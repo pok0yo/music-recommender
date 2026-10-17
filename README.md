@@ -4,20 +4,23 @@ A planned music discovery application that recommends recognizable tracks from a
 
 ## Status
 
-Planning only. Application implementation has not begun.
+Dataset auditing has begun. Application and model implementation have not begun.
 
 - Stage 1: product scope and constraints documented.
 - Stage 2: data-source documentation reviewed; dataset feasibility remains unverified.
 - Stage 3: recommendation methodology and evaluation protocol proposed.
 - Stage 4: UX architecture and five distinct visual directions documented as proposals.
 - Stage 5: implementation plan, contracts, acceptance gates, and milestones documented.
-- Next: Stage 6, dataset feasibility audit and reproducible preprocessing, pending authorization.
+- Stage 6: in progress. The published metadata sample fails the listening-event gate; replacement acquisition and the user's coverage panel remain pending.
+- Stage 7: model implementation remains gated on a successful Stage 6 audit.
 
 See the [Stage 4 UX and design plan](docs/stage-4-design-plan.md) for the journey, interface states, five design systems, exact hero reservations, and future verification criteria. No final visual direction has been selected or implemented.
 
 See the [Stage 5 implementation plan](docs/stage-5-implementation-plan.md) for architecture, data-to-UI contracts, the evaluation protocol, stage acceptance criteria, testing, deployment, and portfolio deliverables. Its 122–174-hour planning range includes contingency; the 6–8-week target depends on availability and a successful data audit.
 
-The target is a 6–8-week individual portfolio project, subject to data feasibility and available development time. No dataset has been downloaded, model trained, or recommendation performance measured.
+See the [Stage 6 data audit](docs/stage-6-data-audit.md) for the checksum-verified sample findings, resource observations, reproducible audit commands, and unresolved data gate.
+
+The target is a 6–8-week individual portfolio project, subject to data feasibility and available development time. A metadata sample has been downloaded and audited. No training-ready listening dataset, trained model, or measured recommendation result exists yet.
 
 ## Proposed MVP
 

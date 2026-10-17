@@ -1,0 +1,201 @@
+{
+  "compressed_bytes": 246734240,
+  "decision": "No JSON listening events detected; source review required",
+  "elapsed_scope": "local checksum verification and full archive scan; excludes download",
+  "elapsed_seconds": 10.341,
+  "expanded_file_bytes": 2420517782,
+  "file_count": 25,
+  "json_event_rows_detected": 0,
+  "listen_members": [],
+  "members": [
+    {
+      "bytes": 1,
+      "path": "listenbrainz-sample-dump-20250610-094311/SCHEMA_SEQUENCE"
+    },
+    {
+      "bytes": 26,
+      "path": "listenbrainz-sample-dump-20250610-094311/TIMESTAMP"
+    },
+    {
+      "bytes": 6390,
+      "path": "listenbrainz-sample-dump-20250610-094311/COPYING"
+    },
+    {
+      "bytes": 200368176,
+      "field_counts": {
+        "artist_data": 5549,
+        "artist_mbid": 5549,
+        "dirty": 5549,
+        "last_updated": 5549,
+        "release_group_data": 5549,
+        "tag_data": 5549
+      },
+      "max_line_bytes": 94308020,
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/metadata/artists_cache.jsonl",
+      "rows": 5549
+    },
+    {
+      "bytes": 1602060286,
+      "field_counts": {
+        "artist_data": 450279,
+        "artist_mbids": 450279,
+        "dirty": 450279,
+        "last_updated": 450279,
+        "recording_data": 450279,
+        "recording_mbid": 450279,
+        "release_data": 450279,
+        "release_mbid": 450279,
+        "tag_data": 450279
+      },
+      "max_line_bytes": 45377,
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/metadata/recordings_cache.jsonl",
+      "rows": 450279
+    },
+    {
+      "bytes": 341919996,
+      "field_counts": {
+        "artist_data": 28162,
+        "artist_mbids": 28162,
+        "dirty": 28162,
+        "last_updated": 28162,
+        "recording_data": 28162,
+        "release_group_data": 28162,
+        "release_group_mbid": 28162,
+        "tag_data": 28162
+      },
+      "max_line_bytes": 1290556,
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/metadata/release_groups_cache.jsonl",
+      "rows": 28162
+    },
+    {
+      "bytes": 52,
+      "header": [
+        "recording_mbid",
+        "total_listen_count",
+        "total_user_count"
+      ],
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/popularity/mlhd_recording.csv"
+    },
+    {
+      "bytes": 56,
+      "header": [
+        "release_group_mbid",
+        "total_listen_count",
+        "total_user_count"
+      ],
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/popularity/mlhd_release_group.csv"
+    },
+    {
+      "bytes": 44538810,
+      "header": [
+        "artist_mbid",
+        "recording_mbid",
+        "total_listen_count",
+        "total_user_count"
+      ],
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/popularity/mlhd_top_recording.csv"
+    },
+    {
+      "bytes": 52,
+      "header": [
+        "recording_mbid",
+        "total_listen_count",
+        "total_user_count"
+      ],
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/popularity/recording.csv"
+    },
+    {
+      "bytes": 607397,
+      "header": [
+        "release_group_mbid",
+        "total_listen_count",
+        "total_user_count"
+      ],
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/popularity/release_group.csv"
+    },
+    {
+      "bytes": 90426440,
+      "header": [
+        "artist_mbid",
+        "recording_mbid",
+        "total_listen_count",
+        "total_user_count"
+      ],
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/popularity/top_recording.csv"
+    },
+    {
+      "bytes": 291998,
+      "inspection": "inventory_only; excluded from training",
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/spark/artist_country_code.parquet"
+    },
+    {
+      "bytes": 2956714,
+      "inspection": "inventory_only; excluded from training",
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/spark/artist_credit.parquet"
+    },
+    {
+      "bytes": 26629711,
+      "inspection": "inventory_only; excluded from training",
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/spark/artist_genre.parquet"
+    },
+    {
+      "bytes": 29747984,
+      "inspection": "inventory_only; excluded from training",
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/spark/artist_tag.parquet"
+    },
+    {
+      "bytes": 19140341,
+      "inspection": "inventory_only; excluded from training",
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/spark/recording_artist.parquet"
+    },
+    {
+      "bytes": 1884832,
+      "inspection": "inventory_only; excluded from training",
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/spark/recording_feedback.parquet"
+    },
+    {
+      "bytes": 2486781,
+      "inspection": "inventory_only; excluded from training",
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/spark/recording_genre.parquet"
+    },
+    {
+      "bytes": 20210227,
+      "inspection": "inventory_only; excluded from training",
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/spark/recording_length.parquet"
+    },
+    {
+      "bytes": 2811517,
+      "inspection": "inventory_only; excluded from training",
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/spark/recording_tag.parquet"
+    },
+    {
+      "bytes": 12460381,
+      "inspection": "inventory_only; excluded from training",
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/spark/release_group_genre.parquet"
+    },
+    {
+      "bytes": 2946305,
+      "inspection": "inventory_only; excluded from training",
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/spark/release_group_metadata.parquet"
+    },
+    {
+      "bytes": 14838852,
+      "inspection": "inventory_only; excluded from training",
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/spark/release_group_tag.parquet"
+    },
+    {
+      "bytes": 4184457,
+      "inspection": "inventory_only; excluded from training",
+      "path": "listenbrainz-sample-dump-20250610-094311/lbdump/spark/release_metadata.parquet"
+    }
+  ],
+  "observed_on": "2026-10-17",
+  "parquet_contents_verified": false,
+  "runtime": "CPython 3.15.0 on Windows x86_64",
+  "schema_sequence": "8",
+  "sha256": "509282544c50b324db8dfb4e33a5af4012f514c153da077a0fb07f093956168b",
+  "source_generator_revision_is_deployment_verified": false,
+  "source_generator_revision_reviewed": "69246933c082436af41b6806383a9f49a9548512",
+  "source_url": "https://data.metabrainz.org/pub/musicbrainz/listenbrainz/sample/listenbrainz-sample-20250610-094311-full/listenbrainz-sample-dump-20250610-094311.tar.zst",
+  "training_approved": false
+}
