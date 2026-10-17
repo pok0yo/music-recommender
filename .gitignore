@@ -1,0 +1,38 @@
+# Credentials; sanitized examples may be tracked.
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated frontend output.
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+.vercel/
+
+# Python environments and caches.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Test output.
+coverage/
+.coverage
+htmlcov/
+playwright-report/
+test-results/
+
+# Downloaded data and generated model artifacts.
+/data/raw/
+/data/interim/
+/data/processed/
+/artifacts/
+
+# Operating-system files.
+.DS_Store
+Thumbs.db
