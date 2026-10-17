@@ -9,7 +9,10 @@ Planning only. Application implementation has not begun.
 - Stage 1: product scope and constraints documented.
 - Stage 2: data-source documentation reviewed; dataset feasibility remains unverified.
 - Stage 3: recommendation methodology and evaluation protocol proposed.
-- Next: Stage 4, UX architecture and five distinct visual directions, pending authorization.
+- Stage 4: UX architecture and five distinct visual directions documented as proposals.
+- Next: Stage 5, final implementation plan and milestones, pending authorization.
+
+See the [Stage 4 UX and design plan](docs/stage-4-design-plan.md) for the journey, interface states, five design systems, exact hero reservations, and future verification criteria. No final visual direction has been selected or implemented.
 
 The target is a 6–8-week individual portfolio project, subject to data feasibility and available development time. No dataset has been downloaded, model trained, or recommendation performance measured.
 
