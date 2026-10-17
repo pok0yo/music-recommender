@@ -10,9 +10,12 @@ Planning only. Application implementation has not begun.
 - Stage 2: data-source documentation reviewed; dataset feasibility remains unverified.
 - Stage 3: recommendation methodology and evaluation protocol proposed.
 - Stage 4: UX architecture and five distinct visual directions documented as proposals.
-- Next: Stage 5, final implementation plan and milestones, pending authorization.
+- Stage 5: implementation plan, contracts, acceptance gates, and milestones documented.
+- Next: Stage 6, dataset feasibility audit and reproducible preprocessing, pending authorization.
 
 See the [Stage 4 UX and design plan](docs/stage-4-design-plan.md) for the journey, interface states, five design systems, exact hero reservations, and future verification criteria. No final visual direction has been selected or implemented.
+
+See the [Stage 5 implementation plan](docs/stage-5-implementation-plan.md) for architecture, data-to-UI contracts, the evaluation protocol, stage acceptance criteria, testing, deployment, and portfolio deliverables. Its 122–174-hour planning range includes contingency; the 6–8-week target depends on availability and a successful data audit.
 
 The target is a 6–8-week individual portfolio project, subject to data feasibility and available development time. No dataset has been downloaded, model trained, or recommendation performance measured.
 
@@ -44,7 +47,7 @@ Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Python, pandas, NumPy, scik
 
 ## Design direction
 
-Y2K Futurism / Soft Club: icy blue, glossy white, cobalt typography, restrained chrome, curved surfaces, and fine technical markings. Five coherent alternatives will be planned before frontend implementation. Hero imagery will initially use flat CSS placeholders; reference artwork will not be copied.
+Y2K Futurism / Soft Club: icy blue, glossy white, cobalt typography, restrained chrome, curved surfaces, and fine technical markings. Five coherent alternatives are documented for future implementation in separate `v1/` through `v5/` folders sharing one behavior layer. Hero imagery will initially use flat CSS placeholders; reference artwork will not be copied.
 
 ## Project workflow
 
