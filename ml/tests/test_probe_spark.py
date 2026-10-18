@@ -40,6 +40,23 @@ class RangeReaderTests(unittest.TestCase):
                 reader.read(1)
             request.assert_not_called()
 
+    def test_failed_read_consumes_budget_and_connection_path_matches(self):
+        reader = probe_spark.RangeReader(max_bytes=4)
+        with patch.object(probe_spark, "urlopen", return_value=Response(status=200)):
+            with self.assertRaises(ValueError):
+                reader.read(3)
+        self.assertEqual(reader.reserved_bytes,4)
+        with patch.object(probe_spark, "urlopen") as request:
+            with self.assertRaises(ValueError):
+                reader.read(1)
+            request.assert_not_called()
+        from unittest.mock import Mock
+        connection=Mock()
+        connection.getresponse.return_value=Response()
+        reader=probe_spark.RangeReader(connection=connection)
+        self.assertEqual(reader.read(3),b"abc")
+        connection.request.assert_called_once()
+
     def test_pax_names_offsets_and_prefix_limit(self):
         data = io.BytesIO()
         long_name = 'a' * 150 + '.parquet'

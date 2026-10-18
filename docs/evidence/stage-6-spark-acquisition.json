@@ -1,0 +1,3671 @@
+{
+  "observed_on": "2026-10-17",
+  "source_url": "https://data.metabrainz.org/pub/musicbrainz/listenbrainz/fullexport/listenbrainz-dump-2722-20261015-000002-full/listenbrainz-spark-dump-2722-20261015-000002-full.tar",
+  "etag": "\"6ad31670-39ac83c800\"",
+  "archive_markers": {
+    "COPYING": {
+      "bytes": 6390,
+      "contains_cc0_1_0": true,
+      "sha256": "75f3c90d6fa833817f19d019b35807687c3ed1c0b858b5f274625e96dda24bea"
+    },
+    "SCHEMA_SEQUENCE": {
+      "bytes": 1,
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "value": "1"
+    },
+    "TIMESTAMP": {
+      "bytes": 32,
+      "sha256": "bc090f7e98d7e319b2f33b0b6981211a55cfb5e32d02bee0e361a5fbcc885061",
+      "value": "2026-10-15 00:00:02.588811+00:00"
+    },
+    "transferred_bytes": 6423
+  },
+  "latest_member": {
+    "download_sha256": "369a38579f6de8cc9cac6ca6e3ef4b96e81734e867e4b621874698141f53ca78",
+    "etag": "\"6ad31670-39ac83c800\"",
+    "inspection": {
+      "file": "1509.parquet",
+      "bytes": 41606352,
+      "sha256": "369a38579f6de8cc9cac6ca6e3ef4b96e81734e867e4b621874698141f53ca78",
+      "rows": 508234,
+      "schema": "listened_at: timestamp[ns] not null\ncreated: timestamp[ns] not null\nuser_id: int64 not null\nrecording_msid: string not null\nartist_name: string not null\nartist_credit_id: int64\nrelease_name: string\nrelease_mbid: string\nrecording_name: string not null\nrecording_mbid: string\nartist_credit_mbids: list<element: string>\n  child 0, element: string\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1471",
+      "row_groups": 1,
+      "listened_at": {
+        "min": "2026-10-14 14:49:34.000000000",
+        "max": "2026-10-15 00:00:01.000000000"
+      },
+      "created": {
+        "min": "2026-10-14 14:47:25.039000000",
+        "max": "2026-10-15 00:00:02.588000000"
+      },
+      "distinct_listeners": 18788,
+      "unmapped_recordings": 131439
+    },
+    "member": {
+      "bytes": 41606352,
+      "column_bytes": {
+        "artist_credit_id": 860467,
+        "artist_credit_mbids.list.element": 3945869,
+        "artist_name": 3242091,
+        "created": 2383505,
+        "listened_at": 230444,
+        "recording_mbid": 6107377,
+        "recording_msid": 9241454,
+        "recording_name": 5396878,
+        "release_mbid": 4861219,
+        "release_name": 4367759,
+        "user_id": 962682
+      },
+      "next_header": 247707449344,
+      "offset": 247665842688,
+      "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1509.parquet",
+      "rows": 508234
+    },
+    "requests": 12,
+    "reserved_bytes": 41675984,
+    "source_url": "https://data.metabrainz.org/pub/musicbrainz/listenbrainz/fullexport/listenbrainz-dump-2722-20261015-000002-full/listenbrainz-spark-dump-2722-20261015-000002-full.tar",
+    "training_approved": false,
+    "transferred_bytes": 41675984
+  },
+  "tail_inventory": {
+    "etag": "\"6ad31670-39ac83c800\"",
+    "full_inventory": false,
+    "members": [
+      {
+        "bytes": 41606352,
+        "column_bytes": {
+          "artist_credit_id": 860467,
+          "artist_credit_mbids.list.element": 3945869,
+          "artist_name": 3242091,
+          "created": 2383505,
+          "listened_at": 230444,
+          "recording_mbid": 6107377,
+          "recording_msid": 9241454,
+          "recording_name": 5396878,
+          "release_mbid": 4861219,
+          "release_name": 4367759,
+          "user_id": 962682
+        },
+        "next_header": 247707449344,
+        "offset": 247665842688,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1509.parquet",
+        "rows": 508234
+      },
+      {
+        "bytes": 179005769,
+        "column_bytes": {
+          "artist_credit_id": 3752208,
+          "artist_credit_mbids.list.element": 17504052,
+          "artist_name": 14396334,
+          "created": 10589860,
+          "listened_at": 910255,
+          "recording_mbid": 25733934,
+          "recording_msid": 39474003,
+          "recording_name": 23016479,
+          "release_mbid": 20499055,
+          "release_name": 18773820,
+          "user_id": 4346032
+        },
+        "next_header": 247665841152,
+        "offset": 247486835200,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1508.parquet",
+        "rows": 2296902
+      },
+      {
+        "bytes": 178199086,
+        "column_bytes": {
+          "artist_credit_id": 4066683,
+          "artist_credit_mbids.list.element": 18127231,
+          "artist_name": 14099051,
+          "created": 10002456,
+          "listened_at": 1077023,
+          "recording_mbid": 26398979,
+          "recording_msid": 38568736,
+          "recording_name": 22499855,
+          "release_mbid": 20948593,
+          "release_name": 18175332,
+          "user_id": 4225513
+        },
+        "next_header": 247486833664,
+        "offset": 247308634112,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1507.parquet",
+        "rows": 2264647
+      },
+      {
+        "bytes": 184818799,
+        "column_bytes": {
+          "artist_credit_id": 4040948,
+          "artist_credit_mbids.list.element": 19426821,
+          "artist_name": 14687112,
+          "created": 10560640,
+          "listened_at": 896144,
+          "recording_mbid": 27239239,
+          "recording_msid": 39595208,
+          "recording_name": 23090493,
+          "release_mbid": 22167873,
+          "release_name": 18871574,
+          "user_id": 4233012
+        },
+        "next_header": 247308632576,
+        "offset": 247123813376,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1506.parquet",
+        "rows": 2258723
+      },
+      {
+        "bytes": 181297933,
+        "column_bytes": {
+          "artist_credit_id": 4042576,
+          "artist_credit_mbids.list.element": 19015058,
+          "artist_name": 14323088,
+          "created": 10420807,
+          "listened_at": 875420,
+          "recording_mbid": 26832231,
+          "recording_msid": 38884259,
+          "recording_name": 22609937,
+          "release_mbid": 21619589,
+          "release_name": 18391047,
+          "user_id": 4274202
+        },
+        "next_header": 247123811840,
+        "offset": 246942513664,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1505.parquet",
+        "rows": 2256155
+      },
+      {
+        "bytes": 182076811,
+        "column_bytes": {
+          "artist_credit_id": 4051481,
+          "artist_credit_mbids.list.element": 19057323,
+          "artist_name": 14365882,
+          "created": 10462324,
+          "listened_at": 881835,
+          "recording_mbid": 26987910,
+          "recording_msid": 38939400,
+          "recording_name": 22795260,
+          "release_mbid": 21814107,
+          "release_name": 18458143,
+          "user_id": 4253482
+        },
+        "next_header": 246942512128,
+        "offset": 246760435200,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1504.parquet",
+        "rows": 2255399
+      },
+      {
+        "bytes": 183547759,
+        "column_bytes": {
+          "artist_credit_id": 4113408,
+          "artist_credit_mbids.list.element": 19447142,
+          "artist_name": 14601185,
+          "created": 10465005,
+          "listened_at": 901413,
+          "recording_mbid": 27160428,
+          "recording_msid": 39213126,
+          "recording_name": 22867849,
+          "release_mbid": 21924711,
+          "release_name": 18617312,
+          "user_id": 4226522
+        },
+        "next_header": 246760433664,
+        "offset": 246576885760,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1503.parquet",
+        "rows": 2255636
+      },
+      {
+        "bytes": 178662451,
+        "column_bytes": {
+          "artist_credit_id": 4006811,
+          "artist_credit_mbids.list.element": 18513176,
+          "artist_name": 14121887,
+          "created": 10149014,
+          "listened_at": 959958,
+          "recording_mbid": 26443742,
+          "recording_msid": 38622769,
+          "recording_name": 22414165,
+          "release_mbid": 21112678,
+          "release_name": 18059894,
+          "user_id": 4248694
+        },
+        "next_header": 246576884224,
+        "offset": 246398221312,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1502.parquet",
+        "rows": 2258843
+      },
+      {
+        "bytes": 178307788,
+        "column_bytes": {
+          "artist_credit_id": 4039128,
+          "artist_credit_mbids.list.element": 18449841,
+          "artist_name": 13989672,
+          "created": 10225039,
+          "listened_at": 879737,
+          "recording_mbid": 26521941,
+          "recording_msid": 38341420,
+          "recording_name": 22348928,
+          "release_mbid": 21246813,
+          "release_name": 18005145,
+          "user_id": 4250425
+        },
+        "next_header": 246398219776,
+        "offset": 246219911680,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1501.parquet",
+        "rows": 2256657
+      },
+      {
+        "bytes": 170878385,
+        "column_bytes": {
+          "artist_credit_id": 3771952,
+          "artist_credit_mbids.list.element": 18542360,
+          "artist_name": 13543121,
+          "created": 9745075,
+          "listened_at": 755126,
+          "recording_mbid": 25272769,
+          "recording_msid": 35998235,
+          "recording_name": 20999356,
+          "release_mbid": 20882449,
+          "release_name": 17453427,
+          "user_id": 3906288
+        },
+        "next_header": 246219910144,
+        "offset": 246049031680,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1500.parquet",
+        "rows": 2063530
+      },
+      {
+        "bytes": 177449330,
+        "column_bytes": {
+          "artist_credit_id": 4014259,
+          "artist_credit_mbids.list.element": 18072764,
+          "artist_name": 13801586,
+          "created": 10484288,
+          "listened_at": 877224,
+          "recording_mbid": 26460658,
+          "recording_msid": 38282973,
+          "recording_name": 22139621,
+          "release_mbid": 21219769,
+          "release_name": 17850863,
+          "user_id": 4235611
+        },
+        "next_header": 246049030144,
+        "offset": 245871580672,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1499.parquet",
+        "rows": 2254675
+      },
+      {
+        "bytes": 177298286,
+        "column_bytes": {
+          "artist_credit_id": 4002496,
+          "artist_credit_mbids.list.element": 18209319,
+          "artist_name": 13917136,
+          "created": 10369463,
+          "listened_at": 995126,
+          "recording_mbid": 26206089,
+          "recording_msid": 38224261,
+          "recording_name": 22248388,
+          "release_mbid": 21019888,
+          "release_name": 17899733,
+          "user_id": 4196699
+        },
+        "next_header": 245871579136,
+        "offset": 245694280704,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1498.parquet",
+        "rows": 2252245
+      },
+      {
+        "bytes": 183133764,
+        "column_bytes": {
+          "artist_credit_id": 4048834,
+          "artist_credit_mbids.list.element": 19458532,
+          "artist_name": 14444740,
+          "created": 10579773,
+          "listened_at": 835954,
+          "recording_mbid": 27271338,
+          "recording_msid": 39018387,
+          "recording_name": 22531004,
+          "release_mbid": 22206965,
+          "release_name": 18496885,
+          "user_id": 4231587
+        },
+        "next_header": 245694279168,
+        "offset": 245511144960,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1497.parquet",
+        "rows": 2247477
+      },
+      {
+        "bytes": 178902852,
+        "column_bytes": {
+          "artist_credit_id": 4056735,
+          "artist_credit_mbids.list.element": 18574108,
+          "artist_name": 14124370,
+          "created": 10416251,
+          "listened_at": 900761,
+          "recording_mbid": 26513917,
+          "recording_msid": 38264991,
+          "recording_name": 22359742,
+          "release_mbid": 21373517,
+          "release_name": 18048760,
+          "user_id": 4260007
+        },
+        "next_header": 245511143424,
+        "offset": 245332240384,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1496.parquet",
+        "rows": 2252482
+      },
+      {
+        "bytes": 182769188,
+        "column_bytes": {
+          "artist_credit_id": 4117556,
+          "artist_credit_mbids.list.element": 19397958,
+          "artist_name": 14377912,
+          "created": 10586873,
+          "listened_at": 835800,
+          "recording_mbid": 27165418,
+          "recording_msid": 38792883,
+          "recording_name": 22612425,
+          "release_mbid": 22205598,
+          "release_name": 18451331,
+          "user_id": 4215717
+        },
+        "next_header": 245332238848,
+        "offset": 245149469184,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1495.parquet",
+        "rows": 2248640
+      },
+      {
+        "bytes": 176504681,
+        "column_bytes": {
+          "artist_credit_id": 4030569,
+          "artist_credit_mbids.list.element": 18218873,
+          "artist_name": 14015491,
+          "created": 10400423,
+          "listened_at": 960208,
+          "recording_mbid": 25922122,
+          "recording_msid": 38104880,
+          "recording_name": 22064838,
+          "release_mbid": 20721172,
+          "release_name": 17840994,
+          "user_id": 4215276
+        },
+        "next_header": 245149467648,
+        "offset": 244972962816,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1494.parquet",
+        "rows": 2261268
+      },
+      {
+        "bytes": 176679139,
+        "column_bytes": {
+          "artist_credit_id": 3973029,
+          "artist_credit_mbids.list.element": 18127997,
+          "artist_name": 13980647,
+          "created": 10404423,
+          "listened_at": 911399,
+          "recording_mbid": 26158535,
+          "recording_msid": 38186947,
+          "recording_name": 22182366,
+          "release_mbid": 20758529,
+          "release_name": 17730063,
+          "user_id": 4255515
+        },
+        "next_header": 244972961280,
+        "offset": 244796281856,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1493.parquet",
+        "rows": 2259277
+      },
+      {
+        "bytes": 181389842,
+        "column_bytes": {
+          "artist_credit_id": 4085533,
+          "artist_credit_mbids.list.element": 19250136,
+          "artist_name": 14369995,
+          "created": 10550524,
+          "listened_at": 846072,
+          "recording_mbid": 26871254,
+          "recording_msid": 38484659,
+          "recording_name": 22395784,
+          "release_mbid": 21951331,
+          "release_name": 18342355,
+          "user_id": 4232557
+        },
+        "next_header": 244796280320,
+        "offset": 244614889984,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1492.parquet",
+        "rows": 2251718
+      },
+      {
+        "bytes": 180698382,
+        "column_bytes": {
+          "artist_credit_id": 4047389,
+          "artist_credit_mbids.list.element": 19215664,
+          "artist_name": 14369223,
+          "created": 10468439,
+          "listened_at": 855747,
+          "recording_mbid": 26735747,
+          "recording_msid": 38363407,
+          "recording_name": 22315189,
+          "release_mbid": 21744130,
+          "release_name": 18343496,
+          "user_id": 4230186
+        },
+        "next_header": 244614888448,
+        "offset": 244434189824,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1491.parquet",
+        "rows": 2250799
+      },
+      {
+        "bytes": 174115369,
+        "column_bytes": {
+          "artist_credit_id": 3956108,
+          "artist_credit_mbids.list.element": 17600377,
+          "artist_name": 13677983,
+          "created": 10256557,
+          "listened_at": 990907,
+          "recording_mbid": 25803102,
+          "recording_msid": 37752449,
+          "recording_name": 21792513,
+          "release_mbid": 20504875,
+          "release_name": 17543131,
+          "user_id": 4227615
+        },
+        "next_header": 244434188288,
+        "offset": 244260072448,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1490.parquet",
+        "rows": 2256799
+      },
+      {
+        "bytes": 177694719,
+        "column_bytes": {
+          "artist_credit_id": 3995090,
+          "artist_credit_mbids.list.element": 18430009,
+          "artist_name": 14032553,
+          "created": 10543854,
+          "listened_at": 886402,
+          "recording_mbid": 26235488,
+          "recording_msid": 38172425,
+          "recording_name": 22127388,
+          "release_mbid": 21167056,
+          "release_name": 17874718,
+          "user_id": 4219941
+        },
+        "next_header": 244260070912,
+        "offset": 244082376192,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1489.parquet",
+        "rows": 2257478
+      },
+      {
+        "bytes": 181951209,
+        "column_bytes": {
+          "artist_credit_id": 4084866,
+          "artist_credit_mbids.list.element": 19350767,
+          "artist_name": 14308419,
+          "created": 10582174,
+          "listened_at": 834875,
+          "recording_mbid": 27051283,
+          "recording_msid": 38682720,
+          "recording_name": 22400695,
+          "release_mbid": 22048176,
+          "release_name": 18375053,
+          "user_id": 4222360
+        },
+        "next_header": 244082374656,
+        "offset": 243900423168,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1488.parquet",
+        "rows": 2249956
+      },
+      {
+        "bytes": 176639287,
+        "column_bytes": {
+          "artist_credit_id": 4022487,
+          "artist_credit_mbids.list.element": 18132584,
+          "artist_name": 13840103,
+          "created": 10449145,
+          "listened_at": 907500,
+          "recording_mbid": 26254943,
+          "recording_msid": 37892720,
+          "recording_name": 22066863,
+          "release_mbid": 21070414,
+          "release_name": 17755429,
+          "user_id": 4237430
+        },
+        "next_header": 243900421632,
+        "offset": 243723782144,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1487.parquet",
+        "rows": 2255305
+      },
+      {
+        "bytes": 175833175,
+        "column_bytes": {
+          "artist_credit_id": 3982139,
+          "artist_credit_mbids.list.element": 18063231,
+          "artist_name": 13777706,
+          "created": 10418357,
+          "listened_at": 979563,
+          "recording_mbid": 25988801,
+          "recording_msid": 37893745,
+          "recording_name": 22021178,
+          "release_mbid": 20797058,
+          "release_name": 17720889,
+          "user_id": 4180812
+        },
+        "next_header": 243723780608,
+        "offset": 243547947008,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1486.parquet",
+        "rows": 2254879
+      },
+      {
+        "bytes": 179838071,
+        "column_bytes": {
+          "artist_credit_id": 4026122,
+          "artist_credit_mbids.list.element": 18820808,
+          "artist_name": 14093150,
+          "created": 10562831,
+          "listened_at": 932792,
+          "recording_mbid": 26662890,
+          "recording_msid": 38573022,
+          "recording_name": 22343608,
+          "release_mbid": 21505796,
+          "release_name": 18117188,
+          "user_id": 4190063
+        },
+        "next_header": 243547945472,
+        "offset": 243368107008,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1485.parquet",
+        "rows": 2254863
+      },
+      {
+        "bytes": 176518185,
+        "column_bytes": {
+          "artist_credit_id": 4038566,
+          "artist_credit_mbids.list.element": 18296542,
+          "artist_name": 13770974,
+          "created": 10460412,
+          "listened_at": 899049,
+          "recording_mbid": 26268501,
+          "recording_msid": 37899883,
+          "recording_name": 21842075,
+          "release_mbid": 21074080,
+          "release_name": 17724485,
+          "user_id": 4233867
+        },
+        "next_header": 243368105472,
+        "offset": 243191586816,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1484.parquet",
+        "rows": 2250003
+      },
+      {
+        "bytes": 175054933,
+        "column_bytes": {
+          "artist_credit_id": 4007460,
+          "artist_credit_mbids.list.element": 18002939,
+          "artist_name": 13604568,
+          "created": 10484122,
+          "listened_at": 907390,
+          "recording_mbid": 26112202,
+          "recording_msid": 37621687,
+          "recording_name": 21750780,
+          "release_mbid": 20882434,
+          "release_name": 17469373,
+          "user_id": 4202293
+        },
+        "next_header": 243191585280,
+        "offset": 243016529920,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1483.parquet",
+        "rows": 2248343
+      },
+      {
+        "bytes": 92929938,
+        "column_bytes": {
+          "artist_credit_id": 2079098,
+          "artist_credit_mbids.list.element": 9753973,
+          "artist_name": 7265872,
+          "created": 5497193,
+          "listened_at": 467804,
+          "recording_mbid": 13890538,
+          "recording_msid": 19906640,
+          "recording_name": 11492758,
+          "release_mbid": 11132660,
+          "release_name": 9271242,
+          "user_id": 2163991
+        },
+        "next_header": 243016528384,
+        "offset": 242923598336,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1482.parquet",
+        "rows": 1166512
+      },
+      {
+        "bytes": 175699424,
+        "column_bytes": {
+          "artist_credit_id": 3944931,
+          "artist_credit_mbids.list.element": 18204760,
+          "artist_name": 13822033,
+          "created": 10369960,
+          "listened_at": 1073059,
+          "recording_mbid": 26045272,
+          "recording_msid": 37886127,
+          "recording_name": 21897211,
+          "release_mbid": 20670676,
+          "release_name": 17623757,
+          "user_id": 4151775
+        },
+        "next_header": 242923596800,
+        "offset": 242747897344,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1481.parquet",
+        "rows": 2252761
+      },
+      {
+        "bytes": 178948878,
+        "column_bytes": {
+          "artist_credit_id": 4070412,
+          "artist_credit_mbids.list.element": 18761841,
+          "artist_name": 14022135,
+          "created": 10419579,
+          "listened_at": 945688,
+          "recording_mbid": 26739693,
+          "recording_msid": 38264096,
+          "recording_name": 22072990,
+          "release_mbid": 21457897,
+          "release_name": 17975532,
+          "user_id": 4209312
+        },
+        "next_header": 242747895808,
+        "offset": 242568946688,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1480.parquet",
+        "rows": 2249555
+      },
+      {
+        "bytes": 174970862,
+        "column_bytes": {
+          "artist_credit_id": 4044975,
+          "artist_credit_mbids.list.element": 17916857,
+          "artist_name": 13563874,
+          "created": 10530260,
+          "listened_at": 995826,
+          "recording_mbid": 26155471,
+          "recording_msid": 37566087,
+          "recording_name": 21755840,
+          "release_mbid": 20814985,
+          "release_name": 17378549,
+          "user_id": 4238430
+        },
+        "next_header": 242568945152,
+        "offset": 242393974272,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1479.parquet",
+        "rows": 2250711
+      },
+      {
+        "bytes": 176136105,
+        "column_bytes": {
+          "artist_credit_id": 4029679,
+          "artist_credit_mbids.list.element": 17928859,
+          "artist_name": 13677326,
+          "created": 10649005,
+          "listened_at": 1007700,
+          "recording_mbid": 26334632,
+          "recording_msid": 37880021,
+          "recording_name": 21882618,
+          "release_mbid": 20971520,
+          "release_name": 17550521,
+          "user_id": 4214500
+        },
+        "next_header": 242393972736,
+        "offset": 242217836544,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1478.parquet",
+        "rows": 2252537
+      },
+      {
+        "bytes": 172896632,
+        "column_bytes": {
+          "artist_credit_id": 4005210,
+          "artist_credit_mbids.list.element": 17654831,
+          "artist_name": 13460275,
+          "created": 10264259,
+          "listened_at": 1086818,
+          "recording_mbid": 25628197,
+          "recording_msid": 37425804,
+          "recording_name": 21616948,
+          "release_mbid": 20302312,
+          "release_name": 17273104,
+          "user_id": 4169122
+        },
+        "next_header": 242217835008,
+        "offset": 242044938240,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1477.parquet",
+        "rows": 2252656
+      },
+      {
+        "bytes": 180505843,
+        "column_bytes": {
+          "artist_credit_id": 4083895,
+          "artist_credit_mbids.list.element": 19106482,
+          "artist_name": 14124097,
+          "created": 10520274,
+          "listened_at": 887737,
+          "recording_mbid": 26888790,
+          "recording_msid": 38402168,
+          "recording_name": 22259764,
+          "release_mbid": 21864037,
+          "release_name": 18172396,
+          "user_id": 4186450
+        },
+        "next_header": 242044936704,
+        "offset": 241864430592,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1476.parquet",
+        "rows": 2247703
+      },
+      {
+        "bytes": 175530883,
+        "column_bytes": {
+          "artist_credit_id": 4047558,
+          "artist_credit_mbids.list.element": 18381234,
+          "artist_name": 13650122,
+          "created": 10426065,
+          "listened_at": 912596,
+          "recording_mbid": 26161099,
+          "recording_msid": 37522481,
+          "recording_name": 21685859,
+          "release_mbid": 21000389,
+          "release_name": 17523015,
+          "user_id": 4210785
+        },
+        "next_header": 241864429056,
+        "offset": 241688898048,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1475.parquet",
+        "rows": 2247056
+      },
+      {
+        "bytes": 174059892,
+        "column_bytes": {
+          "artist_credit_id": 3943178,
+          "artist_credit_mbids.list.element": 17931029,
+          "artist_name": 13542581,
+          "created": 10382005,
+          "listened_at": 975492,
+          "recording_mbid": 25951460,
+          "recording_msid": 37428372,
+          "recording_name": 21732586,
+          "release_mbid": 20578307,
+          "release_name": 17375150,
+          "user_id": 4209935
+        },
+        "next_header": 241688896512,
+        "offset": 241514836480,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1474.parquet",
+        "rows": 2254370
+      },
+      {
+        "bytes": 171186097,
+        "column_bytes": {
+          "artist_credit_id": 3934642,
+          "artist_credit_mbids.list.element": 17333865,
+          "artist_name": 13316787,
+          "created": 10180881,
+          "listened_at": 1088762,
+          "recording_mbid": 25466806,
+          "recording_msid": 37097521,
+          "recording_name": 21521493,
+          "release_mbid": 20050812,
+          "release_name": 17018665,
+          "user_id": 4166171
+        },
+        "next_header": 241514834944,
+        "offset": 241343648768,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1473.parquet",
+        "rows": 2253468
+      },
+      {
+        "bytes": 177256992,
+        "column_bytes": {
+          "artist_credit_id": 4022457,
+          "artist_credit_mbids.list.element": 18686207,
+          "artist_name": 13833533,
+          "created": 10543146,
+          "listened_at": 892864,
+          "recording_mbid": 26362822,
+          "recording_msid": 37881093,
+          "recording_name": 21923392,
+          "release_mbid": 21246647,
+          "release_name": 17682628,
+          "user_id": 4172179
+        },
+        "next_header": 241343647232,
+        "offset": 241166389760,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1472.parquet",
+        "rows": 2249261
+      },
+      {
+        "bytes": 173075993,
+        "column_bytes": {
+          "artist_credit_id": 4004558,
+          "artist_credit_mbids.list.element": 18110840,
+          "artist_name": 13432677,
+          "created": 10368441,
+          "listened_at": 908831,
+          "recording_mbid": 25680374,
+          "recording_msid": 37027019,
+          "recording_name": 21397689,
+          "release_mbid": 20603859,
+          "release_name": 17332577,
+          "user_id": 4199484
+        },
+        "next_header": 241166388224,
+        "offset": 240993311744,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1471.parquet",
+        "rows": 2247336
+      },
+      {
+        "bytes": 170880373,
+        "column_bytes": {
+          "artist_credit_id": 3915561,
+          "artist_credit_mbids.list.element": 17318016,
+          "artist_name": 13177235,
+          "created": 10333230,
+          "listened_at": 956722,
+          "recording_mbid": 25475185,
+          "recording_msid": 36909001,
+          "recording_name": 21415560,
+          "release_mbid": 20148268,
+          "release_name": 17025037,
+          "user_id": 4196870
+        },
+        "next_header": 240993310208,
+        "offset": 240822429696,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1470.parquet",
+        "rows": 2253790
+      },
+      {
+        "bytes": 167695831,
+        "column_bytes": {
+          "artist_credit_id": 3923947,
+          "artist_credit_mbids.list.element": 16945848,
+          "artist_name": 12979030,
+          "created": 10283854,
+          "listened_at": 1016911,
+          "recording_mbid": 24848074,
+          "recording_msid": 36291499,
+          "recording_name": 20931741,
+          "release_mbid": 19634803,
+          "release_name": 16692577,
+          "user_id": 4137745
+        },
+        "next_header": 240822428160,
+        "offset": 240654732288,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1469.parquet",
+        "rows": 2249897
+      },
+      {
+        "bytes": 176886072,
+        "column_bytes": {
+          "artist_credit_id": 4036605,
+          "artist_credit_mbids.list.element": 18573104,
+          "artist_name": 13765103,
+          "created": 10547705,
+          "listened_at": 893060,
+          "recording_mbid": 26407532,
+          "recording_msid": 37688540,
+          "recording_name": 21809229,
+          "release_mbid": 21307216,
+          "release_name": 17679312,
+          "user_id": 4168885
+        },
+        "next_header": 240654730752,
+        "offset": 240477844480,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1468.parquet",
+        "rows": 2247270
+      },
+      {
+        "bytes": 173224395,
+        "column_bytes": {
+          "artist_credit_id": 4009646,
+          "artist_credit_mbids.list.element": 17933679,
+          "artist_name": 13388525,
+          "created": 10450344,
+          "listened_at": 927777,
+          "recording_mbid": 25822831,
+          "recording_msid": 37069297,
+          "recording_name": 21458843,
+          "release_mbid": 20643715,
+          "release_name": 17307163,
+          "user_id": 4202824
+        },
+        "next_header": 240477842944,
+        "offset": 240304618496,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1467.parquet",
+        "rows": 2248681
+      },
+      {
+        "bytes": 168529198,
+        "column_bytes": {
+          "artist_credit_id": 3932666,
+          "artist_credit_mbids.list.element": 16852013,
+          "artist_name": 12978587,
+          "created": 10438781,
+          "listened_at": 968303,
+          "recording_mbid": 25216346,
+          "recording_msid": 36419455,
+          "recording_name": 21041929,
+          "release_mbid": 19781907,
+          "release_name": 16699259,
+          "user_id": 4190335
+        },
+        "next_header": 240304616960,
+        "offset": 240136087552,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1466.parquet",
+        "rows": 2252316
+      },
+      {
+        "bytes": 165837952,
+        "column_bytes": {
+          "artist_credit_id": 3918360,
+          "artist_credit_mbids.list.element": 16512555,
+          "artist_name": 12737016,
+          "created": 10285767,
+          "listened_at": 1043397,
+          "recording_mbid": 24696122,
+          "recording_msid": 36031235,
+          "recording_name": 20745380,
+          "release_mbid": 19331204,
+          "release_name": 16378104,
+          "user_id": 4149080
+        },
+        "next_header": 240136086016,
+        "offset": 239970247680,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1465.parquet",
+        "rows": 2254783
+      },
+      {
+        "bytes": 18549673,
+        "column_bytes": {
+          "artist_credit_id": 491213,
+          "artist_credit_mbids.list.element": 1458822,
+          "artist_name": 1151120,
+          "created": 1145733,
+          "listened_at": 107302,
+          "recording_mbid": 3030157,
+          "recording_msid": 4354227,
+          "recording_name": 2442640,
+          "release_mbid": 2205684,
+          "release_name": 1698426,
+          "user_id": 457752
+        },
+        "next_header": 239970246144,
+        "offset": 239951696384,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1464.parquet",
+        "rows": 249840
+      },
+      {
+        "bytes": 170466471,
+        "column_bytes": {
+          "artist_credit_id": 3915040,
+          "artist_credit_mbids.list.element": 17433752,
+          "artist_name": 13209188,
+          "created": 10510433,
+          "listened_at": 907927,
+          "recording_mbid": 25408943,
+          "recording_msid": 36566748,
+          "recording_name": 21152647,
+          "release_mbid": 20205824,
+          "release_name": 16977279,
+          "user_id": 4168835
+        },
+        "next_header": 239951694848,
+        "offset": 239781228032,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1463.parquet",
+        "rows": 2251079
+      },
+      {
+        "bytes": 173813208,
+        "column_bytes": {
+          "artist_credit_id": 3999324,
+          "artist_credit_mbids.list.element": 18121659,
+          "artist_name": 13474918,
+          "created": 10548545,
+          "listened_at": 904140,
+          "recording_mbid": 25958599,
+          "recording_msid": 37058013,
+          "recording_name": 21422897,
+          "release_mbid": 20794874,
+          "release_name": 17353784,
+          "user_id": 4166876
+        },
+        "next_header": 239781226496,
+        "offset": 239607413248,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1462.parquet",
+        "rows": 2245718
+      },
+      {
+        "bytes": 171636111,
+        "column_bytes": {
+          "artist_credit_id": 3963058,
+          "artist_credit_mbids.list.element": 18126282,
+          "artist_name": 13366034,
+          "created": 10404458,
+          "listened_at": 1012416,
+          "recording_mbid": 26175014,
+          "recording_msid": 35435759,
+          "recording_name": 21271736,
+          "release_mbid": 20656739,
+          "release_name": 17051759,
+          "user_id": 4163151
+        },
+        "next_header": 239607411712,
+        "offset": 239435775488,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1461.parquet",
+        "rows": 2236124
+      },
+      {
+        "bytes": 172396469,
+        "column_bytes": {
+          "artist_credit_id": 4057223,
+          "artist_credit_mbids.list.element": 18545259,
+          "artist_name": 13410488,
+          "created": 10345334,
+          "listened_at": 1083786,
+          "recording_mbid": 26624113,
+          "recording_msid": 34819964,
+          "recording_name": 21268063,
+          "release_mbid": 21026617,
+          "release_name": 17055414,
+          "user_id": 4150487
+        },
+        "next_header": 239435773952,
+        "offset": 239263377408,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1460.parquet",
+        "rows": 2225608
+      },
+      {
+        "bytes": 172912276,
+        "column_bytes": {
+          "artist_credit_id": 4096034,
+          "artist_credit_mbids.list.element": 18818760,
+          "artist_name": 13412796,
+          "created": 10432699,
+          "listened_at": 951465,
+          "recording_mbid": 26691279,
+          "recording_msid": 34719569,
+          "recording_name": 21205755,
+          "release_mbid": 21239938,
+          "release_name": 17174195,
+          "user_id": 4160116
+        },
+        "next_header": 239263375872,
+        "offset": 239090463232,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1459.parquet",
+        "rows": 2223308
+      },
+      {
+        "bytes": 178658972,
+        "column_bytes": {
+          "artist_credit_id": 4143836,
+          "artist_credit_mbids.list.element": 19860937,
+          "artist_name": 13760651,
+          "created": 10540388,
+          "listened_at": 986361,
+          "recording_mbid": 27715916,
+          "recording_msid": 35620919,
+          "recording_name": 21684948,
+          "release_mbid": 22395444,
+          "release_name": 17815472,
+          "user_id": 4124562
+        },
+        "next_header": 239090461696,
+        "offset": 238911802368,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1458.parquet",
+        "rows": 2217392
+      },
+      {
+        "bytes": 173306394,
+        "column_bytes": {
+          "artist_credit_id": 4094714,
+          "artist_credit_mbids.list.element": 19272355,
+          "artist_name": 13450889,
+          "created": 10319840,
+          "listened_at": 961561,
+          "recording_mbid": 26672532,
+          "recording_msid": 34644425,
+          "recording_name": 21043334,
+          "release_mbid": 21407529,
+          "release_name": 17316899,
+          "user_id": 4112610
+        },
+        "next_header": 238911800832,
+        "offset": 238738493952,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1457.parquet",
+        "rows": 2221378
+      },
+      {
+        "bytes": 170714154,
+        "column_bytes": {
+          "artist_credit_id": 4066732,
+          "artist_credit_mbids.list.element": 18686083,
+          "artist_name": 13245230,
+          "created": 10280961,
+          "listened_at": 956713,
+          "recording_mbid": 26292955,
+          "recording_msid": 34324663,
+          "recording_name": 20735746,
+          "release_mbid": 20996170,
+          "release_name": 16960759,
+          "user_id": 4158353
+        },
+        "next_header": 238738492416,
+        "offset": 238567777792,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1456.parquet",
+        "rows": 2225247
+      },
+      {
+        "bytes": 169083056,
+        "column_bytes": {
+          "artist_credit_id": 4025024,
+          "artist_credit_mbids.list.element": 18438906,
+          "artist_name": 12992680,
+          "created": 10146437,
+          "listened_at": 900651,
+          "recording_mbid": 26212212,
+          "recording_msid": 33898213,
+          "recording_name": 20628267,
+          "release_mbid": 20834796,
+          "release_name": 16841257,
+          "user_id": 4154901
+        },
+        "next_header": 238567776256,
+        "offset": 238398692864,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1455.parquet",
+        "rows": 2222083
+      },
+      {
+        "bytes": 175094749,
+        "column_bytes": {
+          "artist_credit_id": 4122687,
+          "artist_credit_mbids.list.element": 19589963,
+          "artist_name": 13530328,
+          "created": 10442594,
+          "listened_at": 864407,
+          "recording_mbid": 27134717,
+          "recording_msid": 34937549,
+          "recording_name": 21066691,
+          "release_mbid": 21923927,
+          "release_name": 17344325,
+          "user_id": 4127747
+        },
+        "next_header": 238398691328,
+        "offset": 238223596544,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1454.parquet",
+        "rows": 2218452
+      },
+      {
+        "bytes": 171863385,
+        "column_bytes": {
+          "artist_credit_id": 4064774,
+          "artist_credit_mbids.list.element": 19122857,
+          "artist_name": 13401796,
+          "created": 10394003,
+          "listened_at": 878399,
+          "recording_mbid": 26463184,
+          "recording_msid": 34302624,
+          "recording_name": 20789576,
+          "release_mbid": 21229961,
+          "release_name": 17063772,
+          "user_id": 4142832
+        },
+        "next_header": 238223595008,
+        "offset": 238051731456,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1453.parquet",
+        "rows": 2219474
+      },
+      {
+        "bytes": 166562667,
+        "column_bytes": {
+          "artist_credit_id": 3971604,
+          "artist_credit_mbids.list.element": 17954648,
+          "artist_name": 12842108,
+          "created": 10185986,
+          "listened_at": 990356,
+          "recording_mbid": 25757461,
+          "recording_msid": 33598062,
+          "recording_name": 20374372,
+          "release_mbid": 20303378,
+          "release_name": 16440202,
+          "user_id": 4134647
+        },
+        "next_header": 238051729920,
+        "offset": 237885167104,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1452.parquet",
+        "rows": 2223494
+      },
+      {
+        "bytes": 171941790,
+        "column_bytes": {
+          "artist_credit_id": 3968460,
+          "artist_credit_mbids.list.element": 19045769,
+          "artist_name": 13205140,
+          "created": 10570362,
+          "listened_at": 831776,
+          "recording_mbid": 26586497,
+          "recording_msid": 34383625,
+          "recording_name": 20782180,
+          "release_mbid": 21388943,
+          "release_name": 17031831,
+          "user_id": 4137639
+        },
+        "next_header": 237885165568,
+        "offset": 237713223680,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1451.parquet",
+        "rows": 2220545
+      },
+      {
+        "bytes": 171055734,
+        "column_bytes": {
+          "artist_credit_id": 3974210,
+          "artist_credit_mbids.list.element": 19086740,
+          "artist_name": 13190569,
+          "created": 10451301,
+          "listened_at": 843082,
+          "recording_mbid": 26335045,
+          "recording_msid": 34121006,
+          "recording_name": 20587434,
+          "release_mbid": 21289227,
+          "release_name": 17011613,
+          "user_id": 4155930
+        },
+        "next_header": 237713222144,
+        "offset": 237542166016,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1450.parquet",
+        "rows": 2221561
+      },
+      {
+        "bytes": 165070647,
+        "column_bytes": {
+          "artist_credit_id": 4005490,
+          "artist_credit_mbids.list.element": 17898102,
+          "artist_name": 12650301,
+          "created": 10400279,
+          "listened_at": 898219,
+          "recording_mbid": 25396049,
+          "recording_msid": 33240054,
+          "recording_name": 20049271,
+          "release_mbid": 20129429,
+          "release_name": 16254568,
+          "user_id": 4139123
+        },
+        "next_header": 237542164480,
+        "offset": 237377093632,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1449.parquet",
+        "rows": 2224091
+      },
+      {
+        "bytes": 163840716,
+        "column_bytes": {
+          "artist_credit_id": 3918256,
+          "artist_credit_mbids.list.element": 17715005,
+          "artist_name": 12570427,
+          "created": 10386517,
+          "listened_at": 973272,
+          "recording_mbid": 25255248,
+          "recording_msid": 33037628,
+          "recording_name": 19897738,
+          "release_mbid": 19917894,
+          "release_name": 16092136,
+          "user_id": 4066975
+        },
+        "next_header": 237377092096,
+        "offset": 237213251072,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1448.parquet",
+        "rows": 2223112
+      },
+      {
+        "bytes": 168684124,
+        "column_bytes": {
+          "artist_credit_id": 4068107,
+          "artist_credit_mbids.list.element": 18719657,
+          "artist_name": 13025853,
+          "created": 10511213,
+          "listened_at": 831447,
+          "recording_mbid": 25938344,
+          "recording_msid": 33668754,
+          "recording_name": 20268862,
+          "release_mbid": 20807335,
+          "release_name": 16696556,
+          "user_id": 4138263
+        },
+        "next_header": 237213249536,
+        "offset": 237044564992,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1447.parquet",
+        "rows": 2221909
+      },
+      {
+        "bytes": 157014340,
+        "column_bytes": {
+          "artist_credit_id": 3818314,
+          "artist_credit_mbids.list.element": 16967959,
+          "artist_name": 11976749,
+          "created": 10453921,
+          "listened_at": 812367,
+          "recording_mbid": 24012807,
+          "recording_msid": 31423175,
+          "recording_name": 19078043,
+          "release_mbid": 19016600,
+          "release_name": 15363265,
+          "user_id": 4081367
+        },
+        "next_header": 237044563456,
+        "offset": 236887548928,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1446.parquet",
+        "rows": 2223750
+      },
+      {
+        "bytes": 20831136,
+        "column_bytes": {
+          "artist_credit_id": 557923,
+          "artist_credit_mbids.list.element": 1874009,
+          "artist_name": 1250785,
+          "created": 1369733,
+          "listened_at": 109772,
+          "recording_mbid": 3493672,
+          "recording_msid": 4520095,
+          "recording_name": 2647373,
+          "release_mbid": 2586260,
+          "release_name": 1869877,
+          "user_id": 545051
+        },
+        "next_header": 236887547392,
+        "offset": 236866716160,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1445.parquet",
+        "rows": 294816
+      },
+      {
+        "bytes": 152953732,
+        "column_bytes": {
+          "artist_credit_id": 3683094,
+          "artist_credit_mbids.list.element": 16419122,
+          "artist_name": 11445328,
+          "created": 11073852,
+          "listened_at": 679071,
+          "recording_mbid": 23309038,
+          "recording_msid": 30554517,
+          "recording_name": 18382593,
+          "release_mbid": 18539880,
+          "release_name": 14775319,
+          "user_id": 4082127
+        },
+        "next_header": 236866714624,
+        "offset": 236713760768,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1444.parquet",
+        "rows": 2220946
+      },
+      {
+        "bytes": 142479555,
+        "column_bytes": {
+          "artist_credit_id": 3585858,
+          "artist_credit_mbids.list.element": 14675539,
+          "artist_name": 10628581,
+          "created": 10763744,
+          "listened_at": 785072,
+          "recording_mbid": 21653797,
+          "recording_msid": 28745485,
+          "recording_name": 17328308,
+          "release_mbid": 16604087,
+          "release_name": 13659091,
+          "user_id": 4040092
+        },
+        "next_header": 236713759232,
+        "offset": 236571279360,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1443.parquet",
+        "rows": 2220567
+      },
+      {
+        "bytes": 151484522,
+        "column_bytes": {
+          "artist_credit_id": 3672517,
+          "artist_credit_mbids.list.element": 16168087,
+          "artist_name": 11429633,
+          "created": 10954667,
+          "listened_at": 729503,
+          "recording_mbid": 23108614,
+          "recording_msid": 30404473,
+          "recording_name": 18169489,
+          "release_mbid": 18161336,
+          "release_name": 14617838,
+          "user_id": 4058700
+        },
+        "next_header": 236571277824,
+        "offset": 236419792896,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1442.parquet",
+        "rows": 2221321
+      },
+      {
+        "bytes": 165232762,
+        "column_bytes": {
+          "artist_credit_id": 3933795,
+          "artist_credit_mbids.list.element": 18094257,
+          "artist_name": 12709661,
+          "created": 10278395,
+          "listened_at": 902571,
+          "recording_mbid": 25470464,
+          "recording_msid": 33150486,
+          "recording_name": 20089778,
+          "release_mbid": 20130126,
+          "release_name": 16319725,
+          "user_id": 4143584
+        },
+        "next_header": 236419791360,
+        "offset": 236254558208,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1441.parquet",
+        "rows": 2223550
+      },
+      {
+        "bytes": 167178264,
+        "column_bytes": {
+          "artist_credit_id": 3945073,
+          "artist_credit_mbids.list.element": 18816381,
+          "artist_name": 12949544,
+          "created": 9159563,
+          "listened_at": 800863,
+          "recording_mbid": 26107101,
+          "recording_msid": 33100029,
+          "recording_name": 20378986,
+          "release_mbid": 21143039,
+          "release_name": 16695381,
+          "user_id": 4072635
+        },
+        "next_header": 236254556672,
+        "offset": 236087377920,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1440.parquet",
+        "rows": 2212268
+      },
+      {
+        "bytes": 160224051,
+        "column_bytes": {
+          "artist_credit_id": 3961301,
+          "artist_credit_mbids.list.element": 17955392,
+          "artist_name": 12514294,
+          "created": 8886223,
+          "listened_at": 835716,
+          "recording_mbid": 24877619,
+          "recording_msid": 31806688,
+          "recording_name": 19516037,
+          "release_mbid": 19826810,
+          "release_name": 15954331,
+          "user_id": 4080047
+        },
+        "next_header": 236087376384,
+        "offset": 235927152128,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1439.parquet",
+        "rows": 2215247
+      },
+      {
+        "bytes": 157921775,
+        "column_bytes": {
+          "artist_credit_id": 3953579,
+          "artist_credit_mbids.list.element": 17249296,
+          "artist_name": 12286483,
+          "created": 8730666,
+          "listened_at": 939666,
+          "recording_mbid": 24589321,
+          "recording_msid": 31571924,
+          "recording_name": 19459229,
+          "release_mbid": 19369675,
+          "release_name": 15708636,
+          "user_id": 4053619
+        },
+        "next_header": 235927150592,
+        "offset": 235769228800,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1438.parquet",
+        "rows": 2218539
+      },
+      {
+        "bytes": 169661503,
+        "column_bytes": {
+          "artist_credit_id": 4111728,
+          "artist_credit_mbids.list.element": 19410642,
+          "artist_name": 13282861,
+          "created": 9174621,
+          "listened_at": 793036,
+          "recording_mbid": 26438850,
+          "recording_msid": 33450731,
+          "recording_name": 20428836,
+          "release_mbid": 21502965,
+          "release_name": 16968575,
+          "user_id": 4088909
+        },
+        "next_header": 235769227264,
+        "offset": 235599565312,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1437.parquet",
+        "rows": 2213244
+      },
+      {
+        "bytes": 160350284,
+        "column_bytes": {
+          "artist_credit_id": 3901476,
+          "artist_credit_mbids.list.element": 17905409,
+          "artist_name": 12465552,
+          "created": 8894110,
+          "listened_at": 821521,
+          "recording_mbid": 24965861,
+          "recording_msid": 31803445,
+          "recording_name": 19589950,
+          "release_mbid": 19877251,
+          "release_name": 15998029,
+          "user_id": 4118056
+        },
+        "next_header": 235599563776,
+        "offset": 235439213056,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1436.parquet",
+        "rows": 2212353
+      },
+      {
+        "bytes": 167903937,
+        "column_bytes": {
+          "artist_credit_id": 4061423,
+          "artist_credit_mbids.list.element": 19177765,
+          "artist_name": 13131200,
+          "created": 9121624,
+          "listened_at": 765914,
+          "recording_mbid": 26185621,
+          "recording_msid": 33135803,
+          "recording_name": 20230937,
+          "release_mbid": 21275186,
+          "release_name": 16727309,
+          "user_id": 4081549
+        },
+        "next_header": 235439211520,
+        "offset": 235271307264,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1435.parquet",
+        "rows": 2210663
+      },
+      {
+        "bytes": 154882990,
+        "column_bytes": {
+          "artist_credit_id": 3852261,
+          "artist_credit_mbids.list.element": 16912040,
+          "artist_name": 12061690,
+          "created": 8648757,
+          "listened_at": 871448,
+          "recording_mbid": 24095566,
+          "recording_msid": 31024498,
+          "recording_name": 19068827,
+          "release_mbid": 18875370,
+          "release_name": 15415220,
+          "user_id": 4047639
+        },
+        "next_header": 235271305728,
+        "offset": 235116422656,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1434.parquet",
+        "rows": 2216340
+      },
+      {
+        "bytes": 158745998,
+        "column_bytes": {
+          "artist_credit_id": 3821613,
+          "artist_credit_mbids.list.element": 17658372,
+          "artist_name": 12334346,
+          "created": 8871969,
+          "listened_at": 813093,
+          "recording_mbid": 24746097,
+          "recording_msid": 31627666,
+          "recording_name": 19316921,
+          "release_mbid": 19691868,
+          "release_name": 15788464,
+          "user_id": 4065912
+        },
+        "next_header": 235116421120,
+        "offset": 234957675008,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1433.parquet",
+        "rows": 2214059
+      },
+      {
+        "bytes": 170081432,
+        "column_bytes": {
+          "artist_credit_id": 4081137,
+          "artist_credit_mbids.list.element": 19447407,
+          "artist_name": 13262206,
+          "created": 9185785,
+          "listened_at": 818437,
+          "recording_mbid": 26542103,
+          "recording_msid": 33635750,
+          "recording_name": 20547933,
+          "release_mbid": 21425899,
+          "release_name": 17021892,
+          "user_id": 4103247
+        },
+        "next_header": 234957673472,
+        "offset": 234787591680,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1432.parquet",
+        "rows": 2210519
+      },
+      {
+        "bytes": 163121420,
+        "column_bytes": {
+          "artist_credit_id": 3957115,
+          "artist_credit_mbids.list.element": 18173505,
+          "artist_name": 12638379,
+          "created": 8846561,
+          "listened_at": 865618,
+          "recording_mbid": 25584477,
+          "recording_msid": 32485373,
+          "recording_name": 19901856,
+          "release_mbid": 20297226,
+          "release_name": 16268856,
+          "user_id": 4092727
+        },
+        "next_header": 234787590144,
+        "offset": 234624468480,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1431.parquet",
+        "rows": 2209311
+      },
+      {
+        "bytes": 166103546,
+        "column_bytes": {
+          "artist_credit_id": 4001370,
+          "artist_credit_mbids.list.element": 18735450,
+          "artist_name": 12902699,
+          "created": 9007762,
+          "listened_at": 809823,
+          "recording_mbid": 25977519,
+          "recording_msid": 33037220,
+          "recording_name": 20166343,
+          "release_mbid": 20837199,
+          "release_name": 16583339,
+          "user_id": 4035219
+        },
+        "next_header": 234624466944,
+        "offset": 234458363392,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1430.parquet",
+        "rows": 2212916
+      },
+      {
+        "bytes": 160767229,
+        "column_bytes": {
+          "artist_credit_id": 3998198,
+          "artist_credit_mbids.list.element": 17895902,
+          "artist_name": 12535910,
+          "created": 8720912,
+          "listened_at": 898436,
+          "recording_mbid": 25079613,
+          "recording_msid": 32148919,
+          "recording_name": 19599077,
+          "release_mbid": 19769648,
+          "release_name": 16048391,
+          "user_id": 4062526
+        },
+        "next_header": 234458361856,
+        "offset": 234297594368,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1429.parquet",
+        "rows": 2212312
+      },
+      {
+        "bytes": 163417555,
+        "column_bytes": {
+          "artist_credit_id": 4006376,
+          "artist_credit_mbids.list.element": 18270381,
+          "artist_name": 12661125,
+          "created": 8936067,
+          "listened_at": 793196,
+          "recording_mbid": 25565789,
+          "recording_msid": 32593802,
+          "recording_name": 19909921,
+          "release_mbid": 20325668,
+          "release_name": 16283073,
+          "user_id": 4062386
+        },
+        "next_header": 234297592832,
+        "offset": 234134175232,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1428.parquet",
+        "rows": 2210274
+      },
+      {
+        "bytes": 166549839,
+        "column_bytes": {
+          "artist_credit_id": 4019889,
+          "artist_credit_mbids.list.element": 18914680,
+          "artist_name": 12874661,
+          "created": 8963573,
+          "listened_at": 803252,
+          "recording_mbid": 26087868,
+          "recording_msid": 33052564,
+          "recording_name": 20090287,
+          "release_mbid": 20982101,
+          "release_name": 16661669,
+          "user_id": 4089568
+        },
+        "next_header": 234134173696,
+        "offset": 233967623680,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1427.parquet",
+        "rows": 2211352
+      },
+      {
+        "bytes": 160761666,
+        "column_bytes": {
+          "artist_credit_id": 3947153,
+          "artist_credit_mbids.list.element": 17883486,
+          "artist_name": 12375969,
+          "created": 8681294,
+          "listened_at": 843444,
+          "recording_mbid": 25302341,
+          "recording_msid": 32152186,
+          "recording_name": 19547503,
+          "release_mbid": 19978813,
+          "release_name": 15978471,
+          "user_id": 4061334
+        },
+        "next_header": 233967622144,
+        "offset": 233806860288,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1426.parquet",
+        "rows": 2212695
+      },
+      {
+        "bytes": 77607498,
+        "column_bytes": {
+          "artist_credit_id": 1885239,
+          "artist_credit_mbids.list.element": 8753435,
+          "artist_name": 6037474,
+          "created": 4121343,
+          "listened_at": 421210,
+          "recording_mbid": 12128926,
+          "recording_msid": 15433131,
+          "recording_name": 9435635,
+          "release_mbid": 9672431,
+          "release_name": 7843592,
+          "user_id": 1868522
+        },
+        "next_header": 233806858752,
+        "offset": 233729250816,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1425.parquet",
+        "rows": 1040262
+      },
+      {
+        "bytes": 162513265,
+        "column_bytes": {
+          "artist_credit_id": 3997286,
+          "artist_credit_mbids.list.element": 18122722,
+          "artist_name": 12615191,
+          "created": 8589933,
+          "listened_at": 820140,
+          "recording_mbid": 25687279,
+          "recording_msid": 32600334,
+          "recording_name": 19761974,
+          "release_mbid": 20151656,
+          "release_name": 16144717,
+          "user_id": 4012442
+        },
+        "next_header": 233729249280,
+        "offset": 233566735872,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1424.parquet",
+        "rows": 2208422
+      },
+      {
+        "bytes": 161846253,
+        "column_bytes": {
+          "artist_credit_id": 3945334,
+          "artist_credit_mbids.list.element": 18149127,
+          "artist_name": 12534196,
+          "created": 8813755,
+          "listened_at": 804131,
+          "recording_mbid": 25365921,
+          "recording_msid": 32181847,
+          "recording_name": 19671080,
+          "release_mbid": 20158526,
+          "release_name": 16151606,
+          "user_id": 4061104
+        },
+        "next_header": 233566734336,
+        "offset": 233404888064,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1423.parquet",
+        "rows": 2208096
+      },
+      {
+        "bytes": 170814952,
+        "column_bytes": {
+          "artist_credit_id": 4138591,
+          "artist_credit_mbids.list.element": 19661404,
+          "artist_name": 13277432,
+          "created": 9028467,
+          "listened_at": 808700,
+          "recording_mbid": 26762601,
+          "recording_msid": 33692687,
+          "recording_name": 20499846,
+          "release_mbid": 21724019,
+          "release_name": 17138614,
+          "user_id": 4072835
+        },
+        "next_header": 233404886528,
+        "offset": 233234071552,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1422.parquet",
+        "rows": 2206652
+      },
+      {
+        "bytes": 158496519,
+        "column_bytes": {
+          "artist_credit_id": 3862645,
+          "artist_credit_mbids.list.element": 17454662,
+          "artist_name": 12258146,
+          "created": 8580889,
+          "listened_at": 884888,
+          "recording_mbid": 24852703,
+          "recording_msid": 31734416,
+          "recording_name": 19505114,
+          "release_mbid": 19498503,
+          "release_name": 15802559,
+          "user_id": 4052320
+        },
+        "next_header": 233234070016,
+        "offset": 233075573248,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1421.parquet",
+        "rows": 2209407
+      },
+      {
+        "bytes": 158803237,
+        "column_bytes": {
+          "artist_credit_id": 3942701,
+          "artist_credit_mbids.list.element": 17548215,
+          "artist_name": 12198104,
+          "created": 8541403,
+          "listened_at": 909548,
+          "recording_mbid": 24926599,
+          "recording_msid": 31743981,
+          "recording_name": 19512270,
+          "release_mbid": 19623469,
+          "release_name": 15855370,
+          "user_id": 3992019
+        },
+        "next_header": 233075571712,
+        "offset": 232916768256,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1420.parquet",
+        "rows": 2210802
+      },
+      {
+        "bytes": 166331609,
+        "column_bytes": {
+          "artist_credit_id": 4062889,
+          "artist_credit_mbids.list.element": 18806689,
+          "artist_name": 12886272,
+          "created": 8950556,
+          "listened_at": 795363,
+          "recording_mbid": 26079337,
+          "recording_msid": 33015859,
+          "recording_name": 20144851,
+          "release_mbid": 20904676,
+          "release_name": 16602091,
+          "user_id": 4073351
+        },
+        "next_header": 232916766720,
+        "offset": 232750434816,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1419.parquet",
+        "rows": 2210444
+      },
+      {
+        "bytes": 160354836,
+        "column_bytes": {
+          "artist_credit_id": 3978644,
+          "artist_credit_mbids.list.element": 17918594,
+          "artist_name": 12378587,
+          "created": 8724421,
+          "listened_at": 802172,
+          "recording_mbid": 25175076,
+          "recording_msid": 31832412,
+          "recording_name": 19482998,
+          "release_mbid": 20000886,
+          "release_name": 15997001,
+          "user_id": 4054456
+        },
+        "next_header": 232750433280,
+        "offset": 232590077952,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1418.parquet",
+        "rows": 2210130
+      },
+      {
+        "bytes": 167869325,
+        "column_bytes": {
+          "artist_credit_id": 4017030,
+          "artist_credit_mbids.list.element": 18937939,
+          "artist_name": 12958099,
+          "created": 8981060,
+          "listened_at": 790819,
+          "recording_mbid": 26301541,
+          "recording_msid": 33485194,
+          "recording_name": 20254435,
+          "release_mbid": 21141104,
+          "release_name": 16909341,
+          "user_id": 4083132
+        },
+        "next_header": 232590076416,
+        "offset": 232422206976,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1417.parquet",
+        "rows": 2212416
+      },
+      {
+        "bytes": 152546362,
+        "column_bytes": {
+          "artist_credit_id": 3630839,
+          "artist_credit_mbids.list.element": 15199893,
+          "artist_name": 11983841,
+          "created": 8616911,
+          "listened_at": 879119,
+          "recording_mbid": 22854470,
+          "recording_msid": 32578504,
+          "recording_name": 19389644,
+          "release_mbid": 17692723,
+          "release_name": 15602795,
+          "user_id": 4107925
+        },
+        "next_header": 232422205440,
+        "offset": 232269658624,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1416.parquet",
+        "rows": 2255881
+      },
+      {
+        "bytes": 158652927,
+        "column_bytes": {
+          "artist_credit_id": 3652308,
+          "artist_credit_mbids.list.element": 16047260,
+          "artist_name": 12412281,
+          "created": 8959102,
+          "listened_at": 810242,
+          "recording_mbid": 23787948,
+          "recording_msid": 33908828,
+          "recording_name": 20022730,
+          "release_mbid": 18634078,
+          "release_name": 16280406,
+          "user_id": 4128095
+        },
+        "next_header": 232269657088,
+        "offset": 232111004160,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1415.parquet",
+        "rows": 2259673
+      },
+      {
+        "bytes": 157892344,
+        "column_bytes": {
+          "artist_credit_id": 3622041,
+          "artist_credit_mbids.list.element": 16158086,
+          "artist_name": 12389998,
+          "created": 8814223,
+          "listened_at": 828267,
+          "recording_mbid": 23708718,
+          "recording_msid": 33544815,
+          "recording_name": 19777484,
+          "release_mbid": 18640935,
+          "release_name": 16262450,
+          "user_id": 4135564
+        },
+        "next_header": 232111002624,
+        "offset": 231953110016,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1414.parquet",
+        "rows": 2254815
+      },
+      {
+        "bytes": 162379044,
+        "column_bytes": {
+          "artist_credit_id": 3938087,
+          "artist_credit_mbids.list.element": 18339367,
+          "artist_name": 12541727,
+          "created": 8816909,
+          "listened_at": 792736,
+          "recording_mbid": 25333579,
+          "recording_msid": 32328616,
+          "recording_name": 19692470,
+          "release_mbid": 20289449,
+          "release_name": 16222016,
+          "user_id": 4074419
+        },
+        "next_header": 231953108480,
+        "offset": 231790729216,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1413.parquet",
+        "rows": 2211293
+      },
+      {
+        "bytes": 164406143,
+        "column_bytes": {
+          "artist_credit_id": 4042355,
+          "artist_credit_mbids.list.element": 18772149,
+          "artist_name": 12761838,
+          "created": 8682824,
+          "listened_at": 823548,
+          "recording_mbid": 25705712,
+          "recording_msid": 32560751,
+          "recording_name": 19824772,
+          "release_mbid": 20711594,
+          "release_name": 16457270,
+          "user_id": 4053689
+        },
+        "next_header": 231790727680,
+        "offset": 231626321408,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1412.parquet",
+        "rows": 2207716
+      },
+      {
+        "bytes": 156176779,
+        "column_bytes": {
+          "artist_credit_id": 3838949,
+          "artist_credit_mbids.list.element": 17164174,
+          "artist_name": 12038859,
+          "created": 8421368,
+          "listened_at": 894558,
+          "recording_mbid": 24478453,
+          "recording_msid": 31291961,
+          "recording_name": 19164814,
+          "release_mbid": 19200663,
+          "release_name": 15628304,
+          "user_id": 4044978
+        },
+        "next_header": 231626319872,
+        "offset": 231470142976,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1411.parquet",
+        "rows": 2212913
+      },
+      {
+        "bytes": 168432271,
+        "column_bytes": {
+          "artist_credit_id": 4107458,
+          "artist_credit_mbids.list.element": 19359967,
+          "artist_name": 13020431,
+          "created": 9012314,
+          "listened_at": 758617,
+          "recording_mbid": 26465780,
+          "recording_msid": 33257035,
+          "recording_name": 20183097,
+          "release_mbid": 21409110,
+          "release_name": 16782481,
+          "user_id": 4066236
+        },
+        "next_header": 231470141440,
+        "offset": 231301708800,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1410.parquet",
+        "rows": 2204148
+      },
+      {
+        "bytes": 158907896,
+        "column_bytes": {
+          "artist_credit_id": 3992432,
+          "artist_credit_mbids.list.element": 17781619,
+          "artist_name": 12277842,
+          "created": 8605149,
+          "listened_at": 818913,
+          "recording_mbid": 24908545,
+          "recording_msid": 31650405,
+          "recording_name": 19367868,
+          "release_mbid": 19615283,
+          "release_name": 15804165,
+          "user_id": 4076020
+        },
+        "next_header": 231301707264,
+        "offset": 231142799360,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1409.parquet",
+        "rows": 2207275
+      },
+      {
+        "bytes": 167498951,
+        "column_bytes": {
+          "artist_credit_id": 4115207,
+          "artist_credit_mbids.list.element": 19318529,
+          "artist_name": 12988362,
+          "created": 8931354,
+          "listened_at": 764444,
+          "recording_mbid": 26228441,
+          "recording_msid": 33034146,
+          "recording_name": 20116590,
+          "release_mbid": 21200972,
+          "release_name": 16746339,
+          "user_id": 4044979
+        },
+        "next_header": 231142797824,
+        "offset": 230975298560,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1408.parquet",
+        "rows": 2204775
+      },
+      {
+        "bytes": 158069486,
+        "column_bytes": {
+          "artist_credit_id": 3913648,
+          "artist_credit_mbids.list.element": 17551525,
+          "artist_name": 12304002,
+          "created": 8456500,
+          "listened_at": 900393,
+          "recording_mbid": 24713547,
+          "recording_msid": 31547528,
+          "recording_name": 19414660,
+          "release_mbid": 19421514,
+          "release_name": 15800927,
+          "user_id": 4035560
+        },
+        "next_header": 230975297024,
+        "offset": 230817227264,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1407.parquet",
+        "rows": 2212937
+      },
+      {
+        "bytes": 158139766,
+        "column_bytes": {
+          "artist_credit_id": 3920900,
+          "artist_credit_mbids.list.element": 17413201,
+          "artist_name": 12215058,
+          "created": 8513136,
+          "listened_at": 889071,
+          "recording_mbid": 24827174,
+          "recording_msid": 31656591,
+          "recording_name": 19427832,
+          "release_mbid": 19484664,
+          "release_name": 15736229,
+          "user_id": 4046115
+        },
+        "next_header": 230817225728,
+        "offset": 230659085824,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1406.parquet",
+        "rows": 2212225
+      },
+      {
+        "bytes": 146810764,
+        "column_bytes": {
+          "artist_credit_id": 3535413,
+          "artist_credit_mbids.list.element": 16966926,
+          "artist_name": 11354510,
+          "created": 7689622,
+          "listened_at": 698016,
+          "recording_mbid": 23000367,
+          "recording_msid": 28888209,
+          "recording_name": 17626649,
+          "release_mbid": 18799248,
+          "release_name": 14710572,
+          "user_id": 3533076
+        },
+        "next_header": 230659084288,
+        "offset": 230512273408,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1405.parquet",
+        "rows": 1898275
+      },
+      {
+        "bytes": 163565889,
+        "column_bytes": {
+          "artist_credit_id": 3946057,
+          "artist_credit_mbids.list.element": 18493518,
+          "artist_name": 12606525,
+          "created": 8769709,
+          "listened_at": 831106,
+          "recording_mbid": 25647798,
+          "recording_msid": 32343750,
+          "recording_name": 19894857,
+          "release_mbid": 20550117,
+          "release_name": 16409353,
+          "user_id": 4063394
+        },
+        "next_header": 230512271872,
+        "offset": 230348705792,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1404.parquet",
+        "rows": 2204267
+      },
+      {
+        "bytes": 166420074,
+        "column_bytes": {
+          "artist_credit_id": 3979203,
+          "artist_credit_mbids.list.element": 19099026,
+          "artist_name": 12982654,
+          "created": 8800844,
+          "listened_at": 841602,
+          "recording_mbid": 26013293,
+          "recording_msid": 32857477,
+          "recording_name": 20157520,
+          "release_mbid": 20955868,
+          "release_name": 16691716,
+          "user_id": 4031120
+        },
+        "next_header": 230348704256,
+        "offset": 230182283776,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1403.parquet",
+        "rows": 2204730
+      },
+      {
+        "bytes": 160912028,
+        "column_bytes": {
+          "artist_credit_id": 4010723,
+          "artist_credit_mbids.list.element": 17847124,
+          "artist_name": 12506472,
+          "created": 8473453,
+          "listened_at": 933626,
+          "recording_mbid": 25147163,
+          "recording_msid": 32071896,
+          "recording_name": 19800821,
+          "release_mbid": 19918220,
+          "release_name": 16141152,
+          "user_id": 4051444
+        },
+        "next_header": 230182282240,
+        "offset": 230021369856,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1402.parquet",
+        "rows": 2210510
+      },
+      {
+        "bytes": 163273816,
+        "column_bytes": {
+          "artist_credit_id": 3956877,
+          "artist_credit_mbids.list.element": 18491432,
+          "artist_name": 12572249,
+          "created": 8741109,
+          "listened_at": 791632,
+          "recording_mbid": 25601632,
+          "recording_msid": 32445242,
+          "recording_name": 19818272,
+          "release_mbid": 20518608,
+          "release_name": 16276349,
+          "user_id": 4050931
+        },
+        "next_header": 230021368320,
+        "offset": 229858094080,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1401.parquet",
+        "rows": 2206704
+      },
+      {
+        "bytes": 163397998,
+        "column_bytes": {
+          "artist_credit_id": 3982590,
+          "artist_credit_mbids.list.element": 18614115,
+          "artist_name": 12565687,
+          "created": 8681224,
+          "listened_at": 810301,
+          "recording_mbid": 25557438,
+          "recording_msid": 32235654,
+          "recording_name": 19865195,
+          "release_mbid": 20675620,
+          "release_name": 16347045,
+          "user_id": 4053298
+        },
+        "next_header": 229858092544,
+        "offset": 229694694400,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1400.parquet",
+        "rows": 2206381
+      },
+      {
+        "bytes": 156528840,
+        "column_bytes": {
+          "artist_credit_id": 3871500,
+          "artist_credit_mbids.list.element": 17411862,
+          "artist_name": 12009293,
+          "created": 8454746,
+          "listened_at": 819669,
+          "recording_mbid": 24525398,
+          "recording_msid": 31129086,
+          "recording_name": 19173804,
+          "release_mbid": 19477675,
+          "release_name": 15608273,
+          "user_id": 4037742
+        },
+        "next_header": 229694692864,
+        "offset": 229538163712,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1399.parquet",
+        "rows": 2211448
+      },
+      {
+        "bytes": 157175332,
+        "column_bytes": {
+          "artist_credit_id": 3887772,
+          "artist_credit_mbids.list.element": 17564088,
+          "artist_name": 12121044,
+          "created": 8451176,
+          "listened_at": 897810,
+          "recording_mbid": 24623258,
+          "recording_msid": 31290436,
+          "recording_name": 19155958,
+          "release_mbid": 19522860,
+          "release_name": 15679055,
+          "user_id": 3972120
+        },
+        "next_header": 229538162176,
+        "offset": 229380986368,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1398.parquet",
+        "rows": 2210848
+      },
+      {
+        "bytes": 157002027,
+        "column_bytes": {
+          "artist_credit_id": 3915909,
+          "artist_credit_mbids.list.element": 17378801,
+          "artist_name": 12059036,
+          "created": 8490864,
+          "listened_at": 856208,
+          "recording_mbid": 24643214,
+          "recording_msid": 31287848,
+          "recording_name": 19266952,
+          "release_mbid": 19464191,
+          "release_name": 15580025,
+          "user_id": 4049346
+        },
+        "next_header": 229380984832,
+        "offset": 229223982592,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1397.parquet",
+        "rows": 2212446
+      },
+      {
+        "bytes": 159895094,
+        "column_bytes": {
+          "artist_credit_id": 3886709,
+          "artist_credit_mbids.list.element": 18026979,
+          "artist_name": 12273569,
+          "created": 8711601,
+          "listened_at": 789149,
+          "recording_mbid": 25043540,
+          "recording_msid": 31647130,
+          "recording_name": 19580815,
+          "release_mbid": 20024695,
+          "release_name": 15867024,
+          "user_id": 4034222
+        },
+        "next_header": 229223981056,
+        "offset": 229064085504,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1396.parquet",
+        "rows": 2210000
+      },
+      {
+        "bytes": 160877234,
+        "column_bytes": {
+          "artist_credit_id": 3975549,
+          "artist_credit_mbids.list.element": 18166456,
+          "artist_name": 12432877,
+          "created": 8630501,
+          "listened_at": 816297,
+          "recording_mbid": 25095104,
+          "recording_msid": 31848876,
+          "recording_name": 19701336,
+          "release_mbid": 20116063,
+          "release_name": 16040035,
+          "user_id": 4044398
+        },
+        "next_header": 229064083968,
+        "offset": 228903206400,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1395.parquet",
+        "rows": 2212391
+      },
+      {
+        "bytes": 153890820,
+        "column_bytes": {
+          "artist_credit_id": 3815326,
+          "artist_credit_mbids.list.element": 16711191,
+          "artist_name": 11762904,
+          "created": 8360640,
+          "listened_at": 912943,
+          "recording_mbid": 24197703,
+          "recording_msid": 30910928,
+          "recording_name": 19198385,
+          "release_mbid": 18804300,
+          "release_name": 15188531,
+          "user_id": 4018306
+        },
+        "next_header": 228903204864,
+        "offset": 228749313536,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1394.parquet",
+        "rows": 2217442
+      },
+      {
+        "bytes": 160970439,
+        "column_bytes": {
+          "artist_credit_id": 3953286,
+          "artist_credit_mbids.list.element": 18079324,
+          "artist_name": 12424118,
+          "created": 8640319,
+          "listened_at": 856861,
+          "recording_mbid": 25270661,
+          "recording_msid": 32028561,
+          "recording_name": 19656186,
+          "release_mbid": 20073627,
+          "release_name": 15966079,
+          "user_id": 4011824
+        },
+        "next_header": 228749312000,
+        "offset": 228588341248,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1393.parquet",
+        "rows": 2214719
+      },
+      {
+        "bytes": 160090143,
+        "column_bytes": {
+          "artist_credit_id": 3955990,
+          "artist_credit_mbids.list.element": 18164617,
+          "artist_name": 12394265,
+          "created": 8531656,
+          "listened_at": 827456,
+          "recording_mbid": 25041832,
+          "recording_msid": 31746629,
+          "recording_name": 19496465,
+          "release_mbid": 19918884,
+          "release_name": 15935654,
+          "user_id": 4067094
+        },
+        "next_header": 228588339712,
+        "offset": 228428249088,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1392.parquet",
+        "rows": 2211981
+      },
+      {
+        "bytes": 163186215,
+        "column_bytes": {
+          "artist_credit_id": 4039168,
+          "artist_credit_mbids.list.element": 18740122,
+          "artist_name": 12618466,
+          "created": 8720890,
+          "listened_at": 767925,
+          "recording_mbid": 25558381,
+          "recording_msid": 32183966,
+          "recording_name": 19642804,
+          "release_mbid": 20599608,
+          "release_name": 16248099,
+          "user_id": 4057026
+        },
+        "next_header": 228428247552,
+        "offset": 228265060864,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1391.parquet",
+        "rows": 2208405
+      },
+      {
+        "bytes": 157212167,
+        "column_bytes": {
+          "artist_credit_id": 3831815,
+          "artist_credit_mbids.list.element": 17806680,
+          "artist_name": 12163870,
+          "created": 8333743,
+          "listened_at": 832229,
+          "recording_mbid": 24593849,
+          "recording_msid": 31212360,
+          "recording_name": 19110287,
+          "release_mbid": 19570204,
+          "release_name": 15723080,
+          "user_id": 4024353
+        },
+        "next_header": 228265059328,
+        "offset": 228107846656,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1390.parquet",
+        "rows": 2213432
+      },
+      {
+        "bytes": 150408548,
+        "column_bytes": {
+          "artist_credit_id": 3786841,
+          "artist_credit_mbids.list.element": 16434231,
+          "artist_name": 11491860,
+          "created": 8089416,
+          "listened_at": 870988,
+          "recording_mbid": 23705561,
+          "recording_msid": 30257620,
+          "recording_name": 18584623,
+          "release_mbid": 18321898,
+          "release_name": 14855814,
+          "user_id": 4000132
+        },
+        "next_header": 228107845120,
+        "offset": 227957436416,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1389.parquet",
+        "rows": 2215435
+      },
+      {
+        "bytes": 161797468,
+        "column_bytes": {
+          "artist_credit_id": 3899706,
+          "artist_credit_mbids.list.element": 18476457,
+          "artist_name": 12517430,
+          "created": 8616745,
+          "listened_at": 760175,
+          "recording_mbid": 25410485,
+          "recording_msid": 32187671,
+          "recording_name": 19466547,
+          "release_mbid": 20376889,
+          "release_name": 16046661,
+          "user_id": 4029017
+        },
+        "next_header": 227957434880,
+        "offset": 227795637248,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1388.parquet",
+        "rows": 2212425
+      },
+      {
+        "bytes": 152123943,
+        "column_bytes": {
+          "artist_credit_id": 3857350,
+          "artist_credit_mbids.list.element": 17028673,
+          "artist_name": 11686565,
+          "created": 8292471,
+          "listened_at": 779143,
+          "recording_mbid": 23799184,
+          "recording_msid": 30301445,
+          "recording_name": 18493901,
+          "release_mbid": 18799545,
+          "release_name": 15038051,
+          "user_id": 4037883
+        },
+        "next_header": 227795635712,
+        "offset": 227643511296,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1387.parquet",
+        "rows": 2216773
+      },
+      {
+        "bytes": 64119837,
+        "column_bytes": {
+          "artist_credit_id": 1545011,
+          "artist_credit_mbids.list.element": 7485634,
+          "artist_name": 4948782,
+          "created": 3338952,
+          "listened_at": 258575,
+          "recording_mbid": 10061005,
+          "recording_msid": 12632273,
+          "recording_name": 7655401,
+          "release_mbid": 8258396,
+          "release_name": 6380746,
+          "user_id": 1548451
+        },
+        "next_header": 227643509760,
+        "offset": 227579389440,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1386.parquet",
+        "rows": 838653
+      },
+      {
+        "bytes": 153348693,
+        "column_bytes": {
+          "artist_credit_id": 3869981,
+          "artist_credit_mbids.list.element": 17152715,
+          "artist_name": 11838088,
+          "created": 8337323,
+          "listened_at": 761649,
+          "recording_mbid": 23984457,
+          "recording_msid": 30578892,
+          "recording_name": 18662483,
+          "release_mbid": 18939164,
+          "release_name": 15176993,
+          "user_id": 4037166
+        },
+        "next_header": 227579387904,
+        "offset": 227426038784,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1385.parquet",
+        "rows": 2220020
+      },
+      {
+        "bytes": 156677864,
+        "column_bytes": {
+          "artist_credit_id": 3931401,
+          "artist_credit_mbids.list.element": 17585014,
+          "artist_name": 12086510,
+          "created": 8356613,
+          "listened_at": 808498,
+          "recording_mbid": 24575457,
+          "recording_msid": 31225418,
+          "recording_name": 19054326,
+          "release_mbid": 19497846,
+          "release_name": 15547673,
+          "user_id": 3999501
+        },
+        "next_header": 227426037248,
+        "offset": 227269359104,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1384.parquet",
+        "rows": 2217037
+      },
+      {
+        "bytes": 153748008,
+        "column_bytes": {
+          "artist_credit_id": 3898719,
+          "artist_credit_mbids.list.element": 17143760,
+          "artist_name": 11869568,
+          "created": 8315494,
+          "listened_at": 800165,
+          "recording_mbid": 24052327,
+          "recording_msid": 30600765,
+          "recording_name": 18746963,
+          "release_mbid": 18930327,
+          "release_name": 15318496,
+          "user_id": 4061797
+        },
+        "next_header": 227269357568,
+        "offset": 227115609088,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1383.parquet",
+        "rows": 2216865
+      },
+      {
+        "bytes": 164519919,
+        "column_bytes": {
+          "artist_credit_id": 3938040,
+          "artist_credit_mbids.list.element": 19133942,
+          "artist_name": 12766759,
+          "created": 8760318,
+          "listened_at": 728360,
+          "recording_mbid": 25741879,
+          "recording_msid": 32354824,
+          "recording_name": 19596907,
+          "release_mbid": 21004198,
+          "release_name": 16448874,
+          "user_id": 4036069
+        },
+        "next_header": 227115607552,
+        "offset": 226951087616,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1382.parquet",
+        "rows": 2210456
+      },
+      {
+        "bytes": 155988181,
+        "column_bytes": {
+          "artist_credit_id": 3933251,
+          "artist_credit_mbids.list.element": 17555618,
+          "artist_name": 12049905,
+          "created": 8384754,
+          "listened_at": 814746,
+          "recording_mbid": 24417057,
+          "recording_msid": 30934958,
+          "recording_name": 18971003,
+          "release_mbid": 19331712,
+          "release_name": 15515614,
+          "user_id": 4069854
+        },
+        "next_header": 226951086080,
+        "offset": 226795097600,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1381.parquet",
+        "rows": 2216194
+      },
+      {
+        "bytes": 162320314,
+        "column_bytes": {
+          "artist_credit_id": 4018666,
+          "artist_credit_mbids.list.element": 18627022,
+          "artist_name": 12624770,
+          "created": 8644181,
+          "listened_at": 790677,
+          "recording_mbid": 25362784,
+          "recording_msid": 32097402,
+          "recording_name": 19503373,
+          "release_mbid": 20434096,
+          "release_name": 16192811,
+          "user_id": 4014952
+        },
+        "next_header": 226795096064,
+        "offset": 226632775680,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1380.parquet",
+        "rows": 2215574
+      },
+      {
+        "bytes": 154135243,
+        "column_bytes": {
+          "artist_credit_id": 3842480,
+          "artist_credit_mbids.list.element": 17253669,
+          "artist_name": 11933219,
+          "created": 8329047,
+          "listened_at": 864696,
+          "recording_mbid": 24067612,
+          "recording_msid": 30667617,
+          "recording_name": 18697667,
+          "release_mbid": 19033154,
+          "release_name": 15385575,
+          "user_id": 4050837
+        },
+        "next_header": 226632774144,
+        "offset": 226478638592,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1379.parquet",
+        "rows": 2224902
+      },
+      {
+        "bytes": 166136796,
+        "column_bytes": {
+          "artist_credit_id": 4044284,
+          "artist_credit_mbids.list.element": 19021484,
+          "artist_name": 12841372,
+          "created": 8922865,
+          "listened_at": 789944,
+          "recording_mbid": 25878808,
+          "recording_msid": 33192120,
+          "recording_name": 19919181,
+          "release_mbid": 20881104,
+          "release_name": 16561618,
+          "user_id": 4074178
+        },
+        "next_header": 226478637056,
+        "offset": 226312500224,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1378.parquet",
+        "rows": 2220032
+      },
+      {
+        "bytes": 172723394,
+        "column_bytes": {
+          "artist_credit_id": 4184134,
+          "artist_credit_mbids.list.element": 20109220,
+          "artist_name": 13443411,
+          "created": 8672213,
+          "listened_at": 830699,
+          "recording_mbid": 26956837,
+          "recording_msid": 34661403,
+          "recording_name": 20567915,
+          "release_mbid": 21874768,
+          "release_name": 17356532,
+          "user_id": 4056644
+        },
+        "next_header": 226312498688,
+        "offset": 226139774976,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1377.parquet",
+        "rows": 2199590
+      },
+      {
+        "bytes": 165684968,
+        "column_bytes": {
+          "artist_credit_id": 4118512,
+          "artist_credit_mbids.list.element": 18806473,
+          "artist_name": 12812665,
+          "created": 8400742,
+          "listened_at": 876789,
+          "recording_mbid": 25942891,
+          "recording_msid": 33549243,
+          "recording_name": 19858311,
+          "release_mbid": 20653384,
+          "release_name": 16633734,
+          "user_id": 4022558
+        },
+        "next_header": 226139773440,
+        "offset": 225974088192,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1376.parquet",
+        "rows": 2195727
+      },
+      {
+        "bytes": 166688864,
+        "column_bytes": {
+          "artist_credit_id": 4119184,
+          "artist_credit_mbids.list.element": 19132505,
+          "artist_name": 13017074,
+          "created": 8247053,
+          "listened_at": 1047481,
+          "recording_mbid": 26042271,
+          "recording_msid": 33703974,
+          "recording_name": 19887498,
+          "release_mbid": 20792340,
+          "release_name": 16722613,
+          "user_id": 3967267
+        },
+        "next_header": 225974086656,
+        "offset": 225807397376,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1375.parquet",
+        "rows": 2194143
+      },
+      {
+        "bytes": 174508979,
+        "column_bytes": {
+          "artist_credit_id": 4233099,
+          "artist_credit_mbids.list.element": 20460918,
+          "artist_name": 13644540,
+          "created": 8744757,
+          "listened_at": 828075,
+          "recording_mbid": 27377349,
+          "recording_msid": 34926809,
+          "recording_name": 20554547,
+          "release_mbid": 22212747,
+          "release_name": 17476305,
+          "user_id": 4040140
+        },
+        "next_header": 225807395840,
+        "offset": 225632886784,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1374.parquet",
+        "rows": 2189112
+      },
+      {
+        "bytes": 168225553,
+        "column_bytes": {
+          "artist_credit_id": 4146053,
+          "artist_credit_mbids.list.element": 19637231,
+          "artist_name": 13093934,
+          "created": 8504681,
+          "listened_at": 866505,
+          "recording_mbid": 26356676,
+          "recording_msid": 33803171,
+          "recording_name": 19893360,
+          "release_mbid": 21107581,
+          "release_name": 16779869,
+          "user_id": 4026901
+        },
+        "next_header": 225632885248,
+        "offset": 225464659456,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1373.parquet",
+        "rows": 2186438
+      },
+      {
+        "bytes": 177560169,
+        "column_bytes": {
+          "artist_credit_id": 4255783,
+          "artist_credit_mbids.list.element": 21416000,
+          "artist_name": 13812132,
+          "created": 8905539,
+          "listened_at": 796556,
+          "recording_mbid": 27954172,
+          "recording_msid": 35215465,
+          "recording_name": 20617296,
+          "release_mbid": 22860339,
+          "release_name": 17700447,
+          "user_id": 4016751
+        },
+        "next_header": 225464657920,
+        "offset": 225287097344,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1372.parquet",
+        "rows": 2183657
+      },
+      {
+        "bytes": 166380627,
+        "column_bytes": {
+          "artist_credit_id": 4217033,
+          "artist_credit_mbids.list.element": 19157737,
+          "artist_name": 12981575,
+          "created": 8333460,
+          "listened_at": 935679,
+          "recording_mbid": 26101089,
+          "recording_msid": 33599688,
+          "recording_name": 19795264,
+          "release_mbid": 20666534,
+          "release_name": 16583814,
+          "user_id": 3999168
+        },
+        "next_header": 225287095808,
+        "offset": 225120714752,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1371.parquet",
+        "rows": 2190140
+      },
+      {
+        "bytes": 169692133,
+        "column_bytes": {
+          "artist_credit_id": 4183098,
+          "artist_credit_mbids.list.element": 19648688,
+          "artist_name": 13239187,
+          "created": 8504541,
+          "listened_at": 916567,
+          "recording_mbid": 26659280,
+          "recording_msid": 34278866,
+          "recording_name": 20171132,
+          "release_mbid": 21161731,
+          "release_name": 16883657,
+          "user_id": 4035735
+        },
+        "next_header": 225120713216,
+        "offset": 224951021056,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1370.parquet",
+        "rows": 2193356
+      },
+      {
+        "bytes": 177430919,
+        "column_bytes": {
+          "artist_credit_id": 4271209,
+          "artist_credit_mbids.list.element": 21191684,
+          "artist_name": 13824866,
+          "created": 8809558,
+          "listened_at": 819389,
+          "recording_mbid": 27954730,
+          "recording_msid": 35366106,
+          "recording_name": 20750279,
+          "release_mbid": 22726273,
+          "release_name": 17694456,
+          "user_id": 4012603
+        },
+        "next_header": 224951019520,
+        "offset": 224773588480,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1369.parquet",
+        "rows": 2184365
+      },
+      {
+        "bytes": 170488265,
+        "column_bytes": {
+          "artist_credit_id": 4238401,
+          "artist_credit_mbids.list.element": 20030504,
+          "artist_name": 13340777,
+          "created": 8469830,
+          "listened_at": 869764,
+          "recording_mbid": 26768783,
+          "recording_msid": 34155562,
+          "recording_name": 20126675,
+          "release_mbid": 21445792,
+          "release_name": 17005673,
+          "user_id": 4026605
+        },
+        "next_header": 224773586944,
+        "offset": 224603098624,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1368.parquet",
+        "rows": 2184039
+      },
+      {
+        "bytes": 166580849,
+        "column_bytes": {
+          "artist_credit_id": 4158413,
+          "artist_credit_mbids.list.element": 19151610,
+          "artist_name": 12939058,
+          "created": 8279375,
+          "listened_at": 970354,
+          "recording_mbid": 26264000,
+          "recording_msid": 33677024,
+          "recording_name": 19894487,
+          "release_mbid": 20631986,
+          "release_name": 16619335,
+          "user_id": 3985459
+        },
+        "next_header": 224603097088,
+        "offset": 224436515840,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1367.parquet",
+        "rows": 2187998
+      },
+      {
+        "bytes": 53063740,
+        "column_bytes": {
+          "artist_credit_id": 1294195,
+          "artist_credit_mbids.list.element": 6223737,
+          "artist_name": 4030069,
+          "created": 2524029,
+          "listened_at": 258745,
+          "recording_mbid": 8492578,
+          "recording_msid": 10758337,
+          "recording_name": 6269209,
+          "release_mbid": 6818483,
+          "release_name": 5211503,
+          "user_id": 1176264
+        },
+        "next_header": 224436514304,
+        "offset": 224383450112,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1366.parquet",
+        "rows": 650653
+      },
+      {
+        "bytes": 170142970,
+        "column_bytes": {
+          "artist_credit_id": 4226213,
+          "artist_credit_mbids.list.element": 19783646,
+          "artist_name": 13243228,
+          "created": 8453073,
+          "listened_at": 910985,
+          "recording_mbid": 26803193,
+          "recording_msid": 34220576,
+          "recording_name": 20181794,
+          "release_mbid": 21325745,
+          "release_name": 16949697,
+          "user_id": 4035225
+        },
+        "next_header": 224383448576,
+        "offset": 224213305344,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1365.parquet",
+        "rows": 2185688
+      },
+      {
+        "bytes": 175227291,
+        "column_bytes": {
+          "artist_credit_id": 4255374,
+          "artist_credit_mbids.list.element": 20709246,
+          "artist_name": 13645723,
+          "created": 8736535,
+          "listened_at": 880871,
+          "recording_mbid": 27599795,
+          "recording_msid": 34982975,
+          "recording_name": 20540756,
+          "release_mbid": 22259060,
+          "release_name": 17577905,
+          "user_id": 4029451
+        },
+        "next_header": 224213303808,
+        "offset": 224038076416,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1364.parquet",
+        "rows": 2188076
+      },
+      {
+        "bytes": 177177869,
+        "column_bytes": {
+          "artist_credit_id": 4285182,
+          "artist_credit_mbids.list.element": 21093503,
+          "artist_name": 13778439,
+          "created": 8763698,
+          "listened_at": 842489,
+          "recording_mbid": 27939531,
+          "recording_msid": 35325026,
+          "recording_name": 20697729,
+          "release_mbid": 22683082,
+          "release_name": 17740465,
+          "user_id": 4019165
+        },
+        "next_header": 224038074880,
+        "offset": 223860896768,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1363.parquet",
+        "rows": 2187933
+      },
+      {
+        "bytes": 167193936,
+        "column_bytes": {
+          "artist_credit_id": 4199614,
+          "artist_credit_mbids.list.element": 19181939,
+          "artist_name": 13063123,
+          "created": 8256526,
+          "listened_at": 969145,
+          "recording_mbid": 26311905,
+          "recording_msid": 33822088,
+          "recording_name": 19934142,
+          "release_mbid": 20723928,
+          "release_name": 16734713,
+          "user_id": 3987160
+        },
+        "next_header": 223860895232,
+        "offset": 223693701120,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1362.parquet",
+        "rows": 2189270
+      },
+      {
+        "bytes": 170444909,
+        "column_bytes": {
+          "artist_credit_id": 4230759,
+          "artist_credit_mbids.list.element": 19805304,
+          "artist_name": 13301631,
+          "created": 8450729,
+          "listened_at": 924801,
+          "recording_mbid": 26915259,
+          "recording_msid": 34380827,
+          "recording_name": 20066711,
+          "release_mbid": 21355862,
+          "release_name": 16991824,
+          "user_id": 4011397
+        },
+        "next_header": 223693699584,
+        "offset": 223523254272,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1361.parquet",
+        "rows": 2189912
+      },
+      {
+        "bytes": 177943148,
+        "column_bytes": {
+          "artist_credit_id": 4270246,
+          "artist_credit_mbids.list.element": 21375842,
+          "artist_name": 13905168,
+          "created": 8777029,
+          "listened_at": 838029,
+          "recording_mbid": 28033567,
+          "recording_msid": 35349011,
+          "recording_name": 20775361,
+          "release_mbid": 22823215,
+          "release_name": 17781841,
+          "user_id": 4004075
+        },
+        "next_header": 223523252736,
+        "offset": 223345309184,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1360.parquet",
+        "rows": 2182286
+      },
+      {
+        "bytes": 170692916,
+        "column_bytes": {
+          "artist_credit_id": 4240852,
+          "artist_credit_mbids.list.element": 20029137,
+          "artist_name": 13276554,
+          "created": 8450276,
+          "listened_at": 884634,
+          "recording_mbid": 26966432,
+          "recording_msid": 34222322,
+          "recording_name": 20054697,
+          "release_mbid": 21531617,
+          "release_name": 17017879,
+          "user_id": 4008856
+        },
+        "next_header": 223345307648,
+        "offset": 223174614528,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1359.parquet",
+        "rows": 2179772
+      },
+      {
+        "bytes": 167561746,
+        "column_bytes": {
+          "artist_credit_id": 4193094,
+          "artist_credit_mbids.list.element": 19299604,
+          "artist_name": 13034186,
+          "created": 8296970,
+          "listened_at": 1001647,
+          "recording_mbid": 26459228,
+          "recording_msid": 33832163,
+          "recording_name": 19891596,
+          "release_mbid": 20836649,
+          "release_name": 16710790,
+          "user_id": 3996105
+        },
+        "next_header": 223174612992,
+        "offset": 223007050752,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1358.parquet",
+        "rows": 2183022
+      },
+      {
+        "bytes": 173325645,
+        "column_bytes": {
+          "artist_credit_id": 4273814,
+          "artist_credit_mbids.list.element": 20536931,
+          "artist_name": 13538108,
+          "created": 8532546,
+          "listened_at": 954002,
+          "recording_mbid": 27438325,
+          "recording_msid": 34591201,
+          "recording_name": 20277037,
+          "release_mbid": 21969659,
+          "release_name": 17229044,
+          "user_id": 3975362
+        },
+        "next_header": 223007049216,
+        "offset": 222833723392,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1357.parquet",
+        "rows": 2176114
+      },
+      {
+        "bytes": 177558305,
+        "column_bytes": {
+          "artist_credit_id": 4320394,
+          "artist_credit_mbids.list.element": 21417924,
+          "artist_name": 13830038,
+          "created": 8687701,
+          "listened_at": 873187,
+          "recording_mbid": 28101689,
+          "recording_msid": 35072850,
+          "recording_name": 20696558,
+          "release_mbid": 22862928,
+          "release_name": 17675831,
+          "user_id": 4009445
+        },
+        "next_header": 222833721856,
+        "offset": 222656163328,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1356.parquet",
+        "rows": 2175497
+      },
+      {
+        "bytes": 173037000,
+        "column_bytes": {
+          "artist_credit_id": 4278895,
+          "artist_credit_mbids.list.element": 20361923,
+          "artist_name": 13598459,
+          "created": 8508489,
+          "listened_at": 926791,
+          "recording_mbid": 27343777,
+          "recording_msid": 34562097,
+          "recording_name": 20420089,
+          "release_mbid": 21752993,
+          "release_name": 17222454,
+          "user_id": 4051483
+        },
+        "next_header": 222656161792,
+        "offset": 222483124736,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1355.parquet",
+        "rows": 2183879
+      },
+      {
+        "bytes": 169659538,
+        "column_bytes": {
+          "artist_credit_id": 4218267,
+          "artist_credit_mbids.list.element": 19723177,
+          "artist_name": 13211603,
+          "created": 8438829,
+          "listened_at": 1013890,
+          "recording_mbid": 26743989,
+          "recording_msid": 34036701,
+          "recording_name": 20152055,
+          "release_mbid": 21172782,
+          "release_name": 16954376,
+          "user_id": 3984142
+        },
+        "next_header": 222483123200,
+        "offset": 222313463296,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1354.parquet",
+        "rows": 2187936
+      },
+      {
+        "bytes": 175458733,
+        "column_bytes": {
+          "artist_credit_id": 4284191,
+          "artist_credit_mbids.list.element": 20758332,
+          "artist_name": 13706957,
+          "created": 8616468,
+          "listened_at": 952729,
+          "recording_mbid": 27778145,
+          "recording_msid": 35065871,
+          "recording_name": 20610136,
+          "release_mbid": 22189170,
+          "release_name": 17492810,
+          "user_id": 3994269
+        },
+        "next_header": 222313461760,
+        "offset": 222138002944,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1353.parquet",
+        "rows": 2184519
+      },
+      {
+        "bytes": 177327414,
+        "column_bytes": {
+          "artist_credit_id": 4363549,
+          "artist_credit_mbids.list.element": 21369747,
+          "artist_name": 13914516,
+          "created": 8554398,
+          "listened_at": 900006,
+          "recording_mbid": 27936852,
+          "recording_msid": 35054600,
+          "recording_name": 20676306,
+          "release_mbid": 22778018,
+          "release_name": 17759815,
+          "user_id": 4009738
+        },
+        "next_header": 222138001408,
+        "offset": 221960673792,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1352.parquet",
+        "rows": 2181729
+      },
+      {
+        "bytes": 173844149,
+        "column_bytes": {
+          "artist_credit_id": 4325424,
+          "artist_credit_mbids.list.element": 20486342,
+          "artist_name": 13599849,
+          "created": 8400072,
+          "listened_at": 951515,
+          "recording_mbid": 27497485,
+          "recording_msid": 34681514,
+          "recording_name": 20512542,
+          "release_mbid": 22029672,
+          "release_name": 17297925,
+          "user_id": 4052136
+        },
+        "next_header": 221960672256,
+        "offset": 221786827776,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1351.parquet",
+        "rows": 2186255
+      },
+      {
+        "bytes": 170942038,
+        "column_bytes": {
+          "artist_credit_id": 4226384,
+          "artist_credit_mbids.list.element": 19982982,
+          "artist_name": 13327638,
+          "created": 8373878,
+          "listened_at": 1032258,
+          "recording_mbid": 27006705,
+          "recording_msid": 34158617,
+          "recording_name": 20231513,
+          "release_mbid": 21511669,
+          "release_name": 17102442,
+          "user_id": 3978345
+        },
+        "next_header": 221786826240,
+        "offset": 221615883776,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1350.parquet",
+        "rows": 2183008
+      },
+      {
+        "bytes": 123296024,
+        "column_bytes": {
+          "artist_credit_id": 3047288,
+          "artist_credit_mbids.list.element": 14492989,
+          "artist_name": 9491125,
+          "created": 5736858,
+          "listened_at": 708051,
+          "recording_mbid": 19647015,
+          "recording_msid": 24690890,
+          "recording_name": 14555224,
+          "release_mbid": 15813311,
+          "release_name": 12293256,
+          "user_id": 2811895
+        },
+        "next_header": 221615882240,
+        "offset": 221492585984,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1349.parquet",
+        "rows": 1529981
+      },
+      {
+        "bytes": 174203949,
+        "column_bytes": {
+          "artist_credit_id": 4279761,
+          "artist_credit_mbids.list.element": 20701768,
+          "artist_name": 13689270,
+          "created": 8483957,
+          "listened_at": 948197,
+          "recording_mbid": 27430746,
+          "recording_msid": 34592219,
+          "recording_name": 20511762,
+          "release_mbid": 22107097,
+          "release_name": 17432638,
+          "user_id": 4016923
+        },
+        "next_header": 221492584448,
+        "offset": 221318380032,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1348.parquet",
+        "rows": 2182198
+      },
+      {
+        "bytes": 179106930,
+        "column_bytes": {
+          "artist_credit_id": 4295513,
+          "artist_credit_mbids.list.element": 21666730,
+          "artist_name": 14054190,
+          "created": 8704159,
+          "listened_at": 897937,
+          "recording_mbid": 28197920,
+          "recording_msid": 35414200,
+          "recording_name": 20825524,
+          "release_mbid": 23126286,
+          "release_name": 17931067,
+          "user_id": 3983783
+        },
+        "next_header": 221318378496,
+        "offset": 221139271168,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1347.parquet",
+        "rows": 2181099
+      },
+      {
+        "bytes": 173907290,
+        "column_bytes": {
+          "artist_credit_id": 4258419,
+          "artist_credit_mbids.list.element": 20749435,
+          "artist_name": 13788050,
+          "created": 8362255,
+          "listened_at": 992923,
+          "recording_mbid": 27168833,
+          "recording_msid": 34565547,
+          "recording_name": 20491662,
+          "release_mbid": 22052880,
+          "release_name": 17498090,
+          "user_id": 3969428
+        },
+        "next_header": 221139269632,
+        "offset": 220965362176,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1346.parquet",
+        "rows": 2185454
+      },
+      {
+        "bytes": 171977099,
+        "column_bytes": {
+          "artist_credit_id": 4286967,
+          "artist_credit_mbids.list.element": 20357507,
+          "artist_name": 13568201,
+          "created": 8133496,
+          "listened_at": 1054400,
+          "recording_mbid": 27023619,
+          "recording_msid": 34298399,
+          "recording_name": 20268974,
+          "release_mbid": 21761263,
+          "release_name": 17227222,
+          "user_id": 3987397
+        },
+        "next_header": 220965360640,
+        "offset": 220793383424,
+        "path": "listenbrainz-spark-dump-2722-20261015-000002-full/1345.parquet",
+        "rows": 2181638
+      }
+    ],
+    "oldest_timestamp_probe": {
+      "bounds": {
+        "max": "2026-08-11 14:11:44",
+        "min": "2026-08-09 20:08:07"
+      },
+      "fetched_ranges": [
+        {
+          "bytes": 65536,
+          "relative_offset": 170814837,
+          "sha256": "b5c73c46c6a1543959cd25a4ee7be25457131e700f551b073505a46256e7066d"
+        },
+        {
+          "bytes": 460299,
+          "relative_offset": 4,
+          "sha256": "9d19fb030ae01952e8d7bfd7f25ff223ba3c78e33ca48692a07fdebc7425f010"
+        },
+        {
+          "bytes": 441984,
+          "relative_offset": 79495106,
+          "sha256": "ec476e19e20791f00cf6939e3ed6be3886f5f32f4c95f58d958da92b98163f8d"
+        },
+        {
+          "bytes": 54439,
+          "relative_offset": 159697700,
+          "sha256": "52e03dd85d86ee240e137574db5e928e569379c57c8227ac90b985cef46c054a"
+        }
+      ],
+      "full_file_checksum_verified": false,
+      "rows": 2253790
+    },
+    "requests": 334,
+    "reserved_bytes": 12511568,
+    "source_url": "https://data.metabrainz.org/pub/musicbrainz/listenbrainz/fullexport/listenbrainz-dump-2722-20261015-000002-full/listenbrainz-spark-dump-2722-20261015-000002-full.tar",
+    "transferred_bytes": 12511538
+  },
+  "date_probes": {
+    "etag": "\"6ad31670-39ac83c800\"",
+    "probes": {
+      "1349": {
+        "bounds": {
+          "max": "2026-02-01 00:00:00.000000000",
+          "min": "2026-01-30 17:07:59.000000000"
+        },
+        "fetched_ranges": [
+          {
+            "bytes": 65536,
+            "relative_offset": 123230488,
+            "sha256": "06d96328ef986b380890683c309338e8d19997f22f6f2094292c45f11f4cba72"
+          },
+          {
+            "bytes": 501879,
+            "relative_offset": 4,
+            "sha256": "f3dcfe16d66c98ee0f4a590a29ac256c377c06b7bc2f24f237be1f6e77483011"
+          },
+          {
+            "bytes": 206172,
+            "relative_offset": 83660117,
+            "sha256": "d6721b2024c9e4c1a6bf77d2b97d74e18d0848f32e00edfca7d5d41eeaf98909"
+          }
+        ],
+        "full_file_checksum_verified": false,
+        "rows": 1529981
+      },
+      "1350": {
+        "bounds": {
+          "max": "2026-02-02 19:24:22.000000000",
+          "min": "2026-02-01 00:00:01.000000000"
+        },
+        "fetched_ranges": [
+          {
+            "bytes": 65536,
+            "relative_offset": 170876502,
+            "sha256": "437afb5e702797250033a5823595d688df0db59f21e1f0913be6170097f07e11"
+          },
+          {
+            "bytes": 541647,
+            "relative_offset": 4,
+            "sha256": "5c2ad62a013667ac71e58031db46bfef2b47fdd336b209dce94a3b970536a649"
+          },
+          {
+            "bytes": 459793,
+            "relative_offset": 82766108,
+            "sha256": "7c648e927213700d7970b31d50e535bbb2b646ad53ba8eaf61ea2cbc0c673349"
+          },
+          {
+            "bytes": 30818,
+            "relative_offset": 164690772,
+            "sha256": "e52a8e95d5b463149864a664b928b6eea186fea6aa695ba66e824faab1f75dc3"
+          }
+        ],
+        "full_file_checksum_verified": false,
+        "rows": 2183008
+      },
+      "1375": {
+        "bounds": {
+          "max": "2026-03-15 23:59:59.000000000",
+          "min": "2026-03-14 04:50:05.000000000"
+        },
+        "fetched_ranges": [
+          {
+            "bytes": 65536,
+            "relative_offset": 166623328,
+            "sha256": "c5f291cd8eda1907bd4d8c7e2be1c0e2b51c6a642ec39fba1a0efbb0ed399ee0"
+          },
+          {
+            "bytes": 533961,
+            "relative_offset": 4,
+            "sha256": "7e492fd55d287cf7ba741e0c80c3fc53456f4b1e23da6f878d4d3d3dc6f0dc53"
+          },
+          {
+            "bytes": 469041,
+            "relative_offset": 80631710,
+            "sha256": "489d46b8bcb08e6dba939ad86e077c1e42a6bb52a5a5b2ae1701e987fa649c51"
+          },
+          {
+            "bytes": 44479,
+            "relative_offset": 160175169,
+            "sha256": "63cea09059cf48b8acf1a13192a52ad43bd27a116cb571478e77899d3d52dce8"
+          }
+        ],
+        "full_file_checksum_verified": false,
+        "rows": 2194143
+      },
+      "1390": {
+        "bounds": {
+          "max": "2026-04-07 05:49:43.000000000",
+          "min": "2026-04-05 15:25:02.000000000"
+        },
+        "fetched_ranges": [
+          {
+            "bytes": 65536,
+            "relative_offset": 157146631,
+            "sha256": "8ab6c46ce160e79fe9e924ec402ccd1ff72e3432f18cc9f29edfed864eaccd90"
+          },
+          {
+            "bytes": 420534,
+            "relative_offset": 4,
+            "sha256": "2313cfe4b4f2364a2704e26032635c2d85fbafd061434bd883600b82486a15fc"
+          },
+          {
+            "bytes": 364131,
+            "relative_offset": 72818831,
+            "sha256": "738d72b863a88bdc6e001da71c5b1a843e003cabebd6ea375869cafeb8f24965"
+          },
+          {
+            "bytes": 47564,
+            "relative_offset": 151276166,
+            "sha256": "e9987c971cff90de078d732e8bbe91b5064aabd4dda6cf0c213bae019c2387ba"
+          }
+        ],
+        "full_file_checksum_verified": false,
+        "rows": 2213432
+      },
+      "1490": {
+        "bounds": {
+          "max": "2026-09-14 13:58:20.000000000",
+          "min": "2026-09-12 18:32:23.000000000"
+        },
+        "fetched_ranges": [
+          {
+            "bytes": 65536,
+            "relative_offset": 174049833,
+            "sha256": "0c73427f2072eba46f2c3d960ccddaf9b55a75a0030504adc7d8ad4e90f6c04a"
+          },
+          {
+            "bytes": 491147,
+            "relative_offset": 4,
+            "sha256": "e9398e72b383927e0ef92c517208062923cbc9abe10e04ab401e32acb4fe498d"
+          },
+          {
+            "bytes": 447711,
+            "relative_offset": 80985000,
+            "sha256": "d7b7eaeddd89ab8b5e7fd400dd9f2ac1ed872dde87083cfce353a8f2de787846"
+          },
+          {
+            "bytes": 52049,
+            "relative_offset": 162533112,
+            "sha256": "7926534df9f8068d1f390163f251562f9ed5ed5995740e5a8f9e01ef552fa25f"
+          }
+        ],
+        "full_file_checksum_verified": false,
+        "rows": 2256799
+      },
+      "1496": {
+        "bounds": {
+          "max": "2026-09-24 12:49:19.000000000",
+          "min": "2026-09-22 20:30:57.000000000"
+        },
+        "fetched_ranges": [
+          {
+            "bytes": 65536,
+            "relative_offset": 178837316,
+            "sha256": "a904a23d11781e9caeb7bfefe19169dfc3bb041ca860cf94dc8dd131cdd9dd75"
+          },
+          {
+            "bytes": 429427,
+            "relative_offset": 4,
+            "sha256": "86a3ca584d32f7567fe829be6f85e3870cbef3ea04de4fb9cae16c5038ad6e48"
+          },
+          {
+            "bytes": 415787,
+            "relative_offset": 83815177,
+            "sha256": "f1baa94eb41d63d2a5a278cf6f567e85b8283ec6d68d04abffe4c233e0e78725"
+          },
+          {
+            "bytes": 55547,
+            "relative_offset": 167828968,
+            "sha256": "97449dd02375583af3828a3fabb348367e3ccbe53507bf7af33ddc888021219a"
+          }
+        ],
+        "full_file_checksum_verified": false,
+        "rows": 2252482
+      },
+      "1497": {
+        "bounds": {
+          "max": "2026-09-26 03:06:26.000000000",
+          "min": "2026-09-24 12:49:19.000000000"
+        },
+        "fetched_ranges": [
+          {
+            "bytes": 65536,
+            "relative_offset": 183068228,
+            "sha256": "76d095e40ac79952048611be92eed37544dfa7085cc0a3ca29dfc0f8e91d6eb2"
+          },
+          {
+            "bytes": 394116,
+            "relative_offset": 4,
+            "sha256": "c3f750e0f5f794c68f326e0bc3e9ceeab28cc23f69b6de7bee0baaa1b59e2b80"
+          },
+          {
+            "bytes": 366165,
+            "relative_offset": 85189221,
+            "sha256": "b4ce48ac5bdca2b1cb001b4038f910cc7eca753b69498731b8f21332aa6e7282"
+          },
+          {
+            "bytes": 75673,
+            "relative_offset": 173465115,
+            "sha256": "31ec6c037604977235bc2d313effd99bb39c945d747dbcd257e696b269a27378"
+          }
+        ],
+        "full_file_checksum_verified": false,
+        "rows": 2247477
+      }
+    },
+    "requests": 27,
+    "reserved_bytes": 6806420,
+    "source_url": "https://data.metabrainz.org/pub/musicbrainz/listenbrainz/fullexport/listenbrainz-dump-2722-20261015-000002-full/listenbrainz-spark-dump-2722-20261015-000002-full.tar",
+    "transferred_bytes": 6806393
+  },
+  "proposed_acquisition": {
+    "status": "requires new download cap; splits not frozen",
+    "first_member": 1349,
+    "last_member": 1497,
+    "files": 149,
+    "footer_declared_rows_including_boundary_spill": 320570129,
+    "complete_members_bytes": 24201427536,
+    "event_columns_bytes": 5799875519,
+    "event_and_catalog_columns_bytes": 13295252866,
+    "columns": [
+      "listened_at",
+      "created",
+      "user_id",
+      "recording_mbid",
+      "artist_name",
+      "recording_name",
+      "artist_credit_mbids.list.element"
+    ],
+    "train": [
+      "2026-02-01T00:00:00Z",
+      "2026-08-01T00:00:00Z"
+    ],
+    "validation": [
+      "2026-08-01T00:00:00Z",
+      "2026-08-29T00:00:00Z"
+    ],
+    "test": [
+      "2026-08-29T00:00:00Z",
+      "2026-09-26T00:00:00Z"
+    ],
+    "interval_semantics": "start inclusive, end exclusive; proposal only",
+    "requested_additional_cap_bytes": 17179869184,
+    "all_member_dates_decoded": false,
+    "all_member_payloads_verified": false
+  },
+  "initial_budget": {
+    "authorized_bytes": 1073741824,
+    "recorded_successful_data_body_bytes": 61388136,
+    "interrupted_forward_probe_upper_bound": 67108864,
+    "package_allowance_bytes": 33554432,
+    "musicbrainz_query_allowance_bytes": 5242880,
+    "other_metadata_allowance_bytes": 16777216,
+    "accounted_conservative_total_bytes": 184071528,
+    "note": "Payload-read accounting, not packet capture. Interrupted probe exact bytes were not retained; its entire hard cap is reserved. Package download log reported 27.2 MiB. Allowances are conservative reservations, not measured transfers. Prior 246734240-byte metadata sample excluded from this new cap; adding it still stays below 1 GiB."
+  },
+  "full_archive_checksum_verified": false,
+  "training_approved": false
+}

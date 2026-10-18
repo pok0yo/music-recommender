@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 import tarfile
 from urllib.request import Request, urlopen
+from urllib.parse import urlsplit
 
 from ml.audit_sample import USER_AGENT
 
@@ -24,10 +25,15 @@ MAX_BYTES = 4 * 1024**2
 
 
 class RangeReader:
-    def __init__(self):
+    def __init__(self, *, max_requests=MAX_REQUESTS, max_bytes=MAX_BYTES, max_read=64 * 1024, connection=None):
         self.position = 0
         self.requests = 0
         self.bytes_read = 0
+        self.reserved_bytes = 0
+        self.max_requests = max_requests
+        self.max_bytes = max_bytes
+        self.max_read = max_read
+        self.connection = connection
 
     def tell(self):
         return self.position
@@ -40,12 +46,12 @@ class RangeReader:
         return self.position
 
     def read(self, size):
-        if not 0 <= size <= 64 * 1024:
+        if not 0 <= size <= self.max_read:
             raise ValueError("Refusing an unbounded range request")
         size = min(size, SIZE - self.position)
         if size == 0:
             return b""
-        if self.requests >= MAX_REQUESTS or self.bytes_read + size > MAX_BYTES:
+        if self.requests >= self.max_requests or self.reserved_bytes + size + 1 > self.max_bytes:
             raise ValueError("Header probe resource budget exceeded")
         end = self.position + size - 1
         request = Request(URL, headers={
@@ -53,7 +59,14 @@ class RangeReader:
             "User-Agent": USER_AGENT,
         })
         self.requests += 1
-        with urlopen(request, timeout=30) as response:
+        # Reserve before I/O so failed reads cannot reset the transfer budget.
+        self.reserved_bytes += size + 1
+        if self.connection is None:
+            response = urlopen(request, timeout=30)
+        else:
+            self.connection.request("GET", urlsplit(URL).path, headers=dict(request.header_items()))
+            response = self.connection.getresponse()
+        with response:
             expected = f"bytes {self.position}-{end}/{SIZE}"
             if response.status != 206 or response.headers.get("Content-Range") != expected:
                 raise ValueError("Server did not honor the exact range; refusing download")

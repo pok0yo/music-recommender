@@ -1,0 +1,96 @@
+{
+  "observed_on": "2026-10-17",
+  "training_approved": false,
+  "files": [
+    {
+      "file": "0.parquet",
+      "bytes": 60557,
+      "sha256": "b3a6c809cec9e0933bb3a7f1e2b82d6c1fcf7cc9d2a20353c495679ba4512b4c",
+      "rows": 845,
+      "schema": "listened_at: timestamp[ns] not null\ncreated: timestamp[ns] not null\nuser_id: int64 not null\nrecording_msid: string not null\nartist_name: string not null\nartist_credit_id: int64\nrelease_name: string\nrelease_mbid: string\nrecording_name: string not null\nrecording_mbid: string\nartist_credit_mbids: list<element: string>\n  child 0, element: string\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1471",
+      "row_groups": 1,
+      "listened_at": {
+        "min": "2002-10-01 00:00:01",
+        "max": "2002-10-31 23:00:00"
+      },
+      "created": {
+        "min": "2026-06-28 17:02:20.771000",
+        "max": "2026-08-03 16:12:00.916000"
+      },
+      "distinct_listeners": 2,
+      "unmapped_recordings": 27
+    },
+    {
+      "file": "1.parquet",
+      "bytes": 13285,
+      "sha256": "a3520a4fd534a2084b725564fa7aad7b02794a6698237043a839aaac76ee6fa3",
+      "rows": 77,
+      "schema": "listened_at: timestamp[ns] not null\ncreated: timestamp[ns] not null\nuser_id: int64 not null\nrecording_msid: string not null\nartist_name: string not null\nartist_credit_id: int64\nrelease_name: string\nrelease_mbid: string\nrecording_name: string not null\nrecording_mbid: string\nartist_credit_mbids: list<element: string>\n  child 0, element: string\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1471",
+      "row_groups": 1,
+      "listened_at": {
+        "min": "2002-11-01 16:58:39",
+        "max": "2002-11-29 13:23:12"
+      },
+      "created": {
+        "min": "2023-11-01 00:00:00",
+        "max": "2026-08-03 16:01:52.734000"
+      },
+      "distinct_listeners": 4,
+      "unmapped_recordings": 2
+    },
+    {
+      "file": "2.parquet",
+      "bytes": 11959,
+      "sha256": "7fc768f1f40172215ac2ba4383d73bb3d6dc59cb7ef2140f74fb2a329d640f6f",
+      "rows": 52,
+      "schema": "listened_at: timestamp[ns] not null\ncreated: timestamp[ns] not null\nuser_id: int64 not null\nrecording_msid: string not null\nartist_name: string not null\nartist_credit_id: int64\nrelease_name: string\nrelease_mbid: string\nrecording_name: string not null\nrecording_mbid: string\nartist_credit_mbids: list<element: string>\n  child 0, element: string\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1471",
+      "row_groups": 1,
+      "listened_at": {
+        "min": "2002-12-01 23:00:00",
+        "max": "2002-12-31 23:00:00"
+      },
+      "created": {
+        "min": "2026-06-28 22:47:49.294000",
+        "max": "2026-08-02 11:15:38.659000"
+      },
+      "distinct_listeners": 3,
+      "unmapped_recordings": 0
+    },
+    {
+      "file": "3.parquet",
+      "bytes": 16310,
+      "sha256": "db973a841123c092ccea8c2e62283b24cd0711f20f1471d8f709305246873447",
+      "rows": 144,
+      "schema": "listened_at: timestamp[ns] not null\ncreated: timestamp[ns] not null\nuser_id: int64 not null\nrecording_msid: string not null\nartist_name: string not null\nartist_credit_id: int64\nrelease_name: string\nrelease_mbid: string\nrecording_name: string not null\nrecording_mbid: string\nartist_credit_mbids: list<element: string>\n  child 0, element: string\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1471",
+      "row_groups": 1,
+      "listened_at": {
+        "min": "2003-01-01 13:00:24",
+        "max": "2003-01-31 23:00:00"
+      },
+      "created": {
+        "min": "2026-06-28 17:11:15.245000",
+        "max": "2026-09-12 18:37:56.430000"
+      },
+      "distinct_listeners": 4,
+      "unmapped_recordings": 2
+    },
+    {
+      "file": "4.parquet",
+      "bytes": 11255,
+      "sha256": "56b05caf5564ad661d351b52661545ae329ff2746c8475e87c79ecfa94e6c97c",
+      "rows": 50,
+      "schema": "listened_at: timestamp[ns] not null\ncreated: timestamp[ns] not null\nuser_id: int64 not null\nrecording_msid: string not null\nartist_name: string not null\nartist_credit_id: int64\nrelease_name: string\nrelease_mbid: string\nrecording_name: string not null\nrecording_mbid: string\nartist_credit_mbids: list<element: string>\n  child 0, element: string\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1471",
+      "row_groups": 1,
+      "listened_at": {
+        "min": "2003-02-01 23:00:00",
+        "max": "2003-02-28 23:00:00"
+      },
+      "created": {
+        "min": "2026-06-28 17:10:05.689000",
+        "max": "2026-07-18 16:37:54.690000"
+      },
+      "distinct_listeners": 3,
+      "unmapped_recordings": 1
+    }
+  ]
+}

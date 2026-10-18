@@ -6,7 +6,6 @@ feasibility audit, not a training-data importer or recommendation implementation
 
 import argparse
 from collections import Counter
-from compression import zstd
 import hashlib
 import json
 from pathlib import Path
@@ -129,6 +128,8 @@ def inspect_tar(stream):
 
 
 def main():
+    from compression import zstd
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--download", action="store_true")
     parser.add_argument("--archive", type=Path, default=Path("data/raw") / FILENAME)

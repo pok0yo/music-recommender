@@ -1,16 +1,16 @@
 # Stage 6 — data feasibility audit
 
-Audit date: 2026-10-17. **Stage 6 is in progress; the published sample fails the event-data gate.** No training-ready dataset, frozen evaluation split, or model is approved. This report distinguishes executed checks from proposed next work.
+Audit date: 2026-10-17. **Stage 6 is in progress. The metadata sample failed; a bounded Spark pilot now confirms real events and all ten requested artists.** Full-interval acquisition, track-level support, preprocessing, and evaluation gates remain open. No training-ready dataset, frozen evaluation split, or model is approved. Sections 2–7 preserve the first checkpoint; section 8 records the authorized continuation.
 
 ## 1. Scope and assumptions
 
 1. Established mainstream songs remain the provisional target, without an account or listening-history integration.
-2. The user will supply specific artists/tracks. The 40-track acceptance panel is therefore pending; no substitute panel has been silently selected.
+2. The user supplied nate sib, Tiffany Day, che, 2hollis, Lucy Bedroque, beabadoobee, Daniel Caesar, Steve Lacy, Bruno Mars, and Giveon. Recent releases are not essential. Four titles per artist are now proposed in [the panel](coverage-panel.json); these are not yet user-agreed recording versions.
 3. Availability is flexible ("whenever I am free"), not a quantified weekly commitment. The earlier effort range remains a planning estimate, not a delivery promise.
-4. No paid compute or hosting budget has been established. This checkpoint uses the existing local Python and a bounded public sample download.
+4. No paid compute or hosting budget has been established. The continuation has a user-authorized initial download cap of 1 GiB, treated as a ceiling from this continuation onward; a larger event acquisition requires a new cap.
 5. This is the Stage 6 source/resource gate. A failed source does not authorize fabricated interactions, training on popularity summaries, or changing the evaluation task without recording the change.
 
-The change reaches two audit utilities, their tests, a small CI workflow, aggregate evidence, and the README. There are no app callers, database migrations, model exports, or frontend fixtures yet. Existing planning files remain intact.
+At the first checkpoint, the change reached two audit utilities, their tests, a small CI workflow, aggregate evidence, and the README. There are no app callers, database migrations, model exports, or frontend fixtures yet. Existing planning files remain intact.
 
 ## 2. Observed local resources
 
@@ -126,3 +126,139 @@ All **13 local tests passed** on the stated Windows/Python runtime. The CI workf
 4. Measure support/coverage, freeze chronological splits and train-only eligibility, and record the original pass/revise gates with all denominators.
 
 Do not mark Stage 6 complete until these checks have real evidence. No recommendation performance, mainstream coverage percentage, or evaluation sample size has yet been measured.
+
+
+## 8. Authorized continuation: real events and requested artists
+
+The user supplied ten artists, confirmed that very recent releases are not essential, authorized an initial **1 GiB** download cap, and said to continue Stage 6. This is a source audit, not permission to start Stage 7 or exceed that cap.
+
+### Identity and proposed panel
+
+MusicBrainz identities were checked against its API or artist pages. API access succeeded for four artist searches and then returned HTTP 503; no automatic retry loop or successful-access claim is substituted for that failure. Public MusicBrainz pages supplied the remaining identities. The highest search result for `che` was a different person: the provisional intended identity is the Atlanta rapper. Steve Lacy means the singer/guitarist born in 1998. Lucy Bedroque's documented aliases include lostrushi; Giveon's MusicBrainz display spelling is GIVĒON. See [the machine-readable panel and source links](coverage-panel.json).
+
+These **40 titles are proposals**, selected before inspecting pilot artist support. They are neither a popularity ranking nor claimed user favorites. Studio recording MBIDs, featured credits, duplicate recordings, and release versions still need resolution. Freeze the agreed IDs before running the support gate; do not replace failing tracks with better-supported ones afterward.
+
+| Artist | Proposed titles |
+|---|---|
+| nate sib | typical; go; secret; only1 |
+| Tiffany Day | CLOUDS; SAN FRANCISCO SIDEWALK; HELLA BOY CRAZY; KANSAS |
+| che | Miley Cyrus; Pizza Time; Bae; blac chyna |
+| 2hollis | crush; jeans; gold; lie |
+| Lucy Bedroque | AQUAFINA; Mi Amor; No Lie; GIRLS!!! |
+| beabadoobee | Coffee; She Plays Bass; Glue Song; the way things go |
+| Daniel Caesar | Get You; Best Part; Japanese Denim; Always |
+| Steve Lacy | Dark Red; Bad Habit; N Side; Some |
+| Bruno Mars | Just the Way You Are; Locked Out of Heaven; Treasure; That's What I Like |
+| GIVĒON | Heartbreak Anniversary; Like I Want You; For Tonight; Garden Kisses |
+
+### What was actually decoded
+
+One necessary dependency, **PyArrow 26.0.0**, was installed in the ignored project environment using the existing Python 3.12.14 runtime. Its [documented Parquet metadata and column-reading APIs](https://arrow.apache.org/docs/python/parquet/parquet.html) permit inspection without reading every column. `compression.zstd` is now imported only by the original sample CLI; that CLI still requires Python 3.14+, while other audits/tests work on 3.12.
+
+- The five prefix files total 113,366 bytes and contain 1,168 rows, spanning October 2002 to February 2003. Many were submitted decades later. They are unsuitable for this artist coverage target. [Prefix payload evidence](evidence/stage-6-spark-prefix-payloads.json).
+- The latest member, `1509.parquet`, is 41,606,352 bytes. Its locally computed SHA-256 is `369a38579f6de8cc9cac6ca6e3ef4b96e81734e867e4b621874698141f53ca78`. This hashes the retained complete member, not the 247 GB parent archive; no published whole-archive checksum was verified by a range read.
+- It contains **508,234 rows**, with listen times **2026-10-14 14:49:34 through 2026-10-15 00:00:01**, and **18,788 distinct listener IDs**. This is a deliberately chosen chronological suffix, approximately nine hours, not a representative listener sample or an eight-month evaluation dataset.
+- The observed schema includes nanosecond `listened_at`/`created` timestamps, integer `user_id`, nullable recording MBIDs, and artist-credit MBID lists. Timestamps have no Arrow timezone annotation; UTC interpretation follows the export convention and must remain explicit in preprocessing.
+- The Spark archive's own schema marker is **1**, distinct from the earlier metadata sample's marker 8. Its timestamp is `2026-10-15 00:00:02.588811+00:00`; its COPYING member contains CC0 1.0. Only event and core identity/title/artist fields are proposed for use. No tags, artwork, audio, or playback rights are included.
+
+The backwards locator infers a Parquet start from footer offsets and checks it against the actual tar header, its checksum, and member length. It deliberately supports this export's observed 1536-byte PAX header layout and fails on a different layout. All remote reads enforce the pinned URL, ETag, exact HTTP 206 range, size, and request limits. Footer-only reads do not verify full payload contents.
+
+### Event-quality evidence
+
+[The local event audit](evidence/stage-6-event-pilot.json) reports:
+
+| Check | Actual pilot count |
+|---|---:|
+| Rows with syntactically valid recording MBIDs | 376,793 |
+| Missing recording MBIDs | 131,439 |
+| Malformed non-null recording MBIDs | 2 |
+| Duplicate mapped `(user_id, recording_mbid, listened_at)` rows beyond the first | 17,015 |
+| Distinct valid recording MBIDs before any support filtering | 175,094 |
+| Nonpositive listener IDs | 0 |
+| Creation time earlier than listen time | 6,354 |
+| Creation more than one day after listen time | 0 |
+
+A syntactically valid MBID is not independent proof that the submitted recording was mapped correctly. Creation/listen ordering differences need an explicit preprocessing policy; they are not silently removed here. No cleaned training artifact has been emitted. The tiny early files demonstrate retrospective imports even though this newest suffix has no imports delayed over a day. A future training cutoff must report submission-time availability as well as listen-time boundaries; a retrospective evaluation must not be described as an as-of deployment replay.
+
+### Artist presence, not the support gate
+
+Matching uses exact membership in `artist_credit_mbids`, including collaborations. It does not infer identity from a matching artist-name string. Counts below include repeated events; listeners are distinct within each artist, and recording counts include only syntactically valid IDs. No listener IDs or histories are published.
+
+| Artist | Event rows | Distinct listeners | Distinct mapped recordings |
+|---|---:|---:|---:|
+| nate sib | 31 | 10 | 15 |
+| Tiffany Day | 185 | 58 | 36 |
+| che | 121 | 28 | 51 |
+| 2hollis | 55 | 33 | 25 |
+| Lucy Bedroque | 224 | 50 | 43 |
+| beabadoobee | 190 | 85 | 53 |
+| Daniel Caesar | 130 | 59 | 45 |
+| Steve Lacy | 263 | 99 | 36 |
+| Bruno Mars | 380 | 185 | 54 |
+| GIVĒON | 35 | 21 | 25 |
+
+All ten artists appear in this suffix. **This does not pass the 80% track gate.** The per-track five-listener threshold, three qualifying neighbors, candidate catalog, and validation/test query counts have not been measured on an approved training interval. The pilot will not be repurposed as the final test set.
+
+### Verification and reproduction
+
+The smallest added scope comprises the Parquet inspection/audit utilities, their synthetic tests, one pinned dependency, panel/evidence files, documentation, and the audit CI dependency installation. There are no application callers, model exports, database migrations, accounts, or frontend changes.
+
+With the audit environment installed:
+
+```powershell
+uv pip install --python .venv/Scripts/python.exe -r ml/requirements-audit.txt
+.venv/Scripts/python.exe -m ml.inspect_spark --latest
+.venv/Scripts/python.exe -m ml.inspect_spark --members 165
+.venv/Scripts/python.exe -m ml.audit_events --input data/raw/spark-latest/1509.parquet --output data/interim/event-pilot-rerun.json
+.venv/Scripts/python.exe -m unittest discover -s ml/tests -v
+```
+
+`--latest` refuses an existing output/payload/partial file. Reuse the retained payload for local audits rather than downloading it again. The footer index resumes its existing provenance-checked checkpoint and retains cumulative bounds. These commands have per-operation limits; they are not authorization to run unlimited repeat downloads against the user's cumulative cap.
+
+Local tests passed on Python 3.12.14/PyArrow 26.0.0: **19 tests**. Tests cover exact range/version/budget checks, failed-read accounting, corrupt headers/footer bounds, preserving files on interrupted downloads, projected timestamp reads, nanosecond precision without pandas, missing/invalid IDs, duplicate keys, artist-name collisions, and required-field rejection. Initial fixtures exposed a timestamp conversion issue; serializing Arrow timestamps directly as strings fixed it without adding pandas. Tests use synthetic records and make no live network calls. CI status is recorded separately after the commit.
+
+
+## 9. Resource decision and next Stage 6 gate
+
+[Acquisition evidence](evidence/stage-6-spark-acquisition.json) contains the pinned archive URL/ETag, marker hashes, retained pilot hash, **165 verified tar-header/Parquet-footer locations**, selected decoded date columns, and the arithmetic below. This is a partial archive inventory, not verification of every payload or timestamp in those files.
+
+### Concrete acquisition proposal
+
+Use the following candidate UTC intervals, start inclusive and end exclusive. These are proposed before any recommendation experiment; they are **not frozen splits** until acquisition and support checks succeed.
+
+| Partition | Start | End |
+|---|---|---|
+| Training: six calendar months | 2026-02-01 | 2026-08-01 |
+| Validation: 28 days | 2026-08-01 | 2026-08-29 |
+| Test: 28 days | 2026-08-29 | 2026-09-26 |
+
+Actual timestamp-column reads place `1349.parquet` at January 30 17:07:59 through February 1 00:00:00, and `1350.parquet` from February 1 00:00:01. Include file 1349 to retain the exact boundary event. File 1497 spans September 24 12:49:19 through September 26 03:06:26; filter the final hours after the exclusive test cutoff. The inspected source exporter orders files chronologically; this still requires a full timestamp/order check during preprocessing, rather than assuming all interior values are correct. The October 14–15 pilot lies outside this proposed evaluation interval.
+
+| Files 1349–1497 inclusive | Declared compressed bytes | GiB |
+|---|---:|---:|
+| Complete 149 members | 24,201,427,536 | 22.54 |
+| `listened_at`, `created`, `user_id`, `recording_mbid` | 5,799,875,519 | 5.40 |
+| Those four plus title, artist name, artist-credit MBIDs | 13,295,252,866 | 12.38 |
+
+The footers declare **320,570,129 rows across the complete members**, including boundary spill. This is not a decoded count of valid interval events or a count of usable training pairs. The figures sum actual compressed column-chunk lengths; request overhead, footer reads, retries, and derived-file size are separate.
+
+**Request a new additional transfer cap of 16 GiB** for the seven-column acquisition, with a hard cumulative stop and bounded retries. Reserve up to **20 GiB of local working space** as a proposal, not a measured requirement. Observed free C: space at this checkpoint was 135,508,623,360 bytes, approximately 126.2 GiB. Full raw members and the complete parent archive are unnecessary. The larger acquisition has not begun and is not authorized by the initial 1 GiB cap.
+
+### Initial cap accounting
+
+- Recorded successful data-body reads in this continuation: **61,388,136 bytes**, approximately **58.54 MiB**.
+- An exploratory forward-header scan was interrupted before its final counters were saved. Its entire **64 MiB hard ceiling** is reserved conservatively instead of inventing an exact transfer count. The retained utility now checkpoints completed backwards-inventory entries individually.
+- Adding conservative package, MusicBrainz-query, and other-metadata allowances gives an accounted upper allowance of **184,071,528 bytes**, approximately **175.54 MiB**, comfortably inside 1 GiB. The package tool reported a 27.2 MiB wheel download. These allowances are not packet-capture measurements.
+- Even adding the previous 246,734,240-byte metadata archive to that conservative accounting stays below 1 GiB. Raw data and the local environment remain Git-ignored.
+
+### What follows approval, within Stage 6
+
+1. Agree on the proposed titles or incorporate the user's substitutions, then resolve exact recording MBIDs/versions and record any ambiguity before measuring track support.
+2. Acquire only the selected column chunks within the new cap, preserve their hashes and provenance, and stream processing with bounded batches. The sparse in-memory container used for timestamp probes is not a complete source Parquet file and must never be published as one.
+3. Start with a proposed deterministic 10% listener cohort selected by a fixed hash of listener ID, independent of artist choices and future targets. Keep all eligible events for selected listeners throughout all three windows; do not select only listeners who play the requested artists. This reduces retained data and compute, **not the column-download requirement**, because listener IDs are mixed within compressed chunks. Freeze the cohort rule before support/model comparisons; any change is a new dataset version with the original failure recorded.
+4. Normalize valid IDs and UTC timestamps, count and quarantine missing/malformed IDs, and deduplicate the explicit listener/recording/listen-time key. Report submission delays, timestamp anomalies, mapping limitations, prolific listeners, sampling effects, and all exclusions. Catalog names in submitted events are not automatically independently verified MusicBrainz names; reconcile eligible recording IDs against permitted core metadata and expose unresolved metadata honestly.
+5. Measure train-only item support and qualifying neighbors against the agreed panel, and holdout query/seed counts against the original gates. Freeze splits only after the audit passes. Clarify retrospective reconstruction versus submission-time availability before calling the result a temporal deployment evaluation. No model scores will decide the split dates or panel membership.
+
+The 10% cohort, 20 GiB working-space allowance, and computational practicality remain proposals. Peak memory, full preprocessing runtime, item-neighbor computation, and model quality have not been measured. If support gates fail, report the failure and propose a revision; do not lower thresholds or substitute tracks silently.
+
+**Current result: the event-source existence and bounded-access checks pass for the inspected files. Stage 6 overall remains incomplete.** Full-interval acquisition exceeds the current transfer authorization, and the track panel is still proposed. Stage 7 remains closed.

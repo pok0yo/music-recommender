@@ -1,0 +1,110 @@
+{
+  "rows": 508234,
+  "valid_recording_id_rows": 376793,
+  "missing_recording_id_rows": 131439,
+  "malformed_recording_id_rows": 2,
+  "duplicate_mapped_user_recording_timestamp_rows": 17015,
+  "nonpositive_listener_id_rows": 0,
+  "created_before_listened_rows": 6354,
+  "created_over_one_day_after_listened_rows": 0,
+  "distinct_listeners": 18788,
+  "distinct_mapped_recordings": 175094,
+  "artist_presence": [
+    {
+      "name": "nate sib",
+      "mbid": "1ff7da2a-885f-4f66-b1a2-14d93bf590d0",
+      "source_url": "https://musicbrainz.org/artist/1ff7da2a-885f-4f66-b1a2-14d93bf590d0",
+      "event_rows": 31,
+      "mapped_event_rows": 31,
+      "distinct_listeners": 10,
+      "distinct_mapped_recordings": 15
+    },
+    {
+      "name": "Tiffany Day",
+      "mbid": "c9e3089c-a7bc-4df5-80f9-9161eaa74a02",
+      "source_url": "https://musicbrainz.org/artist/c9e3089c-a7bc-4df5-80f9-9161eaa74a02",
+      "event_rows": 185,
+      "mapped_event_rows": 184,
+      "distinct_listeners": 58,
+      "distinct_mapped_recordings": 36
+    },
+    {
+      "name": "che",
+      "mbid": "0a68f3b5-79c2-4f81-a7bc-ebc977602e86",
+      "source_url": "https://musicbrainz.org/artist/0a68f3b5-79c2-4f81-a7bc-ebc977602e86",
+      "event_rows": 121,
+      "mapped_event_rows": 121,
+      "distinct_listeners": 28,
+      "distinct_mapped_recordings": 51
+    },
+    {
+      "name": "2hollis",
+      "mbid": "8bd5a8fb-4c25-401d-a597-2c24affdd5c5",
+      "source_url": "https://musicbrainz.org/artist/8bd5a8fb-4c25-401d-a597-2c24affdd5c5",
+      "event_rows": 55,
+      "mapped_event_rows": 55,
+      "distinct_listeners": 33,
+      "distinct_mapped_recordings": 25
+    },
+    {
+      "name": "Lucy Bedroque",
+      "mbid": "bb7959ac-84cc-45c4-8138-d80ee5f2bd9a",
+      "source_url": "https://musicbrainz.org/artist/bb7959ac-84cc-45c4-8138-d80ee5f2bd9a",
+      "event_rows": 224,
+      "mapped_event_rows": 224,
+      "distinct_listeners": 50,
+      "distinct_mapped_recordings": 43
+    },
+    {
+      "name": "beabadoobee",
+      "mbid": "88d17133-abbc-42db-9526-4e2c1db60336",
+      "source_url": "https://musicbrainz.org/artist/88d17133-abbc-42db-9526-4e2c1db60336",
+      "event_rows": 190,
+      "mapped_event_rows": 189,
+      "distinct_listeners": 85,
+      "distinct_mapped_recordings": 53
+    },
+    {
+      "name": "Daniel Caesar",
+      "mbid": "b46e298d-d3a5-4695-a03e-63e8c523b23e",
+      "source_url": "https://musicbrainz.org/artist/b46e298d-d3a5-4695-a03e-63e8c523b23e",
+      "event_rows": 130,
+      "mapped_event_rows": 129,
+      "distinct_listeners": 59,
+      "distinct_mapped_recordings": 45
+    },
+    {
+      "name": "Steve Lacy",
+      "mbid": "b29020d6-5dbf-4c99-b16f-c009f8a712ff",
+      "source_url": "https://musicbrainz.org/artist/b29020d6-5dbf-4c99-b16f-c009f8a712ff",
+      "event_rows": 263,
+      "mapped_event_rows": 263,
+      "distinct_listeners": 99,
+      "distinct_mapped_recordings": 36
+    },
+    {
+      "name": "Bruno Mars",
+      "mbid": "afb680f2-b6eb-4cd7-a70b-a63b25c763d5",
+      "source_url": "https://musicbrainz.org/artist/afb680f2-b6eb-4cd7-a70b-a63b25c763d5",
+      "event_rows": 380,
+      "mapped_event_rows": 374,
+      "distinct_listeners": 185,
+      "distinct_mapped_recordings": 54
+    },
+    {
+      "name": "GIV\u0112ON",
+      "mbid": "ad322b8b-31b2-437d-8fd8-1af13c1d7b91",
+      "source_url": "https://musicbrainz.org/artist/ad322b8b-31b2-437d-8fd8-1af13c1d7b91",
+      "event_rows": 35,
+      "mapped_event_rows": 35,
+      "distinct_listeners": 21,
+      "distinct_mapped_recordings": 25
+    }
+  ],
+  "artist_match_method": "Exact membership in source artist_credit_mbids; names are not identity matches",
+  "training_approved": false,
+  "coverage_gate_measured": false,
+  "limitation": "One deliberately selected chronological file, not a random listener sample or a training interval. Presence does not establish track support, neighbors, or quality.",
+  "input_sha256": "369a38579f6de8cc9cac6ca6e3ef4b96e81734e867e4b621874698141f53ca78",
+  "input_file": "1509.parquet"
+}

@@ -1,0 +1,133 @@
+{
+  "status": "proposed tracks; user supplied artists; recording versions not yet resolved",
+  "recent_releases_required": false,
+  "selection": "Four proposed titles per requested artist, chosen before inspecting pilot artist support. No claim that these are the user's favorite tracks or the artists' most popular tracks.",
+  "artists": [
+    {
+      "name": "nate sib",
+      "mbid": "1ff7da2a-885f-4f66-b1a2-14d93bf590d0",
+      "tracks": [
+        "typical",
+        "go",
+        "secret",
+        "only1"
+      ],
+      "artist_source": "https://musicbrainz.org/artist/1ff7da2a-885f-4f66-b1a2-14d93bf590d0"
+    },
+    {
+      "name": "Tiffany Day",
+      "mbid": "c9e3089c-a7bc-4df5-80f9-9161eaa74a02",
+      "tracks": [
+        "CLOUDS",
+        "SAN FRANCISCO SIDEWALK",
+        "HELLA BOY CRAZY",
+        "KANSAS"
+      ],
+      "artist_source": "https://musicbrainz.org/artist/c9e3089c-a7bc-4df5-80f9-9161eaa74a02"
+    },
+    {
+      "name": "che",
+      "mbid": "0a68f3b5-79c2-4f81-a7bc-ebc977602e86",
+      "identity_note": "Assumed Atlanta rapper, not other artists named Che.",
+      "tracks": [
+        "Miley Cyrus",
+        "Pizza Time",
+        "Bae",
+        "blac chyna"
+      ],
+      "artist_source": "https://musicbrainz.org/artist/0a68f3b5-79c2-4f81-a7bc-ebc977602e86"
+    },
+    {
+      "name": "2hollis",
+      "mbid": "8bd5a8fb-4c25-401d-a597-2c24affdd5c5",
+      "tracks": [
+        "crush",
+        "jeans",
+        "gold",
+        "lie"
+      ],
+      "artist_source": "https://musicbrainz.org/artist/8bd5a8fb-4c25-401d-a597-2c24affdd5c5"
+    },
+    {
+      "name": "Lucy Bedroque",
+      "mbid": "bb7959ac-84cc-45c4-8138-d80ee5f2bd9a",
+      "aliases": [
+        "lostrushi",
+        "lucybedroque"
+      ],
+      "tracks": [
+        "AQUAFINA",
+        "Mi Amor",
+        "No Lie",
+        "GIRLS!!!"
+      ],
+      "artist_source": "https://musicbrainz.org/artist/bb7959ac-84cc-45c4-8138-d80ee5f2bd9a"
+    },
+    {
+      "name": "beabadoobee",
+      "mbid": "88d17133-abbc-42db-9526-4e2c1db60336",
+      "tracks": [
+        "Coffee",
+        "She Plays Bass",
+        "Glue Song",
+        "the way things go"
+      ],
+      "artist_source": "https://musicbrainz.org/artist/88d17133-abbc-42db-9526-4e2c1db60336"
+    },
+    {
+      "name": "Daniel Caesar",
+      "mbid": "b46e298d-d3a5-4695-a03e-63e8c523b23e",
+      "tracks": [
+        "Get You",
+        "Best Part",
+        "Japanese Denim",
+        "Always"
+      ],
+      "artist_source": "https://musicbrainz.org/artist/b46e298d-d3a5-4695-a03e-63e8c523b23e"
+    },
+    {
+      "name": "Steve Lacy",
+      "mbid": "b29020d6-5dbf-4c99-b16f-c009f8a712ff",
+      "identity_note": "Singer/guitarist born 1998, not the jazz saxophonist.",
+      "tracks": [
+        "Dark Red",
+        "Bad Habit",
+        "N Side",
+        "Some"
+      ],
+      "artist_source": "https://musicbrainz.org/artist/b29020d6-5dbf-4c99-b16f-c009f8a712ff"
+    },
+    {
+      "name": "Bruno Mars",
+      "mbid": "afb680f2-b6eb-4cd7-a70b-a63b25c763d5",
+      "tracks": [
+        "Just the Way You Are",
+        "Locked Out of Heaven",
+        "Treasure",
+        "That's What I Like"
+      ],
+      "artist_source": "https://musicbrainz.org/artist/afb680f2-b6eb-4cd7-a70b-a63b25c763d5"
+    },
+    {
+      "name": "GIVĒON",
+      "mbid": "ad322b8b-31b2-437d-8fd8-1af13c1d7b91",
+      "aliases": [
+        "Giveon"
+      ],
+      "tracks": [
+        "Heartbreak Anniversary",
+        "Like I Want You",
+        "For Tonight",
+        "Garden Kisses"
+      ],
+      "artist_source": "https://musicbrainz.org/artist/ad322b8b-31b2-437d-8fd8-1af13c1d7b91"
+    }
+  ],
+  "title_sources": {
+    "nate sib": "https://musicbrainz.org/release/494076d8-ec42-4399-8d73-f8f19084764c",
+    "2hollis": "https://musicbrainz.org/artist-credit/3640045/recording",
+    "Daniel Caesar": "https://musicbrainz.org/artist/b46e298d-d3a5-4695-a03e-63e8c523b23e/recordings",
+    "Steve Lacy": "https://musicbrainz.org/artist/b29020d6-5dbf-4c99-b16f-c009f8a712ff?all=1",
+    "others": "Artist overview discographies linked on each artist entry; consulted 2026-10-17. Title presence is not recording-version disambiguation."
+  }
+}

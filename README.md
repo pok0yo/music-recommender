@@ -11,7 +11,7 @@ Dataset auditing has begun. Application and model implementation have not begun.
 - Stage 3: recommendation methodology and evaluation protocol proposed.
 - Stage 4: UX architecture and five distinct visual directions documented as proposals.
 - Stage 5: implementation plan, contracts, acceptance gates, and milestones documented.
-- Stage 6: in progress. The published metadata sample fails the listening-event gate; replacement acquisition and the user's coverage panel remain pending.
+- Stage 6: in progress. Real Spark listening events have been inspected; all ten requested artists appear in a short pilot. A longer acquisition, agreed track panel, preprocessing, and temporal split gates remain pending.
 - Stage 7: model implementation remains gated on a successful Stage 6 audit.
 
 See the [Stage 4 UX and design plan](docs/stage-4-design-plan.md) for the journey, interface states, five design systems, exact hero reservations, and future verification criteria. No final visual direction has been selected or implemented.
@@ -20,7 +20,7 @@ See the [Stage 5 implementation plan](docs/stage-5-implementation-plan.md) for a
 
 See the [Stage 6 data audit](docs/stage-6-data-audit.md) for the checksum-verified sample findings, resource observations, reproducible audit commands, and unresolved data gate.
 
-The target is a 6–8-week individual portfolio project, subject to data feasibility and available development time. A metadata sample has been downloaded and audited. No training-ready listening dataset, trained model, or measured recommendation result exists yet.
+The target is a 6–8-week individual portfolio project, subject to data feasibility and available development time. A metadata sample and bounded listening-event pilot have been audited. No training-ready listening dataset, trained model, or measured recommendation result exists yet.
 
 ## Proposed MVP
 
@@ -30,7 +30,7 @@ The target is a 6–8-week individual portfolio project, subject to data feasibi
 - Select a result as the next seed, without creating an account.
 - Support responsive layouts, keyboard navigation, reduced motion, and clear loading, empty, and error states.
 
-Established mainstream music is the immediate priority. Comprehensive recent-release coverage remains unresolved. Outbound listening links remain provisional pending final MVP approval.
+The user's ten requested artists define the coverage target; very recent releases are not essential. A [40-title panel](docs/coverage-panel.json) is proposed for agreement and recording-version resolution. Outbound listening links remain provisional pending final MVP approval.
 
 ## Recommendation and evaluation proposal
 
@@ -46,7 +46,7 @@ Dataset coverage, identity matching, timestamps, sparsity, and processing requir
 
 ## Preferred stack
 
-Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Python, pandas, NumPy, scikit-learn, FastAPI, Pydantic, and Supabase PostgreSQL. Authentication is deferred. Dependencies have not been installed.
+Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Python, pandas, NumPy, scikit-learn, FastAPI, Pydantic, and Supabase PostgreSQL. Authentication is deferred. Only the audit dependency, PyArrow 26.0.0, has been installed in an ignored local Python environment; the application and model stack remains uninstalled.
 
 ## Design direction
 
