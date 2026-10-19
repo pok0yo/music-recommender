@@ -6,6 +6,8 @@ A planned music discovery application that recommends recognizable tracks from a
 
 The Stage 6 audit is complete for the first listener cohort. **Its coverage gate failed: 26 of 40 approved tracks are supported; 32 are required.** Application and model implementation have not begun.
 
+A separately versioned Stage 6 revision is now being processed: two independently verified recording redirects and a fixed 30% listener cohort reconstructed from existing cached ranges, with no new event download. The original failure, approved panel, and acceptance thresholds remain preserved. See the [revision protocol](docs/stage-6-protocol-v2.json); expanded-cohort results are pending.
+
 - Stage 1: product scope and constraints documented.
 - Stage 2: data-source documentation reviewed; dataset feasibility remains unverified.
 - Stage 3: recommendation methodology and evaluation protocol proposed.

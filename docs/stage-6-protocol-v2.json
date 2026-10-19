@@ -1,0 +1,61 @@
+{
+  "approved_panel_sha256": "20281d8e6461a83bd774ab4f9026f7bc53dbf2c2d1ab28a66c00ef63742e4c04",
+  "cohort": {
+    "nested_parent": "cohort-v1; identical seed and interval; includes original bucket 0 plus buckets 1 and 2",
+    "rule": "SHA256 of seed + ':' + positive decimal listener ID; first 8 bytes unsigned big-endian modulo 10 less than 3",
+    "scope": "Keep all retained listeners' valid events within the entire interval; no per-listener truncation",
+    "seed": "music-recommender-stage6-v1"
+  },
+  "identity_lookup_sha256": "d00bc2f77f6474ae1a1ed5e69e50c993fd8a0ce360e6281911c083fbaae3de37",
+  "parent_failed_decision_sha256": "ca9587f89cdd206c9f9467580648a2d33c7b13344f72fc7cf64fd8df974a204b",
+  "parent_protocol_sha256": "2ab97b29463c747bc10430027741a7fa5824ad31cfb06e3efae7120d6a0a39a8",
+  "queries": {
+    "denominators": "Report all active listeners, constructed queries, listeners without an early seed, unsupported seeds, zero targets, all-out-of-catalog targets, target-pair catalog coverage, scorable count/share and distinct scorable seeds",
+    "gate_per_window": "At least 500 scorable queries and 100 distinct scorable seeds",
+    "ranking_universe": "Every item in the same fixed training catalog except the seed; no sampled negatives or history-based candidate removal",
+    "scorable": "Seed is in the fixed train candidate catalog and at least one target is in that catalog",
+    "seed": "First valid event at window start <= t < window start + 21 days; equal-time ties choose lexicographically smallest recording MBID, independent of support or future targets",
+    "targets": "Distinct other recordings with seed time < t < seed time + 7 days and t < window end; equal-time and exactly-seven-day events are excluded",
+    "unit": "One query per listener per holdout window",
+    "unsupported": "Do not replace unsupported first seeds with later supported seeds"
+  },
+  "recording_identity": "Normalize MBIDs, then apply only the two verified MusicBrainz redirects before deduplication and split/query construction. All other IDs remain distinct; the original 38 panel selections and two unresolved titles remain unchanged.",
+  "recording_redirects": {
+    "2c03feb2-af77-483f-982e-8d82d3ffd03f": "4658bb93-57c4-4710-86f1-b87869f5781b",
+    "d7b68421-b496-49c7-a898-92df7fde5f48": "49233c96-b2dc-47e3-99f1-b09fcbb179b4"
+  },
+  "resource_plan": {
+    "additional_transfer_cap_bytes": 17179869184,
+    "estimated_total_retained_GiB": 26,
+    "event_acquisition": "Offline cache only; missing range stops before reservation or network access",
+    "free_disk_bytes_before_processing": 110668128256,
+    "reserved_bytes_before_processing": 13465108118,
+    "retained_storage_note": "The prior 20 GiB figure was a planning target, not a user cap. Preserve original artifacts. Record actual retained storage and peak process memory; no paid compute.",
+    "sqlite_cache_limit_bytes": 1073741824
+  },
+  "revision_reason": "Original cohort failed 26/40. Verified redirects alone yield only 28/40 IDs meeting the five-listener minimum, so full coverage cannot pass 32/40. Fix a 30% listener cohort before expanded support measurements; no model results have been inspected.",
+  "stage_7_boundary": "Stage 6 reports data support and query feasibility only. No ranking quality, shrinkage choice or measured improvement is produced. Tune only on validation after data acceptance; keep test for the frozen final model comparison.",
+  "status": "Fixed before expanded-cohort support measurement; acceptance still depends on unchanged Stage 6 gates",
+  "task": "Retrospective listen-time reconstruction using the pinned dump and current recording metadata; not an as-of deployment replay",
+  "training": {
+    "binary_pairs": "Unique listener-recording pairs from train only",
+    "candidate_catalog": "Recordings with at least 5 distinct training listeners",
+    "panel_gate": "At least 32 of the unchanged 40 titles resolve to a candidate with at least 3 qualifying neighbors. Unresolved entries remain in the denominator. Report ability to return 10 separately.",
+    "qualifying_neighbor": "A different candidate recording with at least 3 shared distinct training listeners"
+  },
+  "version": "cohort-v2",
+  "windows_utc_start_inclusive_end_exclusive": {
+    "test": [
+      "2026-08-29T00:00:00Z",
+      "2026-09-26T00:00:00Z"
+    ],
+    "train": [
+      "2026-02-01T00:00:00Z",
+      "2026-08-01T00:00:00Z"
+    ],
+    "validation": [
+      "2026-08-01T00:00:00Z",
+      "2026-08-29T00:00:00Z"
+    ]
+  }
+}

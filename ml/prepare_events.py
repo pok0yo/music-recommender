@@ -15,6 +15,7 @@ from ml.acquire_events import COHORT, START, END
 from ml.audit_events import MBID
 from ml.inspect_spark import save, peak_process_bytes
 from ml.probe_spark import URL, ETAG
+from ml.reconcile_panel import redirects
 
 DAY = 86400 * 10**9
 TRAIN_END = 1785542400000000000  # 2026-08-01 UTC.
@@ -25,11 +26,15 @@ EVENT_COLUMNS = ["user_id", "recording_mbid", "listened_at", "created"]
 
 
 class Cleaner:
-    def __init__(self):
+    def __init__(self, recording_redirects=None):
         self.counts = Counter()
         self.previous_time = None
         self.border_time = None
         self.border_keys = set()
+        self.recording_redirects = recording_redirects or {}
+        if (not all(MBID.fullmatch(a) and MBID.fullmatch(b) for a,b in self.recording_redirects.items())
+                or set(self.recording_redirects) & set(self.recording_redirects.values())):
+            raise ValueError("Redirects must map valid IDs directly to final IDs")
 
     def clean(self, table):
         self.counts["input_rows"] += len(table)
@@ -61,6 +66,11 @@ class Cleaner:
         table = table.filter(positive)
         ids = pc.utf8_lower(pc.utf8_trim_whitespace(table["recording_mbid"]))
         self.counts["normalized_id_rows"] += pc.sum(pc.not_equal(ids,table["recording_mbid"])).as_py() or 0
+        if self.recording_redirects:
+            positions=pc.index_in(ids,value_set=pa.array(list(self.recording_redirects)))
+            mapped=pc.coalesce(pc.take(pa.array(list(self.recording_redirects.values())),positions),ids)
+            self.counts["redirected_recording_rows"] += pc.sum(pc.not_equal(ids,mapped)).as_py() or 0
+            ids=mapped
         self.counts["excluded_missing_recording"] += ids.null_count
         valid = pc.fill_null(pc.match_substring_regex(ids, "^"+MBID.pattern+"$"), False)
         self.counts["excluded_malformed_recording"] += len(table)-ids.null_count-(pc.sum(valid).as_py() or 0)
@@ -105,26 +115,35 @@ def main():
     started=time.monotonic()
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output",type=Path,default=Path("data/processed/cohort-v1"))
+    parser.add_argument("--input",type=Path,default=Path("data/interim/cohort-v1"))
+    parser.add_argument("--identity-lookups",type=Path)
     args=parser.parse_args()
-    root=Path("data/interim/cohort-v1")
+    root=args.input
     source=root/"acquisition.json"
     acquired=json.loads(source.read_text())
     if (not acquired["complete"] or len(acquired["files"]) != 149 or
             (acquired["source_url"],acquired["etag"],acquired["cohort_rule"],acquired["start_ns"],acquired["end_ns"]) !=
             (URL,ETAG,COHORT,START,END)):
         raise ValueError("Acquisition incomplete or provenance differs; no partial-data splits")
+    buckets=acquired.get("cohort_buckets",1)
+    if buckets not in (1,3):
+        raise ValueError("Unrecognized cohort configuration")
+    mapping=redirects(json.loads(args.identity_lookups.read_text(encoding="utf-8"))) if args.identity_lookups else {}
     temporary=args.output.with_name(args.output.name+".building")
     if args.output.exists() or temporary.exists():
         raise FileExistsError("Preserving existing output/partial run; choose a new output path")
     for name in SPLITS:
         (temporary/name).mkdir(parents=True,exist_ok=False)
-    cleaner=Cleaner()
+    cleaner=Cleaner(mapping)
     report=dict(source_manifest_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
                 source_url=URL,etag=ETAG,cohort_rule=COHORT,complete=False,
                 task="Retrospective reconstruction by listen time, not an as-of deployment replay",
                 duplicate_policy="First source row for (listener, normalized recording MBID, listen time)",
                 split_bounds_ns=SPLITS,counts={},splits={name:{"rows":0,"created_at_or_after_split_end":0} for name in SPLITS},
                 files={},training_approved=False)
+    report["cohort_buckets"]=buckets
+    report["recording_redirects"]=mapping
+    report["identity_lookup_sha256"]=hashlib.sha256(args.identity_lookups.read_bytes()).hexdigest() if args.identity_lookups else None
     for name,item in sorted(acquired["files"].items(),key=lambda pair:int(Path(pair[0]).stem)):
         source_file=root/name
         with source_file.open("rb") as stream:

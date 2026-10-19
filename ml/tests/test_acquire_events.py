@@ -24,6 +24,30 @@ class Response(io.BytesIO):
 
 
 class AcquisitionTests(unittest.TestCase):
+    def test_offline_cache_never_reserves_or_requests_missing_ranges(self):
+        with tempfile.TemporaryDirectory() as directory:
+            cache=acquire.Cache(Path(directory),probe.RangeReader(),offline=True)
+            with patch.object(probe,"urlopen") as request:
+                with self.assertRaises(ValueError):
+                    cache.fetch(0,3)
+                with self.assertRaises(ValueError):
+                    cache.prefetch([(0,3)])
+                request.assert_not_called()
+            self.assertEqual(cache.summary()["reserved_bytes"],0)
+            cache.store(0,b"abc")
+            self.assertEqual(cache.fetch(0,3),b"abc")
+            cache.close()
+
+    def test_expanded_cohort_is_nested_and_invalid_size_rejected(self):
+        old={u for u in range(1,1001) if acquire.cohort_user(u)}
+        expanded={u for u in range(1,1001) if acquire.cohort_user(u,3)}
+        self.assertLess(old,expanded)
+        self.assertEqual([u for u in range(1,26) if acquire.cohort_user(u)],[3,15,21])
+        self.assertEqual([u for u in range(1,26) if acquire.cohort_user(u,3)],
+                         [2,3,5,8,12,14,15,17,18,21])
+        with self.assertRaises(ValueError):
+            acquire.cohort_user(1,10)
+
     def test_budget_persists_before_failed_io_and_cap_cannot_reset(self):
         with tempfile.TemporaryDirectory() as directory, patch.object(acquire, "CAP", acquire.OVERHEAD+3):
             root = Path(directory)

@@ -506,3 +506,28 @@ Training-index construction alone took 967.047 seconds. These observations inclu
 | Dataset accepted / Stage 7 ready | **No — revise identity/data strategy first** |
 
 Stage 6's audit work is complete for cohort-v1; its result is a documented rejection for the promised coverage, not a successful data gate. No ranking accuracy, measured improvement, playback availability, or product readiness is asserted. The unaccepted snapshot is reproducible evidence for deciding the next revision.
+
+## 13. Identity reconciliation and separately versioned cohort revision
+
+The original failed cohort-v1 decision remains unchanged. On 2026-10-19, 58 authoritative MusicBrainz recording lookups were cached with request URLs and response hashes; the [lookup evidence](evidence/stage-6-identity-lookups.json) contains core identity fields only. Each canonical destination was independently looked up and returned itself. Two redirects were established: `2c03feb2-af77-483f-982e-8d82d3ffd03f` to `4658bb93-57c4-4710-86f1-b87869f5781b` (Just the Way You Are), and `d7b68421-b496-49c7-a898-92df7fde5f48` to `49233c96-b2dc-47e3-99f1-b09fcbb179b4` (Always). Shared ISRC, title, date, or duration did not authorize any other merge. The panel's 38 selected IDs are unchanged; AQUAFINA and Japanese Denim remain unresolved.
+
+A second training-only candidate-discovery scan used the agreed artist-credit MBID and NFKD/case-folded titles with only alphanumeric characters retained. This broader punctuation-insensitive scan found one additional ID for That's What I Like, but the authoritative lookup did not redirect it to the selected ID. [Discovery evidence](evidence/stage-6-identity-discovery-v2.json) is explicitly not acoustic-equivalence proof. The scans only discover candidates for independent metadata review; their listener counts never choose a panel ID.
+
+An [identity-only recount](evidence/stage-6-identity-support-v2.json) unions distinct training listeners over the two verified alias groups in the original index. Only **28/40** selected items then meet the five-listener minimum. This is an upper bound on full supported coverage, not a recomputed neighbor/query audit, and cannot satisfy the unchanged 32/40 gate.
+
+The [cohort-v2 protocol](stage-6-protocol-v2.json) therefore fixes a 30% listener hash cohort before expanded support measurement, retaining the same seed, dates, panel, support thresholds, and query rules. It includes buckets 0, 1, and 2 of the original ten-bucket rule. Both verified redirects apply before deduplication across every split. Current identity metadata and late-submitted events make this a retrospective analysis, not an as-of historical replay. Canonical review covers these 58 IDs, not the entire catalog.
+
+All event extraction must use the existing range cache in offline mode; missing or corrupt ranges stop the run. The original transfer ledger and 16 GiB additional cap are preserved. Estimated total retained storage is about 26 GiB, compared with about 107 GiB free before this revision; this supersedes the earlier proposed 20 GiB storage target, not a user-imposed cap. Actual resource observations and the new gate decision remain pending. SQLite's page cache is bounded at 1 GiB on the verified 16 GiB machine; no dependency or paid service was added.
+
+The complete local suite passes **38 tests**, including fixed hash-cohort vectors, offline failure without network/budget reservation, complete stable redirect validation, canonicalization before boundary deduplication, and repeat-listen preservation. Source, tests, and protocol are committed before expanded-cohort measurement. These are data-processing tests, not model-quality results.
+
+Reproduction commands (run from the repository root; existing completed outputs are preserved):
+
+```powershell
+.venv/Scripts/python.exe -u -m ml.acquire_events --output data/interim/cohort-v2 --cohort-buckets 3 --offline
+.venv/Scripts/python.exe -u -m ml.prepare_events --input data/interim/cohort-v2 --output data/processed/cohort-v2 --identity-lookups docs/evidence/stage-6-identity-lookups.json
+.venv/Scripts/python.exe -u -m ml.prepare_events --input data/interim/cohort-v2 --output data/processed/cohort-v2-repro --identity-lookups docs/evidence/stage-6-identity-lookups.json
+.venv/Scripts/python.exe -u -m ml.audit_support --input data/processed/cohort-v2 --output data/processed/support-v2
+```
+
+The previous failed version is retained for comparison. Passing a larger-cohort feasibility gate, if it happens, is not a measured improvement in recommendation quality. Stage 7 remains closed while this revision is being audited.

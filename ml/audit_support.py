@@ -90,7 +90,8 @@ def training_index(root, manifest, output):
         raise FileExistsError("Preserving incomplete training index; choose a different output directory")
     started=time.monotonic()
     db=sqlite3.connect(path)
-    db.execute("PRAGMA cache_size=-131072")
+    # Bound the cache at 1 GiB to reduce repeated disk reads on the verified 16 GiB machine.
+    db.execute("PRAGMA cache_size=-1048576")
     db.execute("PRAGMA temp_store=FILE")
     rows=0
     try:
@@ -206,8 +207,9 @@ def audit_queries(root,manifest,split,catalog,output):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output",type=Path,default=Path("data/processed/support-v1"))
+    parser.add_argument("--input",type=Path,default=Path("data/processed/cohort-v1"))
     args=parser.parse_args()
-    root=Path("data/processed/cohort-v1")
+    root=args.input
     manifest=json.loads((root/"manifest.json").read_text())
     if not manifest["complete"] or manifest["split_bounds_ns"]!={k:list(v) for k,v in SPLITS.items()}:
         raise ValueError("Cleaned splits incomplete or boundaries differ")
@@ -216,7 +218,7 @@ def main():
     approved=json.loads(Path("docs/coverage-panel.json").read_text())
     expected={(a["mbid"],title) for a in approved["artists"] for title in a["tracks"]}
     actual={(t["artist_mbid"],t["title"]) for t in panel["tracks"]}
-    if len(panel["tracks"])!=40 or actual!=expected or not panel["complete"]:
+    if len(panel["tracks"])!=40 or actual!=expected or not panel["complete"] or not panel.get("resolution_review_complete"):
         raise ValueError("Panel search inventory is incomplete or differs from approved titles")
     args.output.mkdir(parents=True,exist_ok=True)
     started=time.monotonic()

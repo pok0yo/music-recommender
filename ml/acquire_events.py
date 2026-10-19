@@ -1,5 +1,6 @@
 """Resume a pinned seven-column acquisition under a durable 16 GiB allowance."""
 
+import argparse
 import hashlib
 from concurrent.futures import ThreadPoolExecutor
 from http.client import HTTPSConnection, HTTPException
@@ -15,7 +16,7 @@ import pyarrow as pa
 import pyarrow.compute as pc
 import pyarrow.parquet as pq
 
-from ml.inspect_spark import header, save
+from ml.inspect_spark import header, save, peak_process_bytes
 from ml.probe_spark import ETAG, SIZE, URL, RangeReader
 
 CAP = 16 * 1024**3
@@ -42,9 +43,10 @@ def reserve_transfer(db, offset, size):
 
 
 class Cache:
-    def __init__(self, root, reader=None):
+    def __init__(self, root, reader=None, offline=False):
         root.mkdir(parents=True, exist_ok=True)
         self.root = root
+        self.offline = offline
         # A separate OS-backed SQLite lock survives process crashes without stale locks.
         self.lock = sqlite3.connect(root / "process-lock.sqlite", timeout=0)
         try:
@@ -86,6 +88,8 @@ class Cache:
             if len(data) != size or hashlib.sha256(data).hexdigest() != receipt[0]:
                 raise ValueError("Cached range corrupted; preserving evidence and stopping")
             return data
+        if self.offline:
+            raise ValueError("Required range is not cached; offline acquisition cannot download")
         for attempt in range(3):
             self.reader.seek(offset)
             try:
@@ -126,6 +130,8 @@ class Cache:
 
         pending = [(offset,size) for offset,size in ranges if not self.db.execute(
             "SELECT 1 FROM chunks WHERE offset=? AND size=?", (offset,size)).fetchone()]
+        if pending and self.offline:
+            raise ValueError("Required ranges are not cached; offline prefetch cannot download")
         with ThreadPoolExecutor(max_workers=4) as pool:
             for index in range(0,len(pending),4):
                 futures=[]
@@ -196,11 +202,13 @@ def projected_file(cache, member):
     return pq.ParquetFile(pa.BufferReader(buffer))
 
 
-def cohort_user(user):
-    return int.from_bytes(hashlib.sha256(f"{COHORT}:{user}".encode()).digest()[:8], "big") % 10 == 0
+def cohort_user(user, buckets=1):
+    if buckets not in (1,3):
+        raise ValueError("Only the recorded 10% and 30% cohorts are supported")
+    return int.from_bytes(hashlib.sha256(f"{COHORT}:{user}".encode()).digest()[:8], "big") % 10 < buckets
 
 
-def extract(file, output):
+def extract(file, output, buckets=1):
     part = output.with_suffix(".part")
     schema = file.schema_arrow.remove_metadata()
     schema = pa.schema([schema.field(name) for name in COLUMNS])
@@ -221,7 +229,7 @@ def extract(file, output):
             result["source_rows"] += len(table)
             table = table.filter(pc.and_(pc.greater_equal(dates, START), pc.less(dates, END)))
             result["interval_rows"] += len(table)
-            users = [u for u in pc.unique(table["user_id"]).to_pylist() if u > 0 and cohort_user(u)]
+            users = [u for u in pc.unique(table["user_id"]).to_pylist() if u > 0 and cohort_user(u,buckets)]
             table = table.filter(pc.is_in(table["user_id"], value_set=pa.array(users,type=pa.int64())))
             result["cohort_rows"] += len(table)
             writer.write_table(table)
@@ -231,6 +239,12 @@ def extract(file, output):
 
 
 def main():
+    started=time.monotonic()
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output",type=Path,default=Path("data/interim/cohort-v1"))
+    parser.add_argument("--cohort-buckets",type=int,choices=(1,3),default=1)
+    parser.add_argument("--offline",action="store_true")
+    args=parser.parse_args()
     evidence = json.loads(Path("docs/evidence/stage-6-spark-acquisition.json").read_text())
     if (evidence["source_url"], evidence["etag"]) != (URL, ETAG):
         raise ValueError("Inventory provenance differs")
@@ -238,16 +252,19 @@ def main():
                       if 1349 <= int(Path(m["path"]).stem) <= 1497), key=lambda m:m["offset"])
     if len(members) != 149:
         raise ValueError("Incomplete acquisition inventory")
-    output = Path("data/interim/cohort-v1")
+    output = args.output
     output.mkdir(parents=True, exist_ok=True)
     report_path = output / "acquisition.json"
     report = json.loads(report_path.read_text()) if report_path.exists() else dict(
-        source_url=URL, etag=ETAG, cohort_rule=COHORT, cohort_fraction="hash64 modulo 10 = 0",
+        source_url=URL, etag=ETAG, cohort_rule=COHORT, cohort_buckets=args.cohort_buckets,
+        cohort_fraction=f"hash64 modulo 10 < {args.cohort_buckets}",
         start_ns=START, end_ns=END, files={}, complete=False, full_source_checksum_verified=False)
     if (report["source_url"], report["etag"], report["cohort_rule"], report["start_ns"], report["end_ns"]) != (URL, ETAG, COHORT, START, END):
         raise ValueError("Checkpoint configuration differs")
+    if report.get("cohort_buckets",1) != args.cohort_buckets:
+        raise ValueError("Cannot resume a different cohort into existing output")
     report["complete"] = False
-    cache = Cache(ROOT)
+    cache = Cache(ROOT,offline=args.offline)
     try:
         previous = None
         for member in members:
@@ -261,7 +278,7 @@ def main():
                 if shutil.disk_usage(output).free < 4*1024**3:
                     raise ValueError("Less than 4 GiB free; preserve progress and stop")
                 file = projected_file(cache, member)
-                item = extract(file, path)
+                item = extract(file, path,args.cohort_buckets)
                 file.close()
                 report["files"][name] = item
             if previous is not None and item["min_ns"] < previous:
@@ -272,6 +289,8 @@ def main():
             print(json.dumps(dict(member=name, completed=len(report["files"]),
                                   cohort_rows=item["cohort_rows"], **cache.summary())), flush=True)
         report["complete"] = True
+        report["seconds_this_run"]=round(time.monotonic()-started,3)
+        report["peak_process_memory_bytes"]=peak_process_bytes()
     finally:
         report["budget"] = cache.summary()
         save(report_path, report)

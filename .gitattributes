@@ -9,3 +9,7 @@ docs/evidence/stage-6-identity-diagnostic.json -text
 docs/evidence/stage-6-reproducibility.json -text
 docs/evidence/stage-6-resources.json -text
 docs/evidence/stage-6-support-audit.json -text
+docs/stage-6-protocol-v2.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/evidence/stage-6-identity-discovery-v2.json -text
+docs/evidence/stage-6-identity-lookups.json -text
+docs/evidence/stage-6-identity-support-v2.json -text

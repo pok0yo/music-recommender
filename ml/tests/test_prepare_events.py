@@ -17,6 +17,20 @@ def events(rows):
 
 
 class PreparationTests(unittest.TestCase):
+    def test_redirects_precede_deduplication_and_preserve_repeat_listens(self):
+        cleaner=Cleaner({B:A})
+        first=cleaner.clean(events([(1,B,START,START+3),(1,A,START,START+4)]))
+        self.assertEqual(first["recording_mbid"].to_pylist(),[A])
+        self.assertEqual(first["created"].cast(pa.int64()).to_pylist(),[START+3])
+        second=cleaner.clean(events([(1,B,START,START+5),(1,B,START+1,START+1),
+                                     (2,B,TRAIN_END,TRAIN_END)]))
+        self.assertEqual(second["recording_mbid"].to_pylist(),[A,A])
+        self.assertEqual(cleaner.counts["excluded_duplicate"],2)
+        self.assertEqual(cleaner.counts["redirected_recording_rows"],4)
+        self.assertEqual(len(partition(second)["validation"]),1)
+        with self.assertRaises(ValueError):
+            Cleaner({A:B,B:A})
+
     def test_canonical_ids_exclusions_and_duplicate_crossing_empty_batch(self):
         cleaner=Cleaner()
         first=cleaner.clean(events([(1,A,START-1,START), (0,A,START,START),

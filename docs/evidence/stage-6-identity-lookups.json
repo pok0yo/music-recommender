@@ -1,0 +1,1056 @@
+{
+  "complete": true,
+  "diagnostic_sha256": "10e951bb6b0c64bc47eb24a9c403948523da83731504246515c6a88faf733162",
+  "inventory_count": 58,
+  "lookups": [
+    {
+      "artist_mbids": [
+        "88d17133-abbc-42db-9526-4e2c1db60336"
+      ],
+      "canonical_mbid": "0e011401-8380-48f3-b4bf-ad89e5e8e6ae",
+      "disambiguation": "",
+      "first-release-date": "2023-07-18",
+      "isrcs": [
+        "GBK3W2302683"
+      ],
+      "length": 188000,
+      "redirected": false,
+      "requested_mbid": "0e011401-8380-48f3-b4bf-ad89e5e8e6ae",
+      "response_sha256": "f50a6d5d61b32027de71d7c78091b3243a9494e88a46552943111d4a395f2266",
+      "title": "the way things go",
+      "url": "https://musicbrainz.org/ws/2/recording/0e011401-8380-48f3-b4bf-ad89e5e8e6ae?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "ad322b8b-31b2-437d-8fd8-1af13c1d7b91"
+      ],
+      "canonical_mbid": "14594d66-64fe-4519-bcff-5f70ec5e1fa9",
+      "disambiguation": "clean",
+      "first-release-date": "2020-03-27",
+      "isrcs": [
+        "USSM12001704"
+      ],
+      "length": 198371,
+      "redirected": false,
+      "requested_mbid": "14594d66-64fe-4519-bcff-5f70ec5e1fa9",
+      "response_sha256": "07d34a1a6cb55a6f7fb9afa66e0e26be368e2e0e5fa494344738c35a0aff3f15",
+      "title": "Heartbreak Anniversary",
+      "url": "https://musicbrainz.org/ws/2/recording/14594d66-64fe-4519-bcff-5f70ec5e1fa9?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "c9e3089c-a7bc-4df5-80f9-9161eaa74a02"
+      ],
+      "canonical_mbid": "15db4b6a-7205-4960-9f0c-d1a34d147afe",
+      "disambiguation": "",
+      "first-release-date": "2021-12-03",
+      "isrcs": [
+        "QM3DF2174213"
+      ],
+      "length": 178727,
+      "redirected": false,
+      "requested_mbid": "15db4b6a-7205-4960-9f0c-d1a34d147afe",
+      "response_sha256": "aabda595590f71c0f55efb6ac327d8eb8daa6d1c13d59f7dae479d5a2732b288",
+      "title": "CLOUDS",
+      "url": "https://musicbrainz.org/ws/2/recording/15db4b6a-7205-4960-9f0c-d1a34d147afe?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "0a68f3b5-79c2-4f81-a7bc-ebc977602e86"
+      ],
+      "canonical_mbid": "1a3b3c0e-5bee-43f9-8696-56e6d9c22b00",
+      "disambiguation": "",
+      "first-release-date": "2023-07-21",
+      "isrcs": [
+        "QZFZ42313410"
+      ],
+      "length": 125000,
+      "redirected": false,
+      "requested_mbid": "1a3b3c0e-5bee-43f9-8696-56e6d9c22b00",
+      "response_sha256": "c720e4ac0a85c0844940d2fbc48030a1448f576b96f6e5285a5fac24bf75c427",
+      "title": "blac chyna",
+      "url": "https://musicbrainz.org/ws/2/recording/1a3b3c0e-5bee-43f9-8696-56e6d9c22b00?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b29020d6-5dbf-4c99-b16f-c009f8a712ff"
+      ],
+      "canonical_mbid": "1abdf128-2f80-457c-8da0-e554e8e3b534",
+      "disambiguation": "explicit",
+      "first-release-date": "2022-06-29",
+      "isrcs": [
+        "USRC12201440",
+        "USRC12202615"
+      ],
+      "length": 232114,
+      "redirected": false,
+      "requested_mbid": "1abdf128-2f80-457c-8da0-e554e8e3b534",
+      "response_sha256": "f9319e87087dc9610c68cc84cd995ae41b71bf973d452f62c631f975073656a6",
+      "title": "Bad Habit",
+      "url": "https://musicbrainz.org/ws/2/recording/1abdf128-2f80-457c-8da0-e554e8e3b534?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "8bd5a8fb-4c25-401d-a597-2c24affdd5c5"
+      ],
+      "canonical_mbid": "1eb60aa4-9610-4296-87c5-ba050f64655c",
+      "disambiguation": "",
+      "first-release-date": "2024-10-04",
+      "isrcs": [
+        "USUG12406645"
+      ],
+      "length": 126988,
+      "redirected": false,
+      "requested_mbid": "1eb60aa4-9610-4296-87c5-ba050f64655c",
+      "response_sha256": "14adc10792db2be747e7c07d63f9340c905c27f309d8b5c610ee771356d3beef",
+      "title": "gold",
+      "url": "https://musicbrainz.org/ws/2/recording/1eb60aa4-9610-4296-87c5-ba050f64655c?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "88d17133-abbc-42db-9526-4e2c1db60336"
+      ],
+      "canonical_mbid": "297dd100-3148-49f7-841d-c44ce59f34bd",
+      "disambiguation": "",
+      "first-release-date": "2019-08-20",
+      "isrcs": [
+        "GBK3W1901098"
+      ],
+      "length": 207106,
+      "redirected": false,
+      "requested_mbid": "297dd100-3148-49f7-841d-c44ce59f34bd",
+      "response_sha256": "f4c2c99652b9338c90af478733251fc7daf10c9f6bf4c6224fdfe4f24e1dc016",
+      "title": "She Plays Bass",
+      "url": "https://musicbrainz.org/ws/2/recording/297dd100-3148-49f7-841d-c44ce59f34bd?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "afb680f2-b6eb-4cd7-a70b-a63b25c763d5"
+      ],
+      "canonical_mbid": "4658bb93-57c4-4710-86f1-b87869f5781b",
+      "disambiguation": "",
+      "first-release-date": "2010-07-20",
+      "isrcs": [
+        "USAT21001269",
+        "USAT21300051"
+      ],
+      "length": 220000,
+      "redirected": true,
+      "requested_mbid": "2c03feb2-af77-483f-982e-8d82d3ffd03f",
+      "response_sha256": "cc35f0cbde7118cfc1174092475978508c3b932b2abdb6e6f6fab8213df21dcf",
+      "title": "Just the Way You Are",
+      "url": "https://musicbrainz.org/ws/2/recording/2c03feb2-af77-483f-982e-8d82d3ffd03f?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "0a68f3b5-79c2-4f81-a7bc-ebc977602e86"
+      ],
+      "canonical_mbid": "35c0a3e6-3aba-4e38-8939-7bf0a0d6753b",
+      "disambiguation": "",
+      "first-release-date": "2023-02-10",
+      "isrcs": [],
+      "length": 125000,
+      "redirected": false,
+      "requested_mbid": "35c0a3e6-3aba-4e38-8939-7bf0a0d6753b",
+      "response_sha256": "6417bb0d5fe1a23d63af4c0f3363a587f6acd4f8ccf38cb59500c7e2e20dd6f7",
+      "title": "blac chyna",
+      "url": "https://musicbrainz.org/ws/2/recording/35c0a3e6-3aba-4e38-8939-7bf0a0d6753b?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "0a68f3b5-79c2-4f81-a7bc-ebc977602e86"
+      ],
+      "canonical_mbid": "37917bf2-83f7-41bb-9f89-5320aa4561c4",
+      "disambiguation": "",
+      "first-release-date": "2024-05-29",
+      "isrcs": [
+        "QZJ842401058"
+      ],
+      "length": 119468,
+      "redirected": false,
+      "requested_mbid": "37917bf2-83f7-41bb-9f89-5320aa4561c4",
+      "response_sha256": "5032bfb3f60b5b2e227e69972eac1b4f6bd8d6bb67358c48efbdf5f9e86098b2",
+      "title": "Pizza Time",
+      "url": "https://musicbrainz.org/ws/2/recording/37917bf2-83f7-41bb-9f89-5320aa4561c4?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "8bd5a8fb-4c25-401d-a597-2c24affdd5c5"
+      ],
+      "canonical_mbid": "38ad538a-fddb-49f7-aeb7-84fb232ac4ff",
+      "disambiguation": "",
+      "first-release-date": "2023-10-27",
+      "isrcs": [
+        "USUYG1515913"
+      ],
+      "length": 181258,
+      "redirected": false,
+      "requested_mbid": "38ad538a-fddb-49f7-aeb7-84fb232ac4ff",
+      "response_sha256": "3d97510bd7f63a5ba2aa5c5e5970e4d42ee23471bf55ebae6650cc2620fe4771",
+      "title": "jeans",
+      "url": "https://musicbrainz.org/ws/2/recording/38ad538a-fddb-49f7-aeb7-84fb232ac4ff?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "1ff7da2a-885f-4f66-b1a2-14d93bf590d0"
+      ],
+      "canonical_mbid": "3956cb39-7741-421c-a5bd-a163b99d8813",
+      "disambiguation": "",
+      "first-release-date": "2025-05-16",
+      "isrcs": [
+        "USUM72504380"
+      ],
+      "length": 185983,
+      "redirected": false,
+      "requested_mbid": "3956cb39-7741-421c-a5bd-a163b99d8813",
+      "response_sha256": "d0a189d004992dc0497d41777839d58c9e484451a61f43348595def7e1fa0358",
+      "title": "only1",
+      "url": "https://musicbrainz.org/ws/2/recording/3956cb39-7741-421c-a5bd-a163b99d8813?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "88d17133-abbc-42db-9526-4e2c1db60336",
+        "d786f59b-1836-4ddb-8393-ab753edbe984"
+      ],
+      "canonical_mbid": "42cd7ca9-ee58-42cb-aa53-570afd2a83fb",
+      "disambiguation": "",
+      "first-release-date": "2023-04-20",
+      "isrcs": [
+        "GBK3W2302605"
+      ],
+      "length": 135000,
+      "redirected": false,
+      "requested_mbid": "42cd7ca9-ee58-42cb-aa53-570afd2a83fb",
+      "response_sha256": "3ca6d9e6e778ae5e14d904386e28452dacf59d4b55fea3b90ff88dfcc1e1d51f",
+      "title": "Glue Song",
+      "url": "https://musicbrainz.org/ws/2/recording/42cd7ca9-ee58-42cb-aa53-570afd2a83fb?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "bb7959ac-84cc-45c4-8138-d80ee5f2bd9a"
+      ],
+      "canonical_mbid": "45244efc-83e4-42bc-93e1-c902e65f1076",
+      "disambiguation": "",
+      "first-release-date": "2022-12-10",
+      "isrcs": [],
+      "length": 158000,
+      "redirected": false,
+      "requested_mbid": "45244efc-83e4-42bc-93e1-c902e65f1076",
+      "response_sha256": "5b0cabdd6ff3bf01eb1901d8e744f5de452ec95024ddef99beadd655d2adb1f8",
+      "title": "AQUAFINA",
+      "url": "https://musicbrainz.org/ws/2/recording/45244efc-83e4-42bc-93e1-c902e65f1076?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "afb680f2-b6eb-4cd7-a70b-a63b25c763d5"
+      ],
+      "canonical_mbid": "4658bb93-57c4-4710-86f1-b87869f5781b",
+      "disambiguation": "",
+      "first-release-date": "2010-07-20",
+      "isrcs": [
+        "USAT21001269",
+        "USAT21300051"
+      ],
+      "length": 220000,
+      "redirected": false,
+      "requested_mbid": "4658bb93-57c4-4710-86f1-b87869f5781b",
+      "response_sha256": "79c4cbed5e320a0388ba09212909a322bf51dcd51bc90b45a7ffef48d61f9ac2",
+      "title": "Just the Way You Are",
+      "url": "https://musicbrainz.org/ws/2/recording/4658bb93-57c4-4710-86f1-b87869f5781b?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b46e298d-d3a5-4695-a03e-63e8c523b23e"
+      ],
+      "canonical_mbid": "49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+      "disambiguation": "",
+      "first-release-date": "2023-04-07",
+      "isrcs": [
+        "USUG12209355"
+      ],
+      "length": 225312,
+      "redirected": false,
+      "requested_mbid": "49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+      "response_sha256": "548c3269fd759b94e5e6f127ef859a168f86036aa83dbe7021b1d2bc375ee11c",
+      "title": "Always",
+      "url": "https://musicbrainz.org/ws/2/recording/49233c96-b2dc-47e3-99f1-b09fcbb179b4?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "bb7959ac-84cc-45c4-8138-d80ee5f2bd9a"
+      ],
+      "canonical_mbid": "4c4053b4-6e64-4bb7-a8a3-ca5e9f32811b",
+      "disambiguation": "",
+      "first-release-date": "2023-12-22",
+      "isrcs": [],
+      "length": 82000,
+      "redirected": false,
+      "requested_mbid": "4c4053b4-6e64-4bb7-a8a3-ca5e9f32811b",
+      "response_sha256": "6f80225319d25ef2ae5de8bcdf55edf6c89a3b2ead621420a26653c9b0247407",
+      "title": "Mi Amor",
+      "url": "https://musicbrainz.org/ws/2/recording/4c4053b4-6e64-4bb7-a8a3-ca5e9f32811b?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "0a68f3b5-79c2-4f81-a7bc-ebc977602e86"
+      ],
+      "canonical_mbid": "565ed4d0-469e-4a89-8e3e-afc521a4ed56",
+      "disambiguation": "",
+      "first-release-date": "2024-03-27",
+      "isrcs": [
+        "QZJ842400466"
+      ],
+      "length": 138000,
+      "redirected": false,
+      "requested_mbid": "565ed4d0-469e-4a89-8e3e-afc521a4ed56",
+      "response_sha256": "691ed20d86f535d0aa11d0c0d068e984982b14e03c765e37f282448646147cf7",
+      "title": "Miley Cyrus",
+      "url": "https://musicbrainz.org/ws/2/recording/565ed4d0-469e-4a89-8e3e-afc521a4ed56?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "0a68f3b5-79c2-4f81-a7bc-ebc977602e86"
+      ],
+      "canonical_mbid": "5755aa85-5c68-4b4b-a825-ed2ec55228ed",
+      "disambiguation": "",
+      "first-release-date": "2024-02-14",
+      "isrcs": [
+        "QZJ842400142"
+      ],
+      "length": 170000,
+      "redirected": false,
+      "requested_mbid": "5755aa85-5c68-4b4b-a825-ed2ec55228ed",
+      "response_sha256": "fd1eb5fb01cb9c52b117210778c8ad231c3beb562d1d7a2bebe306502839dbcd",
+      "title": "Bae",
+      "url": "https://musicbrainz.org/ws/2/recording/5755aa85-5c68-4b4b-a825-ed2ec55228ed?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "afb680f2-b6eb-4cd7-a70b-a63b25c763d5"
+      ],
+      "canonical_mbid": "661e19b7-5c69-48af-bee9-9c2110495d45",
+      "disambiguation": "censored",
+      "first-release-date": "2016-11-17",
+      "isrcs": [
+        "USAT21602948"
+      ],
+      "length": 206000,
+      "redirected": false,
+      "requested_mbid": "661e19b7-5c69-48af-bee9-9c2110495d45",
+      "response_sha256": "defa17a2bd637ca021de30cfbb18f96188e515909e56a7287270508f354738a3",
+      "title": "That\u2019s What I Like",
+      "url": "https://musicbrainz.org/ws/2/recording/661e19b7-5c69-48af-bee9-9c2110495d45?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b46e298d-d3a5-4695-a03e-63e8c523b23e",
+        "93998e01-ff53-4af7-ba2a-5674adcdf21e"
+      ],
+      "canonical_mbid": "6a70e938-1fb1-4b2c-9fc7-5e92e62aab7e",
+      "disambiguation": "",
+      "first-release-date": "2017-08-25",
+      "isrcs": [
+        "CADDS1700022"
+      ],
+      "length": 209443,
+      "redirected": false,
+      "requested_mbid": "6a70e938-1fb1-4b2c-9fc7-5e92e62aab7e",
+      "response_sha256": "570f436f87ba7b2e2483540d1e08a5a48fe90c35aba6e4048de6c5fc5925713b",
+      "title": "Best Part",
+      "url": "https://musicbrainz.org/ws/2/recording/6a70e938-1fb1-4b2c-9fc7-5e92e62aab7e?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "88d17133-abbc-42db-9526-4e2c1db60336"
+      ],
+      "canonical_mbid": "6ace010e-6e46-479b-8b8f-58032b679573",
+      "disambiguation": "live, 2022\u201010\u201019: O\u2082 Academy Brixton, London, UK",
+      "first-release-date": "2023-09-29",
+      "isrcs": [
+        "GBK3W2302782"
+      ],
+      "length": 207629,
+      "redirected": false,
+      "requested_mbid": "6ace010e-6e46-479b-8b8f-58032b679573",
+      "response_sha256": "f4a07c1f151b2375994b53fe036529c2fb695677009b738feebc884e56a53365",
+      "title": "Coffee",
+      "url": "https://musicbrainz.org/ws/2/recording/6ace010e-6e46-479b-8b8f-58032b679573?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "8bd5a8fb-4c25-401d-a597-2c24affdd5c5"
+      ],
+      "canonical_mbid": "6b2ed59c-316e-4b8a-aae1-cca399354126",
+      "disambiguation": "",
+      "first-release-date": "2024-06-07",
+      "isrcs": [
+        "USUYG1547499"
+      ],
+      "length": 143000,
+      "redirected": false,
+      "requested_mbid": "6b2ed59c-316e-4b8a-aae1-cca399354126",
+      "response_sha256": "c20e5632a55327713dd80d50fa46cc593f198f9198f6c9420af6410f93a346be",
+      "title": "lie",
+      "url": "https://musicbrainz.org/ws/2/recording/6b2ed59c-316e-4b8a-aae1-cca399354126?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "ad322b8b-31b2-437d-8fd8-1af13c1d7b91"
+      ],
+      "canonical_mbid": "7c59799e-3135-4f54-9541-f25e8822684d",
+      "disambiguation": "",
+      "first-release-date": "2019-11-20",
+      "isrcs": [
+        "USSM11914370"
+      ],
+      "length": 260773,
+      "redirected": false,
+      "requested_mbid": "7c59799e-3135-4f54-9541-f25e8822684d",
+      "response_sha256": "03cf662bcfd22ae5a18c8e6466fe3ca013a4a7cee7fffeeed917e9b6158ddc60",
+      "title": "Like I Want You",
+      "url": "https://musicbrainz.org/ws/2/recording/7c59799e-3135-4f54-9541-f25e8822684d?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "ad322b8b-31b2-437d-8fd8-1af13c1d7b91"
+      ],
+      "canonical_mbid": "80f206d2-2668-4797-ab84-c556b85efbf9",
+      "disambiguation": "",
+      "first-release-date": "2018-08-08",
+      "isrcs": [
+        "QM24S1824891"
+      ],
+      "length": 195406,
+      "redirected": false,
+      "requested_mbid": "80f206d2-2668-4797-ab84-c556b85efbf9",
+      "response_sha256": "aacac32ad54b62d28d7435972d1cea538045260f807f38a8cd6b46c57f8e9b90",
+      "title": "Garden Kisses",
+      "url": "https://musicbrainz.org/ws/2/recording/80f206d2-2668-4797-ab84-c556b85efbf9?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b46e298d-d3a5-4695-a03e-63e8c523b23e"
+      ],
+      "canonical_mbid": "84438db6-26b5-4c5d-adee-85f9bb242ecf",
+      "disambiguation": "live, Up Next session",
+      "first-release-date": "2017-08-16",
+      "isrcs": [
+        "CADDS1700030"
+      ],
+      "length": 289000,
+      "redirected": false,
+      "requested_mbid": "84438db6-26b5-4c5d-adee-85f9bb242ecf",
+      "response_sha256": "3cfc2f677621fdc26f69d4edee38abb586adebab0f3e4c6ce883172180dd8fed",
+      "title": "Get You",
+      "url": "https://musicbrainz.org/ws/2/recording/84438db6-26b5-4c5d-adee-85f9bb242ecf?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "1ff7da2a-885f-4f66-b1a2-14d93bf590d0"
+      ],
+      "canonical_mbid": "8630f911-a9a6-486e-b764-aabc236479ad",
+      "disambiguation": "",
+      "first-release-date": "2025-05-16",
+      "isrcs": [
+        "USUM72504372"
+      ],
+      "length": 84000,
+      "redirected": false,
+      "requested_mbid": "8630f911-a9a6-486e-b764-aabc236479ad",
+      "response_sha256": "480e039065e8bde9cd03b154698e416c313677e4d2d24cbb72f90184ff89922b",
+      "title": "typical",
+      "url": "https://musicbrainz.org/ws/2/recording/8630f911-a9a6-486e-b764-aabc236479ad?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "afb680f2-b6eb-4cd7-a70b-a63b25c763d5"
+      ],
+      "canonical_mbid": "881e6040-095a-449d-8c34-e8b3fca38cbd",
+      "disambiguation": "",
+      "first-release-date": "2016-11-18",
+      "isrcs": [
+        "USAT21602956"
+      ],
+      "length": 207000,
+      "redirected": false,
+      "requested_mbid": "881e6040-095a-449d-8c34-e8b3fca38cbd",
+      "response_sha256": "52759643d82d630a2007b441b9007e564f8d0d1b8cd40592d3819df6c29d20b3",
+      "title": "That's What I Like",
+      "url": "https://musicbrainz.org/ws/2/recording/881e6040-095a-449d-8c34-e8b3fca38cbd?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b46e298d-d3a5-4695-a03e-63e8c523b23e"
+      ],
+      "canonical_mbid": "8979c29a-6c76-4b66-bf71-2ec4a15187c4",
+      "disambiguation": "",
+      "first-release-date": "2017-08-24",
+      "isrcs": [
+        "TCACR1690007"
+      ],
+      "length": 270847,
+      "redirected": false,
+      "requested_mbid": "8979c29a-6c76-4b66-bf71-2ec4a15187c4",
+      "response_sha256": "021e22cc48e7d6f602627e4607cfe1d45a0a03b3672128517cbb27eb5a4726fb",
+      "title": "Japanese Denim",
+      "url": "https://musicbrainz.org/ws/2/recording/8979c29a-6c76-4b66-bf71-2ec4a15187c4?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "88d17133-abbc-42db-9526-4e2c1db60336"
+      ],
+      "canonical_mbid": "9449de93-c3ec-404f-ac82-9fd77aacac8e",
+      "disambiguation": "live, 2023-08-14: The Greek Theatre, Los Angeles, CA, USA",
+      "first-release-date": "2023-12-06",
+      "isrcs": [
+        "GBK3W2302858"
+      ],
+      "length": 284871,
+      "redirected": false,
+      "requested_mbid": "9449de93-c3ec-404f-ac82-9fd77aacac8e",
+      "response_sha256": "3e76bc76568d6892af8256d05de1ac9ce0c657deeddb7c9bda90ad0d8f18888f",
+      "title": "She Plays Bass",
+      "url": "https://musicbrainz.org/ws/2/recording/9449de93-c3ec-404f-ac82-9fd77aacac8e?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "c9e3089c-a7bc-4df5-80f9-9161eaa74a02"
+      ],
+      "canonical_mbid": "99e50018-d45e-44e2-b085-8052e87c71ae",
+      "disambiguation": "",
+      "first-release-date": "2024-07-12",
+      "isrcs": [
+        "US3DF2492092"
+      ],
+      "length": 181267,
+      "redirected": false,
+      "requested_mbid": "99e50018-d45e-44e2-b085-8052e87c71ae",
+      "response_sha256": "2c6cd7dbd94aa19b5204f2312266196d016cdd3532d85d31ee96304f99453d06",
+      "title": "KANSAS",
+      "url": "https://musicbrainz.org/ws/2/recording/99e50018-d45e-44e2-b085-8052e87c71ae?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "ad322b8b-31b2-437d-8fd8-1af13c1d7b91"
+      ],
+      "canonical_mbid": "9c237f32-aaa3-4275-a984-87dddff37d17",
+      "disambiguation": "",
+      "first-release-date": "2021-09-21",
+      "isrcs": [
+        "USSM12106837"
+      ],
+      "length": 192226,
+      "redirected": false,
+      "requested_mbid": "9c237f32-aaa3-4275-a984-87dddff37d17",
+      "response_sha256": "a13693430da36895ea453bc31f5cf3fdb9c4a35d73edbec2ae57abc01f48f780",
+      "title": "For Tonight",
+      "url": "https://musicbrainz.org/ws/2/recording/9c237f32-aaa3-4275-a984-87dddff37d17?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "afb680f2-b6eb-4cd7-a70b-a63b25c763d5"
+      ],
+      "canonical_mbid": "9dbd4c26-c4ad-4abe-ba3e-88bfe6750518",
+      "disambiguation": "",
+      "first-release-date": "2012-10-01",
+      "isrcs": [
+        "USAT21203287",
+        "USAT21204492",
+        "USAT21207276",
+        "USATV1200558"
+      ],
+      "length": 233478,
+      "redirected": false,
+      "requested_mbid": "9dbd4c26-c4ad-4abe-ba3e-88bfe6750518",
+      "response_sha256": "8b9a63e1196d698f39e8ea13c9b8a8f8241d791606a1339858e526b52fec3063",
+      "title": "Locked Out of Heaven",
+      "url": "https://musicbrainz.org/ws/2/recording/9dbd4c26-c4ad-4abe-ba3e-88bfe6750518?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "bb7959ac-84cc-45c4-8138-d80ee5f2bd9a"
+      ],
+      "canonical_mbid": "a16edbac-5302-485f-9c7b-39fff0e3a2ac",
+      "disambiguation": "",
+      "first-release-date": "2025-05-14",
+      "isrcs": [],
+      "length": 134000,
+      "redirected": false,
+      "requested_mbid": "a16edbac-5302-485f-9c7b-39fff0e3a2ac",
+      "response_sha256": "91564eb00b50ef4f11cdbe9022ba1ff33e1aab465e1f52c99cf5b944e7c9588a",
+      "title": "GIRLS!!!",
+      "url": "https://musicbrainz.org/ws/2/recording/a16edbac-5302-485f-9c7b-39fff0e3a2ac?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "c9e3089c-a7bc-4df5-80f9-9161eaa74a02"
+      ],
+      "canonical_mbid": "a824626f-d5e1-43b3-a2e9-49b138b0eaee",
+      "disambiguation": "",
+      "first-release-date": "2024-05-23",
+      "isrcs": [
+        "US3DF2460052"
+      ],
+      "length": 134787,
+      "redirected": false,
+      "requested_mbid": "a824626f-d5e1-43b3-a2e9-49b138b0eaee",
+      "response_sha256": "8d073aa8957810c11ca85c71f0dca493c36ee5dcc47dd3b47755ce6bf20ce11f",
+      "title": "HELLA BOY CRAZY",
+      "url": "https://musicbrainz.org/ws/2/recording/a824626f-d5e1-43b3-a2e9-49b138b0eaee?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b29020d6-5dbf-4c99-b16f-c009f8a712ff"
+      ],
+      "canonical_mbid": "aa03fca2-4c9e-4ee9-95c3-c30fa0a91004",
+      "disambiguation": "",
+      "first-release-date": "2019-04-08",
+      "isrcs": [
+        "GBWWP1904872"
+      ],
+      "length": 224440,
+      "redirected": false,
+      "requested_mbid": "aa03fca2-4c9e-4ee9-95c3-c30fa0a91004",
+      "response_sha256": "08eac0adbf230b56a8f512b062f7e4ae5e1582b29bfbbbc8dd607f3afd93764b",
+      "title": "N Side",
+      "url": "https://musicbrainz.org/ws/2/recording/aa03fca2-4c9e-4ee9-95c3-c30fa0a91004?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b46e298d-d3a5-4695-a03e-63e8c523b23e"
+      ],
+      "canonical_mbid": "ae7dab5c-8429-4d00-8dce-afeff37185d8",
+      "disambiguation": "",
+      "first-release-date": "2016-10-21",
+      "isrcs": [
+        "TCACR1690007"
+      ],
+      "length": 270000,
+      "redirected": false,
+      "requested_mbid": "ae7dab5c-8429-4d00-8dce-afeff37185d8",
+      "response_sha256": "eee49cf4c5a4c4ca279f12af905d9ca2df349fc3965863f6e7189cab8d2260c1",
+      "title": "Japanese Denim",
+      "url": "https://musicbrainz.org/ws/2/recording/ae7dab5c-8429-4d00-8dce-afeff37185d8?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b46e298d-d3a5-4695-a03e-63e8c523b23e",
+        "d0c7656d-8169-4f77-9dbe-b8f24e40105d"
+      ],
+      "canonical_mbid": "b3323026-2dc1-4c02-b447-1b7118a97e90",
+      "disambiguation": "",
+      "first-release-date": "2016-10-21",
+      "isrcs": [
+        "TCACR1690004"
+      ],
+      "length": 278000,
+      "redirected": false,
+      "requested_mbid": "b3323026-2dc1-4c02-b447-1b7118a97e90",
+      "response_sha256": "d756262d65757d99e82da6b9b99e2bb17e8b50e2eb3c0e3507f6111546bfc17b",
+      "title": "Get You",
+      "url": "https://musicbrainz.org/ws/2/recording/b3323026-2dc1-4c02-b447-1b7118a97e90?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "ad322b8b-31b2-437d-8fd8-1af13c1d7b91"
+      ],
+      "canonical_mbid": "b66dd4d2-a376-4eae-a538-a8fd7ce5b219",
+      "disambiguation": "",
+      "first-release-date": "2020-03-27",
+      "isrcs": [
+        "USSM12001705"
+      ],
+      "length": 260000,
+      "redirected": false,
+      "requested_mbid": "b66dd4d2-a376-4eae-a538-a8fd7ce5b219",
+      "response_sha256": "1365ead59f5d5d965389bac294fbc4988deddb2cb3573262b5659927c09b6f5e",
+      "title": "Like I Want You",
+      "url": "https://musicbrainz.org/ws/2/recording/b66dd4d2-a376-4eae-a538-a8fd7ce5b219?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b29020d6-5dbf-4c99-b16f-c009f8a712ff"
+      ],
+      "canonical_mbid": "bc0f4be2-29bd-4f4b-a850-862bbd130db5",
+      "disambiguation": "",
+      "first-release-date": "2017-02-20",
+      "isrcs": [
+        "GBKPL1778015"
+      ],
+      "length": 173104,
+      "redirected": false,
+      "requested_mbid": "bc0f4be2-29bd-4f4b-a850-862bbd130db5",
+      "response_sha256": "7bf4e19910a09b24fcfae2a5416e8dc391e757c8d7508535686be56cfa75f43a",
+      "title": "Dark Red",
+      "url": "https://musicbrainz.org/ws/2/recording/bc0f4be2-29bd-4f4b-a850-862bbd130db5?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b29020d6-5dbf-4c99-b16f-c009f8a712ff"
+      ],
+      "canonical_mbid": "be62d1e4-c803-40a7-b806-62af232f9972",
+      "disambiguation": "clean",
+      "first-release-date": "2022-07-14",
+      "isrcs": [
+        "USRC12202615"
+      ],
+      "length": 231746,
+      "redirected": false,
+      "requested_mbid": "be62d1e4-c803-40a7-b806-62af232f9972",
+      "response_sha256": "8ca030a31cb306a8c49e3c8fa56ec6156aee81e50785faf4e97e4f5bbb0de990",
+      "title": "Bad Habit",
+      "url": "https://musicbrainz.org/ws/2/recording/be62d1e4-c803-40a7-b806-62af232f9972?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "afb680f2-b6eb-4cd7-a70b-a63b25c763d5"
+      ],
+      "canonical_mbid": "c2525847-4207-44c8-995f-45e81004c6ab",
+      "disambiguation": "explicit intro",
+      "first-release-date": "2012-12-07",
+      "isrcs": [
+        "USAT21206710",
+        "USAT21206909",
+        "USAT21206968",
+        "USAT21206969",
+        "USAT21207278"
+      ],
+      "length": 178000,
+      "redirected": false,
+      "requested_mbid": "c2525847-4207-44c8-995f-45e81004c6ab",
+      "response_sha256": "149e3abddf6e4e0a117aba0c9af2d11f84f269eb0b114f291bd59fc657cc556e",
+      "title": "Treasure",
+      "url": "https://musicbrainz.org/ws/2/recording/c2525847-4207-44c8-995f-45e81004c6ab?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "88d17133-abbc-42db-9526-4e2c1db60336"
+      ],
+      "canonical_mbid": "c6cdaca3-37a1-47f3-a5e3-e9c012a6c0f1",
+      "disambiguation": "",
+      "first-release-date": "2017-09-17",
+      "isrcs": [
+        "GBK3W1800819"
+      ],
+      "length": 126000,
+      "redirected": false,
+      "requested_mbid": "c6cdaca3-37a1-47f3-a5e3-e9c012a6c0f1",
+      "response_sha256": "ad40d8f19fd04b8ace630d7f78de26bd719079d692a5a0be4e7c03dc2e49983e",
+      "title": "Coffee",
+      "url": "https://musicbrainz.org/ws/2/recording/c6cdaca3-37a1-47f3-a5e3-e9c012a6c0f1?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b46e298d-d3a5-4695-a03e-63e8c523b23e"
+      ],
+      "canonical_mbid": "c7a2659d-e7d3-4924-8a4a-ad38801c317a",
+      "disambiguation": "",
+      "first-release-date": "2019",
+      "isrcs": [],
+      "length": 279379,
+      "redirected": false,
+      "requested_mbid": "c7a2659d-e7d3-4924-8a4a-ad38801c317a",
+      "response_sha256": "69af6c1af85ae5aee4b9cd9051f66e3aa1ff926a005ec0d83b156ab03ca04d8b",
+      "title": "Get You",
+      "url": "https://musicbrainz.org/ws/2/recording/c7a2659d-e7d3-4924-8a4a-ad38801c317a?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b46e298d-d3a5-4695-a03e-63e8c523b23e",
+        "93998e01-ff53-4af7-ba2a-5674adcdf21e"
+      ],
+      "canonical_mbid": "c7aa28ec-2e62-415d-a744-043d8c383095",
+      "disambiguation": "",
+      "first-release-date": "2017-08-25",
+      "isrcs": [
+        "CADDS1700022"
+      ],
+      "length": 209000,
+      "redirected": false,
+      "requested_mbid": "c7aa28ec-2e62-415d-a744-043d8c383095",
+      "response_sha256": "d9784106e5b9e5005047937b463496d40d11d616a46ba94e653107d5e0663ca9",
+      "title": "Best Part",
+      "url": "https://musicbrainz.org/ws/2/recording/c7aa28ec-2e62-415d-a744-043d8c383095?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "1ff7da2a-885f-4f66-b1a2-14d93bf590d0"
+      ],
+      "canonical_mbid": "ca215903-73eb-42f7-97bd-ccf520137b23",
+      "disambiguation": "",
+      "first-release-date": "2025-05-16",
+      "isrcs": [
+        "USUM72504375"
+      ],
+      "length": 139534,
+      "redirected": false,
+      "requested_mbid": "ca215903-73eb-42f7-97bd-ccf520137b23",
+      "response_sha256": "bb70fd10ee8af49e23ffefb37766b919e8521e13972cd8a83356d25f70a03938",
+      "title": "go",
+      "url": "https://musicbrainz.org/ws/2/recording/ca215903-73eb-42f7-97bd-ccf520137b23?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "ad322b8b-31b2-437d-8fd8-1af13c1d7b91"
+      ],
+      "canonical_mbid": "cb77aabb-7b1f-4cf4-8db9-6b49753a60de",
+      "disambiguation": "explicit",
+      "first-release-date": "2020-02-21",
+      "isrcs": [
+        "USSM12000998"
+      ],
+      "length": 198000,
+      "redirected": false,
+      "requested_mbid": "cb77aabb-7b1f-4cf4-8db9-6b49753a60de",
+      "response_sha256": "232aabb51cbe1fff683123a1b9d14764b2d06995fd90ce363e640ad9c7facdea",
+      "title": "Heartbreak Anniversary",
+      "url": "https://musicbrainz.org/ws/2/recording/cb77aabb-7b1f-4cf4-8db9-6b49753a60de?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "bb7959ac-84cc-45c4-8138-d80ee5f2bd9a"
+      ],
+      "canonical_mbid": "cd53b5fb-375f-4b1b-a89b-054de87d02ee",
+      "disambiguation": "",
+      "first-release-date": "2022-12-10",
+      "isrcs": [],
+      "length": 158000,
+      "redirected": false,
+      "requested_mbid": "cd53b5fb-375f-4b1b-a89b-054de87d02ee",
+      "response_sha256": "c632104e7b20cb3750ba2e61a70d58084816b7b9d04efe9ce087a587dd99c3f3",
+      "title": "AQUAFINA",
+      "url": "https://musicbrainz.org/ws/2/recording/cd53b5fb-375f-4b1b-a89b-054de87d02ee?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b29020d6-5dbf-4c99-b16f-c009f8a712ff"
+      ],
+      "canonical_mbid": "d3d1a743-a512-49c7-b38d-0610c3433a39",
+      "disambiguation": "",
+      "first-release-date": "2016-10-31",
+      "isrcs": [
+        "TCACT1617859"
+      ],
+      "length": 118000,
+      "redirected": false,
+      "requested_mbid": "d3d1a743-a512-49c7-b38d-0610c3433a39",
+      "response_sha256": "17207a925a40c821d91d8c7523aafd8e3f70887192e79989ee26aeab9d11d37b",
+      "title": "Some",
+      "url": "https://musicbrainz.org/ws/2/recording/d3d1a743-a512-49c7-b38d-0610c3433a39?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b46e298d-d3a5-4695-a03e-63e8c523b23e"
+      ],
+      "canonical_mbid": "49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+      "disambiguation": "",
+      "first-release-date": "2023-04-07",
+      "isrcs": [
+        "USUG12209355"
+      ],
+      "length": 225312,
+      "redirected": true,
+      "requested_mbid": "d7b68421-b496-49c7-a898-92df7fde5f48",
+      "response_sha256": "47d54c11a0649228f11f024f870b1dd18a41f273fb4c0ea5552434edee05443c",
+      "title": "Always",
+      "url": "https://musicbrainz.org/ws/2/recording/d7b68421-b496-49c7-a898-92df7fde5f48?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "c9e3089c-a7bc-4df5-80f9-9161eaa74a02"
+      ],
+      "canonical_mbid": "daf4d723-2ff7-4e5f-b132-237c987c3a03",
+      "disambiguation": "",
+      "first-release-date": "2022-08-10",
+      "isrcs": [
+        "US3DF2273682"
+      ],
+      "length": 145520,
+      "redirected": false,
+      "requested_mbid": "daf4d723-2ff7-4e5f-b132-237c987c3a03",
+      "response_sha256": "dc0bc914a0f942e1363a33dcc7aebd788fbea341dea073e92ef62462d6205349",
+      "title": "SAN FRANCISCO SIDEWALK",
+      "url": "https://musicbrainz.org/ws/2/recording/daf4d723-2ff7-4e5f-b132-237c987c3a03?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "8bd5a8fb-4c25-401d-a597-2c24affdd5c5"
+      ],
+      "canonical_mbid": "de766945-2406-4627-9d3c-5dd4a17497d6",
+      "disambiguation": "",
+      "first-release-date": "2024-04-26",
+      "isrcs": [
+        "USUYG1544301"
+      ],
+      "length": 146000,
+      "redirected": false,
+      "requested_mbid": "de766945-2406-4627-9d3c-5dd4a17497d6",
+      "response_sha256": "ba4cbb512e0c59c93bc7e8f8760a9f97749617b507e5105ace7a8bc7ab8495a3",
+      "title": "crush",
+      "url": "https://musicbrainz.org/ws/2/recording/de766945-2406-4627-9d3c-5dd4a17497d6?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b46e298d-d3a5-4695-a03e-63e8c523b23e",
+        "9167f739-da47-4495-9d63-9c13b40114ac"
+      ],
+      "canonical_mbid": "eb8792d8-fd7e-49e5-9bee-0cff8e048d56",
+      "disambiguation": "",
+      "first-release-date": "2023-04-10",
+      "isrcs": [
+        "USUG12302294"
+      ],
+      "length": 222402,
+      "redirected": false,
+      "requested_mbid": "eb8792d8-fd7e-49e5-9bee-0cff8e048d56",
+      "response_sha256": "f0dfa7802c7bbe4d09331b1b055215705ffe647409f17f430d006461367a9dfd",
+      "title": "Always",
+      "url": "https://musicbrainz.org/ws/2/recording/eb8792d8-fd7e-49e5-9bee-0cff8e048d56?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "88d17133-abbc-42db-9526-4e2c1db60336"
+      ],
+      "canonical_mbid": "f220ba2e-0d12-41a2-b9ef-5a5119b967b8",
+      "disambiguation": "",
+      "first-release-date": "2023-02-15",
+      "isrcs": [
+        "GBK3W2302568"
+      ],
+      "length": 135067,
+      "redirected": false,
+      "requested_mbid": "f220ba2e-0d12-41a2-b9ef-5a5119b967b8",
+      "response_sha256": "6ec676c1c115967b7227d6f590e1d1b7b906a3d02d29db8890582b92e5314bbf",
+      "title": "Glue Song",
+      "url": "https://musicbrainz.org/ws/2/recording/f220ba2e-0d12-41a2-b9ef-5a5119b967b8?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "88d17133-abbc-42db-9526-4e2c1db60336"
+      ],
+      "canonical_mbid": "f2271dc9-2b37-4c0a-a7be-1e7437bd5489",
+      "disambiguation": "live: Abbey Road Studios, London, UK",
+      "first-release-date": "2019-11-20",
+      "isrcs": [
+        "GBK3W1901187"
+      ],
+      "length": 225632,
+      "redirected": false,
+      "requested_mbid": "f2271dc9-2b37-4c0a-a7be-1e7437bd5489",
+      "response_sha256": "93813e0c9692d3f7f503e1b3c907486e5997184ef365c6877987e51655e2e6d3",
+      "title": "She Plays Bass",
+      "url": "https://musicbrainz.org/ws/2/recording/f2271dc9-2b37-4c0a-a7be-1e7437bd5489?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "b46e298d-d3a5-4695-a03e-63e8c523b23e"
+      ],
+      "canonical_mbid": "f3292f6d-09cd-48ba-9211-f8ede1d34b53",
+      "disambiguation": "",
+      "first-release-date": "2016-10-21",
+      "isrcs": [
+        "TCACR1690007"
+      ],
+      "length": 270000,
+      "redirected": false,
+      "requested_mbid": "f3292f6d-09cd-48ba-9211-f8ede1d34b53",
+      "response_sha256": "e70287db6c592dd25c4a37da3997918d05666072b66a83f4fb93cbfb4db25a9c",
+      "title": "Japanese Denim",
+      "url": "https://musicbrainz.org/ws/2/recording/f3292f6d-09cd-48ba-9211-f8ede1d34b53?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "1ff7da2a-885f-4f66-b1a2-14d93bf590d0"
+      ],
+      "canonical_mbid": "fa4c7167-c1c8-4c5a-909f-3dd8f3139658",
+      "disambiguation": "",
+      "first-release-date": "2025-05-16",
+      "isrcs": [
+        "USUM72504377"
+      ],
+      "length": 114125,
+      "redirected": false,
+      "requested_mbid": "fa4c7167-c1c8-4c5a-909f-3dd8f3139658",
+      "response_sha256": "2e32a1f3e2b79824eb686b24c49f8dd24e42257016efb2512d5abfd460f890c8",
+      "title": "secret",
+      "url": "https://musicbrainz.org/ws/2/recording/fa4c7167-c1c8-4c5a-909f-3dd8f3139658?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    },
+    {
+      "artist_mbids": [
+        "bb7959ac-84cc-45c4-8138-d80ee5f2bd9a"
+      ],
+      "canonical_mbid": "fa54b457-1b22-45eb-8d57-027fda58e63f",
+      "disambiguation": "",
+      "first-release-date": "2024-09-12",
+      "isrcs": [],
+      "length": 115000,
+      "redirected": false,
+      "requested_mbid": "fa54b457-1b22-45eb-8d57-027fda58e63f",
+      "response_sha256": "586cc95f6012b23bc36b6473ff4e8cb1f7ca0d2a6129b9d381c006f05b8df0cb",
+      "title": "No Lie",
+      "url": "https://musicbrainz.org/ws/2/recording/fa54b457-1b22-45eb-8d57-027fda58e63f?inc=artist-credits+isrcs&fmt=json",
+      "video": false
+    }
+  ],
+  "observed_on": "2026-10-19",
+  "panel_sha256": "20281d8e6461a83bd774ab4f9026f7bc53dbf2c2d1ab28a66c00ef63742e4c04",
+  "policy": "Only an authoritative lookup returning a different ID establishes a redirect. Shared title, ISRC, duration or artist alone never merges IDs.",
+  "reserved_bytes_total": 13465108118
+}
