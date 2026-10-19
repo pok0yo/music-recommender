@@ -25,7 +25,7 @@ MAX_BYTES = 4 * 1024**2
 
 
 class RangeReader:
-    def __init__(self, *, max_requests=MAX_REQUESTS, max_bytes=MAX_BYTES, max_read=64 * 1024, connection=None):
+    def __init__(self, *, max_requests=MAX_REQUESTS, max_bytes=MAX_BYTES, max_read=64 * 1024, connection=None, reserve=None):
         self.position = 0
         self.requests = 0
         self.bytes_read = 0
@@ -34,6 +34,7 @@ class RangeReader:
         self.max_bytes = max_bytes
         self.max_read = max_read
         self.connection = connection
+        self.reserve = reserve
 
     def tell(self):
         return self.position
@@ -58,6 +59,8 @@ class RangeReader:
             "Range": f"bytes={self.position}-{end}", "If-Match": ETAG,
             "User-Agent": USER_AGENT,
         })
+        if self.reserve is not None:
+            self.reserve(self.position, size)
         self.requests += 1
         # Reserve before I/O so failed reads cannot reset the transfer budget.
         self.reserved_bytes += size + 1

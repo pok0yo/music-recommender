@@ -1,0 +1,20 @@
+{
+  "scope": "First three completed acquisition members only; not the full cohort or a gate result",
+  "files": [
+    "1349.parquet",
+    "1350.parquet",
+    "1351.parquet"
+  ],
+  "counts": {
+    "input_rows": 419689,
+    "created_before_listened_input_rows": 4073,
+    "created_over_one_day_late_input_rows": 209278,
+    "excluded_outside_interval": 0,
+    "excluded_nonpositive_listener": 0,
+    "normalized_id_rows": 0,
+    "excluded_missing_recording": 66250,
+    "excluded_malformed_recording": 0,
+    "excluded_duplicate": 2015,
+    "output_rows": 351424
+  }
+}

@@ -11,7 +11,7 @@ Dataset auditing has begun. Application and model implementation have not begun.
 - Stage 3: recommendation methodology and evaluation protocol proposed.
 - Stage 4: UX architecture and five distinct visual directions documented as proposals.
 - Stage 5: implementation plan, contracts, acceptance gates, and milestones documented.
-- Stage 6: in progress. Real Spark listening events have been inspected; all ten requested artists appear in a short pilot. A longer acquisition, agreed track panel, preprocessing, and temporal split gates remain pending.
+- Stage 6: in progress. The additional 16 GiB acquisition and 40-title panel are approved. A resumable seven-column acquisition is underway; cleaning code has synthetic and partial-data checks. Full acquisition, recording-version resolution, support counts, and split gates remain pending.
 - Stage 7: model implementation remains gated on a successful Stage 6 audit.
 
 See the [Stage 4 UX and design plan](docs/stage-4-design-plan.md) for the journey, interface states, five design systems, exact hero reservations, and future verification criteria. No final visual direction has been selected or implemented.
@@ -30,7 +30,7 @@ The target is a 6–8-week individual portfolio project, subject to data feasibi
 - Select a result as the next seed, without creating an account.
 - Support responsive layouts, keyboard navigation, reduced motion, and clear loading, empty, and error states.
 
-The user's ten requested artists define the coverage target; very recent releases are not essential. A [40-title panel](docs/coverage-panel.json) is proposed for agreement and recording-version resolution. Outbound listening links remain provisional pending final MVP approval.
+The user's ten requested artists define the coverage target; very recent releases are not essential. The [40-title panel](docs/coverage-panel.json) was approved on 2026-10-18; exact recording-version resolution remains incomplete. Outbound listening links remain provisional pending final MVP approval.
 
 ## Recommendation and evaluation proposal
 

@@ -220,6 +220,8 @@ Local tests passed on Python 3.12.14/PyArrow 26.0.0: **19 tests**. Tests cover e
 
 ## 9. Resource decision and next Stage 6 gate
 
+Historical proposal: the additional cap and title panel below were subsequently approved. Section 10 records the active acquisition; earlier statements about pending authorization describe the preceding checkpoint.
+
 [Acquisition evidence](evidence/stage-6-spark-acquisition.json) contains the pinned archive URL/ETag, marker hashes, retained pilot hash, **165 verified tar-header/Parquet-footer locations**, selected decoded date columns, and the arithmetic below. This is a partial archive inventory, not verification of every payload or timestamp in those files.
 
 ### Concrete acquisition proposal
@@ -262,3 +264,73 @@ The footers declare **320,570,129 rows across the complete members**, including 
 The 10% cohort, 20 GiB working-space allowance, and computational practicality remain proposals. Peak memory, full preprocessing runtime, item-neighbor computation, and model quality have not been measured. If support gates fail, report the failure and propose a revision; do not lower thresholds or substitute tracks silently.
 
 **Current result: the event-source existence and bounded-access checks pass for the inspected files. Stage 6 overall remains incomplete.** Full-interval acquisition exceeds the current transfer authorization, and the track panel is still proposed. Stage 7 remains closed.
+
+## 10. Approved acquisition and preparation milestone — 2026-10-18
+
+### Confirmed decisions and implementation scope
+
+The user approved **16 GiB additional transfer** (17,179,869,184 bytes) and all 40 proposed titles. The initial 1 GiB investigation is separate. Recording IDs and versions still require resolution; title approval is not evidence of catalog support.
+
+The working dataset version uses the previously proposed intervals and listener cohort, fixed before any support results. Select positive listener IDs when the first eight SHA-256 bytes of UTF-8 `music-recommender-stage6-v1:<decimal user ID>`, interpreted as an unsigned big-endian integer, modulo ten equal zero. This is deterministic listener sampling, not an exact 10% of events or a representative population claim. Do not adjust sampling or dates in response to model results. Final split acceptance remains gated.
+
+Changed scope: `RangeReader` gains an optional pre-request reservation callback; new acquisition, panel lookup, and cleaning utilities use the existing pinned source, PyArrow dependency, and audit helpers. Tests exercise these callers and synthetic fixtures. CI already discovers them. No new package, application code, model training, authentication, imagery, or deployment is included.
+
+### Durable transfer accounting and recovery
+
+`ml.acquire_events` acquires the seven selected columns from members 1349–1497. Four range requests may run simultaneously. Each reserves its complete requested body plus 16,385 bytes in a shared SQLite ledger **before network I/O**, committed with `synchronous=FULL`. Failed and interrupted attempts remain charged. The ledger is never reset on resume. Metadata lookups reserve 512 KiB per request plus the same allowance; their ledger offsets are -1 and they consume the same 16 GiB cap.
+
+The hard ceiling is on requested HTTP body bytes plus an application overhead allowance, **not a packet-level measurement of TLS/TCP traffic**. Each response requires the exact byte range and pinned ETag; an ignored range, changed version, corrupt cache, or exhausted allowance stops the run. Four-request prefetch stops on an error; small serial reads have at most three attempts, all charged. A separate OS-backed SQLite lock prevents overlapping acquisition processes and releases on process exit. Cached ranges are hashed, flushed to disk, and recorded before use. A range without a committed receipt must be fetched again and charged again. Do not delete the ledger or cache to resume.
+
+The sparse in-memory Parquet container is never saved as an original source file. A new, explicitly derived Parquet file contains only selected-cohort rows within February 1–September 26. All decoded input timestamps must be nondecreasing within and between members. Cohort files and completion state are checkpointed with hashes. Disk space below 4 GiB stops acquisition; the earlier 20 GiB working-space figure remains an estimate, not measured peak use.
+
+The sequential downloader was restarted to enable four simultaneous reads. Its existing reservations and verified cache were reused; any interrupted range remains charged. The initial concurrent-process test exposed an unclosed rejected lock on Windows; that cleanup was fixed and retested.
+
+### Cleaning policy and evidence boundaries
+
+`ml.prepare_events` refuses an incomplete acquisition and verifies retained cohort hashes. It writes a separate temporary output directory and publishes it as complete only after every input succeeds and exclusions reconcile. Existing output and interrupted preparation directories are preserved; preparation can be rerun to a different local output path without another download.
+
+Cleaning trims surrounding whitespace and lowercases recording IDs, rejects missing/malformed UUIDs, retains positive integer listeners, and enforces UTC nanosecond split boundaries. It removes duplicate `(listener, normalized recording MBID, listen time)` keys across batches and file boundaries, retaining the first source occurrence and that occurrence's submitted creation time. Missing required fields or broken chronological ordering fail closed. ID syntax does not independently verify a recording's mapping.
+
+The cleaned event files contain only listener ID, recording ID, listen time, and creation time. Submitted catalog labels remain in the ignored acquisition files and are not promoted to a verified catalog. Source rows outside the requested interval and nonpositive listener IDs are excluded before cohort output; the cleaner's counts describe its **retained cohort input**, not rejection rates across the whole archive.
+
+Evaluation is explicitly a **retrospective reconstruction by listen time using this dump's mappings**, not a replay of information available at each historical cutoff. Creation-time anomalies and late imports are counted rather than silently removed. Each partition will report retained events created at or after its end. This policy does not claim mapping history, submission time, or historical catalog availability has been reconstructed.
+
+[Partial cleaning evidence](evidence/stage-6-cleaning-smoke.json) covers only retained rows from members 1349, 1350, and 1351:
+
+| Check | Observed count |
+|---|---:|
+| Cohort input events | 419,689 |
+| Missing recording IDs excluded | 66,250 |
+| Malformed non-null IDs excluded | 0 |
+| Duplicate keys excluded | 2,015 |
+| Remaining cleaned events | 351,424 |
+| Input events created before listen time | 4,073 |
+| Input events submitted more than one day later | 209,278 |
+
+The last two counts overlap other categories and are not exclusions. This smoke check emitted aggregate evidence only; it did not create final split artifacts or measure model quality.
+
+### Recording resolution and remaining gates
+
+MusicBrainz queries combine the approved artist MBID with the title, following its [recording-search fields](https://musicbrainz.org/doc/MusicBrainz_API/Search/RecordingSearch). The resolver checks returned artist IDs and normalized exact titles, preserves multiple matching versions, and never selects a recording using listening support. Search responses are bounded and cached with hashes. API errors stop lookup rather than triggering an unbounded retry loop.
+
+[The resolution checkpoint](evidence/stage-6-panel-resolution.json) records six successful title searches and temporary HTTP 503 failures on subsequent requests. Each successful search returned one exact artist/title candidate; version resolution is not declared complete, and the other 34 titles are not labeled absent. Search metadata is current to lookup time, not necessarily the dump's original mapping snapshot.
+
+At this milestone, **28 local tests pass** on Python 3.12.14 with PyArrow 26.0.0. Tests cover durable accounting before failed and concurrent I/O, cap enforcement after restart, source/version pinning, cache integrity, process-lock exclusion, selected-column projection, deterministic cohort selection, identity collisions and version ambiguity, normalization, cross-batch deduplication, exact split boundaries, and held-out changes leaving training rows unchanged. They do not establish real-data ranking quality. CI confirmation is tracked with the pushed commit.
+
+Resume acquisition with the original ledger and retained files:
+
+```powershell
+.venv/Scripts/python.exe -u -m ml.acquire_events
+```
+
+After acquisition completes, run cleaning and resume panel resolution:
+
+```powershell
+.venv/Scripts/python.exe -u -m ml.prepare_events
+.venv/Scripts/python.exe -u -m ml.resolve_panel
+.venv/Scripts/python.exe -m unittest discover -s ml/tests -v
+```
+
+These commands do not authorize a new budget. Avoid starting a second downloader while one is active. Raw ranges, SQLite ledgers, local identities/history, and derived event files remain ignored by Git. Only code, approved panel definitions, public catalog identifiers, and aggregate audit evidence are committed.
+
+**Stage 6 remains in progress.** Acquisition, full cleaning, training-only item/neighbor support, validation/test query counts, complete version resolution, and peak resource measurements are not yet verified. Stage 7 remains closed; no ranking metrics or improvements have been measured.

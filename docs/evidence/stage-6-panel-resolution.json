@@ -1,0 +1,143 @@
+{
+  "panel_status": "user approved all 40 proposed titles on 2026-10-18; recording versions not yet resolved",
+  "search_reference": "https://musicbrainz.org/doc/MusicBrainz_API/Search/RecordingSearch",
+  "selection": "Exact artist ID and normalized title only; versions require review",
+  "tracks": [
+    {
+      "artist": "nate sib",
+      "artist_mbid": "1ff7da2a-885f-4f66-b1a2-14d93bf590d0",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2025-05-16",
+          "id": "8630f911-a9a6-486e-b764-aabc236479ad",
+          "length": 84000,
+          "title": "typical",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A1ff7da2a-885f-4f66-b1a2-14d93bf590d0+AND+recording%3A%22typical%22&fmt=json&limit=100",
+      "resolved_recording_mbid": null,
+      "response_sha256": "958d532410e17b37451e03a744b2d2aaa0a254bac5aac3dfd3d923e8ab1023a9",
+      "search_truncated": false,
+      "title": "typical",
+      "total_search_results": 1
+    },
+    {
+      "artist": "nate sib",
+      "artist_mbid": "1ff7da2a-885f-4f66-b1a2-14d93bf590d0",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2025-05-16",
+          "id": "ca215903-73eb-42f7-97bd-ccf520137b23",
+          "length": 139534,
+          "title": "go",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A1ff7da2a-885f-4f66-b1a2-14d93bf590d0+AND+recording%3A%22go%22&fmt=json&limit=100",
+      "resolved_recording_mbid": null,
+      "response_sha256": "8858b1f8c9030f1bbfe58151f52994c899bb2d51dff09cf5ca29b60f9fb06df2",
+      "search_truncated": false,
+      "title": "go",
+      "total_search_results": 3
+    },
+    {
+      "artist": "nate sib",
+      "artist_mbid": "1ff7da2a-885f-4f66-b1a2-14d93bf590d0",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2025-05-16",
+          "id": "fa4c7167-c1c8-4c5a-909f-3dd8f3139658",
+          "length": 114125,
+          "title": "secret",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A1ff7da2a-885f-4f66-b1a2-14d93bf590d0+AND+recording%3A%22secret%22&fmt=json&limit=100",
+      "resolved_recording_mbid": null,
+      "response_sha256": "e5eff86bf452f045df1b0f27d0aa1f380744774d9b2edbee93a9b47dcf81d47c",
+      "search_truncated": false,
+      "title": "secret",
+      "total_search_results": 1
+    },
+    {
+      "artist": "nate sib",
+      "artist_mbid": "1ff7da2a-885f-4f66-b1a2-14d93bf590d0",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2025-05-16",
+          "id": "3956cb39-7741-421c-a5bd-a163b99d8813",
+          "length": 185983,
+          "title": "only1",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A1ff7da2a-885f-4f66-b1a2-14d93bf590d0+AND+recording%3A%22only1%22&fmt=json&limit=100",
+      "resolved_recording_mbid": null,
+      "response_sha256": "b2b04a7543e901b665bbce05d13fe284f1e883bc96964af82567f96cc0c94148",
+      "search_truncated": false,
+      "title": "only1",
+      "total_search_results": 1
+    },
+    {
+      "artist": "Tiffany Day",
+      "artist_mbid": "c9e3089c-a7bc-4df5-80f9-9161eaa74a02",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2021-12-03",
+          "id": "15db4b6a-7205-4960-9f0c-d1a34d147afe",
+          "length": 178727,
+          "title": "CLOUDS",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ac9e3089c-a7bc-4df5-80f9-9161eaa74a02+AND+recording%3A%22CLOUDS%22&fmt=json&limit=100",
+      "resolved_recording_mbid": null,
+      "response_sha256": "cf2f00fddec70e858f985fea98f9001068546fc28390bddb5cb8f68fb14e6e0a",
+      "search_truncated": false,
+      "title": "CLOUDS",
+      "total_search_results": 1
+    },
+    {
+      "artist": "Tiffany Day",
+      "artist_mbid": "c9e3089c-a7bc-4df5-80f9-9161eaa74a02",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2022-08-10",
+          "id": "daf4d723-2ff7-4e5f-b132-237c987c3a03",
+          "length": 145520,
+          "title": "SAN FRANCISCO SIDEWALK",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ac9e3089c-a7bc-4df5-80f9-9161eaa74a02+AND+recording%3A%22SAN+FRANCISCO+SIDEWALK%22&fmt=json&limit=100",
+      "resolved_recording_mbid": null,
+      "response_sha256": "72e18b973dfc97aa0417637b5ab244ec4bf29f2f40bcfbf6e7a10f061e0b6d96",
+      "search_truncated": false,
+      "title": "SAN FRANCISCO SIDEWALK",
+      "total_search_results": 1
+    }
+  ],
+  "complete": false,
+  "observed_on": "2026-10-18",
+  "observed_http_errors": [
+    {
+      "status": 503,
+      "artist": "Tiffany Day",
+      "title": "SAN FRANCISCO SIDEWALK",
+      "note": "Subsequent cached-resume attempt succeeded for this title"
+    },
+    {
+      "status": 503,
+      "artist": "Tiffany Day",
+      "title": "HELLA BOY CRAZY",
+      "note": "Lookup stopped; title availability remains unknown"
+    }
+  ]
+}
