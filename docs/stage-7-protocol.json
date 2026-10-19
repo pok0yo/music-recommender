@@ -1,0 +1,50 @@
+{
+  "authorization": "User: Continue with stage 7; stop before 10% remains in either account usage window",
+  "baseline": "Descending distinct training listeners; ascending recording MBID breaks ties",
+  "candidate_universe": "All 565147 training-eligible IDs except seed; no sampled negatives or history removal",
+  "cf": {
+    "block_size": 32,
+    "edge_support_minimum": 3,
+    "formula": "c_ij / sqrt(n_i*n_j) * c_ij/(c_ij+lambda)",
+    "item_support_minimum": 5,
+    "lambda_candidates": [
+      0,
+      10,
+      50
+    ],
+    "short_lists": "Abstain after positive supported edges; no zero-score or popularity padding; unreturned positions earn zero credit",
+    "tie_break": "Ascending recording MBID"
+  },
+  "dataset": "cohort-v2",
+  "diagnostics": [
+    "Zero-hit query share",
+    "Mean recommended training listener count",
+    "Original query exclusions and target coverage"
+  ],
+  "export": "All catalog rows; top 10 supported neighbors, float64 score, int32 shared/item support and indices, S36 MBIDs. Numeric NPY with pickle disabled; checksummed JSON manifest pinned by trusted hash. No listener histories.",
+  "metrics": {
+    "completeness": "Mean list length, full-list share, empty-list share; no fallback items",
+    "coverage": "Unique recommended IDs across evaluated scorable queries / fixed catalog size",
+    "k": 10,
+    "macro": "Mean over all frozen scorable listener/window queries",
+    "ndcg": "Binary DCG discounts 1/log2(rank+1), ideal length min(10, number of in-catalog targets)",
+    "precision": "Hits / 10 including missing positions",
+    "recall": "Hits / number of distinct in-catalog targets",
+    "seed_balanced": "Compute mean within each seed, then equal mean across distinct seeds",
+    "support_cohorts": [
+      "5-19",
+      "20+"
+    ],
+    "uncertainty": "Paired percentile bootstrap by listener/query, 1000 replicates, NumPy default_rng seed 20261019, 2.5th/97.5th quantiles; exploratory intervals for validation alternatives, final selected comparison on test"
+  },
+  "optional_metrics_deferred": "Artist diversity and audio/feature diversity require independent validated metadata/features not available for the full catalog",
+  "resource_policy": "Local CPU, sparse 32-seed blocks, no dense all-item matrix, no paid compute or new event acquisition",
+  "selection": "Maximum validation macro NDCG@10; exact ties choose smaller lambda. Freeze selection, code and protocol before final test. Test compares popularity and selected CF only.",
+  "source_protocol_sha256": "c5bdeb888c5efd2a008776b17c13e46537fec2634e6b6cb55f35040c5d5def32",
+  "stage_6_decision_sha256": "db823e90e1bf34003ffccd499394194e602aff82598e12ad44a3c1c55da60bdf",
+  "stage_7_authorized": true,
+  "stage_8_authorized": false,
+  "training": "Binary eligible listener-recording pairs from frozen train database only; no holdout interactions or target features",
+  "usage_stop_buffer_remaining_percent": 15,
+  "version": "stage7-v1"
+}

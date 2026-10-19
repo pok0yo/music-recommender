@@ -19,3 +19,5 @@ docs/evidence/stage-6-support-audit-v2.json -text
 docs/evidence/stage-6-reproducibility-v2.json -text
 docs/evidence/stage-6-resources-v2.json -text
 docs/evidence/stage-6-decision-v2.json -text
+docs/stage-7-protocol.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/evidence/stage-7-*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
