@@ -1,0 +1,40 @@
+{
+  "candidate_items": 565147,
+  "complete": true,
+  "expanded_array_bytes": 113029400,
+  "files": {
+    "ids.npy": "87732d20d4ec796a657df1b2560438feed57c9f1db04ce7ef82d3ca7172a9737",
+    "neighbors.npy": "7d2f2ce93b725f362bcc6a16db1d1485591b3d392233ca4160a1046865e134d9",
+    "scores.npy": "5ba4097e6147701c5ea7b63101f99ffe8bbf11e813edac880aa7b834c0f09508",
+    "shared.npy": "a2c47e46ca2756d33a88c216838868807a90c7e4b1bc057abfb285e572b6729f",
+    "support.npy": "3b4bdefa6b5eaae88427230a586b75e22b74674b205f0e72049bcc1a1b0e57e6"
+  },
+  "k": 10,
+  "lambda": 50,
+  "lineage": {
+    "code_sha256": {
+      "ml/evaluate.py": "5d82af78a7264d31f97503723191a327b53406cb1cbe20e95af8759543e48363",
+      "ml/recommend.py": "1ce9f62c2d7f676e8599cca6be723c769f6b3ff315b457224ba82d8ec495b9af",
+      "ml/requirements-audit.txt": "c62c677e9e1498bf07c495540db8461e55e2f4e72577b3252bebd1a6d8ec76f7",
+      "ml/requirements-model.txt": "740b49ba516ae42f0addebdb0a5fd2d6e6a9ba9a2652cca64cef5ce91e61ce3d",
+      "ml/run_stage7.py": "fdaa19a5731a5a0f2e1cb4ecbca008736c964bbe75919e4b34c3e2a221a10734",
+      "ml/serving_artifact.py": "53f621fae818a02304d714d20114958b01f3baa6e9a5640614cc65c1e891f098"
+    },
+    "protocol_sha256": "4f5899ab8c8232e84ff6d89358a7f8eaf7e71720bc0ac1bfa64c6e9ca27bc401",
+    "selection_sha256": "4077515435a3adda5bb584cc04846ef2a04ddc9de1ebcea36b8ffbe15a4dfc3c",
+    "stage_6_decision_sha256": "db823e90e1bf34003ffccd499394194e602aff82598e12ad44a3c1c55da60bdf",
+    "test_report_sha256": "bbdd6c047309f385b776a9128e04a85edefa8ead2447a1c6b45235b13658e55f",
+    "training_interval": [
+      "2026-02-01",
+      "2026-08-01"
+    ]
+  },
+  "min_edge_listeners": 3,
+  "min_item_listeners": 5,
+  "model_id": "item-cf-cohort-v2-lambda-50",
+  "peak_process_memory_bytes": 641093632,
+  "schema_version": 1,
+  "score": "c/sqrt(n_i*n_j) * c/(c+lambda)",
+  "seconds": 478.469,
+  "serialized_array_bytes": 113030040
+}

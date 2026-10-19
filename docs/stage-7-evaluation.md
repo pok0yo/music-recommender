@@ -1,6 +1,6 @@
 # Stage 7 — recommendation models and evaluation
 
-Status: implementation, 48 tests, and validation replay are complete. Lambda 50 is selected. Final test results, serving export, and the Stage 7 completion decision are pending. Stage 8 is not authorized.
+Status: implementation, 48 tests, validation replay, and final held-out evaluation are complete. Lambda 50 is selected. Serving export verification is complete; Stage 7 is accepted. Stage 8 is not authorized.
 
 ## Scope and frozen experiment
 
@@ -63,3 +63,52 @@ Validation elapsed time was 131.172 seconds; peak process memory was 3,431,378,9
 Before a completed test report was produced, code review found that baseline top-ten slices retained full temporary catalog arrays. The exact test processes were stopped; no test report was written or inspected. Commit `d5b8bfe0b66af8426c15c483e8659bcd22d2e72d` limits the temporary candidates to eleven before seed exclusion. The ranking definition and all CF parameters stayed unchanged. A regression test proves exact equivalence for seeds inside and outside the top ten and checks the backing array size. All **48 tests** passed locally and in [CI](https://github.com/pok0yo/music-recommender/actions/runs/39339435161).
 
 Both validation runs produced byte-identical rankings, per-query metrics, and seed arrays for all four models, plus exactly equal aggregate metrics and bootstrap intervals. The same lambda 50 was selected. [Replay evidence](evidence/stage-7-reproducibility.json) preserves hashes; [the earlier report](evidence/stage-7-validation-before-memory-fix.json) remains available. Measured elapsed time changed from 131.172 to 40.234 seconds and peak process memory from 3,431,378,944 to 640,856,064 bytes. These local observations are not cross-machine performance guarantees. The corrected [selection](evidence/stage-7-selection.json) is committed before the new final test run.
+
+## Final held-out result
+
+The corrected selection was committed and pushed in `580bbc9d77731378eb7e52d0e2b6f24a53673388` before final test execution. No parameters changed after inspecting test results. [Final test evidence](evidence/stage-7-test.json) covers 7,848 scorable listener queries and 7,003 distinct seeds. The selected CF improves this specific retrospective future-listening task over the fixed popularity baseline.
+
+| Metric | Popularity | Selected CF |
+|---|---:|---:|
+| Macro NDCG@10 | 0.021665 | 0.218345 |
+| Macro Recall@10 | 0.003147 | 0.060890 |
+| Macro Precision@10 | 0.020821 | 0.195260 |
+| Seed-balanced NDCG@10 | 0.020712 | 0.201037 |
+| Unique recommended IDs | 11 | 47,473 |
+| Catalog coverage | 0.001946% | 8.400115% |
+| Full ten-item lists | 100% | 99.3884% |
+| Zero-hit queries | 86.0729% | 49.2610% |
+| Mean recommended training listeners | 1,664.93 | 199.86 |
+
+The paired bootstrap difference in macro NDCG@10 is **+0.196681**, with 95% percentile interval **[0.190176, 0.203435]**. Recall difference is +0.057743 [0.054456, 0.060946]; precision difference is +0.174439 [0.168093, 0.180775]. These intervals describe listener-query resampling conditional on this frozen cohort, catalog, and time window. They do not include uncertainty from choosing a different population or window.
+
+Lower-support seeds remain harder: the 2,208 queries with 5–19 training listeners have CF NDCG@10 0.169512 versus popularity 0.014348. The 5,640 queries with at least 20 listeners have CF 0.237463 versus popularity 0.024529. Nearly half of scorable CF queries have no observed target in the top ten, and average recall is only 6.09%. A complete list is not a useful-list guarantee. One scorable query returns an empty list; no popularity fallback is inserted.
+
+Only **7,848 of 11,577 constructed queries (67.79%)** are scorable. The source audit also records 12,143 active-window listeners, 566 without a seed in the first 21 days, 3,412 unsupported-seed queries, 395 zero-target queries, and 265 queries with all targets outside the catalog. Those reason counts can overlap; they must not be added as disjoint exclusions. There are 379,317 out-of-catalog target pairs among 1,254,237 total pairs. Reported recall uses the 874,920 in-catalog pairs and is therefore conditional on coverage. It is not an all-music recall estimate.
+
+The final run took 45.438 seconds and peaked at 640,823,296 process bytes on the local machine. This includes input checks, fitting the sparse training representation, ranking, metrics, and reporting; it is not request latency. The original training interval remains unchanged for the serving export. No deployment refit is assigned these test scores.
+
+## Model decision and product limits
+
+Use the selected lambda-50 item-CF as the first related-track model, with the serving export now verified. The baseline comparison, stable ranking, train-only support evidence, and lower-support cohort results justify this bounded choice. Optional ALS and metadata hybrids are unnecessary for this stage. The evidence supports offline ranking improvement, not a claim about satisfaction, audio similarity, or causal discovery.
+
+The default explanation remains **“Connected through shared listening in this dataset.”** Details may describe the training interval and thresholded aggregate counts. Scores are ranking signals, never enjoyment probabilities. Unsupported seeds return an explicit unavailable state; supported seeds with insufficient edges return a short or empty list. The eventual API must preserve those distinctions.
+
+Eight approved panel titles remain unsupported, including two unresolved identities. Lucy Bedroque has only one of four supported titles. Full-catalog title/artist identity, external listening links, human usefulness, artist/acoustic diversity, and deployed performance remain unverified. No streaming, playback rights, or application readiness is inferred from these experiments.
+
+
+## Serving verification and completion
+
+The [artifact manifest](evidence/stage-7-artifact-manifest.json) and [verification report](evidence/stage-7-artifact-verification.json) bind the same frozen model to the real export. All 565,147 rows pass structural, checksum, support, score-formula, ordering, and self-exclusion checks. Exported rankings exactly match all 6,983 validation seeds and 7,003 test seeds. A further 100 deterministic sampled seeds plus all 32 supported panel tracks match on-demand training results, including scores and evidence counts. All 32 panel tracks return ten results. Unsupported and short-list responses pass explicit checks.
+
+Across the full catalog, 553,165 seeds have ten results, 462 have none, and 11,520 have one to nine. These are catalog-wide counts, distinct from query-weighted test completeness. Arrays occupy 113,030,040 serialized bytes and 113,029,400 expanded bytes. Export took 478.469 seconds with 641,093,632 peak process bytes before final reload validation. In a separate verifier process, loading plus full validation took 3.188 seconds and peaked at 181,694,464 process bytes before constructing the training model. One thousand warm local Python lookups over 100 fixed sampled seeds measured p50 0.0073 ms and p95 0.0132 ms. These exclude startup, HTTP, database, network, and deployment overhead; no API latency target is claimed.
+
+The full export was built once. Validation replay is byte-identical, and every exported evaluation ranking matches, but a second full-export rebuild was not performed. The local artifact remains ignored and contains no listener histories. No new event download or paid compute occurred. The [completion decision](evidence/stage-7-decision.json) closes Stage 7 only. Stage 8 requires a new user go; catalog metadata and serving integration remain future work.
+
+Recheck the saved artifact without retraining or changing the experiment:
+
+```powershell
+.venv/Scripts/python.exe -m ml.verify_stage7_artifact --artifact artifacts/stage-7-cf-v1 --manifest-sha256 ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122 --output data/processed/stage-7-artifact-recheck.json
+```
+
+Use a fresh output path for each verification. The verifier uses assert-based acceptance checks; run normal Python without optimization flags. All model-source hashes remain those selected before the final test. The added verifier was exercised on the real artifact; the 48 model/audit tests and their successful CI run remain unchanged.

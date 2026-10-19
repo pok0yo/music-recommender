@@ -1,0 +1,43 @@
+{
+  "catalog_items": 565147,
+  "experiment_checks": {
+    "test": {
+      "exact_ranking_match": true,
+      "seeds": 7003
+    },
+    "validation": {
+      "exact_ranking_match": true,
+      "seeds": 6983
+    }
+  },
+  "full_export_builds": 1,
+  "full_export_rebuild_reproducibility_checked": false,
+  "list_length_histogram": [
+    462,
+    751,
+    893,
+    1062,
+    1268,
+    1317,
+    1464,
+    1493,
+    1599,
+    1673,
+    553165
+  ],
+  "load_and_validation_seconds": 3.1879842999987886,
+  "load_peak_process_memory_bytes": 181694464,
+  "manifest_sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122",
+  "scope": "Local Python lookup only; includes result objects, excludes API/network/database and startup",
+  "supported_panel_full_lists": 32,
+  "training_comparison_seeds": 132,
+  "verified": true,
+  "verifier_sha256": "b46fabeeafa636b61bebcd69be84e23b5883d4a611cfa3dc87b2c0bfe25e9d83",
+  "warm_lookup": {
+    "calls": 1000,
+    "distinct_seeds": 100,
+    "p50_ms": 0.007300001016119495,
+    "p95_ms": 0.013199998647905886,
+    "random_seed": 20261019
+  }
+}

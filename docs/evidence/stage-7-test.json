@@ -1,0 +1,155 @@
+{
+  "catalog_items": 565147,
+  "code_sha256": {
+    "ml/evaluate.py": "5d82af78a7264d31f97503723191a327b53406cb1cbe20e95af8759543e48363",
+    "ml/recommend.py": "1ce9f62c2d7f676e8599cca6be723c769f6b3ff315b457224ba82d8ec495b9af",
+    "ml/requirements-audit.txt": "c62c677e9e1498bf07c495540db8461e55e2f4e72577b3252bebd1a6d8ec76f7",
+    "ml/requirements-model.txt": "740b49ba516ae42f0addebdb0a5fd2d6e6a9ba9a2652cca64cef5ce91e61ce3d",
+    "ml/run_stage7.py": "fdaa19a5731a5a0f2e1cb4ecbca008736c964bbe75919e4b34c3e2a221a10734",
+    "ml/serving_artifact.py": "53f621fae818a02304d714d20114958b01f3baa6e9a5640614cc65c1e891f098"
+  },
+  "denominators": {
+    "active_window_listeners": 12143,
+    "all_targets_outside_catalog_queries": 265,
+    "artifact_sha256": "ea5a345d11023c1af7d3882aa94c5b967ae35f51a13e56ce10251432af47ce6a",
+    "constructed_queries": 11577,
+    "distinct_scorable_seeds": 7003,
+    "events": 8614555,
+    "gate_pass": true,
+    "in_catalog_target_pairs": 874920,
+    "listeners_without_seed_in_first_21_days": 566,
+    "out_of_catalog_target_pairs": 379317,
+    "scorable_queries": 7848,
+    "scorable_share": 0.6778958279346982,
+    "target_pairs": 1254237,
+    "unsupported_seed_queries": 3412,
+    "zero_target_queries": 395
+  },
+  "local_artifact_sha256": {
+    "cf_lambda_50-query-metrics.npy": "d1c2b20421b7137547e8c9a9016523378700ce0da11b128819845a04ad35e0c1",
+    "cf_lambda_50-rankings.npy": "a2fb93a5c96138c3abc0422445869772d5a3d2db648d5fb654bf11f8af74c082",
+    "popularity-query-metrics.npy": "d06a05d3d74393cd2960156d089fb6225039c4ce4af31ce55a25ed535867ae31",
+    "popularity-rankings.npy": "f9754b9f5443ae90130540b0cec76e376222242bfd243e1c53bff7656dee1867",
+    "seed-indices.npy": "a855ade476aa10684e6232f89b723ebd85bd5edbac9aebebff3d404b8c4ba4ac"
+  },
+  "models": {
+    "cf_lambda_50": {
+      "catalog_coverage": 0.08400115368213934,
+      "distinct_seeds": 7003,
+      "empty_list_share": 0.00012742099898063202,
+      "fallback_items_used": 0,
+      "full_list_share": 0.9938837920489296,
+      "macro": {
+        "ndcg_at_10": 0.2183453189514125,
+        "precision_at_10": 0.19525993883791876,
+        "recall_at_10": 0.06089034404828689
+      },
+      "mean_list_length": 9.971330275229358,
+      "mean_recommended_training_listeners": 199.85819436457734,
+      "paired_difference_vs_popularity": {
+        "ndcg_at_10": {
+          "lower_95": 0.19017609436676022,
+          "mean_difference": 0.19668052060810445,
+          "replicates": 1000,
+          "seed": 20261019,
+          "unit": "listener/query",
+          "upper_95": 0.20343460368935493
+        },
+        "precision_at_10": {
+          "lower_95": 0.16809250764525993,
+          "mean_difference": 0.1744393476044852,
+          "replicates": 1000,
+          "seed": 20261019,
+          "unit": "listener/query",
+          "upper_95": 0.18077471967380224
+        },
+        "recall_at_10": {
+          "lower_95": 0.054455835357245144,
+          "mean_difference": 0.05774301674788071,
+          "replicates": 1000,
+          "seed": 20261019,
+          "unit": "listener/query",
+          "upper_95": 0.06094566349640209
+        }
+      },
+      "queries": 7848,
+      "recommended_unique_items": 47473,
+      "seed_balanced": {
+        "ndcg_at_10": 0.2010367462878784,
+        "precision_at_10": 0.17894220780071804,
+        "recall_at_10": 0.05791312979101101
+      },
+      "support_cohorts": {
+        "20_or_more": {
+          "metrics": {
+            "ndcg_at_10": 0.23746303312564448,
+            "precision_at_10": 0.21436170212765956,
+            "recall_at_10": 0.06301632453019228
+          },
+          "queries": 5640
+        },
+        "5_to_19": {
+          "metrics": {
+            "ndcg_at_10": 0.16951202731071646,
+            "precision_at_10": 0.1464673913043479,
+            "recall_at_10": 0.05545985042602923
+          },
+          "queries": 2208
+        }
+      },
+      "zero_hit_query_share": 0.49260958205912336
+    },
+    "popularity": {
+      "catalog_coverage": 1.946396247348035e-05,
+      "distinct_seeds": 7003,
+      "empty_list_share": 0.0,
+      "fallback_items_used": 0,
+      "full_list_share": 1.0,
+      "macro": {
+        "ndcg_at_10": 0.02166479834331063,
+        "precision_at_10": 0.02082059123343497,
+        "recall_at_10": 0.003147327300406396
+      },
+      "mean_list_length": 10.0,
+      "mean_recommended_training_listeners": 1664.925369520897,
+      "queries": 7848,
+      "recommended_unique_items": 11,
+      "seed_balanced": {
+        "ndcg_at_10": 0.020712403768488652,
+        "precision_at_10": 0.019942581297357584,
+        "recall_at_10": 0.0029780448108522603
+      },
+      "support_cohorts": {
+        "20_or_more": {
+          "metrics": {
+            "ndcg_at_10": 0.024529294256324257,
+            "precision_at_10": 0.0236879432624111,
+            "recall_at_10": 0.0035134085135018595
+          },
+          "queries": 5640
+        },
+        "5_to_19": {
+          "metrics": {
+            "ndcg_at_10": 0.01434787943506896,
+            "precision_at_10": 0.01349637681159424,
+            "recall_at_10": 0.0022122285495647163
+          },
+          "queries": 2208
+        }
+      },
+      "zero_hit_query_share": 0.8607288481141692
+    }
+  },
+  "peak_process_memory_bytes": 640823296,
+  "phase": "test",
+  "protocol_sha256": "4f5899ab8c8232e84ff6d89358a7f8eaf7e71720bc0ac1bfa64c6e9ca27bc401",
+  "runtime": {
+    "numpy": "2.5.4",
+    "python": "3.12.14",
+    "scipy": "1.18.1"
+  },
+  "seconds": 45.438,
+  "selection_sha256": "4077515435a3adda5bb584cc04846ef2a04ddc9de1ebcea36b8ffbe15a4dfc3c",
+  "source_commit": "580bbc9d77731378eb7e52d0e2b6f24a53673388",
+  "stage_6_decision_sha256": "db823e90e1bf34003ffccd499394194e602aff82598e12ad44a3c1c55da60bdf"
+}

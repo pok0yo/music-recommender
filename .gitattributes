@@ -27,3 +27,4 @@ ml/run_stage7.py text eol=lf
 ml/serving_artifact.py text eol=lf
 ml/requirements-model.txt text eol=lf
 ml/requirements-audit.txt text eol=lf
+ml/verify_stage7_artifact.py text eol=lf

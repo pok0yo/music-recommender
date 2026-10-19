@@ -1,0 +1,26 @@
+{
+  "ci": "https://github.com/pok0yo/music-recommender/actions/runs/39339435161",
+  "evidence_sha256": {
+    "stage-7-artifact-manifest.json": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122",
+    "stage-7-artifact-verification.json": "f99d3e3a07bb3ed39089cbc5cda0b2aa30f2c28ffbb37ee986c47be1ad470cd8",
+    "stage-7-reproducibility.json": "ad3f5d847495dbdeafdb3a8da0e89a2eaa630a6fb1990d6e6be113baeb7dba04",
+    "stage-7-selection.json": "4077515435a3adda5bb584cc04846ef2a04ddc9de1ebcea36b8ffbe15a4dfc3c",
+    "stage-7-test.json": "bbdd6c047309f385b776a9128e04a85edefa8ead2447a1c6b45235b13658e55f",
+    "stage-7-validation.json": "3919bac7c291578f2afada12554e61465f4e9bfc13e1eb545b1bef173c50679d"
+  },
+  "limitations": [
+    "Conditional retrospective listening overlap, not enjoyment",
+    "Eight panel titles unsupported; full catalog metadata not verified",
+    "Full export built once; repeated validation and all evaluated export rankings match",
+    "No API, frontend, deployment, or playback verification"
+  ],
+  "next_stage_requires_user_go": true,
+  "observed_on": "2026-10-19",
+  "protocol_sha256": "4f5899ab8c8232e84ff6d89358a7f8eaf7e71720bc0ac1bfa64c6e9ca27bc401",
+  "selected_model": "item-cf-cohort-v2-lambda-50",
+  "stage_6_decision_sha256": "db823e90e1bf34003ffccd499394194e602aff82598e12ad44a3c1c55da60bdf",
+  "stage_7_complete": true,
+  "stage_8_authorized": false,
+  "test_source_commit": "580bbc9d77731378eb7e52d0e2b6f24a53673388",
+  "tests_passed": 48
+}

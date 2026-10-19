@@ -4,7 +4,7 @@ A planned music discovery application that recommends recognizable tracks from a
 
 ## Status
 
-**Stage 6 is complete. The revised dataset passes: 32 of 40 approved tracks are supported, meeting the unchanged 80% gate.** Application and model implementation have not begun. Stage 7 requires the user's next explicit go.
+**Stage 7 is complete: models, 48 tests, validation replay, final held-out comparison, and serving export verification passed.** Stage 8 is not authorized; application implementation has not begun.
 
 The accepted `cohort-v2` applies two independently verified recording redirects to a fixed 30% listener cohort reconstructed from existing cached ranges, with no new event download. The original 26/40 failure, approved panel, and acceptance thresholds remain preserved. See the [frozen revision protocol](docs/stage-6-protocol-v2.json) and [acceptance decision](docs/evidence/stage-6-decision-v2.json).
 
@@ -13,8 +13,8 @@ The accepted `cohort-v2` applies two independently verified recording redirects 
 - Stage 3: recommendation methodology and evaluation protocol proposed.
 - Stage 4: UX architecture and five distinct visual directions documented as proposals.
 - Stage 5: implementation plan, contracts, acceptance gates, and milestones documented.
-- Stage 6: complete and accepted. All 149 selected files are processed inside the additional 16 GiB transfer cap; 75,994,223 cleaned events and reproducible splits are available locally. The unchanged panel passes for 32/40 tracks. Validation/test have 7,887/7,848 scorable queries. All 38 local and CI tests passed. No model quality has been measured.
-- Stage 7: data prerequisites satisfied; awaiting the user's explicit go. No model training or implementation is authorized by data acceptance alone.
+- Stage 6: complete and accepted. All 149 selected files are processed inside the additional 16 GiB transfer cap; 75,994,223 cleaned events and reproducible splits are available locally. The unchanged panel passes for 32/40 tracks. Validation/test have 7,887/7,848 scorable queries. The original 38 audit tests passed locally and in CI.
+- Stage 7: selected lambda-50 item-CF reaches test NDCG@10 0.218345 versus popularity 0.021665 on scorable queries. All 48 tests passed locally and in CI. The 565,147-item serving export passes integrity checks and matches every evaluated ranking. See the [evaluation report](docs/stage-7-evaluation.md) for uncertainty, exclusions, failure cohorts, and reproducibility.
 
 See the [Stage 4 UX and design plan](docs/stage-4-design-plan.md) for the journey, interface states, five design systems, exact hero reservations, and future verification criteria. No final visual direction has been selected or implemented.
 
@@ -22,7 +22,7 @@ See the [Stage 5 implementation plan](docs/stage-5-implementation-plan.md) for a
 
 See the [Stage 6 acceptance report](docs/stage-6-data-audit.md#15-final-cohort-v2-acceptance-and-stage-boundary) and [decision manifest](docs/evidence/stage-6-decision-v2.json) for coverage gaps, exclusions, resources, reproducibility, and the frozen candidate/query hashes. Earlier failed versions and checkpoints remain documented as history.
 
-The target is a 6–8-week individual portfolio project, subject to available development time and later model/product checks. The accepted cohort and training-support index exist locally. No trained recommender or measured recommendation-quality result exists yet.
+The target is a 6–8-week individual portfolio project, subject to available development time and later product checks. The accepted cohort, train-only recommender, and measured offline results exist locally. These results do not establish subjective usefulness or application readiness.
 
 ## Proposed MVP
 
@@ -34,21 +34,21 @@ The target is a 6–8-week individual portfolio project, subject to available de
 
 The user's ten requested artists define the coverage target; very recent releases are not essential. The [40-title panel](docs/coverage-panel.json) was approved on 2026-10-18. The original 38 selected recording IDs remain unchanged; AQUAFINA and Japanese Denim remain ambiguous. Eight titles are still unsupported, and Lucy Bedroque has only one of four supported titles. The aggregate pass does not establish comprehensive artist coverage or correct metadata for all 565,147 eligible recording IDs. Outbound listening links remain provisional pending final MVP approval.
 
-## Recommendation and evaluation proposal
+## Recommendation and evaluation
 
-- Audited sources: [ListenBrainz listening events](https://listenbrainz.org/data/) and [MusicBrainz core metadata](https://musicbrainz.org/doc/MusicBrainz_Database). The revised cohort passes the agreed data gates; recommendation usefulness still needs model evaluation.
+- Audited sources: [ListenBrainz listening events](https://listenbrainz.org/data/) and [MusicBrainz core metadata](https://musicbrainz.org/doc/MusicBrainz_Database). The revised cohort passes the agreed data gates; human recommendation usefulness remains unverified.
 - Baseline: distinct-listener popularity calculated from training data.
 - Primary model: binary item-based collaborative filtering with cosine normalization and a shared-listener support adjustment.
 - ALS and metadata hybrids are conditional experiments, not requirements.
-- Proposed evaluation: global chronological training, validation, and test windows; one seed per query; future co-listening as an explicitly limited relevance proxy.
-- Compare models on the same full candidate catalog. Report NDCG@10, Recall@10, coverage, support cohorts, exclusions, uncertainty, and measured latency.
-- Similarity scores are not probabilities of enjoyment. No improvements are claimed before experiments.
+- Completed evaluation: global chronological training, validation, and test windows; one seed per query; future co-listening as an explicitly limited relevance proxy.
+- Both models use the same full candidate catalog. NDCG@10, Recall@10, Precision@10, coverage, support cohorts, exclusions, and uncertainty are reported. Deployed latency is unmeasured.
+- Similarity scores are not probabilities of enjoyment. Nearly half of scorable test queries have no observed target in the selected model's top ten.
 
 The audit measured coverage, timestamp anomalies, sparsity, processing resources, and exclusions. Identity ambiguity and unsupported items remain explicit limitations. Evaluation is a retrospective reconstruction by listen time, not an as-of historical deployment replay. Spotify Platform content is not a proposed ML input.
 
 ## Preferred stack
 
-Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Python, pandas, NumPy, scikit-learn, FastAPI, Pydantic, and Supabase PostgreSQL. Authentication is deferred. Only the audit dependency, PyArrow 26.0.0, has been installed in an ignored local Python environment; the application and model stack remains uninstalled.
+Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Python, FastAPI, Pydantic, and Supabase PostgreSQL remain the preferred application stack. Authentication is deferred. The implemented audit/model pipeline uses pinned PyArrow 26.0.0, NumPy 2.5.4, and SciPy 1.18.1 in an ignored local Python environment. pandas, scikit-learn, and implicit are unnecessary for the current model; application dependencies are not installed.
 
 ## Design direction
 
