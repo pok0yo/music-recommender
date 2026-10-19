@@ -1,0 +1,59 @@
+{
+  "acquisition": {
+    "budget": {
+      "cached_body_bytes": 13305628630,
+      "cap_bytes": 17179869184,
+      "requests": 5824,
+      "reserved_bytes": 13465108118,
+      "verified_cached_ranges": 5687
+    },
+    "peak_process_memory_bytes": 737411072,
+    "seconds_this_run": 791.656
+  },
+  "cleaning_runs": [
+    {
+      "manifest_sha256": "3b9eed403dbe9a4ccc5d59d06c42d6b32738852b11373c74766bed873089bd8a",
+      "peak_process_memory_bytes": 350822400,
+      "runtime_seconds": 136.672
+    },
+    {
+      "manifest_sha256": "95e73e832180242afec85e68bad774063b0dfd229c6b143898be3c326811b99e",
+      "peak_process_memory_bytes": 335200256,
+      "runtime_seconds": 131.297
+    }
+  ],
+  "free_disk_bytes": 105012781056,
+  "limitations": [
+    "Logical retained file sizes and final free-space snapshot, not peak disk allocation",
+    "Elapsed timings include concurrent work and filesystem effects; not general performance guarantees",
+    "Stage 7 model memory and latency are not measured"
+  ],
+  "observed_on": "2026-10-19",
+  "paid_compute_used": false,
+  "physical_ram_bytes": 16267988992,
+  "physical_ram_source": "Earlier hardware observation in stage-6-resources.json on the same machine",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "pyarrow": "26.0.0",
+  "python": "3.12.14",
+  "query_replay": {
+    "peak_process_memory_bytes": 416796672,
+    "seconds": 25.984
+  },
+  "retained_bytes_by_directory": {
+    "data/interim": 5297387441,
+    "data/processed": 7415230502,
+    "data/raw": 13594893596
+  },
+  "retained_total_bytes": 26307511539,
+  "support_audit": {
+    "peak_process_memory_bytes": 1886556160,
+    "seconds_this_run": 1184.485
+  },
+  "training_database": {
+    "database_bytes": 1795788800,
+    "database_sha256": "a46b8dbb26ceb7c76806c232e4602fec954fa9fb47f5cbeb804055967939139b",
+    "eligible_binary_pairs": 10847115,
+    "singleton_recordings": 2007886,
+    "sqlite_quick_check": "ok"
+  }
+}

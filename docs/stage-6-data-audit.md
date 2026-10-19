@@ -1,6 +1,6 @@
 # Stage 6 — data feasibility audit
 
-Latest decision: **2026-10-19 — the Stage 6 audit is complete, but cohort-v1 fails the approved coverage gate: 26/40 supported tracks versus 32/40 required. Stage 7 remains closed.** Acquisition, cleaning, reproducibility, and both holdout feasibility checks completed. Sections 1–10 preserve historical checkpoints; sections 11–12 contain the final evidence and revise decision. No model comparison is approved and no recommendation-quality result is claimed.
+Latest decision: **2026-10-19 — Stage 6 is complete and cohort-v2 is accepted: 32/40 supported tracks meets the unchanged 32/40 gate. Both holdout gates, cleaning/query reproducibility, and database integrity pass. Stage 7 must wait for the user's explicit go.** Sections 1–12 preserve the earlier checkpoints and failed cohort-v1 decision; sections 13–15 document the separately frozen revision, measured evidence, and acceptance. No model has been trained and no recommendation-quality result is claimed.
 
 ## 1. Scope and assumptions
 
@@ -521,7 +521,7 @@ All event extraction must use the existing range cache in offline mode; missing 
 
 The complete local suite passes **38 tests**, including fixed hash-cohort vectors, offline failure without network/budget reservation, complete stable redirect validation, canonicalization before boundary deduplication, and repeat-listen preservation. Source, tests, and protocol are committed before expanded-cohort measurement. These are data-processing tests, not model-quality results.
 
-Reproduction commands (run from the repository root; existing completed outputs are preserved):
+Commands used for this revision (run from the repository root with fresh output directories). Do not rerun acquisition into a frozen completed directory: a resumed run rechecks file hashes but updates its acquisition receipt and elapsed-time fields. Use separately named outputs for a new extraction and carry those paths through preparation/auditing; preserve the published snapshots and the transfer ledger. Cleaning refuses to overwrite existing output:
 
 ```powershell
 .venv/Scripts/python.exe -u -m ml.acquire_events --output data/interim/cohort-v2 --cohort-buckets 3 --offline
@@ -531,3 +531,161 @@ Reproduction commands (run from the repository root; existing completed outputs 
 ```
 
 The previous failed version is retained for comparison. Passing a larger-cohort feasibility gate, if it happens, is not a measured improvement in recommendation quality. Stage 7 remains closed while this revision is being audited.
+
+## 14. Cohort-v2 processing evidence
+
+The protocol and processing source were frozen in commit `eff996718da2ae268d951d43a319a70b83bb4416`, before expanded-cohort measurement. All **38 tests passed locally and in [GitHub Actions](https://github.com/pok0yo/music-recommender/actions/runs/39288175514)**. The identity/protocol milestone was pushed before extraction began.
+
+### Acquisition and cleaning
+
+The offline run reconstructed all 149 members from the pinned, hash-verified range cache. It decoded 320,570,129 source rows, of which 318,891,384 fall in the fixed interval, and retained **92,971,366 events** for the three selected listener-hash buckets. The hash rule selects listeners, not an exact fraction of events. [Acquisition evidence](evidence/stage-6-acquisition-complete-v2.json) records 791.656 seconds elapsed and 737,411,072 bytes peak process memory. Elapsed time includes a period of slowed execution and is not a compute benchmark. No complete source-archive checksum is claimed.
+
+The durable ledger remained unchanged throughout offline extraction: **13,465,108,118 reserved bytes**, 5,824 charged requests, and the original **17,179,869,184-byte additional cap**. This includes the preceding identity lookups and their bounded retries. The 68 requests added since the original v1 snapshot reserved 36,765,764 bytes; these are conservative body-plus-overhead allowances, not packet-level traffic measurements. The original initial 1 GiB investigation allowance remains separate. No new event ranges were fetched.
+
+| Cleaning quantity | Measured rows |
+|---|---:|
+| Input | 92,971,366 |
+| Missing recording ID, excluded | 15,098,821 |
+| Duplicate listener/normalized-recording/listen-time, excluded | 1,878,322 |
+| Malformed recording ID, excluded | 0 |
+| Nonpositive listener / outside retained interval, excluded | 0 / 0 |
+| Valid retained events | 75,994,223 |
+| IDs normalized for whitespace/case | 165 |
+| Verified redirect applied | 3,332 |
+
+Normalization and redirects are transformations, not extra exclusions. Duplicates are identified after canonicalization; repeated listens at different times remain. The first source row supplies the retained creation time. The [cleaning manifest](evidence/stage-6-cleaned-manifest-v2.json) records every output file and hash. Output plus excluded rows equals input exactly.
+
+| Partition | Retained events | Created at or after partition end |
+|---|---:|---:|
+| Train: February 1 to August 1 | 59,207,212 | 4,797,611 |
+| Validation: August 1 to August 29 | 8,172,456 | 507,427 |
+| Test: August 29 to September 26 | 8,614,555 | 230,123 |
+
+All boundaries are 2026 UTC, start inclusive and end exclusive. Among input events, 636,003 have creation times before listen time and 31,631,850 were created more than a day later. These input counts include subsequently excluded rows. Late imports remain in their listen-time partitions, so this remains retrospective; it must not be described as a simulation using only data available at each historical cutoff.
+
+Both independent cleaning runs completed, producing byte-identical copies of all **151 split files** and identical non-resource manifest fields. Runtime/peak memory were 136.672 seconds / 350,822,400 bytes and 131.297 seconds / 335,200,256 bytes, with overlapping execution. This proves repeatability in the recorded local environment, not cross-platform Parquet byte identity. Completed training-support, holdout replay, final storage, and acceptance evidence follow in section 15.
+
+### Repeating verification without modifying frozen outputs
+
+After the cleaning runs and support audit, this local command verifies every split file, compares non-resource manifest fields, rebuilds both query windows in a new directory, and requires exact equality with the saved audit. Change only the fresh replay directory name if it already exists. It does not download, train, rewrite source data, or rebuild the training index. Listener histories and query JSONL remain ignored local artifacts.
+
+```powershell
+@'
+from pathlib import Path
+import json, sqlite3
+from ml.audit_support import audit_queries, sha256
+roots = [Path('data/processed/cohort-v2'), Path('data/processed/cohort-v2-repro')]
+manifest = [json.loads((root/'manifest.json').read_text()) for root in roots]
+resource = {'runtime_seconds', 'peak_process_memory_bytes'}
+assert all(m['complete'] for m in manifest)
+assert {k:v for k,v in manifest[0].items() if k not in resource} == {k:v for k,v in manifest[1].items() if k not in resource}
+for root, m in zip(roots, manifest):
+    for name, item in m['files'].items():
+        assert sha256(root/name) == item['sha256']
+support = Path('data/processed/support-v2')
+receipt = json.loads((support/'training-index.json').read_text())
+assert receipt['manifest_sha256'] == sha256(roots[0]/'manifest.json')
+assert receipt['database_sha256'] == sha256(support/'training.sqlite')
+audit = json.loads((support/'audit.json').read_text())
+assert audit['cleaned_manifest_sha256'] == receipt['manifest_sha256']
+db = sqlite3.connect(f'file:{(support/"training.sqlite").as_posix()}?mode=ro', uri=True)
+assert db.execute('PRAGMA quick_check').fetchone()[0] == 'ok'
+catalog = {r[0] for r in db.execute('SELECT recording FROM support WHERE listeners>=5')}
+db.close()
+out = Path('data/processed/query-verification-v2-fresh')
+out.mkdir(exist_ok=False)
+for split in ('validation', 'test'):
+    assert audit_queries(roots[0], manifest[0], split, catalog, out) == audit['holdouts'][split]
+print('Cleaning files, index integrity and both query replays verified')
+'@ | .venv/Scripts/python.exe -X utf8 -
+```
+
+## 15. Final cohort-v2 acceptance and stage boundary
+
+**Accept cohort-v2 for the frozen evaluation protocol. Stage 6 is complete. Stop here: the user explicitly requires a new go before Stage 7.** Data readiness does not authorize model implementation or training. The [acceptance decision](evidence/stage-6-decision-v2.json) binds source-code revision, protocol, original panel, identity evidence, cleaned splits, training index, candidate catalog, and query hashes. The cleaning manifest records training as unapproved at preparation time; the final decision accepts the data while keeping Stage 7 execution unapproved.
+
+### Training support and remaining gaps
+
+| Statistic | Measured value |
+|---|---:|
+| Training listeners | 16,726 |
+| Recording IDs | 3,550,552 |
+| Distinct listener-recording pairs | 15,380,182 |
+| Eligible recording IDs, at least five listeners | 565,147 |
+| Binary pairs in eligible catalog | 10,847,115 |
+| Recording IDs heard by exactly one listener | 2,007,886 |
+
+All-recording interaction density is 0.0259%; eligible-catalog density, including all training listeners, is 0.1148%. These are binary interaction densities, not accuracy. The most active 1% of listeners contribute 31.5887% of training events. Binary pairs prevent repeat-play inflation of item support but do not remove prolific-listener or source-population bias.
+
+Median/p95/p99/max events per listener are **823 / 11,607 / 40,463 / 460,165**; distinct recordings per listener are **380 / 3,491 / 6,797 / 40,576**. Distinct listeners per recording are **1 / 14 / 51 / 1,911**. Counts describe submitted IDs, not a fully verified searchable application catalog.
+
+| Approved artist, four titles each | Supported | Ten qualifying neighbors |
+|---|---:|---:|
+| nate sib | 4/4 | 4/4 |
+| Tiffany Day | 4/4 | 4/4 |
+| che | 2/4 | 2/4 |
+| 2hollis | 4/4 | 4/4 |
+| Lucy Bedroque | 1/4 | 1/4 |
+| beabadoobee | 4/4 | 4/4 |
+| Daniel Caesar | 2/4 | 2/4 |
+| Steve Lacy | 4/4 | 4/4 |
+| Bruno Mars | 3/4 | 3/4 |
+| GIVĒON | 4/4 | 4/4 |
+| **Total** | **32/40 (80%)** | **32/40 (80%)** |
+
+This meets the original gate exactly, with no margin. Each supported item has at least five distinct training listeners and at least three other eligible recordings sharing at least three listeners; all 32 also have at least ten qualifying neighbors. Available neighbors do not establish relevance or quality. Lucy Bedroque remains particularly weak at 1/4; the aggregate pass must not be advertised as comprehensive coverage of every requested artist.
+
+| Unsupported title | Reason |
+|---|---|
+| che — Bae | Selected ID has 4 training listeners |
+| che — blac chyna | Selected ID has 0 training listeners |
+| Lucy Bedroque — AQUAFINA | Unresolved recording identity |
+| Lucy Bedroque — No Lie | Selected ID has 1 training listener |
+| Lucy Bedroque — GIRLS!!! | Selected ID has 1 training listener |
+| Daniel Caesar — Best Part | Selected ID has 0 training listeners |
+| Daniel Caesar — Japanese Denim | Unresolved recording identity |
+| Bruno Mars — That's What I Like | Selected ID has 0 training listeners |
+
+Zero selected-ID support is not proof that the song is absent under every identifier. For below-threshold items the audit skips neighbor calculation; zero reported neighbors is not proof of zero co-listening. No unresolved item or alternate ID was chosen because of its support count. The panel, dates, thresholds, and query rules remained unchanged. The two verified redirects and larger cohort explain a changed feasibility result; this is not an experiment showing improved model quality.
+
+### Holdout feasibility and replay
+
+| Count or share | Validation | Test |
+|---|---:|---:|
+| Active listeners | 11,585 | 12,143 |
+| Constructed queries | 11,082 | 11,577 |
+| No seed in first 21 days | 503 | 566 |
+| Unsupported seeds | 2,850 | 3,412 |
+| Queries with zero targets | 392 | 395 |
+| Nonempty targets all outside catalog | 266 | 265 |
+| Scorable queries | 7,887 | 7,848 |
+| Distinct scorable seeds | 6,983 | 7,003 |
+| All distinct query-target pairs | 1,190,388 | 1,254,237 |
+| In-catalog query-target pairs | 847,936 | 874,920 |
+| Out-of-catalog query-target pairs | 342,452 | 379,317 |
+| Scorable share of constructed queries | 71.17% | 67.79% |
+
+Both windows exceed 500 scorable queries and 100 distinct scorable seeds. Unsupported seeds are never replaced by later supported events. Target-related and seed-related exclusions overlap; do not add them as disjoint rejections. Future metrics remain conditional on supported seeds and in-catalog targets, and future co-listening is only an implicit relevance proxy. Test inspection remains limited to predefined feasibility counts, not parameter selection.
+
+The independent replay reproduced every holdout count and both query-file hashes exactly. [Reproducibility evidence](evidence/stage-6-reproducibility-v2.json) covers both full cleaning runs and query replay. The training database was built once, then checked with SQLite `quick_check` (`ok`) and a matching SHA-256. It was not independently rebuilt twice.
+
+### Resource observations and frozen handoff
+
+The complete support/holdout audit took **1,184.485 seconds (19.74 minutes)**, including a **987.688-second** training-index build. Peak process memory was **1,886,556,160 bytes (1.757 GiB)**. Query replay took 25.984 seconds with 416,796,672 bytes peak memory. These local elapsed observations include overlapping verification and filesystem effects; they are not general benchmarks.
+
+[Resource evidence](evidence/stage-6-resources-v2.json) records **26,307,511,539 bytes (24.501 GiB)** of retained raw/interim/processed files, including previous failed versions and reproduction copies. Free C: space at the final snapshot was **97.80 GiB**. Actual storage exceeds the old proposed 20 GiB target and fits the revised estimate and available disk. The user-authorized transfer cap was never increased. These are logical file sizes and final free space, not peak allocated disk. No paid compute was used. Model memory, ranking latency, and serving resources remain Stage 7 or later measurements.
+
+The accepted ranking universe contains **565,147 training-eligible IDs**. Its serialized hash, cleaned manifest, training database, and both query hashes are frozen in the decision. Future models must compare on that same candidate set, excluding the seed, and tune only on validation; test ranking results remain unmeasured. Current identity review covers only 58 targeted IDs. Full catalog metadata quality, outbound links, audio rights, and application readiness are not established by this pass.
+
+| Stage 6 gate | Final result |
+|---|---|
+| Bounded acquisition and provenance | Pass; all 149 files, original ledger preserved, offline revision |
+| Source terms and field provenance | Documented for selected event/core fields; no audio or artwork rights claimed |
+| Cleaning and query reproducibility | Pass; 151 identical split files and both identical query artifacts |
+| Local processing feasibility | Pass on available hardware; resource limits and observations recorded |
+| Approved 40-title coverage | Pass: 32/40; eight explicit gaps remain |
+| Validation and test feasibility | Pass for both windows |
+| Dataset accepted for the frozen protocol | Yes |
+| Stage 7 execution | **Not started; awaiting explicit user go** |
+
+No trained recommendation engine, ranking metrics, improvement claim, serving artifact, frontend, or deployment is included in Stage 6.

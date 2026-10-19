@@ -1,0 +1,1363 @@
+{
+  "budget": {
+    "cached_body_bytes": 13305628630,
+    "cap_bytes": 17179869184,
+    "requests": 5824,
+    "reserved_bytes": 13465108118,
+    "verified_cached_ranges": 5687
+  },
+  "cohort_buckets": 3,
+  "cohort_fraction": "hash64 modulo 10 < 3",
+  "cohort_rule": "music-recommender-stage6-v1",
+  "complete": true,
+  "end_ns": 1790380800000000000,
+  "etag": "\"6ad31670-39ac83c800\"",
+  "files": {
+    "1349.parquet": {
+      "bytes": 15123,
+      "cohort_rows": 5,
+      "interval_rows": 71,
+      "max_ns": 1769904000000000000,
+      "min_ns": 1769792879000000000,
+      "sha256": "ed74515fe1c5f8a4b26ceccf8c7eec52f6f15cf73f3fbd5f1b1ef9f9f5b5f291",
+      "source_rows": 1529981
+    },
+    "1350.parquet": {
+      "bytes": 26538400,
+      "cohort_rows": 605321,
+      "interval_rows": 2183008,
+      "max_ns": 1770060262000000000,
+      "min_ns": 1769904001000000000,
+      "sha256": "317ba3f101eeebb65a52d73729360be5d5d5ddaaea7f4ac5cd57aa283d8114d3",
+      "source_rows": 2183008
+    },
+    "1351.parquet": {
+      "bytes": 26621450,
+      "cohort_rows": 606585,
+      "interval_rows": 2186255,
+      "max_ns": 1770212837000000000,
+      "min_ns": 1770060262000000000,
+      "sha256": "614e2587e51ffb8b2e04bb36e84261ee9be29286e986114c45fcd4842c808a79",
+      "source_rows": 2186255
+    },
+    "1352.parquet": {
+      "bytes": 26787291,
+      "cohort_rows": 606074,
+      "interval_rows": 2181729,
+      "max_ns": 1770359405000000000,
+      "min_ns": 1770212837000000000,
+      "sha256": "6c4c50865205aea7632e6a6367515763882876fcab59d621cdbb14518dca41dd",
+      "source_rows": 2181729
+    },
+    "1353.parquet": {
+      "bytes": 26387698,
+      "cohort_rows": 606464,
+      "interval_rows": 2184519,
+      "max_ns": 1770509510000000000,
+      "min_ns": 1770359405000000000,
+      "sha256": "92a1c8ef108f856ea0a25b98ec3701326d6131db7dde6a3fcf5de4b4a08fdbb7",
+      "source_rows": 2184519
+    },
+    "1354.parquet": {
+      "bytes": 26074764,
+      "cohort_rows": 610929,
+      "interval_rows": 2187936,
+      "max_ns": 1770664742000000000,
+      "min_ns": 1770509511000000000,
+      "sha256": "f5a955ba0448d37d36ff582a1cb9bfc171ff79872ce8cc23e8e72b617e01ea2b",
+      "source_rows": 2187936
+    },
+    "1355.parquet": {
+      "bytes": 26811331,
+      "cohort_rows": 614738,
+      "interval_rows": 2183879,
+      "max_ns": 1770814415000000000,
+      "min_ns": 1770664742000000000,
+      "sha256": "774716b494d9fd0edc11a6cb82b417b3fbe5df166f3b49d4b8f92a5e98457854",
+      "source_rows": 2183879
+    },
+    "1356.parquet": {
+      "bytes": 26982056,
+      "cohort_rows": 613690,
+      "interval_rows": 2175497,
+      "max_ns": 1770957790000000000,
+      "min_ns": 1770814415000000000,
+      "sha256": "afb8c8c39a71d4a6dca7a7fb792c789b3a1ac5bacdbf1eb918b5cc3d7506476c",
+      "source_rows": 2175497
+    },
+    "1357.parquet": {
+      "bytes": 26843363,
+      "cohort_rows": 620287,
+      "interval_rows": 2176114,
+      "max_ns": 1771107805000000000,
+      "min_ns": 1770957790000000000,
+      "sha256": "8217c8944a52bccdf21264b25baed4add05170467f5f0081037ef0efe0ba6303",
+      "source_rows": 2176114
+    },
+    "1358.parquet": {
+      "bytes": 26161948,
+      "cohort_rows": 615668,
+      "interval_rows": 2183022,
+      "max_ns": 1771263766000000000,
+      "min_ns": 1771107805000000000,
+      "sha256": "773e5572055350b1a3f1c9604faefaeb1ec57506feaa8d1e68ce9422d26c82e0",
+      "source_rows": 2183022
+    },
+    "1359.parquet": {
+      "bytes": 25981156,
+      "cohort_rows": 606834,
+      "interval_rows": 2179772,
+      "max_ns": 1771408834000000000,
+      "min_ns": 1771263766000000000,
+      "sha256": "e55c050ab23d8740ba7eba85689784e820bbc34a7ec31a6524466c59513165d9",
+      "source_rows": 2179772
+    },
+    "1360.parquet": {
+      "bytes": 27231389,
+      "cohort_rows": 620747,
+      "interval_rows": 2182286,
+      "max_ns": 1771547040000000000,
+      "min_ns": 1771408834000000000,
+      "sha256": "2b16feef03e7faf5d333087af495e0474b947bfabb48566b788d8faf5c6e7251",
+      "source_rows": 2182286
+    },
+    "1361.parquet": {
+      "bytes": 26188354,
+      "cohort_rows": 616674,
+      "interval_rows": 2189912,
+      "max_ns": 1771695483000000000,
+      "min_ns": 1771547040000000000,
+      "sha256": "7d0683e80c47871d56578dd1b6bf440f3441c9c23ed1adde24c5b6f9a0dc6643",
+      "source_rows": 2189912
+    },
+    "1362.parquet": {
+      "bytes": 25902370,
+      "cohort_rows": 610407,
+      "interval_rows": 2189270,
+      "max_ns": 1771850974000000000,
+      "min_ns": 1771695483000000000,
+      "sha256": "c2a1be94e16cfc951b41094ebd733ef4a4d73da1a13ae97874b8b5d77d73b067",
+      "source_rows": 2189270
+    },
+    "1363.parquet": {
+      "bytes": 27300461,
+      "cohort_rows": 626369,
+      "interval_rows": 2187933,
+      "max_ns": 1771990512000000000,
+      "min_ns": 1771850974000000000,
+      "sha256": "364f0827fe4de490acf95e7e41f87edfd9af370808d5552dd7194735f093145c",
+      "source_rows": 2187933
+    },
+    "1364.parquet": {
+      "bytes": 27136044,
+      "cohort_rows": 629988,
+      "interval_rows": 2188076,
+      "max_ns": 1772132553000000000,
+      "min_ns": 1771990512000000000,
+      "sha256": "80fd18bfeff3a95d7f0c7b0c97140f9b815176dc7bb86de47fbe61a88b7df3b8",
+      "source_rows": 2188076
+    },
+    "1365.parquet": {
+      "bytes": 26130073,
+      "cohort_rows": 621829,
+      "interval_rows": 2185688,
+      "max_ns": 1772280461000000000,
+      "min_ns": 1772132553000000000,
+      "sha256": "e46d1863f8d231c62128a551d40f62418605956bd6bddb3d960a86d6c71ac511",
+      "source_rows": 2185688
+    },
+    "1366.parquet": {
+      "bytes": 8237963,
+      "cohort_rows": 185674,
+      "interval_rows": 650653,
+      "max_ns": 1772323200000000000,
+      "min_ns": 1772280461000000000,
+      "sha256": "d55b925104503ef4ebc623343ebe296cdcbcfcec246b54cd82ad2f1abfde8564",
+      "source_rows": 650653
+    },
+    "1367.parquet": {
+      "bytes": 26000560,
+      "cohort_rows": 626041,
+      "interval_rows": 2187998,
+      "max_ns": 1772474436000000000,
+      "min_ns": 1772323201000000000,
+      "sha256": "38c29d11ec76687e8b241464adc8f8b9b622bc17ed66a7a4c5bf87b5225f0fa4",
+      "source_rows": 2187998
+    },
+    "1368.parquet": {
+      "bytes": 26155994,
+      "cohort_rows": 621941,
+      "interval_rows": 2184039,
+      "max_ns": 1772617538000000000,
+      "min_ns": 1772474436000000000,
+      "sha256": "51e0746c9f7db34d0430bd7552e02d4a93a5ece380168d47d63a958dc2a7d857",
+      "source_rows": 2184039
+    },
+    "1369.parquet": {
+      "bytes": 27203609,
+      "cohort_rows": 629146,
+      "interval_rows": 2184365,
+      "max_ns": 1772753354000000000,
+      "min_ns": 1772617538000000000,
+      "sha256": "367aa05b86ae1930bb27542dce52ab492665d06ff2357dc3b2e6bf3e1b57f82c",
+      "source_rows": 2184365
+    },
+    "1370.parquet": {
+      "bytes": 26513020,
+      "cohort_rows": 628632,
+      "interval_rows": 2193356,
+      "max_ns": 1772900915000000000,
+      "min_ns": 1772753354000000000,
+      "sha256": "58e8832ae887e082e4a000999be3d27a78d70bba02e3cd46617abf46676b976d",
+      "source_rows": 2193356
+    },
+    "1371.parquet": {
+      "bytes": 25636539,
+      "cohort_rows": 622939,
+      "interval_rows": 2190140,
+      "max_ns": 1773052665000000000,
+      "min_ns": 1772900916000000000,
+      "sha256": "3b1dbb8bd714c3208a71783efce63250bb5d97f2f392b7b5f1bc867c7a974756",
+      "source_rows": 2190140
+    },
+    "1372.parquet": {
+      "bytes": 27111887,
+      "cohort_rows": 624959,
+      "interval_rows": 2183657,
+      "max_ns": 1773185248000000000,
+      "min_ns": 1773052665000000000,
+      "sha256": "f0c69ec0eb348b231e49f1111749285c23c010944d3307fb40f6d95b23e0a67f",
+      "source_rows": 2183657
+    },
+    "1373.parquet": {
+      "bytes": 26452562,
+      "cohort_rows": 629132,
+      "interval_rows": 2186438,
+      "max_ns": 1773326286000000000,
+      "min_ns": 1773185248000000000,
+      "sha256": "6bd272100e5a615cd4fe6c3648d0e3b0f8599c5a30cfbc87ee85c6fa0eacd264",
+      "source_rows": 2186438
+    },
+    "1374.parquet": {
+      "bytes": 26629026,
+      "cohort_rows": 620174,
+      "interval_rows": 2189112,
+      "max_ns": 1773463805000000000,
+      "min_ns": 1773326286000000000,
+      "sha256": "c99b97671b06d97016104308a112931498b3f858745d7cb550aac8b0e6f8ef34",
+      "source_rows": 2189112
+    },
+    "1375.parquet": {
+      "bytes": 25996633,
+      "cohort_rows": 621048,
+      "interval_rows": 2194143,
+      "max_ns": 1773619199000000000,
+      "min_ns": 1773463805000000000,
+      "sha256": "63ad64d40b9880d7edde3e3e5b1e7212a02117564358cb2acea60bfea12db74a",
+      "source_rows": 2194143
+    },
+    "1376.parquet": {
+      "bytes": 26151055,
+      "cohort_rows": 631290,
+      "interval_rows": 2195727,
+      "max_ns": 1773761321000000000,
+      "min_ns": 1773619200000000000,
+      "sha256": "0dbfa2ba428cf07086c65abdd0ea86084baa2a114cc80f33676f106a28ff2d24",
+      "source_rows": 2195727
+    },
+    "1377.parquet": {
+      "bytes": 27138395,
+      "cohort_rows": 643268,
+      "interval_rows": 2199590,
+      "max_ns": 1773899118000000000,
+      "min_ns": 1773761321000000000,
+      "sha256": "3ef9e195594e532b7f76c2d520bb09125d20c8b0752f575d3d8c1b243979cff3",
+      "source_rows": 2199590
+    },
+    "1378.parquet": {
+      "bytes": 26582620,
+      "cohort_rows": 660212,
+      "interval_rows": 2220032,
+      "max_ns": 1774029568000000000,
+      "min_ns": 1773899118000000000,
+      "sha256": "32f526fb53567ca372d78068619bcfa09a3045285ed69e499970746e39f7ee95",
+      "source_rows": 2220032
+    },
+    "1379.parquet": {
+      "bytes": 24771328,
+      "cohort_rows": 639039,
+      "interval_rows": 2224902,
+      "max_ns": 1774172742000000000,
+      "min_ns": 1774029568000000000,
+      "sha256": "66f12ea075c57efe72b61c72a50a5afac33095498d6c10ac2f705b46f9d049aa",
+      "source_rows": 2224902
+    },
+    "1380.parquet": {
+      "bytes": 25378589,
+      "cohort_rows": 618275,
+      "interval_rows": 2215574,
+      "max_ns": 1774304904000000000,
+      "min_ns": 1774172742000000000,
+      "sha256": "245f8253fbcf64ce680c1205d6b72285fafc7cc5970860846743f4fcea61f2ce",
+      "source_rows": 2215574
+    },
+    "1381.parquet": {
+      "bytes": 24513075,
+      "cohort_rows": 617812,
+      "interval_rows": 2216194,
+      "max_ns": 1774439958000000000,
+      "min_ns": 1774304904000000000,
+      "sha256": "da71776b0f30a9bcdf24b5bf215f926b32909e4a8ad699ef7b06af81e4e6ce94",
+      "source_rows": 2216194
+    },
+    "1382.parquet": {
+      "bytes": 25490498,
+      "cohort_rows": 623373,
+      "interval_rows": 2210456,
+      "max_ns": 1774562656000000000,
+      "min_ns": 1774439958000000000,
+      "sha256": "05c883722b61a8063cbfb9c18d660f17137e4a69fa3d0e4752bc3e903281c779",
+      "source_rows": 2210456
+    },
+    "1383.parquet": {
+      "bytes": 24351893,
+      "cohort_rows": 627149,
+      "interval_rows": 2216865,
+      "max_ns": 1774695921000000000,
+      "min_ns": 1774562656000000000,
+      "sha256": "bd6de1c34d58820f2e1f97e23ca4f72c156099dbd0f626c355e929b170419ea3",
+      "source_rows": 2216865
+    },
+    "1384.parquet": {
+      "bytes": 24823660,
+      "cohort_rows": 633309,
+      "interval_rows": 2217037,
+      "max_ns": 1774830506000000000,
+      "min_ns": 1774695921000000000,
+      "sha256": "b8434ffb94189d13b1b66f2e4c769f89f94097a45e72d93675731d4f4649acb8",
+      "source_rows": 2217037
+    },
+    "1385.parquet": {
+      "bytes": 23820784,
+      "cohort_rows": 625751,
+      "interval_rows": 2220020,
+      "max_ns": 1774957778000000000,
+      "min_ns": 1774830506000000000,
+      "sha256": "a8c24f2cd0ce2538647e8eab0c5563e4434063e4a6facf7ae4737042c5cf273a",
+      "source_rows": 2220020
+    },
+    "1386.parquet": {
+      "bytes": 9920931,
+      "cohort_rows": 242176,
+      "interval_rows": 838653,
+      "max_ns": 1775001600000000000,
+      "min_ns": 1774957778000000000,
+      "sha256": "a8f24382f42f5d7bb367a3ef2da63903ae8b529faec818a6efc2667d0eef898f",
+      "source_rows": 838653
+    },
+    "1387.parquet": {
+      "bytes": 23940031,
+      "cohort_rows": 624741,
+      "interval_rows": 2216773,
+      "max_ns": 1775131955000000000,
+      "min_ns": 1775001601000000000,
+      "sha256": "548b6ab81937af165657d0cf5caee672f4f9037b805ff947801e65aa2b43a917",
+      "source_rows": 2216773
+    },
+    "1388.parquet": {
+      "bytes": 25395004,
+      "cohort_rows": 633804,
+      "interval_rows": 2212425,
+      "max_ns": 1775259670000000000,
+      "min_ns": 1775131955000000000,
+      "sha256": "0f68e9417a7f926e0f749d6c3fabc43828bc193138f71ae2e1c29721f4278437",
+      "source_rows": 2212425
+    },
+    "1389.parquet": {
+      "bytes": 24093310,
+      "cohort_rows": 627191,
+      "interval_rows": 2215435,
+      "max_ns": 1775402702000000000,
+      "min_ns": 1775259670000000000,
+      "sha256": "35ecd3cdcb45c199477a5940fc5244cf2bb8ecd4a403ae630020fb5efb1ed747",
+      "source_rows": 2215435
+    },
+    "1390.parquet": {
+      "bytes": 24627793,
+      "cohort_rows": 621797,
+      "interval_rows": 2213432,
+      "max_ns": 1775540983000000000,
+      "min_ns": 1775402702000000000,
+      "sha256": "0552ffe0fde359a5d154dfd04ba0b0ac44e2c50da5fcc35e25cb32dfe55f6100",
+      "source_rows": 2213432
+    },
+    "1391.parquet": {
+      "bytes": 25679889,
+      "cohort_rows": 635162,
+      "interval_rows": 2208405,
+      "max_ns": 1775669050000000000,
+      "min_ns": 1775540983000000000,
+      "sha256": "638b6ae42cb4a11fbb206f1afd1b93cd0af1a7aab4ce621ef728490ba3962267",
+      "source_rows": 2208405
+    },
+    "1392.parquet": {
+      "bytes": 25174194,
+      "cohort_rows": 617239,
+      "interval_rows": 2211981,
+      "max_ns": 1775806931000000000,
+      "min_ns": 1775669050000000000,
+      "sha256": "91b8634d5f3c4742c08bd51cfa2ef1387ba6b6ca03fb1f231ce2ddb62fab1dee",
+      "source_rows": 2211981
+    },
+    "1393.parquet": {
+      "bytes": 25550917,
+      "cohort_rows": 625894,
+      "interval_rows": 2214719,
+      "max_ns": 1775947492000000000,
+      "min_ns": 1775806931000000000,
+      "sha256": "b2faf58aac53c7f2d33a6a9e2ad2bf818da2c6bffdb03f7e8da02f682a451afc",
+      "source_rows": 2214719
+    },
+    "1394.parquet": {
+      "bytes": 24659062,
+      "cohort_rows": 616109,
+      "interval_rows": 2217442,
+      "max_ns": 1776094040000000000,
+      "min_ns": 1775947492000000000,
+      "sha256": "9595c245cfe8b645c308fa3d6a515a7ecf9a8027c21cfde9a02406e425a59312",
+      "source_rows": 2217442
+    },
+    "1395.parquet": {
+      "bytes": 25091426,
+      "cohort_rows": 615287,
+      "interval_rows": 2212391,
+      "max_ns": 1776230138000000000,
+      "min_ns": 1776094040000000000,
+      "sha256": "098b71f86ceba884805cf2a053bc62bb47625ee12d206ae609cac6128e888f7d",
+      "source_rows": 2212391
+    },
+    "1396.parquet": {
+      "bytes": 25048032,
+      "cohort_rows": 611376,
+      "interval_rows": 2210000,
+      "max_ns": 1776360933000000000,
+      "min_ns": 1776230138000000000,
+      "sha256": "c9f702b9cc090776e20e72ea1137723b49df8fbe187b4ddcd38509b19fa4e823",
+      "source_rows": 2210000
+    },
+    "1397.parquet": {
+      "bytes": 25080495,
+      "cohort_rows": 620039,
+      "interval_rows": 2212446,
+      "max_ns": 1776501980000000000,
+      "min_ns": 1776360933000000000,
+      "sha256": "a7a04b5aceba13621f2277cd9f86c23b543e9b8f63d79f7e4a88ca796620321b",
+      "source_rows": 2212446
+    },
+    "1398.parquet": {
+      "bytes": 25354951,
+      "cohort_rows": 623210,
+      "interval_rows": 2210848,
+      "max_ns": 1776648241000000000,
+      "min_ns": 1776501980000000000,
+      "sha256": "d17c023db87a5fb314744639c18a0701ea955fd42b109ca42159781cb431b030",
+      "source_rows": 2210848
+    },
+    "1399.parquet": {
+      "bytes": 24739257,
+      "cohort_rows": 604637,
+      "interval_rows": 2211448,
+      "max_ns": 1776783685000000000,
+      "min_ns": 1776648241000000000,
+      "sha256": "c7f4eea4d22fee506d8a8f0a401a4ad9372a92d6031738ae002ba6c9da753dcb",
+      "source_rows": 2211448
+    },
+    "1400.parquet": {
+      "bytes": 25528555,
+      "cohort_rows": 612831,
+      "interval_rows": 2206381,
+      "max_ns": 1776918885000000000,
+      "min_ns": 1776783685000000000,
+      "sha256": "7346af1a452fda0595a154e3802843f836a6c4c9b8461fbbc3dc09a8ac8611d6",
+      "source_rows": 2206381
+    },
+    "1401.parquet": {
+      "bytes": 25412292,
+      "cohort_rows": 602468,
+      "interval_rows": 2206704,
+      "max_ns": 1777050395000000000,
+      "min_ns": 1776918885000000000,
+      "sha256": "78d4277a5128ef96e68afb1d29c7d7fc1613c9538a6c743286ec4491f645f44d",
+      "source_rows": 2206704
+    },
+    "1402.parquet": {
+      "bytes": 25654904,
+      "cohort_rows": 619392,
+      "interval_rows": 2210510,
+      "max_ns": 1777201793000000000,
+      "min_ns": 1777050395000000000,
+      "sha256": "5c15a589e62209a22678ff8f4beb549f2054b2083b29c58a0c34872c0235e534",
+      "source_rows": 2210510
+    },
+    "1403.parquet": {
+      "bytes": 26492889,
+      "cohort_rows": 633174,
+      "interval_rows": 2204730,
+      "max_ns": 1777341260000000000,
+      "min_ns": 1777201793000000000,
+      "sha256": "8fad699986e2594c6ea732a0108a85a298e7c55a6c1fdd9a52b39c0043468af8",
+      "source_rows": 2204730
+    },
+    "1404.parquet": {
+      "bytes": 26212712,
+      "cohort_rows": 634818,
+      "interval_rows": 2204267,
+      "max_ns": 1777477461000000000,
+      "min_ns": 1777341260000000000,
+      "sha256": "e8b9b50b3a308a94d264c7b34ebff84ae4eec41fdb5a00f54ebb44be0a91c699",
+      "source_rows": 2204267
+    },
+    "1405.parquet": {
+      "bytes": 23090330,
+      "cohort_rows": 549247,
+      "interval_rows": 1898275,
+      "max_ns": 1777593600000000000,
+      "min_ns": 1777477461000000000,
+      "sha256": "27aac033373b35534aba4407836662c2c4ae914ae973eca4bc61f2007d5fa25f",
+      "source_rows": 1898275
+    },
+    "1406.parquet": {
+      "bytes": 25097556,
+      "cohort_rows": 624921,
+      "interval_rows": 2212225,
+      "max_ns": 1777738225000000000,
+      "min_ns": 1777593601000000000,
+      "sha256": "fdfd8fc001d05ba4849e705dc876ec35084b22ee1d33c2659a9e6d900233d80b",
+      "source_rows": 2212225
+    },
+    "1407.parquet": {
+      "bytes": 24927378,
+      "cohort_rows": 611593,
+      "interval_rows": 2212937,
+      "max_ns": 1777885702000000000,
+      "min_ns": 1777738226000000000,
+      "sha256": "ecdc5b2670f811acec839762f5f26821a14fd783d1295447d8742217095d6a43",
+      "source_rows": 2212937
+    },
+    "1408.parquet": {
+      "bytes": 25981688,
+      "cohort_rows": 613898,
+      "interval_rows": 2204775,
+      "max_ns": 1778013825000000000,
+      "min_ns": 1777885702000000000,
+      "sha256": "f1fddc3a0b55a74a3a6ad8d6d8da40d5453bcc805793d8ebf677a239f123ef0d",
+      "source_rows": 2204775
+    },
+    "1409.parquet": {
+      "bytes": 25049414,
+      "cohort_rows": 618386,
+      "interval_rows": 2207275,
+      "max_ns": 1778149215000000000,
+      "min_ns": 1778013825000000000,
+      "sha256": "65a6558c9922fa8190e9e7c83468e396d3f420d89a7af163b8f16e5906bd360e",
+      "source_rows": 2207275
+    },
+    "1410.parquet": {
+      "bytes": 26457758,
+      "cohort_rows": 635217,
+      "interval_rows": 2204148,
+      "max_ns": 1778276872000000000,
+      "min_ns": 1778149215000000000,
+      "sha256": "cf203a37cc3fae1babf252fed10c12561ca0445e8a36cdff4dce45be8becc047",
+      "source_rows": 2204148
+    },
+    "1411.parquet": {
+      "bytes": 24900255,
+      "cohort_rows": 622723,
+      "interval_rows": 2212913,
+      "max_ns": 1778423135000000000,
+      "min_ns": 1778276872000000000,
+      "sha256": "476104b263b5ff36d48ad6741af12fc53b379383c0137518771db53e6efc1d21",
+      "source_rows": 2212913
+    },
+    "1412.parquet": {
+      "bytes": 25754935,
+      "cohort_rows": 623285,
+      "interval_rows": 2207716,
+      "max_ns": 1778560158000000000,
+      "min_ns": 1778423135000000000,
+      "sha256": "28a54f0cdcafc959810a83b84a73a920ea0869152602e7a7f8b22257697772bb",
+      "source_rows": 2207716
+    },
+    "1413.parquet": {
+      "bytes": 25547834,
+      "cohort_rows": 615436,
+      "interval_rows": 2211293,
+      "max_ns": 1778691869000000000,
+      "min_ns": 1778560158000000000,
+      "sha256": "e0e9d294b53e73fa0179942175c0ed03084e7603acd31e609a0d593016569dde",
+      "source_rows": 2211293
+    },
+    "1414.parquet": {
+      "bytes": 25132263,
+      "cohort_rows": 643083,
+      "interval_rows": 2254815,
+      "max_ns": 1778829730000000000,
+      "min_ns": 1778691869000000000,
+      "sha256": "d18c0293912b451d90a3b5d75e73e2190026935127106e1201fe04d270907738",
+      "source_rows": 2254815
+    },
+    "1415.parquet": {
+      "bytes": 25208187,
+      "cohort_rows": 649477,
+      "interval_rows": 2259673,
+      "max_ns": 1778964149000000000,
+      "min_ns": 1778829730000000000,
+      "sha256": "ed35a4b330db9fefe8049d1705fa14aeb32d954078647f20a1f664c9a45f440f",
+      "source_rows": 2259673
+    },
+    "1416.parquet": {
+      "bytes": 24392325,
+      "cohort_rows": 645833,
+      "interval_rows": 2255881,
+      "max_ns": 1779108089000000000,
+      "min_ns": 1778964149000000000,
+      "sha256": "4d4ec9b1b0a137806caf71c009cabc2c3ea0f0c4567a48a215786ab5cff253b8",
+      "source_rows": 2255881
+    },
+    "1417.parquet": {
+      "bytes": 26747964,
+      "cohort_rows": 642316,
+      "interval_rows": 2212416,
+      "max_ns": 1779240510000000000,
+      "min_ns": 1779108089000000000,
+      "sha256": "7975525cefe393b1638070b2cac06e17c676eb6533e606a8df1879beea35aa9a",
+      "source_rows": 2212416
+    },
+    "1418.parquet": {
+      "bytes": 25649650,
+      "cohort_rows": 635899,
+      "interval_rows": 2210130,
+      "max_ns": 1779373482000000000,
+      "min_ns": 1779240510000000000,
+      "sha256": "5268c846acfbca5173a662ec2162d96514e2a9d4d922fd94072f02919bd2b8ba",
+      "source_rows": 2210130
+    },
+    "1419.parquet": {
+      "bytes": 26631370,
+      "cohort_rows": 643549,
+      "interval_rows": 2210444,
+      "max_ns": 1779506860000000000,
+      "min_ns": 1779373482000000000,
+      "sha256": "54d98e744ddce12a33c99443a5f81f7e84451bf80b6874bc7c9a2cfb6968f168",
+      "source_rows": 2210444
+    },
+    "1420.parquet": {
+      "bytes": 25384758,
+      "cohort_rows": 629481,
+      "interval_rows": 2210802,
+      "max_ns": 1779653828000000000,
+      "min_ns": 1779506860000000000,
+      "sha256": "a667b6f36eca0465a06123c9803132a56c351476efdddc6904b50b3ad2c29739",
+      "source_rows": 2210802
+    },
+    "1421.parquet": {
+      "bytes": 25458542,
+      "cohort_rows": 629255,
+      "interval_rows": 2209407,
+      "max_ns": 1779798239000000000,
+      "min_ns": 1779653828000000000,
+      "sha256": "555dbe3bd311ea510e0c4a24c30958f29d9bc7e1e7f4da9189159449711a707b",
+      "source_rows": 2209407
+    },
+    "1422.parquet": {
+      "bytes": 26653508,
+      "cohort_rows": 633540,
+      "interval_rows": 2206652,
+      "max_ns": 1779933213000000000,
+      "min_ns": 1779798239000000000,
+      "sha256": "2b2687b1c98e968db8e8b9be76c3666657a6e503b79be8a1c495c6ab9bf0e1e6",
+      "source_rows": 2206652
+    },
+    "1423.parquet": {
+      "bytes": 25709647,
+      "cohort_rows": 632323,
+      "interval_rows": 2208096,
+      "max_ns": 1780066351000000000,
+      "min_ns": 1779933213000000000,
+      "sha256": "0579ce2c5771a40062abff7234cc44d60f5a1f2cf9eb7b48f0bf17970a519f5f",
+      "source_rows": 2208096
+    },
+    "1424.parquet": {
+      "bytes": 24752328,
+      "cohort_rows": 608105,
+      "interval_rows": 2208422,
+      "max_ns": 1780203605000000000,
+      "min_ns": 1780066351000000000,
+      "sha256": "a4712c425d6662fe3a94a11f20a85030cf0611f19a3223209529be57d7d2d757",
+      "source_rows": 2208422
+    },
+    "1425.parquet": {
+      "bytes": 12379359,
+      "cohort_rows": 297099,
+      "interval_rows": 1040262,
+      "max_ns": 1780272000000000000,
+      "min_ns": 1780203605000000000,
+      "sha256": "ea918dcc5e4ddd1a67b5f552e0818b4ac1449e95f58831080ef05ef16f364fe1",
+      "source_rows": 1040262
+    },
+    "1426.parquet": {
+      "bytes": 25798261,
+      "cohort_rows": 633190,
+      "interval_rows": 2212695,
+      "max_ns": 1780410369000000000,
+      "min_ns": 1780272001000000000,
+      "sha256": "037980af46941b37e142add0bb2d37b4d3e620ce4e58930b5b5ebf55ba2d9e47",
+      "source_rows": 2212695
+    },
+    "1427.parquet": {
+      "bytes": 26703073,
+      "cohort_rows": 640151,
+      "interval_rows": 2211352,
+      "max_ns": 1780544601000000000,
+      "min_ns": 1780410369000000000,
+      "sha256": "a6518295ee39e051a8ee21b945c35889d3a54788f6f1fd2f049747562fb05085",
+      "source_rows": 2211352
+    },
+    "1428.parquet": {
+      "bytes": 25750684,
+      "cohort_rows": 621502,
+      "interval_rows": 2210274,
+      "max_ns": 1780675850000000000,
+      "min_ns": 1780544601000000000,
+      "sha256": "58799939aef443a34d27e97d0bcd0745a0494b9c9492193a565eb992f1195fac",
+      "source_rows": 2210274
+    },
+    "1429.parquet": {
+      "bytes": 25690143,
+      "cohort_rows": 631482,
+      "interval_rows": 2212312,
+      "max_ns": 1780822787000000000,
+      "min_ns": 1780675850000000000,
+      "sha256": "7a4bd380f5127a6b8393ef0abfc845b265c678b514bd63d8fc48ffa44f1cc3fe",
+      "source_rows": 2212312
+    },
+    "1430.parquet": {
+      "bytes": 26391750,
+      "cohort_rows": 630403,
+      "interval_rows": 2212916,
+      "max_ns": 1780957680000000000,
+      "min_ns": 1780822787000000000,
+      "sha256": "991c72418181196b3a7e5855b9c62d64315987dc1216b2f36a91c619707a72a4",
+      "source_rows": 2212916
+    },
+    "1431.parquet": {
+      "bytes": 26337493,
+      "cohort_rows": 637169,
+      "interval_rows": 2209311,
+      "max_ns": 1781098601000000000,
+      "min_ns": 1780957680000000000,
+      "sha256": "8d47f8c80d88c5fd8dd55598d2f2c2096c5537b51ed9ef9a7a26013f46592461",
+      "source_rows": 2209311
+    },
+    "1432.parquet": {
+      "bytes": 26973632,
+      "cohort_rows": 626698,
+      "interval_rows": 2210519,
+      "max_ns": 1781235080000000000,
+      "min_ns": 1781098601000000000,
+      "sha256": "fe5208a47b4f52991a5557885af816e7aaaaa3f2445d3388b03694fe797bb1ca",
+      "source_rows": 2210519
+    },
+    "1433.parquet": {
+      "bytes": 25299031,
+      "cohort_rows": 625207,
+      "interval_rows": 2214059,
+      "max_ns": 1781369634000000000,
+      "min_ns": 1781235080000000000,
+      "sha256": "c0ed432287846f8a72a817c6558936d69cfde5f80a27c350d406e11c6c0dec1b",
+      "source_rows": 2214059
+    },
+    "1434.parquet": {
+      "bytes": 24997575,
+      "cohort_rows": 626904,
+      "interval_rows": 2216340,
+      "max_ns": 1781513368000000000,
+      "min_ns": 1781369634000000000,
+      "sha256": "d0ba38339ac0804a8d8b7925a456a9b021e6a2647646640c2f6a906b958bf9c2",
+      "source_rows": 2216340
+    },
+    "1435.parquet": {
+      "bytes": 26614621,
+      "cohort_rows": 637183,
+      "interval_rows": 2210663,
+      "max_ns": 1781641589000000000,
+      "min_ns": 1781513368000000000,
+      "sha256": "a21d236bfa0c4801ae2b64fe4b9a9b26586fded252bebbc46952ee875af58654",
+      "source_rows": 2210663
+    },
+    "1436.parquet": {
+      "bytes": 25765463,
+      "cohort_rows": 636743,
+      "interval_rows": 2212353,
+      "max_ns": 1781777716000000000,
+      "min_ns": 1781641589000000000,
+      "sha256": "39263d72f74fe1702accefd8b72402cc5451be03764b6278359b5faa04dc6b96",
+      "source_rows": 2212353
+    },
+    "1437.parquet": {
+      "bytes": 27327437,
+      "cohort_rows": 650604,
+      "interval_rows": 2213244,
+      "max_ns": 1781910287000000000,
+      "min_ns": 1781777716000000000,
+      "sha256": "ee32c341eb57b0b1d4e1dcb3562713d97c078e14c60f1a607f70b20463a27e11",
+      "source_rows": 2213244
+    },
+    "1438.parquet": {
+      "bytes": 25672985,
+      "cohort_rows": 644990,
+      "interval_rows": 2218539,
+      "max_ns": 1782060791000000000,
+      "min_ns": 1781910287000000000,
+      "sha256": "33e294be321bad2085f3202e92f134b9233209cb958664f170d90d27e2f91dd0",
+      "source_rows": 2218539
+    },
+    "1439.parquet": {
+      "bytes": 25839513,
+      "cohort_rows": 641552,
+      "interval_rows": 2215247,
+      "max_ns": 1782199102000000000,
+      "min_ns": 1782060791000000000,
+      "sha256": "8c422986559891746691e896676b57920e05449481aab3526503cc4118975ffd",
+      "source_rows": 2215247
+    },
+    "1440.parquet": {
+      "bytes": 26696768,
+      "cohort_rows": 639311,
+      "interval_rows": 2212268,
+      "max_ns": 1782332533000000000,
+      "min_ns": 1782199102000000000,
+      "sha256": "209b9c81804760a2e8afba3fedd384afc56dc20c5908f7649d318749ee740019",
+      "source_rows": 2212268
+    },
+    "1441.parquet": {
+      "bytes": 27283156,
+      "cohort_rows": 666504,
+      "interval_rows": 2223550,
+      "max_ns": 1782477042000000000,
+      "min_ns": 1782332534000000000,
+      "sha256": "2c67ced4485ee96dba9717f62711d4a8dda4467e0a6da25be915bb51a04ee297",
+      "source_rows": 2223550
+    },
+    "1442.parquet": {
+      "bytes": 25478987,
+      "cohort_rows": 669862,
+      "interval_rows": 2221321,
+      "max_ns": 1782600031000000000,
+      "min_ns": 1782477042000000000,
+      "sha256": "6616b2223c2a5930e6698a6f531fad3c7dafdcbf067366f1391afd77bdb419fc",
+      "source_rows": 2221321
+    },
+    "1443.parquet": {
+      "bytes": 23935590,
+      "cohort_rows": 657668,
+      "interval_rows": 2220567,
+      "max_ns": 1782730752000000000,
+      "min_ns": 1782600031000000000,
+      "sha256": "8a42ce774a262b33c6a57052c7b0c6088835d8c80896aca4162012c9b17b5582",
+      "source_rows": 2220567
+    },
+    "1444.parquet": {
+      "bytes": 25343574,
+      "cohort_rows": 660186,
+      "interval_rows": 2220946,
+      "max_ns": 1782845889000000000,
+      "min_ns": 1782730753000000000,
+      "sha256": "feeb3a10096fc25a3763015f1e66e7f997a2dca86fcab1d3b5bcd5a39c89e663",
+      "source_rows": 2220946
+    },
+    "1445.parquet": {
+      "bytes": 3709953,
+      "cohort_rows": 90023,
+      "interval_rows": 294816,
+      "max_ns": 1782864000000000000,
+      "min_ns": 1782845889000000000,
+      "sha256": "3094511dce11f8d1a246900885b8436f3213cf63b5e9cb6a08a5c082e55391a5",
+      "source_rows": 294816
+    },
+    "1446.parquet": {
+      "bytes": 25996201,
+      "cohort_rows": 678988,
+      "interval_rows": 2223750,
+      "max_ns": 1782998308000000000,
+      "min_ns": 1782864001000000000,
+      "sha256": "aae0e4ddca53258e02086d4004e0f96fe408085b123392e171eab511c6cc29be",
+      "source_rows": 2223750
+    },
+    "1447.parquet": {
+      "bytes": 27396902,
+      "cohort_rows": 666811,
+      "interval_rows": 2221909,
+      "max_ns": 1783136633000000000,
+      "min_ns": 1782998308000000000,
+      "sha256": "487cd33dc85e0c023796d06db891e0d52c6f0a69cbe37543c8894f66637e52f6",
+      "source_rows": 2221909
+    },
+    "1448.parquet": {
+      "bytes": 27518501,
+      "cohort_rows": 683958,
+      "interval_rows": 2223112,
+      "max_ns": 1783289113000000000,
+      "min_ns": 1783136633000000000,
+      "sha256": "da19023d2291cee5e570b5eb0d56a0b8a7702b5d57667bcbb5b3ffdafacd0c00",
+      "source_rows": 2223112
+    },
+    "1449.parquet": {
+      "bytes": 27251264,
+      "cohort_rows": 672905,
+      "interval_rows": 2224091,
+      "max_ns": 1783433476000000000,
+      "min_ns": 1783289113000000000,
+      "sha256": "4340ec4f771b3f20c256bb844e9658cfa24208afd131590a1d71a077c2946125",
+      "source_rows": 2224091
+    },
+    "1450.parquet": {
+      "bytes": 27839565,
+      "cohort_rows": 674992,
+      "interval_rows": 2221561,
+      "max_ns": 1783572963000000000,
+      "min_ns": 1783433476000000000,
+      "sha256": "24a7ade21c67be3ce9bf58bbdc5f03bbaa24dfe6ab57e00e84a90ecceff7ea72",
+      "source_rows": 2221561
+    },
+    "1451.parquet": {
+      "bytes": 27812529,
+      "cohort_rows": 669049,
+      "interval_rows": 2220545,
+      "max_ns": 1783709221000000000,
+      "min_ns": 1783572963000000000,
+      "sha256": "6abdb70d3bda0e8dd2176ec25c29baca2a0f611e0f8a985762409a9d73ea8048",
+      "source_rows": 2220545
+    },
+    "1452.parquet": {
+      "bytes": 27642338,
+      "cohort_rows": 666840,
+      "interval_rows": 2223494,
+      "max_ns": 1783866474000000000,
+      "min_ns": 1783709221000000000,
+      "sha256": "951f2563752008047c0f5364353abf06396cc701f6fa416094f6385b94de6362",
+      "source_rows": 2223494
+    },
+    "1453.parquet": {
+      "bytes": 28319507,
+      "cohort_rows": 678090,
+      "interval_rows": 2219474,
+      "max_ns": 1784010930000000000,
+      "min_ns": 1783866474000000000,
+      "sha256": "5e5e41a0192ed58bc9f296df742fe9b8e884fba1402ae4ef1b4d1a44f1efaf9b",
+      "source_rows": 2219474
+    },
+    "1454.parquet": {
+      "bytes": 28732484,
+      "cohort_rows": 676819,
+      "interval_rows": 2218452,
+      "max_ns": 1784151524000000000,
+      "min_ns": 1784010930000000000,
+      "sha256": "323dd8653ed01934ff6e353254e72f2cd12347333ace4efb3ab007d5f261e988",
+      "source_rows": 2218452
+    },
+    "1455.parquet": {
+      "bytes": 27582258,
+      "cohort_rows": 661011,
+      "interval_rows": 2222083,
+      "max_ns": 1784297870000000000,
+      "min_ns": 1784151524000000000,
+      "sha256": "f0d8750cf9ed4257cff244c4ffd7663b7fb62131af43bfad9f03bb723c7526a2",
+      "source_rows": 2222083
+    },
+    "1456.parquet": {
+      "bytes": 28346450,
+      "cohort_rows": 680296,
+      "interval_rows": 2225247,
+      "max_ns": 1784450457000000000,
+      "min_ns": 1784297870000000000,
+      "sha256": "9e75efd62108b76b0d50adccfa689c942be4729f5b0b1d58f3f82964c77bef07",
+      "source_rows": 2225247
+    },
+    "1457.parquet": {
+      "bytes": 28881456,
+      "cohort_rows": 684249,
+      "interval_rows": 2221378,
+      "max_ns": 1784603274000000000,
+      "min_ns": 1784450457000000000,
+      "sha256": "1540233dee4ff1c9495ef644ecbea7a5564c47df9a79f8fe2b272210327962c1",
+      "source_rows": 2221378
+    },
+    "1458.parquet": {
+      "bytes": 29441874,
+      "cohort_rows": 673170,
+      "interval_rows": 2217392,
+      "max_ns": 1784755686000000000,
+      "min_ns": 1784603274000000000,
+      "sha256": "5c8f4f1a57664092b7084125f4f4f8b1a444e4f12b76d6b010c16649c2e872ce",
+      "source_rows": 2217392
+    },
+    "1459.parquet": {
+      "bytes": 28635043,
+      "cohort_rows": 679668,
+      "interval_rows": 2223308,
+      "max_ns": 1784906881000000000,
+      "min_ns": 1784755686000000000,
+      "sha256": "6f1c0693aa9192f0ae641c8ca07981e6214aec67a14c39d5a1d6c440be1e4c66",
+      "source_rows": 2223308
+    },
+    "1460.parquet": {
+      "bytes": 28738632,
+      "cohort_rows": 674035,
+      "interval_rows": 2225608,
+      "max_ns": 1785073732000000000,
+      "min_ns": 1784906881000000000,
+      "sha256": "4ef525a0c7658a928c806bf40d65b51e74bc2bf7f174f25d17f223eabf112469",
+      "source_rows": 2225608
+    },
+    "1461.parquet": {
+      "bytes": 28189546,
+      "cohort_rows": 673005,
+      "interval_rows": 2236124,
+      "max_ns": 1785234245000000000,
+      "min_ns": 1785073732000000000,
+      "sha256": "ab2494cbee03a44175a6aeb2ed8fa2809b48aa0d9a56a2530c53f8be1a74a909",
+      "source_rows": 2236124
+    },
+    "1462.parquet": {
+      "bytes": 28258665,
+      "cohort_rows": 673085,
+      "interval_rows": 2245718,
+      "max_ns": 1785380698000000000,
+      "min_ns": 1785234245000000000,
+      "sha256": "158edd77ed984f0a540eb38a2228c722ea8d71b2eca036a56c3a9b6e80044a6e",
+      "source_rows": 2245718
+    },
+    "1463.parquet": {
+      "bytes": 27798182,
+      "cohort_rows": 682659,
+      "interval_rows": 2251079,
+      "max_ns": 1785525392000000000,
+      "min_ns": 1785380698000000000,
+      "sha256": "8e084f2455dada1768f10aaac5e91297e7fa20555ca548193486bfb33054c41a",
+      "source_rows": 2251079
+    },
+    "1464.parquet": {
+      "bytes": 3216503,
+      "cohort_rows": 73946,
+      "interval_rows": 249840,
+      "max_ns": 1785542400000000000,
+      "min_ns": 1785525392000000000,
+      "sha256": "f23fc2b52677ef291f887cab6e39433a5cbd660f57cdf2be42bd61808d36ed2c",
+      "source_rows": 249840
+    },
+    "1465.parquet": {
+      "bytes": 27142544,
+      "cohort_rows": 676268,
+      "interval_rows": 2254783,
+      "max_ns": 1785702191000000000,
+      "min_ns": 1785542401000000000,
+      "sha256": "0bc589eb4e1696ee53fc7061414163713b97ac052fbe0233d8e15e76a81909e2",
+      "source_rows": 2254783
+    },
+    "1466.parquet": {
+      "bytes": 27815840,
+      "cohort_rows": 684088,
+      "interval_rows": 2252316,
+      "max_ns": 1785854337000000000,
+      "min_ns": 1785702191000000000,
+      "sha256": "83f3e66a586e786d87099923f71305f45eff4e7b1af4b0f4abd346f5966dd424",
+      "source_rows": 2252316
+    },
+    "1467.parquet": {
+      "bytes": 28223042,
+      "cohort_rows": 679319,
+      "interval_rows": 2248681,
+      "max_ns": 1786004206000000000,
+      "min_ns": 1785854338000000000,
+      "sha256": "851451855bc86af93a75276ed21867984d7987878af74339accc5a3bffb08987",
+      "source_rows": 2248681
+    },
+    "1468.parquet": {
+      "bytes": 28878907,
+      "cohort_rows": 682577,
+      "interval_rows": 2247270,
+      "max_ns": 1786148519000000000,
+      "min_ns": 1786004207000000000,
+      "sha256": "623e507bb6a0497da4f18130858bf2dccdf2d8e2588d03f759c133a24e4d1833",
+      "source_rows": 2247270
+    },
+    "1469.parquet": {
+      "bytes": 27229555,
+      "cohort_rows": 663729,
+      "interval_rows": 2249897,
+      "max_ns": 1786306087000000000,
+      "min_ns": 1786148519000000000,
+      "sha256": "722081dca4eaef637b75e7901f1c87d4c4e949122c7f1c5e9680c0853e92fe9b",
+      "source_rows": 2249897
+    },
+    "1470.parquet": {
+      "bytes": 28042973,
+      "cohort_rows": 679680,
+      "interval_rows": 2253790,
+      "max_ns": 1786457504000000000,
+      "min_ns": 1786306087000000000,
+      "sha256": "c661c5e0133caacd20d10ecdf4c04f710ff87fca24f9fd72ff856a589ef353e4",
+      "source_rows": 2253790
+    },
+    "1471.parquet": {
+      "bytes": 28376222,
+      "cohort_rows": 683892,
+      "interval_rows": 2247336,
+      "max_ns": 1786604940000000000,
+      "min_ns": 1786457504000000000,
+      "sha256": "6e34d002b4d3125d9c86fe988e14d414242ac00d0b0b75161e7255d8c48fd4e7",
+      "source_rows": 2247336
+    },
+    "1472.parquet": {
+      "bytes": 28953524,
+      "cohort_rows": 684934,
+      "interval_rows": 2249261,
+      "max_ns": 1786749037000000000,
+      "min_ns": 1786604940000000000,
+      "sha256": "7f7ea86b8e045b5e4ed6fb47c406c4129715ac2f60e8988feec3c8d87b87d0d8",
+      "source_rows": 2249261
+    },
+    "1473.parquet": {
+      "bytes": 28112045,
+      "cohort_rows": 671087,
+      "interval_rows": 2253468,
+      "max_ns": 1786913484000000000,
+      "min_ns": 1786749037000000000,
+      "sha256": "66f1a47d60c82a43339d2607ede72c8e0ca6c7fe739f2e3a4873271366d6e066",
+      "source_rows": 2253468
+    },
+    "1474.parquet": {
+      "bytes": 28390623,
+      "cohort_rows": 675020,
+      "interval_rows": 2254370,
+      "max_ns": 1787065632000000000,
+      "min_ns": 1786913484000000000,
+      "sha256": "78f3c929f344fa361613568856de1eeeaa6493ae32f6140a1f3f028bdee8431f",
+      "source_rows": 2254370
+    },
+    "1475.parquet": {
+      "bytes": 28735485,
+      "cohort_rows": 685753,
+      "interval_rows": 2247056,
+      "max_ns": 1787213506000000000,
+      "min_ns": 1787065632000000000,
+      "sha256": "6bc8c03e9414d570ae25030e2e36b8cc40d5aa028425ffe4379cb05c59d9e759",
+      "source_rows": 2247056
+    },
+    "1476.parquet": {
+      "bytes": 29467226,
+      "cohort_rows": 687399,
+      "interval_rows": 2247703,
+      "max_ns": 1787356960000000000,
+      "min_ns": 1787213506000000000,
+      "sha256": "6528345c5eac7947c1444e82d20e781df7d4a612e60bbc7051665616b9a944b7",
+      "source_rows": 2247703
+    },
+    "1477.parquet": {
+      "bytes": 28419769,
+      "cohort_rows": 678468,
+      "interval_rows": 2252656,
+      "max_ns": 1787520194000000000,
+      "min_ns": 1787356960000000000,
+      "sha256": "f1ba3ba0b53f8b8087a8f892285ceefe4b270574f78056e11bfa7c5c8015ba56",
+      "source_rows": 2252656
+    },
+    "1478.parquet": {
+      "bytes": 28882639,
+      "cohort_rows": 678889,
+      "interval_rows": 2252537,
+      "max_ns": 1787676464000000000,
+      "min_ns": 1787520194000000000,
+      "sha256": "68df2e8f2cc902e66c4b0d09446010e99b777202e2661532eeabf746f5d9c244",
+      "source_rows": 2252537
+    },
+    "1479.parquet": {
+      "bytes": 28904792,
+      "cohort_rows": 691654,
+      "interval_rows": 2250711,
+      "max_ns": 1787833390000000000,
+      "min_ns": 1787676464000000000,
+      "sha256": "945faef92275e8efe98415cbde8ba31a6a21250035957cddf4dfafaafec04ecd",
+      "source_rows": 2250711
+    },
+    "1480.parquet": {
+      "bytes": 29110159,
+      "cohort_rows": 685935,
+      "interval_rows": 2249555,
+      "max_ns": 1787984435000000000,
+      "min_ns": 1787833391000000000,
+      "sha256": "6e3021fb069e67a3b874110d076378bdeae83751685cf36c9de35103eefb74be",
+      "source_rows": 2249555
+    },
+    "1481.parquet": {
+      "bytes": 28677001,
+      "cohort_rows": 675976,
+      "interval_rows": 2252761,
+      "max_ns": 1788146269000000000,
+      "min_ns": 1787984435000000000,
+      "sha256": "d8fcd88542d21736bbe71533f8d11aa22e6c93346360b9f9b15dd8383aef6cae",
+      "source_rows": 2252761
+    },
+    "1482.parquet": {
+      "bytes": 15279685,
+      "cohort_rows": 357725,
+      "interval_rows": 1166512,
+      "max_ns": 1788220800000000000,
+      "min_ns": 1788146269000000000,
+      "sha256": "79d46cdc64ae577fec5186f52dbe1ae9e880ac91977a3f89516d47991a0005d1",
+      "source_rows": 1166512
+    },
+    "1483.parquet": {
+      "bytes": 28536539,
+      "cohort_rows": 684664,
+      "interval_rows": 2248343,
+      "max_ns": 1788364957000000000,
+      "min_ns": 1788220801000000000,
+      "sha256": "6344e564c75aeba31535b6bb2a8dd305c0c882432c93e0b789e2ecda46e17553",
+      "source_rows": 2248343
+    },
+    "1484.parquet": {
+      "bytes": 29132039,
+      "cohort_rows": 696941,
+      "interval_rows": 2250003,
+      "max_ns": 1788511238000000000,
+      "min_ns": 1788364958000000000,
+      "sha256": "7771ddfbf34a5aa3e443c945448c2ed867124ff0f1120c5a9b45661d8e7e8841",
+      "source_rows": 2250003
+    },
+    "1485.parquet": {
+      "bytes": 29505729,
+      "cohort_rows": 692515,
+      "interval_rows": 2254863,
+      "max_ns": 1788659360000000000,
+      "min_ns": 1788511238000000000,
+      "sha256": "04496cc7941a3545a4106f35a0653e30c843a66c36e1d97918c4897db843e253",
+      "source_rows": 2254863
+    },
+    "1486.parquet": {
+      "bytes": 29101012,
+      "cohort_rows": 697306,
+      "interval_rows": 2254879,
+      "max_ns": 1788810909000000000,
+      "min_ns": 1788659360000000000,
+      "sha256": "6e7831090cfecdca1b43b766452af6b2391093ee60950222a158453d88be1c27",
+      "source_rows": 2254879
+    },
+    "1487.parquet": {
+      "bytes": 29042725,
+      "cohort_rows": 698115,
+      "interval_rows": 2255305,
+      "max_ns": 1788957012000000000,
+      "min_ns": 1788810909000000000,
+      "sha256": "b6becf68dbf0356402ddbce2b20078243cf4e1009cc4bed81e4938c56eefe33c",
+      "source_rows": 2255305
+    },
+    "1488.parquet": {
+      "bytes": 29600441,
+      "cohort_rows": 691609,
+      "interval_rows": 2249956,
+      "max_ns": 1789095205000000000,
+      "min_ns": 1788957012000000000,
+      "sha256": "82ce250f237530bae4ef589595c039fdd945789f8e4f0ccd807763a390da017a",
+      "source_rows": 2249956
+    },
+    "1489.parquet": {
+      "bytes": 29163065,
+      "cohort_rows": 698411,
+      "interval_rows": 2257478,
+      "max_ns": 1789237943000000000,
+      "min_ns": 1789095205000000000,
+      "sha256": "7fe6c6d9eb0ba89465febe2aa8272321993671fcce9ea79854d0d4037ea1c678",
+      "source_rows": 2257478
+    },
+    "1490.parquet": {
+      "bytes": 28589033,
+      "cohort_rows": 688422,
+      "interval_rows": 2256799,
+      "max_ns": 1789394300000000000,
+      "min_ns": 1789237943000000000,
+      "sha256": "cb8900269498050bd5a5f4b59a42a9635318b2c1df20d84bf8f7b55c3d39ba49",
+      "source_rows": 2256799
+    },
+    "1491.parquet": {
+      "bytes": 29299180,
+      "cohort_rows": 690426,
+      "interval_rows": 2250799,
+      "max_ns": 1789535230000000000,
+      "min_ns": 1789394300000000000,
+      "sha256": "35c20ed68cbee3bf2157ed534c6a9c39aa18485b125e5eda64c7f082f7df1524",
+      "source_rows": 2250799
+    },
+    "1492.parquet": {
+      "bytes": 29573982,
+      "cohort_rows": 693964,
+      "interval_rows": 2251718,
+      "max_ns": 1789672129000000000,
+      "min_ns": 1789535230000000000,
+      "sha256": "7847275b372f72502123acd58b5783221bbddfee657a4a36e4b8b125f87ddae3",
+      "source_rows": 2251718
+    },
+    "1493.parquet": {
+      "bytes": 29136341,
+      "cohort_rows": 697679,
+      "interval_rows": 2259277,
+      "max_ns": 1789819511000000000,
+      "min_ns": 1789672129000000000,
+      "sha256": "05c7674e1bdcaefef7fbe80433af6c3c68c6f6ec6d86868a754ba7aacd876da3",
+      "source_rows": 2259277
+    },
+    "1494.parquet": {
+      "bytes": 29212458,
+      "cohort_rows": 701504,
+      "interval_rows": 2261268,
+      "max_ns": 1789972967000000000,
+      "min_ns": 1789819511000000000,
+      "sha256": "e14d9087d28b0552d922b68a7ca3e52e6d6bdfdc8aef161b119040d3e81cebfe",
+      "source_rows": 2261268
+    },
+    "1495.parquet": {
+      "bytes": 29514500,
+      "cohort_rows": 688935,
+      "interval_rows": 2248640,
+      "max_ns": 1790109057000000000,
+      "min_ns": 1789972967000000000,
+      "sha256": "4a799549d20cbfbd9026c3c53a02fed8088d1f3514a6420fc415b6c2a7ebd154",
+      "source_rows": 2248640
+    },
+    "1496.parquet": {
+      "bytes": 29639403,
+      "cohort_rows": 705698,
+      "interval_rows": 2252482,
+      "max_ns": 1790254159000000000,
+      "min_ns": 1790109057000000000,
+      "sha256": "1a36d8ca40d033497b29f9222d02eb104b83ab706e5a120b29a23360b7bb5c9c",
+      "source_rows": 2252482
+    },
+    "1497.parquet": {
+      "bytes": 27590396,
+      "cohort_rows": 644092,
+      "interval_rows": 2098642,
+      "max_ns": 1790391986000000000,
+      "min_ns": 1790254159000000000,
+      "sha256": "c7690cc1b09146a4a2ad91ff9dee9956ad0b659d6d3a04b440ad52dcd604697b",
+      "source_rows": 2247477
+    }
+  },
+  "full_source_checksum_verified": false,
+  "peak_process_memory_bytes": 737411072,
+  "seconds_this_run": 791.656,
+  "source_url": "https://data.metabrainz.org/pub/musicbrainz/listenbrainz/fullexport/listenbrainz-dump-2722-20261015-000002-full/listenbrainz-spark-dump-2722-20261015-000002-full.tar",
+  "start_ns": 1769904000000000000
+}

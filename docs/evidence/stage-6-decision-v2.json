@@ -1,0 +1,121 @@
+{
+  "acquisition_complete": true,
+  "cleaning_and_query_reproducibility_pass": true,
+  "data_accepted_for_stage_7": true,
+  "dataset_version": "cohort-v2",
+  "evidence_sha256": {
+    "stage-6-acquisition-complete-v2.json": "935e53c7a26c33124ec4cf212813bc142bd1566d3f442628d444ece330cd853b",
+    "stage-6-cleaned-manifest-v2.json": "3b9eed403dbe9a4ccc5d59d06c42d6b32738852b11373c74766bed873089bd8a",
+    "stage-6-identity-discovery-v2.json": "10e951bb6b0c64bc47eb24a9c403948523da83731504246515c6a88faf733162",
+    "stage-6-identity-lookups.json": "d00bc2f77f6474ae1a1ed5e69e50c993fd8a0ce360e6281911c083fbaae3de37",
+    "stage-6-identity-support-v2.json": "4307b62e13a889e238659f24363b13647f4f83ac463540535e5e00870b0c0c8e",
+    "stage-6-panel-resolution.json": "20281d8e6461a83bd774ab4f9026f7bc53dbf2c2d1ab28a66c00ef63742e4c04",
+    "stage-6-reproducibility-v2.json": "4b2ee311c137bf399198a63404d01ad72673b31bbd795984ed5cf720f0f6e5e9",
+    "stage-6-resources-v2.json": "8e87559366a25053b4eb7e993c1df2a6723efeb5382fc4044536c50ff0ddd97c",
+    "stage-6-support-audit-v2.json": "16ca93d2f189cd8b5f0001dfea558a3929fbf5581efd88fc40dc70964629a2bb"
+  },
+  "execution_boundary": "User explicitly requires a new go before Stage 7. Data readiness is not permission to train or implement models.",
+  "failed_gates": [],
+  "frozen_manifest": {
+    "accepted_for_model_comparison": true,
+    "candidate_catalog": {
+      "construction": "SELECT recording FROM support WHERE listeners>=5; support is distinct train listener count",
+      "count": 565147,
+      "serialization": "Sorted IDs joined by LF, UTF-8, no trailing newline",
+      "sha256": "816d13d7642e606feeb1029d2afaf0571722f0477b6682b378240c913f9ef8d5"
+    },
+    "cleaned_manifest_sha256": "3b9eed403dbe9a4ccc5d59d06c42d6b32738852b11373c74766bed873089bd8a",
+    "query_artifact_sha256": {
+      "test": "ea5a345d11023c1af7d3882aa94c5b967ae35f51a13e56ce10251432af47ce6a",
+      "validation": "c9fb95863a3a0226f21035c69ffb0f27f60f84a33ba7bbccc513d5a593e000bd"
+    },
+    "training_database_sha256": "a46b8dbb26ceb7c76806c232e4602fec954fa9fb47f5cbeb804055967939139b"
+  },
+  "holdout_gates_pass": true,
+  "limitations": [
+    "Exactly meets the 32/40 gate; eight approved titles remain unsupported, including two unresolved identities",
+    "58 targeted identity lookups do not establish catalog-wide canonical correctness or metadata readiness",
+    "Listen-time retrospective evaluation includes late imports and current metadata; not an as-of replay",
+    "Self-selected source population and prolific-listener bias; future co-listening is not explicit enjoyment",
+    "Full source archive checksum was not verified; only pinned subset provenance and range hashes",
+    "No recommendation quality, serving latency, Stage 7 model memory, playback or product readiness has been measured"
+  ],
+  "no_model_results": true,
+  "observed_on": "2026-10-19",
+  "panel": {
+    "denominator": 40,
+    "required": 32,
+    "resolved": 38,
+    "share": 0.8,
+    "supported": 32,
+    "ten_neighbors": 32,
+    "unsupported": [
+      {
+        "artist": "che",
+        "resolved": true,
+        "title": "Bae",
+        "training_listeners": 4
+      },
+      {
+        "artist": "che",
+        "resolved": true,
+        "title": "blac chyna",
+        "training_listeners": 0
+      },
+      {
+        "artist": "Lucy Bedroque",
+        "resolved": false,
+        "title": "AQUAFINA",
+        "training_listeners": 0
+      },
+      {
+        "artist": "Lucy Bedroque",
+        "resolved": true,
+        "title": "No Lie",
+        "training_listeners": 1
+      },
+      {
+        "artist": "Lucy Bedroque",
+        "resolved": true,
+        "title": "GIRLS!!!",
+        "training_listeners": 1
+      },
+      {
+        "artist": "Daniel Caesar",
+        "resolved": true,
+        "title": "Best Part",
+        "training_listeners": 0
+      },
+      {
+        "artist": "Daniel Caesar",
+        "resolved": false,
+        "title": "Japanese Denim",
+        "training_listeners": 0
+      },
+      {
+        "artist": "Bruno Mars",
+        "resolved": true,
+        "title": "That's What I Like",
+        "training_listeners": 0
+      }
+    ]
+  },
+  "parent_failed_decision_sha256": "ca9587f89cdd206c9f9467580648a2d33c7b13344f72fc7cf64fd8df974a204b",
+  "protocol_sha256": "c5bdeb888c5efd2a008776b17c13e46537fec2634e6b6cb55f35040c5d5def32",
+  "revision_declared_before_expanded_support_measurement": true,
+  "revision_informed_by_failed_v1_feasibility": true,
+  "source_code_commit": "eff996718da2ae268d951d43a319a70b83bb4416",
+  "stage_6_complete": true,
+  "stage_7_execution_authorized": false,
+  "stage_7_ready": true,
+  "stage_7_started": false,
+  "status": "Stage 6 complete; dataset accepted for the frozen Stage 7 protocol",
+  "thresholds_titles_dates_query_rules_unchanged": true,
+  "training_approved": false,
+  "verification": {
+    "ci_source_conclusion": "success",
+    "ci_source_run": "https://github.com/pok0yo/music-recommender/actions/runs/39288175514",
+    "local_tests_passed": 38,
+    "training_sqlite_quick_check": "ok"
+  }
+}

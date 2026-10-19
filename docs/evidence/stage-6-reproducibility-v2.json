@@ -1,0 +1,34 @@
+{
+  "all_artifact_hashes_equal": true,
+  "all_non_resource_manifest_fields_equal": true,
+  "allowed_differences": [
+    "peak_process_memory_bytes",
+    "runtime_seconds"
+  ],
+  "check": "Independent full cleaning runs from the same acquired cohort and frozen identity map; every output file rehashed",
+  "file_count": 151,
+  "holdout_query_replay": {
+    "all_counts_and_artifact_hashes_equal": true,
+    "artifact_sha256": {
+      "test": "ea5a345d11023c1af7d3882aa94c5b967ae35f51a13e56ce10251432af47ce6a",
+      "validation": "c9fb95863a3a0226f21035c69ffb0f27f60f84a33ba7bbccc513d5a593e000bd"
+    },
+    "check": "Reconstructed both windows independently from cleaned splits and the same completed training index; not a second index build",
+    "peak_process_memory_bytes": 416796672,
+    "seconds": 25.984
+  },
+  "observed_on": "2026-10-19",
+  "rows": 75994223,
+  "runs": [
+    {
+      "manifest_sha256": "3b9eed403dbe9a4ccc5d59d06c42d6b32738852b11373c74766bed873089bd8a",
+      "peak_process_memory_bytes": 350822400,
+      "runtime_seconds": 136.672
+    },
+    {
+      "manifest_sha256": "95e73e832180242afec85e68bad774063b0dfd229c6b143898be3c326811b99e",
+      "peak_process_memory_bytes": 335200256,
+      "runtime_seconds": 131.297
+    }
+  ]
+}

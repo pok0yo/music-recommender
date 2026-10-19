@@ -1,0 +1,490 @@
+{
+  "catalog_sha256": "816d13d7642e606feeb1029d2afaf0571722f0477b6682b378240c913f9ef8d5",
+  "cleaned_manifest_sha256": "3b9eed403dbe9a4ccc5d59d06c42d6b32738852b11373c74766bed873089bd8a",
+  "data_gates_pass": true,
+  "eligible_catalog_items": 565147,
+  "holdouts": {
+    "test": {
+      "active_window_listeners": 12143,
+      "all_targets_outside_catalog_queries": 265,
+      "artifact_sha256": "ea5a345d11023c1af7d3882aa94c5b967ae35f51a13e56ce10251432af47ce6a",
+      "constructed_queries": 11577,
+      "distinct_scorable_seeds": 7003,
+      "events": 8614555,
+      "gate_pass": true,
+      "in_catalog_target_pairs": 874920,
+      "listeners_without_seed_in_first_21_days": 566,
+      "out_of_catalog_target_pairs": 379317,
+      "scorable_queries": 7848,
+      "scorable_share": 0.6778958279346982,
+      "target_pairs": 1254237,
+      "unsupported_seed_queries": 3412,
+      "zero_target_queries": 395
+    },
+    "validation": {
+      "active_window_listeners": 11585,
+      "all_targets_outside_catalog_queries": 266,
+      "artifact_sha256": "c9fb95863a3a0226f21035c69ffb0f27f60f84a33ba7bbccc513d5a593e000bd",
+      "constructed_queries": 11082,
+      "distinct_scorable_seeds": 6983,
+      "events": 8172456,
+      "gate_pass": true,
+      "in_catalog_target_pairs": 847936,
+      "listeners_without_seed_in_first_21_days": 503,
+      "out_of_catalog_target_pairs": 342452,
+      "scorable_queries": 7887,
+      "scorable_share": 0.7116946399566865,
+      "target_pairs": 1190388,
+      "unsupported_seed_queries": 2850,
+      "zero_target_queries": 392
+    }
+  },
+  "model_results_measured": false,
+  "panel": [
+    {
+      "artist": "nate sib",
+      "qualifying_neighbors": 1823,
+      "recording_mbid": "8630f911-a9a6-486e-b764-aabc236479ad",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "typical",
+      "training_listeners": 18
+    },
+    {
+      "artist": "nate sib",
+      "qualifying_neighbors": 3185,
+      "recording_mbid": "ca215903-73eb-42f7-97bd-ccf520137b23",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "go",
+      "training_listeners": 23
+    },
+    {
+      "artist": "nate sib",
+      "qualifying_neighbors": 1052,
+      "recording_mbid": "fa4c7167-c1c8-4c5a-909f-3dd8f3139658",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "secret",
+      "training_listeners": 10
+    },
+    {
+      "artist": "nate sib",
+      "qualifying_neighbors": 2613,
+      "recording_mbid": "3956cb39-7741-421c-a5bd-a163b99d8813",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "only1",
+      "training_listeners": 19
+    },
+    {
+      "artist": "Tiffany Day",
+      "qualifying_neighbors": 655,
+      "recording_mbid": "15db4b6a-7205-4960-9f0c-d1a34d147afe",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "CLOUDS",
+      "training_listeners": 9
+    },
+    {
+      "artist": "Tiffany Day",
+      "qualifying_neighbors": 4356,
+      "recording_mbid": "daf4d723-2ff7-4e5f-b132-237c987c3a03",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "SAN FRANCISCO SIDEWALK",
+      "training_listeners": 29
+    },
+    {
+      "artist": "Tiffany Day",
+      "qualifying_neighbors": 4628,
+      "recording_mbid": "a824626f-d5e1-43b3-a2e9-49b138b0eaee",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "HELLA BOY CRAZY",
+      "training_listeners": 31
+    },
+    {
+      "artist": "Tiffany Day",
+      "qualifying_neighbors": 5354,
+      "recording_mbid": "99e50018-d45e-44e2-b085-8052e87c71ae",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "KANSAS",
+      "training_listeners": 37
+    },
+    {
+      "artist": "che",
+      "qualifying_neighbors": 7381,
+      "recording_mbid": "565ed4d0-469e-4a89-8e3e-afc521a4ed56",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Miley Cyrus",
+      "training_listeners": 36
+    },
+    {
+      "artist": "che",
+      "qualifying_neighbors": 7718,
+      "recording_mbid": "37917bf2-83f7-41bb-9f89-5320aa4561c4",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Pizza Time",
+      "training_listeners": 35
+    },
+    {
+      "artist": "che",
+      "qualifying_neighbors": 0,
+      "recording_mbid": "5755aa85-5c68-4b4b-a825-ed2ec55228ed",
+      "resolved": true,
+      "supported": false,
+      "ten_neighbors_available": false,
+      "title": "Bae",
+      "training_listeners": 4
+    },
+    {
+      "artist": "che",
+      "qualifying_neighbors": 0,
+      "recording_mbid": "35c0a3e6-3aba-4e38-8939-7bf0a0d6753b",
+      "resolved": true,
+      "supported": false,
+      "ten_neighbors_available": false,
+      "title": "blac chyna",
+      "training_listeners": 0
+    },
+    {
+      "artist": "2hollis",
+      "qualifying_neighbors": 20590,
+      "recording_mbid": "de766945-2406-4627-9d3c-5dd4a17497d6",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "crush",
+      "training_listeners": 124
+    },
+    {
+      "artist": "2hollis",
+      "qualifying_neighbors": 1824,
+      "recording_mbid": "38ad538a-fddb-49f7-aeb7-84fb232ac4ff",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "jeans",
+      "training_listeners": 23
+    },
+    {
+      "artist": "2hollis",
+      "qualifying_neighbors": 1611,
+      "recording_mbid": "1eb60aa4-9610-4296-87c5-ba050f64655c",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "gold",
+      "training_listeners": 20
+    },
+    {
+      "artist": "2hollis",
+      "qualifying_neighbors": 8871,
+      "recording_mbid": "6b2ed59c-316e-4b8a-aae1-cca399354126",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "lie",
+      "training_listeners": 54
+    },
+    {
+      "artist": "Lucy Bedroque",
+      "qualifying_neighbors": 0,
+      "recording_mbid": null,
+      "resolved": false,
+      "supported": false,
+      "ten_neighbors_available": false,
+      "title": "AQUAFINA",
+      "training_listeners": 0
+    },
+    {
+      "artist": "Lucy Bedroque",
+      "qualifying_neighbors": 654,
+      "recording_mbid": "4c4053b4-6e64-4bb7-a8a3-ca5e9f32811b",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Mi Amor",
+      "training_listeners": 7
+    },
+    {
+      "artist": "Lucy Bedroque",
+      "qualifying_neighbors": 0,
+      "recording_mbid": "fa54b457-1b22-45eb-8d57-027fda58e63f",
+      "resolved": true,
+      "supported": false,
+      "ten_neighbors_available": false,
+      "title": "No Lie",
+      "training_listeners": 1
+    },
+    {
+      "artist": "Lucy Bedroque",
+      "qualifying_neighbors": 0,
+      "recording_mbid": "a16edbac-5302-485f-9c7b-39fff0e3a2ac",
+      "resolved": true,
+      "supported": false,
+      "ten_neighbors_available": false,
+      "title": "GIRLS!!!",
+      "training_listeners": 1
+    },
+    {
+      "artist": "beabadoobee",
+      "qualifying_neighbors": 21334,
+      "recording_mbid": "c6cdaca3-37a1-47f3-a5e3-e9c012a6c0f1",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Coffee",
+      "training_listeners": 127
+    },
+    {
+      "artist": "beabadoobee",
+      "qualifying_neighbors": 13844,
+      "recording_mbid": "297dd100-3148-49f7-841d-c44ce59f34bd",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "She Plays Bass",
+      "training_listeners": 67
+    },
+    {
+      "artist": "beabadoobee",
+      "qualifying_neighbors": 53184,
+      "recording_mbid": "f220ba2e-0d12-41a2-b9ef-5a5119b967b8",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Glue Song",
+      "training_listeners": 305
+    },
+    {
+      "artist": "beabadoobee",
+      "qualifying_neighbors": 35256,
+      "recording_mbid": "0e011401-8380-48f3-b4bf-ad89e5e8e6ae",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "the way things go",
+      "training_listeners": 156
+    },
+    {
+      "artist": "Daniel Caesar",
+      "qualifying_neighbors": 43581,
+      "recording_mbid": "b3323026-2dc1-4c02-b447-1b7118a97e90",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Get You",
+      "training_listeners": 245
+    },
+    {
+      "artist": "Daniel Caesar",
+      "qualifying_neighbors": 0,
+      "recording_mbid": "c7aa28ec-2e62-415d-a744-043d8c383095",
+      "resolved": true,
+      "supported": false,
+      "ten_neighbors_available": false,
+      "title": "Best Part",
+      "training_listeners": 0
+    },
+    {
+      "artist": "Daniel Caesar",
+      "qualifying_neighbors": 0,
+      "recording_mbid": null,
+      "resolved": false,
+      "supported": false,
+      "ten_neighbors_available": false,
+      "title": "Japanese Denim",
+      "training_listeners": 0
+    },
+    {
+      "artist": "Daniel Caesar",
+      "qualifying_neighbors": 24317,
+      "recording_mbid": "49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Always",
+      "training_listeners": 147
+    },
+    {
+      "artist": "Steve Lacy",
+      "qualifying_neighbors": 77040,
+      "recording_mbid": "bc0f4be2-29bd-4f4b-a850-862bbd130db5",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Dark Red",
+      "training_listeners": 501
+    },
+    {
+      "artist": "Steve Lacy",
+      "qualifying_neighbors": 1980,
+      "recording_mbid": "1abdf128-2f80-457c-8da0-e554e8e3b534",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Bad Habit",
+      "training_listeners": 29
+    },
+    {
+      "artist": "Steve Lacy",
+      "qualifying_neighbors": 24523,
+      "recording_mbid": "aa03fca2-4c9e-4ee9-95c3-c30fa0a91004",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "N Side",
+      "training_listeners": 110
+    },
+    {
+      "artist": "Steve Lacy",
+      "qualifying_neighbors": 41661,
+      "recording_mbid": "d3d1a743-a512-49c7-b38d-0610c3433a39",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Some",
+      "training_listeners": 217
+    },
+    {
+      "artist": "Bruno Mars",
+      "qualifying_neighbors": 77246,
+      "recording_mbid": "4658bb93-57c4-4710-86f1-b87869f5781b",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Just the Way You Are",
+      "training_listeners": 561
+    },
+    {
+      "artist": "Bruno Mars",
+      "qualifying_neighbors": 111242,
+      "recording_mbid": "9dbd4c26-c4ad-4abe-ba3e-88bfe6750518",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Locked Out of Heaven",
+      "training_listeners": 782
+    },
+    {
+      "artist": "Bruno Mars",
+      "qualifying_neighbors": 66394,
+      "recording_mbid": "c2525847-4207-44c8-995f-45e81004c6ab",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Treasure",
+      "training_listeners": 423
+    },
+    {
+      "artist": "Bruno Mars",
+      "qualifying_neighbors": 0,
+      "recording_mbid": "881e6040-095a-449d-8c34-e8b3fca38cbd",
+      "resolved": true,
+      "supported": false,
+      "ten_neighbors_available": false,
+      "title": "That's What I Like",
+      "training_listeners": 0
+    },
+    {
+      "artist": "GIV\u0112ON",
+      "qualifying_neighbors": 21373,
+      "recording_mbid": "cb77aabb-7b1f-4cf4-8db9-6b49753a60de",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Heartbreak Anniversary",
+      "training_listeners": 154
+    },
+    {
+      "artist": "GIV\u0112ON",
+      "qualifying_neighbors": 4437,
+      "recording_mbid": "7c59799e-3135-4f54-9541-f25e8822684d",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Like I Want You",
+      "training_listeners": 29
+    },
+    {
+      "artist": "GIV\u0112ON",
+      "qualifying_neighbors": 2686,
+      "recording_mbid": "9c237f32-aaa3-4275-a984-87dddff37d17",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "For Tonight",
+      "training_listeners": 20
+    },
+    {
+      "artist": "GIV\u0112ON",
+      "qualifying_neighbors": 7730,
+      "recording_mbid": "80f206d2-2668-4797-ab84-c556b85efbf9",
+      "resolved": true,
+      "supported": true,
+      "ten_neighbors_available": true,
+      "title": "Garden Kisses",
+      "training_listeners": 36
+    }
+  ],
+  "panel_gate_pass": true,
+  "panel_resolution_sha256": "20281d8e6461a83bd774ab4f9026f7bc53dbf2c2d1ab28a66c00ef63742e4c04",
+  "panel_resolved": 38,
+  "panel_supported": 32,
+  "panel_with_ten_neighbors": 32,
+  "peak_process_memory_bytes": 1886556160,
+  "seconds_this_run": 1184.485,
+  "stage": 6,
+  "training": {
+    "database_sha256": "a46b8dbb26ceb7c76806c232e4602fec954fa9fb47f5cbeb804055967939139b",
+    "manifest_sha256": "3b9eed403dbe9a4ccc5d59d06c42d6b32738852b11373c74766bed873089bd8a",
+    "seconds": 987.688,
+    "statistics": {
+      "binary_pairs": 15380182,
+      "eligible_recordings": 565147,
+      "events": 59207212,
+      "item_listener_distribution": {
+        "count": 3550552,
+        "max": 1911,
+        "min": 1,
+        "p50": 1,
+        "p95": 14,
+        "p99": 51
+      },
+      "listener_event_distribution": {
+        "count": 16726,
+        "max": 460165,
+        "min": 1,
+        "p50": 823,
+        "p95": 11607,
+        "p99": 40463
+      },
+      "listener_unique_item_distribution": {
+        "count": 16726,
+        "max": 40576,
+        "min": 1,
+        "p50": 380,
+        "p95": 3491,
+        "p99": 6797
+      },
+      "listeners": 16726,
+      "recordings": 3550552,
+      "top_one_percent_listener_event_share": 0.31588672001647367
+    }
+  }
+}
