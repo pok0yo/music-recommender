@@ -1,0 +1,33 @@
+{
+  "version": "cohort-v1",
+  "status": "fixed before support measurement; acceptance depends on Stage 6 gates",
+  "task": "Retrospective listen-time reconstruction using the pinned dump and current recording metadata; not an as-of deployment replay",
+  "cohort": {
+    "seed": "music-recommender-stage6-v1",
+    "rule": "SHA256 of seed + ':' + positive decimal listener ID; first 8 bytes unsigned big-endian modulo 10 equals 0",
+    "scope": "Keep all retained listeners' valid events within the entire interval; no per-listener truncation"
+  },
+  "windows_utc_start_inclusive_end_exclusive": {
+    "train": ["2026-02-01T00:00:00Z", "2026-08-01T00:00:00Z"],
+    "validation": ["2026-08-01T00:00:00Z", "2026-08-29T00:00:00Z"],
+    "test": ["2026-08-29T00:00:00Z", "2026-09-26T00:00:00Z"]
+  },
+  "recording_identity": "Use normalized recording MBIDs as distinct identifiers. No undocumented merge of same-title versions or acoustically unverified candidates.",
+  "training": {
+    "binary_pairs": "Unique listener-recording pairs from train only",
+    "candidate_catalog": "Recordings with at least 5 distinct training listeners",
+    "qualifying_neighbor": "A different candidate recording with at least 3 shared distinct training listeners",
+    "panel_gate": "At least 32 of the unchanged 40 titles resolve to a candidate with at least 3 qualifying neighbors. Unresolved entries remain in the denominator. Report ability to return 10 separately."
+  },
+  "queries": {
+    "unit": "One query per listener per holdout window",
+    "seed": "First valid event at window start <= t < window start + 21 days; equal-time ties choose lexicographically smallest recording MBID, independent of support or future targets",
+    "targets": "Distinct other recordings with seed time < t < seed time + 7 days and t < window end; equal-time and exactly-seven-day events are excluded",
+    "scorable": "Seed is in the fixed train candidate catalog and at least one target is in that catalog",
+    "unsupported": "Do not replace unsupported first seeds with later supported seeds",
+    "denominators": "Report all active listeners, constructed queries, listeners without an early seed, unsupported seeds, zero targets, all-out-of-catalog targets, target-pair catalog coverage, scorable count/share and distinct scorable seeds",
+    "gate_per_window": "At least 500 scorable queries and 100 distinct scorable seeds",
+    "ranking_universe": "Every item in the same fixed training catalog except the seed; no sampled negatives or history-based candidate removal"
+  },
+  "stage_7_boundary": "Stage 6 reports data support and query feasibility only. No ranking quality, shrinkage choice or measured improvement is produced. Tune only on validation after data acceptance; keep test for the frozen final model comparison."
+}

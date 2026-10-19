@@ -1,7 +1,8 @@
 {
+  "complete": true,
   "panel_status": "user approved all 40 proposed titles on 2026-10-18; recording versions not yet resolved",
   "search_reference": "https://musicbrainz.org/doc/MusicBrainz_API/Search/RecordingSearch",
-  "selection": "Exact artist ID and normalized title only; versions require review",
+  "selection": "Reviewed core metadata before support measurement. Prefer the original studio single/artist album; preserve distinct versions and leave two unresolved identities unselected. No acoustic equivalence or canonical merge is asserted.",
   "tracks": [
     {
       "artist": "nate sib",
@@ -17,11 +18,28 @@
         }
       ],
       "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A1ff7da2a-885f-4f66-b1a2-14d93bf590d0+AND+recording%3A%22typical%22&fmt=json&limit=100",
-      "resolved_recording_mbid": null,
+      "resolved_recording_mbid": "8630f911-a9a6-486e-b764-aabc236479ad",
       "response_sha256": "958d532410e17b37451e03a744b2d2aaa0a254bac5aac3dfd3d923e8ab1023a9",
       "search_truncated": false,
       "title": "typical",
-      "total_search_results": 1
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "494076d8-ec42-4399-8d73-f8f19084764c",
+          "title": "for us",
+          "status": "Official",
+          "release-group": {
+            "id": "18ff5b91-3641-4a0f-aab6-4327d1cfb9da",
+            "type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "primary-type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "title": "for us",
+            "primary-type": "EP"
+          },
+          "date": "2025-05-16"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/8630f911-a9a6-486e-b764-aabc236479ad"
     },
     {
       "artist": "nate sib",
@@ -37,11 +55,28 @@
         }
       ],
       "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A1ff7da2a-885f-4f66-b1a2-14d93bf590d0+AND+recording%3A%22go%22&fmt=json&limit=100",
-      "resolved_recording_mbid": null,
+      "resolved_recording_mbid": "ca215903-73eb-42f7-97bd-ccf520137b23",
       "response_sha256": "8858b1f8c9030f1bbfe58151f52994c899bb2d51dff09cf5ca29b60f9fb06df2",
       "search_truncated": false,
       "title": "go",
-      "total_search_results": 3
+      "total_search_results": 3,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "494076d8-ec42-4399-8d73-f8f19084764c",
+          "title": "for us",
+          "status": "Official",
+          "release-group": {
+            "id": "18ff5b91-3641-4a0f-aab6-4327d1cfb9da",
+            "type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "primary-type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "title": "for us",
+            "primary-type": "EP"
+          },
+          "date": "2025-05-16"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/ca215903-73eb-42f7-97bd-ccf520137b23"
     },
     {
       "artist": "nate sib",
@@ -57,11 +92,28 @@
         }
       ],
       "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A1ff7da2a-885f-4f66-b1a2-14d93bf590d0+AND+recording%3A%22secret%22&fmt=json&limit=100",
-      "resolved_recording_mbid": null,
+      "resolved_recording_mbid": "fa4c7167-c1c8-4c5a-909f-3dd8f3139658",
       "response_sha256": "e5eff86bf452f045df1b0f27d0aa1f380744774d9b2edbee93a9b47dcf81d47c",
       "search_truncated": false,
       "title": "secret",
-      "total_search_results": 1
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "494076d8-ec42-4399-8d73-f8f19084764c",
+          "title": "for us",
+          "status": "Official",
+          "release-group": {
+            "id": "18ff5b91-3641-4a0f-aab6-4327d1cfb9da",
+            "type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "primary-type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "title": "for us",
+            "primary-type": "EP"
+          },
+          "date": "2025-05-16"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/fa4c7167-c1c8-4c5a-909f-3dd8f3139658"
     },
     {
       "artist": "nate sib",
@@ -77,11 +129,28 @@
         }
       ],
       "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A1ff7da2a-885f-4f66-b1a2-14d93bf590d0+AND+recording%3A%22only1%22&fmt=json&limit=100",
-      "resolved_recording_mbid": null,
+      "resolved_recording_mbid": "3956cb39-7741-421c-a5bd-a163b99d8813",
       "response_sha256": "b2b04a7543e901b665bbce05d13fe284f1e883bc96964af82567f96cc0c94148",
       "search_truncated": false,
       "title": "only1",
-      "total_search_results": 1
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "494076d8-ec42-4399-8d73-f8f19084764c",
+          "title": "for us",
+          "status": "Official",
+          "release-group": {
+            "id": "18ff5b91-3641-4a0f-aab6-4327d1cfb9da",
+            "type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "primary-type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "title": "for us",
+            "primary-type": "EP"
+          },
+          "date": "2025-05-16"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/3956cb39-7741-421c-a5bd-a163b99d8813"
     },
     {
       "artist": "Tiffany Day",
@@ -97,11 +166,54 @@
         }
       ],
       "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ac9e3089c-a7bc-4df5-80f9-9161eaa74a02+AND+recording%3A%22CLOUDS%22&fmt=json&limit=100",
-      "resolved_recording_mbid": null,
+      "resolved_recording_mbid": "15db4b6a-7205-4960-9f0c-d1a34d147afe",
       "response_sha256": "cf2f00fddec70e858f985fea98f9001068546fc28390bddb5cb8f68fb14e6e0a",
       "search_truncated": false,
       "title": "CLOUDS",
-      "total_search_results": 1
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "40e84df1-b29a-4667-af49-b015678e1fad",
+          "title": "CLOUDS",
+          "status": "Official",
+          "release-group": {
+            "id": "aab78d17-e622-42de-aa3a-89e39963eb79",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "CLOUDS",
+            "primary-type": "Single"
+          },
+          "date": "2021-12-03"
+        },
+        {
+          "id": "d86a653c-e8d8-48ec-ba5a-7f95a1f8b00a",
+          "title": "THE RENEWAL PROJECT",
+          "status": "Official",
+          "release-group": {
+            "id": "a5067196-d3de-4820-8c03-0083229df9d6",
+            "type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "primary-type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "title": "THE RENEWAL PROJECT",
+            "primary-type": "EP"
+          },
+          "date": "2022-02-16"
+        },
+        {
+          "id": "dc067195-fe7c-435a-b339-784a47feeef3",
+          "title": "THE RENEWAL PROJECT",
+          "status": "Official",
+          "release-group": {
+            "id": "a5067196-d3de-4820-8c03-0083229df9d6",
+            "type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "primary-type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "title": "THE RENEWAL PROJECT",
+            "primary-type": "EP"
+          },
+          "date": "2022-02-16"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/15db4b6a-7205-4960-9f0c-d1a34d147afe"
     },
     {
       "artist": "Tiffany Day",
@@ -117,27 +229,2680 @@
         }
       ],
       "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ac9e3089c-a7bc-4df5-80f9-9161eaa74a02+AND+recording%3A%22SAN+FRANCISCO+SIDEWALK%22&fmt=json&limit=100",
-      "resolved_recording_mbid": null,
+      "resolved_recording_mbid": "daf4d723-2ff7-4e5f-b132-237c987c3a03",
       "response_sha256": "72e18b973dfc97aa0417637b5ab244ec4bf29f2f40bcfbf6e7a10f061e0b6d96",
       "search_truncated": false,
       "title": "SAN FRANCISCO SIDEWALK",
-      "total_search_results": 1
-    }
-  ],
-  "complete": false,
-  "observed_on": "2026-10-18",
-  "observed_http_errors": [
-    {
-      "status": 503,
-      "artist": "Tiffany Day",
-      "title": "SAN FRANCISCO SIDEWALK",
-      "note": "Subsequent cached-resume attempt succeeded for this title"
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "1d4f4efd-526c-4e03-b22b-3f7634d5d59e",
+          "title": "SAN FRANCISCO SIDEWALK",
+          "status": "Official",
+          "release-group": {
+            "id": "0341329b-5a2d-4004-b5c8-255311745f58",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "SAN FRANCISCO SIDEWALK",
+            "primary-type": "Single"
+          },
+          "date": "2022-08-10"
+        },
+        {
+          "id": "861b2d85-cc18-4b57-a40a-60851feb7962",
+          "title": "THE GRATITUDE PROJECT",
+          "status": "Official",
+          "release-group": {
+            "id": "c1184dbc-a870-4d96-8489-f406f49244eb",
+            "type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "primary-type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "title": "THE GRATITUDE PROJECT",
+            "primary-type": "EP"
+          },
+          "date": "2023-02-17"
+        },
+        {
+          "id": "a3875f3f-28f8-43ca-9cb3-5415b5fad112",
+          "title": "THE GRATITUDE PROJECT",
+          "status": "Official",
+          "release-group": {
+            "id": "c1184dbc-a870-4d96-8489-f406f49244eb",
+            "type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "primary-type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "title": "THE GRATITUDE PROJECT",
+            "primary-type": "EP"
+          },
+          "date": "2023-02-17"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/daf4d723-2ff7-4e5f-b132-237c987c3a03"
     },
     {
-      "status": 503,
       "artist": "Tiffany Day",
+      "artist_mbid": "c9e3089c-a7bc-4df5-80f9-9161eaa74a02",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2024-05-23",
+          "id": "a824626f-d5e1-43b3-a2e9-49b138b0eaee",
+          "length": 134787,
+          "title": "HELLA BOY CRAZY",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ac9e3089c-a7bc-4df5-80f9-9161eaa74a02+AND+recording%3A%22HELLA+BOY+CRAZY%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "a824626f-d5e1-43b3-a2e9-49b138b0eaee",
+      "response_sha256": "ce2632a45f666f9ae62656afee2dc42b061513d72ae7868b0bff56449c5ec63f",
+      "search_truncated": false,
       "title": "HELLA BOY CRAZY",
-      "note": "Lookup stopped; title availability remains unknown"
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "c95fadf6-70c7-438d-998b-04ee3167160b",
+          "title": "FAR AWAY",
+          "status": "Official",
+          "release-group": {
+            "id": "777415d4-4581-4307-9fef-b056321c64a8",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Far Away",
+            "primary-type": "Single"
+          },
+          "date": "2024-08-16"
+        },
+        {
+          "id": "64323138-cb6f-4667-a0c0-2930b81e8ddb",
+          "title": "HELLA BOY CRAZY",
+          "status": "Official",
+          "release-group": {
+            "id": "ef08c72f-2881-4176-b812-7a746e61fed9",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "HELLA BOY CRAZY",
+            "primary-type": "Single"
+          },
+          "date": "2024-05-23"
+        },
+        {
+          "id": "afeae643-67b1-4de9-9ee2-5198433f1304",
+          "title": "KANSAS",
+          "status": "Official",
+          "release-group": {
+            "id": "8103b5ae-ec65-4ffe-839f-64efb1f5c57e",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "KANSAS",
+            "primary-type": "Single"
+          },
+          "date": "2024-07-12"
+        },
+        {
+          "id": "90c91ed5-7f11-4b76-b8eb-1a5e9acee37b",
+          "title": "LOVER TOFU FRUIT",
+          "status": "Official",
+          "release-group": {
+            "id": "00b1d114-ab48-4a5f-96dc-445426446eab",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "LOVER TOFU FRUIT",
+            "primary-type": "Album"
+          },
+          "date": "2024-09-13"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/a824626f-d5e1-43b3-a2e9-49b138b0eaee"
+    },
+    {
+      "artist": "Tiffany Day",
+      "artist_mbid": "c9e3089c-a7bc-4df5-80f9-9161eaa74a02",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2024-07-12",
+          "id": "99e50018-d45e-44e2-b085-8052e87c71ae",
+          "length": 181267,
+          "title": "KANSAS",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ac9e3089c-a7bc-4df5-80f9-9161eaa74a02+AND+recording%3A%22KANSAS%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "99e50018-d45e-44e2-b085-8052e87c71ae",
+      "response_sha256": "cf25bd29c1df400703768c26978b730e364101779c73513045dd06a67ae9aba5",
+      "search_truncated": false,
+      "title": "KANSAS",
+      "total_search_results": 2,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "c95fadf6-70c7-438d-998b-04ee3167160b",
+          "title": "FAR AWAY",
+          "status": "Official",
+          "release-group": {
+            "id": "777415d4-4581-4307-9fef-b056321c64a8",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Far Away",
+            "primary-type": "Single"
+          },
+          "date": "2024-08-16"
+        },
+        {
+          "id": "afeae643-67b1-4de9-9ee2-5198433f1304",
+          "title": "KANSAS",
+          "status": "Official",
+          "release-group": {
+            "id": "8103b5ae-ec65-4ffe-839f-64efb1f5c57e",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "KANSAS",
+            "primary-type": "Single"
+          },
+          "date": "2024-07-12"
+        },
+        {
+          "id": "90c91ed5-7f11-4b76-b8eb-1a5e9acee37b",
+          "title": "LOVER TOFU FRUIT",
+          "status": "Official",
+          "release-group": {
+            "id": "00b1d114-ab48-4a5f-96dc-445426446eab",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "LOVER TOFU FRUIT",
+            "primary-type": "Album"
+          },
+          "date": "2024-09-13"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/99e50018-d45e-44e2-b085-8052e87c71ae"
+    },
+    {
+      "artist": "che",
+      "artist_mbid": "0a68f3b5-79c2-4f81-a7bc-ebc977602e86",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2024-03-27",
+          "id": "565ed4d0-469e-4a89-8e3e-afc521a4ed56",
+          "length": 138000,
+          "title": "Miley Cyrus",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A0a68f3b5-79c2-4f81-a7bc-ebc977602e86+AND+recording%3A%22Miley+Cyrus%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "565ed4d0-469e-4a89-8e3e-afc521a4ed56",
+      "response_sha256": "96463a2a5e4bc8754832618b45eb4cbd3cbcd7e8d4f535db97c2d733b073d4a4",
+      "search_truncated": false,
+      "title": "Miley Cyrus",
+      "total_search_results": 3,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "78918a4c-ba92-4653-b8e3-ffa19494c64f",
+          "title": "Miley Cyrus",
+          "status": "Official",
+          "release-group": {
+            "id": "d6f23d1d-a3c7-4fd5-9939-09bce9534879",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Miley Cyrus",
+            "primary-type": "Single"
+          },
+          "date": "2024-03-27"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/565ed4d0-469e-4a89-8e3e-afc521a4ed56"
+    },
+    {
+      "artist": "che",
+      "artist_mbid": "0a68f3b5-79c2-4f81-a7bc-ebc977602e86",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2024-05-29",
+          "id": "37917bf2-83f7-41bb-9f89-5320aa4561c4",
+          "length": 119468,
+          "title": "Pizza Time",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A0a68f3b5-79c2-4f81-a7bc-ebc977602e86+AND+recording%3A%22Pizza+Time%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "37917bf2-83f7-41bb-9f89-5320aa4561c4",
+      "response_sha256": "5f293d1a1e34ec3341d1cafcf301f8137aedc8d0e92b0bfc74726f3ecbb3bdfe",
+      "search_truncated": false,
+      "title": "Pizza Time",
+      "total_search_results": 3,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "3a38d5a7-b178-4d2c-8366-0140da9f8dd4",
+          "title": "Pizza Time",
+          "status": "Official",
+          "release-group": {
+            "id": "283ecb6f-3848-4e32-88ac-604ef2074cec",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Pizza Time",
+            "primary-type": "Single"
+          },
+          "date": "2024-05-29"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/37917bf2-83f7-41bb-9f89-5320aa4561c4"
+    },
+    {
+      "artist": "che",
+      "artist_mbid": "0a68f3b5-79c2-4f81-a7bc-ebc977602e86",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2024-02-14",
+          "id": "5755aa85-5c68-4b4b-a825-ed2ec55228ed",
+          "length": 170000,
+          "title": "Bae",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A0a68f3b5-79c2-4f81-a7bc-ebc977602e86+AND+recording%3A%22Bae%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "5755aa85-5c68-4b4b-a825-ed2ec55228ed",
+      "response_sha256": "cbd1f01a840b5f8ef093fc1eec4caa6019dee4491fcc982c6ada0e0656c2394d",
+      "search_truncated": false,
+      "title": "Bae",
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "bb910716-e14f-47b5-a8df-1002b7df8e75",
+          "title": "Bae",
+          "status": "Official",
+          "release-group": {
+            "id": "75212370-cee4-49e0-afa7-332733617ddc",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Bae",
+            "primary-type": "Single"
+          },
+          "date": "2024-02-14"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/5755aa85-5c68-4b4b-a825-ed2ec55228ed"
+    },
+    {
+      "artist": "che",
+      "artist_mbid": "0a68f3b5-79c2-4f81-a7bc-ebc977602e86",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2023-02-10",
+          "id": "35c0a3e6-3aba-4e38-8939-7bf0a0d6753b",
+          "length": 125000,
+          "title": "blac chyna",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2023-07-21",
+          "id": "1a3b3c0e-5bee-43f9-8696-56e6d9c22b00",
+          "length": 125000,
+          "title": "blac chyna",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A0a68f3b5-79c2-4f81-a7bc-ebc977602e86+AND+recording%3A%22blac+chyna%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "35c0a3e6-3aba-4e38-8939-7bf0a0d6753b",
+      "response_sha256": "f6d50fbc864718ca801e627095ce10db7af9b4a30f9f4a27a82687851d467e66",
+      "search_truncated": false,
+      "title": "blac chyna",
+      "total_search_results": 2,
+      "resolution_reason": "Original dated 2023-02-10 official single; later album ID remains separate.",
+      "reviewed_release_context": [
+        {
+          "id": "064b8f41-facc-476d-9502-9ab6ef52ba45",
+          "title": "blac chyna",
+          "status": "Official",
+          "release-group": {
+            "id": "080a68d4-9ec0-459c-8160-65e8bed83638",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "blac chyna",
+            "primary-type": "Single"
+          },
+          "date": "2023-02-10"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/35c0a3e6-3aba-4e38-8939-7bf0a0d6753b"
+    },
+    {
+      "artist": "2hollis",
+      "artist_mbid": "8bd5a8fb-4c25-401d-a597-2c24affdd5c5",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2024-04-26",
+          "id": "de766945-2406-4627-9d3c-5dd4a17497d6",
+          "length": 146000,
+          "title": "crush",
+          "video": null
+        },
+        {
+          "disambiguation": "part of \u201cTakeover: Madeon\u201d DJ\u2010mix",
+          "first-release-date": "2025-08-25",
+          "id": "7616ae0f-628e-4435-9759-9add935579c5",
+          "length": 64000,
+          "title": "Crush",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A8bd5a8fb-4c25-401d-a597-2c24affdd5c5+AND+recording%3A%22crush%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "de766945-2406-4627-9d3c-5dd4a17497d6",
+      "response_sha256": "804986fd94d1f2ba1076a3041adfc571f8ddbe3551885d5313e38b9a12487ad2",
+      "search_truncated": false,
+      "title": "crush",
+      "total_search_results": 2,
+      "resolution_reason": "Official 2024 single/album recording; exclude the shortened DJ-mix segment.",
+      "reviewed_release_context": [
+        {
+          "id": "90f9c5be-b6df-4a43-b1f2-0e7d6688690a",
+          "title": "crush",
+          "status": "Official",
+          "release-group": {
+            "id": "ac3c5857-f73d-445f-bfcf-67cac31f22ac",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "crush",
+            "primary-type": "Single"
+          },
+          "date": "2024-04-26"
+        },
+        {
+          "id": "d1e0b2ea-76d3-4584-95fe-e79684c43297",
+          "title": "boy",
+          "status": "Official",
+          "release-group": {
+            "id": "f0ed33a3-8097-4f92-b98d-97a70bd9e6b3",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "boy",
+            "primary-type": "Album"
+          },
+          "date": "2024-06-07"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/de766945-2406-4627-9d3c-5dd4a17497d6"
+    },
+    {
+      "artist": "2hollis",
+      "artist_mbid": "8bd5a8fb-4c25-401d-a597-2c24affdd5c5",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2023-10-27",
+          "id": "38ad538a-fddb-49f7-aeb7-84fb232ac4ff",
+          "length": 181258,
+          "title": "jeans",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A8bd5a8fb-4c25-401d-a597-2c24affdd5c5+AND+recording%3A%22jeans%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "38ad538a-fddb-49f7-aeb7-84fb232ac4ff",
+      "response_sha256": "15acf51c3795565b29cef53f242b460856189197a39fb46368a24b7e5b9bbd43",
+      "search_truncated": false,
+      "title": "jeans",
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "4df67b29-4168-4770-94e5-f94db2f48084",
+          "title": "jeans",
+          "status": "Official",
+          "release-group": {
+            "id": "05880522-35c8-407d-86a2-2f4577b59460",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "jeans",
+            "primary-type": "Single"
+          }
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/38ad538a-fddb-49f7-aeb7-84fb232ac4ff"
+    },
+    {
+      "artist": "2hollis",
+      "artist_mbid": "8bd5a8fb-4c25-401d-a597-2c24affdd5c5",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2024-10-04",
+          "id": "1eb60aa4-9610-4296-87c5-ba050f64655c",
+          "length": 126988,
+          "title": "gold",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A8bd5a8fb-4c25-401d-a597-2c24affdd5c5+AND+recording%3A%22gold%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "1eb60aa4-9610-4296-87c5-ba050f64655c",
+      "response_sha256": "5fb3d9df0d66345f1051dcecaa3f7a3b24a3869e256e8cbdb0d8ed02f58baf05",
+      "search_truncated": false,
+      "title": "gold",
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "af7d5b26-32f8-42de-a5ee-f2f286ce4a00",
+          "title": "gold",
+          "status": "Official",
+          "release-group": {
+            "id": "e1148672-0f2d-409f-b43c-284086963016",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "gold",
+            "primary-type": "Single"
+          }
+        },
+        {
+          "id": "73ef249c-70fa-4d96-8417-3b77f6d95ab8",
+          "title": "gold",
+          "status": "Official",
+          "release-group": {
+            "id": "e1148672-0f2d-409f-b43c-284086963016",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "gold",
+            "primary-type": "Single"
+          }
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/1eb60aa4-9610-4296-87c5-ba050f64655c"
+    },
+    {
+      "artist": "2hollis",
+      "artist_mbid": "8bd5a8fb-4c25-401d-a597-2c24affdd5c5",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2024-06-07",
+          "id": "6b2ed59c-316e-4b8a-aae1-cca399354126",
+          "length": 143000,
+          "title": "lie",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A8bd5a8fb-4c25-401d-a597-2c24affdd5c5+AND+recording%3A%22lie%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "6b2ed59c-316e-4b8a-aae1-cca399354126",
+      "response_sha256": "ccd0db51d3ff7934594d967de18fbe5677b41d22500ae6f1ac6f4b9e854ac8ee",
+      "search_truncated": false,
+      "title": "lie",
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "d1e0b2ea-76d3-4584-95fe-e79684c43297",
+          "title": "boy",
+          "status": "Official",
+          "release-group": {
+            "id": "f0ed33a3-8097-4f92-b98d-97a70bd9e6b3",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "boy",
+            "primary-type": "Album"
+          },
+          "date": "2024-06-07"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/6b2ed59c-316e-4b8a-aae1-cca399354126"
+    },
+    {
+      "artist": "Lucy Bedroque",
+      "artist_mbid": "bb7959ac-84cc-45c4-8138-d80ee5f2bd9a",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2022-12-10",
+          "id": "cd53b5fb-375f-4b1b-a89b-054de87d02ee",
+          "length": 158000,
+          "title": "AQUAFINA",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2022-12-10",
+          "id": "45244efc-83e4-42bc-93e1-c902e65f1076",
+          "length": 158000,
+          "title": "AQUAFINA",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Abb7959ac-84cc-45c4-8138-d80ee5f2bd9a+AND+recording%3A%22AQUAFINA%22&fmt=json&limit=100",
+      "resolved_recording_mbid": null,
+      "response_sha256": "c6242eaf94a50e5fffef2c9b43dd1aff523a868c7e04b089619341eb2a9885db",
+      "search_truncated": false,
+      "title": "AQUAFINA",
+      "total_search_results": 2,
+      "resolution_reason": "Two studio candidates share title, date and duration. Identity equivalence is unresolved; neither is chosen using support."
+    },
+    {
+      "artist": "Lucy Bedroque",
+      "artist_mbid": "bb7959ac-84cc-45c4-8138-d80ee5f2bd9a",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2023-12-22",
+          "id": "4c4053b4-6e64-4bb7-a8a3-ca5e9f32811b",
+          "length": 82000,
+          "title": "Mi Amor",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Abb7959ac-84cc-45c4-8138-d80ee5f2bd9a+AND+recording%3A%22Mi+Amor%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "4c4053b4-6e64-4bb7-a8a3-ca5e9f32811b",
+      "response_sha256": "45e5fdd8e297e00c88c2f1bd350770a0efa5531f425dbdbc43f3bc6975087764",
+      "search_truncated": false,
+      "title": "Mi Amor",
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "23af07a7-6bf9-4773-a070-11c3d8692d59",
+          "title": "Mi Amor",
+          "status": "Official",
+          "release-group": {
+            "id": "e99eaa92-08f1-49a4-9ba5-8b332cc663ec",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Mi Amor",
+            "primary-type": "Single"
+          },
+          "date": "2023-12-22"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/4c4053b4-6e64-4bb7-a8a3-ca5e9f32811b"
+    },
+    {
+      "artist": "Lucy Bedroque",
+      "artist_mbid": "bb7959ac-84cc-45c4-8138-d80ee5f2bd9a",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2024-09-12",
+          "id": "fa54b457-1b22-45eb-8d57-027fda58e63f",
+          "length": 115000,
+          "title": "No Lie",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Abb7959ac-84cc-45c4-8138-d80ee5f2bd9a+AND+recording%3A%22No+Lie%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "fa54b457-1b22-45eb-8d57-027fda58e63f",
+      "response_sha256": "29ab647dfefce2e6be1c4223294991db53340fc8f58d0d3f89c5cf8aa308afe6",
+      "search_truncated": false,
+      "title": "No Lie",
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "b0a3d0bf-5fee-45f2-bba9-e74ae8d8c808",
+          "title": "No Lie",
+          "status": "Official",
+          "release-group": {
+            "id": "3fa2b936-9f0d-4ccc-8730-ba70c08e2661",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "No Lie",
+            "primary-type": "Single"
+          }
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/fa54b457-1b22-45eb-8d57-027fda58e63f"
+    },
+    {
+      "artist": "Lucy Bedroque",
+      "artist_mbid": "bb7959ac-84cc-45c4-8138-d80ee5f2bd9a",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2025-05-14",
+          "id": "a16edbac-5302-485f-9c7b-39fff0e3a2ac",
+          "length": 134000,
+          "title": "GIRLS!!!",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Abb7959ac-84cc-45c4-8138-d80ee5f2bd9a+AND+recording%3A%22GIRLS%21%21%21%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "a16edbac-5302-485f-9c7b-39fff0e3a2ac",
+      "response_sha256": "27f065a4dd7310ec3d7f9ad2141b45cec8e4f63441f541d6b8a0573873a208f4",
+      "search_truncated": false,
+      "title": "GIRLS!!!",
+      "total_search_results": 2,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "b9c23fd6-d232-47ef-a073-28b2996d2335",
+          "title": "GIRLS!!!",
+          "status": "Official",
+          "release-group": {
+            "id": "933b9c6e-43e9-4e19-96c6-0f11b40420db",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "GIRLS!!!",
+            "primary-type": "Single"
+          },
+          "date": "2025-05-14"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/a16edbac-5302-485f-9c7b-39fff0e3a2ac"
+    },
+    {
+      "artist": "beabadoobee",
+      "artist_mbid": "88d17133-abbc-42db-9526-4e2c1db60336",
+      "exact_candidates": [
+        {
+          "disambiguation": "live, 2023-08-14: The Greek Theatre, Los Angeles, CA, USA",
+          "first-release-date": "2023-12-06",
+          "id": "ac5bf0c6-6b9d-4d3a-8fd6-6ff0233ee042",
+          "length": 134000,
+          "title": "Coffee",
+          "video": null
+        },
+        {
+          "disambiguation": "live, 2022\u201010\u201019: O\u2082 Academy Brixton, London, UK",
+          "first-release-date": "2023-09-29",
+          "id": "6ace010e-6e46-479b-8b8f-58032b679573",
+          "length": 207629,
+          "title": "Coffee",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2017-09-17",
+          "id": "c6cdaca3-37a1-47f3-a5e3-e9c012a6c0f1",
+          "length": 126000,
+          "title": "Coffee",
+          "video": null
+        },
+        {
+          "disambiguation": "live, 2024-08-02: Layfayette, London, UK",
+          "first-release-date": "2025-04-12",
+          "id": "9325c23d-e466-403f-b3aa-3b81d2485a13",
+          "length": null,
+          "title": "Coffee",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A88d17133-abbc-42db-9526-4e2c1db60336+AND+recording%3A%22Coffee%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "c6cdaca3-37a1-47f3-a5e3-e9c012a6c0f1",
+      "response_sha256": "c1615eea6536708bcf76856b8d2103bb81419a0fa94f8c762770a4c1b738320d",
+      "search_truncated": false,
+      "title": "Coffee",
+      "total_search_results": 8,
+      "resolution_reason": "2017 official single; other candidates are labeled live.",
+      "reviewed_release_context": [
+        {
+          "id": "f6ff9e1b-a235-4554-8c8d-9d65f39b880b",
+          "title": "Coffee",
+          "status": "Official",
+          "release-group": {
+            "id": "90f12463-fa52-41fd-b851-508110ba5c32",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Coffee",
+            "primary-type": "Single"
+          },
+          "date": "2023-10-30"
+        },
+        {
+          "id": "182fa90e-2ed0-4464-a7bf-12d7caf7cc3c",
+          "title": "Coffee",
+          "status": "Official",
+          "release-group": {
+            "id": "90f12463-fa52-41fd-b851-508110ba5c32",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Coffee",
+            "primary-type": "Single"
+          },
+          "date": "2017-09-17"
+        },
+        {
+          "id": "5b856979-a9c8-471c-ac78-93c7983004aa",
+          "title": "Coffee",
+          "status": "Official",
+          "release-group": {
+            "id": "90f12463-fa52-41fd-b851-508110ba5c32",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Coffee",
+            "primary-type": "Single"
+          },
+          "date": "2017-11-04"
+        },
+        {
+          "id": "dced9cfc-edb2-4d32-90e6-49e59d946231",
+          "title": "Coffee",
+          "status": "Official",
+          "release-group": {
+            "id": "90f12463-fa52-41fd-b851-508110ba5c32",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Coffee",
+            "primary-type": "Single"
+          },
+          "date": "2017-11-04"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/c6cdaca3-37a1-47f3-a5e3-e9c012a6c0f1"
+    },
+    {
+      "artist": "beabadoobee",
+      "artist_mbid": "88d17133-abbc-42db-9526-4e2c1db60336",
+      "exact_candidates": [
+        {
+          "disambiguation": "live, 2022\u201010\u201019: O\u2082 Academy Brixton, London, UK",
+          "first-release-date": "2023-09-29",
+          "id": "3b632e1c-ef36-4d3a-b76c-12820326b2e3",
+          "length": 258885,
+          "title": "She Plays Bass",
+          "video": null
+        },
+        {
+          "disambiguation": "live: Abbey Road Studios, London, UK",
+          "first-release-date": "2019-11-20",
+          "id": "f2271dc9-2b37-4c0a-a7be-1e7437bd5489",
+          "length": 225632,
+          "title": "She Plays Bass",
+          "video": null
+        },
+        {
+          "disambiguation": "live, 2023-08-14: The Greek Theatre, Los Angeles, CA, USA",
+          "first-release-date": "2023-12-06",
+          "id": "9449de93-c3ec-404f-ac82-9fd77aacac8e",
+          "length": 284871,
+          "title": "She Plays Bass",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2019-08-20",
+          "id": "297dd100-3148-49f7-841d-c44ce59f34bd",
+          "length": 207106,
+          "title": "She Plays Bass",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A88d17133-abbc-42db-9526-4e2c1db60336+AND+recording%3A%22She+Plays+Bass%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "297dd100-3148-49f7-841d-c44ce59f34bd",
+      "response_sha256": "3255137a620c4a9827bf6e9fbafbbe2fa82ef7618678b8520d55021a2063f8e9",
+      "search_truncated": false,
+      "title": "She Plays Bass",
+      "total_search_results": 4,
+      "resolution_reason": "2019 official single/Space Cadet recording; exclude live versions.",
+      "reviewed_release_context": [
+        {
+          "id": "1a902a07-6ead-4fc7-b0e3-e81b8ee95e01",
+          "title": "SXSW 2020 Showcasing Artists",
+          "status": "Bootleg",
+          "release-group": {
+            "id": "243b9ef5-4d5a-43f1-b350-805981bc35ca",
+            "type-id": "4fc3be2b-de1e-396b-a933-beb8f1607a22",
+            "primary-type-id": "4fc3be2b-de1e-396b-a933-beb8f1607a22",
+            "title": "SXSW 2020 Showcasing Artists",
+            "primary-type": "Other",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          }
+        },
+        {
+          "id": "8760381f-f9bf-4adb-8cbe-59759861b287",
+          "title": "Space Cadet",
+          "status": "Official",
+          "release-group": {
+            "id": "2f12da45-60a8-44eb-8b94-58dbe54a63f6",
+            "type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "primary-type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "title": "Space Cadet",
+            "primary-type": "EP"
+          },
+          "date": "2019-11-29"
+        },
+        {
+          "id": "a77ff376-0816-4ac2-9276-8f29da34c822",
+          "title": "Space Cadet",
+          "status": "Official",
+          "release-group": {
+            "id": "2f12da45-60a8-44eb-8b94-58dbe54a63f6",
+            "type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "primary-type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "title": "Space Cadet",
+            "primary-type": "EP"
+          },
+          "date": "2019-10-14"
+        },
+        {
+          "id": "191e8def-1709-4041-a3f0-63e67a9cbee9",
+          "title": "She Plays Bass",
+          "status": "Official",
+          "release-group": {
+            "id": "91177d22-4f69-493b-86df-7b6bddb89ec8",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "She Plays Bass",
+            "primary-type": "Single"
+          },
+          "date": "2019-08-20"
+        },
+        {
+          "id": "b331c5e2-b4bc-4811-9fae-c4aa008405a3",
+          "title": "Space Cadet",
+          "status": "Official",
+          "release-group": {
+            "id": "2f12da45-60a8-44eb-8b94-58dbe54a63f6",
+            "type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "primary-type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "title": "Space Cadet",
+            "primary-type": "EP"
+          },
+          "date": "2019-10-15"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/297dd100-3148-49f7-841d-c44ce59f34bd"
+    },
+    {
+      "artist": "beabadoobee",
+      "artist_mbid": "88d17133-abbc-42db-9526-4e2c1db60336",
+      "exact_candidates": [
+        {
+          "disambiguation": "kids choir version",
+          "first-release-date": "2023-03-14",
+          "id": "33c2f4f4-c793-4067-9b42-4d32329b438f",
+          "length": 165000,
+          "title": "Glue Song",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": null,
+          "id": "e15bb768-83e3-4ffb-a193-a4c318757a93",
+          "length": 136000,
+          "title": "Glue Song",
+          "video": true
+        },
+        {
+          "disambiguation": "live, 2022\u201010\u201027: WFUV, New York, NY, USA",
+          "first-release-date": "2024",
+          "id": "6ef3a1e0-1ad8-409e-b4fc-a34f3bcc93cc",
+          "length": 135266,
+          "title": "Glue Song",
+          "video": null
+        },
+        {
+          "disambiguation": "live, 2023-08-14: The Greek Theatre, Los Angeles, CA, USA",
+          "first-release-date": "2023-12-06",
+          "id": "2144b494-8847-48c5-aa5f-1e5f48a066e8",
+          "length": 176000,
+          "title": "Glue Song",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2023-02-15",
+          "id": "f220ba2e-0d12-41a2-b9ef-5a5119b967b8",
+          "length": 135067,
+          "title": "Glue Song",
+          "video": null
+        },
+        {
+          "disambiguation": "live, 2024-08-02: Layfayette, London, UK",
+          "first-release-date": "2025-04-12",
+          "id": "eb0e5a7a-ce0b-46cd-8948-fa88529d8338",
+          "length": null,
+          "title": "Glue Song",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2023-04-20",
+          "id": "42cd7ca9-ee58-42cb-aa53-570afd2a83fb",
+          "length": 135000,
+          "title": "Glue Song",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A88d17133-abbc-42db-9526-4e2c1db60336+AND+recording%3A%22Glue+Song%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "f220ba2e-0d12-41a2-b9ef-5a5119b967b8",
+      "response_sha256": "6e031635f27bcda6f7fc378de99c483f01fa86984142bdf691c694bf6669bc69",
+      "search_truncated": false,
+      "title": "Glue Song",
+      "total_search_results": 8,
+      "resolution_reason": "Original 2023-02-15 solo recording; exclude later Clairo collaboration, choir, live and video variants.",
+      "reviewed_release_context": [
+        {
+          "id": "7b4af4d1-2f5d-406e-9f75-6ea8a3a2b448",
+          "title": "NOW That's What I Call Music! 114",
+          "status": "Withdrawn",
+          "release-group": {
+            "id": "3433a9ce-4eaf-45d6-8c04-3178b47808e2",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Now That\u2019s What I Call Music! 114",
+            "disambiguation": "UK",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          }
+        },
+        {
+          "id": "14deaea7-6897-4301-ac3e-e0319d858fc9",
+          "title": "Glue Song",
+          "status": "Official",
+          "release-group": {
+            "id": "b5482dbf-a401-4be3-bb27-b6e435b0fe89",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Glue Song",
+            "primary-type": "Single"
+          },
+          "date": "2023-07-28"
+        },
+        {
+          "id": "9af3f425-8de4-4d49-971c-837141e9d2f0",
+          "title": "Glue Song",
+          "status": "Official",
+          "release-group": {
+            "id": "b5482dbf-a401-4be3-bb27-b6e435b0fe89",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Glue Song",
+            "primary-type": "Single"
+          },
+          "date": "2023-09-28"
+        },
+        {
+          "id": "6235fd14-4d32-4d73-84de-f488e165ff5f",
+          "title": "Now That\u2019s What I Call Music! 114",
+          "status": "Official",
+          "release-group": {
+            "id": "3433a9ce-4eaf-45d6-8c04-3178b47808e2",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Now That\u2019s What I Call Music! 114",
+            "disambiguation": "UK",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": "2023-04-14"
+        },
+        {
+          "id": "f7eb79e0-3e22-4afd-8fc2-68a73f2ade91",
+          "title": "Now That\u2019s What I Call Music! 114",
+          "status": "Official",
+          "release-group": {
+            "id": "3433a9ce-4eaf-45d6-8c04-3178b47808e2",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Now That\u2019s What I Call Music! 114",
+            "disambiguation": "UK",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": "2023-04-14"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/f220ba2e-0d12-41a2-b9ef-5a5119b967b8"
+    },
+    {
+      "artist": "beabadoobee",
+      "artist_mbid": "88d17133-abbc-42db-9526-4e2c1db60336",
+      "exact_candidates": [
+        {
+          "disambiguation": "live, 2023-08-14: The Greek Theatre, Los Angeles, CA, USA",
+          "first-release-date": "2023-11-23",
+          "id": "c2e43dbb-c766-4686-9b06-56ac499619ca",
+          "length": 208450,
+          "title": "the way things go",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2023-07-18",
+          "id": "0e011401-8380-48f3-b4bf-ad89e5e8e6ae",
+          "length": 188000,
+          "title": "the way things go",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3A88d17133-abbc-42db-9526-4e2c1db60336+AND+recording%3A%22the+way+things+go%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "0e011401-8380-48f3-b4bf-ad89e5e8e6ae",
+      "response_sha256": "5ec1eacdf7c041b8260bfa898af1fdb5bea780b8bb18df1794f242e021ab3c29",
+      "search_truncated": false,
+      "title": "the way things go",
+      "total_search_results": 2,
+      "resolution_reason": "Official 2023-07-18 single recording.",
+      "reviewed_release_context": [
+        {
+          "id": "8c357a23-f6da-4dd4-9818-34bebfa5c678",
+          "title": "the way things go",
+          "status": "Official",
+          "release-group": {
+            "id": "563cf42e-a255-4cb8-9a1a-ad43df8f9585",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "the way things go",
+            "primary-type": "Single"
+          }
+        },
+        {
+          "id": "7e3046d5-ef39-4009-a26c-422186bd759e",
+          "title": "the way things go",
+          "status": "Official",
+          "release-group": {
+            "id": "563cf42e-a255-4cb8-9a1a-ad43df8f9585",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "the way things go",
+            "primary-type": "Single"
+          },
+          "date": "2023-07-18"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/0e011401-8380-48f3-b4bf-ad89e5e8e6ae"
+    },
+    {
+      "artist": "Daniel Caesar",
+      "artist_mbid": "b46e298d-d3a5-4695-a03e-63e8c523b23e",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2019",
+          "id": "c7a2659d-e7d3-4924-8a4a-ad38801c317a",
+          "length": 279379,
+          "title": "Get You",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2016-10-21",
+          "id": "b3323026-2dc1-4c02-b447-1b7118a97e90",
+          "length": 278000,
+          "title": "Get You",
+          "video": null
+        },
+        {
+          "disambiguation": "live, Up Next session",
+          "first-release-date": "2017-08-16",
+          "id": "84438db6-26b5-4c5d-adee-85f9bb242ecf",
+          "length": 289000,
+          "title": "Get You",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ab46e298d-d3a5-4695-a03e-63e8c523b23e+AND+recording%3A%22Get+You%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "b3323026-2dc1-4c02-b447-1b7118a97e90",
+      "response_sha256": "067dc8bffd51b539da89fcc027e7735e6a2ebf346c744a74e6cf51499bcc30fc",
+      "search_truncated": false,
+      "title": "Get You",
+      "total_search_results": 4,
+      "resolution_reason": "2016 original single/Freudian recording credited with Kali Uchis.",
+      "reviewed_release_context": [
+        {
+          "id": "6076ace9-041d-406a-abbe-7200c130c487",
+          "title": "Freudian",
+          "status": "Official",
+          "release-group": {
+            "id": "ba660007-8e88-4301-ba89-5574d06d29cc",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Freudian",
+            "primary-type": "Album"
+          },
+          "date": "2017-08-25"
+        },
+        {
+          "id": "23f127d7-7fed-4fc1-9b67-b5305570def3",
+          "title": "Get You - Single",
+          "status": "Official",
+          "release-group": {
+            "id": "9542b529-55a1-4250-91b6-417062fc5104",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Get You",
+            "primary-type": "Single"
+          },
+          "date": "2016-10-21"
+        },
+        {
+          "id": "209ad4ec-df53-4667-b45f-38413802b94b",
+          "title": "Freudian",
+          "status": "Official",
+          "release-group": {
+            "id": "ba660007-8e88-4301-ba89-5574d06d29cc",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Freudian",
+            "primary-type": "Album"
+          },
+          "date": "2017-08-25"
+        },
+        {
+          "id": "d0e5e3f0-d41e-45d7-8b1f-95762f438a3b",
+          "title": "Get You",
+          "status": "Official",
+          "release-group": {
+            "id": "9542b529-55a1-4250-91b6-417062fc5104",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Get You",
+            "primary-type": "Single"
+          },
+          "date": "2016-10-21"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/b3323026-2dc1-4c02-b447-1b7118a97e90"
+    },
+    {
+      "artist": "Daniel Caesar",
+      "artist_mbid": "b46e298d-d3a5-4695-a03e-63e8c523b23e",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2017-08-25",
+          "id": "c7aa28ec-2e62-415d-a744-043d8c383095",
+          "length": 209000,
+          "title": "Best Part",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2017-08-25",
+          "id": "6a70e938-1fb1-4b2c-9fc7-5e92e62aab7e",
+          "length": 209443,
+          "title": "Best Part",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ab46e298d-d3a5-4695-a03e-63e8c523b23e+AND+recording%3A%22Best+Part%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "c7aa28ec-2e62-415d-a744-043d8c383095",
+      "response_sha256": "3cd4d7d22d45bc830d78b45064ea3b5f5d01d5687f4fd97291ae083925cc75a9",
+      "search_truncated": false,
+      "title": "Best Part",
+      "total_search_results": 4,
+      "resolution_reason": "Recording attached to the requested artist's Freudian album; the H.E.R./compilation ID remains separate.",
+      "reviewed_release_context": [
+        {
+          "id": "6076ace9-041d-406a-abbe-7200c130c487",
+          "title": "Freudian",
+          "status": "Official",
+          "release-group": {
+            "id": "ba660007-8e88-4301-ba89-5574d06d29cc",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Freudian",
+            "primary-type": "Album"
+          },
+          "date": "2017-08-25"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/c7aa28ec-2e62-415d-a744-043d8c383095"
+    },
+    {
+      "artist": "Daniel Caesar",
+      "artist_mbid": "b46e298d-d3a5-4695-a03e-63e8c523b23e",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2017-08-24",
+          "id": "8979c29a-6c76-4b66-bf71-2ec4a15187c4",
+          "length": 270847,
+          "title": "Japanese Denim",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2016-10-21",
+          "id": "f3292f6d-09cd-48ba-9211-f8ede1d34b53",
+          "length": 270000,
+          "title": "Japanese Denim",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2016-10-21",
+          "id": "ae7dab5c-8429-4d00-8dce-afeff37185d8",
+          "length": 270000,
+          "title": "Japanese Denim",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ab46e298d-d3a5-4695-a03e-63e8c523b23e+AND+recording%3A%22Japanese+Denim%22&fmt=json&limit=100",
+      "resolved_recording_mbid": null,
+      "response_sha256": "179282cb5f5f3ecc64b8f1ba331e39c2bcec05ebae4b10a6c1e1f2705bbd2124",
+      "search_truncated": false,
+      "title": "Japanese Denim",
+      "total_search_results": 4,
+      "resolution_reason": "Two same-date 2016 single candidates have identical listed durations. Equivalence is unresolved; retain this title as an unresolved panel entry."
+    },
+    {
+      "artist": "Daniel Caesar",
+      "artist_mbid": "b46e298d-d3a5-4695-a03e-63e8c523b23e",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2023-04-10",
+          "id": "eb8792d8-fd7e-49e5-9bee-0cff8e048d56",
+          "length": 222402,
+          "title": "Always",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2023-04-07",
+          "id": "49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+          "length": 225312,
+          "title": "Always",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ab46e298d-d3a5-4695-a03e-63e8c523b23e+AND+recording%3A%22Always%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+      "response_sha256": "900e931322481ac1390485e5fc3a46f1238091213098ba7daccf461e6be16b96",
+      "search_truncated": false,
+      "title": "Always",
+      "total_search_results": 5,
+      "resolution_reason": "Original 2023-04-07 solo album recording; exclude later Summer Walker collaboration.",
+      "reviewed_release_context": [
+        {
+          "id": "896a6372-00ef-44e5-86f2-1ba0df62fe7d",
+          "title": "NEVER ENOUGH (Bonus Version)",
+          "status": "Official",
+          "release-group": {
+            "id": "65f5ca68-6dcd-4cc9-8f3c-09d9aaa56bfb",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "NEVER ENOUGH",
+            "primary-type": "Album"
+          },
+          "date": "2023-04-07"
+        },
+        {
+          "id": "d223b0ef-399e-460e-af4d-194fa1ab64b1",
+          "title": "NEVER ENOUGH",
+          "status": "Official",
+          "release-group": {
+            "id": "65f5ca68-6dcd-4cc9-8f3c-09d9aaa56bfb",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "NEVER ENOUGH",
+            "primary-type": "Album"
+          },
+          "date": "2023-04-07"
+        },
+        {
+          "id": "9844eaad-b637-4bc2-9634-d4ec4e58afd6",
+          "title": "NEVER ENOUGH",
+          "status": "Official",
+          "release-group": {
+            "id": "65f5ca68-6dcd-4cc9-8f3c-09d9aaa56bfb",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "NEVER ENOUGH",
+            "primary-type": "Album"
+          },
+          "date": "2023-04-10"
+        },
+        {
+          "id": "69467e7e-ed61-4e03-b849-375b188eef3f",
+          "title": "NEVER ENOUGH",
+          "status": "Official",
+          "release-group": {
+            "id": "65f5ca68-6dcd-4cc9-8f3c-09d9aaa56bfb",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "NEVER ENOUGH",
+            "primary-type": "Album"
+          },
+          "date": "2023-04-10"
+        },
+        {
+          "id": "224b043e-4b7c-4a72-bf65-5db9fb07c688",
+          "title": "Never Enough",
+          "status": "Official",
+          "release-group": {
+            "id": "65f5ca68-6dcd-4cc9-8f3c-09d9aaa56bfb",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "NEVER ENOUGH",
+            "primary-type": "Album"
+          },
+          "date": "2023-04-07"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/49233c96-b2dc-47e3-99f1-b09fcbb179b4"
+    },
+    {
+      "artist": "Steve Lacy",
+      "artist_mbid": "b29020d6-5dbf-4c99-b16f-c009f8a712ff",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2017",
+          "id": "132cc877-2da2-442f-b141-ddfb63e06820",
+          "length": 174706,
+          "title": "Dark Red",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2017-02-20",
+          "id": "bc0f4be2-29bd-4f4b-a850-862bbd130db5",
+          "length": 173104,
+          "title": "Dark Red",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ab29020d6-5dbf-4c99-b16f-c009f8a712ff+AND+recording%3A%22Dark+Red%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "bc0f4be2-29bd-4f4b-a850-862bbd130db5",
+      "response_sha256": "daa69a51aa5c18d535312fc58e0350207113ed4501f5b24387b5dba5da7c1df7",
+      "search_truncated": false,
+      "title": "Dark Red",
+      "total_search_results": 2,
+      "resolution_reason": "Original 2017 official single/EP recording rather than the separately identified radio promotion.",
+      "reviewed_release_context": [
+        {
+          "id": "8db4dde1-cd48-4ad9-8e7d-c94945453ad1",
+          "title": "Dark Red",
+          "status": "Official",
+          "release-group": {
+            "id": "dda2c55a-5a76-4051-991c-90b3513cdec8",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Dark Red",
+            "primary-type": "Single"
+          },
+          "date": "2017-02-20"
+        },
+        {
+          "id": "c3530a7e-9590-4e26-9a25-255037de4bf3",
+          "title": "Steve Lacy's Demo",
+          "status": "Official",
+          "release-group": {
+            "id": "7f88950c-d879-4022-8e99-48af2cf74d6b",
+            "type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "primary-type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "title": "Steve Lacy's Demo",
+            "primary-type": "EP"
+          },
+          "date": "2017-02-24"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/bc0f4be2-29bd-4f4b-a850-862bbd130db5"
+    },
+    {
+      "artist": "Steve Lacy",
+      "artist_mbid": "b29020d6-5dbf-4c99-b16f-c009f8a712ff",
+      "exact_candidates": [
+        {
+          "disambiguation": "live, 2024\u201006\u201019: Kia Forum, Inglewood, CA, USA",
+          "first-release-date": "2024-06-19",
+          "id": "2a2451ae-bd7d-4308-963e-936e7bc6985c",
+          "length": 148000,
+          "title": "Bad Habit",
+          "video": null
+        },
+        {
+          "disambiguation": "clean",
+          "first-release-date": "2022-07-14",
+          "id": "be62d1e4-c803-40a7-b806-62af232f9972",
+          "length": 231746,
+          "title": "Bad Habit",
+          "video": null
+        },
+        {
+          "disambiguation": "explicit",
+          "first-release-date": "2022-06-29",
+          "id": "1abdf128-2f80-457c-8da0-e554e8e3b534",
+          "length": 232114,
+          "title": "Bad Habit",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ab29020d6-5dbf-4c99-b16f-c009f8a712ff+AND+recording%3A%22Bad+Habit%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "1abdf128-2f80-457c-8da0-e554e8e3b534",
+      "response_sha256": "6cee0a7cafd972b643b3137e5fdbfd4dc071c24f22f32715dc7d5a2ba4031780",
+      "search_truncated": false,
+      "title": "Bad Habit",
+      "total_search_results": 5,
+      "resolution_reason": "Original 2022-06-29 explicit studio recording; clean version stays separate.",
+      "reviewed_release_context": [
+        {
+          "id": "5f14c831-d932-456f-96ec-eeebff0246fc",
+          "title": "Viral TikTok Hits 2022 | 2023",
+          "status": "Official",
+          "release-group": {
+            "id": "6132bb18-d40d-4f48-9470-d2f978a66f61",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Viral TikTok Hits 2022 | 2023",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          }
+        },
+        {
+          "id": "63b3a979-02dd-4ef0-9b92-2d1f05641472",
+          "title": "TikTok Viral Hits 2022 | 2023",
+          "status": "Official",
+          "release-group": {
+            "id": "31310fad-c9c7-4900-8f14-c729a4408ae6",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "TikTok Viral Hits 2022 | 2023",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          }
+        },
+        {
+          "id": "3df80136-70fe-4ada-bbff-259620680f4a",
+          "title": "Summer Smash Hits 2024",
+          "status": "Official",
+          "release-group": {
+            "id": "51e2e0cf-4a17-470a-af09-53d5f282b4cb",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Summer Smash Hits 2024",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          }
+        },
+        {
+          "id": "47a4155d-6b23-4a99-9dab-5b229f8596a3",
+          "title": "So Fresh: The Hits Of Summer 2023 + The Best Of 2022",
+          "release-group": {
+            "id": "89009b2e-648b-4826-825f-8ed640abc67b",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "So Fresh: The Hits Of Summer 2023 + The Best Of 2022",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": "2022-12-02"
+        },
+        {
+          "id": "6a549f50-ac0c-4bcd-aa7a-9a9dbbdcad0c",
+          "title": "Internacionais 2025 - As melhores",
+          "status": "Official",
+          "release-group": {
+            "id": "292e039b-01cb-42af-b6ce-2e7180379033",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Internacionais 2025 - As melhores",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          }
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/1abdf128-2f80-457c-8da0-e554e8e3b534"
+    },
+    {
+      "artist": "Steve Lacy",
+      "artist_mbid": "b29020d6-5dbf-4c99-b16f-c009f8a712ff",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2019-04-08",
+          "id": "aa03fca2-4c9e-4ee9-95c3-c30fa0a91004",
+          "length": 224440,
+          "title": "N Side",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ab29020d6-5dbf-4c99-b16f-c009f8a712ff+AND+recording%3A%22N+Side%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "aa03fca2-4c9e-4ee9-95c3-c30fa0a91004",
+      "response_sha256": "bed1d63eacb46f0ca384b7e839d3c3a7d7cdad786175147efd90483f31521c34",
+      "search_truncated": false,
+      "title": "N Side",
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "b309fe3b-8231-40f5-8db8-8e952d135beb",
+          "title": "N Side",
+          "status": "Official",
+          "release-group": {
+            "id": "d71046f4-fc1d-48f0-9692-9c106714bcfa",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "N Side",
+            "primary-type": "Single"
+          },
+          "date": "2019-04-08"
+        },
+        {
+          "id": "73c74914-7409-404a-a814-2cc27d15d84c",
+          "title": "Apollo XXI",
+          "status": "Official",
+          "release-group": {
+            "id": "c1be618a-18a0-4c40-8f85-0a9e0637a355",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Apollo XXI",
+            "primary-type": "Album"
+          },
+          "date": "2019"
+        },
+        {
+          "id": "b6893da2-8f38-4df0-90fb-d7deac8033f0",
+          "title": "Apollo XXI",
+          "status": "Official",
+          "release-group": {
+            "id": "c1be618a-18a0-4c40-8f85-0a9e0637a355",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Apollo XXI",
+            "primary-type": "Album"
+          },
+          "date": "2019-11-15"
+        },
+        {
+          "id": "2f46abd2-1928-4eb2-bde7-47124e2bc023",
+          "title": "Defected Staff Picks 2020-10",
+          "status": "Bootleg",
+          "release-group": {
+            "id": "718b9011-000e-4303-8470-379e1815dfb9",
+            "type-id": "4fc3be2b-de1e-396b-a933-beb8f1607a22",
+            "primary-type-id": "4fc3be2b-de1e-396b-a933-beb8f1607a22",
+            "title": "Defected Staff Picks 2020-10",
+            "primary-type": "Other",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          }
+        },
+        {
+          "id": "36d0be6d-e14b-40a5-9733-42029fbaddf0",
+          "title": "Apollo XXI",
+          "status": "Official",
+          "release-group": {
+            "id": "c1be618a-18a0-4c40-8f85-0a9e0637a355",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Apollo XXI",
+            "primary-type": "Album"
+          },
+          "date": "2019-05-24"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/aa03fca2-4c9e-4ee9-95c3-c30fa0a91004"
+    },
+    {
+      "artist": "Steve Lacy",
+      "artist_mbid": "b29020d6-5dbf-4c99-b16f-c009f8a712ff",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2016-10-31",
+          "id": "d3d1a743-a512-49c7-b38d-0610c3433a39",
+          "length": 118000,
+          "title": "Some",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2017-02-24",
+          "id": "f6b9ab9a-06a7-4a22-98a5-fcbc1a35dae8",
+          "length": 180696,
+          "title": "Some",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Ab29020d6-5dbf-4c99-b16f-c009f8a712ff+AND+recording%3A%22Some%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "d3d1a743-a512-49c7-b38d-0610c3433a39",
+      "response_sha256": "68375bf9b7adb26dd165230c73124474d1add5dd4fd6060a3d0775f37d7b8304",
+      "search_truncated": false,
+      "title": "Some",
+      "total_search_results": 4,
+      "resolution_reason": "Original 2016-10-31 single; later EP candidate has materially different duration.",
+      "reviewed_release_context": [
+        {
+          "id": "dacce9af-884c-4b60-a814-12e7d65f01be",
+          "title": "Insecure Music (Complete Season 02)",
+          "status": "Bootleg",
+          "release-group": {
+            "id": "8daa4b76-fb5d-4ece-98c4-beb0aaf09bcb",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Insecure Music (Complete Season 02)",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation",
+              "Soundtrack"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+              "22a628ad-c082-3c4f-b1b6-d41665107b88"
+            ]
+          }
+        },
+        {
+          "id": "436c3ff4-de12-481f-beee-6707ff48a894",
+          "title": "Some",
+          "status": "Official",
+          "release-group": {
+            "id": "397b03ed-5746-435c-ab9e-1238e94bd9bd",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Some",
+            "primary-type": "Single"
+          },
+          "date": "2016-10-31"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/d3d1a743-a512-49c7-b38d-0610c3433a39"
+    },
+    {
+      "artist": "Bruno Mars",
+      "artist_mbid": "afb680f2-b6eb-4cd7-a70b-a63b25c763d5",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": null,
+          "id": "cb93f8ef-c5a3-425d-9876-b7c5e00b7dfd",
+          "length": 302000,
+          "title": "Just the Way You Are",
+          "video": null
+        },
+        {
+          "disambiguation": "part of \u201cChilled Summer\u201d DJ-mix",
+          "first-release-date": "2014-07-14",
+          "id": "272945ab-a0f4-41d7-8438-75628b483616",
+          "length": 215893,
+          "title": "Just the Way You Are",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2025-10-03",
+          "id": "4ec3dd26-cedb-4332-8ff4-b641a88190d8",
+          "length": 220000,
+          "title": "Just the Way You Are",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2025-10-03",
+          "id": "05401478-af04-4e33-8535-2118ad10df9e",
+          "length": 220000,
+          "title": "Just the Way You Are",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2010-07-20",
+          "id": "4658bb93-57c4-4710-86f1-b87869f5781b",
+          "length": 220000,
+          "title": "Just the Way You Are",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2010-09-08",
+          "id": "f3334d3c-2fed-4104-995e-cd1f37234f6f",
+          "length": 236000,
+          "title": "Just the Way You Are",
+          "video": true
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2010-11-15",
+          "id": "cab74708-8dc3-4c9e-8a6a-78e506575ff0",
+          "length": 200440,
+          "title": "Just the Way You Are",
+          "video": null
+        },
+        {
+          "disambiguation": "live, 2023-09-03: Aut\u00f3dromo de Interlagos, S\u00e3o Paulo, Brazil",
+          "first-release-date": "2023",
+          "id": "f7ac12ba-39e7-4c23-95e0-2d2587022ae3",
+          "length": 657890,
+          "title": "Just the Way You Are",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2011",
+          "id": "72463de3-483e-4ab8-b1c1-23c5fc9cd3c5",
+          "length": 235000,
+          "title": "Just the Way You Are",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2011-06-10",
+          "id": "c8af1502-16e2-458d-b272-c1d81a1130d6",
+          "length": 220734,
+          "title": "Just the Way You Are",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2011-02-10",
+          "id": "93a89b89-3a02-4501-a55b-ca1d8f6575da",
+          "length": 48000,
+          "title": "Just the Way You Are",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Aafb680f2-b6eb-4cd7-a70b-a63b25c763d5+AND+recording%3A%22Just+the+Way+You+Are%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "4658bb93-57c4-4710-86f1-b87869f5781b",
+      "response_sha256": "c3bf6b22ce93c38d0a0f1a6147202f64c8f68cf960c4d30e13c941c76005ddfe",
+      "search_truncated": false,
+      "title": "Just the Way You Are",
+      "total_search_results": 45,
+      "resolution_reason": "Original 2010 single/Doo-Wops & Hooligans recording; later reissues and compilation variants remain separate.",
+      "reviewed_release_context": [
+        {
+          "id": "808c3583-fca0-4bfe-8499-18374bc3efb7",
+          "title": "Just The Way You Are",
+          "status": "Official",
+          "release-group": {
+            "id": "fcda5c52-240d-4339-a4fc-bdd0d0b3de30",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Just the Way You Are",
+            "primary-type": "Single"
+          },
+          "date": "2010-11-12"
+        },
+        {
+          "id": "66a26adb-9a0e-465a-838d-65c3662bf1a8",
+          "title": "Now That\u2019s What I Call a Song",
+          "status": "Official",
+          "release-group": {
+            "id": "3857e727-4c6a-4acf-aa92-1742aa9a0be3",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Now That\u2019s What I Call a Song",
+            "disambiguation": "UK",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": "2015-04-13"
+        },
+        {
+          "id": "d6982d34-b422-4b37-8b49-025ae87b4c10",
+          "title": "Doo-Wops & Hooligans",
+          "status": "Official",
+          "release-group": {
+            "id": "b3d1fbf7-dd1c-4119-a16e-58c2feb5bcb0",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Doo-Wops & Hooligans",
+            "primary-type": "Album"
+          }
+        },
+        {
+          "id": "6bbe5606-67ba-4063-8481-49f8d4c41852",
+          "title": "Doo-Wops & Hooligans",
+          "status": "Official",
+          "release-group": {
+            "id": "b3d1fbf7-dd1c-4119-a16e-58c2feb5bcb0",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Doo-Wops & Hooligans",
+            "primary-type": "Album"
+          },
+          "date": "2010-10-05"
+        },
+        {
+          "id": "84cf2cce-1e59-4161-a385-caee66de49a4",
+          "title": "Doo-Wops & Hooligans",
+          "status": "Official",
+          "release-group": {
+            "id": "b3d1fbf7-dd1c-4119-a16e-58c2feb5bcb0",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Doo-Wops & Hooligans",
+            "primary-type": "Album"
+          },
+          "date": "2010"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/4658bb93-57c4-4710-86f1-b87869f5781b"
+    },
+    {
+      "artist": "Bruno Mars",
+      "artist_mbid": "afb680f2-b6eb-4cd7-a70b-a63b25c763d5",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2015",
+          "id": "ce4d82e6-0118-49e3-bfa6-a8581770b622",
+          "length": 31013,
+          "title": "Locked Out of Heaven",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2014-03-20",
+          "id": "98ce9df2-231a-4964-b2d0-cb918b79b2d7",
+          "length": 221000,
+          "title": "Locked Out of Heaven",
+          "video": null
+        },
+        {
+          "disambiguation": "part of \u201cDarsh Fest, Vol. 1\u201d DJ\u2010mix",
+          "first-release-date": "2019-08-03",
+          "id": "20edb5bc-d4b7-41ab-8805-1bdbe03b0a83",
+          "length": 217974,
+          "title": "Locked Out of Heaven",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2015-11-30",
+          "id": "dcb0ae76-4f12-486f-bdb8-b8d6ac28d678",
+          "length": 150266,
+          "title": "Locked Out of Heaven",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2013-06-04",
+          "id": "e13c02e2-ad84-4cbb-b601-debeda291c3d",
+          "length": null,
+          "title": "Locked Out of Heaven",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": null,
+          "id": "abf322ea-002c-4c4d-b718-19a09fe99acb",
+          "length": null,
+          "title": "Locked Out of Heaven",
+          "video": true
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2012-10-01",
+          "id": "9dbd4c26-c4ad-4abe-ba3e-88bfe6750518",
+          "length": 233478,
+          "title": "Locked Out of Heaven",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Aafb680f2-b6eb-4cd7-a70b-a63b25c763d5+AND+recording%3A%22Locked+Out+of+Heaven%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "9dbd4c26-c4ad-4abe-ba3e-88bfe6750518",
+      "response_sha256": "60747a7b156166237f8a4d533e9de82452ce0de1e72d0587b0aa689f4f444ecc",
+      "search_truncated": false,
+      "title": "Locked Out of Heaven",
+      "total_search_results": 34,
+      "resolution_reason": "Original 2012 single/Unorthodox Jukebox recording.",
+      "reviewed_release_context": [
+        {
+          "id": "a655458a-b64b-47f3-bf73-e1c4eb866f9c",
+          "title": "Pop Essentials 2010s",
+          "status": "Official",
+          "release-group": {
+            "id": "41075d51-140b-4eef-aeeb-bffcfde4c3ac",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Pop Essentials 2010s",
+            "primary-type": "Album"
+          },
+          "date": "2025-11-05"
+        },
+        {
+          "id": "99d2cd3d-d2a3-4c8a-8f9c-cb1f6295c8bf",
+          "title": "Unorthodox Jukebox",
+          "status": "Official",
+          "release-group": {
+            "id": "978d88db-60ec-41d9-ade7-beea020941b0",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Unorthodox Jukebox",
+            "primary-type": "Album"
+          },
+          "date": "2025-01-10"
+        },
+        {
+          "id": "f60a6a1c-56cf-4dd9-a6ad-c47450d1b132",
+          "title": "Unorthodox Jukebox (Hi-Res Version)",
+          "status": "Official",
+          "release-group": {
+            "id": "978d88db-60ec-41d9-ade7-beea020941b0",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Unorthodox Jukebox",
+            "primary-type": "Album"
+          },
+          "date": "2012-12-11"
+        },
+        {
+          "id": "7580673c-8db3-4c10-9051-a4828d3f5b6e",
+          "title": "Succes Hits \u2013 Volume 3",
+          "status": "Bootleg",
+          "release-group": {
+            "id": "8cfe539d-a440-4aa5-98a0-69e951f2ef13",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Succes Hits \u2013 Volume 3",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": ""
+        },
+        {
+          "id": "2119c91c-653f-4756-95b5-62423a7b0a5f",
+          "title": "10s HITS - 100 Greatest Songs of the 2010s",
+          "status": "Official",
+          "release-group": {
+            "id": "fed1abf7-c574-4229-a48a-3e35c4d18866",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "10s HITS - 100 Greatest Songs of the 2010s",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          }
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/9dbd4c26-c4ad-4abe-ba3e-88bfe6750518"
+    },
+    {
+      "artist": "Bruno Mars",
+      "artist_mbid": "afb680f2-b6eb-4cd7-a70b-a63b25c763d5",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2013-12-10",
+          "id": "1701d155-f019-4128-b85a-b605be3cfa11",
+          "length": null,
+          "title": "Treasure",
+          "video": null
+        },
+        {
+          "disambiguation": "explicit intro",
+          "first-release-date": "2012-12-07",
+          "id": "c2525847-4207-44c8-995f-45e81004c6ab",
+          "length": 178000,
+          "title": "Treasure",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2013",
+          "id": "835e527b-f37c-409b-b9f7-18977d0a0460",
+          "length": 272346,
+          "title": "Treasure",
+          "video": null
+        },
+        {
+          "disambiguation": "part of \u201cGroove Station 2014\u201d DJ\u2010mix",
+          "first-release-date": "2014-02-04",
+          "id": "0ebb687e-fc02-4abc-b016-4fad16e9e832",
+          "length": 214880,
+          "title": "Treasure",
+          "video": null
+        },
+        {
+          "disambiguation": "live, 2023-09-03: Aut\u00f3dromo de Interlagos, S\u00e3o Paulo, Brazil",
+          "first-release-date": "2023",
+          "id": "401edc12-51b0-41c9-b079-3567a8d5d229",
+          "length": 282586,
+          "title": "Treasure",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2013-11-12",
+          "id": "a870c996-dcab-4bcd-9185-00a4a2099506",
+          "length": null,
+          "title": "Treasure",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2025-05-16",
+          "id": "1361b3ea-4a12-4c3f-8c05-90d767378f21",
+          "length": 179000,
+          "title": "Treasure",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2018-04-11",
+          "id": "973426e3-d2bb-4b07-8189-f4257fcb9e7b",
+          "length": null,
+          "title": "Treasure",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2013-07",
+          "id": "b9ecb656-bb9b-4042-8a16-522da4c34a67",
+          "length": 192000,
+          "title": "Treasure",
+          "video": true
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2012",
+          "id": "3a781247-8d38-4a12-b95e-1c61c209a160",
+          "length": 181000,
+          "title": "Treasure",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2012-12-11",
+          "id": "9c00fa54-f678-4d4f-abb6-c188a9e1990d",
+          "length": 178000,
+          "title": "Treasure",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2013-11-08",
+          "id": "5ac1b313-c131-40ef-92a4-5cb1da6c2ccf",
+          "length": 222000,
+          "title": "Treasure",
+          "video": null
+        },
+        {
+          "disambiguation": "part of \u201cMuchDance 2014\u201d DJ\u2010mix",
+          "first-release-date": "2013",
+          "id": "4882c9a8-ef7a-40b7-a5dd-58cdbf12305d",
+          "length": 174000,
+          "title": "Treasure",
+          "video": null
+        },
+        {
+          "disambiguation": "clean / no intro",
+          "first-release-date": "2013-04-30",
+          "id": "0a0efdfe-7531-4510-a4c6-ed640e492ea0",
+          "length": 174986,
+          "title": "Treasure",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Aafb680f2-b6eb-4cd7-a70b-a63b25c763d5+AND+recording%3A%22Treasure%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "c2525847-4207-44c8-995f-45e81004c6ab",
+      "response_sha256": "4ea0c6da2862dac4c3164c9fa76faf4e714cae37dcff8ebdf7b564e97e6ded38",
+      "search_truncated": false,
+      "title": "Treasure",
+      "total_search_results": 31,
+      "resolution_reason": "2012 original Unorthodox Jukebox recording with explicit intro; clean/no-intro, promo and high-resolution edition IDs remain separate.",
+      "reviewed_release_context": [
+        {
+          "id": "99d2cd3d-d2a3-4c8a-8f9c-cb1f6295c8bf",
+          "title": "Unorthodox Jukebox",
+          "status": "Official",
+          "release-group": {
+            "id": "978d88db-60ec-41d9-ade7-beea020941b0",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Unorthodox Jukebox",
+            "primary-type": "Album"
+          },
+          "date": "2025-01-10"
+        },
+        {
+          "id": "11d0ede6-31f8-40e8-a747-dfd055505bb3",
+          "title": "NRJ Music Awards 15th Edition",
+          "status": "Official",
+          "release-group": {
+            "id": "e508b5f8-2971-4467-8b6a-59290742817f",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "NRJ Music Awards 15TH Edition",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": "2013"
+        },
+        {
+          "id": "59d1d40b-610d-403b-a7f7-6f12b68c7300",
+          "title": "Cool Driving Songs",
+          "status": "Official",
+          "release-group": {
+            "id": "d1564f25-9ff9-4139-bf0d-0c082fa5ab18",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Cool Driving Songs",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          }
+        },
+        {
+          "id": "ff15ee74-b609-4b15-9588-8b2cd4f1c61f",
+          "title": "These Days - Greatest Summer",
+          "status": "Official",
+          "release-group": {
+            "id": "1194dc09-630a-4686-a26a-e55f72e27c20",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "These Days - Greatest Summer",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          }
+        },
+        {
+          "id": "d13cf7d3-6dc2-4742-a567-eef2916146eb",
+          "title": "Paradise - Summer Feeling",
+          "status": "Official",
+          "release-group": {
+            "id": "8aba3291-4335-4bf7-8cf2-48148bd94704",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Paradise - Summer Feeling",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": "2021-06-18"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/c2525847-4207-44c8-995f-45e81004c6ab"
+    },
+    {
+      "artist": "Bruno Mars",
+      "artist_mbid": "afb680f2-b6eb-4cd7-a70b-a63b25c763d5",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2021",
+          "id": "7cb29276-cc90-4814-8b0f-bc2cc83fa4ed",
+          "length": 215040,
+          "title": "That's What I Like",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2016-11-18",
+          "id": "881e6040-095a-449d-8c34-e8b3fca38cbd",
+          "length": 207000,
+          "title": "That's What I Like",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2018-04-11",
+          "id": "deaaf2a2-b19e-47ac-8675-5b876a6858bc",
+          "length": null,
+          "title": "That's What I Like",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Aafb680f2-b6eb-4cd7-a70b-a63b25c763d5+AND+recording%3A%22That%27s+What+I+Like%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "881e6040-095a-449d-8c34-e8b3fca38cbd",
+      "response_sha256": "821872c3730a8bec5a74055c188b6ba3d9959e4d357246dec95cb971c5cd7856",
+      "search_truncated": false,
+      "title": "That's What I Like",
+      "total_search_results": 17,
+      "resolution_reason": "Original 2016-11-18 24K Magic album recording; exclude live and later separately identified editions.",
+      "reviewed_release_context": [
+        {
+          "id": "39209fa8-4352-485c-ac03-a68f92b80b00",
+          "title": "24K Magic",
+          "status": "Official",
+          "release-group": {
+            "id": "80ea43b7-2c32-4a79-9fb0-8ff1761ebe09",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "24K Magic",
+            "primary-type": "Album"
+          },
+          "date": "2016-11-18"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/881e6040-095a-449d-8c34-e8b3fca38cbd"
+    },
+    {
+      "artist": "GIV\u0112ON",
+      "artist_mbid": "ad322b8b-31b2-437d-8fd8-1af13c1d7b91",
+      "exact_candidates": [
+        {
+          "disambiguation": "clean",
+          "first-release-date": "2020-03-27",
+          "id": "14594d66-64fe-4519-bcff-5f70ec5e1fa9",
+          "length": 198371,
+          "title": "Heartbreak Anniversary",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2021",
+          "id": "922db166-c32b-4e82-80d3-68179ec6afab",
+          "length": 196800,
+          "title": "Heartbreak Anniversary",
+          "video": null
+        },
+        {
+          "disambiguation": "explicit",
+          "first-release-date": "2020-02-21",
+          "id": "cb77aabb-7b1f-4cf4-8db9-6b49753a60de",
+          "length": 198000,
+          "title": "Heartbreak Anniversary",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Aad322b8b-31b2-437d-8fd8-1af13c1d7b91+AND+recording%3A%22Heartbreak+Anniversary%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "cb77aabb-7b1f-4cf4-8db9-6b49753a60de",
+      "response_sha256": "870413b3ec18e6d805d797e37b3962ca9e3504fdae2ee7b6ba356a48317551ed",
+      "search_truncated": false,
+      "title": "Heartbreak Anniversary",
+      "total_search_results": 3,
+      "resolution_reason": "Original 2020-02-21 explicit recording; later clean and compilation variants remain separate.",
+      "reviewed_release_context": [
+        {
+          "id": "5f14c831-d932-456f-96ec-eeebff0246fc",
+          "title": "Viral TikTok Hits 2022 | 2023",
+          "status": "Official",
+          "release-group": {
+            "id": "6132bb18-d40d-4f48-9470-d2f978a66f61",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Viral TikTok Hits 2022 | 2023",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          }
+        },
+        {
+          "id": "63b3a979-02dd-4ef0-9b92-2d1f05641472",
+          "title": "TikTok Viral Hits 2022 | 2023",
+          "status": "Official",
+          "release-group": {
+            "id": "31310fad-c9c7-4900-8f14-c729a4408ae6",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "TikTok Viral Hits 2022 | 2023",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          }
+        },
+        {
+          "id": "4b31f535-5d76-4b3a-80ff-a5eb9089a3d5",
+          "title": "M\u00fasicas de Casamento: Internacionais",
+          "status": "Official",
+          "release-group": {
+            "id": "49b9f7f9-14a1-4e46-aaf6-a0122542ac42",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "M\u00fasicas de Casamento: Internacionais",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": "2024-12-22"
+        },
+        {
+          "id": "66ed6d18-596b-40c6-9ab8-eb71fe481f31",
+          "title": "So Fresh: The Hits Of Winter 2021",
+          "status": "Official",
+          "release-group": {
+            "id": "bb4a5a9d-b790-4fd9-8f33-fb66644ddd8d",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "So Fresh: The Hits Of Winter 2021",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": "2021"
+        },
+        {
+          "id": "ec5e48f0-8959-4765-8623-e442c4914390",
+          "title": "When It\u2019s All Said and Done\u2026 Take Time",
+          "status": "Official",
+          "release-group": {
+            "id": "9dcb6a39-3b30-47c8-931a-533bb601dab8",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "When It\u2019s All Said and Done\u2026 Take Time",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": "2021-03-12"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/cb77aabb-7b1f-4cf4-8db9-6b49753a60de"
+    },
+    {
+      "artist": "GIV\u0112ON",
+      "artist_mbid": "ad322b8b-31b2-437d-8fd8-1af13c1d7b91",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2020-03-27",
+          "id": "b66dd4d2-a376-4eae-a538-a8fd7ce5b219",
+          "length": 260000,
+          "title": "Like I Want You",
+          "video": null
+        },
+        {
+          "disambiguation": null,
+          "first-release-date": "2019-11-20",
+          "id": "7c59799e-3135-4f54-9541-f25e8822684d",
+          "length": 260773,
+          "title": "Like I Want You",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Aad322b8b-31b2-437d-8fd8-1af13c1d7b91+AND+recording%3A%22Like+I+Want+You%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "7c59799e-3135-4f54-9541-f25e8822684d",
+      "response_sha256": "0350ac038c40171fcdaca6072bf30093e741b2b2b32cb3679e6f5b12f5f8acf7",
+      "search_truncated": false,
+      "title": "Like I Want You",
+      "total_search_results": 3,
+      "resolution_reason": "Original 2019-11-20 single also linked to Take Time; later separately identified EP candidate remains separate.",
+      "reviewed_release_context": [
+        {
+          "id": "3f94fc52-b2d0-47ed-9f59-b0a285cb67c7",
+          "title": "When It\u2019s All Said and Done\u2026 Take Time",
+          "status": "Official",
+          "release-group": {
+            "id": "9dcb6a39-3b30-47c8-931a-533bb601dab8",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "When It\u2019s All Said and Done\u2026 Take Time",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": "2021-03-12"
+        },
+        {
+          "id": "ec5e48f0-8959-4765-8623-e442c4914390",
+          "title": "When It\u2019s All Said and Done\u2026 Take Time",
+          "status": "Official",
+          "release-group": {
+            "id": "9dcb6a39-3b30-47c8-931a-533bb601dab8",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "When It\u2019s All Said and Done\u2026 Take Time",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": "2021-03-12"
+        },
+        {
+          "id": "aff2efa7-104b-4e47-bfd7-5f6f14f5276c",
+          "title": "Take Time",
+          "status": "Official",
+          "release-group": {
+            "id": "8891da89-48da-4f56-85d4-e24053584ea5",
+            "type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "primary-type-id": "6d0c5bf6-7a33-3420-a519-44fc63eedebf",
+            "title": "Take Time",
+            "primary-type": "EP"
+          },
+          "date": "2020-03-27"
+        },
+        {
+          "id": "6b450880-6e68-4022-9a09-069bc7ee15d0",
+          "title": "Like I Want You",
+          "status": "Official",
+          "release-group": {
+            "id": "ff2f0dcd-cbb1-4017-897d-1008f35b189f",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Like I Want You",
+            "primary-type": "Single"
+          },
+          "date": "2019-11-20"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/7c59799e-3135-4f54-9541-f25e8822684d"
+    },
+    {
+      "artist": "GIV\u0112ON",
+      "artist_mbid": "ad322b8b-31b2-437d-8fd8-1af13c1d7b91",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2021-09-21",
+          "id": "9c237f32-aaa3-4275-a984-87dddff37d17",
+          "length": 192226,
+          "title": "For Tonight",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Aad322b8b-31b2-437d-8fd8-1af13c1d7b91+AND+recording%3A%22For+Tonight%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "9c237f32-aaa3-4275-a984-87dddff37d17",
+      "response_sha256": "d8d4d1256e2f171e0bf091f9b35742a66ab9a66d22cb10bd53a1e6c2b09d60b4",
+      "search_truncated": false,
+      "title": "For Tonight",
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "32e745ae-2a5a-4142-8bac-f27711fac247",
+          "title": "Give or Take",
+          "status": "Official",
+          "release-group": {
+            "id": "451a1881-da32-499a-81e9-596dd16eacca",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Give or Take",
+            "primary-type": "Album"
+          },
+          "date": "2022-06-24"
+        },
+        {
+          "id": "8045adde-edb2-483c-a49c-544dbd12027e",
+          "title": "Give or Take",
+          "status": "Official",
+          "release-group": {
+            "id": "451a1881-da32-499a-81e9-596dd16eacca",
+            "type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Give or Take",
+            "primary-type": "Album"
+          },
+          "date": "2022-06-24"
+        },
+        {
+          "id": "be218b0b-ebe7-446d-bbeb-3966e9c6e46a",
+          "title": "Now That's What I Call Music 81",
+          "status": "Official",
+          "release-group": {
+            "id": "5abf822f-fe02-42f3-b494-3399f045e3ef",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Now That's What I Call Music! 81",
+            "disambiguation": "USA",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": "2022-01-28"
+        },
+        {
+          "id": "0bbc54a4-2458-4dfe-bbc7-e5d03cbabbfd",
+          "title": "Promo Only: Urban Radio, December 2021",
+          "status": "Promotion",
+          "release-group": {
+            "id": "c95c9722-95a6-408b-b42e-6bdd5287a79e",
+            "type-id": "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1",
+            "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+            "title": "Promo Only: Urban Radio, December 2021",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ],
+            "secondary-type-ids": [
+              "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+            ]
+          },
+          "date": "2021-12"
+        },
+        {
+          "id": "394084d4-737d-43a4-bdd1-764d57d3d2c8",
+          "title": "For Tonight",
+          "status": "Official",
+          "release-group": {
+            "id": "1c39f36e-346f-4fb5-8b05-c2d3d9738642",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "For Tonight",
+            "primary-type": "Single"
+          },
+          "date": "2021-09-21"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/9c237f32-aaa3-4275-a984-87dddff37d17"
+    },
+    {
+      "artist": "GIV\u0112ON",
+      "artist_mbid": "ad322b8b-31b2-437d-8fd8-1af13c1d7b91",
+      "exact_candidates": [
+        {
+          "disambiguation": null,
+          "first-release-date": "2018-08-08",
+          "id": "80f206d2-2668-4797-ab84-c556b85efbf9",
+          "length": 195406,
+          "title": "Garden Kisses",
+          "video": null
+        }
+      ],
+      "query_url": "https://musicbrainz.org/ws/2/recording/?query=arid%3Aad322b8b-31b2-437d-8fd8-1af13c1d7b91+AND+recording%3A%22Garden+Kisses%22&fmt=json&limit=100",
+      "resolved_recording_mbid": "80f206d2-2668-4797-ab84-c556b85efbf9",
+      "response_sha256": "2571bd6c030a2cb35974ec524becb1d5b84ecf4ec215a1e8b7efecd28da6ab5c",
+      "search_truncated": false,
+      "title": "Garden Kisses",
+      "total_search_results": 1,
+      "resolution_reason": "One exact artist/title candidate in the complete bounded search; no contrary version annotation. Audio identity was not independently checked.",
+      "reviewed_release_context": [
+        {
+          "id": "ebbac437-aa84-48e0-8bde-82c6c4150869",
+          "title": "Garden Kisses",
+          "status": "Official",
+          "release-group": {
+            "id": "95d9c6d7-20b8-425e-bf47-ab523ed466eb",
+            "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+            "title": "Garden Kisses",
+            "primary-type": "Single"
+          },
+          "date": "2018-08-08"
+        }
+      ],
+      "recording_url": "https://musicbrainz.org/recording/80f206d2-2668-4797-ab84-c556b85efbf9"
     }
-  ]
+  ],
+  "observed_on": "2026-10-18",
+  "resolution_review_complete": true,
+  "resolved_count": 38,
+  "source_search_manifest_sha256": "dbe67b35271a5cc564d8e8bc86cba1529e3b9ef64f1958fe188d027ca313fc9b"
 }

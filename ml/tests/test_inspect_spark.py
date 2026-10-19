@@ -7,7 +7,7 @@ import unittest
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from ml.inspect_spark import download_member, header, last_member, timestamp_bounds
+from ml.inspect_spark import download_member, header, last_member, timestamp_bounds, peak_process_bytes
 
 
 class LocalReader(io.BytesIO):
@@ -28,6 +28,9 @@ def archive_bytes():
 
 
 class SparkInspectionTests(unittest.TestCase):
+    def test_peak_memory_is_a_positive_byte_count(self):
+        self.assertGreater(peak_process_bytes(),0)
+
     def test_footer_location_and_timestamp_projection(self):
         archive,payload=archive_bytes()
         reader=LocalReader(archive)

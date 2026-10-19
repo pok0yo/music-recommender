@@ -9,9 +9,32 @@ from pathlib import Path
 import struct
 import tarfile
 import time
+import sys
 from urllib.parse import urlsplit
 
 from ml.probe_spark import ETAG, SIZE, URL, RangeReader
+
+
+def peak_process_bytes():
+    if sys.platform != "win32":
+        import resource
+        peak=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+        return peak if sys.platform=="darwin" else peak*1024
+    import ctypes
+    from ctypes import wintypes
+    class Counters(ctypes.Structure):
+        _fields_=[("cb",wintypes.DWORD),("faults",wintypes.DWORD)]+[
+            (name,ctypes.c_size_t) for name in ("peak_working_set","working_set","peak_paged_pool",
+            "paged_pool","peak_nonpaged_pool","nonpaged_pool","pagefile","peak_pagefile")]
+    counters=Counters()
+    counters.cb=ctypes.sizeof(counters)
+    kernel=ctypes.WinDLL("kernel32",use_last_error=True)
+    psapi=ctypes.WinDLL("psapi",use_last_error=True)
+    kernel.GetCurrentProcess.restype=wintypes.HANDLE
+    psapi.GetProcessMemoryInfo.argtypes=[wintypes.HANDLE,ctypes.POINTER(Counters),wintypes.DWORD]
+    if not psapi.GetProcessMemoryInfo(kernel.GetCurrentProcess(),ctypes.byref(counters),counters.cb):
+        raise ctypes.WinError(ctypes.get_last_error())
+    return counters.peak_working_set
 
 
 def time_bounds(column):

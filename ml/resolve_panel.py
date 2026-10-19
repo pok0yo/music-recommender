@@ -33,6 +33,26 @@ def candidates(response, artist, title):
     return matches
 
 
+def fetch(db, url):
+    for attempt in range(3):
+        time.sleep(1.1)
+        reserve_transfer(db, -1, LIMIT)
+        try:
+            with urlopen(Request(url, headers={"User-Agent":USER_AGENT}),timeout=30) as response:
+                raw = response.read(LIMIT+1)
+            if len(raw) > LIMIT:
+                raise ValueError("MusicBrainz response exceeds reserved bound")
+            json.loads(raw)
+            return raw
+        except HTTPError as error:
+            retry_after = error.headers.get("Retry-After", "") if error.headers else ""
+            delay = int(retry_after) if retry_after.isdigit() else (10,30,60)[attempt]
+            error.close()
+            if error.code not in (429,502,503,504) or attempt == 2 or delay > 60:
+                raise
+            time.sleep(max(1.1,delay))
+
+
 def main():
     panel = json.loads(Path("docs/coverage-panel.json").read_text(encoding="utf-8"))
     root = Path("data/interim/panel-recordings")
@@ -58,14 +78,8 @@ def main():
                     if saved["url"] != url or saved["sha256"] != hashlib.sha256(raw).hexdigest():
                         raise ValueError("Search cache provenance differs")
                 else:
-                    time.sleep(1.1)
                     # Offset -1 marks a bounded metadata lookup in the shared transfer ledger.
-                    reserve_transfer(db, -1, LIMIT)
-                    with urlopen(Request(url, headers={"User-Agent":USER_AGENT}),timeout=30) as response:
-                        raw = response.read(LIMIT+1)
-                    if len(raw) > LIMIT:
-                        raise ValueError("MusicBrainz response exceeds reserved bound")
-                    json.loads(raw)
+                    raw = fetch(db,url)
                     path.write_bytes(raw)
                     save(receipt, dict(url=url, sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw)))
                 result = json.loads(raw)

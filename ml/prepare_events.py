@@ -4,6 +4,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import time
 from pathlib import Path
 
 import pyarrow as pa
@@ -12,7 +13,7 @@ import pyarrow.parquet as pq
 
 from ml.acquire_events import COHORT, START, END
 from ml.audit_events import MBID
-from ml.inspect_spark import save
+from ml.inspect_spark import save, peak_process_bytes
 from ml.probe_spark import URL, ETAG
 
 DAY = 86400 * 10**9
@@ -101,6 +102,7 @@ def partition(table):
 
 
 def main():
+    started=time.monotonic()
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output",type=Path,default=Path("data/processed/cohort-v1"))
     args=parser.parse_args()
@@ -156,6 +158,8 @@ def main():
     if removed+cleaner.counts["output_rows"] != cleaner.counts["input_rows"]:
         raise ValueError("Cleaning counts do not reconcile")
     report["complete"]=True
+    report["runtime_seconds"]=round(time.monotonic()-started,3)
+    report["peak_process_memory_bytes"]=peak_process_bytes()
     save(temporary/"manifest.json",report)
     temporary.rename(args.output)
 
