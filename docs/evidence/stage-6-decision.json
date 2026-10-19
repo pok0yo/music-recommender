@@ -1,0 +1,56 @@
+{
+  "acquisition_complete": true,
+  "cleaning_and_query_reproducibility_pass": true,
+  "dataset_version": "cohort-v1",
+  "evidence_sha256": {
+    "stage-6-acquisition-complete.json": "01a0abe421a8a2e557b90144ea7aa9b7fc3a5fc6effb068ad3fcad78c3c0b194",
+    "stage-6-cleaned-manifest.json": "fae12a90ba846d90b3e8742e8980f8f04a35d445e417664e0549670f7d1dfbc7",
+    "stage-6-identity-diagnostic.json": "f1558795520fd99cf7e9734f0f9f1222778f4437fa1613c9a29e5cf39ed23137",
+    "stage-6-panel-resolution.json": "20281d8e6461a83bd774ab4f9026f7bc53dbf2c2d1ab28a66c00ef63742e4c04",
+    "stage-6-reproducibility.json": "9aa58d58dbb72889d1d76f0358151791b1c7df5a9f57d160efc49c4c07359d36",
+    "stage-6-resources.json": "e0d280e10654ae2c26f7291c7cd6178340214b49dc91bcc8c832dbb04a83955a",
+    "stage-6-support-audit.json": "68c3ab7cab856f86096e247259061bcab71100be0d7c9508c2b840f4f4a007c8"
+  },
+  "failed_gates": [
+    "approved_panel_support"
+  ],
+  "frozen_diagnostic_manifest": {
+    "accepted_for_model_comparison": false,
+    "candidate_catalog": {
+      "construction": "SELECT recording FROM support WHERE listeners>=5; support is distinct train listener count",
+      "count": 202078,
+      "serialization": "Sorted distinct training-eligible recording IDs joined by LF, UTF-8, no trailing newline",
+      "sha256": "97e720e92fc2635bcd86c09d52e43f8f122f7a629553558a7f0f2657598cd4b6"
+    },
+    "cleaned_manifest_sha256": "fae12a90ba846d90b3e8742e8980f8f04a35d445e417664e0549670f7d1dfbc7",
+    "query_artifact_sha256": {
+      "test": "c1ac5f305e370299fc962efd47331f9020fe32347d81e7ba468dc53d42f9716f",
+      "validation": "66b0b1116ee7e222f5f6520ae69392d7c1b8cae1cf8014a9c991765dbea9f911"
+    },
+    "training_database_sha256": "8ef325542cfdde0e5ebd8cfeb318237923ba592f69a2262d9ad24c842a4527cb"
+  },
+  "holdout_gates_pass": true,
+  "local_resource_check": "Processing completed on the available machine; retained data fits the proposed 20 GiB target. Peak disk, acquisition peak RAM and Stage 7 model costs are not measured.",
+  "no_model_results": true,
+  "observed_on": "2026-10-19",
+  "panel": {
+    "denominator": 40,
+    "required": 32,
+    "resolved": 38,
+    "share": 0.65,
+    "supported": 26,
+    "ten_neighbors": 26
+  },
+  "proposed_next_step": "Resolve identity discrepancies using independent MusicBrainz redirect/version evidence first; document any corrected mapping as a new version, preserve this failed audit, and rerun unchanged gates. If genuine sparsity remains, propose a broader deterministic cohort from cached ranges or request an explicit scope revision. Do not choose a version because it has more listeners.",
+  "protocol_sha256": "2ab97b29463c747bc10430027741a7fa5824ad31cfb06e3efae7120d6a0a39a8",
+  "rules_changed_after_support_measurement": false,
+  "source_code_commit": "bc88aa2158bceb65bc18ce8e43cb2fab36ad4d27",
+  "stage_7_ready": false,
+  "status": "Audit complete; revise before dataset acceptance",
+  "training_approved": false,
+  "verification": {
+    "ci_source_run": "https://github.com/pok0yo/music-recommender/actions/runs/39189706064",
+    "local_tests_passed": 33,
+    "training_sqlite_quick_check": "ok"
+  }
+}

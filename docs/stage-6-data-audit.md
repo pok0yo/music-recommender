@@ -1,6 +1,6 @@
 # Stage 6 — data feasibility audit
 
-Audit date: 2026-10-17. **Stage 6 is in progress. The metadata sample failed; a bounded Spark pilot now confirms real events and all ten requested artists.** Full-interval acquisition, track-level support, preprocessing, and evaluation gates remain open. No training-ready dataset, frozen evaluation split, or model is approved. Sections 2–7 preserve the first checkpoint; section 8 records the authorized continuation.
+Latest decision: **2026-10-19 — the Stage 6 audit is complete, but cohort-v1 fails the approved coverage gate: 26/40 supported tracks versus 32/40 required. Stage 7 remains closed.** Acquisition, cleaning, reproducibility, and both holdout feasibility checks completed. Sections 1–10 preserve historical checkpoints; sections 11–12 contain the final evidence and revise decision. No model comparison is approved and no recommendation-quality result is claimed.
 
 ## 1. Scope and assumptions
 
@@ -334,3 +334,175 @@ After acquisition completes, run cleaning and resume panel resolution:
 These commands do not authorize a new budget. Avoid starting a second downloader while one is active. Raw ranges, SQLite ledgers, local identities/history, and derived event files remain ignored by Git. Only code, approved panel definitions, public catalog identifiers, and aggregate audit evidence are committed.
 
 **Stage 6 remains in progress.** Acquisition, full cleaning, training-only item/neighbor support, validation/test query counts, complete version resolution, and peak resource measurements are not yet verified. Stage 7 remains closed; no ranking metrics or improvements have been measured.
+
+## 11. Full-cohort audit — 2026-10-19
+
+This section supersedes the pending-work statements in the historical checkpoints above. The panel choices and query rules were committed as `bc88aa2` before training support was measured. No panel title, recording choice, cohort rule, date boundary, or threshold was changed in response to support results.
+
+### Completed acquisition, cleaning, and reproducibility
+
+All 149 selected source members completed. Decoding counted **320,570,129 source rows**, matching the footer inventory; **318,891,384** lie inside the requested interval. The fixed listener hash retained **31,449,038** rows. The original whole archive was not downloaded or checksum-verified. Exact range/ETag checks, local range hashes, and derived-file hashes provide the documented subset provenance.
+
+The durable ledger reserves **13,428,342,354 bytes (12.506 GiB)** of the approved additional 16 GiB, including retries and metadata-request allowances. Of this, 46 metadata requests reserve 24,870,958 bytes. Cached range bodies total 13,305,628,630 bytes. These are application accounting figures, not packet-capture measurements. The initial investigation's separate 1 GiB cap is documented above. No further transfer is needed for this audit.
+
+| Full retained-cohort cleaning | Rows |
+|---|---:|
+| Input | 31,449,038 |
+| Missing recording ID excluded | 5,343,707 |
+| Duplicate listener/recording/time excluded | 647,410 |
+| Malformed non-null recording ID excluded | 0 |
+| Nonpositive listener / outside interval at this cleaning step | 0 / 0 |
+| Output | 25,457,921 |
+| IDs normalized by trim/lowercase | 50 |
+| Input created before listen time | 259,307 |
+| Input created more than one day after listen time | 10,402,518 |
+
+Exclusions reconcile exactly. Normalization and creation-time diagnostics overlap other categories; they are not additional exclusions. Interval and positive-listener selection happened before these cohort cleaning counts. Missing IDs are an observed coverage loss, not proof that the remaining mappings are correct. Raw cohort files remain available locally for investigation; rejected histories are not published.
+
+| Partition, UTC start inclusive / end exclusive | Clean events | Created at or after partition end |
+|---|---:|---:|
+| Train: February 1–August 1, 2026 | 20,069,944 | 1,588,501 |
+| Validation: August 1–August 29, 2026 | 2,641,102 | 173,242 |
+| Test: August 29–September 26, 2026 | 2,746,875 | 80,372 |
+
+All input ordering and split-boundary checks passed. The late-created training events make the retrospective interpretation consequential: these are not necessarily interactions available on August 1. Recording mappings and current MusicBrainz identity enrichment are likewise not historical snapshots at each cutoff. Future listen times never enter training counts; historical availability is a separate limitation.
+
+Two independent full cleaning runs produced **151 byte-identical Parquet artifacts** and identical counts/configuration. Every output file was rehashed in both directories. There are 151 outputs from 149 source members because two members cross partition boundaries. Runtime and peak-memory fields differ by design, so the complete manifest hashes differ; their non-resource fields match. This verifies cleaning/split reproducibility in the current environment, not fresh remote re-downloads, cross-platform byte identity, or model reproducibility.
+
+Evidence: [completed acquisition manifest](evidence/stage-6-acquisition-complete.json), [cleaning manifest](evidence/stage-6-cleaned-manifest.json), and [reproducibility check](evidence/stage-6-reproducibility.json). These files contain counts, public source identifiers, and hashes, not listener histories.
+
+### Recording identities and permitted fields
+
+All 40 title searches completed without result truncation. Core-metadata review selected **38 recording IDs** and left **Lucy Bedroque — AQUAFINA** and **Daniel Caesar — Japanese Denim** unresolved because multiple plausible original recording IDs remain. Both unresolved titles stay in the 40-title denominator. The frozen [resolution evidence](evidence/stage-6-panel-resolution.json) contains selection reasons and source-response hashes; its earlier `panel_status` text describes title approval before resolution, while `resolution_review_complete` and the per-track decisions describe the finished review.
+
+Artist identity uses the agreed artist MBID, not a name-only match. Original singles/artist albums are preferred when metadata supports that distinction; live, remix, collaboration, clean, explicit, and longer versions are not silently merged. Audio identity was not independently verified. Search completeness means the bounded queries completed, not that MusicBrainz itself contains every possible recording. The resolver now makes at most three charged attempts for transient failures; it preserves unsuccessful state rather than treating an API error as absence.
+
+Field provenance for this audit:
+
+| Fields actually used | Source and boundary |
+|---|---|
+| Listener ID, recording MBID, listen/creation timestamps | Pinned ListenBrainz Spark export; its inspected COPYING notice is CC0. Private event processing only. |
+| Submitted artist/title/artist-credit IDs | Same export; retained for inspection, not independently verified catalog labels or model features. |
+| Recording/artist/release IDs, titles, credits, duration, disambiguation, release date/type/status | MusicBrainz core metadata, used for panel identity review. |
+| Response counts, response hashes, query URLs | Audit diagnostics; search ranking scores are not recommendation features. |
+
+The official [MusicBrainz field/license classification](https://musicbrainz.org/doc/MusicBrainz_Database) and [MetaBrainz dataset license summary](https://metabrainz.org/datasets/postgres-dumps) were checked again on October 19. Core MusicBrainz metadata is CC0; supplementary annotations, tags/genre associations, ratings, and derived statistics have separate terms and are excluded. The inspected Spark notice supplements the website's general ListenBrainz CC0 description; the website's older format description does not override the observed Parquet schema. No audio, cover art, or playback entitlement was acquired.
+
+The full training catalog is an eligible **recording-ID catalog**, not yet a verified searchable product catalog. Independently reconcile display metadata and permitted destination links for the eventual serving subset before exposing it in the application. The 38 selected IDs have first-release years of 2010 (1), 2012 (2), 2016 (3), 2017 (3), 2018 (1), 2019 (3), 2020 (1), 2021 (2), 2022 (2), 2023 (6), 2024 (9), and 2025 (5), according to the cached core metadata. Genre-wide or era-wide catalog coverage is not established by this ten-artist panel; no pre-2010 coverage claim is supported by it.
+
+### Reproduction and verification
+
+The implementation at `bc88aa2` uses Python 3.12.14 and pinned PyArrow 26.0.0 locally, plus standard-library SQLite. From the project root, the processing order is:
+
+```powershell
+.venv/Scripts/python.exe -u -m ml.acquire_events
+.venv/Scripts/python.exe -u -m ml.prepare_events
+.venv/Scripts/python.exe -u -m ml.audit_support
+.venv/Scripts/python.exe -u -m ml.prepare_events --output data/processed/cohort-v1-repro
+.venv/Scripts/python.exe -m unittest discover -s ml/tests -v
+```
+
+This sequence assumes the pinned inventory, reviewed panel, and existing authorized cache/ledger are present, and preparation destinations do not already exist. It records the completed workflow; do not blindly rerun preparation into its existing outputs. The acquisition command validates/reuses completed cohort files and the original transfer ledger. Preparation intentionally refuses existing or interrupted output directories; choose a new explicit destination for another cleaning check. The support audit reuses a completed training index only when its manifest and database hashes match, and refuses an incomplete index. New download permission is needed if reproducing without the cache would exceed the remaining allowance; deleting the ledger does not create a new budget.
+
+For the cleaning comparison, compare the two manifests after removing only `runtime_seconds` and `peak_process_memory_bytes`, then independently SHA-256 each listed file in both roots and compare against its recorded digest. This was performed for all 151 artifacts, not inferred from matching row totals. Keep the reviewed panel snapshot unchanged; rerunning the live MusicBrainz API does not guarantee identical metadata. Retaining the local source cache is important because the dated upstream dump may eventually disappear.
+
+The repository preserves the exact bytes of hashed JSON snapshots through scoped `.gitattributes` rules, including their original line endings. Staged Git blobs were hashed against the decision manifest before committing. The panel's JSON content is unchanged from `bc88aa2`; preserving its local audited bytes prevents Windows/Linux newline conversion from breaking provenance checks.
+
+**33 local tests passed** in the completed verification run. They cover transfer accounting/failures, cache integrity, chronological and missing-field rejection, duplicate boundaries, split membership, train-only distinct-listener counting, support thresholds, first-seed/tie rules, seven-day and 21-day boundaries, and exclusion denominators. The first sandboxed test attempt could not access its temporary files; the permitted rerun outside that sandbox passed all tests. No product code was changed to bypass that environment limitation. The same source revision passed [GitHub Actions](https://github.com/pok0yo/music-recommender/actions/runs/39189706064) on Python 3.14; this does not establish cross-version Parquet byte identity.
+
+No model was fitted or ranked. Test-window inspection is limited to the predefined feasibility counts, not model selection. Test targets and listener histories stay local. The popularity baseline, item-CF comparison, ranking metrics, uncertainty, serving latency, and product behavior remain Stage 7 or later work.
+
+## 12. Final gate decision — revise, not accepted
+
+The [machine-readable decision](evidence/stage-6-decision.json) freezes the diagnostic input, split, candidate-catalog, and query hashes. It explicitly sets `stage_7_ready` and `training_approved` to false. The original [protocol](stage-6-protocol.json) remains unchanged; this failed dataset version is preserved rather than relabeled as accepted. The cleaning manifest's `training_approved: false` is consistent with this decision.
+
+### Training support and coverage
+
+| Training statistic | Measured value |
+|---|---:|
+| Listeners with retained events | 5,577 |
+| Recording IDs | 1,897,597 |
+| Distinct listener–recording pairs | 5,324,587 |
+| Eligible recording IDs, at least five listeners | 202,078 |
+| Distinct pairs in that eligible catalog | 2,892,752 |
+| Recording IDs heard by exactly one listener | 1,218,534 |
+| All-recording interaction density | 0.0503% |
+| Eligible-catalog density, including all training listeners | 0.2567% |
+| Share of training events from the most active 1% of listeners | 31.2649% |
+
+Density is observed binary pairs divided by listener count times recording count, not recommendation accuracy. Recording/listener counts are ID-based and do not imply independent catalog identity validation. Median/p95/p99/max events per listener are **856 / 11,827 / 40,857 / 375,235**; unique recordings per listener are **405 / 3,612 / 6,733 / 40,576**. Median/p95/p99/max distinct listeners per recording are **1 / 8 / 28 / 648**. Full distributions are in [the support audit](evidence/stage-6-support-audit.json). Prolific listeners and the self-selected source population can dominate connections even with binary pairs; neither listener hashing nor cosine normalization establishes representativeness.
+
+| Approved artist, four titles each | Supported | Has ten qualifying neighbors |
+|---|---:|---:|
+| nate sib | 3/4 | 3/4 |
+| Tiffany Day | 3/4 | 3/4 |
+| che | 2/4 | 2/4 |
+| 2hollis | 4/4 | 4/4 |
+| Lucy Bedroque | 0/4 | 0/4 |
+| beabadoobee | 4/4 | 4/4 |
+| Daniel Caesar | 1/4 | 1/4 |
+| Steve Lacy | 4/4 | 4/4 |
+| Bruno Mars | 2/4 | 2/4 |
+| GIVĒON | 3/4 | 3/4 |
+| **Total** | **26/40 (65%)** | **26/40 (65%)** |
+
+The required minimum was **32/40 (80%)**. All 26 items meeting the five-listener threshold have at least ten qualifying other-recording neighbors, so the immediate failure is item support/identity coverage, not a shortage of three-neighbor connections for those items. Qualifying neighbors are available connections, not tested useful recommendations. When an item has fewer than five listeners, the audit does not compute its neighbors; a reported zero in that case does not establish that no shared listening exists.
+
+The 14 failures comprise two unresolved identities, six selected IDs with zero training listeners, and six selected IDs with one to four listeners:
+
+| Failure type | Approved titles |
+|---|---|
+| Unresolved identity | Lucy Bedroque — AQUAFINA; Daniel Caesar — Japanese Denim |
+| Selected ID has zero training listeners | che — blac chyna; Lucy Bedroque — GIRLS!!!; Daniel Caesar — Best Part and Always; Bruno Mars — Just the Way You Are and That's What I Like |
+| Selected ID has one to four training listeners | nate sib — secret (3); Tiffany Day — CLOUDS (2); che — Bae (2); Lucy Bedroque — Mi Amor (2) and No Lie (1); GIVĒON — For Tonight (4) |
+
+### Identity diagnostic after the failed gate
+
+An additional local scan matched submitted titles after Unicode normalization/case folding and the agreed artist-credit MBID, using only training-window cohort events. It found matching labels for 37/40 titles. The [aggregate diagnostic](evidence/stage-6-identity-diagnostic.json) lists observed recording IDs and distinct listener counts; no listener identities were exported. This diagnostic happened **after** the gate calculation and changed no panel selections or rules.
+
+Examples of discrepancies: Best Part has 80 matching-label listeners under a different recording ID; Just the Way You Are has 182; blac chyna has 6. Japanese Denim has 50 under one candidate ID, while its metadata ambiguity remains unresolved. These observations show why zero selected-ID support must not be described as absence of the song. They **do not prove that different IDs are the same audio or an acceptable version**. Apostrophe/punctuation differences, missing artist credits, and incorrect submitted labels can also evade or confuse this deliberately narrow diagnostic. No IDs were selected because of their listener counts.
+
+The smallest justified next investigation is independent identity reconciliation: verify MusicBrainz redirects, version distinctions, and canonical-recording evidence for the discrepant IDs. Record any corrected mapping as a new version and rerun the original thresholds, retaining this failure report. If real sparsity remains after that check, consider a broader deterministic listener cohort using the already cached column ranges, with a new retained-storage/compute estimate, or request an explicit MVP scope revision. Neither a larger cohort nor identity repair is assumed to pass. Do not lower the gate, swap in popular titles, silently merge recordings, or start Stage 7 on this failed version.
+
+### Holdout feasibility
+
+Each window required at least 500 scorable queries and 100 distinct scorable seeds. **Both pass.** The first eligible-in-time event defines the seed even if the seed is unsupported; no later supported seed replaces it.
+
+| Count or share | Validation | Test |
+|---|---:|---:|
+| Active listeners | 3,927 | 4,093 |
+| Constructed queries | 3,751 | 3,916 |
+| No seed in first 21 days | 176 | 177 |
+| Unsupported seed queries | 1,479 | 1,728 |
+| Queries with zero targets | 148 | 144 |
+| Queries with nonempty targets all outside catalog | 145 | 159 |
+| Scorable queries | 2,161 | 2,081 |
+| Distinct scorable seeds | 2,017 | 1,967 |
+| Scorable share of constructed queries | 57.61% | 53.14% |
+| All distinct query–target pairs | 409,573 | 430,962 |
+| In-catalog query–target pairs | 228,543 | 233,008 |
+| Out-of-catalog query–target pairs | 181,030 | 197,954 |
+
+Unsupported-seed and target-exclusion categories overlap; do not add them as disjoint rejections. The unscorable shares are 42.39% and 46.86% of constructed queries. These exclusions make eventual ranking metrics conditional on supported seeds and targets. Future co-listening remains an imperfect relevance proxy, not explicit preference. Query construction was rerun from the cleaned splits and same completed training index: both windows reproduced every reported count and byte-identical JSONL hashes. The full training index was built once, not independently rebuilt twice; SQLite `quick_check` returned `ok`.
+
+### Resources and final acceptance
+
+| Local operation | Measured wall time | Peak process memory |
+|---|---:|---:|
+| First full cleaning | 76.234 seconds | 254.19 MiB |
+| Independent cleaning replay, overlapping index construction | 95.922 seconds | 233.05 MiB |
+| Training index + panel support + both holdouts | 1,071.672 seconds (17.86 minutes) | 333.28 MiB |
+
+Training-index construction alone took 967.047 seconds. These observations include local filesystem effects and are not general performance guarantees. [Resource evidence](evidence/stage-6-resources.json) records Python 3.12.14, PyArrow 26.0.0, Windows 11, and **16,267,988,992 bytes of physical RAM**. Retained raw/interim/processed data, including old probes and reproduction copies, totals **17,044,856,627 bytes (15.874 GiB)**, below the earlier proposed 20 GiB target. Free C: space afterward was approximately **107.48 GiB**. These are logical file sizes and a final free-space snapshot, not peak disk allocation. Acquisition runtime/peak memory and future model costs remain unmeasured. No paid compute was used.
+
+| Gate | Result |
+|---|---|
+| Authorized bounded acquisition and subset provenance | Pass; 149 files, inside 16 GiB additional accounting cap |
+| Field provenance and source terms | Documented for selected event/core-metadata fields; no audio/artwork rights claimed |
+| Reproducible cleaning/splits and query construction | Pass in the recorded local environment |
+| Local data-processing feasibility | Completed on available hardware; retained storage fits proposed target |
+| Approved 40-title coverage | **Fail: 26 supported; 32 required** |
+| Validation and test query feasibility | Pass for both windows |
+| Dataset accepted / Stage 7 ready | **No — revise identity/data strategy first** |
+
+Stage 6's audit work is complete for cohort-v1; its result is a documented rejection for the promised coverage, not a successful data gate. No ranking accuracy, measured improvement, playback availability, or product readiness is asserted. The unaccepted snapshot is reproducible evidence for deciding the next revision.

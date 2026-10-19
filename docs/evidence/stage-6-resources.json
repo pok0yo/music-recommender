@@ -1,0 +1,25 @@
+{
+  "data_directory_bytes": {
+    "interim": 1448155348,
+    "processed": 2001811779,
+    "raw": 13594889500
+  },
+  "free_disk_bytes_after_audit": 115401105408,
+  "notes": [
+    "Directory file-size sums are retained logical bytes, not peak disk or filesystem allocation. Includes historical probes and reproducibility copies.",
+    "Acquisition wall time and peak memory were not instrumented; cleaner and support audit report per-process peaks.",
+    "No paid compute used; Stage 7 model memory and runtime are unmeasured."
+  ],
+  "observed_on": "2026-10-19",
+  "physical_ram_bytes": 16267988992,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "pyarrow": "26.0.0",
+  "python": "3.12.14",
+  "retained_data_bytes": 17044856627,
+  "training_extra_statistics": {
+    "all_training_pair_density": 0.0005031312561107025,
+    "eligible_binary_pairs": 2892752,
+    "eligible_pair_density_using_all_training_listeners": 0.0025667970003249527,
+    "singleton_recordings": 1218534
+  }
+}

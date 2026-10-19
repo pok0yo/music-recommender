@@ -1,0 +1,32 @@
+{
+  "all_artifact_hashes_equal": true,
+  "all_non_resource_manifest_fields_equal": true,
+  "allowed_differences": [
+    "peak_process_memory_bytes",
+    "runtime_seconds"
+  ],
+  "check": "Independent full cleaning runs from the same acquired cohort; every output file rehashed",
+  "file_count": 151,
+  "holdout_query_replay": {
+    "all_counts_and_artifact_hashes_equal": true,
+    "artifact_sha256": {
+      "test": "c1ac5f305e370299fc962efd47331f9020fe32347d81e7ba468dc53d42f9716f",
+      "validation": "66b0b1116ee7e222f5f6520ae69392d7c1b8cae1cf8014a9c991765dbea9f911"
+    },
+    "check": "Reconstructed both windows from cleaned events and the same completed training index; not a second training-index build"
+  },
+  "observed_on": "2026-10-19",
+  "rows": 25457921,
+  "runs": [
+    {
+      "manifest_sha256": "fae12a90ba846d90b3e8742e8980f8f04a35d445e417664e0549670f7d1dfbc7",
+      "peak_process_memory_bytes": 266534912,
+      "runtime_seconds": 76.234
+    },
+    {
+      "manifest_sha256": "bffc9e6c0024ae8b485371290f79e93ca781479d4989f66dcce26bd93c297bbc",
+      "peak_process_memory_bytes": 244371456,
+      "runtime_seconds": 95.922
+    }
+  ]
+}

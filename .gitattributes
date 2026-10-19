@@ -1,0 +1,11 @@
+# Preserve exact bytes of hashed audit snapshots across Windows/Linux checkouts.
+docs/evidence/stage-6-*.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/stage-6-protocol.json -text
+docs/evidence/stage-6-panel-resolution.json -text
+docs/evidence/stage-6-acquisition-complete.json -text
+docs/evidence/stage-6-cleaned-manifest.json -text
+docs/evidence/stage-6-decision.json -text
+docs/evidence/stage-6-identity-diagnostic.json -text
+docs/evidence/stage-6-reproducibility.json -text
+docs/evidence/stage-6-resources.json -text
+docs/evidence/stage-6-support-audit.json -text

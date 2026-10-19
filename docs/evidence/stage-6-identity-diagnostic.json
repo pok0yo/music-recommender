@@ -1,0 +1,477 @@
+{
+  "observed_on": "2026-10-19",
+  "purpose": "Post-gate diagnostic only: submitted exact title plus agreed artist-credit ID. Not independently verified recording equivalence; no selections or gates changed.",
+  "runtime_seconds": 7.36,
+  "source_manifest_sha256": "01a0abe421a8a2e557b90144ea7aa9b7fc3a5fc6effb068ad3fcad78c3c0b194",
+  "tracks": [
+    {
+      "artist": "nate sib",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 6,
+          "recording_mbid": "8630f911-a9a6-486e-b764-aabc236479ad"
+        }
+      ],
+      "selected_recording_mbid": "8630f911-a9a6-486e-b764-aabc236479ad",
+      "title": "typical"
+    },
+    {
+      "artist": "nate sib",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 6,
+          "recording_mbid": "ca215903-73eb-42f7-97bd-ccf520137b23"
+        }
+      ],
+      "selected_recording_mbid": "ca215903-73eb-42f7-97bd-ccf520137b23",
+      "title": "go"
+    },
+    {
+      "artist": "nate sib",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 3,
+          "recording_mbid": "fa4c7167-c1c8-4c5a-909f-3dd8f3139658"
+        }
+      ],
+      "selected_recording_mbid": "fa4c7167-c1c8-4c5a-909f-3dd8f3139658",
+      "title": "secret"
+    },
+    {
+      "artist": "nate sib",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 7,
+          "recording_mbid": "3956cb39-7741-421c-a5bd-a163b99d8813"
+        }
+      ],
+      "selected_recording_mbid": "3956cb39-7741-421c-a5bd-a163b99d8813",
+      "title": "only1"
+    },
+    {
+      "artist": "Tiffany Day",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 2,
+          "recording_mbid": "15db4b6a-7205-4960-9f0c-d1a34d147afe"
+        }
+      ],
+      "selected_recording_mbid": "15db4b6a-7205-4960-9f0c-d1a34d147afe",
+      "title": "CLOUDS"
+    },
+    {
+      "artist": "Tiffany Day",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 10,
+          "recording_mbid": "daf4d723-2ff7-4e5f-b132-237c987c3a03"
+        }
+      ],
+      "selected_recording_mbid": "daf4d723-2ff7-4e5f-b132-237c987c3a03",
+      "title": "SAN FRANCISCO SIDEWALK"
+    },
+    {
+      "artist": "Tiffany Day",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 10,
+          "recording_mbid": "a824626f-d5e1-43b3-a2e9-49b138b0eaee"
+        }
+      ],
+      "selected_recording_mbid": "a824626f-d5e1-43b3-a2e9-49b138b0eaee",
+      "title": "HELLA BOY CRAZY"
+    },
+    {
+      "artist": "Tiffany Day",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 11,
+          "recording_mbid": "99e50018-d45e-44e2-b085-8052e87c71ae"
+        }
+      ],
+      "selected_recording_mbid": "99e50018-d45e-44e2-b085-8052e87c71ae",
+      "title": "KANSAS"
+    },
+    {
+      "artist": "che",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 19,
+          "recording_mbid": "565ed4d0-469e-4a89-8e3e-afc521a4ed56"
+        }
+      ],
+      "selected_recording_mbid": "565ed4d0-469e-4a89-8e3e-afc521a4ed56",
+      "title": "Miley Cyrus"
+    },
+    {
+      "artist": "che",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 13,
+          "recording_mbid": "37917bf2-83f7-41bb-9f89-5320aa4561c4"
+        }
+      ],
+      "selected_recording_mbid": "37917bf2-83f7-41bb-9f89-5320aa4561c4",
+      "title": "Pizza Time"
+    },
+    {
+      "artist": "che",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 2,
+          "recording_mbid": "5755aa85-5c68-4b4b-a825-ed2ec55228ed"
+        }
+      ],
+      "selected_recording_mbid": "5755aa85-5c68-4b4b-a825-ed2ec55228ed",
+      "title": "Bae"
+    },
+    {
+      "artist": "che",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 6,
+          "recording_mbid": "1a3b3c0e-5bee-43f9-8696-56e6d9c22b00"
+        }
+      ],
+      "selected_recording_mbid": "35c0a3e6-3aba-4e38-8939-7bf0a0d6753b",
+      "title": "blac chyna"
+    },
+    {
+      "artist": "2hollis",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 40,
+          "recording_mbid": "de766945-2406-4627-9d3c-5dd4a17497d6"
+        }
+      ],
+      "selected_recording_mbid": "de766945-2406-4627-9d3c-5dd4a17497d6",
+      "title": "crush"
+    },
+    {
+      "artist": "2hollis",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 8,
+          "recording_mbid": "38ad538a-fddb-49f7-aeb7-84fb232ac4ff"
+        }
+      ],
+      "selected_recording_mbid": "38ad538a-fddb-49f7-aeb7-84fb232ac4ff",
+      "title": "jeans"
+    },
+    {
+      "artist": "2hollis",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 8,
+          "recording_mbid": "1eb60aa4-9610-4296-87c5-ba050f64655c"
+        }
+      ],
+      "selected_recording_mbid": "1eb60aa4-9610-4296-87c5-ba050f64655c",
+      "title": "gold"
+    },
+    {
+      "artist": "2hollis",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 22,
+          "recording_mbid": "6b2ed59c-316e-4b8a-aae1-cca399354126"
+        }
+      ],
+      "selected_recording_mbid": "6b2ed59c-316e-4b8a-aae1-cca399354126",
+      "title": "lie"
+    },
+    {
+      "artist": "Lucy Bedroque",
+      "observed_submitted_ids": [],
+      "selected_recording_mbid": null,
+      "title": "AQUAFINA"
+    },
+    {
+      "artist": "Lucy Bedroque",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 2,
+          "recording_mbid": "4c4053b4-6e64-4bb7-a8a3-ca5e9f32811b"
+        }
+      ],
+      "selected_recording_mbid": "4c4053b4-6e64-4bb7-a8a3-ca5e9f32811b",
+      "title": "Mi Amor"
+    },
+    {
+      "artist": "Lucy Bedroque",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 1,
+          "recording_mbid": "fa54b457-1b22-45eb-8d57-027fda58e63f"
+        }
+      ],
+      "selected_recording_mbid": "fa54b457-1b22-45eb-8d57-027fda58e63f",
+      "title": "No Lie"
+    },
+    {
+      "artist": "Lucy Bedroque",
+      "observed_submitted_ids": [],
+      "selected_recording_mbid": "a16edbac-5302-485f-9c7b-39fff0e3a2ac",
+      "title": "GIRLS!!!"
+    },
+    {
+      "artist": "beabadoobee",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 2,
+          "recording_mbid": "6ace010e-6e46-479b-8b8f-58032b679573"
+        },
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 46,
+          "recording_mbid": "c6cdaca3-37a1-47f3-a5e3-e9c012a6c0f1"
+        }
+      ],
+      "selected_recording_mbid": "c6cdaca3-37a1-47f3-a5e3-e9c012a6c0f1",
+      "title": "Coffee"
+    },
+    {
+      "artist": "beabadoobee",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 24,
+          "recording_mbid": "297dd100-3148-49f7-841d-c44ce59f34bd"
+        },
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 1,
+          "recording_mbid": "9449de93-c3ec-404f-ac82-9fd77aacac8e"
+        },
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 2,
+          "recording_mbid": "f2271dc9-2b37-4c0a-a7be-1e7437bd5489"
+        }
+      ],
+      "selected_recording_mbid": "297dd100-3148-49f7-841d-c44ce59f34bd",
+      "title": "She Plays Bass"
+    },
+    {
+      "artist": "beabadoobee",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 2,
+          "recording_mbid": "42cd7ca9-ee58-42cb-aa53-570afd2a83fb"
+        },
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 107,
+          "recording_mbid": "f220ba2e-0d12-41a2-b9ef-5a5119b967b8"
+        }
+      ],
+      "selected_recording_mbid": "f220ba2e-0d12-41a2-b9ef-5a5119b967b8",
+      "title": "Glue Song"
+    },
+    {
+      "artist": "beabadoobee",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 57,
+          "recording_mbid": "0e011401-8380-48f3-b4bf-ad89e5e8e6ae"
+        }
+      ],
+      "selected_recording_mbid": "0e011401-8380-48f3-b4bf-ad89e5e8e6ae",
+      "title": "the way things go"
+    },
+    {
+      "artist": "Daniel Caesar",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 1,
+          "recording_mbid": "84438db6-26b5-4c5d-adee-85f9bb242ecf"
+        },
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 78,
+          "recording_mbid": "b3323026-2dc1-4c02-b447-1b7118a97e90"
+        },
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 4,
+          "recording_mbid": "c7a2659d-e7d3-4924-8a4a-ad38801c317a"
+        }
+      ],
+      "selected_recording_mbid": "b3323026-2dc1-4c02-b447-1b7118a97e90",
+      "title": "Get You"
+    },
+    {
+      "artist": "Daniel Caesar",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 80,
+          "recording_mbid": "6a70e938-1fb1-4b2c-9fc7-5e92e62aab7e"
+        }
+      ],
+      "selected_recording_mbid": "c7aa28ec-2e62-415d-a744-043d8c383095",
+      "title": "Best Part"
+    },
+    {
+      "artist": "Daniel Caesar",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 50,
+          "recording_mbid": "ae7dab5c-8429-4d00-8dce-afeff37185d8"
+        }
+      ],
+      "selected_recording_mbid": null,
+      "title": "Japanese Denim"
+    },
+    {
+      "artist": "Daniel Caesar",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 46,
+          "recording_mbid": "d7b68421-b496-49c7-a898-92df7fde5f48"
+        },
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 1,
+          "recording_mbid": "eb8792d8-fd7e-49e5-9bee-0cff8e048d56"
+        }
+      ],
+      "selected_recording_mbid": "49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+      "title": "Always"
+    },
+    {
+      "artist": "Steve Lacy",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 163,
+          "recording_mbid": "bc0f4be2-29bd-4f4b-a850-862bbd130db5"
+        }
+      ],
+      "selected_recording_mbid": "bc0f4be2-29bd-4f4b-a850-862bbd130db5",
+      "title": "Dark Red"
+    },
+    {
+      "artist": "Steve Lacy",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 10,
+          "recording_mbid": "1abdf128-2f80-457c-8da0-e554e8e3b534"
+        },
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 183,
+          "recording_mbid": "be62d1e4-c803-40a7-b806-62af232f9972"
+        }
+      ],
+      "selected_recording_mbid": "1abdf128-2f80-457c-8da0-e554e8e3b534",
+      "title": "Bad Habit"
+    },
+    {
+      "artist": "Steve Lacy",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 33,
+          "recording_mbid": "aa03fca2-4c9e-4ee9-95c3-c30fa0a91004"
+        }
+      ],
+      "selected_recording_mbid": "aa03fca2-4c9e-4ee9-95c3-c30fa0a91004",
+      "title": "N Side"
+    },
+    {
+      "artist": "Steve Lacy",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 71,
+          "recording_mbid": "d3d1a743-a512-49c7-b38d-0610c3433a39"
+        }
+      ],
+      "selected_recording_mbid": "d3d1a743-a512-49c7-b38d-0610c3433a39",
+      "title": "Some"
+    },
+    {
+      "artist": "Bruno Mars",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 182,
+          "recording_mbid": "2c03feb2-af77-483f-982e-8d82d3ffd03f"
+        }
+      ],
+      "selected_recording_mbid": "4658bb93-57c4-4710-86f1-b87869f5781b",
+      "title": "Just the Way You Are"
+    },
+    {
+      "artist": "Bruno Mars",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 268,
+          "recording_mbid": "9dbd4c26-c4ad-4abe-ba3e-88bfe6750518"
+        }
+      ],
+      "selected_recording_mbid": "9dbd4c26-c4ad-4abe-ba3e-88bfe6750518",
+      "title": "Locked Out of Heaven"
+    },
+    {
+      "artist": "Bruno Mars",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 141,
+          "recording_mbid": "c2525847-4207-44c8-995f-45e81004c6ab"
+        }
+      ],
+      "selected_recording_mbid": "c2525847-4207-44c8-995f-45e81004c6ab",
+      "title": "Treasure"
+    },
+    {
+      "artist": "Bruno Mars",
+      "observed_submitted_ids": [],
+      "selected_recording_mbid": "881e6040-095a-449d-8c34-e8b3fca38cbd",
+      "title": "That's What I Like"
+    },
+    {
+      "artist": "GIV\u0112ON",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 3,
+          "recording_mbid": "14594d66-64fe-4519-bcff-5f70ec5e1fa9"
+        },
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 39,
+          "recording_mbid": "cb77aabb-7b1f-4cf4-8db9-6b49753a60de"
+        }
+      ],
+      "selected_recording_mbid": "cb77aabb-7b1f-4cf4-8db9-6b49753a60de",
+      "title": "Heartbreak Anniversary"
+    },
+    {
+      "artist": "GIV\u0112ON",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 7,
+          "recording_mbid": "7c59799e-3135-4f54-9541-f25e8822684d"
+        },
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 16,
+          "recording_mbid": "b66dd4d2-a376-4eae-a538-a8fd7ce5b219"
+        }
+      ],
+      "selected_recording_mbid": "7c59799e-3135-4f54-9541-f25e8822684d",
+      "title": "Like I Want You"
+    },
+    {
+      "artist": "GIV\u0112ON",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 4,
+          "recording_mbid": "9c237f32-aaa3-4275-a984-87dddff37d17"
+        }
+      ],
+      "selected_recording_mbid": "9c237f32-aaa3-4275-a984-87dddff37d17",
+      "title": "For Tonight"
+    },
+    {
+      "artist": "GIV\u0112ON",
+      "observed_submitted_ids": [
+        {
+          "distinct_training_listeners_with_matching_submitted_label": 15,
+          "recording_mbid": "80f206d2-2668-4797-ab84-c556b85efbf9"
+        }
+      ],
+      "selected_recording_mbid": "80f206d2-2668-4797-ab84-c556b85efbf9",
+      "title": "Garden Kisses"
+    }
+  ],
+  "window_ns": [
+    1769904000000000000,
+    1785542400000000000
+  ]
+}
