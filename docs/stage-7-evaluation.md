@@ -1,6 +1,6 @@
 # Stage 7 — recommendation models and evaluation
 
-Status: implementation and 47 correctness/regression tests completed; real-data validation is in progress. Final test results, serving export, and the Stage 7 completion decision are pending. Stage 8 is not authorized.
+Status: implementation, 48 tests, and validation replay are complete. Lambda 50 is selected. Final test results, serving export, and the Stage 7 completion decision are pending. Stage 8 is not authorized.
 
 ## Scope and frozen experiment
 
@@ -37,10 +37,10 @@ Run from the repository root with the frozen Stage 6 local inputs present. Prese
 ```powershell
 uv pip install --python .venv/Scripts/python.exe -r ml/requirements-model.txt
 .venv/Scripts/python.exe -m unittest discover -s ml/tests -v
-.venv/Scripts/python.exe -u -m ml.run_stage7 validation --output data/processed/stage-7-validation-v1
+.venv/Scripts/python.exe -u -m ml.run_stage7 validation --output data/processed/stage-7-validation-v2
 # Freeze and commit the validation report and selection before the next command.
-.venv/Scripts/python.exe -u -m ml.run_stage7 test --output data/processed/stage-7-test-v1 --selection data/processed/stage-7-validation-v1/selection.json
-.venv/Scripts/python.exe -u -m ml.serving_artifact --selection data/processed/stage-7-validation-v1/selection.json --test-report data/processed/stage-7-test-v1/report.json --output artifacts/stage-7-cf-v1
+.venv/Scripts/python.exe -u -m ml.run_stage7 test --output data/processed/stage-7-test-v2 --selection data/processed/stage-7-validation-v2/selection.json
+.venv/Scripts/python.exe -u -m ml.serving_artifact --selection data/processed/stage-7-validation-v2/selection.json --test-report data/processed/stage-7-test-v2/report.json --output artifacts/stage-7-cf-v1
 ```
 
 Raw events, listener-level queries, per-query metrics, ranking caches, and model arrays stay out of Git. Source, frozen settings, and aggregate evidence are committed. These commands reproduce offline experiments; there is no API or frontend yet.
@@ -57,3 +57,9 @@ Validation selected **lambda 50** using the predeclared maximum macro NDCG@10 ru
 | popularity | 0.021189 | 0.002843 | 0.020249 |
 
 Validation elapsed time was 131.172 seconds; peak process memory was 3,431,378,944 bytes. These observations include input verification, matrix construction, ranking, metrics, bootstrap intervals, and artifact writing. No test ranking has been used to select lambda. Improvement over popularity in this validation task does not establish subjective recommendation usefulness.
+
+## Memory correction and validation replay
+
+Before a completed test report was produced, code review found that baseline top-ten slices retained full temporary catalog arrays. The exact test processes were stopped; no test report was written or inspected. Commit `d5b8bfe0b66af8426c15c483e8659bcd22d2e72d` limits the temporary candidates to eleven before seed exclusion. The ranking definition and all CF parameters stayed unchanged. A regression test proves exact equivalence for seeds inside and outside the top ten and checks the backing array size. All **48 tests** passed locally and in [CI](https://github.com/pok0yo/music-recommender/actions/runs/39339435161).
+
+Both validation runs produced byte-identical rankings, per-query metrics, and seed arrays for all four models, plus exactly equal aggregate metrics and bootstrap intervals. The same lambda 50 was selected. [Replay evidence](evidence/stage-7-reproducibility.json) preserves hashes; [the earlier report](evidence/stage-7-validation-before-memory-fix.json) remains available. Measured elapsed time changed from 131.172 to 40.234 seconds and peak process memory from 3,431,378,944 to 640,856,064 bytes. These local observations are not cross-machine performance guarantees. The corrected [selection](evidence/stage-7-selection.json) is committed before the new final test run.

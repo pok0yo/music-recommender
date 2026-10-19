@@ -1,0 +1,34 @@
+{
+  "after": {
+    "peak_process_memory_bytes": 640856064,
+    "seconds": 40.234
+  },
+  "before": {
+    "peak_process_memory_bytes": 3431378944,
+    "seconds": 131.172
+  },
+  "interrupted_test": {
+    "reason": "Stopped to fix avoidable baseline array retention before a completed test report",
+    "report_written": false,
+    "results_inspected": false
+  },
+  "memory_fix": "Restrict baseline temporary candidate array to the first 11 entries before excluding the seed; ranking formula/order unchanged",
+  "validation": {
+    "all_model_metrics_and_intervals_equal": true,
+    "all_nine_rank_metric_seed_artifacts_byte_identical": true,
+    "artifact_sha256": {
+      "cf_lambda_0-query-metrics.npy": "0676e6a4a96e666726b63c155681639fa135d9861de4fee8976e331d2e4d674c",
+      "cf_lambda_0-rankings.npy": "dbb775fe79318e7db768adf4f7d1714315f48bb283519676f0368c16df725455",
+      "cf_lambda_10-query-metrics.npy": "6c473e9ddd53077782caf4683ba66d6a8b6c3f46254eae43239466e432dc97ee",
+      "cf_lambda_10-rankings.npy": "559cf9a412308db5eb0d3cf21ad9127f884f270e4e8125591a0aebe5df443d6e",
+      "cf_lambda_50-query-metrics.npy": "e556798571f10a785dd9e2aa53454412ed583c9a326fc329252ae4c90d6be97d",
+      "cf_lambda_50-rankings.npy": "aba29d56058d913a7fde7af6ebf9cccc508f94c8ae46434bb110e16228b5b762",
+      "popularity-query-metrics.npy": "0c7de70414bc7e77fff2018554b3e55ea421a7930c86f60a84c6c628acef71f6",
+      "popularity-rankings.npy": "1faad09025b1c705094312182a4ca3e5b800f481b80699c91f5a4bc9522c8f79",
+      "seed-indices.npy": "5f542158fcf4d242edb592156e60b148f80d0514d5d87c20bb5261a12221db32"
+    },
+    "corrected_report_sha256": "3919bac7c291578f2afada12554e61465f4e9bfc13e1eb545b1bef173c50679d",
+    "original_report_sha256": "d7da75d715fe00de930ce6687a8600b485083f7dab589ff760fa01ef8023d24d",
+    "selected_lambda_unchanged": 50
+  }
+}

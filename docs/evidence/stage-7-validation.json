@@ -2,7 +2,7 @@
   "catalog_items": 565147,
   "code_sha256": {
     "ml/evaluate.py": "5d82af78a7264d31f97503723191a327b53406cb1cbe20e95af8759543e48363",
-    "ml/recommend.py": "4c20b49de565323c7b3b47bf77ad3d20ff21d7d468d1580c2ba869cbeef1187a",
+    "ml/recommend.py": "1ce9f62c2d7f676e8599cca6be723c769f6b3ff315b457224ba82d8ec495b9af",
     "ml/requirements-audit.txt": "c62c677e9e1498bf07c495540db8461e55e2f4e72577b3252bebd1a6d8ec76f7",
     "ml/requirements-model.txt": "740b49ba516ae42f0addebdb0a5fd2d6e6a9ba9a2652cca64cef5ce91e61ce3d",
     "ml/run_stage7.py": "fdaa19a5731a5a0f2e1cb4ecbca008736c964bbe75919e4b34c3e2a221a10734",
@@ -276,7 +276,7 @@
       "zero_hit_query_share": 0.8657284138455686
     }
   },
-  "peak_process_memory_bytes": 3431378944,
+  "peak_process_memory_bytes": 640856064,
   "phase": "validation",
   "protocol_sha256": "4f5899ab8c8232e84ff6d89358a7f8eaf7e71720bc0ac1bfa64c6e9ca27bc401",
   "runtime": {
@@ -284,8 +284,8 @@
     "python": "3.12.14",
     "scipy": "1.18.1"
   },
-  "seconds": 131.172,
+  "seconds": 40.234,
   "selection_sha256": null,
-  "source_commit": "5639bd038a60f6aa6028f24445cb51452aa09bae",
+  "source_commit": "d5b8bfe0b66af8426c15c483e8659bcd22d2e72d",
   "stage_6_decision_sha256": "db823e90e1bf34003ffccd499394194e602aff82598e12ad44a3c1c55da60bdf"
 }
