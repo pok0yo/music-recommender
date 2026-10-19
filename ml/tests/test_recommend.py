@@ -36,6 +36,15 @@ class RecommendationTests(unittest.TestCase):
         self.assertEqual(candidates[top_k(candidates,scores,3)].tolist(),[15,0,1])
         with self.assertRaises(ValueError):top_k(np.array([0]),np.array([np.nan]))
 
+    def test_popularity_matches_full_sort_without_retaining_catalog_per_seed(self):
+        model=fixture()
+        model.popularity=np.arange(10000)
+        for seed in (0,9,10,5000):
+            result=model.popular(seed)
+            np.testing.assert_array_equal(result,model.popularity[model.popularity!=seed][:10])
+            backing=result.base if result.base is not None else result
+            self.assertLessEqual(backing.size,11)
+
     def test_integer_overflow_and_sparse_vs_independent_dense_formula(self):
         matrix=np.ones((3,140),dtype=np.int32)
         matrix[2,:40]=0

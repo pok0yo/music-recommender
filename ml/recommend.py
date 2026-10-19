@@ -66,7 +66,8 @@ class ItemCF:
         return i if i < len(self.ids) and self.ids[i] == value else None
 
     def popular(self, seed):
-        return self.popularity[self.popularity != seed][:K]
+        candidates = self.popularity[:K+1]
+        return candidates[candidates != seed][:K]
 
     def rank_block(self, seeds, lambdas=LAMBDAS):
         seeds = np.asarray(seeds, dtype=np.int64)
