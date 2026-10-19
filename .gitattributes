@@ -21,3 +21,9 @@ docs/evidence/stage-6-resources-v2.json -text
 docs/evidence/stage-6-decision-v2.json -text
 docs/stage-7-protocol.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 docs/evidence/stage-7-*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+ml/recommend.py text eol=lf
+ml/evaluate.py text eol=lf
+ml/run_stage7.py text eol=lf
+ml/serving_artifact.py text eol=lf
+ml/requirements-model.txt text eol=lf
+ml/requirements-audit.txt text eol=lf

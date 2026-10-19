@@ -1,0 +1,291 @@
+{
+  "catalog_items": 565147,
+  "code_sha256": {
+    "ml/evaluate.py": "5d82af78a7264d31f97503723191a327b53406cb1cbe20e95af8759543e48363",
+    "ml/recommend.py": "4c20b49de565323c7b3b47bf77ad3d20ff21d7d468d1580c2ba869cbeef1187a",
+    "ml/requirements-audit.txt": "c62c677e9e1498bf07c495540db8461e55e2f4e72577b3252bebd1a6d8ec76f7",
+    "ml/requirements-model.txt": "740b49ba516ae42f0addebdb0a5fd2d6e6a9ba9a2652cca64cef5ce91e61ce3d",
+    "ml/run_stage7.py": "fdaa19a5731a5a0f2e1cb4ecbca008736c964bbe75919e4b34c3e2a221a10734",
+    "ml/serving_artifact.py": "53f621fae818a02304d714d20114958b01f3baa6e9a5640614cc65c1e891f098"
+  },
+  "denominators": {
+    "active_window_listeners": 11585,
+    "all_targets_outside_catalog_queries": 266,
+    "artifact_sha256": "c9fb95863a3a0226f21035c69ffb0f27f60f84a33ba7bbccc513d5a593e000bd",
+    "constructed_queries": 11082,
+    "distinct_scorable_seeds": 6983,
+    "events": 8172456,
+    "gate_pass": true,
+    "in_catalog_target_pairs": 847936,
+    "listeners_without_seed_in_first_21_days": 503,
+    "out_of_catalog_target_pairs": 342452,
+    "scorable_queries": 7887,
+    "scorable_share": 0.7116946399566865,
+    "target_pairs": 1190388,
+    "unsupported_seed_queries": 2850,
+    "zero_target_queries": 392
+  },
+  "local_artifact_sha256": {
+    "cf_lambda_0-query-metrics.npy": "0676e6a4a96e666726b63c155681639fa135d9861de4fee8976e331d2e4d674c",
+    "cf_lambda_0-rankings.npy": "dbb775fe79318e7db768adf4f7d1714315f48bb283519676f0368c16df725455",
+    "cf_lambda_10-query-metrics.npy": "6c473e9ddd53077782caf4683ba66d6a8b6c3f46254eae43239466e432dc97ee",
+    "cf_lambda_10-rankings.npy": "559cf9a412308db5eb0d3cf21ad9127f884f270e4e8125591a0aebe5df443d6e",
+    "cf_lambda_50-query-metrics.npy": "e556798571f10a785dd9e2aa53454412ed583c9a326fc329252ae4c90d6be97d",
+    "cf_lambda_50-rankings.npy": "aba29d56058d913a7fde7af6ebf9cccc508f94c8ae46434bb110e16228b5b762",
+    "popularity-query-metrics.npy": "0c7de70414bc7e77fff2018554b3e55ea421a7930c86f60a84c6c628acef71f6",
+    "popularity-rankings.npy": "1faad09025b1c705094312182a4ca3e5b800f481b80699c91f5a4bc9522c8f79",
+    "seed-indices.npy": "5f542158fcf4d242edb592156e60b148f80d0514d5d87c20bb5261a12221db32"
+  },
+  "models": {
+    "cf_lambda_0": {
+      "catalog_coverage": 0.09530971587923143,
+      "distinct_seeds": 6983,
+      "empty_list_share": 0.00025358184354000256,
+      "fallback_items_used": 0,
+      "full_list_share": 0.9932800811461899,
+      "macro": {
+        "ndcg_at_10": 0.22070386668713282,
+        "precision_at_10": 0.19974641815645938,
+        "recall_at_10": 0.06313482076787043
+      },
+      "mean_list_length": 9.96728794218334,
+      "mean_recommended_training_listeners": 142.72290490001527,
+      "paired_difference_vs_popularity": {
+        "ndcg_at_10": {
+          "lower_95": 0.1929928253463977,
+          "mean_difference": 0.19951443970497004,
+          "replicates": 1000,
+          "seed": 20261019,
+          "unit": "listener/query",
+          "upper_95": 0.2066223255935287
+        },
+        "precision_at_10": {
+          "lower_95": 0.17336059338151388,
+          "mean_difference": 0.17949790794979084,
+          "replicates": 1000,
+          "seed": 20261019,
+          "unit": "listener/query",
+          "upper_95": 0.18637124381894257
+        },
+        "recall_at_10": {
+          "lower_95": 0.05705240254298682,
+          "mean_difference": 0.06029172742098586,
+          "replicates": 1000,
+          "seed": 20261019,
+          "unit": "listener/query",
+          "upper_95": 0.06368350157634461
+        }
+      },
+      "queries": 7887,
+      "recommended_unique_items": 53864,
+      "seed_balanced": {
+        "ndcg_at_10": 0.19714664528450135,
+        "precision_at_10": 0.17627544336543577,
+        "recall_at_10": 0.059318223644129045
+      },
+      "support_cohorts": {
+        "20_or_more": {
+          "metrics": {
+            "ndcg_at_10": 0.2399358770216913,
+            "precision_at_10": 0.21997162114224858,
+            "recall_at_10": 0.06592443741681331
+          },
+          "queries": 5638
+        },
+        "5_to_19": {
+          "metrics": {
+            "ndcg_at_10": 0.17249129475906352,
+            "precision_at_10": 0.14904401956425103,
+            "recall_at_10": 0.056141553241530646
+          },
+          "queries": 2249
+        }
+      },
+      "zero_hit_query_share": 0.5091923418283251
+    },
+    "cf_lambda_10": {
+      "catalog_coverage": 0.08893438344359963,
+      "distinct_seeds": 6983,
+      "empty_list_share": 0.00025358184354000256,
+      "fallback_items_used": 0,
+      "full_list_share": 0.9932800811461899,
+      "macro": {
+        "ndcg_at_10": 0.22800263619184616,
+        "precision_at_10": 0.20565487511094097,
+        "recall_at_10": 0.06496626799871796
+      },
+      "mean_list_length": 9.96728794218334,
+      "mean_recommended_training_listeners": 166.1249936396479,
+      "paired_difference_vs_popularity": {
+        "ndcg_at_10": {
+          "lower_95": 0.1999765249248948,
+          "mean_difference": 0.20681320920968377,
+          "replicates": 1000,
+          "seed": 20261019,
+          "unit": "listener/query",
+          "upper_95": 0.21395142514311305
+        },
+        "precision_at_10": {
+          "lower_95": 0.17932642322809686,
+          "mean_difference": 0.18540636490427287,
+          "replicates": 1000,
+          "seed": 20261019,
+          "unit": "listener/query",
+          "upper_95": 0.19216432103461392
+        },
+        "recall_at_10": {
+          "lower_95": 0.0588932953895713,
+          "mean_difference": 0.06212317465183329,
+          "replicates": 1000,
+          "seed": 20261019,
+          "unit": "listener/query",
+          "upper_95": 0.0655438179606399
+        }
+      },
+      "queries": 7887,
+      "recommended_unique_items": 50261,
+      "seed_balanced": {
+        "ndcg_at_10": 0.20500822099507734,
+        "precision_at_10": 0.18272863240275766,
+        "recall_at_10": 0.06127422513868773
+      },
+      "support_cohorts": {
+        "20_or_more": {
+          "metrics": {
+            "ndcg_at_10": 0.24608017743533137,
+            "precision_at_10": 0.22490244767648063,
+            "recall_at_10": 0.06728276284588743
+          },
+          "queries": 5638
+        },
+        "5_to_19": {
+          "metrics": {
+            "ndcg_at_10": 0.18268419353699836,
+            "precision_at_10": 0.15740329035126782,
+            "recall_at_10": 0.05915906570954936
+          },
+          "queries": 2249
+        }
+      },
+      "zero_hit_query_share": 0.4847216939267148
+    },
+    "cf_lambda_50": {
+      "catalog_coverage": 0.08416040428419509,
+      "distinct_seeds": 6983,
+      "empty_list_share": 0.00025358184354000256,
+      "fallback_items_used": 0,
+      "full_list_share": 0.9932800811461899,
+      "macro": {
+        "ndcg_at_10": 0.2309036067154829,
+        "precision_at_10": 0.20807658171674773,
+        "recall_at_10": 0.06506373480151141
+      },
+      "mean_list_length": 9.96728794218334,
+      "mean_recommended_training_listeners": 196.58305347784054,
+      "paired_difference_vs_popularity": {
+        "ndcg_at_10": {
+          "lower_95": 0.20313382099449254,
+          "mean_difference": 0.20971417973332018,
+          "replicates": 1000,
+          "seed": 20261019,
+          "unit": "listener/query",
+          "upper_95": 0.21671249301567344
+        },
+        "precision_at_10": {
+          "lower_95": 0.18144826930391783,
+          "mean_difference": 0.18782807151007988,
+          "replicates": 1000,
+          "seed": 20261019,
+          "unit": "listener/query",
+          "upper_95": 0.19463896285025992
+        },
+        "recall_at_10": {
+          "lower_95": 0.058980114057599974,
+          "mean_difference": 0.06222064145462672,
+          "replicates": 1000,
+          "seed": 20261019,
+          "unit": "listener/query",
+          "upper_95": 0.06554479792110016
+        }
+      },
+      "queries": 7887,
+      "recommended_unique_items": 47563,
+      "seed_balanced": {
+        "ndcg_at_10": 0.20767117734791507,
+        "precision_at_10": 0.18479237967271975,
+        "recall_at_10": 0.061329001488124146
+      },
+      "support_cohorts": {
+        "20_or_more": {
+          "metrics": {
+            "ndcg_at_10": 0.24960721947771836,
+            "precision_at_10": 0.22761617594891748,
+            "recall_at_10": 0.06707478184919144
+          },
+          "queries": 5638
+        },
+        "5_to_19": {
+          "metrics": {
+            "ndcg_at_10": 0.18401567040891467,
+            "precision_at_10": 0.15909293019119664,
+            "recall_at_10": 0.060022257142632374
+          },
+          "queries": 2249
+        }
+      },
+      "zero_hit_query_share": 0.47343730188918476
+    },
+    "popularity": {
+      "catalog_coverage": 1.946396247348035e-05,
+      "distinct_seeds": 6983,
+      "empty_list_share": 0.0,
+      "fallback_items_used": 0,
+      "full_list_share": 1.0,
+      "macro": {
+        "ndcg_at_10": 0.02118942698216519,
+        "precision_at_10": 0.02024851020666891,
+        "recall_at_10": 0.002843093346884797
+      },
+      "mean_list_length": 10.0,
+      "mean_recommended_training_listeners": 1664.9342842652466,
+      "queries": 7887,
+      "recommended_unique_items": 11,
+      "seed_balanced": {
+        "ndcg_at_10": 0.020634622387736095,
+        "precision_at_10": 0.019726450177187452,
+        "recall_at_10": 0.002726363695968965
+      },
+      "support_cohorts": {
+        "20_or_more": {
+          "metrics": {
+            "ndcg_at_10": 0.024158927294865604,
+            "precision_at_10": 0.023181979425327903,
+            "recall_at_10": 0.0032885389084932595
+          },
+          "queries": 5638
+        },
+        "5_to_19": {
+          "metrics": {
+            "ndcg_at_10": 0.013745210546858195,
+            "precision_at_10": 0.012894619831036042,
+            "recall_at_10": 0.0017264094534439394
+          },
+          "queries": 2249
+        }
+      },
+      "zero_hit_query_share": 0.8657284138455686
+    }
+  },
+  "peak_process_memory_bytes": 3431378944,
+  "phase": "validation",
+  "protocol_sha256": "4f5899ab8c8232e84ff6d89358a7f8eaf7e71720bc0ac1bfa64c6e9ca27bc401",
+  "runtime": {
+    "numpy": "2.5.4",
+    "python": "3.12.14",
+    "scipy": "1.18.1"
+  },
+  "seconds": 131.172,
+  "selection_sha256": null,
+  "source_commit": "5639bd038a60f6aa6028f24445cb51452aa09bae",
+  "stage_6_decision_sha256": "db823e90e1bf34003ffccd499394194e602aff82598e12ad44a3c1c55da60bdf"
+}
