@@ -4,7 +4,7 @@ A planned music discovery application that recommends recognizable tracks from a
 
 ## Status
 
-**Stage 8 is implemented and locally verified:** a FastAPI service, 215-recording catalog, and local PostgreSQL with read-only application access. All 53 local tests and separate real-model/database checks pass; final CI verification is pending. Stage 9 requires a separate go.
+**Stage 8 is complete:** a FastAPI service, 215-recording catalog, and local PostgreSQL with read-only application access. All 53 local/CI tests and separate real-model/database checks pass. Stage 9 requires a separate go.
 
 The accepted `cohort-v2` applies two independently verified recording redirects to a fixed 30% listener cohort reconstructed from existing cached ranges, with no new event download. The original 26/40 failure, approved panel, and acceptance thresholds remain preserved. See the [frozen revision protocol](docs/stage-6-protocol-v2.json) and [acceptance decision](docs/evidence/stage-6-decision-v2.json).
 

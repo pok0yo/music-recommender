@@ -1,0 +1,41 @@
+{
+  "ci": "https://github.com/pok0yo/music-recommender/actions/runs/39377289267",
+  "cloud_mutations": false,
+  "code_sha256": {
+    "backend/audit_catalog.py": "34abd4047e5879047c67b0e45119ed8753b0c00b256635640c02d737a7278f89",
+    "backend/catalog.py": "4d23a2a165f1a9c144107e734180f88ac173719d06066b8e6a1b61514b526cb9",
+    "backend/local_postgres.py": "de601ecadb6e93e19e4d49dcc1e31d130a7f26a342a1594272db06ba27afff9b",
+    "backend/main.py": "0036bc5cf4f1753ce5ddf23aa6c23532fba7b53d5c89869e5b2775ed37527497",
+    "backend/openapi.json": "e1f2a69f1e11706df3085c96f6806ac2cfee8f298278620dcd3a88a325076c0b",
+    "backend/prepare_catalog.py": "bdf10e6d289f565d3ffb25743f0e37ec58dd0ecb8c9a5ac88b93af1f54978441",
+    "backend/requirements.txt": "11fd907e8c419a1fb91695768a50a3aa75a65f5e484f33d528be8af3d7f1671b",
+    "backend/schema.sql": "d5b9f821ee02c2ab397a19326acf5f92e2fc32fe870ae2729a7827f9dc8e3f08",
+    "backend/schemas.py": "345f5245555bb9bc4691b62c45e9959cc4c9481dc8b2a07af5934b1c2e5e2b85",
+    "backend/tests/test_api.py": "0f5a935571e4079fd0edf30fd7bfb531ef4bf21dd53aa06a41caafe32184c512",
+    "backend/verify_local.py": "8544d20c5ccd148a3a1f27d23d67de5260213697272899c99ec42c322253f82d"
+  },
+  "database": "Project-local PostgreSQL 17.11",
+  "evidence_sha256": {
+    "stage-8-catalog-preparation.json": "faf07f4ce3140d13d2423f52f221791df5a27bf9487e17e3ba8a3432d213335a",
+    "stage-8-catalog-readiness.json": "cc4c6d8910a9f4673e3b9ea16cd68404b97eda80fa4e20b91cfac14255c68eb6",
+    "stage-8-catalog-release.json": "f113611de60d5b84d3106675097c237510bcee2c74fbe772e28e385c3813b3a7",
+    "stage-8-local-verification.json": "ac5ef188547e3f28d218c45f5168c0d97ce0d2946d88241f497352ad48543f71"
+  },
+  "frontend_started": false,
+  "limitations": [
+    "Small serving catalog; reseeding may omit unavailable metadata with explicit limited status",
+    "No verified external listening links or playback",
+    "No frontend, deployment or concurrent-load validation",
+    "Single-process rate limiter; production proxy and host controls deferred",
+    "API still uses the pinned scientific loader dependency stack"
+  ],
+  "local_and_ci_tests_passed": 53,
+  "next_stage_requires_user_go": true,
+  "observed_on": "2026-10-20",
+  "real_starter_queries_verified": 32,
+  "searchable_recordings": 215,
+  "source_commit": "89c9a5468bba85782b18dd4bbe55b0af61ea00a9",
+  "stage_7_decision_sha256": "f3677bbf7cb17c1f6dad2c3911d299e595d8f31e6695ae79cf4f5a2428a2683e",
+  "stage_8_complete": true,
+  "stage_9_authorized": false
+}

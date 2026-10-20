@@ -1,6 +1,6 @@
 # Stage 8 — local recommendation backend
 
-Status: implemented and locally verified; final CI and completion record are recorded with the release evidence. Stage 9 requires a separate user go.
+Status: Stage 8 complete. All 53 local and CI tests pass; real model/database checks pass. See the [completion decision](evidence/stage-8-decision.json). Stage 9 requires a separate user go.
 
 ## Scope and decisions
 
@@ -77,3 +77,6 @@ Five synthetic API tests pass: contract/demo labeling, bounds and safe errors, s
 [Real local verification](evidence/stage-8-local-verification.json) separately checks all 32 starter HTTP results against the actual model's IDs and shared-listener counts; search, SQL injection input, malformed/unknown parameters, liveness/readiness, OpenAPI, SELECT-only privileges, denied mutations, and an actual database stop/restart. The 32 sequential local HTTP requests measured median 134.308 ms and maximum 259.926 ms, including readiness/version checks and PostgreSQL. This is not the proposed 100-request, five-concurrent-client production p95 test. No deployment performance target is claimed.
 
 The first release has 215 searchable recordings, no verified external listening links, and no hosted endpoint. Reseeding may yield limited metadata. Eight approved panel titles remain unsupported. Human usefulness, concurrent load, proxy/host controls, production secrets/retention, cloud portability, and browser integration remain later-stage work. New metadata enrichment does not revise or remeasure Stage 7 recommendation quality.
+
+
+Final [GitHub CI](https://github.com/pok0yo/music-recommender/actions/runs/39377289267) passed on source commit `89c9a5468bba85782b18dd4bbe55b0af61ea00a9` with Python 3.14 on Linux. The serving process observed a peak working set of 213,880,832 bytes on Windows; this excludes the separate PostgreSQL process and is not a container-sizing guarantee. The durable source-accounting ledger remains intact: 6,005 charged requests and 13,562,969,931 reserved bytes inside its 17,179,869,184-byte cap. The PostgreSQL tooling download is separate from that source ledger. All Stage 7 source files and evidence remain unchanged. Local services are stopped at this checkpoint.
