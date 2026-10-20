@@ -1,0 +1,23 @@
+{
+  "approved_supported_starters": 32,
+  "artifact_manifest_sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122",
+  "cached_canonical_records_with_title_and_credits": 56,
+  "cached_lookup_responses_verified": 58,
+  "complete_catalog_metadata_ready": false,
+  "identity_lookup_sha256": "d00bc2f77f6474ae1a1ed5e69e50c993fd8a0ce360e6281911c083fbaae3de37",
+  "limitations": [
+    "Cached core fields checked for presence and response identity, not a new catalog-wide identity review",
+    "No release/link validation, database, API, or network access in this audit",
+    "Submitted listening labels are not independently reconciled metadata"
+  ],
+  "missing_id_inventory_sha256": "9ca973ee2912b45c258b75ea963b4ee716d2166ea256f2bb8c832e693e26b24f",
+  "model_catalog_items": 565147,
+  "model_items_with_cached_metadata": 41,
+  "observed_on": "2026-10-20",
+  "required_id_inventory_sha256": "5a525f48d92cc46a9fc74fc3b3c6b4a1929353bbbfb46416f08ef0aa44d75101",
+  "stage_7_decision_sha256": "f3677bbf7cb17c1f6dad2c3911d299e595d8f31e6695ae79cf4f5a2428a2683e",
+  "stage_8_authorized": true,
+  "starter_and_neighbor_ids_missing_metadata": 178,
+  "starter_and_neighbor_unique_ids": 215,
+  "starters_with_all_ten_results_describable": 0
+}

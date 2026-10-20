@@ -4,7 +4,7 @@ A planned music discovery application that recommends recognizable tracks from a
 
 ## Status
 
-**Stage 7 is complete: models, 48 tests, validation replay, final held-out comparison, and serving export verification passed.** Stage 8 is not authorized; application implementation has not begun.
+**Stage 8 is implemented and locally verified:** a FastAPI service, 215-recording catalog, and local PostgreSQL with read-only application access. All 53 local tests and separate real-model/database checks pass; final CI verification is pending. Stage 9 requires a separate go.
 
 The accepted `cohort-v2` applies two independently verified recording redirects to a fixed 30% listener cohort reconstructed from existing cached ranges, with no new event download. The original 26/40 failure, approved panel, and acceptance thresholds remain preserved. See the [frozen revision protocol](docs/stage-6-protocol-v2.json) and [acceptance decision](docs/evidence/stage-6-decision-v2.json).
 
@@ -21,6 +21,8 @@ See the [Stage 4 UX and design plan](docs/stage-4-design-plan.md) for the journe
 See the [Stage 5 implementation plan](docs/stage-5-implementation-plan.md) for architecture, data-to-UI contracts, the evaluation protocol, stage acceptance criteria, testing, deployment, and portfolio deliverables. Its 122–174-hour planning range includes contingency; the 6–8-week target depends on availability and a successful data audit.
 
 See the [Stage 6 acceptance report](docs/stage-6-data-audit.md#15-final-cohort-v2-acceptance-and-stage-boundary) and [decision manifest](docs/evidence/stage-6-decision-v2.json) for coverage gaps, exclusions, resources, reproducibility, and the frozen candidate/query hashes. Earlier failed versions and checkpoints remain documented as history.
+
+- Stage 8: local API and versioned 215-recording catalog implemented; 32 real starter responses match the frozen model. Database permissions and actual outage recovery are verified. See the [backend report and setup](docs/stage-8-backend.md).
 
 The target is a 6–8-week individual portfolio project, subject to available development time and later product checks. The accepted cohort, train-only recommender, and measured offline results exist locally. These results do not establish subjective usefulness or application readiness.
 
@@ -48,7 +50,7 @@ The audit measured coverage, timestamp anomalies, sparsity, processing resources
 
 ## Preferred stack
 
-Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Python, FastAPI, Pydantic, and Supabase PostgreSQL remain the preferred application stack. Authentication is deferred. The implemented audit/model pipeline uses pinned PyArrow 26.0.0, NumPy 2.5.4, and SciPy 1.18.1 in an ignored local Python environment. pandas, scikit-learn, and implicit are unnecessary for the current model; application dependencies are not installed.
+Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Python, FastAPI, Pydantic, and Supabase PostgreSQL remain the preferred application stack. Authentication is deferred. The implemented audit/model pipeline uses pinned PyArrow 26.0.0, NumPy 2.5.4, and SciPy 1.18.1 in an ignored local Python environment. pandas, scikit-learn, and implicit are unnecessary for the current model; frontend dependencies are not installed.
 
 ## Design direction
 

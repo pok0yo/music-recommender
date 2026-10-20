@@ -1,0 +1,49 @@
+{
+  "actual_database_outage_and_recovery_verified": true,
+  "all_rankings_and_shared_counts_exact": true,
+  "http_local_warm_ms": {
+    "calls": 32,
+    "maximum": 259.92609999957494,
+    "median": 134.30759999755537
+  },
+  "input_and_injection_checks_pass": true,
+  "limitations": [
+    "215-recording catalog; no deployed service, load test, playback or outbound links",
+    "32 starter queries are verification cases, not a fresh recommendation-quality experiment"
+  ],
+  "observed_on": "2026-10-20",
+  "postgres_version": "17.11",
+  "reader_select_only_verified": true,
+  "real_model_and_database": true,
+  "search_query_plan": [
+    {
+      "Plan": {
+        "Async Capable": false,
+        "Node Type": "Limit",
+        "Parallel Aware": false,
+        "Plan Rows": 20,
+        "Plan Width": 542,
+        "Plans": [
+          {
+            "Alias": "recordings",
+            "Async Capable": false,
+            "Filter": "(POSITION(('nate sib'::text) IN (search_text)) > 0)",
+            "Node Type": "Seq Scan",
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 72,
+            "Plan Width": 542,
+            "Relation Name": "recordings",
+            "Startup Cost": 0.0,
+            "Total Cost": 23.23
+          }
+        ],
+        "Startup Cost": 0.0,
+        "Total Cost": 6.45
+      }
+    }
+  ],
+  "supported_starter_queries_verified": 32,
+  "timing_scope": "Local sequential HTTP requests including version/readiness checks and PostgreSQL; excludes startup and external network",
+  "verifier_sha256": "8544d20c5ccd148a3a1f27d23d67de5260213697272899c99ec42c322253f82d"
+}
