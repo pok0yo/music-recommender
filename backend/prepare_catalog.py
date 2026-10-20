@@ -6,6 +6,7 @@ from pathlib import Path
 
 from ml.acquire_events import Cache, ROOT
 from ml.audit_support import sha256
+from ml.audit_events import MBID
 from ml.inspect_spark import save
 from ml.resolve_panel import fetch
 
@@ -41,6 +42,8 @@ def prepare():
                 path.write_bytes(raw)
                 save(receipt, dict(url=url, sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw)))
             raw = json.loads(path.read_text(encoding="utf-8"))
+            if not isinstance(raw.get("id"), str) or not MBID.fullmatch(raw["id"]):
+                raise ValueError("Invalid metadata recording ID")
             if raw.get("id") != recording:
                 canonical = raw["id"]
                 verification = cache / (canonical + ".redirect-verification.json")
