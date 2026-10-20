@@ -1,0 +1,120 @@
+{
+  "external_skill_scripts_executed": false,
+  "frontend_implemented": false,
+  "installed_on": "2026-10-20",
+  "main_skill_and_supporting_files_verified": true,
+  "skills": [
+    {
+      "directory": "animate-expo",
+      "files": 3,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "9a01a91701e6563c67677dde6b66ab30f066a5341d42c21a90ba51d99679274a"
+    },
+    {
+      "directory": "animate",
+      "files": 3,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "b8ede161270458e6ae2e45e8a1985373515d4c63de5568ddb0f9012d7634356c"
+    },
+    {
+      "directory": "animation-performance",
+      "files": 2,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "ceb9dd3fe912615830f725a0120ccf8d012d15a6218001a5cd6c15d38e39a957"
+    },
+    {
+      "directory": "animation-vocabulary",
+      "files": 2,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "40d2b27adfdfeb0570a9f20e7d0255109d9233c50603878bcd0dcd04c923fd94"
+    },
+    {
+      "directory": "apple-design",
+      "files": 2,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "77bb63b7043bb93aca2ff4ab040c249484eef35682bb6ff7163433c31d30adc7"
+    },
+    {
+      "directory": "ask-sonner",
+      "files": 3,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "39f3ee185b3aa2cf70a689052ff078953ce7ba5915ed7a9391d232e9d4dcf57f"
+    },
+    {
+      "directory": "break-ui",
+      "files": 3,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e"
+    },
+    {
+      "directory": "emil-design-eng",
+      "files": 2,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "ffbe68e6007fb42cb8149f089b400a1ca007d59ba23e8948e2be4476f3175939"
+    },
+    {
+      "directory": "find-animation-opportunities",
+      "files": 2,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "d52a377819b84a71930f0c822cfe2849f40301605a2d5c7eccbfa3b257700df2"
+    },
+    {
+      "directory": "improve-animations",
+      "files": 4,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "73962447464433476343e2c12cd08ab39cc99a9e5f3c118c5fb54ed897574ef6"
+    },
+    {
+      "directory": "mobile-native",
+      "files": 2,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "888b7651d66d66dbac4e72b7c554638eb19bd971d686d6cbdf030a5ef3788f55"
+    },
+    {
+      "directory": "pick-ui-library",
+      "files": 2,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "675fdce308683256ed617351a9b74d23457a5fbd0a562d9831b9c764b8c5e682"
+    },
+    {
+      "directory": "prototype",
+      "files": 3,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "bba39c955eb1871c5a02733976ceec5d0324198e0812e667604756489c89f7b9"
+    },
+    {
+      "directory": "review-animations",
+      "files": 3,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "6ff590d29e436766135aa3d137be1fac2a867165c7257fc315b189361f1873af"
+    },
+    {
+      "directory": "write-swift",
+      "files": 2,
+      "repository": "emilkowalski/skills",
+      "revision": "2d228630ba1446365f614a108cb8252f1feda202",
+      "skill_sha256": "16a4b6adb74e338e55e704ce5753ad54d825438b8a63930eeaede9f3c04c9447"
+    },
+    {
+      "directory": "taste-skill",
+      "files": 39,
+      "repository": "leonxlnx/taste-skill",
+      "revision": "6010f91a9935f1c167dfc500fb1a475681892e6b",
+      "skill_sha256": "d955dae4ba8ab2d994f4bb06b4bf412a1d9875433a8597939c391f4bae91dd7a"
+    }
+  ]
+}
