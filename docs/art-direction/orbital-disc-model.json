@@ -1,5 +1,5 @@
 {
-  "observed_at": "2026-10-21T21:39:48.329Z",
+  "observed_at": "2026-10-21T22:04:20.186Z",
   "path": "public/artwork/disc-tray/orbital-disc-model-7e748054c1e3.png",
   "public_url": "/artwork/disc-tray/orbital-disc-model-7e748054c1e3.png",
   "width": 2000,
@@ -9,7 +9,7 @@
   "renderer": "three0.186.1 / Chrome 155.0.8059.85",
   "sources": {
     "components/orbital-scene.ts": "854b158db44753d3ee809d8a1740a42254112ef733c8556e22d3a64ffb028fd7",
-    "components/orbital-hero.tsx": "e533ffb6903cdda40c84c905d13facc0e8766524af251ec39714392f18aaf8e9"
+    "components/orbital-hero.tsx": "619822dd7ed0ca144c37b2963c0eb8050098aab5ae6c0dc33ab9102c987ad069"
   },
   "license": "Original scene source belongs to this project; Three.js MIT notice retained in public/third-party/three/LICENSE."
 }

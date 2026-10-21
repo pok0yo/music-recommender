@@ -7,7 +7,7 @@ const pixels = (canvas: Locator) => canvas.evaluate(async (e: HTMLCanvasElement)
   return Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2,'0')).join('');
 });
 
-test('floating 3D silhouette crosses the tray lip, fits every width and leaves controls clear', async ({ page }) => {
+test('floating 3D silhouette is centered in its tray, fits every width and leaves controls clear', async ({ page }) => {
   test.setTimeout(120_000);
   await page.emulateMedia({ reducedMotion:'reduce' });
   for (const width of [320,390,550,569,768,1024,1253,1440]) {
@@ -31,7 +31,8 @@ test('floating 3D silhouette crosses the tray lip, fits every width and leaves c
       const tray=(await page.locator('.disc-tray > .glass-shell').first().boundingBox())!;
       const notice=(await page.locator('.demo-notice').boundingBox())!;
       const search=(await page.locator('.search-controls').boundingBox())!;
-      expect(bounds.top).toBeLessThan(tray.y);
+      const hero=(await page.locator('.orbital-hero').boundingBox())!;
+      expect(Math.abs(hero.y+hero.height/2-(tray.y+tray.height/2))).toBeLessThan(1);
       expect(bounds.top).toBeGreaterThan(notice.y+notice.height);
       expect(bounds.left).toBeGreaterThan(search.x+search.width);
       if(width===1440){expect(bounds.right).toBeGreaterThan(tray.x+tray.width);expect((await canvas.boundingBox())!.width).toBeGreaterThan(500);}
@@ -43,28 +44,31 @@ test('floating 3D silhouette crosses the tray lip, fits every width and leaves c
   }
 });
 
-test('real rendered pixels respond, pause is stable and offscreen motion stops', async ({ page }) => {
+test('idle is still, hover responds and motion stops on leave or reduced motion', async ({ page }) => {
   await page.goto(route);
   const hero=page.locator('.orbital-hero'), host=page.locator('.orbital-canvas'), canvas=host.locator('canvas');
   await expect(hero).toHaveAttribute('data-model-ready','true');
-  await expect(host).toHaveAttribute('data-render-state','running');
-  await page.getByRole('button',{name:'Pause motion',exact:true}).click();
-  await expect(host).toHaveAttribute('data-render-state','still');
-  const paused=await pixels(canvas);
-  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-  expect(await pixels(canvas)).toBe(paused);
-  await page.getByRole('button',{name:'Resume motion',exact:true}).press('Enter');
-  const rect=(await hero.boundingBox())!;
-  await page.mouse.move(rect.x+rect.width*.85,rect.y+rect.height*.3);
-  await expect.poll(() => pixels(canvas)).not.toBe(paused);
-  await page.emulateMedia({reducedMotion:'reduce'});
-  await expect(host).toHaveAttribute('data-render-state','still');
   await expect(page.getByRole('button',{name:/Pause motion|Resume motion/})).toHaveCount(0);
+  await expect(host).toHaveAttribute('data-render-state','still');
+  const idle=await pixels(canvas);
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  expect(await pixels(canvas)).toBe(idle);
+  await hero.hover({position:{x:300,y:180}});
+  await expect(host).toHaveAttribute('data-render-state','running');
+  await expect.poll(() => pixels(canvas)).not.toBe(idle);
+  await page.mouse.move(0,0);
+  await expect(host).toHaveAttribute('data-render-state','still');
+  const stopped=await pixels(canvas);
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  expect(await pixels(canvas)).toBe(stopped);
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await hero.hover();
+  await expect(host).toHaveAttribute('data-render-state','still');
   const reduced=await pixels(canvas); await page.mouse.move(0,0); expect(await pixels(canvas)).toBe(reduced);
   await page.emulateMedia({reducedMotion:'no-preference'});
   await page.setViewportSize({width:550,height:300}); await page.evaluate(() => scrollTo(0,0));
   await expect(host).toHaveAttribute('data-render-state','offscreen');
-  await hero.scrollIntoViewIfNeeded(); await expect(host).toHaveAttribute('data-render-state','running');
+  await hero.hover(); await expect(host).toHaveAttribute('data-render-state','running');
   await page.evaluate(() => scrollTo(0,0)); await expect(host).toHaveAttribute('data-render-state','offscreen');
 });
 
@@ -90,7 +94,7 @@ test('keyboard order prioritizes song choices and working/About states remove th
   await page.setViewportSize({width:550,height:766}); await page.goto(route);
   await expect(page.locator('.orbital-hero')).toHaveAttribute('data-model-ready','true');
   await page.locator('.starter-button').last().focus(); await page.keyboard.press('Tab');
-  await expect(page.getByRole('button',{name:'Pause motion',exact:true})).toBeFocused();
+  await expect(page.getByRole('link',{name:'How these recommendations work',exact:true})).toBeFocused();
   await page.locator('.starter-button').first().click();
   await expect(page.locator('.track-row')).toHaveCount(10); await expect(page.locator('.orbital-canvas')).toHaveCount(0);
   await page.getByRole('button',{name:'Change song',exact:true}).click();

@@ -122,7 +122,7 @@ export function Discovery({ variant, mode, fixture, study, heroArtwork }: { vari
       trigger?.focus();
     }}>Back to track list</LiquidMetalButton>
   </div></aside> : null;
-  return <><Presentation opening={d.opening} heading={heading} search={search} starters={starters} floatingHero={heroArtwork?.endsWith('/orbital-disc.png')}
+  return <><Presentation opening={d.opening} heading={heading} search={search} starters={starters}
     hero={heroArtwork?.endsWith('/orbital-disc.png') ? <OrbitalHero /> : <div className="hero-slot" aria-hidden="true"><div className="hero-fill">{heroArtwork && <Image src={heroArtwork} alt="" width={2048} height={2048}
       sizes="(max-width: 767px) 204px, (max-width: 1023px) 200px, 240px" preload />}</div></div>} seed={seed} results={results} inspector={inspector} />
     {meta && <div className="release-context"><span>{mode === 'demo' ? 'Demonstration data' : 'Real catalog'}</span><span>{mode === 'demo' ? 'Shared comparison fixtures' : '215 recordings · MusicBrainz + ListenBrainz'}</span></div>}</>;

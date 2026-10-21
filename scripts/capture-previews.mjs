@@ -17,7 +17,7 @@ try {
         if (artwork && variant !== 'orbital-disc' && fixture !== 'entry') continue; // Working screens share the same body and omit the hero.
         await page.goto(`http://127.0.0.1:3000${route}${fixture === 'about' ? '/about' : ''}?mode=demo&fixture=${fixture === 'about' ? 'entry' : fixture}`);
         await page.locator(fixture === 'entry' ? '.starter-button' : fixture === 'about' ? '.about-preview h1' : '.track-list > li').first().waitFor();
-        if (artwork && variant === 'orbital-disc' && fixture === 'entry') { await page.locator('.orbital-hero[data-model-ready]').waitFor(); await page.getByRole('button',{name:'Pause motion',exact:true}).click(); }
+        if (artwork && variant === 'orbital-disc' && fixture === 'entry') { await page.locator('.orbital-hero[data-model-ready]').waitFor(); }
         await page.evaluate(() => document.fonts.ready);
         await page.locator('.hero-fill img').evaluateAll(images => Promise.all(images.map(img => img.decode())));
         const path = `${output}/${studies ? variant : 'v' + variant}-${device}-${fixture}.png`;

@@ -26,13 +26,13 @@ try {
     },null,2)+'\n');
     console.log(path);
   } else {
-    const output = 'docs/evidence/stage-9-orbital-hero';
+    const output = 'docs/evidence/stage-9-orbital-centered';
     await mkdir(output,{recursive:true});
     const evidence = { observed_at:new Date().toISOString(), browser:browser.version(), data:'Demonstration fixtures only', captures:[] };
     const page = await browser.newPage();
     for (const [device,width,height] of [['desktop',1440,900],['mobile',390,844],['user',550,766],['live',569,792],['medium',1253,705],['live-wide',1305,792]]) {
       await page.setViewportSize({width,height});
-      for (const state of ['entry','tilt','paused','fallback','results','about']) {
+      for (const state of ['entry','tilt','fallback','results','about']) {
         await page.emulateMedia({reducedMotion: state === 'fallback' ? 'reduce' : 'no-preference'});
         await page.goto(`${route}${state === 'about' ? '/about' : ''}?mode=demo&fixture=${state === 'results' ? 'ten' : 'entry'}`);
         await page.locator(state === 'about' ? '.about-preview h1' : state === 'results' ? '.track-row' : '.starter-button').first().waitFor();
@@ -44,7 +44,6 @@ try {
             await page.mouse.move(box.x+box.width*.8,box.y+box.height*.4);
             await page.waitForTimeout(500); // Capture the eased pose, never evidence of measured frame-rate.
           }
-          if (state === 'paused') await page.getByRole('button',{name:'Pause motion',exact:true}).click();
           if (state === 'fallback') { await page.locator('.orbital-canvas canvas').evaluate(e => e.getContext('webgl2').getExtension('WEBGL_lose_context').loseContext()); await expect(page.locator('.orbital-fallback')).toBeVisible(); }
           await page.locator('.orbital-fallback').evaluate(e => e.decode());
         }
@@ -58,6 +57,6 @@ try {
         await page.mouse.move(0,0); console.log(path);
       }
     }
-    await writeFile('docs/evidence/stage-9-orbital-hero-captures.json',JSON.stringify(evidence,null,2)+'\n');
+    await writeFile('docs/evidence/stage-9-orbital-centered-captures.json',JSON.stringify(evidence,null,2)+'\n');
   }
 } finally { await browser.close(); }

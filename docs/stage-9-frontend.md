@@ -1,6 +1,17 @@
 # Stage 9: five app structures, awaiting selection
 
-## Interactive Orbital Disc hero
+## Centered hero follow-up
+
+The user requested removal of the pause button and moving the model down to the center. The decorative hero is now vertically centered in the upper panel's right column using its existing enclosure as the positioning reference. The 590px wide model still crosses the right lip on wide desktop; narrow screens retain task/starters before the model. Removing the control also removes its focus stop and the no-longer-needed floating-hero prop/branch.
+
+| Before | After | Why |
+|---|---|---|
+| High, top-overlapping sculpture | Model centered vertically in the upper hero panel | Applies the user's lower placement request |
+| Automatic idle rotation with Pause/Resume | No button; still idle, rotation/tilt/shine only during mouse hover | Keeps the requested interaction without unattended motion requiring a visible pause control |
+
+Reduced motion, touch scrolling, WebGL fallback and working-state cleanup remain. Build, typecheck and six targeted hero/artwork tests pass. Eight alpha-geometry widths now assert vertical centering and search clearance rather than top overlap. Thirty new captures cover entry/tilt/fallback/results/About at the six established viewports in `docs/evidence/stage-9-orbital-centered-captures.json`; previous hero evidence below is historical. The scene geometry and fallback pixels are unchanged; the direct export provenance was refreshed for the revised integration. No new dependency, model experiment, live backend verification or deployment. Physical-device/Safari/screen-reader and measured performance limits remain.
+
+## Interactive Orbital Disc hero (previous checkpoint)
 
 The user approved a larger free-standing model for the Orbital Disc demo, with slow rotation, pointer-responsive tilt/shine and overlap across the tray edge. Open `/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry`. This is a real locally authored Three.js scene, replacing only this candidate's circular raster enclosure. The other three raster artwork demos, original flat comparison routes, factual copy and discovery behavior remain available. This iteration is reviewable exploration; it does not select final artwork, promote the root route, start Stage 10 or deploy the application.
 

@@ -1,0 +1,57 @@
+{
+  "observed_at": "2026-10-21T22:07:07.827729+00:00",
+  "build": "passed",
+  "typecheck": "passed",
+  "targeted_suite": {
+    "startTime": "2026-10-21T22:04:23.672Z",
+    "duration": 24698.613,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "scope": "Four hero tests plus two artwork comparison tests; no full33-test rerun for this refinement. Earlier full suite remains historical.",
+  "geometry_widths": [
+    320,
+    390,
+    550,
+    569,
+    768,
+    1024,
+    1253,
+    1440
+  ],
+  "assertions": [
+    "Figure vertically centered in upper tray at desktop/medium widths; search/notice clearance, wide right-lip overlap and unclipped silhouette",
+    "No pause/resume control or decorative keyboard stop",
+    "Idle/leave/reduced-motion pixels stable; mouse-hover pixels change",
+    "Offscreen suspension, context-loss/unavailable WebGL fallback and discovery still functional",
+    "Artwork picker, search, selection, reseed, history, About and mobile task-first order preserved"
+  ],
+  "captures": "stage-9-orbital-centered-captures.json",
+  "capture_count": 30,
+  "capture_hashes_verified": true,
+  "provenance": "../art-direction/orbital-disc-model.json",
+  "model_scene_and_pixels_unchanged": true,
+  "source_sha256": {
+    "components/orbital-hero.tsx": "619822dd7ed0ca144c37b2963c0eb8050098aab5ae6c0dc33ab9102c987ad069",
+    "components/orbital-scene.ts": "854b158db44753d3ee809d8a1740a42254112ef733c8556e22d3a64ffb028fd7",
+    "components/discovery.tsx": "c7ada65b8206278c6a13d94c1b73d6c35973d99412fdc3874221974e3ca5b9c3",
+    "components/presentation.tsx": "8ebc9dd9218cbcbecb8e7ae10941623d0117168b16993ca9a82a989fb1aabf6f",
+    "v2/disc-tray/index.tsx": "fa32347cd2fd1929fa4787c8e0a7e83e17c2a903c35dd852af16400ca6506632",
+    "v2/studies.css": "93530c42bbfa134fe857626763c4cea3feb90fb3981f327f140151657705df38",
+    "tests/frontend/orbital-hero.spec.ts": "c8247f770fbdacfdd89bf1e9382bbd9665bd9b8b571a2e596e101cd1c1385fd2",
+    "scripts/capture-orbital-hero.mjs": "5d516667990e6f6542114da8d174635ac6efbb38d2151930480217aa6abba1c6",
+    "scripts/capture-previews.mjs": "98dc4c037de2358e4ed0322bf190f05c24a2905033430817e548338b0b2d6c65",
+    "scripts/capture-liquid-buttons.mjs": "9886cfc4b7ac8506cc028cad5f2cb28bb28805ed7e7f5047f6c09fdbc261200f",
+    "PRODUCT.md": "8660335b551d86a3ca23d7d1e65dad9ae667078f969b314d6b3c08be0349726f",
+    "DESIGN.md": "57cfd938d2b9516f6a1c8b8f62dc1255b3c10ae47f36eb8da33d7cffdb71c1d5",
+    ".impeccable/design.json": "dd48f2f9d9e8e52d2c0f9255209dd506aaf209dd559610afaa94e1ffe65b7f50",
+    ".impeccable/briefs/orbital-hero.md": "2c70ba2f65275bb191b09dc3e59add717877cea37867e74eda28a48885928611"
+  },
+  "limitations": [
+    "No physical device, Safari, screen-reader or measured FPS/battery test",
+    "No new backend/model experiment or deployment",
+    "Engine/detector unavailable earlier session; direct craft-floor review instead"
+  ]
+}

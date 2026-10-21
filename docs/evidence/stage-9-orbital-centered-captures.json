@@ -1,0 +1,337 @@
+{
+  "observed_at": "2026-10-21T22:04:58.090Z",
+  "browser": "155.0.8059.85",
+  "data": "Demonstration fixtures only",
+  "captures": [
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/desktop-entry.png",
+      "state": "entry",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "107c582daebca8b58106c49f91878a816047eb0695b6aa6ff30a044366e04a7b"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/desktop-tilt.png",
+      "state": "tilt",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "84f9e89f6754ad9c8b2db012aeafb8209071b36b4350bcf0a8c930d9b19c0bea"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/desktop-fallback.png",
+      "state": "fallback",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "eaaa2dbc24698a065eefbc77520e31b0a1965cdddc02ffd80e01031875b58bc2"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/desktop-results.png",
+      "state": "results",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "d2351851f8cf4a76c0535c58b107380b8551f3522f0fb621cb188fad8ac9cb35"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/desktop-about.png",
+      "state": "about",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "a3169a4b96b8b8b12bb38ea53a1ebb24676f40f4442aa701249c6e0d7d74aec3"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/mobile-entry.png",
+      "state": "entry",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "e8ee5566ee8308ed385a8d2fa8d91773429a6b8bf2e6272cf44bad0b6d8a43b9"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/mobile-tilt.png",
+      "state": "tilt",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "30b5a59e65e844de950800eb3ff5e59bd230da7d45610bc00e2cd117f0fd52f6"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/mobile-fallback.png",
+      "state": "fallback",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "847743910419d0b34cff5b6dd8c40580451b41e28c0aaf5f3eee44d45ca57db0"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/mobile-results.png",
+      "state": "results",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "cebfa840e62a961a7ea69a987ab340258f7b013298ba45f5b070488da0014709"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/mobile-about.png",
+      "state": "about",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "0902cf386b159eba52d4941514ddad754eda4d735f0fbb4ba8941165bca32a8d"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/user-entry.png",
+      "state": "entry",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "536a7e86211353df7c288396eaf0c38d432999b5af3a15e4419e99f2b82de5ac"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/user-tilt.png",
+      "state": "tilt",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "93d770001a7d13df222bf7847d696bdbfed1cbf416a1a05c496a85686c15618f"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/user-fallback.png",
+      "state": "fallback",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "7850be01cf20e6e08e65c8c1b33c79ba22fac56dd84c51e407ca8fa009f6e767"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/user-results.png",
+      "state": "results",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "164257f91d0089edbe895b7ad73d646ff9601f286396f9231d87e055a6934697"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/user-about.png",
+      "state": "about",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "3c56ff31ddc207dd982b18df5e84088f70d7fe6fbdd49a88f6e020ac175ee530"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/live-entry.png",
+      "state": "entry",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "d73d10fc3cc411f035fa46cc676ca8a0e1329fb0099c5981131fd97b980e0cee"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/live-tilt.png",
+      "state": "tilt",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "caca2b7e19ee6a96e64d74f72cc35992e11f4d8d1a8a8276571bf4ad841b80ce"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/live-fallback.png",
+      "state": "fallback",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "6e8e4acdf577a854d9da953f6cb6a17af12cfed7caad456bb6a4970a76a839fe"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/live-results.png",
+      "state": "results",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "827b57bb3709c9eb4318115f373c9ec5bcd92f53823a6a0542e2643e29a25cdb"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/live-about.png",
+      "state": "about",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "1fe5158e8690b1db467fa1c69246813d674ede6d3d751380a38f4bdf31763094"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/medium-entry.png",
+      "state": "entry",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "8e833910742de312120bceeeb65eb538c98d2c7b99d396be12fad35f60d19959"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/medium-tilt.png",
+      "state": "tilt",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "456bd44ae03ee8b2b97ba79d742a233c2cd188a07a11c32a10c13dba3c2f550d"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/medium-fallback.png",
+      "state": "fallback",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "82425b4577c2a3d67fe4df9637d4457d50c6f6851c45f313c4b955a88f2253e0"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/medium-results.png",
+      "state": "results",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "cbf820832f166b5a93c44de723c5f085b8de4419b564397af2642b5639181a39"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/medium-about.png",
+      "state": "about",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "c871aa6862524a8a967e698f0d77ad6d5b3f88e693f83c15284bf05e829d14b9"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/live-wide-entry.png",
+      "state": "entry",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "d8d9593f603137168e3f67df4fbdfd402d4a24510943a68fddbc76b6c4386111"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/live-wide-tilt.png",
+      "state": "tilt",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "8e7ee5c7a8dbd0b19909e18ce3dfec708760472c56a41f294fea8bff0b6a40d7"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/live-wide-fallback.png",
+      "state": "fallback",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "63c2a62670cd24a30dd1ee729db86ff5e461bc053d297994bfc61a6c3a13d60e"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/live-wide-results.png",
+      "state": "results",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "f3941bccefbe0de6d7139daca658ea172d358208a88850cf2604665f00cdf332"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-centered/live-wide-about.png",
+      "state": "about",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "16d76543aa5b89453b92ce75776576295f3bed8b6dba3d9ee6bb9e70d5d3baff"
+    }
+  ]
+}
