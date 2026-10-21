@@ -86,5 +86,19 @@
     "deployed latency",
     "full accessibility conformance"
   ],
-  "ci": "pending push; tracked separately in stage-9-ci.json"
+  "ci": "success for unchanged frontend source at ed52f4a0f5349db88cd723e75ddf1eba38fd2fdf; see stage-9-ci.json",
+  "design_documentation": {
+    "files": [
+      "DESIGN.md",
+      ".impeccable/design.json"
+    ],
+    "checks": [
+      "eight canonical ordered headings",
+      "source-derived tokens and references",
+      "schemaVersion 2",
+      "eight component snippets",
+      "five structure and hero mappings"
+    ],
+    "user_selection_pending": true
+  }
 }

@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T05:19:27.520Z",
+  "title": "Design System: Music Recommender",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Ice canvas"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Pearl surface"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep blue ink"
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Cobalt"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Secondary blue ink"
+      },
+      "control": {
+        "role": "neutral",
+        "displayName": "Field edge"
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Divider"
+      },
+      "tint": {
+        "role": "neutral",
+        "displayName": "Inset"
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White"
+      },
+      "shell-body": {
+        "role": "neutral",
+        "displayName": "Reading field"
+      },
+      "header": {
+        "role": "neutral",
+        "displayName": "Translucent header"
+      },
+      "notice-ink": {
+        "role": "neutral",
+        "displayName": "Notice ink"
+      },
+      "notice-surface": {
+        "role": "neutral",
+        "displayName": "Notice field"
+      },
+      "problem-ink": {
+        "role": "neutral",
+        "displayName": "Problem ink"
+      },
+      "problem-surface": {
+        "role": "neutral",
+        "displayName": "Problem field"
+      },
+      "hero-v1": {
+        "role": "neutral",
+        "displayName": "Blue Horizon reservation"
+      },
+      "hero-v2": {
+        "role": "neutral",
+        "displayName": "Disc Study reservation"
+      },
+      "hero-v3": {
+        "role": "neutral",
+        "displayName": "Pearl Orbit reservation"
+      },
+      "hero-v4": {
+        "role": "neutral",
+        "displayName": "Capsule Current reservation"
+      },
+      "hero-v5": {
+        "role": "neutral",
+        "displayName": "Cobalt Signal reservation"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Opening display",
+        "purpose": "Shared opening heading with tablet/mobile reductions."
+      },
+      "headline": {
+        "displayName": "Command heading",
+        "purpose": "Compact v3–v5 command headings."
+      },
+      "title": {
+        "displayName": "Recommendation title",
+        "purpose": "Result-section headings."
+      },
+      "body": {
+        "displayName": "Task body",
+        "purpose": "Task explanation; About expands line-height."
+      },
+      "label": {
+        "displayName": "Native label",
+        "purpose": "Search labels and metadata."
+      },
+      "button": {
+        "displayName": "Action label",
+        "purpose": "Primary, secondary and reseed actions."
+      }
+    },
+    "shadows": [
+      {
+        "name": "enclosure",
+        "value": "0 16px 38px #28476724,inset 0 1px 1px #fff",
+        "purpose": "Outer material frame."
+      },
+      {
+        "name": "reading-field",
+        "value": "inset 0 1px 0 #fff,inset 0 -1px 0 #d3e2f3",
+        "purpose": "Near-opaque reading interior."
+      },
+      {
+        "name": "header",
+        "value": "inset 0 1px 0 #fff,0 8px 24px #29486b14",
+        "purpose": "Selective translucent navigation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "action-transition",
+        "value": "transform 150ms cubic-bezier(.23,1,.32,1), background-color 150ms ease-out",
+        "purpose": "Pointer feedback on action pills under no-preference."
+      },
+      {
+        "name": "row-transition",
+        "value": "background-color 150ms ease-out",
+        "purpose": "Starter, match and result-row feedback."
+      },
+      {
+        "name": "comparison-highlight",
+        "value": "transform 250ms cubic-bezier(.23,1,.32,1), width 250ms cubic-bezier(.23,1,.32,1)",
+        "purpose": "External comparison picker only; not product navigation."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet-max",
+        "value": "1023px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "767px"
+      },
+      {
+        "name": "narrow-max",
+        "value": "389px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Cobalt search action with pointer press and visible keyboard focus.",
+      "html": "<button type=\"button\" class=\"ds-primary\">Search</button>",
+      "css": ".ds-primary{font-family:Manrope,sans-serif;border-radius:999px;min-height:44px;font-size:14px;font-weight:600;line-height:1.4;padding:10px 24px;background:var(--primary,#153ea8);color:#fff;border:1px solid var(--primary,#153ea8);}@media(hover:hover) and (pointer:fine){.ds-primary:hover{filter:brightness(.92);}}.ds-primary:focus-visible{outline:3px solid var(--primary,#153ea8);outline-offset:3px;box-shadow:0 0 0 3px var(--canvas,#edf5ff);}@media(prefers-reduced-motion:no-preference){.ds-primary{transition:transform 150ms cubic-bezier(.23,1,.32,1),background-color 150ms ease-out;}.ds-primary:active:not(:focus-visible){transform:scale(.98);}}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none!important;animation:none!important;}}"
+    },
+    {
+      "name": "Secondary / Reseed Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Pearl action for following another seed.",
+      "html": "<button type=\"button\" class=\"ds-secondary\">Use as seed</button>",
+      "css": ".ds-secondary{font-family:Manrope,sans-serif;border-radius:999px;min-height:44px;font-size:14px;font-weight:600;line-height:1.4;padding:10px 18px;background:var(--surface,#fcfdff);color:var(--primary,#153ea8);border:1px solid var(--control,#6b8099);}@media(hover:hover) and (pointer:fine){.ds-secondary:hover{background:var(--tint,#eaf1fc);}}.ds-secondary:focus-visible{outline:3px solid var(--primary,#153ea8);outline-offset:3px;box-shadow:0 0 0 3px var(--canvas,#edf5ff);}@media(prefers-reduced-motion:no-preference){.ds-secondary{transition:transform 150ms cubic-bezier(.23,1,.32,1),background-color 150ms ease-out;}.ds-secondary:active:not(:focus-visible){transform:scale(.98);}}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none!important;animation:none!important;}}"
+    },
+    {
+      "name": "Text Action",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "Underlined action for changing seed or returning to the list.",
+      "html": "<button type=\"button\" class=\"ds-text\">Change song</button>",
+      "css": ".ds-text{font-family:Manrope,sans-serif;background:none;border:none;color:var(--primary,#153ea8);min-height:44px;padding:10px 0;text-align:left;font-size:14px;font-weight:600;text-decoration:underline;text-underline-offset:.25em;}.ds-text:disabled{color:var(--muted,#465f7b);text-decoration:none;}@media(hover:hover) and (pointer:fine){.ds-text:hover{text-decoration-thickness:2px;}}.ds-text:focus-visible{outline:3px solid var(--primary,#153ea8);outline-offset:3px;box-shadow:0 0 0 3px var(--canvas,#edf5ff);}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "Native labeled search field with helper text.",
+      "html": "<label class=\"ds-label\" for=\"ds-song\">Song or artist</label><input class=\"ds-search\" id=\"ds-song\" type=\"search\" placeholder=\"For example, Daniel Caesar\" aria-describedby=\"ds-help\"/><p class=\"ds-help\" id=\"ds-help\">Search the supported catalog. Some songs may be unavailable.</p>",
+      "css": ".ds-label{font-family:Manrope,sans-serif;display:block;font-size:14px;font-weight:500;}.ds-search{font-family:Manrope,sans-serif;width:100%;min-width:0;background:var(--surface,#fcfdff);border:1px solid var(--control,#6b8099);border-radius:14px;padding:13px 14px;color:var(--ink,#173250);font-size:16px;min-height:50px;caret-color:var(--primary,#153ea8);}.ds-search::placeholder{color:var(--muted,#465f7b);opacity:1;}.ds-help{font-family:Manrope,sans-serif;font-size:14px;line-height:1.5;color:var(--muted,#465f7b);margin:10px 0 0;}.ds-search:focus-visible{outline:3px solid var(--primary,#153ea8);outline-offset:3px;}"
+    },
+    {
+      "name": "Product Navigation",
+      "kind": "nav",
+      "refersTo": "navigation-active",
+      "description": "Discover/About links with a cobalt current-page pill.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#discover\" aria-current=\"page\">Discover</a><a href=\"#about\">About</a></nav>",
+      "css": ".ds-nav{display:flex;gap:8px;flex-wrap:wrap;}.ds-nav a{font-family:Manrope,sans-serif;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;font-size:14px;padding:10px 20px;border-radius:999px;color:var(--ink,#173250);}.ds-nav a[aria-current]{color:#fff;background:var(--primary,#153ea8);}.ds-nav a:focus-visible{outline:3px solid var(--primary,#153ea8);outline-offset:3px;box-shadow:0 0 0 3px var(--canvas,#edf5ff);}"
+    },
+    {
+      "name": "Chrome Enclosure / Reading Panel",
+      "kind": "card",
+      "refersTo": "reading-panel",
+      "description": "Source page ground, narrow chrome lip and near-opaque reading field.",
+      "html": "<div class=\"ds-ground\"><div class=\"ds-shell\"><div class=\"ds-panel\">Connections reflect shared listening, not audio analysis or a personal profile.</div></div></div>",
+      "css": ".ds-ground{background:linear-gradient(155deg,#d4e3f2,#f5faff 42%,#d2e3f4);padding:24px;}.ds-shell{position:relative;min-width:0;padding:6px;border-radius:32px;background:linear-gradient(140deg,#fff 0%,#c0d0e3 18%,#7898b7 27%,#f8fcff 29%,#aac2dc 66%,#f7fcff 87%,#7e9dbb);box-shadow:0 16px 38px #28476724,inset 0 1px 1px #fff;}.ds-shell::before{content:\"\";position:absolute;top:1px;left:36px;right:36px;height:2px;border-radius:50%;background:#fff;pointer-events:none;}.ds-panel{font-family:Manrope,sans-serif;min-width:0;padding:28px;border-radius:26px;background:rgba(247,251,255,.94);color:var(--ink,#173250);line-height:1.6;box-shadow:inset 0 1px 0 #fff,inset 0 -1px 0 #d3e2f3;}@media(max-width:767px){.ds-shell{padding:4px;border-radius:26px;}.ds-panel{padding:20px;border-radius:22px;}}@media(prefers-reduced-transparency:reduce){.ds-panel{background:var(--surface,#fcfdff);}}@media(forced-colors:active){.ds-shell,.ds-panel{background:Canvas;box-shadow:none;border:1px solid CanvasText;}.ds-shell::before{display:none;}}"
+    },
+    {
+      "name": "Evidence Disclosure",
+      "kind": "custom",
+      "refersTo": "evidence-disclosure",
+      "description": "Native details/summary with inset contextual evidence.",
+      "html": "<details class=\"ds-evidence\"><summary>Details</summary><div class=\"ds-evidence-body\"><p>Aggregate evidence from the training period ending August 1, 2026. These counts do not predict enjoyment.</p><p>Listening link unavailable.</p></div></details>",
+      "css": ".ds-evidence{font-family:Manrope,sans-serif;}.ds-evidence summary{min-height:44px;padding-block:10px;color:var(--primary,#153ea8);font-size:14px;font-weight:500;width:fit-content;text-decoration:underline;text-underline-offset:.25em;cursor:pointer;}.ds-evidence summary::marker{font-size:11px;}.ds-evidence-body{background:var(--tint,#eaf1fc);color:var(--ink,#173250);padding:20px;border-radius:14px;margin:8px 0;max-width:72ch;}.ds-evidence-body p{line-height:1.65;font-size:14px;margin:0 0 14px;}.ds-evidence-body p:last-child{margin-bottom:0;color:var(--muted,#465f7b);}@media(hover:hover) and (pointer:fine){.ds-evidence summary:hover{text-decoration-thickness:2px;}}.ds-evidence summary:focus-visible{outline:3px solid var(--primary,#153ea8);outline-offset:3px;box-shadow:0 0 0 3px var(--canvas,#edf5ff);}"
+    },
+    {
+      "name": "Demonstration Notice",
+      "kind": "custom",
+      "refersTo": "demo-notice",
+      "description": "Persistent fixture truth statement, separate from product claims.",
+      "html": "<p class=\"ds-demo\" role=\"note\"><strong>Demonstration data.</strong> Track relationships and counts are illustrative, not model results.</p>",
+      "css": ".ds-demo{font-family:Manrope,sans-serif;background:var(--tint,#eaf1fc);color:var(--ink,#173250);font-size:14px;line-height:1.6;margin:20px 0 0;padding:12px 16px;border-radius:14px;}.ds-demo strong{font-weight:600;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Icy acrylic and selective chrome",
+    "overview": "The approved Y2K Futurism / Soft Club world uses icy-blue acrylic enclosures, silver seams, pearl reading fields and cobalt controls. Material framing provides identity even with every hero empty. Conventional text and controls carry the task; the generated three-screen board is a critique reference, not interface artwork or a pixel-matching comp.\n\nThis records the implemented October 21 Stage 9 comparison, merging the prior provisional system. No final structure is selected. The shared material world supersedes Stage 4's separate typography/theme directions; those remain historical evidence. The user selects a structure before its Discover and About frontend is promoted. Stage 10 and deployment require separate authorization; retain v1–v5 and comparison history after selection.",
+    "keyCharacteristics": [
+      "Five distinct app structures with shared Manrope typography, content and behavior.",
+      "Sculpted enclosure lips around near-opaque reading fields.",
+      "Flat CSS hero reservations with no shipped images.",
+      "Native controls, visible keyboard focus and task-first mobile flow.",
+      "Persistent demonstration labels and an explicit real-data boundary."
+    ],
+    "rules": [
+      {
+        "name": "The Reading Field Rule",
+        "body": "Keep reading regions near-opaque; text must never depend on artwork for contrast.",
+        "section": "colors"
+      },
+      {
+        "name": "The Shared Voice Rule",
+        "body": "Keep Manrope and its loaded 500/600 weights across all five structures; structural differences must carry the comparison.",
+        "section": "typography"
+      },
+      {
+        "name": "The Task Before Hero Rule",
+        "body": "Put search and starting choices before decorative media on narrow screens; remove the reservation from working states.",
+        "section": "layout"
+      },
+      {
+        "name": "The Selective Chrome Rule",
+        "body": "Use reflective seams at enclosure boundaries while keeping text, fields and result lists calm.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** retain all five structures, routes and comparison history until and after the user's structure selection.",
+      "**Do** keep shared Manrope typography, near-opaque reading fields, cobalt actions and selective enclosure chrome.",
+      "**Do** preserve each flat hero's fill, aspect, location and future fit mapping, with task-first mobile order.",
+      "**Do** preserve native controls, visible focus, reduced-motion, reduced-transparency and forced-color treatments.",
+      "**Do** label demonstration fixtures persistently and keep real failures separate from demo data.",
+      "**Do** treat review/capture evidence as scoped evidence, not deployment, user research or full accessibility conformance."
+    ],
+    "donts": [
+      "**Don't** add generated artwork, reference screenshots, remote images, illustrated hero substitutes or interactive hero controls.",
+      "**Don't** replace structural differences with typography/theme swaps or reserve blank hero space in working screens.",
+      "**Don't** turn approved glass/chrome into a generic ban or extend translucency into low-contrast reading regions.",
+      "**Don't** promote a final structure, Stage 10 or deployment without the separate user gate.",
+      "**Don't** inflate catalog, link, model-quality or personalisation claims beyond PRODUCT.md and frozen evidence."
+    ]
+  }
+}

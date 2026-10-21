@@ -1,6 +1,18 @@
 {
-  "status": "pending push",
+  "status": "completed",
   "workflow": "Frontend previews",
   "repository": "pok0yo/music-recommender",
-  "scope": "CI production build, typecheck and 19 Playwright cases; no real database/model integration in CI."
+  "scope": "CI production build, typecheck and 19 Playwright cases; no real database/model integration in CI.",
+  "head_sha": "ed52f4a0f5349db88cd723e75ddf1eba38fd2fdf",
+  "run_id": 39548903968,
+  "url": "https://github.com/pok0yo/music-recommender/actions/runs/39548903968",
+  "conclusion": "success",
+  "completed_at": "2026-10-21T05:23:23Z",
+  "verified_at": "2026-10-21T05:24:13.942190+00:00",
+  "checks": {
+    "npm_ci": "success",
+    "production_build": "success",
+    "typecheck": "success",
+    "browser_tests": "success"
+  }
 }
