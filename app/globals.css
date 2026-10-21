@@ -233,3 +233,39 @@ summary::marker { font-size: 11px; }
   .primary-button { border: 1px solid ButtonText; }
 }
 @media (prefers-reduced-transparency: reduce) { .app-header,.shell-body,.about-index { background:var(--surface); backdrop-filter:none; } }
+
+/* Liquid metal stays behind an opaque reading face; the shader only runs on interaction. */
+.liquid-metal-button { position:relative; isolation:isolate; overflow:hidden; background:linear-gradient(125deg,#fbfdff 4%,#9eafc4 28%,#eaf7ff 48%,#8da8c3 72%,#fff 96%); border:1px solid var(--control); box-shadow:inset 0 1px 0 #fff,0 3px 8px #29486b14; }
+.liquid-metal-button::before { content:""; position:absolute; inset:3px; z-index:-1; border-radius:inherit; background:linear-gradient(180deg,#fdfefe,#e5effa); box-shadow:inset 0 1px 0 #fff; pointer-events:none; }
+.liquid-material { position:absolute; inset:0; z-index:-2; pointer-events:none; border-radius:inherit; overflow:hidden; }
+.liquid-material canvas { display:block; width:100%; height:100%; }
+.liquid-metal-button.primary-button { color:#fff; border-color:var(--primary); filter:none; }
+.liquid-metal-button.primary-button::before { background:linear-gradient(180deg,#244fb9,var(--primary)); box-shadow:inset 0 1px 0 #ffffff59; }
+.liquid-metal-button.text-button { padding:10px 14px; border-radius:999px; text-decoration:none; }
+.problem .liquid-metal-button::before { background:var(--surface); }
+.liquid-metal-button:is(.starter-button,.match-button) { border-radius:var(--row-radius); padding-inline:14px; margin-block:5px; }
+.liquid-metal-button:is(.starter-button,.match-button)::before { inset:2px; }
+.liquid-ripple { position:absolute; z-index:1; border-radius:50%; pointer-events:none; background:radial-gradient(circle,#c4e7ff66,transparent 65%); transform:translate(-50%,-50%) scale(.02); animation:liquid-ripple 550ms cubic-bezier(.16,1,.3,1) forwards; }
+@keyframes liquid-ripple { to { transform:translate(-50%,-50%) scale(1); opacity:0; } }
+.liquid-metal-button:disabled { background:var(--rule); box-shadow:none; color:var(--muted); cursor:not-allowed; }
+.liquid-metal-button:disabled::before { background:var(--tint); box-shadow:none; }
+.liquid-metal-button:focus-visible { box-shadow:0 0 0 3px var(--canvas); }
+@media (hover:hover) and (pointer:fine) {
+  .liquid-metal-button:not(:disabled):hover { background:linear-gradient(125deg,#fff,#8ba6c4 25%,#d7f3ff 48%,#a5b9cf 72%,#fff); }
+  .liquid-metal-button:not(:disabled):hover::before { background:linear-gradient(180deg,#fff,#dceaf9); }
+  .liquid-metal-button.primary-button:not(:disabled):hover::before { background:linear-gradient(180deg,#315fc7,#153ea8); }
+}
+@media (prefers-reduced-motion:no-preference) {
+  .liquid-metal-button { transition:transform 150ms cubic-bezier(.23,1,.32,1); }
+  .liquid-metal-button:not(:disabled):active:not(:focus-visible) { transform:scale(.98); }
+}
+@media (prefers-reduced-motion:reduce) { .liquid-ripple { display:none; } }
+@media (prefers-reduced-transparency:reduce) {
+  .liquid-metal-button { background:var(--surface); box-shadow:none; }
+  .liquid-material,.liquid-ripple { display:none; }
+}
+@media (forced-colors:active) {
+  .liquid-metal-button,.liquid-metal-button.primary-button { background:ButtonFace; color:ButtonText; border:1px solid ButtonText; box-shadow:none; }
+  .liquid-metal-button::before,.liquid-material,.liquid-ripple { display:none; }
+  .liquid-metal-button:disabled { color:GrayText; border-color:GrayText; }
+}

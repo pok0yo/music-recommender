@@ -1,5 +1,21 @@
 # Stage 9: five app structures, awaiting selection
 
+## Liquid button refinement
+
+The user authorized the supplied liquid-metal effect for buttons first. All shared product buttons now use `components/ui/liquid-metal-button.tsx`: a responsive native button with a silver shader rim, an opaque icy or cobalt reading face, and a bounded pointer-click ripple. The comparison harness, navigation links and native disclosure summaries retain their existing behavior. The hero, circular outline and artwork are unchanged; rotating 3D artwork and outline removal are deferred to the next approved step.
+
+| Before | After | Why |
+|---|---|---|
+| Flat primary/secondary actions and plain text actions | Shared material rim, cobalt primary face and quieter icy action faces | Carries the selected Y2K listening-device aesthetic through working controls |
+| Supplied fixed 142px demo with an invisible overlay button | Content-sized native button props, labels, form submission, disabled state and focus outline | Preserves the actual application rather than adding a detached demo |
+| Supplied always-running shader and `destroy()` cleanup | Lazy pointer interaction, bounded ripple, `dispose()` cleanup and static fallbacks | Uses the installed API and avoids idle shader work |
+
+Only `@paper-design/shaders` 0.0.82 was added; the supplied icon-only demo, class-merging utilities and unrelated icon dependency are unused. Existing TypeScript/Tailwind and the new conventional components/ui folder require no project bootstrap. [Paper Shaders](https://github.com/paper-design/shaders) supplies the shader; its Apache-2.0 LICENSE and NOTICE are preserved in public/third-party/paper-shaders. The optional shader chunk is loaded locally; no remote rendering service is called by these buttons.
+
+Keyboard activation remains static. Reduced motion, reduced transparency and forced colors disable shader animation; failed WebGL or a failed optional shader import leaves the CSS/native control usable. Interaction imports cancel safely when the control leaves or unmounts. The shader library also pauses hidden/offscreen animation. No continuous idle loop, autoplay, new image, backend behavior or model claim was introduced.
+
+Build and typecheck pass. The full 28-test Chrome suite passed, followed by three focused checks expanded to assert the actual ripple and reduced-transparency media preference. Twenty-one captures cover entry, hover, pressed, keyboard focus, results, disabled retry and long text at 1440x900, 390x844 and 550x766. See docs/evidence/stage-9-liquid-button-checks.json, stage-9-liquid-button-captures.json and stage-9-liquid-button-review.md for exact evidence and review scope. These are automated/browser observations, not a measured frame-rate, battery, screen-reader, Safari or physical-device guarantee. Earlier checkpoint counts below remain historical.
+
 ## Working Disc Tray artwork demos
 
 The user selected Disc Tray and requested the four generated artworks inside the working UI. Open `/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry`, then use the four-way picker for Glass Current, Aero Player and Liquid Star. Each option also has a direct route ending in its slug and an `/about` page. The same input, seed, results and source/scenario settings persist while switching artwork. Search, Details, Use as seed, Change song, browser Back and About are functional. These are app demos, not image mockups.

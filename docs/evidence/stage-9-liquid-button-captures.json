@@ -1,0 +1,196 @@
+{
+  "observed_at": "2026-10-21T17:48:23.466Z",
+  "browser": "155.0.8059.85",
+  "data": "Demonstration fixtures only",
+  "captures": [
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/desktop-entry.png",
+      "state": "entry",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "518e3faa350e56d1c2f6db4f2d6ebbe5d03aefef28924918dcd8aaad2ed3d391"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/desktop-hover.png",
+      "state": "hover",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "8cd037020ad61dbb847a28b95ab629db261d84f2f9019641efc5da634cc91222"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/desktop-pressed.png",
+      "state": "pressed",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "0ccdec6511ce8d4f98128ed6264cd729596a2da5eb0fc0b7f7203ccaa6ffd886"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/desktop-focus.png",
+      "state": "focus",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "efdca85a1343fbe660023ef278a09ac36bf4bd5c1957eb09b17407651df6acee"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/desktop-results.png",
+      "state": "results",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "05e8d37c65e2a428c96c331b5a203d16f1a405ebc4e1a59adf399f1f4a7a00b4"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/desktop-disabled.png",
+      "state": "disabled",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "33a6cf9d738e5a3d0ae9143a4a1e879eaa51baf3a5bc1a7ca985118d5ba296e1"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/desktop-long.png",
+      "state": "long",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "a21fc3bb30a7c9090bac6c52f75b360fcb343496311d5d0b12bf78a4e825c5ca"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/mobile-entry.png",
+      "state": "entry",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "0d020a7bb1487d588d565d256b17387151e45e3d25e43d293d62f3817ab9cfe0"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/mobile-hover.png",
+      "state": "hover",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "bcc97c536f2af0a71b83e85fd666ad5fb6f67cba55e235a9b09637e1748f99eb"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/mobile-pressed.png",
+      "state": "pressed",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "95ee37ba78eec66e8c5ebeebeef5f7b5644d6d2ecf2dbcef96075437a0699cb5"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/mobile-focus.png",
+      "state": "focus",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "d1abb51814311bcb04c19829afc75d0e6f94265043da04f67b9a04826a9cf7b3"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/mobile-results.png",
+      "state": "results",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "a03aec7a206cabaefc712e02815d41cf3b6b7c2538610a5dda9997901cde6f4b"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/mobile-disabled.png",
+      "state": "disabled",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "2ae2886db60a0a6323bb998279c092b707a33fed4a76fb12d9fb59382d3b3e1c"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/mobile-long.png",
+      "state": "long",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "74384a6896faa4029a85f407370537e86e77f2a5f1826da2f66af3b122a83b47"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/user-entry.png",
+      "state": "entry",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "0f5786647aef5e6115e2b771add643b9243bf258010adcde2ebadb9da96fe8dc"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/user-hover.png",
+      "state": "hover",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "88e41b7b07645909a4420c7aa2795bbbb06a0f5dc4205feb0e85e25818d1e208"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/user-pressed.png",
+      "state": "pressed",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "ad012916dcb73a1e5f0571ba6acbadec40af36b1421734f97d792f86a99f76cb"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/user-focus.png",
+      "state": "focus",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "d0d13d8dab5c3b49c8ee4980fd0487f5574fc46e360602513950dd4a45acc4fe"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/user-results.png",
+      "state": "results",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "01b58523321b2cb73be64e5d856b483368ac9a9c7ae3540d74712a2075d6e1f1"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/user-disabled.png",
+      "state": "disabled",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "233adfdf32654bfa2d221cf5307a2fa6930956daf00d3f5039168e00a71169ef"
+    },
+    {
+      "path": "docs/evidence/stage-9-liquid-buttons/user-long.png",
+      "state": "long",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "9fa7d23c1a367c4d57d47f605f1a60f69bd8d6df23881fbea4d68dd7bafa218a"
+    }
+  ]
+}

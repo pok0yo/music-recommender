@@ -1,0 +1,42 @@
+{
+  "observed_at": "2026-10-21T17:46:25.835Z",
+  "full_suite": {
+    "startTime": "2026-10-21T17:46:25.835Z",
+    "duration": 230615.639,
+    "expected": 28,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "scope": "28 Chrome frontend tests; demonstration fixtures and mocked API guards. No new live backend/model experiment.",
+  "build": "passed",
+  "typecheck": "passed",
+  "captures": "stage-9-liquid-button-captures.json",
+  "limitations": [
+    "No physical device, Safari or screen-reader verification",
+    "No measured frame-rate or battery benchmark",
+    "Engine/detector unavailable; direct visual review instead"
+  ],
+  "focused_followup": {
+    "startTime": "2026-10-21T17:51:05.558Z",
+    "duration": 8614.564,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "focused_followup_scope": "Same three new tests expanded after full suite: real pointer ripple completes and removes shader; emulated reduced transparency disables shader.",
+  "source_sha256": {
+    "components/ui/liquid-metal-button.tsx": "0ea7d874d851a9d224f3bac52367bda9f74b28dae1e1f3416e33678320de5bc4",
+    "components/discovery.tsx": "3a73fd66a82b29b8c04f97d6251aaaf8658c6529be11ac51862d86c5cf71b8e0",
+    "app/globals.css": "76403beb747d73e766e0e24d96a1d9e2f55a775ca3987f58fba69a4384e2d808",
+    "package.json": "561fd9c6f4efc9d3b27c1fb103206573102ae83b536b00d5167bc5f571ec11f4",
+    "package-lock.json": "2288c17bd28a6802a303c22f563b1e35b8785d1310237f7b89007be51f67b8ec",
+    "tests/frontend/liquid-button.spec.ts": "643b2bee97c9bff1f650f7c42c39cade4e8a60a1e97c3aeede166d4c86e157f6",
+    "scripts/capture-liquid-buttons.mjs": "76bd8b93f39d22b07c176c6ec572c70a90d2c389cc4ecb67aa326f6253dbb732",
+    "DESIGN.md": "77a5cc02b29124627caf830c711fcf19548ba936631c0073b3a725e78e5d71be",
+    ".impeccable/design.json": "8872add5b9f0751a665f418755b129f10cb4054890e176a3ac9f33510cb9bf46"
+  },
+  "attribution_notice_http_status": 200,
+  "backend_model_diff_from_previous_commit": []
+}
