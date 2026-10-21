@@ -53,5 +53,26 @@
     "No physical device, Safari, screen-reader or measured FPS/battery test",
     "No new backend/model experiment or deployment",
     "Engine/detector unavailable earlier session; direct craft-floor review instead"
-  ]
+  ],
+  "software_graphics_suite": {
+    "stats": {
+      "startTime": "2026-10-21T22:09:39.695Z",
+      "duration": 92592.12,
+      "expected": 10,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "environment": "Installed Chrome on Windows with --use-gl=angle --use-angle=swiftshader, two workers; same local build. Not the GitHub Linux runner.",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "startup_probe_ms": 4047
+  },
+  "previous_ci": {
+    "commit": "ff8dfb8f377d4f55d1c44e9d4cf8ec24e813b91f",
+    "url": "https://github.com/pok0yo/music-recommender/actions/runs/39682995664",
+    "conclusion": "failure",
+    "passed": 25,
+    "failed": 8,
+    "observation": "Timeouts in artwork, button and model tests; exact cause not proven. Current hover-only version passes affected10 tests using local software graphics. New remote run remains required for remote confirmation."
+  }
 }
