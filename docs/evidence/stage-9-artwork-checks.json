@@ -42,5 +42,18 @@
     "deployed performance",
     "fresh real-data integration for artwork routes"
   ],
-  "ci": "pending push"
+  "ci": {
+    "run_id": 39643389428,
+    "url": "https://github.com/pok0yo/music-recommender/actions/runs/39643389428",
+    "head_sha": "5bbe9f8f187945cb0211ded64366244209d73c71",
+    "conclusion": "success",
+    "verified_at": "2026-10-21T17:29:13.875951+00:00",
+    "checks": [
+      "npm ci",
+      "production build",
+      "typecheck",
+      "25browser tests with final550px width coverage"
+    ],
+    "scope": "Fixtures and mocked adapter integration in Linux/Chromium; no live database/model in CI."
+  }
 }
