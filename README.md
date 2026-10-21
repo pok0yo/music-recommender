@@ -4,7 +4,7 @@ A planned music discovery application that recommends recognizable tracks from a
 
 ## Status
 
-**Stage 8 is complete:** a FastAPI service, 215-recording catalog, and local PostgreSQL with read-only application access. All 53 local/CI tests and separate real-model/database checks pass. Stage 9 requires a separate go.
+**Stage 9 comparison is implemented:** five structurally different Discover and About interfaces share the approved icy glass/chrome visual system, real API adapter and labeled demonstration fixtures. Hero areas remain flat CSS placeholders. The user must select a structure before the final frontend is promoted; Stage 10 and deployment have not begun. See the [frontend setup, comparison and evidence](docs/stage-9-frontend.md).
 
 The accepted `cohort-v2` applies two independently verified recording redirects to a fixed 30% listener cohort reconstructed from existing cached ranges, with no new event download. The original 26/40 failure, approved panel, and acceptance thresholds remain preserved. See the [frozen revision protocol](docs/stage-6-protocol-v2.json) and [acceptance decision](docs/evidence/stage-6-decision-v2.json).
 
@@ -16,7 +16,7 @@ The accepted `cohort-v2` applies two independently verified recording redirects 
 - Stage 6: complete and accepted. All 149 selected files are processed inside the additional 16 GiB transfer cap; 75,994,223 cleaned events and reproducible splits are available locally. The unchanged panel passes for 32/40 tracks. Validation/test have 7,887/7,848 scorable queries. The original 38 audit tests passed locally and in CI.
 - Stage 7: selected lambda-50 item-CF reaches test NDCG@10 0.218345 versus popularity 0.021665 on scorable queries. All 48 tests passed locally and in CI. The 565,147-item serving export passes integrity checks and matches every evaluated ranking. See the [evaluation report](docs/stage-7-evaluation.md) for uncertainty, exclusions, failure cohorts, and reproducibility.
 
-See the [Stage 4 UX and design plan](docs/stage-4-design-plan.md) for the journey, interface states, five design systems, exact hero reservations, and future verification criteria. No final visual direction has been selected or implemented.
+See the [Stage 4 UX and design plan](docs/stage-4-design-plan.md) for historical planning. The user's October 21 revision replaces the earlier separate themes with five app structures in one shared material world; [DESIGN.md](DESIGN.md) documents the implemented system. No final structure has been selected.
 
 See the [Stage 5 implementation plan](docs/stage-5-implementation-plan.md) for architecture, data-to-UI contracts, the evaluation protocol, stage acceptance criteria, testing, deployment, and portfolio deliverables. Its 122–174-hour planning range includes contingency; the 6–8-week target depends on availability and a successful data audit.
 
@@ -50,11 +50,11 @@ The audit measured coverage, timestamp anomalies, sparsity, processing resources
 
 ## Preferred stack
 
-Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Python, FastAPI, Pydantic, and Supabase PostgreSQL remain the preferred application stack. Authentication is deferred. The implemented audit/model pipeline uses pinned PyArrow 26.0.0, NumPy 2.5.4, and SciPy 1.18.1 in an ignored local Python environment. pandas, scikit-learn, and implicit are unnecessary for the current model; frontend dependencies are not installed.
+The frontend uses Next.js, React, TypeScript and CSS with the installed Tailwind PostCSS integration; shared native controls avoid an unnecessary UI package. The backend uses Python, FastAPI, Pydantic and local PostgreSQL. Authentication is deferred. The audit/model pipeline uses pinned PyArrow 26.0.0, NumPy 2.5.4, and SciPy 1.18.1 in an ignored local Python environment. pandas, scikit-learn and implicit are unnecessary for the current model.
 
 ## Design direction
 
-Y2K Futurism / Soft Club: icy blue, glossy white, cobalt typography, restrained chrome, curved surfaces, and fine technical markings. Five coherent alternatives are documented for future implementation in separate `v1/` through `v5/` folders sharing one behavior layer. Hero imagery will initially use flat CSS placeholders; reference artwork will not be copied.
+Y2K Futurism / Soft Club: icy blue, glossy white, cobalt typography, restrained chrome, curved surfaces and fine technical markings. Five app structures live in separate `v1/` through `v5/` folders sharing one behavior layer. Hero areas use flat CSS placeholders; reference artwork is not copied.
 
 ## Project workflow
 

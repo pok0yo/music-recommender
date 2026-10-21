@@ -1,0 +1,473 @@
+{
+  "observed_at": "2026-10-21T05:10:25.785Z",
+  "revision": "glass-structures-v1",
+  "browser": "155.0.8059.85",
+  "data": "demonstration fixtures only",
+  "captures": [
+    {
+      "variant": 1,
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-previews/v1-desktop-entry.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 720,
+        "height": 540,
+        "fill": "rgb(220, 235, 250)"
+      },
+      "sha256": "abe5e01fb846d68626c17e69bde02dd731d6d759bdfdd8972422d9bcb3dc4f01"
+    },
+    {
+      "variant": 1,
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-previews/v1-desktop-ten.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "536b95abd6b8f7bb3551901eb9c64083ed5a59868e25747d9ed2f94fdb2efde9"
+    },
+    {
+      "variant": 1,
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-previews/v1-desktop-about.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "21471d60338d6d7b80b946ebd5d9b30f9127bd595bf3f22bf7f3dceb06afb2c5"
+    },
+    {
+      "variant": 1,
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-previews/v1-mobile-entry.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 298,
+        "height": 223.5,
+        "fill": "rgb(220, 235, 250)"
+      },
+      "sha256": "9c4e0b1bd5b6145158133ac1847ee28bd3a53e3ff20aafa468bac79766d8f07e"
+    },
+    {
+      "variant": 1,
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-previews/v1-mobile-ten.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "7e9f3133fbc4ccbcd4c524c898d40e9b25f858b10d9446a1a74d3e177cf26be7"
+    },
+    {
+      "variant": 1,
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-previews/v1-mobile-about.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "cf26a7a1fdf95870dd91563eed3bf7d5fbbb7e4a93edbb4c33dc24560c080dff"
+    },
+    {
+      "variant": 2,
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-previews/v2-desktop-entry.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 320,
+        "height": 320,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "bdf70142499d66ab0ce96c60641bae761caad888d20f264b415a0339d56e6f23"
+    },
+    {
+      "variant": 2,
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-previews/v2-desktop-ten.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "26007b86ba2f3f60346397be9eb0b6f21558caa2419244407c0f13eb78ad9531"
+    },
+    {
+      "variant": 2,
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-previews/v2-desktop-about.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "ab887c03a66a77a9ae52208d5a1b3036784d3709ae10e9d757e38d98fe480e61"
+    },
+    {
+      "variant": 2,
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-previews/v2-mobile-entry.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 224,
+        "height": 224,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "a3b82b65aa6b835d493f59d40f02571816ad97bc0ec306e593c854d43b39884d"
+    },
+    {
+      "variant": 2,
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-previews/v2-mobile-ten.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "689ce2a601bfb5442743a5e4bbcf8e6dfbce7eb4e498bd1957f163231e4dbc0e"
+    },
+    {
+      "variant": 2,
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-previews/v2-mobile-about.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "02bf87c5a16fb554caa882797abfb8e13c28f6f6c8967b6cc02456fdedfe19eb"
+    },
+    {
+      "variant": 3,
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-previews/v3-desktop-entry.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 964,
+        "height": 771.1875,
+        "fill": "rgb(221, 226, 247)"
+      },
+      "sha256": "9c4efc5c21ec6784f8bdc5639678f0ab1804d41dcefa68bf5be647791b389abc"
+    },
+    {
+      "variant": 3,
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-previews/v3-desktop-ten.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "83526c240b407f7bd048fbbb57d3b0ec4f25fd02b9e08458c82fac108e21680e"
+    },
+    {
+      "variant": 3,
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-previews/v3-desktop-about.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "1f7d974b4c88fedb6d3fb7bce580677163e2fce49e6cd6a0e56557ac8cd5432c"
+    },
+    {
+      "variant": 3,
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-previews/v3-mobile-entry.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 330,
+        "height": 264,
+        "fill": "rgb(221, 226, 247)"
+      },
+      "sha256": "cc7e134a2599daf5219fc07e012e31a8f78853304fcb762011b1c94a898ace02"
+    },
+    {
+      "variant": 3,
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-previews/v3-mobile-ten.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "2147154d012ff800c727958e4c9bd90465de65e097f6915788ebabbf0518a9a6"
+    },
+    {
+      "variant": 3,
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-previews/v3-mobile-about.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "c9e22a9f43fabd116058d397c24f2c8ad5b8e5910da890f7ebb59abe20a101d4"
+    },
+    {
+      "variant": 4,
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-previews/v4-desktop-entry.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 940,
+        "height": 528.75,
+        "fill": "rgb(202, 223, 229)"
+      },
+      "sha256": "238df6b54df7dde16efdd29c9cf080cf79394d7d561ced3e6c83071d5b3482de"
+    },
+    {
+      "variant": 4,
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-previews/v4-desktop-ten.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "a63efcee054e413468c010ae868e04992847a63441124fd435a17bc5b90b8945"
+    },
+    {
+      "variant": 4,
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-previews/v4-desktop-about.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "acac82510cd8cd4d8a6837cd6c6a7366463fc8f96e6414295f486e1149b07da3"
+    },
+    {
+      "variant": 4,
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-previews/v4-mobile-entry.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 310,
+        "height": 174.375,
+        "fill": "rgb(202, 223, 229)"
+      },
+      "sha256": "02e1dafcb0f58b61a9c6a96245874009a642b5826f2de43a7d683ba9807995a5"
+    },
+    {
+      "variant": 4,
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-previews/v4-mobile-ten.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "05d3486be347540ec9bbebb2b52fa4a1a776c8157099da53a0492f61baf64c7d"
+    },
+    {
+      "variant": 4,
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-previews/v4-mobile-about.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "fac436c5ad5f69c194cec29af248bde37ff165c5f4d66a135712c0c39be13150"
+    },
+    {
+      "variant": 5,
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-previews/v5-desktop-entry.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 1292,
+        "height": 430.65625,
+        "fill": "rgb(199, 215, 243)"
+      },
+      "sha256": "4e57e2c0824c997c7a01e9cbd8d3a5c3d9ba53954d4e221b3c5761a78e66cf16"
+    },
+    {
+      "variant": 5,
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-previews/v5-desktop-ten.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "7cdd9c1c16674e12e61df9e6d7a74cae6fc57cd9f0eb8308e2c4b69840a0d325"
+    },
+    {
+      "variant": 5,
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-previews/v5-desktop-about.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "b78ba5466d408f16698af7ddc2ff6cc3ec0b2190941b06d9bd223bbd5fc93e02"
+    },
+    {
+      "variant": 5,
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-previews/v5-mobile-entry.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 334,
+        "height": 111.328125,
+        "fill": "rgb(199, 215, 243)"
+      },
+      "sha256": "f81e1b46008f7d522270382169536b4bc26b36f6242adaef76491a3439fd7e94"
+    },
+    {
+      "variant": 5,
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-previews/v5-mobile-ten.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "40dd9dac8ca7dd3df4e750c1e0e65f8c7d9feb4ec677a6672c57cee9fe93f1c4"
+    },
+    {
+      "variant": 5,
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-previews/v5-mobile-about.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "bb80f3d980a308606f22bc84aadefeec7a9413e4ff5870ba28e6843945e705ca"
+    }
+  ],
+  "provenance": {
+    "origin": "Local Chrome screenshots generated by scripts/capture-previews.mjs; synthetic application fixtures, not source or generated artwork.",
+    "command": "node scripts/capture-previews.mjs",
+    "application_assets": false
+  }
+}

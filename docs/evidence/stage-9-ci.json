@@ -1,0 +1,6 @@
+{
+  "status": "pending push",
+  "workflow": "Frontend previews",
+  "repository": "pok0yo/music-recommender",
+  "scope": "CI production build, typecheck and 19 Playwright cases; no real database/model integration in CI."
+}

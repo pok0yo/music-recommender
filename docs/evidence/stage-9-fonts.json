@@ -1,0 +1,15 @@
+{
+  "active": {
+    "manrope": {
+      "license": "OFL-1.1",
+      "license_sha256": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
+      "version": "5.3.0"
+    }
+  },
+  "weights": [
+    500,
+    600
+  ],
+  "delivery": "Self-hosted from installed Fontsource package; no font CDN requests.",
+  "other_font_packages": "Removed from active dependency graph during structural revision."
+}

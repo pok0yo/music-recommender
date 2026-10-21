@@ -1,0 +1,57 @@
+{
+  "observed_at": "2026-10-21T05:09:15.094Z",
+  "browser": "155.0.8059.85",
+  "scope": "Actual local PostgreSQL, frozen model, API and v1/v5 browser integration; no routes mocked. Not deployed acceptance or a user study.",
+  "search": {
+    "query": "Tiffany",
+    "count": 10,
+    "meta": {
+      "model_version": "item-cf-cohort-v2-lambda-50",
+      "catalog_version": "catalog-v1-ef2fb83d56b9d320cadfa990d7cefb8ec24f6a309c194a5ff999aab1205354a3",
+      "artifact_schema_version": 1,
+      "training_cutoff": "2026-08-01T00:00:00Z",
+      "method": "item_cosine_shared_listener_shrinkage",
+      "data_mode": "real"
+    }
+  },
+  "seed": {
+    "recording_id": "15db4b6a-7205-4960-9f0c-d1a34d147afe",
+    "title": "CLOUDS"
+  },
+  "recommendations": {
+    "status": "ok",
+    "displayed": 10,
+    "requested_limit": 10,
+    "model_result_count": 10,
+    "omitted_metadata_count": 0,
+    "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "meta": {
+      "model_version": "item-cf-cohort-v2-lambda-50",
+      "catalog_version": "catalog-v1-ef2fb83d56b9d320cadfa990d7cefb8ec24f6a309c194a5ff999aab1205354a3",
+      "artifact_schema_version": 1,
+      "training_cutoff": "2026-08-01T00:00:00Z",
+      "method": "item_cosine_shared_listener_shrinkage",
+      "data_mode": "real"
+    }
+  },
+  "assertions": [
+    "four real starter choices",
+    "real search and recommendation metadata",
+    "rendered count equals API count",
+    "no demo notice or hero in working state",
+    "unavailable listening link explicit",
+    "v5 direct seed loads inspector",
+    "no page errors"
+  ]
+}

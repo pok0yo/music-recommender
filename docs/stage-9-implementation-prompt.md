@@ -1,5 +1,7 @@
 # Stage 9 implementation prompt
 
+> October 21, 2026 revision: the user's approved glass-and-chrome concept and request for five different app structures supersede this prompt's earlier separate fonts, palettes, and exact compositions. See DESIGN.md and docs/stage-9-frontend.md for the current structures. All five still share the API behavior and fixture suite; heroes remain flat CSS reservations. This historical prompt's implementation, evidence, privacy, and user-selection boundaries still apply.
+
 Copy the prompt below into Codex in this repository after the newly installed skills become available. Defaults: working product name “Music Recommender,” the five approved directions, and minimal motion. Change the working name if the user supplies one.
 
 ---

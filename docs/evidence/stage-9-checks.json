@@ -1,0 +1,90 @@
+{
+  "observed_at": "2026-10-21T05:16:59.758505+00:00",
+  "stage": "9 comparison milestone",
+  "selection": null,
+  "stage_10_started": false,
+  "deployed": false,
+  "production_build": "pass",
+  "typecheck": "pass",
+  "local_browser_suite": {
+    "browser": "Chrome 155.0.8059.85",
+    "stats": {
+      "startTime": "2026-10-21T05:13:44.269Z",
+      "duration": 168902.709,
+      "expected": 19,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "result": "19 passed; zero unexpected, skipped or flaky cases"
+  },
+  "scope": {
+    "scenario_width_observations": 375,
+    "about_width_visits": 25,
+    "axe_scans": 30,
+    "captures": 30,
+    "real_browser_smoke": "stage-9-real-smoke.json",
+    "review": "stage-9-finish-review.md"
+  },
+  "prior_final_attempt": {
+    "passed": 18,
+    "failure": "OneDrive EBUSY while closing v3 diagnostic trace; no failed page assertion reported",
+    "resolution": "Local Playwright outputDir moved to OS temporary directory; full final rerun passed"
+  },
+  "frozen_stage_8_code_hashes_verified_unchanged": {
+    "backend/audit_catalog.py": "34abd4047e5879047c67b0e45119ed8753b0c00b256635640c02d737a7278f89",
+    "backend/catalog.py": "4d23a2a165f1a9c144107e734180f88ac173719d06066b8e6a1b61514b526cb9",
+    "backend/local_postgres.py": "de601ecadb6e93e19e4d49dcc1e31d130a7f26a342a1594272db06ba27afff9b",
+    "backend/main.py": "0036bc5cf4f1753ce5ddf23aa6c23532fba7b53d5c89869e5b2775ed37527497",
+    "backend/openapi.json": "e1f2a69f1e11706df3085c96f6806ac2cfee8f298278620dcd3a88a325076c0b",
+    "backend/prepare_catalog.py": "bdf10e6d289f565d3ffb25743f0e37ec58dd0ecb8c9a5ac88b93af1f54978441",
+    "backend/requirements.txt": "11fd907e8c419a1fb91695768a50a3aa75a65f5e484f33d528be8af3d7f1671b",
+    "backend/schema.sql": "d5b9f821ee02c2ab397a19326acf5f92e2fc32fe870ae2729a7827f9dc8e3f08",
+    "backend/schemas.py": "345f5245555bb9bc4691b62c45e9959cc4c9481dc8b2a07af5934b1c2e5e2b85",
+    "backend/tests/test_api.py": "0f5a935571e4079fd0edf30fd7bfb531ef4bf21dd53aa06a41caafe32184c512",
+    "backend/verify_local.py": "8544d20c5ccd148a3a1f27d23d67de5260213697272899c99ec42c322253f82d"
+  },
+  "source_sha256": {
+    ".github/workflows/frontend.yml": "1e1c374db99fcffab6eb6106ea4ffb2c172793584b72bb0898a27d52f56904fb",
+    "app/globals.css": "6bc7b89d871c2c9a8cb903b305d76941c6bc09e51452d6a2bd7c86cd4b4e1050",
+    "app/layout.tsx": "5c64c8e0b428152a8e2d6000dc8e071f7db15dd0c899be08fbd6fdebefb0cfd3",
+    "app/page.tsx": "a3d56990e981678de03a119823e32dfc0b7e73d47111ef4e3a37a08e9b123776",
+    "app/variants/[variant]/[[...section]]/page.tsx": "986c79f14ee14205846a9d148fb212a76e312d41362ef563e9812a3363b33040",
+    "components/about.tsx": "e91a6320ec2237d8f337c2c2462e59150c5e753d14aee2ecaf4233c86dee993d",
+    "components/discovery.tsx": "6f37abd1aa9711b297550d636fb1776c1d279b3cb98f4b42ad2b090ec5891c87",
+    "components/presentation.tsx": "e8567c89c6859c1572345e6476334a1e64c4b80fc035d2775f5d0cf388fa592c",
+    "components/preview.tsx": "d7415db152a008d2c7d35aba43cb47de54a13a6752b3d478a8eb8cbd5cdd7835",
+    "lib/api.ts": "99036d0e0254a8f05312055405dc7e68b3680351f0a9e87dad8c7fedd1734cda",
+    "lib/contracts.ts": "a39bf2c305205de469af1c59cda6eeb5c13b31a53c9e7e9c05ab9af680f0f8b3",
+    "lib/fixtures.ts": "44b2aa955285f39bde2bceabf506fcc3c1cbfa19db1af50afccb7a227ccd0cfd",
+    "lib/use-discovery.ts": "b50c589a1b7fe2cd8af934f17bcd50d47e24c08c245e31118a77214677e894a2",
+    "next.config.ts": "a229ed5b1b9c5324ad55a4f571c5e4edbd3723f68f5534cb6dadaed33f94674d",
+    "package-lock.json": "2289f304ecc66e82b905c53371871d87d1ca11b12f5b15f86d53335efb02e944",
+    "package.json": "93f757301a072a6a70a01c918ca831f61eea5b26086d536b774481146f0bd760",
+    "playwright.config.ts": "50d859a415cb19f4a1f301163827ee2253de7f6e9e5ebdb423e4e3b374c8ab82",
+    "postcss.config.mjs": "f50058e0d309cdb3e7c25a1123337338641fb71e988572607d57f47209db1fd1",
+    "scripts/capture-previews.mjs": "4993f1178973ba3e99001b93838f6f9319017c2a7edfcb2da6b45a9838e74bde",
+    "scripts/smoke-real-frontend.mjs": "c1c1e2299e87f667519646492885b5f1c269d0cc2db21ef2c3035a352f6a2f9f",
+    "tests/frontend/discovery.spec.ts": "07a007cbc34f48dc40869c749f5b80088c683b89e7082b66825b4328a76a2e17",
+    "tsconfig.json": "96401a280a2a6c317e1c6d8da5c0a995336a9f9d3f1accffbd13171129e6e683",
+    "v1/index.tsx": "07b8572cfc2f849440360094b696a9bebd6c091dd770f5d3e557559ef2a41b4b",
+    "v1/style.css": "e41a24b18c9d15c20cef5728546beb80fdf312e70871a2f73edb75c1c8f5c770",
+    "v2/index.tsx": "fc76ec3a041ab7f030ee15a672766c6de80ef5c6d2df94a710d5fa9f93c4196d",
+    "v2/style.css": "4b23320f4b99e96ae872f9a2aedb26672d8002a6e25ef30100351bd940c6335a",
+    "v3/index.tsx": "c3d144f32c6828bd36a2e16bb424044117130a9cb17763d70ed993420c3e3f4e",
+    "v3/style.css": "565a5ce26170189891b3e194f911d769e8f1ef4b737ee0462e314af1f220bf9d",
+    "v4/index.tsx": "d52057206cf7065809b7e8eed431a7d081d906024fec2322fd9b438ab7b62aaf",
+    "v4/style.css": "8a7a8e958e24b8bfecaeb863d43e3671983ea0c056d7cb108fa0acc73ec9e3d8",
+    "v5/index.tsx": "56c26e9ce0a176ad9a4525b16ff8b86306cbe35aaee8f82205b0d57348ad43ee",
+    "v5/style.css": "078e95274b0681cdd00cea6dfbe97110fc9ef85749d0855ec324e73a22a964de"
+  },
+  "unverified": [
+    "physical phone",
+    "screen reader",
+    "actual browser zoom",
+    "human usability",
+    "deployed latency",
+    "full accessibility conformance"
+  ],
+  "ci": "pending push; tracked separately in stage-9-ci.json"
+}

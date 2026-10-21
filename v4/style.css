@@ -1,0 +1,25 @@
+.variant-4 { --hero:#cadfe5; --hero-position:60% 50%; }
+.ledger-command { display:grid; grid-template-columns:1fr 1.15fr; gap:40px; align-items:start; padding:4px 0 28px; border-bottom:1px solid var(--rule); }
+.ledger-command .search-area { margin:0; }
+.ledger-command .task-heading h1 { font-size:36px; }
+.ledger-command .opening-break { display:none; }
+.ledger-entry { display:grid; grid-template-columns:280px minmax(0,1fr); gap:32px; align-items:start; padding-top:28px; }
+.ledger-entry .starting-points { margin:0; }
+.ledger-entry .starting-points ul { grid-template-columns:1fr; }
+.ledger-entry .section-line { display:block; }
+.ledger-entry .section-line > span { display:block; margin-top:4px; }
+.variant-4 .hero-slot { aspect-ratio:16/9; }
+.track-ledger .seed-summary { margin:24px 0 28px; padding:16px 20px; background:var(--tint); border:0; border-radius:16px; }
+.track-ledger .seed-caption { margin-top:10px; }
+.track-ledger .track-row { min-height:80px; padding:12px 8px; }
+.track-ledger .track-identity { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:24px; align-items:start; }
+.track-ledger .track-title { font-size:16px; }
+.track-ledger .track-artist { margin:0; }
+.track-ledger .track-actions details { margin-top:0; }
+.track-ledger .track-rank { width:28px; height:28px; display:grid; place-items:center; padding:0; border:1px solid var(--rule); border-radius:6px; }
+.variant-4 .about-intro { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-bottom:32px; }
+.variant-4 .about-sections { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.variant-4 .method-section { border-top:0; padding:0; }
+@media(max-width:1023px) { .ledger-command { gap:24px; } .ledger-entry { grid-template-columns:240px minmax(0,1fr); gap:24px; } }
+@media(max-width:767px) { .ledger-command,.ledger-entry { grid-template-columns:1fr; } .ledger-entry .starting-points ul { grid-template-columns:repeat(2,minmax(0,1fr)); } .track-ledger .track-identity { display:block; } .track-ledger .track-artist { margin-top:4px; } .variant-4 .about-intro,.variant-4 .about-sections { grid-template-columns:1fr; gap:24px; } }
+@media(max-width:389px) { .ledger-entry .starting-points ul { grid-template-columns:1fr; } }

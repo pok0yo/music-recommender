@@ -1,0 +1,294 @@
+{
+  "scope": "Unsuppressed Taste inspector, entry state only, widths 1440 and 390; run before the focus-only v5 correction.",
+  "result": "Style findings remain; this is not a zero-failure automated style pass.",
+  "decisions": {
+    "gradient": "User-approved chrome/page-ground treatment; each hero-fill itself remains a solid color.",
+    "heavy-shadow": "User-approved contained enclosure depth; readable inner surfaces remain near opaque.",
+    "hero-void": "Explicit user requirement to reserve future artwork with flat fills.",
+    "blank-gap": "Inspected against captures: v3/v5 empty field corresponds to the reserved hero, not a hidden working-state block.",
+    "heavy-borders": "Retained technical panel rules; controls have separate stronger borders.",
+    "app-title-size": "Short entry heading retained at 30-46px; search remains explicit.",
+    "below-fold": "v5 panorama precedes desktop starter rail by design; mobile places starter choices before it."
+  },
+  "reports": [
+    {
+      "variant": 1,
+      "at": "2026-10-21T05:01:40.701Z",
+      "url": "http://127.0.0.1:3000/variants/v1?mode=demo&fixture=entry",
+      "allow": [],
+      "findings": [
+        {
+          "level": "FAIL",
+          "id": "gradient",
+          "width": 1440,
+          "message": "2 gradient fill(s): div.app-surface.variant-1 \u00e2\u2020\u2019 linear-gradient(155deg, rgb(212, 227, 242), rgb(245, 250, 255) 42%, rgb(210, 227, 244)) | div.glass-shell.split-console \u00e2\u2020\u2019 linear-gradient(140deg, rgb(255, 255, 255) 0%, rgb(192, 208, 227) 18%, rgb(120, 152, 183) 27%, rgb(248, 252, 2",
+          "fix": "Use a flat colour or a real image. The only gradient allowed by default is a neutral scrim over a photo for legibility.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "WARN",
+          "id": "hero-void",
+          "width": 1440,
+          "message": "40% of the first screen is one empty block (780\u00c3\u2014660px at 660,240).",
+          "fix": "Place the void on purpose or fill it: move the picture, the film or one fact into it, grow the headline to meet it, or shrink the screen to its content. A void reads as placed only when something closes it on the far side and it is the screen's one rest."
+        },
+        {
+          "level": "FAIL",
+          "id": "heavy-shadow",
+          "width": 1440,
+          "message": "2 panel shadow(s) heavy enough to read as floating: rgba(41, 72, 107, 0.08) 0px 8px 24px 0px | rgba(40, 71, 103, 0.14) 0px 16px 38px 0px",
+          "fix": "Panels sit on the ground: separate them with a fill one step from the ground or a quiet 1px border. A shadow, if any, is under 8% black with a small blur. Real overlays (menus, dialogs, popovers) may float.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "WARN",
+          "id": "app-title-size",
+          "width": 1440,
+          "message": "The h1 is 46px (\"Start with\none song.\").",
+          "fix": "An app screen is not a landing page: the title is 18-32px (20-24px on a phone).",
+          "alsoAt": [
+            390
+          ]
+        }
+      ]
+    },
+    {
+      "variant": 2,
+      "at": "2026-10-21T05:01:50.140Z",
+      "url": "http://127.0.0.1:3000/variants/v2?mode=demo&fixture=entry",
+      "allow": [],
+      "findings": [
+        {
+          "level": "FAIL",
+          "id": "gradient",
+          "width": 1440,
+          "message": "3 gradient fill(s): div.app-surface.variant-2 \u00e2\u2020\u2019 linear-gradient(155deg, rgb(212, 227, 242), rgb(245, 250, 255) 42%, rgb(210, 227, 244)) | div.glass-shell \u00e2\u2020\u2019 linear-gradient(140deg, rgb(255, 255, 255) 0%, rgb(192, 208, 227) 18%, rgb(120, 152, 183) 27%, rgb(248, 252, 2 | div.hero-slot \u00e2\u2020\u2019 linear-gradient(150deg, rgb(255, 255, 255), rgb(131, 154, 180) 48%, rgb(237, 246, 255) 51%, rgb(139, 167, 195)",
+          "fix": "Use a flat colour or a real image. The only gradient allowed by default is a neutral scrim over a photo for legibility.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "FAIL",
+          "id": "heavy-shadow",
+          "width": 1440,
+          "message": "2 panel shadow(s) heavy enough to read as floating: rgba(41, 72, 107, 0.08) 0px 8px 24px 0px | rgba(40, 71, 103, 0.14) 0px 16px 38px 0px",
+          "fix": "Panels sit on the ground: separate them with a fill one step from the ground or a quiet 1px border. A shadow, if any, is under 8% black with a small blur. Real overlays (menus, dialogs, popovers) may float.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "WARN",
+          "id": "heavy-borders",
+          "width": 1440,
+          "message": "5 panel borders are dark against their ground: #b9cbe1 on #f6fbff (1.59:1) | #b9cbe1 on #f6fbff (1.59:1) | #b9cbe1 on #f6fbff (1.59:1)",
+          "fix": "A panel border is a whisper: about 1.1\u00e2\u20ac\u201c1.3:1 against its ground on a light screen (#e5e7eb\u00e2\u20ac\u201c#ededed on white), and about 1.2\u00e2\u20ac\u201c1.5:1 on a dark one (#1a1a1a on #000, #2e2e2e on #111). Darker lines turn the screen into a grid of boxes; keep the stronger line for controls.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "WARN",
+          "id": "app-title-size",
+          "width": 1440,
+          "message": "The h1 is 46px (\"Start with one song.\").",
+          "fix": "An app screen is not a landing page: the title is 18-32px (20-24px on a phone).",
+          "alsoAt": [
+            390
+          ]
+        }
+      ]
+    },
+    {
+      "variant": 3,
+      "at": "2026-10-21T05:01:59.288Z",
+      "url": "http://127.0.0.1:3000/variants/v3?mode=demo&fixture=entry",
+      "allow": [],
+      "findings": [
+        {
+          "level": "FAIL",
+          "id": "gradient",
+          "width": 1440,
+          "message": "3 gradient fill(s): div.app-surface.variant-3 \u00e2\u2020\u2019 linear-gradient(155deg, rgb(212, 227, 242), rgb(245, 250, 255) 42%, rgb(210, 227, 244)) | div.glass-shell.catalog-dock \u00e2\u2020\u2019 linear-gradient(140deg, rgb(255, 255, 255) 0%, rgb(192, 208, 227) 18%, rgb(120, 152, 183) 27%, rgb(248, 252, 2 | div.glass-shell.catalog-display \u00e2\u2020\u2019 linear-gradient(140deg, rgb(255, 255, 255) 0%, rgb(192, 208, 227) 18%, rgb(120, 152, 183) 27%, rgb(248, 252, 2",
+          "fix": "Use a flat colour or a real image. The only gradient allowed by default is a neutral scrim over a photo for legibility.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "WARN",
+          "id": "hero-void",
+          "width": 1440,
+          "message": "44% of the first screen is one empty block (960\u00c3\u2014600px at 480,300).",
+          "fix": "Place the void on purpose or fill it: move the picture, the film or one fact into it, grow the headline to meet it, or shrink the screen to its content. A void reads as placed only when something closes it on the far side and it is the screen's one rest."
+        },
+        {
+          "level": "FAIL",
+          "id": "heavy-shadow",
+          "width": 1440,
+          "message": "2 panel shadow(s) heavy enough to read as floating: rgba(41, 72, 107, 0.08) 0px 8px 24px 0px | rgba(40, 71, 103, 0.14) 0px 16px 38px 0px",
+          "fix": "Panels sit on the ground: separate them with a fill one step from the ground or a quiet 1px border. A shadow, if any, is under 8% black with a small blur. Real overlays (menus, dialogs, popovers) may float.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "WARN",
+          "id": "heavy-borders",
+          "width": 1440,
+          "message": "5 panel borders are dark against their ground: #b9cbe1 on #f6fbff (1.59:1) | #b9cbe1 on #f6fbff (1.59:1) | #b9cbe1 on #f6fbff (1.59:1)",
+          "fix": "A panel border is a whisper: about 1.1\u00e2\u20ac\u201c1.3:1 against its ground on a light screen (#e5e7eb\u00e2\u20ac\u201c#ededed on white), and about 1.2\u00e2\u20ac\u201c1.5:1 on a dark one (#1a1a1a on #000, #2e2e2e on #111). Darker lines turn the screen into a grid of boxes; keep the stronger line for controls.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "WARN",
+          "id": "app-title-size",
+          "width": 1440,
+          "message": "The h1 is 36px (\"Start with one song.\").",
+          "fix": "An app screen is not a landing page: the title is 18-32px (20-24px on a phone).",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "WARN",
+          "id": "blank-gap",
+          "width": 390,
+          "message": "A 376px stretch at 996px holds nothing.",
+          "fix": "Check that it is a deliberate rest (once per page at most); otherwise close it to the normal section gap."
+        }
+      ]
+    },
+    {
+      "variant": 4,
+      "at": "2026-10-21T05:02:09.655Z",
+      "url": "http://127.0.0.1:3000/variants/v4?mode=demo&fixture=entry",
+      "allow": [],
+      "findings": [
+        {
+          "level": "FAIL",
+          "id": "gradient",
+          "width": 1440,
+          "message": "2 gradient fill(s): div.app-surface.variant-4 \u00e2\u2020\u2019 linear-gradient(155deg, rgb(212, 227, 242), rgb(245, 250, 255) 42%, rgb(210, 227, 244)) | div.glass-shell.track-ledger \u00e2\u2020\u2019 linear-gradient(140deg, rgb(255, 255, 255) 0%, rgb(192, 208, 227) 18%, rgb(120, 152, 183) 27%, rgb(248, 252, 2",
+          "fix": "Use a flat colour or a real image. The only gradient allowed by default is a neutral scrim over a photo for legibility.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "WARN",
+          "id": "hero-void",
+          "width": 1440,
+          "message": "33% of the first screen is one empty block (1020\u00c3\u2014420px at 420,480).",
+          "fix": "Place the void on purpose or fill it: move the picture, the film or one fact into it, grow the headline to meet it, or shrink the screen to its content. A void reads as placed only when something closes it on the far side and it is the screen's one rest."
+        },
+        {
+          "level": "FAIL",
+          "id": "heavy-shadow",
+          "width": 1440,
+          "message": "2 panel shadow(s) heavy enough to read as floating: rgba(41, 72, 107, 0.08) 0px 8px 24px 0px | rgba(40, 71, 103, 0.14) 0px 16px 38px 0px",
+          "fix": "Panels sit on the ground: separate them with a fill one step from the ground or a quiet 1px border. A shadow, if any, is under 8% black with a small blur. Real overlays (menus, dialogs, popovers) may float.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "WARN",
+          "id": "heavy-borders",
+          "width": 1440,
+          "message": "5 panel borders are dark against their ground: #b9cbe1 on #f6fbff (1.59:1) | #b9cbe1 on #f6fbff (1.59:1) | #b9cbe1 on #f6fbff (1.59:1)",
+          "fix": "A panel border is a whisper: about 1.1\u00e2\u20ac\u201c1.3:1 against its ground on a light screen (#e5e7eb\u00e2\u20ac\u201c#ededed on white), and about 1.2\u00e2\u20ac\u201c1.5:1 on a dark one (#1a1a1a on #000, #2e2e2e on #111). Darker lines turn the screen into a grid of boxes; keep the stronger line for controls.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "WARN",
+          "id": "app-title-size",
+          "width": 1440,
+          "message": "The h1 is 36px (\"Start with one song.\").",
+          "fix": "An app screen is not a landing page: the title is 18-32px (20-24px on a phone).",
+          "alsoAt": [
+            390
+          ]
+        }
+      ]
+    },
+    {
+      "variant": 5,
+      "at": "2026-10-21T05:02:18.759Z",
+      "url": "http://127.0.0.1:3000/variants/v5?mode=demo&fixture=entry",
+      "allow": [],
+      "findings": [
+        {
+          "level": "FAIL",
+          "id": "gradient",
+          "width": 1440,
+          "message": "3 gradient fill(s): div.app-surface.variant-5 \u00e2\u2020\u2019 linear-gradient(155deg, rgb(212, 227, 242), rgb(245, 250, 255) 42%, rgb(210, 227, 244)) | div.glass-shell \u00e2\u2020\u2019 linear-gradient(140deg, rgb(255, 255, 255) 0%, rgb(192, 208, 227) 18%, rgb(120, 152, 183) 27%, rgb(248, 252, 2 | div.glass-shell.signal-panorama \u00e2\u2020\u2019 linear-gradient(140deg, rgb(255, 255, 255) 0%, rgb(192, 208, 227) 18%, rgb(120, 152, 183) 27%, rgb(248, 252, 2",
+          "fix": "Use a flat colour or a real image. The only gradient allowed by default is a neutral scrim over a photo for legibility.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "FAIL",
+          "id": "blank-gap",
+          "width": 1440,
+          "message": "1 stretch(es) of the page hold nothing at all: 552px at 472px (the screen is 900px tall).",
+          "fix": "Close the gap: a section gap is 120\u00e2\u20ac\u201c240px on desktop and 72\u00e2\u20ac\u201c112px on a phone. Look for a min-height: 100vh on a short section, an empty grid row, a hidden element still holding its space, or a reveal that never fired. A deliberate rest is a placed picture or colour field, not nothing."
+        },
+        {
+          "level": "WARN",
+          "id": "hero-void",
+          "width": 1440,
+          "message": "47% of the first screen is one empty block (1440\u00c3\u2014420px at 0,480).",
+          "fix": "Place the void on purpose or fill it: move the picture, the film or one fact into it, grow the headline to meet it, or shrink the screen to its content. A void reads as placed only when something closes it on the far side and it is the screen's one rest."
+        },
+        {
+          "level": "FAIL",
+          "id": "heavy-shadow",
+          "width": 1440,
+          "message": "2 panel shadow(s) heavy enough to read as floating: rgba(41, 72, 107, 0.08) 0px 8px 24px 0px | rgba(40, 71, 103, 0.14) 0px 16px 38px 0px",
+          "fix": "Panels sit on the ground: separate them with a fill one step from the ground or a quiet 1px border. A shadow, if any, is under 8% black with a small blur. Real overlays (menus, dialogs, popovers) may float.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "WARN",
+          "id": "heavy-borders",
+          "width": 1440,
+          "message": "5 panel borders are dark against their ground: #b9cbe1 on #ffffff (1.65:1) | #b9cbe1 on #ffffff (1.65:1) | #b9cbe1 on #ffffff (1.65:1)",
+          "fix": "A panel border is a whisper: about 1.1\u00e2\u20ac\u201c1.3:1 against its ground on a light screen (#e5e7eb\u00e2\u20ac\u201c#ededed on white), and about 1.2\u00e2\u20ac\u201c1.5:1 on a dark one (#1a1a1a on #000, #2e2e2e on #111). Darker lines turn the screen into a grid of boxes; keep the stronger line for controls.",
+          "alsoAt": [
+            390
+          ]
+        },
+        {
+          "level": "WARN",
+          "id": "below-fold",
+          "width": 1440,
+          "message": "Only 2 of 7 blocks start on the first 1440px screen.",
+          "fix": "Every block the brief names shows its header and first rows on the first desktop screen: size the headline block to its question, cap long lists with \"View all\", and put time-sensitive blocks before long tables."
+        },
+        {
+          "level": "WARN",
+          "id": "app-title-size",
+          "width": 1440,
+          "message": "The h1 is 36px (\"Start with one song.\").",
+          "fix": "An app screen is not a landing page: the title is 18-32px (20-24px on a phone).",
+          "alsoAt": [
+            390
+          ]
+        }
+      ]
+    }
+  ]
+}
