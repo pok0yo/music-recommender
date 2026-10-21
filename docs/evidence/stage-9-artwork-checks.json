@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-10-21T17:21:45.195983+00:00",
+  "scope": "Four working Disc Tray artwork demos; selected body, final art still open. No production/Stage10/deployment.",
+  "build": "pass",
+  "typecheck": "pass",
+  "full_local_suite": {
+    "command": "npm test",
+    "passed": 25,
+    "duration_reported": "2.6m",
+    "scope": "Full suite before adding measured550px width to existing artwork test parameters."
+  },
+  "focused_artwork_suite": {
+    "command": "npx playwright test tests/frontend/artwork.spec.ts",
+    "stats": {
+      "startTime": "2026-10-21T17:20:04.462Z",
+      "duration": 21597.557,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "scope": "Final24 image/width checks including550px,8 axe scans, picker/input/results/history/About."
+  },
+  "captures": 18,
+  "assets": "../art-direction/disc-tray-artwork-assets.json",
+  "source_sha256": {
+    "components/discovery.tsx": "0d7e2f9b0cf1afe7e6a5df8902a8065283003074055271a72f896349582b9ba3",
+    "components/preview.tsx": "135f814671f7aa2cb8a2e22aa8d372df8a5cb19d8f93d842ade909240c9ad122",
+    "v2/artwork.ts": "982f45b9d2b281f06e8eda7ca2b1a12c667ef48f5fc7f696dc903d64bfdb3b38",
+    "v2/studies.css": "f0da1f6e8661ac2cb58f394c15ff9a82ff9a93f8a573092db85d0d380801ec09",
+    "app/prototypes/disc-tray/artwork/[artwork]/[[...section]]/page.tsx": "5ed6f2eebbbb3d17a1963002000d8cf0688f3725f29d3afd07e4ac378afc579a",
+    "tests/frontend/artwork.spec.ts": "3287d51cf63c0a1878f1e59d455cd4afafc3511b2e9b0163621ef610acd6b1b8",
+    "scripts/capture-previews.mjs": "b187b33007be3d5d2ee610ea4cbd8ebf59f981bde8455f9b1fa3e49e6cecebf5"
+  },
+  "frozen_backend_hashes_unchanged": 11,
+  "review": "stage-9-artwork-review.md",
+  "unverified": [
+    "physical phones",
+    "screen readers",
+    "actual browser zoom",
+    "human preference",
+    "deployed performance",
+    "fresh real-data integration for artwork routes"
+  ],
+  "ci": "pending push"
+}

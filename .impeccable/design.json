@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-21T05:48:54.925Z",
+  "generatedAt": "2026-10-21T16:56:24.762Z",
   "title": "Design System: Music Recommender",
   "extensions": {
     "colorMeta": {
@@ -228,11 +228,11 @@
   ],
   "narrative": {
     "northStar": "Icy acrylic and selective chrome",
-    "overview": "The approved Y2K Futurism / Soft Club world uses icy-blue acrylic enclosures, silver seams, pearl reading fields and cobalt controls. Material framing provides identity even with every hero empty. Conventional text and controls carry the task; the generated three-screen board is a critique reference, not interface artwork or a pixel-matching comp.\n\nThis records the implemented October 21 Stage 9 comparison, merging the prior provisional system. No final structure is selected. The shared material world supersedes Stage 4's separate typography/theme directions; those remain historical evidence. The user selects a structure before its Discover and About frontend is promoted. Stage 10 and deployment require separate authorization; retain v1–v5 and comparison history after selection.\n\nThe subsequent Disc Study exploration settles the aesthetic preference on incumbent v2 while leaving the final body structure open. Gatefold, Disc Tray and Liner Notes extend that same visual system for comparison.",
+    "overview": "The approved Y2K Futurism / Soft Club world uses icy-blue acrylic enclosures, silver seams, pearl reading fields and cobalt controls. Material framing provides identity even with every hero empty. Conventional text and controls carry the task; the generated three-screen board is a critique reference, not interface artwork or a pixel-matching comp.\n\nThis records the implemented October 21 Stage 9 comparison, merging the prior provisional system. Disc Tray is the selected body; final hero artwork remains unselected. The shared material world supersedes Stage 4's separate typography/theme directions; those remain historical evidence. Body selection does not authorize production promotion, Stage 10 or deployment; retain v1–v5 and comparison history after selection.\n\nThe subsequent Disc Study exploration settles the aesthetic preference on incumbent v2 and the body choice on Disc Tray. Gatefold, Disc Tray and Liner Notes remain available for comparison. Four user-authorized existing generated originals are compared only in working Disc Tray demos at `/prototypes/disc-tray/artwork/{slug}`; the picker changes artwork while preserving discovery state. The original five previews and three body-comparison routes retain flat placeholders.",
     "keyCharacteristics": [
       "Five distinct app structures with shared Manrope typography, content and behavior.",
       "Sculpted enclosure lips around near-opaque reading fields.",
-      "Flat CSS hero reservations with no shipped images.",
+      "Flat CSS hero reservations in original comparisons; four local decorative images only in the authorized Disc Tray artwork demos.",
       "Native controls, visible keyboard focus and task-first mobile flow.",
       "Persistent demonstration labels and an explicit real-data boundary."
     ],
@@ -261,16 +261,16 @@
     "dos": [
       "**Do** retain all five structures, routes and comparison history until and after the user's structure selection.",
       "**Do** keep shared Manrope typography, near-opaque reading fields, cobalt actions and selective enclosure chrome.",
-      "**Do** preserve each flat hero's fill, aspect, location and future fit mapping, with task-first mobile order.",
+      "**Do** preserve each original comparison's flat hero fill, aspect, location and future fit mapping, with task-first mobile order; keep the four artwork demos in Disc Tray's existing 1:1 slot.",
       "**Do** preserve native controls, visible focus, reduced-motion, reduced-transparency and forced-color treatments.",
       "**Do** label demonstration fixtures persistently and keep real failures separate from demo data.",
       "**Do** treat review/capture evidence as scoped evidence, not deployment, user research or full accessibility conformance."
     ],
     "donts": [
-      "**Don't** add generated artwork, reference screenshots, remote images, illustrated hero substitutes or interactive hero controls.",
+      "**Don't** add artwork beyond the four user-authorized existing generated originals in the Disc Tray artwork demos; keep original comparison routes artwork-free and exclude reference screenshots, runtime remote images, illustrated substitutes and interactive hero controls.",
       "**Don't** replace structural differences with typography/theme swaps or reserve blank hero space in working screens.",
       "**Don't** turn approved glass/chrome into a generic ban or extend translucency into low-contrast reading regions.",
-      "**Don't** promote a final structure, Stage 10 or deployment without the separate user gate.",
+      "**Don't** treat Disc Tray body selection or the artwork demos as authorization for production promotion, Stage 10 or deployment; final hero artwork remains unselected.",
       "**Don't** inflate catalog, link, model-quality or personalisation claims beyond PRODUCT.md and frozen evidence."
     ]
   }

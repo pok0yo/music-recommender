@@ -5,6 +5,7 @@
 .disc-study.is-working .task-heading h1 { font-size:30px; }
 .disc-study .section-line { flex-wrap:wrap; }
 .disc-study .track-details dd { margin-left:12px; }
+[data-artwork] .hero-fill { overflow:hidden; }
 .gatefold-pages { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); padding:0; }
 .gatefold-cover { padding:40px; min-width:0; }
 .gatefold-cover .hero-slot { margin:36px auto 0; }

@@ -1,0 +1,309 @@
+{
+  "observed_at": "2026-10-21T17:20:02.898Z",
+  "revision": "disc-tray-artwork-v1",
+  "browser": "155.0.8059.85",
+  "data": "demonstration fixtures only",
+  "provenance": "Local browser screenshots; documentation evidence, never app artwork.",
+  "captures": [
+    {
+      "variant": "orbital-disc",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-artwork/orbital-disc-desktop-entry.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 260,
+        "height": 260,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "8a1ca2d90781e837f9cb65c4a8fcccece07056a02e1bde1c5fa8fbffefd95639"
+    },
+    {
+      "variant": "orbital-disc",
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-artwork/orbital-disc-desktop-ten.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "97f9e4d59aab6a543bd193118930ec202460e76a7bf873ab6fd6e3912b4ac3d8"
+    },
+    {
+      "variant": "orbital-disc",
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-artwork/orbital-disc-desktop-about.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "a3169a4b96b8b8b12bb38ea53a1ebb24676f40f4442aa701249c6e0d7d74aec3"
+    },
+    {
+      "variant": "orbital-disc",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-artwork/orbital-disc-mobile-entry.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 224,
+        "height": 224,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "d5e3d8b5b77b8a6d6acb58ed0bd0bb37cef1cdb443867578e38a07b2c24b5ccf"
+    },
+    {
+      "variant": "orbital-disc",
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-artwork/orbital-disc-mobile-ten.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "c290b16719a6c46dc547f2fbe1f79e50c998ace9d21db505044aaff28c5a944c"
+    },
+    {
+      "variant": "orbital-disc",
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-artwork/orbital-disc-mobile-about.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "0902cf386b159eba52d4941514ddad754eda4d735f0fbb4ba8941165bca32a8d"
+    },
+    {
+      "variant": "orbital-disc",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-artwork/orbital-disc-user-entry.png",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 224,
+        "height": 224,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "84edd2be53426d32e34ea99e4fac68ce5f196a18afbc9e0f6cb5ec2fa1edbf67"
+    },
+    {
+      "variant": "orbital-disc",
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-artwork/orbital-disc-user-ten.png",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "e0c634ba7be33688e5ef9fb2e91891efdcb38b64aef79b6c45a704234b57ce62"
+    },
+    {
+      "variant": "orbital-disc",
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-artwork/orbital-disc-user-about.png",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "dcb113f5371e55a7e01a832aa5b54c957b9dba24963032ef36da3b01b1809741"
+    },
+    {
+      "variant": "glass-current",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-artwork/glass-current-desktop-entry.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 260,
+        "height": 260,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "22f4ddaf2e2183a1b3f7a33e7278ab287444afaf9fade6d40220c40ccaf64082"
+    },
+    {
+      "variant": "glass-current",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-artwork/glass-current-mobile-entry.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 224,
+        "height": 224,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "8900c369357be79f7f4de9a77c76be54c2f1343191de244d096c3d7585502980"
+    },
+    {
+      "variant": "glass-current",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-artwork/glass-current-user-entry.png",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 224,
+        "height": 224,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "d02ee7a2b36f1aa44da9f4f99bc517db6bd367f4f085f23a2abb832d755712cd"
+    },
+    {
+      "variant": "aero-player",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-artwork/aero-player-desktop-entry.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 260,
+        "height": 260,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "4686cdb7b56d58e6e79d37a1e832743aca6d572d1a35af6135dcd343cd2def9c"
+    },
+    {
+      "variant": "aero-player",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-artwork/aero-player-mobile-entry.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 224,
+        "height": 224,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "1c9c5ae507d92d3f0912b1539538108b7ecce1962431bd62043ba8d3c66088be"
+    },
+    {
+      "variant": "aero-player",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-artwork/aero-player-user-entry.png",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 224,
+        "height": 224,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "60c218241cdeaf12c613369aa61a598bcca584c6819554465bc7bd5e66de9a2f"
+    },
+    {
+      "variant": "liquid-star",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-artwork/liquid-star-desktop-entry.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 260,
+        "height": 260,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "b09a8b860f2893103e6634ba240d8a19fcb3ab8679658a7cbf640510bd6287da"
+    },
+    {
+      "variant": "liquid-star",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-artwork/liquid-star-mobile-entry.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 224,
+        "height": 224,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "1aa11ce0fc87628f777b425b795b54364759eea1342ed28df115a8c62a98fdbc"
+    },
+    {
+      "variant": "liquid-star",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-artwork/liquid-star-user-entry.png",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 224,
+        "height": 224,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "bdc63c13f918b93cf9d36fb6a44d3c52305ade2b419782dbcc7ecb398b8b8a6f"
+    }
+  ]
+}

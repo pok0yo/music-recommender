@@ -7,16 +7,20 @@ import { scenarios, type Scenario } from '../lib/fixtures';
 import type { Meta } from '../lib/contracts';
 import { About } from './about';
 import { studyNames, studySlugs, studyStructures } from '../v2/studies';
+import { artworks } from '../v2/artwork';
 
-export function Preview({ initialVariant, initialMode, initialFixture, about = false, initialStudy }: {
-  initialVariant: number; initialMode: Meta['data_mode']; initialFixture: Scenario; about?: boolean; initialStudy?: number;
+export function Preview({ initialVariant, initialMode, initialFixture, about = false, initialStudy, initialArtwork }: {
+  initialVariant: number; initialMode: Meta['data_mode']; initialFixture: Scenario; about?: boolean; initialStudy?: number; initialArtwork?: number;
 }) {
-  const [variant, setVariant] = useState(initialStudy || initialVariant);
+  const [variant, setVariant] = useState(initialArtwork || initialStudy || initialVariant);
+  const isArtwork = initialArtwork !== undefined;
   const isStudy = initialStudy !== undefined;
-  const productVariant = isStudy ? 2 : variant;
-  const names = isStudy ? studyNames : variantNames;
-  const structures = isStudy ? studyStructures : variantStructures;
-  const pathFor = (next: number) => isStudy ? `/prototypes/disc-study/${studySlugs[next - 1]}` : `/variants/v${next}`;
+  const productVariant = isArtwork || isStudy ? 2 : variant;
+  const study = isArtwork ? 2 : isStudy ? variant : undefined;
+  const artwork = isArtwork ? artworks[variant - 1] : undefined;
+  const names = isArtwork ? artworks.map(item => item.name) : isStudy ? studyNames : variantNames;
+  const structures = isArtwork ? names.map(() => 'Disc Tray · hero comparison') : isStudy ? studyStructures : variantStructures;
+  const pathFor = (next: number) => isArtwork ? `/prototypes/disc-tray/artwork/${artworks[next - 1].slug}` : isStudy ? `/prototypes/disc-study/${studySlugs[next - 1]}` : `/variants/v${next}`;
   const [mode, setMode] = useState(initialMode);
   const [fixture, setFixture] = useState(initialFixture);
   const picker = useRef<HTMLElement>(null);
@@ -58,9 +62,9 @@ export function Preview({ initialVariant, initialMode, initialFixture, about = f
     window.history.replaceState(null, '', url);
   };
   const context = new URLSearchParams({ mode, ...(mode === 'demo' ? { fixture } : {}) });
-  return <div className={`app-surface variant-${productVariant}${isStudy ? ` study-${studySlugs[variant - 1]}` : ''}`} data-variant={`v${productVariant}`} data-study={isStudy ? studySlugs[variant - 1] : undefined}>
+  return <div className={`app-surface variant-${productVariant}${study ? ` study-${studySlugs[study - 1]}` : ''}`} data-variant={`v${productVariant}`} data-study={study ? studySlugs[study - 1] : undefined} data-artwork={artwork?.slug}>
     <a className="skip-link" href="#main-content">Skip to content</a>
-    <aside className="preview-bar" aria-label="Prototype controls"><div className="preview-bar-inner"><p><strong>{isStudy ? 'Disc Study exploration' : 'Prototype preview'}</strong><span>{names[variant - 1]} · {structures[variant - 1]}</span></p>
+    <aside className="preview-bar" aria-label="Prototype controls"><div className="preview-bar-inner"><p><strong>{isArtwork ? 'Disc Tray artwork' : isStudy ? 'Disc Study exploration' : 'Prototype preview'}</strong><span>{names[variant - 1]} · {structures[variant - 1]}</span></p>
       <div className="preview-settings"><label>Data<select aria-label="Data source" value={mode} onChange={event => changeData(event.target.value as Meta['data_mode'], 'entry')}>
         <option value="real">Real catalog</option><option value="demo">Demonstration data</option></select></label>
         {mode === 'demo' && <label>Scenario<select aria-label="Demonstration scenario" value={fixture} onChange={event => changeData('demo', event.target.value as Scenario)}>
@@ -75,7 +79,8 @@ export function Preview({ initialVariant, initialMode, initialFixture, about = f
       <nav aria-label="Main navigation"><Link aria-current={!about ? 'page' : undefined} href={`${pathFor(variant)}?${context}`}>Discover</Link>
         <Link aria-current={about ? 'page' : undefined} aria-label="About the recommendations" href={`${pathFor(variant)}/about?${context}`}>About</Link></nav></header>
       {mode === 'demo' && <p className="demo-notice" role="note"><strong>Demonstration data.</strong> Track relationships and counts are illustrative, not model results.</p>}
-      <main id="main-content" tabIndex={-1} key={mode + fixture + String(about)}>{about ? <About variant={productVariant} /> : <Discovery mode={mode} fixture={fixture} variant={productVariant} study={isStudy ? variant : undefined} />}</main>
+      <main id="main-content" tabIndex={-1} key={mode + fixture + String(about)}>{about ? <About variant={productVariant} /> : <Discovery mode={mode} fixture={fixture} variant={productVariant} study={study}
+        heroArtwork={artwork ? `/artwork/disc-tray/${artwork.slug}.png` : undefined} />}</main>
       <footer className="app-footer"><span>Music, through a different connection.</span><Link href={`${pathFor(variant)}/about?${context}`}>How these recommendations work</Link></footer>
     </div>
   </div>;

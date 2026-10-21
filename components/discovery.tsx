@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { APIError } from '../lib/api';
 import { artists, type Meta, type Track, type RelatedTrack } from '../lib/contracts';
 import { type Scenario } from '../lib/fixtures';
@@ -51,7 +52,7 @@ function EvidenceDetails({ track }: { track: RelatedTrack }) {
   </div>;
 }
 
-export function Discovery({ variant, mode, fixture, study }: { variant: number; mode: Meta['data_mode']; fixture: Scenario; study?: number }) {
+export function Discovery({ variant, mode, fixture, study, heroArtwork }: { variant: number; mode: Meta['data_mode']; fixture: Scenario; study?: number; heroArtwork?: string }) {
   const d = useDiscovery(mode, fixture);
   const [inspectedID, setInspectedID] = useState<string | null>(null);
   const inspectorHeading = useRef<HTMLHeadingElement>(null);
@@ -120,6 +121,7 @@ export function Discovery({ variant, mode, fixture, study }: { variant: number; 
     }}>Back to track list</button>
   </div></aside> : null;
   return <><Presentation opening={d.opening} heading={heading} search={search} starters={starters}
-    hero={<div className="hero-slot" aria-hidden="true"><div className="hero-fill" /></div>} seed={seed} results={results} inspector={inspector} />
+    hero={<div className="hero-slot" aria-hidden="true"><div className="hero-fill">{heroArtwork && <Image src={heroArtwork} alt="" width={2048} height={2048}
+      sizes="(max-width: 767px) 204px, (max-width: 1023px) 200px, 240px" preload />}</div></div>} seed={seed} results={results} inspector={inspector} />
     {meta && <div className="release-context"><span>{mode === 'demo' ? 'Demonstration data' : 'Real catalog'}</span><span>{mode === 'demo' ? 'Shared comparison fixtures' : '215 recordings · MusicBrainz + ListenBrainz'}</span></div>}</>;
 }

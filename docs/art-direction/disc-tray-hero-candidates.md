@@ -1,5 +1,7 @@
 # Disc Tray — four hero artwork candidates
 
+> Historical rejected 4K proposal below is preserved. The subsequent user-approved 2K set was successfully generated with Nano Banana 2.1: Orbital Disc, Glass Current, Aero Player and Liquid Star. Those completed assets and their working-demo provenance are recorded in disc-tray-artwork-assets.json. The current comparison is four actual Disc Tray demos, not the zero-job attempt documented below.
+
 Status: NOT GENERATED. Higgsfield submitted zero jobs. Disc Tray is the user's selected layout; the final hero artwork remains unselected. This record prepares the exact four requests without changing the application or promoting a final frontend.
 
 ## Format and composition

@@ -1,0 +1,54 @@
+{
+  "source": "Four completed Higgsfield jobs from the prior generation turn; not the older rejected4K proposals.",
+  "delivery": "2K originals stored locally; Next.js serves size-appropriate optimized derivatives in the interface.",
+  "assets": [
+    {
+      "slug": "orbital-disc",
+      "file": "public/artwork/disc-tray/orbital-disc.png",
+      "origin": "Previously generated at user request through Higgsfield; unmodified PNG downloaded for local web integration.",
+      "model": "nano_banana_2_1",
+      "job_id": "9bc2813d-6852-40ea-b7ba-f8eb0f4e6fc7",
+      "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3KWfF0ev1K802NVn0uS99BYnnVv/hf_20261021_163544_9bc2813d-6852-40ea-b7ba-f8eb0f4e6fc7.png",
+      "width": 2048,
+      "height": 2048,
+      "bytes": 4950026,
+      "sha256": "df143b3cab89d895e0d27e9246c4b156288f9f80e5a0c343b8ac1456820fe0a9"
+    },
+    {
+      "slug": "glass-current",
+      "file": "public/artwork/disc-tray/glass-current.png",
+      "origin": "Previously generated at user request through Higgsfield; unmodified PNG downloaded for local web integration.",
+      "model": "nano_banana_2_1",
+      "job_id": "6021576e-7477-4967-8826-5d2379258b05",
+      "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3KWfF0ev1K802NVn0uS99BYnnVv/hf_20261021_163714_6021576e-7477-4967-8826-5d2379258b05.png",
+      "width": 2048,
+      "height": 2048,
+      "bytes": 4828215,
+      "sha256": "5d11f2c575debe36e38f0ac3e969c9fcc3f8b5efd6954366913f75f15f6b7bae"
+    },
+    {
+      "slug": "aero-player",
+      "file": "public/artwork/disc-tray/aero-player.png",
+      "origin": "Previously generated at user request through Higgsfield; unmodified PNG downloaded for local web integration.",
+      "model": "nano_banana_2_1",
+      "job_id": "88be2f83-c95d-438a-8244-c446c54bcb0e",
+      "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3KWfF0ev1K802NVn0uS99BYnnVv/hf_20261021_163453_88be2f83-c95d-438a-8244-c446c54bcb0e.png",
+      "width": 2048,
+      "height": 2048,
+      "bytes": 3912631,
+      "sha256": "6006f1a04f73e163d7a95eb7b64e3cd2282ae0f08837f65363ede0eb793ae6e2"
+    },
+    {
+      "slug": "liquid-star",
+      "file": "public/artwork/disc-tray/liquid-star.png",
+      "origin": "Previously generated at user request through Higgsfield; unmodified PNG downloaded for local web integration.",
+      "model": "nano_banana_2_1",
+      "job_id": "9be681f2-fcd6-45f8-ac65-69711d73b016",
+      "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3KWfF0ev1K802NVn0uS99BYnnVv/hf_20261021_163836_9be681f2-fcd6-45f8-ac65-69711d73b016.png",
+      "width": 2048,
+      "height": 2048,
+      "bytes": 4983435,
+      "sha256": "f08b07a07e647e27fb1ad6c05cbdf50b96189b85e10de4297910cb1067586ef3"
+    }
+  ]
+}

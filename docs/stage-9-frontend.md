@@ -1,5 +1,15 @@
 # Stage 9: five app structures, awaiting selection
 
+## Working Disc Tray artwork demos
+
+The user selected Disc Tray and requested the four generated artworks inside the working UI. Open `/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry`, then use the four-way picker for Glass Current, Aero Player and Liquid Star. Each option also has a direct route ending in its slug and an `/about` page. The same input, seed, results and source/scenario settings persist while switching artwork. Search, Details, Use as seed, Change song, browser Back and About are functional. These are app demos, not image mockups.
+
+Four unmodified 2048x2048 originals are stored in public/artwork/disc-tray; their actual provider jobs, origin URLs, dimensions and hashes are in docs/art-direction/disc-tray-artwork-assets.json. Next.js delivers responsive optimized images while keeping the originals intact. Artwork is decorative, does not affect recommendations and occupies the existing circular opening-state slot. Search/results and About retain the same working body and omit the hero. On phones the existing task-before-art order is preserved. No hover/parallax/audio or new controls were added to the artwork itself.
+
+The new artwork.spec.ts covers 24 image/width combinations, 8 axe scans and picker/input/reload/search/details/reseed/history/About behavior. Eighteen captures show all four entry images on desktop/mobile and the actual 550px in-app width, plus the shared results/About screens. See stage-9-artwork-checks.json and stage-9-artwork-review.md in docs/evidence for completed results and review scope. Physical phones, screen readers, actual browser zoom, human preference and deployed performance remain unverified. Existing real/demo behavior is reused; no new model evaluation or data import occurred.
+
+Before: four standalone generated images and blank hero reservations. After: four working Disc Tray demos with the actual images. Why: the user can judge silhouette, crop and visual weight against real search and result content. Earlier comparison routes keep their placeholders. Disc Tray is selected; final hero artwork is still open. No production promotion, Stage 10 or deployment is authorized.
+
 ## Disc Study follow-up
 
 The user preferred v2's aesthetic and approved three additional body layouts. Open `/prototypes/disc-study/gatefold?mode=demo&fixture=entry`, `/prototypes/disc-study/disc-tray?mode=demo&fixture=entry`, or `/prototypes/disc-study/liner-notes?mode=demo&fixture=entry`. The three-way picker preserves the current input and recommendation state. About remains within the selected study route. Original v1–v5 routes remain available, and no final layout is promoted.
