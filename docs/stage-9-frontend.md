@@ -1,5 +1,13 @@
 # Stage 9: five app structures, awaiting selection
 
+## Shimmer follow-up
+
+The user supplied a ShimmerButton and approved a richer idle finish with a smoother transition into the liquid-metal hover. Its conic highlight and container-relative travel are merged into the existing native button; there is no detached demo, nested button, dependency addition or Tailwind 3 configuration. Idle faces now have stronger stationary gloss bands. Fine-pointer hover sweeps the rim highlight over 650ms, while the shader fades in over 240ms only after it is ready. On leave it fades for 180ms before disposal; quick re-entry cancels disposal and reuses the canvas. The previous abrupt hover gradient replacements were removed. Keyboard and accessibility fallbacks remain, and no idle animation loop is added.
+
+The same shared callers receive the refinement; hero artwork, outline, layout, factual copy and recommendation behavior remain unchanged. `node scripts/capture-liquid-buttons.mjs --shimmer` records 21 current state captures in docs/evidence/stage-9-shimmer-buttons and waits for CSS transitions to settle. Earlier liquid-button captures remain historical. The new test covers a still idle state, ready fade, rapid leave/re-entry reuse and eventual disposal. See stage-9-shimmer-button-checks.json and stage-9-shimmer-button-review.md for final results and limitations; still screenshots alone do not establish animation timing or hardware smoothness.
+
+Build, typecheck and the final 29-test Chrome regression pass. The first run retained 26 passes and 3 timeouts while Chrome reported suspended network I/O and an abnormal 2.8h duration; the clean rerun passed 29 in 2.7 minutes without a product change. Both run summaries are retained in the checks file. Physical devices, Safari, screen readers and perceived smoothness remain unverified.
+
 ## Liquid button refinement
 
 The user authorized the supplied liquid-metal effect for buttons first. All shared product buttons now use `components/ui/liquid-metal-button.tsx`: a responsive native button with a silver shader rim, an opaque icy or cobalt reading face, and a bounded pointer-click ripple. The comparison harness, navigation links and native disclosure summaries retain their existing behavior. The hero, circular outline and artwork are unchanged; rotating 3D artwork and outline removal are deferred to the next approved step.

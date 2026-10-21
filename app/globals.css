@@ -236,11 +236,15 @@ summary::marker { font-size: 11px; }
 
 /* Liquid metal stays behind an opaque reading face; the shader only runs on interaction. */
 .liquid-metal-button { position:relative; isolation:isolate; overflow:hidden; background:linear-gradient(125deg,#fbfdff 4%,#9eafc4 28%,#eaf7ff 48%,#8da8c3 72%,#fff 96%); border:1px solid var(--control); box-shadow:inset 0 1px 0 #fff,0 3px 8px #29486b14; }
-.liquid-metal-button::before { content:""; position:absolute; inset:3px; z-index:-1; border-radius:inherit; background:linear-gradient(180deg,#fdfefe,#e5effa); box-shadow:inset 0 1px 0 #fff; pointer-events:none; }
-.liquid-material { position:absolute; inset:0; z-index:-2; pointer-events:none; border-radius:inherit; overflow:hidden; }
+.liquid-metal-button::before { content:""; position:absolute; inset:3px; z-index:-1; border-radius:inherit; background:linear-gradient(180deg,#fff 0%,#f4f9ff 42%,#dceafa 48%,#edf5fd 100%); box-shadow:inset 0 1px 0 #fff,inset 0 -5px 8px #7899bc26; pointer-events:none; }
+.liquid-material { position:absolute; inset:0; z-index:-3; pointer-events:none; border-radius:inherit; overflow:hidden; opacity:0; transition:opacity 180ms ease-out; }
+.liquid-metal-button[data-liquid-active] .liquid-material[data-ready] { opacity:1; transition-duration:240ms; }
 .liquid-material canvas { display:block; width:100%; height:100%; }
+.liquid-shimmer { position:absolute; inset:0; z-index:-2; border-radius:inherit; overflow:hidden; pointer-events:none; container-type:size; opacity:.7; }
+.liquid-shimmer-spark { position:absolute; inset:0 auto auto 0; height:100cqh; aspect-ratio:1; }
+.liquid-shimmer-spark::before { content:""; position:absolute; inset:-100%; background:conic-gradient(from 225deg,transparent 0deg,#fff 55deg,#c7e8ff 90deg,transparent 91deg); }
 .liquid-metal-button.primary-button { color:#fff; border-color:var(--primary); filter:none; }
-.liquid-metal-button.primary-button::before { background:linear-gradient(180deg,#244fb9,var(--primary)); box-shadow:inset 0 1px 0 #ffffff59; }
+.liquid-metal-button.primary-button::before { background:linear-gradient(180deg,#315dc5 0%,#244fb9 42%,#153ea8 49%,#12358e 100%); box-shadow:inset 0 1px 0 #ffffff80,inset 0 -5px 8px #061d5433; }
 .liquid-metal-button.text-button { padding:10px 14px; border-radius:999px; text-decoration:none; }
 .problem .liquid-metal-button::before { background:var(--surface); }
 .liquid-metal-button:is(.starter-button,.match-button) { border-radius:var(--row-radius); padding-inline:14px; margin-block:5px; }
@@ -249,23 +253,24 @@ summary::marker { font-size: 11px; }
 @keyframes liquid-ripple { to { transform:translate(-50%,-50%) scale(1); opacity:0; } }
 .liquid-metal-button:disabled { background:var(--rule); box-shadow:none; color:var(--muted); cursor:not-allowed; }
 .liquid-metal-button:disabled::before { background:var(--tint); box-shadow:none; }
+.liquid-metal-button:disabled .liquid-shimmer { display:none; }
 .liquid-metal-button:focus-visible { box-shadow:0 0 0 3px var(--canvas); }
 @media (hover:hover) and (pointer:fine) {
-  .liquid-metal-button:not(:disabled):hover { background:linear-gradient(125deg,#fff,#8ba6c4 25%,#d7f3ff 48%,#a5b9cf 72%,#fff); }
-  .liquid-metal-button:not(:disabled):hover::before { background:linear-gradient(180deg,#fff,#dceaf9); }
-  .liquid-metal-button.primary-button:not(:disabled):hover::before { background:linear-gradient(180deg,#315fc7,#153ea8); }
+  .liquid-metal-button:not(:disabled):hover .liquid-shimmer-spark { transform:translateX(calc(100cqw - 100%)); }
+  .liquid-metal-button:not(:disabled):hover .liquid-shimmer-spark::before { transform:rotate(270deg); }
 }
 @media (prefers-reduced-motion:no-preference) {
+  .liquid-shimmer-spark,.liquid-shimmer-spark::before { transition:transform 650ms cubic-bezier(.16,1,.3,1); }
   .liquid-metal-button { transition:transform 150ms cubic-bezier(.23,1,.32,1); }
   .liquid-metal-button:not(:disabled):active:not(:focus-visible) { transform:scale(.98); }
 }
 @media (prefers-reduced-motion:reduce) { .liquid-ripple { display:none; } }
 @media (prefers-reduced-transparency:reduce) {
   .liquid-metal-button { background:var(--surface); box-shadow:none; }
-  .liquid-material,.liquid-ripple { display:none; }
+  .liquid-material,.liquid-ripple,.liquid-shimmer { display:none; }
 }
 @media (forced-colors:active) {
   .liquid-metal-button,.liquid-metal-button.primary-button { background:ButtonFace; color:ButtonText; border:1px solid ButtonText; box-shadow:none; }
-  .liquid-metal-button::before,.liquid-material,.liquid-ripple { display:none; }
+  .liquid-metal-button::before,.liquid-material,.liquid-ripple,.liquid-shimmer { display:none; }
   .liquid-metal-button:disabled { color:GrayText; border-color:GrayText; }
 }

@@ -141,7 +141,7 @@ The subsequent Disc Study exploration settles the aesthetic preference on incumb
 **Key Characteristics:**
 - Five distinct app structures with shared Manrope typography, content and behavior.
 - Sculpted enclosure lips around near-opaque reading fields.
-- Liquid-metal button rims around opaque icy or cobalt faces, with pointer-only motion.
+- Liquid-metal button rims and static conic highlights around glossy opaque icy or cobalt faces, with bounded pointer motion.
 - Flat CSS hero reservations in original comparisons; four local decorative images only in the authorized Disc Tray artwork demos.
 - Native controls, visible keyboard focus and task-first mobile flow.
 - Persistent demonstration labels and an explicit real-data boundary.
@@ -231,13 +231,13 @@ The four existing Higgsfield originals are local PNGs at `public/artwork/disc-tr
 
 ## Elevation & Depth
 
-Narrow silver-blue gradient lips, inset highlights and diffuse shadows frame near-opaque reading interiors. The product header uses 14px backdrop blur. The chrome lip is 6px desktop/4px mobile. Gradients belong to the page ground, enclosure edges and product button material; original comparison hero fills remain flat, with the scoped artwork-demo exception above. Button faces remain opaque above the metallic rim and optional shader.
+Narrow silver-blue gradient lips, inset highlights and diffuse shadows frame near-opaque reading interiors. The product header uses 14px backdrop blur. The chrome lip is 6px desktop/4px mobile. Gradients belong to the page ground, enclosure edges and product button material; original comparison hero fills remain flat, with the scoped artwork-demo exception above. Button faces remain opaque above the metallic rim and optional shader; static gloss bands and a stationary conic edge highlight enrich idle controls without animation.
 
 ### Shadow Vocabulary
 - **Enclosure:** `0 16px 38px #28476724,inset 0 1px 1px #fff`.
 - **Reading field:** `inset 0 1px 0 #fff,inset 0 -1px 0 #d3e2f3`.
 - **Header:** `inset 0 1px 0 #fff,0 8px 24px #29486b14`.
-- **Button material:** `inset 0 1px 0 #fff,0 3px 8px #29486b14`; opaque inset face at 3px, or 2px for starter and match frames.
+- **Button material:** `inset 0 1px 0 #fff,0 3px 8px #29486b14`; opaque gloss-banded inset face at 3px, or 2px for starter and match frames. Icy faces add `inset 0 -5px 8px #7899bc26`; cobalt faces use `inset 0 1px 0 #ffffff80,inset 0 -5px 8px #061d5433`.
 
 The dark translucent picker is external comparison chrome in document flow. Reduced transparency solidifies header, reading field and contents index; forced colors replace material fills with system canvas and borders.
 
@@ -251,9 +251,9 @@ Nest smaller reading surfaces inside rounded enclosures: desktop enclosure/inner
 
 ### Buttons and fields
 
-All product native buttons share the liquid-metal material: a responsive silver-blue rim, opaque icy face and existing semantic labels. Primary actions use an opaque cobalt gradient with white text; secondary/reseed actions retain cobalt text. Text actions are material pills with horizontal inset padding, without underlines. Starter and search-match choices use the same material as full-width frames at the field radius, with 14px horizontal padding and 5px block margins. Frontmatter button colors describe base roles; full gradient and state recipes live in the sidecar. Preserve native search inputs, selects, labels and helper text; controls maintain specified 44px targets and search has a 50px minimum height. Fine-pointer hover shifts rim and face gradients. Pointer presses scale enabled buttons to .98 outside keyboard focus; disabled buttons use divider/inset fills, muted text and no shadow.
+All product native buttons share the liquid-metal material: a responsive silver-blue rim, stationary conic edge highlight, opaque gloss-banded icy face and existing semantic labels. Primary actions use an opaque gloss-banded cobalt gradient with white text; secondary/reseed actions retain cobalt text. Text actions are material pills with horizontal inset padding, without underlines. Starter and search-match choices use the same material as full-width frames at the field radius, with 14px horizontal padding and 5px block margins. Frontmatter button colors describe base roles; full gradient and state recipes live in the sidecar. Preserve native search inputs, selects, labels and helper text; controls maintain specified 44px targets and search has a 50px minimum height. Fine-pointer hover moves the conic highlight across the button width and rotates it 270 degrees over 650ms with exponential ease-out; the reading face stays opaque. Pointer presses scale enabled buttons to .98 outside keyboard focus; disabled buttons use divider/inset fills, muted text and no shadow.
 
-Button transforms transition for 150ms. A pointer click produces one contained 550ms radial ripple at its click position. The optional Paper liquid-metal shader loads lazily for fine-pointer mouse hover or a bounded pointer-click ripple, animates only while either is active, and is disposed afterward; it has no idle loop. Keyboard activation remains static. Reduced motion removes transitions, shader animation and ripples; reduced transparency suppresses shader/ripple and removes the outer material shadow; forced colors replace the material with system button colors and a visible border. Failed WebGL or an unavailable shader chunk retains the complete CSS/native button. The sidecar previews this CSS material without requiring the React shader runtime.
+Button transforms transition for 150ms. A pointer click produces one contained 550ms radial ripple at its click position. The optional Paper liquid-metal shader loads lazily for fine-pointer mouse hover or a bounded pointer-click ripple, fades in over 240ms once ready, then fades out over 180ms after interaction before disposal. Its canvas stays mounted through the exit; rapid re-entry cancels disposal and reuses the context. The shader runs only during hover, the bounded ripple or its short exit; static idle gloss and conic highlights have no loop. Keyboard activation remains static. Reduced motion removes transitions, shader animation and ripples; reduced transparency suppresses shader/ripple/shimmer and removes the outer material shadow; forced colors replace the material with system button colors and a visible border. Failed WebGL or an unavailable shader chunk retains the complete CSS/native button. The sidecar previews the glossy CSS material and bounded conic sweep without requiring the React shader runtime.
 
 Native disclosure summaries retain underlines; navigation links and comparison harness retain their existing treatment. Native disclosures and variant replacement are immediate; only the external picker highlight transitions for 250ms. No autoplay, page entrances, parallax or hero animation is implemented.
 
@@ -272,7 +272,7 @@ Demonstration mode keeps its notice and illustrative-ordering language. Real fai
 ### Do:
 - **Do** retain all five structures, routes and comparison history until and after the user's structure selection.
 - **Do** keep shared Manrope typography, near-opaque reading fields, cobalt actions and selective enclosure chrome.
-- **Do** reuse the shared liquid-metal button material with opaque reading faces, bounded pointer feedback and static keyboard/fallback behavior.
+- **Do** reuse the shared glossy liquid-metal button material with opaque reading faces, static idle highlights, bounded pointer feedback and static keyboard/fallback behavior.
 - **Do** preserve each original comparison's flat hero fill, aspect, location and future fit mapping, with task-first mobile order; keep the four artwork demos in Disc Tray's existing 1:1 slot.
 - **Do** preserve native controls, visible focus, reduced-motion, reduced-transparency and forced-color treatments.
 - **Do** label demonstration fixtures persistently and keep real failures separate from demo data.

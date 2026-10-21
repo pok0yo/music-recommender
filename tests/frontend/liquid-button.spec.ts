@@ -2,6 +2,31 @@ import { test, expect } from '@playwright/test';
 
 const route = '/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry';
 
+test('idle shimmer is still and the shader eases in, survives quick re-entry and fades out', async ({ page }) => {
+  await page.goto(route);
+  const search = page.getByRole('button', { name: 'Search', exact: true });
+  const material = search.locator('.liquid-material');
+  await expect(search.locator('.liquid-shimmer')).toHaveAttribute('aria-hidden', 'true');
+  expect(await search.evaluate(e => e.getAnimations({ subtree: true }).filter(a => a.playState === 'running').length)).toBe(0);
+  expect(await material.evaluate(e => getComputedStyle(e).opacity)).toBe('0');
+  await search.hover(); await expect(material.locator('canvas')).toHaveCount(1);
+  await expect.poll(() => material.evaluate(e => getComputedStyle(e).opacity)).toBe('1');
+  expect(await material.evaluate(e => getComputedStyle(e).transitionDuration)).toBe('0.24s');
+  const reused = await search.evaluate(async e => {
+    const canvas = e.querySelector('canvas');
+    e.dispatchEvent(new PointerEvent('pointerout', { bubbles: true, pointerType: 'mouse', relatedTarget: document.body }));
+    await new Promise(requestAnimationFrame);
+    e.dispatchEvent(new PointerEvent('pointerover', { bubbles: true, pointerType: 'mouse', relatedTarget: document.body }));
+    await new Promise(requestAnimationFrame);
+    return e.querySelectorAll('canvas').length === 1 && e.querySelector('canvas') === canvas;
+  });
+  expect(reused).toBe(true);
+  await page.mouse.move(0, 0);
+  expect(await material.evaluate(e => getComputedStyle(e).transitionDuration)).toBe('0.18s');
+  await expect.poll(() => material.evaluate(e => getComputedStyle(e).opacity)).toBe('0');
+  await expect(material.locator('canvas')).toHaveCount(0);
+});
+
 test('liquid buttons animate on pointer interaction, clean up and preserve native submission', async ({ page }) => {
   const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
   await page.goto(route);

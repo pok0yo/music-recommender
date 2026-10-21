@@ -8,11 +8,20 @@ export function LiquidMetalButton({ children, className = '', type = 'button', d
   onPointerEnter, onPointerLeave, onPointerCancel, onClick, ...props }: ComponentPropsWithRef<'button'>) {
   const [motionAllowed, setMotionAllowed] = useState(false);
   const [hovered, setHovered] = useState(false);
+  const [materialMounted, setMaterialMounted] = useState(false);
   const [ripple, setRipple] = useState<{ x: number; y: number; size: number; id: number } | null>(null);
   const rippleID = useRef(0);
   const material = useRef<HTMLSpanElement>(null);
   const shader = useRef<ShaderMount | null>(null);
   const active = motionAllowed && !disabled && (hovered || !!ripple);
+
+  useEffect(() => {
+    if (active) { setMaterialMounted(true); return; }
+    if (!motionAllowed || disabled) { setMaterialMounted(false); return; }
+    // Retain the canvas through the 180ms CSS exit fade; re-entry cancels disposal.
+    const timer = window.setTimeout(() => setMaterialMounted(false), 180);
+    return () => window.clearTimeout(timer);
+  }, [active, motionAllowed, disabled]);
 
   useEffect(() => {
     const preferences = ['(prefers-reduced-motion: reduce)', '(forced-colors: active)', '(prefers-reduced-transparency: reduce)']
@@ -28,7 +37,7 @@ export function LiquidMetalButton({ children, className = '', type = 'button', d
   }, []);
 
   useEffect(() => {
-    if (!active || !material.current) return;
+    if (!materialMounted || !material.current) return;
     const host = material.current;
     let cancelled = false;
     let mount: ShaderMount | undefined;
@@ -43,6 +52,7 @@ export function LiquidMetalButton({ children, className = '', type = 'button', d
           u_offsetX: .1, u_offsetY: -.1, u_worldWidth: 0, u_worldHeight: 0,
         }, undefined, .8, 0, 1, 160_000);
         shader.current = mount;
+        host.dataset.ready = '';
       } catch {
         // WebGL is optional decoration; the CSS material remains a complete button.
         host.replaceChildren();
@@ -52,11 +62,12 @@ export function LiquidMetalButton({ children, className = '', type = 'button', d
       cancelled = true;
       mount?.dispose();
       shader.current = null;
+      delete host.dataset.ready;
       host.replaceChildren();
     };
-  }, [active]);
+  }, [materialMounted]);
 
-  return <button {...props} type={type} disabled={disabled} className={`liquid-metal-button ${className}`}
+  return <button {...props} type={type} disabled={disabled} className={`liquid-metal-button ${className}`} data-liquid-active={active || undefined}
     onPointerEnter={event => {
       if (event.pointerType === 'mouse' && window.matchMedia('(hover: hover) and (pointer: fine)').matches) setHovered(true);
       onPointerEnter?.(event);
@@ -73,6 +84,7 @@ export function LiquidMetalButton({ children, className = '', type = 'button', d
       onClick?.(event);
     }}>
     <span ref={material} className="liquid-material" aria-hidden="true" />
+    <span className="liquid-shimmer" aria-hidden="true"><span className="liquid-shimmer-spark" /></span>
     {children}
     {motionAllowed && !disabled && ripple && <span key={ripple.id} className="liquid-ripple" aria-hidden="true"
       style={{ left: ripple.x, top: ripple.y, width: ripple.size, height: ripple.size }}

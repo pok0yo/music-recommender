@@ -1,0 +1,196 @@
+{
+  "observed_at": "2026-10-21T18:08:29.663Z",
+  "browser": "155.0.8059.85",
+  "data": "Demonstration fixtures only",
+  "captures": [
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/desktop-entry.png",
+      "state": "entry",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "1ec8f5d1037acf13c0b47db94e09bc3cc5a52d972473b0eca4654b12780b07b7"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/desktop-hover.png",
+      "state": "hover",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "a0ceee9407fbd82b3a494fd8c85516999fca8b39edd78ae4a0126c1815912e47"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/desktop-pressed.png",
+      "state": "pressed",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "e75311eb1bce9da207ca10ef7beae645d67bd348bf8f43549573e7d391bf9ae1"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/desktop-focus.png",
+      "state": "focus",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "8179a1cb01b8ea8dbb4c4473abbf31d1bcfd68bbed8baa32030d12f53de3d6c0"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/desktop-results.png",
+      "state": "results",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "d2351851f8cf4a76c0535c58b107380b8551f3522f0fb621cb188fad8ac9cb35"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/desktop-disabled.png",
+      "state": "disabled",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "252f91fa44bb257e06934d521bacd69c4bc60949d9371ef9648a51221370d738"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/desktop-long.png",
+      "state": "long",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "pageWidth": 1440,
+      "sha256": "278443be54b68e361c1b8ab88037bcee620f5e1f7a03f029d59c4aabb5f7706d"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/mobile-entry.png",
+      "state": "entry",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "19b949e847f6865a425a5ed539f3126908006206f87df40d5fdc00455887460d"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/mobile-hover.png",
+      "state": "hover",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "63debc530a739f7289321697ceb3b4e4d8ac6e7bf404ba1dee1481046a3dde47"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/mobile-pressed.png",
+      "state": "pressed",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "c2175028ade10e396e252eec023799e319c95b516395b0f7c9d5a59c312b0403"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/mobile-focus.png",
+      "state": "focus",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "a1f824471cb1498682fb5c8a10b471da36568d6728ed8c2d661b106eba44ea17"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/mobile-results.png",
+      "state": "results",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "cebfa840e62a961a7ea69a987ab340258f7b013298ba45f5b070488da0014709"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/mobile-disabled.png",
+      "state": "disabled",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "0c322a36e45b87920473c95c6f0c2d0f6de62b3c0f6669b1288f2bb6fafe6c13"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/mobile-long.png",
+      "state": "long",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "sha256": "47e4c87c812111200c89b1e95dfed26302f9bb659eeffe95fdb5dda6252a4228"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/user-entry.png",
+      "state": "entry",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "027cfcb727d596d019e4c49df98bb831ca7ee2fe8d2add24d4c3b8fb574b3172"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/user-hover.png",
+      "state": "hover",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "c419b8fa64f9a81b83da1be513918570c6cfc65ee973004d8e70280f95e97063"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/user-pressed.png",
+      "state": "pressed",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "54cee59351d6d72caf494c8bdb4b53ae0e843a4c29e981f73095815b2ccc2f31"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/user-focus.png",
+      "state": "focus",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "0104ce43393e18763e8fba6e98f6ec43ed73febeb83ecbd9ced737e635942ca5"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/user-results.png",
+      "state": "results",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "164257f91d0089edbe895b7ad73d646ff9601f286396f9231d87e055a6934697"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/user-disabled.png",
+      "state": "disabled",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "9f5c2474ddab995cb20ccb6914a17166b30268abfa636f879f773eb8d454f5ab"
+    },
+    {
+      "path": "docs/evidence/stage-9-shimmer-buttons/user-long.png",
+      "state": "long",
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "pageWidth": 550,
+      "sha256": "a826c12ba51eaa862a06982dcf18f946e0902f4d1dfaff127ea0c223a5169f41"
+    }
+  ]
+}

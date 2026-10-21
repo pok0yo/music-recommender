@@ -1,0 +1,38 @@
+{
+  "interrupted_run": {
+    "startTime": "2026-10-21T18:08:00.401Z",
+    "duration": 10122909.361,
+    "expected": 26,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  },
+  "error": "ERR_NETWORK_IO_SUSPENDED in v3 navigation; v4 flow and WebGL fallback also timed out during this run. Reported total duration2.8h. No product fix inferred from this interrupted run.",
+  "captures": "stage-9-shimmer-button-captures.json",
+  "build": "passed",
+  "typecheck": "passed",
+  "source_sha256": {
+    "components/ui/liquid-metal-button.tsx": "3515d9fbeb6539b7ff60afadd1ff8bf31975744237fabc2b4e7864911dec9379",
+    "app/globals.css": "a351143fa29956cd8028581be7915a70fa1f5ed47097129ad7bf262a3d3e32ed",
+    "tests/frontend/liquid-button.spec.ts": "375e3b0b4d84c97496a1183f085436532135e95553b046199fdbf8578368e69e",
+    "scripts/capture-liquid-buttons.mjs": "451459f939e34df0cac83a42241ff9e446ea7e4f092c94cb2e1a65f02e914319",
+    "DESIGN.md": "94b19e5d10d889b680eb052a95c6fb1a9dc7099eb14d613089fe628d80a6b36c",
+    ".impeccable/design.json": "ae4d9bb2598480c39a4c0282ba9762a7395edaa64805e9cac5fd231da44a3862"
+  },
+  "backend_model_diff": [],
+  "scope": "Chrome frontend, demo fixtures and mocked API guards; no new model experiment or live backend verification.",
+  "limitations": [
+    "No physical device, Safari or screen-reader test",
+    "No measured frame-rate, battery or perceived smoothness result",
+    "Engine/detector unavailable in session; direct craft-floor review instead"
+  ],
+  "final_full_suite": {
+    "startTime": "2026-10-21T20:57:23.166Z",
+    "duration": 161758.625,
+    "expected": 29,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "observed_at": "2026-10-21T20:57:23.166Z"
+}

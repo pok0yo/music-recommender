@@ -3,7 +3,8 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 
-const output = 'docs/evidence/stage-9-liquid-buttons';
+const shimmer = process.argv.includes('--shimmer');
+const output = `docs/evidence/stage-9-${shimmer ? 'shimmer' : 'liquid'}-buttons`;
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ channel: process.env.CI ? undefined : 'chrome' });
 const evidence = { observed_at: new Date().toISOString(), browser: browser.version(), data: 'Demonstration fixtures only', captures: [] };
@@ -23,6 +24,7 @@ try {
         await button.locator('canvas').waitFor();
         await page.waitForFunction(() => document.querySelector('.primary-button .liquid-material').paperShaderMount.getCurrentFrame() > 100);
         if (state === 'pressed') await page.mouse.down();
+        await button.evaluate(e => Promise.all(e.getAnimations({ subtree: true }).map(a => a.finished.catch(() => {}))));
       }
       if (state === 'focus') { await page.getByRole('searchbox').focus(); await page.keyboard.press('Tab'); }
       await page.evaluate(() => window.scrollTo(0, 0));
@@ -36,5 +38,5 @@ try {
       console.log(path);
     }
   }
-  await writeFile('docs/evidence/stage-9-liquid-button-captures.json', JSON.stringify(evidence, null, 2) + '\n');
+  await writeFile(`docs/evidence/stage-9-${shimmer ? 'shimmer' : 'liquid'}-button-captures.json`, JSON.stringify(evidence, null, 2) + '\n');
 } finally { await browser.close(); }
