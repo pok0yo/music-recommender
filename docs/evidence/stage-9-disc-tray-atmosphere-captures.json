@@ -1,0 +1,337 @@
+{
+  "observed_at": "2026-10-21T22:38:41.553Z",
+  "browser": "155.0.8059.85",
+  "data": "Demonstration fixtures only",
+  "captures": [
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/desktop-entry.png",
+      "state": "entry",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "2cabc54c36e0b614dce08726f5dd81edd2c865688092bdcc24c24f09a9adba9b"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/desktop-tilt.png",
+      "state": "tilt",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "dd8d0e4e147b43951606875a61e4bb9c42f5fcfaf3112ed762e5b081f4732305"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/desktop-fallback.png",
+      "state": "fallback",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "8778ec682509a9133fa1e0995acc8d5ab3977bbe335e012705ca430b215dfca8"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/desktop-results.png",
+      "state": "results",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "e384bfd457b022080a1d81efff0fedaba1a6c6e27e750cb4f4664489c8025dc1"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/desktop-about.png",
+      "state": "about",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "3c8e879d5584b62aa40098d47b724e838297b96912747dfa3344f27ced0cc19d"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/mobile-entry.png",
+      "state": "entry",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "cc8caf97c44e86d5899158c456ec28eb6bed4fe613ef059b8b97ee2974ddc0b9"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/mobile-tilt.png",
+      "state": "tilt",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "1284b34f7afd6b3186cf47ba65a352fa90a1eec3bb440f606d0fa48ffdb97d20"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/mobile-fallback.png",
+      "state": "fallback",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "8fc68c5701643a5ac6120ad0532d723a70b2e1324c45f97dc3f55b22748a750a"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/mobile-results.png",
+      "state": "results",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "20e0ad2b2672fefb71289cae9d4bb8a17b1eeea9db453d6eed0978f7d6adfa8a"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/mobile-about.png",
+      "state": "about",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "99c2eb9170236c397ede48bde126a6904a7ea1d9979444c098aa5cd712e38fe2"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/user-entry.png",
+      "state": "entry",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "b155e82466a8dc7c74f2b54a096af7977eb94c7b1bbb2d5fbed46ffea110a025"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/user-tilt.png",
+      "state": "tilt",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "ce7f2d89e87ba9d5768527077152737ec7f13fcc30f9002dbb4be12e6a2e76d2"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/user-fallback.png",
+      "state": "fallback",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "e04ffbc83e59226d5fd11526f22dc058c29eb1fdfbf99c6f84d07bd83c4d593f"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/user-results.png",
+      "state": "results",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "fb8de45baf80f6baed551437f5930d78152153f8175f0d69955b402dfbb0ed97"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/user-about.png",
+      "state": "about",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "70b386cbf344fd66a7521a704de24a213d5aca2382f3e8d6458c00be3f333210"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/live-entry.png",
+      "state": "entry",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "44093d8ad24aa5254a624c47b84e89e97b2f8de6451a55b0b3f9b5933dae8d3d"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/live-tilt.png",
+      "state": "tilt",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "f4720978c97d86114c68b895e98590f34a474bebed280aae82455a5dab012b84"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/live-fallback.png",
+      "state": "fallback",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "9bef40d060d3961ea4ff969b0c5c9ef02928e950a84216a4eeee50f9b9a4045d"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/live-results.png",
+      "state": "results",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "2feedcb63a12737afc15c6de5f6e6c96439da80045498cfbaf21d56d4b786ce6"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/live-about.png",
+      "state": "about",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "6705759639192e5fd9833374e0abc0347ac59f875a307d286492584919e9bbe1"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/medium-entry.png",
+      "state": "entry",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "28a395aef62814907992a71a593adbdaee802cda07aee8a9dd53d666a6ea40aa"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/medium-tilt.png",
+      "state": "tilt",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "7e8b6884e339e7fe13b268e5b3feaa2c063c4d84159caa6d7e29727ec3a09765"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/medium-fallback.png",
+      "state": "fallback",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "3df4b49111da43c8b01f4ec9b393572835efadb59639e760bd044f1522964aa7"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/medium-results.png",
+      "state": "results",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "e5571593c3e28d5c0316e97fccf49ddb1ce56ec711026b96f0a195d2a2ed6dc8"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/medium-about.png",
+      "state": "about",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "5081388a6f4d5f31a60eddb9953c48ae47063fddc5e410b8b18841bc57594295"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/live-wide-entry.png",
+      "state": "entry",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "d8dc539c21e57744eb683ca4bce4296fc4e6dddf6c8d7746e1a16e0dfa9e94ea"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/live-wide-tilt.png",
+      "state": "tilt",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "cbddbfd0f2a2998503c32654ce7fdb5281aa8c665136fa9a69df3e49dd249d8b"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/live-wide-fallback.png",
+      "state": "fallback",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "1b2510058924d0f998663b259b8b57a7eee226d490743d9391aea4df661629d7"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/live-wide-results.png",
+      "state": "results",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "3f5b935fda828bd8d90945888b85925c14238808330476571caca75ab90a42b9"
+    },
+    {
+      "path": "docs/evidence/stage-9-disc-tray-atmosphere/live-wide-about.png",
+      "state": "about",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "dd4c42c44b4ba5765084422a8ceb6682be55c0501704b684c76aea752223acb0"
+    }
+  ]
+}

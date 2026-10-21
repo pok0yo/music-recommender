@@ -53,6 +53,28 @@ typography:
     fontSize: "14px"
     fontWeight: 600
     lineHeight: 1.4
+  orbital-display:
+    fontFamily: "Michroma, sans-serif"
+    fontSize: "40px"
+    fontWeight: 400
+    lineHeight: 1.2
+    letterSpacing: "-.025em"
+  orbital-brand:
+    fontFamily: "Michroma, sans-serif"
+    fontSize: "13px"
+    fontWeight: 400
+    letterSpacing: ".015em"
+  orbital-about:
+    fontFamily: "Michroma, sans-serif"
+    fontSize: "clamp(28px,3.5vw,44px)"
+    fontWeight: 400
+    lineHeight: 1.25
+    letterSpacing: "-.025em"
+  orbital-section:
+    fontFamily: "Michroma, sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
+    letterSpacing: "-.015em"
 rounded:
   field: "14px"
   hero: "18px"
@@ -136,13 +158,14 @@ The approved Y2K Futurism / Soft Club world uses icy-blue acrylic enclosures, si
 
 This records the implemented October 21 Stage 9 comparison, merging the prior provisional system. Disc Tray is the selected body; final hero artwork remains unselected. The shared material world supersedes Stage 4's separate typography/theme directions; those remain historical evidence. Body selection does not authorize production promotion, Stage 10 or deployment; retain v1–v5 and comparison history after selection.
 
-The subsequent Disc Study exploration settles the aesthetic preference on incumbent v2 and the body choice on Disc Tray. Gatefold, Disc Tray and Liner Notes remain available for comparison. The four-option artwork comparison lives only in working Disc Tray demos at `/prototypes/disc-tray/artwork/{slug}`; the picker changes artwork while preserving discovery state. The user subsequently authorized a larger interactive 3D Orbital Disc exploration, replacing only that option's circular raster enclosure. The other three options retain their generated originals, and the original five previews and three body-comparison routes retain flat placeholders. The latest user adjustment vertically centers the model in the upper tray and removes its Pause/Resume control; rotation, tilt and shine now respond only during mouse hover, with a still idle pose. This hero iteration remains reviewable exploration, not final artwork acceptance.
+The subsequent Disc Study exploration settles the aesthetic preference on incumbent v2 and the body choice on Disc Tray. Gatefold, Disc Tray and Liner Notes remain available for comparison. The four-option artwork comparison lives only in working Disc Tray demos at `/prototypes/disc-tray/artwork/{slug}`; the picker changes artwork while preserving discovery state. The user subsequently authorized a larger interactive 3D Orbital Disc exploration, replacing only that option's circular raster enclosure. The other three options retain their generated originals, and the original five previews and three body-comparison routes retain flat placeholders. The latest user adjustment vertically centers the model in the upper tray and removes its Pause/Resume control; rotation, tilt and shine now respond only during mouse hover, with a still idle pose. The subsequent approved atmosphere refinement adds one original Higgsfield environment and locally served Michroma display lettering only to the selected Orbital Disc Discover/working/About route. It extends the pinned world without changing the other artwork or body comparisons. This remains a reviewable Stage 9 iteration, not final artwork acceptance.
 
 **Key Characteristics:**
-- Five distinct app structures with shared Manrope typography, content and behavior.
+- Five distinct app structures with shared Manrope base typography, content and behavior; the selected Orbital demo alone adds Michroma short display lettering.
 - Sculpted enclosure lips around near-opaque reading fields.
 - Liquid-metal button rims and static conic highlights around glossy opaque icy or cobalt faces, with bounded pointer motion.
 - Flat CSS heroes in original comparisons; three local raster artwork options and one locally authored 3D Orbital Disc with a transparent static fallback in the authorized Disc Tray demos.
+- One generated environment source supplies static responsive backgrounds only in the selected Orbital demo; pale reading planes protect the task.
 - Native controls, visible keyboard focus and task-first mobile flow.
 - Persistent demonstration labels and an explicit real-data boundary.
 
@@ -154,7 +177,7 @@ Cool pearl and ice-blue surfaces support dark blue reading text and cobalt actio
 - **Cobalt:** headings, selected navigation, action text, primary buttons, caret and keyboard focus.
 
 ### Neutral
-- **Ice canvas / Pearl surface:** ground token and solid controls or displays. The actual page ground is a cool three-stop gradient.
+- **Ice canvas / Pearl surface:** ground token and solid controls or displays. The baseline page ground is a cool three-stop gradient; only the selected Orbital demo adds the scoped environment treatment below.
 - **Deep blue ink / Secondary blue ink:** primary reading text and supporting metadata.
 - **Field edge / Divider / Inset:** strong control boundaries, quiet separators and evidence or demonstration backgrounds.
 - **Reading field / Header:** near-opaque enclosure interiors and selectively translucent product navigation.
@@ -165,7 +188,7 @@ Cool pearl and ice-blue surfaces support dark blue reading text and cobalt actio
 
 ## Typography
 
-**Display and Body Font:** Manrope with sans-serif fallback. The application loads Latin weights 500 and 600; unsupported Unicode uses the platform fallback. System typography belongs to the external comparison harness. The removed display-font packages are not active dependencies.
+**Base Display and Body Font:** Manrope with sans-serif fallback. The application loads Latin weights 500 and 600; unsupported Unicode uses the platform fallback. System typography belongs to the external comparison harness. The selected Orbital demo additionally loads Michroma Latin 400 from local `@fontsource/michroma` 5.3.0; retain its SIL OFL 1.1 notice at `public/third-party/michroma/OFL.txt`.
 
 - **Display:** opening heading reduces from the frontmatter role to 40px at tablet and 32px at mobile.
 - **Headline:** compact v3–v5 command headings. v1/v2 working headings use 30px; the shared working-heading selector also includes 28px/1.2/600 where applicable.
@@ -174,7 +197,11 @@ Cool pearl and ice-blue surfaces support dark blue reading text and cobalt actio
 - **Label / Button:** 14px metadata and actions; artist metadata is normally 15px. Result names use 18px, while the ledger uses 16px titles.
 - **Native inputs/selects:** at least 16px.
 
-**The Shared Voice Rule.** Keep Manrope and its loaded 500/600 weights across all five structures; structural differences must carry the comparison.
+### Selected Orbital display exception
+
+Only `[data-artwork=orbital-disc]` uses the four `orbital-*` frontmatter roles. Branding and its mark use 13px Michroma; opening headings use 40px/1.2, uppercase and `font-style:oblique 10deg`, with a 13ch maximum. At 1023px they reduce to 32px; mobile uses `clamp(25px,5.8vw,36px)`. Working headings use 28px with a 26ch maximum before the narrower mobile rule. About headings use the recorded clamp, a 22ch maximum and 26px on mobile. Result-section headings use 14px Michroma. Keep controls, explanatory copy, song identities, evidence and metadata in Manrope; unsupported glyphs and font failures retain readable sans-serif fallback.
+
+**The Shared Voice Rule.** Keep Manrope and its loaded 500/600 weights as the base across all five structures. Only the selected Orbital demo may use locally served Michroma 400 for branding and short display headings; other comparisons retain their existing typography.
 
 ## Layout
 
@@ -216,7 +243,7 @@ Each original body-comparison entry retains v2's flat circular 1:1 reservation u
 
 ### Disc Tray artwork demos
 
-Only `/prototypes/disc-tray/artwork/{slug}` and its optional `/about` use the four-option artwork picker below. Discover entry alone displays the artwork; search/results and About omit it. Picker changes preserve the current query, seed, recommendations and data context through the shared discovery state.
+Only `/prototypes/disc-tray/artwork/{slug}` and its optional `/about` use the four-option artwork picker below. Discover entry alone displays the hero artwork; search/results and About omit the hero. The selected Orbital demo's separately approved static environment persists behind working states and About. Picker changes preserve the current query, seed, recommendations and data context through the shared discovery state.
 
 | Picker option | Route slug |
 |---|---|
@@ -232,6 +259,14 @@ The four existing Higgsfield originals remain local PNGs at `public/artwork/disc
 Only `/prototypes/disc-tray/artwork/orbital-disc` replaces the circular enclosure with free-standing transparent 3D artwork. The 590×472px desktop figure has no background, border, radius or enclosure shadow. It is vertically centered in the upper command enclosure using `top:50%;transform:translateY(-50%);right:-70px`, leaving heading/search clear while crossing the right lip. The opening state retains 48px top margin and a 43% right column. From 768px through 1359px it uses `width:calc(40% + 80px);right:-8px`, retaining the vertical centering with less side overlap. At 767px and below it returns to document flow with no transform, at `width:min(100%,520px)` and 1.25 aspect ratio; existing layout order places it visually after the starter drawer. The figure is purely decorative and adds no keyboard stop. Search/results and About omit the entire hero.
 
 The local Three.js 0.186.1 scene uses actual annular front/back faces, a thin outer edge, an open center and hub, two chrome torus orbits and a mirrored sphere. Procedural spectrum and thin-film maps supply broad rainbow bands; authored cool sky/area panels illuminate the disc and RoomEnvironment supplies studio reflections for chrome. No remote model, image or environment map is fetched. A transparent 2000×1600 PNG exported directly from the same renderer is the canonical static fallback; its source hashes, asset hash and provenance are in `docs/art-direction/orbital-disc-model.json`. Preserve this same-scene fallback rather than reverting to the earlier generated image.
+
+### Selected Orbital atmosphere
+
+Only the selected `[data-artwork=orbital-disc]` Discover, working/results and About surfaces use `v2/atmosphere.css`. One Higgsfield Nano Banana 2.1 generation (job `1f71568c-fa71-414d-9401-dbee5900ce09`) supplies a retained 2752×1536 master plus three responsive WebP crops: 1920×1080 page/hero environment (93,274 bytes), 720×1280 narrow background (83,528 bytes) and 640×640 About detail (41,724 bytes). These are three derivatives of one generated image, not three independent artworks. The original is retained for provenance and is not loaded by the interface. Prompts, rationale, rejected unsubmitted proposals and actual generation parameters live in `docs/art-direction/disc-tray-environment-request.json`; hashes and crop roles live in `docs/art-direction/disc-tray-environment-assets.json`. No transparent accent was generated and no moodboard/reference pixels are shipped.
+
+The page uses a static cover image over `#daeaf5`, with a pale vertical overlay. The opening upper panel repeats the wide environment behind a near-white-to-transparent left-to-right reading mask; the left 43% remains `#f7fbff`. At 767px and below, the page uses the narrow crop, the upper panel image is removed and the search command receives a `#f7fbfff5` plane. About contains the square detail in the right 32% of its introduction, with text padding reserving 34%; mobile replaces that detail with a pale reading field. Header, demo notice, release context, About boundary and footer receive near-opaque pale planes; image detail never substitutes for text contrast. Working lists and explanatory paragraphs keep their existing calm reading surfaces.
+
+Images are decorative local CSS backgrounds: no fixed attachment, added animation, remote runtime image request, control or factual content. Forced colors replaces the page, upper-panel and About-intro imagery with `Canvas`; missing images leave pale fallback surfaces. Preserve the centered hover-only 3D disc as a separate authored scene and keep the other three artwork routes and original comparisons unchanged.
 
 **The Task Before Hero Rule.** Put search and starting choices before decorative media on narrow screens; remove the reservation from working states. Keep Orbital Disc decorative so it adds no keyboard stop.
 
@@ -270,7 +305,7 @@ The opening-state sculpture stays still at idle. Only mouse hover enables disc r
 
 Rendering suspends when the host is offscreen or the document is hidden. DPR is capped at 1.5; ResizeObserver updates the renderer. An unavailable scene import, WebGL failure or lost context reveals the transparent same-scene fallback. Working-state transition or unmount cancels the animation, disconnects observers/listeners and disposes scene resources. These are implemented lifecycle rules, not measured battery or frame-rate guarantees.
 
-Orbital geometry tests cover widths 320, 390, 550, 569, 768, 1024, 1253 and 1440px; the current assertions check vertical centering and control clearance instead of the superseded high placement. The centered capture set covers entry, tilt, fallback, results and About at desktop 1440×900, mobile 390×844, user 550×766, live 569×792, medium 1253×705 and live-wide 1305×792. All 30 current capture hashes are verified against `docs/evidence/stage-9-orbital-centered-captures.json`. The 1305px set records the wider in-app browser used during live verification; it adds rendered overflow/review evidence, not another geometry-test width. The earlier raised model and Pause/Resume iteration remains historical evidence in the 36-capture `docs/evidence/stage-9-orbital-hero-captures.json`; it does not describe the current layout or motion behavior.
+Orbital geometry tests cover widths 320, 390, 550, 569, 768, 1024, 1253 and 1440px; the current assertions check vertical centering and control clearance instead of the superseded high placement. The centered capture set covers entry, tilt, fallback, results and About at desktop 1440×900, mobile 390×844, user 550×766, live 569×792, medium 1253×705 and live-wide 1305×792. All 30 current atmosphere capture hashes are verified against `docs/evidence/stage-9-disc-tray-atmosphere-captures.json`. The earlier centered-only 30 captures remain historical checkpoint evidence in `docs/evidence/stage-9-orbital-centered-captures.json`. The 1305px set records the wider in-app browser used during live verification; it adds rendered overflow/review evidence, not another geometry-test width. The earlier raised model and Pause/Resume iteration remains historical evidence in the 36-capture `docs/evidence/stage-9-orbital-hero-captures.json`; it does not describe the current layout or motion behavior.
 
 ### Reading panels and track evidence
 
@@ -286,16 +321,16 @@ Demonstration mode keeps its notice and illustrative-ordering language. Real fai
 
 ### Do:
 - **Do** retain all five structures, routes and comparison history until and after the user's structure selection.
-- **Do** keep shared Manrope typography, near-opaque reading fields, cobalt actions and selective enclosure chrome.
+- **Do** keep Manrope base typography, near-opaque reading fields, cobalt actions and selective enclosure chrome; scope Michroma 400 branding/display roles and generated environment backgrounds to the selected Orbital demo.
 - **Do** reuse the shared glossy liquid-metal button material with opaque reading faces, static idle highlights, bounded pointer feedback and static keyboard/fallback behavior.
 - **Do** preserve original comparison flat fills and mappings, and the three retained raster demos' circular 1:1 slot. Give only Orbital Disc its approved vertically centered right-side overlap, same-scene transparent fallback, hover-only motion and task-first mobile order.
 - **Do** preserve native controls, visible focus, reduced-motion, reduced-transparency and forced-color treatments.
 - **Do** label demonstration fixtures persistently and keep real failures separate from demo data.
-- **Do** treat review/capture evidence as scoped evidence, not deployment, user research or full accessibility conformance. Current centered Orbital evidence contains five states at six viewport sets (30 verified captures), including the 1305×792 wider in-app browser; preserve the distinction from the eight geometry-test widths and earlier 36-capture iteration.
+- **Do** treat review/capture evidence as scoped evidence, not deployment, user research or full accessibility conformance. Current atmosphere evidence contains five states at six viewport sets (30 verified captures), including the 1305×792 wider in-app browser; preserve the distinction from the eight geometry-test widths and earlier centered/raised checkpoints.
 
 ### Don't:
-- **Don't** extend the Orbital Disc 3D/motion exception to other routes or add unrelated artwork, reference pixels, remote models/images or decorative playback controls. Keep original comparison routes artwork-free; Orbital Disc stays still except during mouse hover and has no Pause/Resume control.
-- **Don't** replace structural differences with typography/theme swaps or reserve blank hero space in working screens.
+- **Don't** extend Orbital's 3D, environment or display-font exceptions to other routes, copy reference pixels, add remote runtime models/images or invent playback controls. Keep original comparisons artwork-free and body/control typography in Manrope; Orbital stays still except during mouse hover and has no Pause/Resume control.
+- **Don't** replace structural differences with typography/theme swaps, reserve blank hero space in working screens or describe responsive environment crops as independent generated artworks.
 - **Don't** turn approved glass/chrome into a generic ban or extend translucency into low-contrast reading regions.
 - **Don't** treat Disc Tray body selection or the artwork demos as authorization for production promotion, Stage 10 or deployment; final hero artwork remains unselected.
 - **Don't** inflate catalog, link, model-quality or personalisation claims beyond PRODUCT.md and frozen evidence.

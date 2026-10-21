@@ -26,7 +26,8 @@ try {
     },null,2)+'\n');
     console.log(path);
   } else {
-    const output = 'docs/evidence/stage-9-orbital-centered';
+    const name = process.argv.includes('--atmosphere') ? 'stage-9-disc-tray-atmosphere' : 'stage-9-orbital-centered';
+    const output = 'docs/evidence/'+name;
     await mkdir(output,{recursive:true});
     const evidence = { observed_at:new Date().toISOString(), browser:browser.version(), data:'Demonstration fixtures only', captures:[] };
     const page = await browser.newPage();
@@ -57,6 +58,6 @@ try {
         await page.mouse.move(0,0); console.log(path);
       }
     }
-    await writeFile('docs/evidence/stage-9-orbital-centered-captures.json',JSON.stringify(evidence,null,2)+'\n');
+    await writeFile('docs/evidence/'+name+'-captures.json',JSON.stringify(evidence,null,2)+'\n');
   }
 } finally { await browser.close(); }

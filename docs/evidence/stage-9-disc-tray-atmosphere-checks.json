@@ -1,0 +1,61 @@
+{
+  "observed_at": "2026-10-21T22:44:12.607557+00:00",
+  "build": "passed",
+  "typecheck": "passed",
+  "final_full_suite": {
+    "startTime": "2026-10-21T22:38:42.759Z",
+    "duration": 169199.861,
+    "expected": 35,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "captures": "stage-9-disc-tray-atmosphere-captures.json",
+  "capture_count": 30,
+  "capture_hashes_verified": true,
+  "asset_hashes_verified": true,
+  "generated_originals": 1,
+  "responsive_derivatives": 3,
+  "master_pixels": {
+    "width": 2752,
+    "height": 1536
+  },
+  "runtime_image_bytes": {
+    "public/artwork/disc-tray/environment/environment-wide.webp": 93274,
+    "public/artwork/disc-tray/environment/environment-mobile.webp": 83528,
+    "public/artwork/disc-tray/environment/chrome-detail.webp": 41724
+  },
+  "generation_accounting": "Initial3 GPT Image2.5 submissions rejected for plan access, zero jobs. One Nano Banana2.1 requested2k completed for quoted2 credits. No trial/subscription/purchase, no separate transparent accent.",
+  "source_sha256": {
+    "app/layout.tsx": "3398f8e85c3d9ee4e6600cbadab20b8dad18fed7758db4258afdf152d702018c",
+    "v2/atmosphere.css": "eac1376c72ad6bfaec3a0a79081429055954c53f352bd0b86fdc4469523c156a",
+    "tests/frontend/atmosphere.spec.ts": "756a15f2c7b97397e5f587a1ff95711b3781998823475f2d4491597ebb45fc59",
+    "scripts/prepare-disc-tray-environment.mjs": "f2117b4de5ab60d0d43949ab01241166538b079c17b7ac83880203af2f1e4e63",
+    "scripts/capture-orbital-hero.mjs": "c164f98ecb9232b30e00721eba7ee6bc1e070795545000a9035d83568c7442f3",
+    "package.json": "aa4aa2289fa9737f55eee824c5e876bb2488d63433f4f1e3f19776c850fd328a",
+    "package-lock.json": "58b28ac350b70f2d820029b09e1ef5646e12ad0f5433a475eea855b9c8832a90",
+    "PRODUCT.md": "6007d3db9642137100c88fddd40a67de04484fbf20750418ed9a06c3b627caa4",
+    "DESIGN.md": "62c6cc4fe45691bf15f404bc66efe211862b6f459c795e45733e4137e13f1f1a",
+    ".impeccable/design.json": "6bf8a92bf3934cbafaf022d0dc7ac1672e95932a218539c91b61ffacec319ee6",
+    ".impeccable/briefs/disc-tray-atmosphere.md": "2fa43e338ef360350492af3f5967c5143046876e41b6bfb91b8c55cc2a15db7a",
+    "docs/art-direction/disc-tray-environment-assets.json": "2977fadc0da17235e5be0a3459a3095023c807be7478688f23cb49e95ca32823",
+    "docs/art-direction/disc-tray-environment-request.json": "66dd531dda45f3ec0f7c3d5285113a62932024be34f602e9dcf2dc318c750d53",
+    "public/third-party/michroma/OFL.txt": "9d869414cd2df4c69abadbada93d27865c7b0df7d276bb2fe1abfd46288cb093"
+  },
+  "unchanged_backend_model_and_hero": [],
+  "scope": "Local Chrome frontend, real/demo mocked guards and actual in-app visual inspection. No new live backend/model experiment or retention research.",
+  "remote_ci_before_this_commit": {
+    "commit": "7182a2c61311790fb8146848534e12090a71ffc4",
+    "url": "https://github.com/pok0yo/music-recommender/actions/runs/39684723234",
+    "status": "failure",
+    "passed": 24,
+    "failed": 9,
+    "observation": "Artwork/button/hero test timeouts; cause unproven. Local35 passes do not establish a remote pass."
+  },
+  "limitations": [
+    "No physical device, Safari or screen-reader verification",
+    "No measured FPS, battery or user retention result",
+    "Error/long states automated, not included in the30 screenshots",
+    "Earlier Impeccable engine/detector unavailable; direct craft-floor/fresh review, no detector-pass claim"
+  ]
+}

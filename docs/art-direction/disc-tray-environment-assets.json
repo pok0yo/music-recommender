@@ -1,0 +1,44 @@
+{
+  "observed_at": "2026-10-21T22:37:48.646Z",
+  "job_id": "1f71568c-fa71-414d-9401-dbee5900ce09",
+  "model": "nano_banana_2_1",
+  "request": "disc-tray-environment-request.json",
+  "origin": "One completed user-authorized Higgsfield generation. Three resized/cropped WebP derivatives share that source; no reference pixels or additional generated originals.",
+  "assets": [
+    {
+      "path": "public/artwork/disc-tray/environment/refracted-horizon.png",
+      "width": 2752,
+      "height": 1536,
+      "bytes": 6448562,
+      "sha256": "735a13b4690d8b2e89bd324afc65de5b1542e849d853cd5664b026a8bac181a3",
+      "role": "Unmodified Higgsfield original; not loaded by the interface."
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/environment-wide.webp",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 93274,
+      "sha256": "1529ba04d654ce0309ad2a4b2c9315adac22ea8df81e0aa2877a0bf7b1126568",
+      "role": "Page and hero environment",
+      "crop": "centre"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/environment-mobile.webp",
+      "width": 720,
+      "height": 1280,
+      "bytes": 83528,
+      "sha256": "fe9fe3a89c188461f6c6a38526fc94dd3920e26c528575d1a62cb990b2e3854b",
+      "role": "Narrow page background",
+      "crop": "east"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/chrome-detail.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 41724,
+      "sha256": "3cebde23d329670a1edcee7ea27eb95952bbe6234b1a94e3e08f39a936ecd511",
+      "role": "About introduction detail",
+      "crop": "east"
+    }
+  ]
+}

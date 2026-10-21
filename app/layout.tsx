@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import '@fontsource/manrope/latin-500.css';
 import '@fontsource/manrope/latin-600.css';
+import '@fontsource/michroma/latin-400.css';
 import './globals.css';
 import '../v1/style.css';
 import '../v2/style.css';
@@ -8,6 +9,7 @@ import '../v3/style.css';
 import '../v4/style.css';
 import '../v5/style.css';
 import '../v2/studies.css';
+import '../v2/atmosphere.css';
 
 export const metadata: Metadata = { title: 'Music Recommender — design previews', description: 'Five music discovery prototypes with transparent listening connections.' };
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, viewportFit: 'cover', themeColor: '#F4F9FF' };

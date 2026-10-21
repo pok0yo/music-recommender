@@ -1,0 +1,71 @@
+{
+  "observed_at": "2026-10-21T22:34:50.616Z",
+  "initial_proposals": [
+    {
+      "index": 1,
+      "name": "refracted-horizon",
+      "why": "A luminous depth field sits behind the existing interactive disc, while a quiet left side protects search readability.",
+      "params": {
+        "model": "gpt_image_2_5",
+        "resolution": "2k",
+        "quality": "high",
+        "aspect_ratio": "16:9",
+        "background": "opaque",
+        "count": 1,
+        "prompt": "Create one original premium Y2K Futurism / Soft Club CGI asset for a working music discovery website. Optimistic 1999–2002 imagined technology, future plus nostalgia. Ice blue, pearl white, liquid silver, cobalt reflections, tiny ocean-green accents. Meticulously rendered glass/refraction/metal, confident sculptural silhouette and optical depth. No people, faces, brands, logos, letters, typography, numbers, UI, controls, watermarks, fake technical text, grids, collage, neon cyberpunk, purple neon, or starfield. Produce artwork only, never a website screenshot. LANDSCAPE 16:9 background environment: a vast luminous pale-blue optical space, translucent aerodynamic acrylic waves flowing diagonally from upper-right to lower-right, a single polished liquid-silver curved conduit at the extreme right edge, soft distant white cloud reflections seen THROUGH rippling glass, a subtle glossy blue floor reflecting silver light. Right half expressive and dimensional; LEFT 48 percent almost empty pearl-white mist, center transition clean and restrained. Broad glass forms, not tiny clutter. Crisp cobalt depths at rightmost edge, icy white daylight through the center. No disc or sphere: the website already has a separate 3D disc. No enclosing border. Why this works (composition rationale, do not draw text): luminous depth behind the existing disc with a quiet left half preserves search readability."
+      },
+      "status": "submission_failed",
+      "reason": "Requires basic plan or higher.",
+      "submitted": false
+    },
+    {
+      "index": 2,
+      "name": "millennium-atmosphere",
+      "why": "Edge-weighted glass and chrome make page margins atmospheric without putting busy imagery behind content.",
+      "params": {
+        "model": "gpt_image_2_5",
+        "resolution": "2k",
+        "quality": "high",
+        "aspect_ratio": "16:9",
+        "background": "opaque",
+        "count": 1,
+        "prompt": "Create one original premium Y2K Futurism / Soft Club CGI asset for a working music discovery website. Optimistic 1999–2002 imagined technology, future plus nostalgia. Ice blue, pearl white, liquid silver, cobalt reflections, tiny ocean-green accents. Meticulously rendered glass/refraction/metal, confident sculptural silhouette and optical depth. No people, faces, brands, logos, letters, typography, numbers, UI, controls, watermarks, fake technical text, grids, collage, neon cyberpunk, purple neon, or starfield. Produce artwork only, never a website screenshot. LANDSCAPE 16:9 full-page atmospheric background: large sweeping silver and translucent ice-blue ribbon forms at the far outer edges, glancing watery caustics, an airy powder-blue cloud horizon low in the composition, a pale reflective floor. Forms at top-right and bottom-left corners create an elegant diagonal; the central 65 percent remains open luminous pale blue with very low detail for floating website panels. Gentle refracted cobalt light and white specular bands, sharp material edges against soft distant depth. One or two forms only, no gadget collage, no CD, no spheres, no figures. This should evoke a luxurious millennium-era desktop wallpaper and trance sleeve with a contemporary clean composition, not generic blue gradient wallpaper. Why this works (composition rationale, do not draw text): outer-edge atmosphere gives the app visual presence while protecting central reading surfaces."
+      },
+      "status": "submission_failed",
+      "reason": "Requires basic plan or higher.",
+      "submitted": false
+    },
+    {
+      "index": 3,
+      "name": "chrome-current",
+      "why": "One isolated cutout can overlap a frame edge without turning essential controls into decoration.",
+      "params": {
+        "model": "gpt_image_2_5",
+        "resolution": "2k",
+        "quality": "high",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "prompt": "Create one original premium Y2K Futurism / Soft Club CGI asset for a working music discovery website. Optimistic 1999–2002 imagined technology, future plus nostalgia. Ice blue, pearl white, liquid silver, cobalt reflections, tiny ocean-green accents. Meticulously rendered glass/refraction/metal, confident sculptural silhouette and optical depth. No people, faces, brands, logos, letters, typography, numbers, UI, controls, watermarks, fake technical text, grids, collage, neon cyberpunk, purple neon, or starfield. Produce artwork only, never a website screenshot. TRANSPARENT BACKGROUND, isolated single sculptural accent, no ground or shadow baked outside the object: an aerodynamic looping liquid-chrome ribbon with a small translucent ice-blue inner fin, sweeping from bottom-left to top-right, elongated smooth tapered ends, one thick glossy bend and one slender orbit-like return. A compact asymmetric objet d'art inspired by optimistic early CGI. Polished mirror silver with deep cobalt reflections and bright white specular strips; tiny restrained green-blue glints. Entire object fits inside the central 80 percent, clear negative-space aperture, naturally irregular silhouette with proper alpha. Not a CD, not a star, no icons, no frame, no text. Why this works (composition rationale, do not draw text): a single transparent physical accent can cross a frame edge while staying away from essential controls."
+      },
+      "status": "submission_failed",
+      "reason": "Requires basic plan or higher.",
+      "submitted": false
+    }
+  ],
+  "selected": {
+    "job_id": "1f71568c-fa71-414d-9401-dbee5900ce09",
+    "status": "completed",
+    "params": {
+      "model": "nano_banana_2_1",
+      "resolution": "2k",
+      "aspect_ratio": "16:9",
+      "thinking_level": "high",
+      "count": 1,
+      "prompt": "Create one original premium Y2K Futurism / Soft Club CGI asset for a working music discovery website. Optimistic 1999–2002 imagined technology, future plus nostalgia. Ice blue, pearl white, liquid silver, cobalt reflections, tiny ocean-green accents. Meticulously rendered glass/refraction/metal, confident sculptural silhouette and optical depth. No people, faces, brands, logos, letters, typography, numbers, UI, controls, watermarks, fake technical text, grids, collage, neon cyberpunk, purple neon, or starfield. Produce artwork only, never a website screenshot. LANDSCAPE 16:9 background environment: a vast luminous pale-blue optical space, translucent aerodynamic acrylic waves flowing diagonally from upper-right to lower-right, a single polished liquid-silver curved conduit at the extreme right edge, soft distant white cloud reflections seen THROUGH rippling glass, a subtle glossy blue floor reflecting silver light. Right half expressive and dimensional; LEFT 48 percent almost empty pearl-white mist, center transition clean and restrained. Broad glass forms, not tiny clutter. Crisp cobalt depths at rightmost edge, icy white daylight through the center. No disc or sphere: the website already has a separate 3D disc. No enclosing border. Why this works (composition rationale, do not draw text): luminous depth behind the existing disc with a quiet left half preserves search readability."
+    },
+    "credits_quoted": 2,
+    "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3KWfF0ev1K802NVn0uS99BYnnVv/hf_20261021_223124_1f71568c-fa71-414d-9401-dbee5900ce09.png"
+  },
+  "scope": "One generated original; responsive crops share the same source, not distinct generations. No subscription/purchase/trial activation."
+}

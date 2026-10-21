@@ -1,5 +1,23 @@
 # Stage 9: five app structures, awaiting selection
 
+## Refracted environment and display typography
+
+The user approved Higgsfield-generated background assets and a more distinctive Y2K font for the selected Orbital Disc demo. Its Discover, working and About pages now use a static glass/chrome environment, a quiet reading mask behind search and pale reading planes behind data notices, footnotes and footer links. About uses a right-side image detail inside its introduction. The centered hover-only 3D disc, buttons, data flow and factual copy remain. Other artwork/body/original comparisons retain their prior typography and backgrounds.
+
+| Before | After | Why |
+|---|---|---|
+| Flat CSS page field | Local refracted glass/chrome environment with responsive crops | Adds the requested future/nostalgia atmosphere around the working interface |
+| Shared Manrope for every type role | Local Michroma400 for brand and short display/section headings; Manrope for body, controls and track metadata | Gives the selected demo an aerodynamic display voice without making essential controls decorative |
+| Plain About introduction | Contained chrome detail beside a pale reading area | Carries the same world to the explanatory page |
+
+The first three GPT Image2.5 requests were rejected for subscription access with zero jobs submitted. The connected balance then showed2 credits, so one Nano Banana2.1 generation was submitted and completed for the quoted2 credits. It produced the2752x1536 original `public/artwork/disc-tray/environment/refracted-horizon.png`. The1920x1080 page/hero,720x1280 narrow and640x640 About WebPs are crops of that one source, not three independent generated artworks. Their actual sizes are93,274 /83,528 /41,724 bytes. The original is retained for provenance and is not requested by the UI. No transparent accent was generated, and no subscription, credit purchase or trial activation occurred. Exact prompts with composition rationale, job/status and hashes are recorded in `docs/art-direction/disc-tray-environment-request.json` and `disc-tray-environment-assets.json`. `node scripts/prepare-disc-tray-environment.mjs` reproduces the derivatives and asserts dimensions/byte ceilings.
+
+Michroma comes from the verified `@fontsource/michroma`5.3.0 package, is locally served, and retains its OFL1.1 notice in `public/third-party/michroma/OFL.txt`. This route-specific layer is in `v2/atmosphere.css`; the base Manrope and button recipes remain. Reference moodboards informed feel, not shipped pixels or content. [PX PUSH](https://pxpush.com/) was consulted as additional site context; no assets, text, topology or award claim was copied. [Google Fonts' Michroma specimen](https://fonts.google.com/specimen/Michroma) was checked alongside the installed font files/license.
+
+Build, typecheck and the final35-test local Chrome suite pass, including two new atmosphere tests for loaded display type, unchanged comparisons, error/long text at six widths, axe checks, forced-color image removal and missing-image recovery. Existing real/demo guards and eight-width hero geometry tests pass. Thirty final captures in `stage-9-disc-tray-atmosphere-captures.json` show entry/hover/fallback/results/About across the six established viewports; error/long states have automated rather than screenshot evidence. The first visual pass caught an image termination seam, fixed by full-page cover before final captures. Static backgrounds introduce no motion, fixed scrolling effect, remote runtime service or new WebGL scene.
+
+The earlier remote GitHub run39684723234 for7182a2c failed with24 passes and9 graphics-test timeouts, while local checks passed; exact cause remains unproven and this current local35-pass result is not a remote pass. Physical devices, Safari, screen readers, measured performance/battery and any retention benefit remain unverified. No new backend/model experiment, Stage10, production promotion or deployment occurred. The session's unavailable Impeccable engine/detector is recorded; direct craft-floor and fresh review are used without a detector-pass claim.
+
 ## Centered hero follow-up
 
 The user requested removal of the pause button and moving the model down to the center. The decorative hero is now vertically centered in the upper panel's right column using its existing enclosure as the positioning reference. The 590px wide model still crosses the right lip on wide desktop; narrow screens retain task/starters before the model. Removing the control also removes its focus stop and the no-longer-needed floating-hero prop/branch.

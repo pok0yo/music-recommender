@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-21T22:06:20.807Z",
+  "generatedAt": "2026-10-21T22:41:42.800Z",
   "title": "Design System: Music Recommender",
   "extensions": {
     "colorMeta": {
@@ -109,6 +109,22 @@
       "button": {
         "displayName": "Action label",
         "purpose": "Primary, secondary and reseed actions."
+      },
+      "orbital-display": {
+        "displayName": "Selected Orbital opening display",
+        "purpose": "Michroma 400 only in selected Orbital demo; broad oblique uppercase opening heading with tablet/mobile reductions. Controls and body stay Manrope."
+      },
+      "orbital-brand": {
+        "displayName": "Selected Orbital brand",
+        "purpose": "13px Michroma 400 brand and mark only in the selected Orbital demo."
+      },
+      "orbital-about": {
+        "displayName": "Selected Orbital About display",
+        "purpose": "Michroma 400 introduction heading only; mobile 26px and readable pale background."
+      },
+      "orbital-section": {
+        "displayName": "Selected Orbital section heading",
+        "purpose": "14px Michroma 400 for short result-section headings only; track identities and evidence stay Manrope."
       }
     },
     "shadows": [
@@ -275,12 +291,13 @@
   ],
   "narrative": {
     "northStar": "Icy acrylic and selective chrome",
-    "overview": "The approved Y2K Futurism / Soft Club world uses icy-blue acrylic enclosures, silver seams, pearl reading fields and cobalt controls. Material framing provides identity even with every hero empty. Conventional text and controls carry the task; the generated three-screen board is a critique reference, not interface artwork or a pixel-matching comp.\n\nThis records the implemented October 21 Stage 9 comparison, merging the prior provisional system. Disc Tray is the selected body; final hero artwork remains unselected. The shared material world supersedes Stage 4's separate typography/theme directions; those remain historical evidence. Body selection does not authorize production promotion, Stage 10 or deployment; retain v1–v5 and comparison history after selection.\n\nThe subsequent Disc Study exploration settles the aesthetic preference on incumbent v2 and the body choice on Disc Tray. Gatefold, Disc Tray and Liner Notes remain available for comparison. The four-option artwork comparison lives only in working Disc Tray demos at `/prototypes/disc-tray/artwork/{slug}`; the picker changes artwork while preserving discovery state. The user subsequently authorized a larger interactive 3D Orbital Disc exploration, replacing only that option's circular raster enclosure. The other three options retain their generated originals, and the original five previews and three body-comparison routes retain flat placeholders. The latest user adjustment vertically centers the model in the upper tray and removes its Pause/Resume control; rotation, tilt and shine now respond only during mouse hover, with a still idle pose. This hero iteration remains reviewable exploration, not final artwork acceptance.",
+    "overview": "The approved Y2K Futurism / Soft Club world uses icy-blue acrylic enclosures, silver seams, pearl reading fields and cobalt controls. Material framing provides identity even with every hero empty. Conventional text and controls carry the task; the generated three-screen board is a critique reference, not interface artwork or a pixel-matching comp.\n\nThis records the implemented October 21 Stage 9 comparison, merging the prior provisional system. Disc Tray is the selected body; final hero artwork remains unselected. The shared material world supersedes Stage 4's separate typography/theme directions; those remain historical evidence. Body selection does not authorize production promotion, Stage 10 or deployment; retain v1–v5 and comparison history after selection.\n\nThe subsequent Disc Study exploration settles the aesthetic preference on incumbent v2 and the body choice on Disc Tray. Gatefold, Disc Tray and Liner Notes remain available for comparison. The four-option artwork comparison lives only in working Disc Tray demos at `/prototypes/disc-tray/artwork/{slug}`; the picker changes artwork while preserving discovery state. The user subsequently authorized a larger interactive 3D Orbital Disc exploration, replacing only that option's circular raster enclosure. The other three options retain their generated originals, and the original five previews and three body-comparison routes retain flat placeholders. The latest user adjustment vertically centers the model in the upper tray and removes its Pause/Resume control; rotation, tilt and shine now respond only during mouse hover, with a still idle pose. The subsequent approved atmosphere refinement adds one original Higgsfield environment and locally served Michroma display lettering only to the selected Orbital Disc Discover/working/About route. It extends the pinned world without changing the other artwork or body comparisons. This remains a reviewable Stage 9 iteration, not final artwork acceptance.",
     "keyCharacteristics": [
-      "Five distinct app structures with shared Manrope typography, content and behavior.",
+      "Five distinct app structures with shared Manrope base typography, content and behavior; the selected Orbital demo alone adds Michroma short display lettering.",
       "Sculpted enclosure lips around near-opaque reading fields.",
       "Liquid-metal button rims and static conic highlights around glossy opaque icy or cobalt faces, with bounded pointer motion.",
       "Flat CSS heroes in original comparisons; three local raster artwork options and one locally authored 3D Orbital Disc with a transparent static fallback in the authorized Disc Tray demos.",
+      "One generated environment source supplies static responsive backgrounds only in the selected Orbital demo; pale reading planes protect the task.",
       "Native controls, visible keyboard focus and task-first mobile flow.",
       "Persistent demonstration labels and an explicit real-data boundary."
     ],
@@ -292,7 +309,7 @@
       },
       {
         "name": "The Shared Voice Rule",
-        "body": "Keep Manrope and its loaded 500/600 weights across all five structures; structural differences must carry the comparison.",
+        "body": "Keep Manrope and its loaded 500/600 weights as the base across all five structures. Only the selected Orbital demo may use locally served Michroma 400 for branding and short display headings; other comparisons retain their existing typography.",
         "section": "typography"
       },
       {
@@ -308,16 +325,16 @@
     ],
     "dos": [
       "**Do** retain all five structures, routes and comparison history until and after the user's structure selection.",
-      "**Do** keep shared Manrope typography, near-opaque reading fields, cobalt actions and selective enclosure chrome.",
+      "**Do** keep Manrope base typography, near-opaque reading fields, cobalt actions and selective enclosure chrome; scope Michroma 400 branding/display roles and generated environment backgrounds to the selected Orbital demo.",
       "**Do** reuse the shared glossy liquid-metal button material with opaque reading faces, static idle highlights, bounded pointer feedback and static keyboard/fallback behavior.",
       "**Do** preserve original comparison flat fills and mappings, and the three retained raster demos' circular 1:1 slot. Give only Orbital Disc its approved vertically centered right-side overlap, same-scene transparent fallback, hover-only motion and task-first mobile order.",
       "**Do** preserve native controls, visible focus, reduced-motion, reduced-transparency and forced-color treatments.",
       "**Do** label demonstration fixtures persistently and keep real failures separate from demo data.",
-      "**Do** treat review/capture evidence as scoped evidence, not deployment, user research or full accessibility conformance. Current centered Orbital evidence contains five states at six viewport sets (30 verified captures), including the 1305×792 wider in-app browser; preserve the distinction from the eight geometry-test widths and earlier 36-capture iteration."
+      "**Do** treat review/capture evidence as scoped evidence, not deployment, user research or full accessibility conformance. Current atmosphere evidence contains five states at six viewport sets (30 verified captures), including the 1305×792 wider in-app browser; preserve the distinction from the eight geometry-test widths and earlier centered/raised checkpoints."
     ],
     "donts": [
-      "**Don't** extend the Orbital Disc 3D/motion exception to other routes or add unrelated artwork, reference pixels, remote models/images or decorative playback controls. Keep original comparison routes artwork-free; Orbital Disc stays still except during mouse hover and has no Pause/Resume control.",
-      "**Don't** replace structural differences with typography/theme swaps or reserve blank hero space in working screens.",
+      "**Don't** extend Orbital's 3D, environment or display-font exceptions to other routes, copy reference pixels, add remote runtime models/images or invent playback controls. Keep original comparisons artwork-free and body/control typography in Manrope; Orbital stays still except during mouse hover and has no Pause/Resume control.",
+      "**Don't** replace structural differences with typography/theme swaps, reserve blank hero space in working screens or describe responsive environment crops as independent generated artworks.",
       "**Don't** turn approved glass/chrome into a generic ban or extend translucency into low-contrast reading regions.",
       "**Don't** treat Disc Tray body selection or the artwork demos as authorization for production promotion, Stage 10 or deployment; final hero artwork remains unselected.",
       "**Don't** inflate catalog, link, model-quality or personalisation claims beyond PRODUCT.md and frozen evidence."
