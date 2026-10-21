@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-21T20:56:48.960Z",
+  "generatedAt": "2026-10-21T21:56:08.722Z",
   "title": "Design System: Music Recommender",
   "extensions": {
     "colorMeta": {
@@ -131,6 +131,11 @@
         "name": "button-material",
         "value": "inset 0 1px 0 #fff,0 3px 8px #29486b14",
         "purpose": "Subtle raised rim around an opaque gloss-banded button face; disabled and reduced-transparency states remove the outer shadow."
+      },
+      {
+        "name": "orbital-sculpture",
+        "value": "filter:drop-shadow(0 22px 15px #28476726)",
+        "purpose": "Transparent Orbital Disc stage only; no enclosing circle or shell shadow. Forced colors remove this filter."
       }
     ],
     "motion": [
@@ -163,6 +168,16 @@
         "name": "liquid-material-fade",
         "value": "opacity 180ms ease-out; active ready state: 240ms",
         "purpose": "Fade in only once the optional shader is ready; retain its canvas for the 180ms fade-out, cancelling disposal on rapid re-entry."
+      },
+      {
+        "name": "orbital-disc-rotation",
+        "value": ".065 radians/second; vertical drift .035 * sin(elapsed * .32)",
+        "purpose": "Orbital Disc entry only. Native Pause/Resume freezes automatic and pointer motion; reduced motion stays still. Hidden-page/offscreen states suspend the loop; failures reveal the same-scene fallback."
+      },
+      {
+        "name": "orbital-pointer-easing",
+        "value": "1 - exp(-dt * 7); dt <= .05s; vertical tilt .2rad; horizontal tilt .28rad",
+        "purpose": "Mouse-only tilt and rim-light shift. Touch preserves ordinary scrolling; paused and reduced-motion states do not respond."
       }
     ],
     "breakpoints": [
@@ -177,6 +192,10 @@
       {
         "name": "narrow-max",
         "value": "389px"
+      },
+      {
+        "name": "orbital-medium-max",
+        "value": "1359px"
       }
     ]
   },
@@ -256,12 +275,12 @@
   ],
   "narrative": {
     "northStar": "Icy acrylic and selective chrome",
-    "overview": "The approved Y2K Futurism / Soft Club world uses icy-blue acrylic enclosures, silver seams, pearl reading fields and cobalt controls. Material framing provides identity even with every hero empty. Conventional text and controls carry the task; the generated three-screen board is a critique reference, not interface artwork or a pixel-matching comp.\n\nThis records the implemented October 21 Stage 9 comparison, merging the prior provisional system. Disc Tray is the selected body; final hero artwork remains unselected. The shared material world supersedes Stage 4's separate typography/theme directions; those remain historical evidence. Body selection does not authorize production promotion, Stage 10 or deployment; retain v1–v5 and comparison history after selection.\n\nThe subsequent Disc Study exploration settles the aesthetic preference on incumbent v2 and the body choice on Disc Tray. Gatefold, Disc Tray and Liner Notes remain available for comparison. Four user-authorized existing generated originals are compared only in working Disc Tray demos at `/prototypes/disc-tray/artwork/{slug}`; the picker changes artwork while preserving discovery state. The original five previews and three body-comparison routes retain flat placeholders.",
+    "overview": "The approved Y2K Futurism / Soft Club world uses icy-blue acrylic enclosures, silver seams, pearl reading fields and cobalt controls. Material framing provides identity even with every hero empty. Conventional text and controls carry the task; the generated three-screen board is a critique reference, not interface artwork or a pixel-matching comp.\n\nThis records the implemented October 21 Stage 9 comparison, merging the prior provisional system. Disc Tray is the selected body; final hero artwork remains unselected. The shared material world supersedes Stage 4's separate typography/theme directions; those remain historical evidence. Body selection does not authorize production promotion, Stage 10 or deployment; retain v1–v5 and comparison history after selection.\n\nThe subsequent Disc Study exploration settles the aesthetic preference on incumbent v2 and the body choice on Disc Tray. Gatefold, Disc Tray and Liner Notes remain available for comparison. The four-option artwork comparison lives only in working Disc Tray demos at `/prototypes/disc-tray/artwork/{slug}`; the picker changes artwork while preserving discovery state. The user subsequently authorized a larger interactive 3D Orbital Disc exploration, replacing only that option's circular raster enclosure. The other three options retain their generated originals, and the original five previews and three body-comparison routes retain flat placeholders. This hero iteration remains reviewable exploration, not final artwork acceptance.",
     "keyCharacteristics": [
       "Five distinct app structures with shared Manrope typography, content and behavior.",
       "Sculpted enclosure lips around near-opaque reading fields.",
       "Liquid-metal button rims and static conic highlights around glossy opaque icy or cobalt faces, with bounded pointer motion.",
-      "Flat CSS hero reservations in original comparisons; four local decorative images only in the authorized Disc Tray artwork demos.",
+      "Flat CSS heroes in original comparisons; three local raster artwork options and one locally authored 3D Orbital Disc with a transparent static fallback in the authorized Disc Tray demos.",
       "Native controls, visible keyboard focus and task-first mobile flow.",
       "Persistent demonstration labels and an explicit real-data boundary."
     ],
@@ -278,7 +297,7 @@
       },
       {
         "name": "The Task Before Hero Rule",
-        "body": "Put search and starting choices before decorative media on narrow screens; remove the reservation from working states.",
+        "body": "Put search and starting choices before decorative media on narrow screens; remove the reservation from working states. For Orbital Disc, preserve that order in the DOM as well as the visual layout.",
         "section": "layout"
       },
       {
@@ -291,13 +310,13 @@
       "**Do** retain all five structures, routes and comparison history until and after the user's structure selection.",
       "**Do** keep shared Manrope typography, near-opaque reading fields, cobalt actions and selective enclosure chrome.",
       "**Do** reuse the shared glossy liquid-metal button material with opaque reading faces, static idle highlights, bounded pointer feedback and static keyboard/fallback behavior.",
-      "**Do** preserve each original comparison's flat hero fill, aspect, location and future fit mapping, with task-first mobile order; keep the four artwork demos in Disc Tray's existing 1:1 slot.",
+      "**Do** preserve original comparison flat fills and mappings, and the three retained raster demos' circular 1:1 slot. Give only Orbital Disc its approved free-standing overlap, same-scene transparent fallback and task-first DOM/mobile order.",
       "**Do** preserve native controls, visible focus, reduced-motion, reduced-transparency and forced-color treatments.",
       "**Do** label demonstration fixtures persistently and keep real failures separate from demo data.",
-      "**Do** treat review/capture evidence as scoped evidence, not deployment, user research or full accessibility conformance."
+      "**Do** treat review/capture evidence as scoped evidence, not deployment, user research or full accessibility conformance. Orbital capture evidence contains six states at six viewport sets (36 verified captures), including the actual 1305×792 wider in-app browser; preserve the distinction from the eight geometry-test widths."
     ],
     "donts": [
-      "**Don't** add artwork beyond the four user-authorized existing generated originals in the Disc Tray artwork demos; keep original comparison routes artwork-free and exclude reference screenshots, runtime remote images, illustrated substitutes and interactive hero controls.",
+      "**Don't** extend the Orbital Disc 3D/motion exception to other routes or add unrelated artwork, reference pixels, remote models/images or decorative playback controls. Keep original comparison routes artwork-free; Orbital Disc's native Pause/Resume action is explicitly authorized.",
       "**Don't** replace structural differences with typography/theme swaps or reserve blank hero space in working screens.",
       "**Don't** turn approved glass/chrome into a generic ban or extend translucency into low-contrast reading regions.",
       "**Don't** treat Disc Tray body selection or the artwork demos as authorization for production promotion, Stage 10 or deployment; final hero artwork remains unselected.",

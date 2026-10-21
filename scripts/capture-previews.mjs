@@ -17,6 +17,7 @@ try {
         if (artwork && variant !== 'orbital-disc' && fixture !== 'entry') continue; // Working screens share the same body and omit the hero.
         await page.goto(`http://127.0.0.1:3000${route}${fixture === 'about' ? '/about' : ''}?mode=demo&fixture=${fixture === 'about' ? 'entry' : fixture}`);
         await page.locator(fixture === 'entry' ? '.starter-button' : fixture === 'about' ? '.about-preview h1' : '.track-list > li').first().waitFor();
+        if (artwork && variant === 'orbital-disc' && fixture === 'entry') { await page.locator('.orbital-hero[data-model-ready]').waitFor(); await page.getByRole('button',{name:'Pause motion',exact:true}).click(); }
         await page.evaluate(() => document.fonts.ready);
         await page.locator('.hero-fill img').evaluateAll(images => Promise.all(images.map(img => img.decode())));
         const path = `${output}/${studies ? variant : 'v' + variant}-${device}-${fixture}.png`;
@@ -27,13 +28,13 @@ try {
           headingFont: getComputedStyle(document.querySelector('h1')).fontFamily,
           headingFontLoaded: document.fonts.check(`500 32px ${getComputedStyle(document.querySelector('h1')).fontFamily.split(',')[0]}`),
           hero: document.querySelector('.hero-slot') ? (() => {
-            const slot = document.querySelector('.hero-slot'); const fill = document.querySelector('.hero-fill');
+            const slot = document.querySelector('.hero-slot'); const fill = document.querySelector('.hero-fill') || slot;
             const rect = slot.getBoundingClientRect();
             return { width: rect.width, height: rect.height, fill: getComputedStyle(fill).backgroundColor };
           })() : null,
         }));
         if (measure.pageWidth > width + 1) throw new Error(`Horizontal overflow in ${path}`);
-        if (measure.hero && Math.abs(measure.hero.width / measure.hero.height - (studies ? 1 : [4/3,1,5/4,16/9,3][variant-1])) > .02) throw new Error(`Hero aspect mismatch in ${path}`);
+        if (measure.hero && Math.abs(measure.hero.width / measure.hero.height - (artwork && variant === 'orbital-disc' ? 1.25 : studies ? 1 : [4/3,1,5/4,16/9,3][variant-1])) > .02) throw new Error(`Hero aspect mismatch in ${path}`);
         evidence.captures.push({ variant, fixture, path, ...measure });
         console.log(path);
       }

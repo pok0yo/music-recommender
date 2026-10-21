@@ -16,6 +16,7 @@ try {
       const fixture = state === 'results' ? 'ten' : state === 'disabled' ? 'rate-limit' : state === 'long' ? 'long' : 'entry';
       await page.goto(`http://127.0.0.1:3000/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=${fixture}`);
       await page.locator(state === 'disabled' ? '.problem button:disabled' : ['results','long'].includes(state) ? '.track-row' : '.starter-button').first().waitFor();
+      if (!['disabled','results','long'].includes(state)) { await page.locator('.orbital-hero[data-model-ready]').waitFor(); await page.getByRole('button',{name:'Pause motion',exact:true}).click(); }
       await page.evaluate(() => document.fonts.ready);
       await page.locator('.hero-fill img').evaluateAll(images => Promise.all(images.map(img => img.decode())));
       const button = page.locator('.primary-button');

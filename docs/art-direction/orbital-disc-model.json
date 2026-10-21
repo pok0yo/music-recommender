@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-10-21T21:39:48.329Z",
+  "path": "public/artwork/disc-tray/orbital-disc-model-7e748054c1e3.png",
+  "public_url": "/artwork/disc-tray/orbital-disc-model-7e748054c1e3.png",
+  "width": 2000,
+  "height": 1600,
+  "sha256": "7e748054c1e32cc81348b12c0baac1c471ae96c7567a3a238e91c9b1822aeb30",
+  "origin": "Direct transparent PNG export from locally authored Three.js geometry, PBR thin-film/spectrum materials and sky/area-panel lighting. No AI-generated or reference pixels.",
+  "renderer": "three0.186.1 / Chrome 155.0.8059.85",
+  "sources": {
+    "components/orbital-scene.ts": "854b158db44753d3ee809d8a1740a42254112ef733c8556e22d3a64ffb028fd7",
+    "components/orbital-hero.tsx": "e533ffb6903cdda40c84c905d13facc0e8766524af251ec39714392f18aaf8e9"
+  },
+  "license": "Original scene source belongs to this project; Three.js MIT notice retained in public/third-party/three/LICENSE."
+}

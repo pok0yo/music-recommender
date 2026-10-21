@@ -1,0 +1,100 @@
+import { test, expect, type Locator } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+
+const route = '/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry';
+const pixels = (canvas: Locator) => canvas.evaluate(async (e: HTMLCanvasElement) => {
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(e.toDataURL()));
+  return Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2,'0')).join('');
+});
+
+test('floating 3D silhouette crosses the tray lip, fits every width and leaves controls clear', async ({ page }) => {
+  test.setTimeout(120_000);
+  await page.emulateMedia({ reducedMotion:'reduce' });
+  for (const width of [320,390,550,569,768,1024,1253,1440]) {
+    await page.setViewportSize({width,height:900});
+    await page.goto(route);
+    await expect(page.locator('.orbital-hero')).toHaveAttribute('data-model-ready','true');
+    const canvas = page.locator('.orbital-canvas canvas');
+    const bounds = await canvas.evaluate((c: HTMLCanvasElement) => {
+      const gl = c.getContext('webgl2')!;
+      const rgba = new Uint8Array(c.width*c.height*4); gl.readPixels(0,0,c.width,c.height,gl.RGBA,gl.UNSIGNED_BYTE,rgba);
+      let left=c.width,right=0,top=c.height,bottom=0;
+      for(let y=0;y<c.height;y++) for(let x=0;x<c.width;x++) if(rgba[(y*c.width+x)*4+3]>16){left=Math.min(left,x);right=Math.max(right,x);top=Math.min(top,c.height-1-y);bottom=Math.max(bottom,c.height-1-y);}
+      const rect=c.getBoundingClientRect(), scale=rect.width/c.width;
+      return {left:rect.x+left*scale,right:rect.x+right*scale,top:rect.y+top*scale,bottom:rect.y+bottom*scale,
+        unclipped:left>1 && top>1 && right<c.width-2 && bottom<c.height-2};
+    });
+    expect(bounds.unclipped).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);
+    expect(await page.locator('.orbital-hero').evaluate(e => getComputedStyle(e).backgroundImage)).toBe('none');
+    if(width>=768){
+      const tray=(await page.locator('.disc-tray > .glass-shell').first().boundingBox())!;
+      const notice=(await page.locator('.demo-notice').boundingBox())!;
+      const search=(await page.locator('.search-controls').boundingBox())!;
+      expect(bounds.top).toBeLessThan(tray.y);
+      expect(bounds.top).toBeGreaterThan(notice.y+notice.height);
+      expect(bounds.left).toBeGreaterThan(search.x+search.width);
+      if(width===1440){expect(bounds.right).toBeGreaterThan(tray.x+tray.width);expect((await canvas.boundingBox())!.width).toBeGreaterThan(500);}
+    } else {
+      const choices=(await page.locator('.starting-points').boundingBox())!;
+      expect(bounds.top).toBeGreaterThan(choices.y+choices.height);
+    }
+    if([390,1440].includes(width)) expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations).toEqual([]);
+  }
+});
+
+test('real rendered pixels respond, pause is stable and offscreen motion stops', async ({ page }) => {
+  await page.goto(route);
+  const hero=page.locator('.orbital-hero'), host=page.locator('.orbital-canvas'), canvas=host.locator('canvas');
+  await expect(hero).toHaveAttribute('data-model-ready','true');
+  await expect(host).toHaveAttribute('data-render-state','running');
+  await page.getByRole('button',{name:'Pause motion',exact:true}).click();
+  await expect(host).toHaveAttribute('data-render-state','still');
+  const paused=await pixels(canvas);
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  expect(await pixels(canvas)).toBe(paused);
+  await page.getByRole('button',{name:'Resume motion',exact:true}).press('Enter');
+  const rect=(await hero.boundingBox())!;
+  await page.mouse.move(rect.x+rect.width*.85,rect.y+rect.height*.3);
+  await expect.poll(() => pixels(canvas)).not.toBe(paused);
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await expect(host).toHaveAttribute('data-render-state','still');
+  await expect(page.getByRole('button',{name:/Pause motion|Resume motion/})).toHaveCount(0);
+  const reduced=await pixels(canvas); await page.mouse.move(0,0); expect(await pixels(canvas)).toBe(reduced);
+  await page.emulateMedia({reducedMotion:'no-preference'});
+  await page.setViewportSize({width:550,height:300}); await page.evaluate(() => scrollTo(0,0));
+  await expect(host).toHaveAttribute('data-render-state','offscreen');
+  await hero.scrollIntoViewIfNeeded(); await expect(host).toHaveAttribute('data-render-state','running');
+  await page.evaluate(() => scrollTo(0,0)); await expect(host).toHaveAttribute('data-render-state','offscreen');
+});
+
+test('WebGL unavailable and lost contexts show the real static render while discovery keeps working', async ({ page }) => {
+  await page.goto(route);
+  await expect(page.locator('.orbital-hero')).toHaveAttribute('data-model-ready','true');
+  await page.locator('.orbital-canvas canvas').evaluate((e: HTMLCanvasElement) => e.getContext('webgl2')!.getExtension('WEBGL_lose_context')!.loseContext());
+  await expect(page.locator('.orbital-fallback')).toBeVisible();
+  await expect(page.getByRole('button',{name:'Pause motion',exact:true})).toHaveCount(0);
+  await page.addInitScript(() => {
+    const getContext=HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext=function(this:HTMLCanvasElement,...args:Parameters<typeof getContext>){return String(args[0]).includes('webgl') ? null : getContext.apply(this,args);} as typeof getContext;
+  });
+  await page.reload();
+  await expect(page.locator('.orbital-fallback')).toBeVisible();
+  await expect.poll(() => page.locator('.orbital-fallback').evaluate((e:HTMLImageElement) => e.complete && e.naturalWidth>0)).toBe(true);
+  await page.getByRole('searchbox').fill('Tiffany'); await page.getByRole('searchbox').press('Enter');
+  await page.getByRole('button',{name:/CLOUDS.*Use this song/}).click();
+  await expect(page.locator('.track-row')).toHaveCount(10); await expect(page.locator('.orbital-hero')).toHaveCount(0);
+});
+
+test('keyboard order prioritizes song choices and working/About states remove the model', async ({ page }) => {
+  await page.setViewportSize({width:550,height:766}); await page.goto(route);
+  await expect(page.locator('.orbital-hero')).toHaveAttribute('data-model-ready','true');
+  await page.locator('.starter-button').last().focus(); await page.keyboard.press('Tab');
+  await expect(page.getByRole('button',{name:'Pause motion',exact:true})).toBeFocused();
+  await page.locator('.starter-button').first().click();
+  await expect(page.locator('.track-row')).toHaveCount(10); await expect(page.locator('.orbital-canvas')).toHaveCount(0);
+  await page.getByRole('button',{name:'Change song',exact:true}).click();
+  await expect(page.getByRole('searchbox')).toBeFocused(); await expect(page.locator('.orbital-hero')).toHaveAttribute('data-model-ready','true');
+  await page.getByRole('link',{name:'About the recommendations',exact:true}).click();
+  await expect(page.locator('.orbital-hero')).toHaveCount(0);
+});

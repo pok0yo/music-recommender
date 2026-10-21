@@ -1,0 +1,403 @@
+{
+  "observed_at": "2026-10-21T21:55:06.626Z",
+  "browser": "155.0.8059.85",
+  "data": "Demonstration fixtures only",
+  "captures": [
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/desktop-entry.png",
+      "state": "entry",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "b454dde78b55a5098981f25c808672017fea1a4412731c5025c4b8536e032ddd"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/desktop-tilt.png",
+      "state": "tilt",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "a4ba25e33c6d7b36044a9c916567b310bdc944d8976e5b41bf4f6d4a29c3569f"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/desktop-paused.png",
+      "state": "paused",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "abf31cfe7c4eebc58c46a436abcc9c178dfea97de0c3a0b66073fca04c23f0b9"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/desktop-fallback.png",
+      "state": "fallback",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "a86249f274dcddc7c07c595a1a63c36dcf5a70d5acaaab60c9e48cc742295769"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/desktop-results.png",
+      "state": "results",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "d2351851f8cf4a76c0535c58b107380b8551f3522f0fb621cb188fad8ac9cb35"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/desktop-about.png",
+      "state": "about",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "sha256": "a3169a4b96b8b8b12bb38ea53a1ebb24676f40f4442aa701249c6e0d7d74aec3"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/mobile-entry.png",
+      "state": "entry",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "a584abe9909c19aab28aa70a1ed2b7b74081b8dae7b0bbddb86522abf0f2dfba"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/mobile-tilt.png",
+      "state": "tilt",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "322b129de79a6d78428ff79be8e4fa4780d47a442b8182b33109a5601acaa48b"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/mobile-paused.png",
+      "state": "paused",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "d5a4dd79892ce9a0fe8746714fdd749180d3825d2de876b1fd9ec15011fd5a3d"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/mobile-fallback.png",
+      "state": "fallback",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "847743910419d0b34cff5b6dd8c40580451b41e28c0aaf5f3eee44d45ca57db0"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/mobile-results.png",
+      "state": "results",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "cebfa840e62a961a7ea69a987ab340258f7b013298ba45f5b070488da0014709"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/mobile-about.png",
+      "state": "about",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "sha256": "1996e5f9acd43afd2eeb3393e80667ba646ffd3aba2e1b22422be86ebf3edbf9"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/user-entry.png",
+      "state": "entry",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "5e314bdee5a2b15eb5d96004474e90e19bea7ec3b456d7e45ad1d6d7dfcef73d"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/user-tilt.png",
+      "state": "tilt",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "dc68296dc0f3d1560897cbe360241d4138f97de8f0a4e7958ee28e05217b9ccb"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/user-paused.png",
+      "state": "paused",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "c18037749c1c7c26407e447b71bc1689ad8d6d5b6ed2ec1e4ec5ba61f85b7c9b"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/user-fallback.png",
+      "state": "fallback",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "7850be01cf20e6e08e65c8c1b33c79ba22fac56dd84c51e407ca8fa009f6e767"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/user-results.png",
+      "state": "results",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "164257f91d0089edbe895b7ad73d646ff9601f286396f9231d87e055a6934697"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/user-about.png",
+      "state": "about",
+      "device": "user",
+      "viewport": {
+        "width": 550,
+        "height": 766
+      },
+      "pageWidth": 550,
+      "sha256": "3c56ff31ddc207dd982b18df5e84088f70d7fe6fbdd49a88f6e020ac175ee530"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/live-entry.png",
+      "state": "entry",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "87a2df8815ce39910645a1270a4bce29283b720147e4572ae794d7b1bb74a663"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/live-tilt.png",
+      "state": "tilt",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "ba351d1070c41ff60901cf4395a923f92a49d8563dde8adb3be47445973293ce"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/live-paused.png",
+      "state": "paused",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "633a9aee8072fde98232f5a7f9262619e657fa335363380ff7a226c86eee56c6"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/live-fallback.png",
+      "state": "fallback",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "be73a1be0284949e438e2cfa0457a1b96fbc10c05bde866385f6c491cd2398f4"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/live-results.png",
+      "state": "results",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "827b57bb3709c9eb4318115f373c9ec5bcd92f53823a6a0542e2643e29a25cdb"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/live-about.png",
+      "state": "about",
+      "device": "live",
+      "viewport": {
+        "width": 569,
+        "height": 792
+      },
+      "pageWidth": 569,
+      "sha256": "1fe5158e8690b1db467fa1c69246813d674ede6d3d751380a38f4bdf31763094"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/medium-entry.png",
+      "state": "entry",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "d080b74198241f35bb91196776f0e4b790d3d262b6f2d8195ec5295c86942a71"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/medium-tilt.png",
+      "state": "tilt",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "8f99da8241b9f88d778c44f1544c478499e35330f50ded0561adc8b994d600ce"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/medium-paused.png",
+      "state": "paused",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "f64bb5170e2e43347a66aa755fb33f52077485f707d371653f5ec4c59a9aeac1"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/medium-fallback.png",
+      "state": "fallback",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "52dcea9fbf502fd659f2b575da82cbaf35d8642235474e3beac3d5f37cfb1de7"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/medium-results.png",
+      "state": "results",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "cbf820832f166b5a93c44de723c5f085b8de4419b564397af2642b5639181a39"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/medium-about.png",
+      "state": "about",
+      "device": "medium",
+      "viewport": {
+        "width": 1253,
+        "height": 705
+      },
+      "pageWidth": 1253,
+      "sha256": "c871aa6862524a8a967e698f0d77ad6d5b3f88e693f83c15284bf05e829d14b9"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/live-wide-entry.png",
+      "state": "entry",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "69e534272594187d60bc3ec8f107bf084d688925f6469e49ed143ca0462a3f15"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/live-wide-tilt.png",
+      "state": "tilt",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "9e4b4acbe2ff58976f50454d88a984e68fb4361191e07779d998aad616ae2f17"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/live-wide-paused.png",
+      "state": "paused",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "2708cb838c8288d652c31ef6bd700c85e4fa79fbbccefb477f40101c820b9abf"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/live-wide-fallback.png",
+      "state": "fallback",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "72e5f8f0c98f9a95bc5185764493a9b07b3bbfbe7688c8d434cce1e8c0a10f5e"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/live-wide-results.png",
+      "state": "results",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "f3941bccefbe0de6d7139daca658ea172d358208a88850cf2604665f00cdf332"
+    },
+    {
+      "path": "docs/evidence/stage-9-orbital-hero/live-wide-about.png",
+      "state": "about",
+      "device": "live-wide",
+      "viewport": {
+        "width": 1305,
+        "height": 792
+      },
+      "pageWidth": 1305,
+      "sha256": "16d76543aa5b89453b92ce75776576295f3bed8b6dba3d9ee6bb9e70d5d3baff"
+    }
+  ]
+}

@@ -136,13 +136,13 @@ The approved Y2K Futurism / Soft Club world uses icy-blue acrylic enclosures, si
 
 This records the implemented October 21 Stage 9 comparison, merging the prior provisional system. Disc Tray is the selected body; final hero artwork remains unselected. The shared material world supersedes Stage 4's separate typography/theme directions; those remain historical evidence. Body selection does not authorize production promotion, Stage 10 or deployment; retain v1–v5 and comparison history after selection.
 
-The subsequent Disc Study exploration settles the aesthetic preference on incumbent v2 and the body choice on Disc Tray. Gatefold, Disc Tray and Liner Notes remain available for comparison. Four user-authorized existing generated originals are compared only in working Disc Tray demos at `/prototypes/disc-tray/artwork/{slug}`; the picker changes artwork while preserving discovery state. The original five previews and three body-comparison routes retain flat placeholders.
+The subsequent Disc Study exploration settles the aesthetic preference on incumbent v2 and the body choice on Disc Tray. Gatefold, Disc Tray and Liner Notes remain available for comparison. The four-option artwork comparison lives only in working Disc Tray demos at `/prototypes/disc-tray/artwork/{slug}`; the picker changes artwork while preserving discovery state. The user subsequently authorized a larger interactive 3D Orbital Disc exploration, replacing only that option's circular raster enclosure. The other three options retain their generated originals, and the original five previews and three body-comparison routes retain flat placeholders. This hero iteration remains reviewable exploration, not final artwork acceptance.
 
 **Key Characteristics:**
 - Five distinct app structures with shared Manrope typography, content and behavior.
 - Sculpted enclosure lips around near-opaque reading fields.
 - Liquid-metal button rims and static conic highlights around glossy opaque icy or cobalt faces, with bounded pointer motion.
-- Flat CSS hero reservations in original comparisons; four local decorative images only in the authorized Disc Tray artwork demos.
+- Flat CSS heroes in original comparisons; three local raster artwork options and one locally authored 3D Orbital Disc with a transparent static fallback in the authorized Disc Tray demos.
 - Native controls, visible keyboard focus and task-first mobile flow.
 - Persistent demonstration labels and an explicit real-data boundary.
 
@@ -198,7 +198,7 @@ All five preserve seed data, ordering, support evidence, error states, search, r
 | v4 | hero-v4 | 16:9 | Wide inset beside starter rail below command band; cover at 60% 50%. |
 | v5 | hero-v5 | 3:1 | Panorama below command band; cover at 50% 55%. |
 
-Reservations are noninteractive and hidden from assistive technology. Preserve aspect without minimum-height cropping. On mobile, task and choices precede each reservation. Heroes disappear during search/results; working screens reserve no blank media. Future-fit values do not authorize adding images to these original comparison routes; the separate Disc Tray artwork demos below are the scoped exception.
+Reservations are noninteractive and hidden from assistive technology. Preserve aspect without minimum-height cropping. On mobile, task and choices precede each reservation. Heroes disappear during search/results; working screens reserve no blank media. Future-fit values do not authorize adding images to these original comparison routes; the separate Disc Tray artwork demos below are the scoped exception, including the explicitly authorized interactive Orbital Disc.
 
 About preserves the same source-grounded copy, catalog limits and frozen evaluation values: v1 intro rail/body; v2 sequential native disclosures; v3 contents index/methodology; v4 broad intro/two-column sections; v5 reading panel/contents rail. It remains a Read surface, resolving into readable mobile columns.
 
@@ -225,18 +225,25 @@ Only `/prototypes/disc-tray/artwork/{slug}` and its optional `/about` use the fo
 | Aero Player | aero-player |
 | Liquid Star | liquid-star |
 
-The four existing Higgsfield originals are local PNGs at `public/artwork/disc-tray/{slug}.png`; verified 2048×2048 dimensions, immutable origins, job IDs and hashes are recorded in `docs/art-direction/disc-tray-artwork-assets.json`. Next.js Image provides optimized responsive delivery from those originals. Preserve the existing centered circular 1:1 slot and task-first mobile order; contain the decorative image within the inset without changing layout. The image has empty alternative text within an `aria-hidden` reservation and adds no interaction, playback or animation. This is a narrow asset exception for these working demos, not a new visual system or production promotion.
+The four existing Higgsfield originals remain local PNGs at `public/artwork/disc-tray/{slug}.png`; verified 2048×2048 dimensions, immutable origins, job IDs and hashes are recorded in `docs/art-direction/disc-tray-artwork-assets.json`. Glass Current, Aero Player and Liquid Star continue to use Next.js Image in the existing centered circular 1:1 inset, with empty alternative text inside an `aria-hidden` reservation and no hero interaction or animation. Orbital Disc now uses the authored scene below instead of its original raster. These are narrow demo exceptions, not a new visual system or production promotion.
 
-**The Task Before Hero Rule.** Put search and starting choices before decorative media on narrow screens; remove the reservation from working states.
+### Orbital Disc geometry and placement
+
+Only `/prototypes/disc-tray/artwork/orbital-disc` replaces the circular enclosure with free-standing transparent 3D artwork. The 590×472px desktop figure has no background, border, radius or enclosure shadow. It sits at `top:-125px;right:-70px` over the command tray, whose opening state adds 48px top margin and reserves a 43% right column. It crosses the top and right lip while leaving heading/search clear. From 768px through 1359px it uses `width:calc(40% + 80px);top:-80px;right:-8px`, reducing the side overlap. At 767px and below it returns to document flow after the starter drawer, at `width:min(100%,520px)` and 1.25 aspect ratio. Its DOM position follows the starting choices at every size, so the native motion action follows those choices in keyboard order. Search/results and About omit the entire hero.
+
+The local Three.js 0.186.1 scene uses actual annular front/back faces, a thin outer edge, an open center and hub, two chrome torus orbits and a mirrored sphere. Procedural spectrum and thin-film maps supply broad rainbow bands; authored cool sky/area panels illuminate the disc and RoomEnvironment supplies studio reflections for chrome. No remote model, image or environment map is fetched. A transparent 2000×1600 PNG exported directly from the same renderer is the canonical static fallback; its source hashes, asset hash and provenance are in `docs/art-direction/orbital-disc-model.json`. Preserve this same-scene fallback rather than reverting to the earlier generated image.
+
+**The Task Before Hero Rule.** Put search and starting choices before decorative media on narrow screens; remove the reservation from working states. For Orbital Disc, preserve that order in the DOM as well as the visual layout.
 
 ## Elevation & Depth
 
-Narrow silver-blue gradient lips, inset highlights and diffuse shadows frame near-opaque reading interiors. The product header uses 14px backdrop blur. The chrome lip is 6px desktop/4px mobile. Gradients belong to the page ground, enclosure edges and product button material; original comparison hero fills remain flat, with the scoped artwork-demo exception above. Button faces remain opaque above the metallic rim and optional shader; static gloss bands and a stationary conic edge highlight enrich idle controls without animation.
+Narrow silver-blue gradient lips, inset highlights and diffuse shadows frame near-opaque reading interiors. The product header uses 14px backdrop blur. The chrome lip is 6px desktop/4px mobile. Gradients belong to the page ground, enclosure edges and product button material; original comparison hero fills remain flat, with the scoped raster and authored 3D artwork-demo exceptions above. Button faces remain opaque above the metallic rim and optional shader; static gloss bands and a stationary conic edge highlight enrich idle controls without animation.
 
 ### Shadow Vocabulary
 - **Enclosure:** `0 16px 38px #28476724,inset 0 1px 1px #fff`.
 - **Reading field:** `inset 0 1px 0 #fff,inset 0 -1px 0 #d3e2f3`.
 - **Header:** `inset 0 1px 0 #fff,0 8px 24px #29486b14`.
+- **Orbital sculpture:** `filter:drop-shadow(0 22px 15px #28476726)` on the transparent stage, not an enclosure; forced colors remove the filter.
 - **Button material:** `inset 0 1px 0 #fff,0 3px 8px #29486b14`; opaque gloss-banded inset face at 3px, or 2px for starter and match frames. Icy faces add `inset 0 -5px 8px #7899bc26`; cobalt faces use `inset 0 1px 0 #ffffff80,inset 0 -5px 8px #061d5433`.
 
 The dark translucent picker is external comparison chrome in document flow. Reduced transparency solidifies header, reading field and contents index; forced colors replace material fills with system canvas and borders.
@@ -245,7 +252,7 @@ The dark translucent picker is external comparison chrome in document flow. Redu
 
 ## Shapes
 
-Nest smaller reading surfaces inside rounded enclosures: desktop enclosure/inner radii, then 26px/22px outer/inner on mobile. Fields and disclosures share the field radius; navigation and action buttons use pills. Hero corners use the hero/display radius; v2 alone is circular. Strokes are 1px. Keyboard focus uses a 3px outline and 3px offset with supporting canvas rings on buttons, summaries and links; contents links use a zero outline offset.
+Nest smaller reading surfaces inside rounded enclosures: desktop enclosure/inner radii, then 26px/22px outer/inner on mobile. Fields and disclosures share the field radius; navigation and action buttons use pills. Original hero reservations use the hero/display radius; v2 and the three retained Disc Tray raster demos use circular insets. The explicitly authorized Orbital Disc has no enclosing circle or clipped container; only its physical disc and orbit geometry are circular. Strokes are 1px. Keyboard focus uses a 3px outline and 3px offset with supporting canvas rings on buttons, summaries and links; contents links use a zero outline offset.
 
 ## Components
 
@@ -255,7 +262,15 @@ All product native buttons share the liquid-metal material: a responsive silver-
 
 Button transforms transition for 150ms. A pointer click produces one contained 550ms radial ripple at its click position. The optional Paper liquid-metal shader loads lazily for fine-pointer mouse hover or a bounded pointer-click ripple, fades in over 240ms once ready, then fades out over 180ms after interaction before disposal. Its canvas stays mounted through the exit; rapid re-entry cancels disposal and reuses the context. The shader runs only during hover, the bounded ripple or its short exit; static idle gloss and conic highlights have no loop. Keyboard activation remains static. Reduced motion removes transitions, shader animation and ripples; reduced transparency suppresses shader/ripple/shimmer and removes the outer material shadow; forced colors replace the material with system button colors and a visible border. Failed WebGL or an unavailable shader chunk retains the complete CSS/native button. The sidecar previews the glossy CSS material and bounded conic sweep without requiring the React shader runtime.
 
-Native disclosure summaries retain underlines; navigation links and comparison harness retain their existing treatment. Native disclosures and variant replacement are immediate; only the external picker highlight transitions for 250ms. No autoplay, page entrances, parallax or hero animation is implemented.
+Native disclosure summaries retain underlines; navigation links and comparison harness retain their existing treatment. Native disclosures and variant replacement are immediate; only the external picker highlight transitions for 250ms. Page entrances and page parallax remain absent. The explicitly authorized Orbital Disc motion below is the only animated hero exception.
+
+### Orbital Disc motion and fallback
+
+The opening-state sculpture rotates its disc at .065 radians per second, with a .035-unit vertical drift at `sin(elapsed * .32)`. Mouse movement eases sculpture tilt toward ±.2 radians vertically and ±.28 horizontally, and shifts the rim light; touch does not drive the scene. Easing uses `1 - exp(-dt * 7)` with frame delta capped at .05 seconds. Keep the scene decorative: its canvas and fallback are hidden from assistive technology, while the separate native Pause motion / Resume motion button uses the shared liquid-metal material and `aria-pressed`. The button appears only when rendering is ready and reduced motion is not requested. Pause freezes automatic and pointer-driven motion; reduced motion keeps a still scene without the motion action.
+
+Rendering suspends when the host is offscreen or the document is hidden. DPR is capped at 1.5; ResizeObserver updates the renderer. An unavailable scene import, WebGL failure or lost context reveals the transparent same-scene fallback. Working-state transition or unmount cancels the animation, disconnects observers/listeners and disposes scene resources. These are implemented lifecycle rules, not measured battery or frame-rate guarantees.
+
+Orbital review geometry tests are configured at widths 320, 390, 550, 569, 768, 1024, 1253 and 1440px. The capture helper covers entry, tilt, paused, fallback, results and About at desktop 1440×900, mobile 390×844, user 550×766, live 569×792, medium 1253×705 and live-wide 1305×792. All 36 completed captures and hashes are verified against `docs/evidence/stage-9-orbital-hero-captures.json`. The 1305px set records the actual wider in-app browser used during live verification; it adds rendered overflow/review evidence, not another geometry-test width.
 
 ### Reading panels and track evidence
 
@@ -273,13 +288,13 @@ Demonstration mode keeps its notice and illustrative-ordering language. Real fai
 - **Do** retain all five structures, routes and comparison history until and after the user's structure selection.
 - **Do** keep shared Manrope typography, near-opaque reading fields, cobalt actions and selective enclosure chrome.
 - **Do** reuse the shared glossy liquid-metal button material with opaque reading faces, static idle highlights, bounded pointer feedback and static keyboard/fallback behavior.
-- **Do** preserve each original comparison's flat hero fill, aspect, location and future fit mapping, with task-first mobile order; keep the four artwork demos in Disc Tray's existing 1:1 slot.
+- **Do** preserve original comparison flat fills and mappings, and the three retained raster demos' circular 1:1 slot. Give only Orbital Disc its approved free-standing overlap, same-scene transparent fallback and task-first DOM/mobile order.
 - **Do** preserve native controls, visible focus, reduced-motion, reduced-transparency and forced-color treatments.
 - **Do** label demonstration fixtures persistently and keep real failures separate from demo data.
-- **Do** treat review/capture evidence as scoped evidence, not deployment, user research or full accessibility conformance.
+- **Do** treat review/capture evidence as scoped evidence, not deployment, user research or full accessibility conformance. Orbital capture evidence contains six states at six viewport sets (36 verified captures), including the actual 1305×792 wider in-app browser; preserve the distinction from the eight geometry-test widths.
 
 ### Don't:
-- **Don't** add artwork beyond the four user-authorized existing generated originals in the Disc Tray artwork demos; keep original comparison routes artwork-free and exclude reference screenshots, runtime remote images, illustrated substitutes and interactive hero controls.
+- **Don't** extend the Orbital Disc 3D/motion exception to other routes or add unrelated artwork, reference pixels, remote models/images or decorative playback controls. Keep original comparison routes artwork-free; Orbital Disc's native Pause/Resume action is explicitly authorized.
 - **Don't** replace structural differences with typography/theme swaps or reserve blank hero space in working screens.
 - **Don't** turn approved glass/chrome into a generic ban or extend translucency into low-contrast reading regions.
 - **Don't** treat Disc Tray body selection or the artwork demos as authorization for production promotion, Stage 10 or deployment; final hero artwork remains unselected.

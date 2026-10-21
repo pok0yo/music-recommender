@@ -62,13 +62,13 @@ test('reduced motion and forced colors use static buttons, including preference 
   const search = page.getByRole('button', { name: 'Search', exact: true });
   await search.hover(); await expect(search.locator('canvas')).toHaveCount(1);
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await expect(page.locator('canvas')).toHaveCount(0);
+  await expect(page.locator('.liquid-material canvas')).toHaveCount(0);
   await search.click();
   await expect(page.locator('.liquid-ripple')).toHaveCount(0);
   expect(await search.evaluate(e => getComputedStyle(e).transitionDuration)).toBe('0s');
   await page.emulateMedia({ reducedMotion: 'no-preference', forcedColors: 'active' });
   await page.mouse.move(0, 0); await search.hover();
-  await expect(page.locator('canvas')).toHaveCount(0);
+  await expect(page.locator('.liquid-material canvas')).toHaveCount(0);
   expect(await search.evaluate(e => getComputedStyle(e, '::before').display)).toBe('none');
   await page.getByRole('searchbox').fill('Tiffany'); await search.click();
   await expect(page.locator('.match-button').first()).toContainText('CLOUDS');
@@ -77,7 +77,7 @@ test('reduced motion and forced colors use static buttons, including preference 
   await cdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-transparency', value: 'reduce' }] });
   await expect.poll(() => page.evaluate(() => matchMedia('(prefers-reduced-transparency: reduce)').matches)).toBe(true);
   await page.mouse.move(0, 0); await search.hover();
-  await expect(page.locator('canvas')).toHaveCount(0);
+  await expect(page.locator('.liquid-material canvas')).toHaveCount(0);
   expect(await search.locator('.liquid-material').evaluate(e => getComputedStyle(e).display)).toBe('none');
 });
 

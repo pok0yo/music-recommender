@@ -1,0 +1,91 @@
+{
+  "observed_at": "2026-10-21T21:57:29.709448+00:00",
+  "build": "passed: npm run build",
+  "typecheck": "passed: npm run typecheck",
+  "final_full_suite": {
+    "startTime": "2026-10-21T21:51:49.492Z",
+    "duration": 191864.889,
+    "expected": 33,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "geometry_widths": [
+    320,
+    390,
+    550,
+    569,
+    768,
+    1024,
+    1253,
+    1440
+  ],
+  "geometry_evidence": "Real WebGL RGBA alpha bounds: unclipped silhouette, search/notice clearance, wide top/right overlap and medium top overlap; mobile model below choices.",
+  "interaction_evidence": [
+    "Rendered pixels change after resume/pointer input and remain stable while paused/reduced motion",
+    "Offscreen recurring-frame suspension",
+    "Context loss and unavailable WebGL display the exact-scene fallback; discovery still works",
+    "Native keyboard order, focus recovery, working/About unmount and opening remount",
+    "Existing shared button animation/fallback, all layouts and real/demo API guards pass"
+  ],
+  "capture_manifest": "stage-9-orbital-hero-captures.json",
+  "capture_count": 36,
+  "capture_viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844
+    },
+    "user": {
+      "width": 550,
+      "height": 766
+    },
+    "live": {
+      "width": 569,
+      "height": 792
+    },
+    "medium": {
+      "width": 1253,
+      "height": 705
+    },
+    "live-wide": {
+      "width": 1305,
+      "height": 792
+    }
+  },
+  "capture_hashes_verified": true,
+  "model_provenance": "../art-direction/orbital-disc-model.json",
+  "model_source_and_asset_hashes_verified": true,
+  "source_sha256": {
+    "components/orbital-scene.ts": "854b158db44753d3ee809d8a1740a42254112ef733c8556e22d3a64ffb028fd7",
+    "components/orbital-hero.tsx": "e533ffb6903cdda40c84c905d13facc0e8766524af251ec39714392f18aaf8e9",
+    "components/discovery.tsx": "82dc8fd8212352cb5e128bdce72fa6becff54ba3030795e8ea30a5101cedc43f",
+    "components/presentation.tsx": "9999cf7520594d24c331a5f88fd62b86e81835b348ed1439c26d3fd716a92bcf",
+    "v2/disc-tray/index.tsx": "ec9240c947698995b9961bf900de3b998eb8a511f79dddcd88c9d426fe4bf626",
+    "v2/studies.css": "7bcdf667948c3d8c14c0f6306ef3bba286d1e5ad170793d4e131b0ca6a5d1bda",
+    "tests/frontend/orbital-hero.spec.ts": "948f7286722fc0918cbd284b84358ba8dbb079da437357ebfeac33abf87b5283",
+    "tests/frontend/artwork.spec.ts": "f930f03e4821a5a0419a18eea57233c64a558ee603e0e73211d3f6451e4bf8a2",
+    "tests/frontend/liquid-button.spec.ts": "db7b24759761e2010b7814af464e49103c35e3d1178b380c69181f7dfd7d4f6d",
+    "scripts/capture-orbital-hero.mjs": "509cb2299f61254be577b4353e14a6903b21402bb6fc862e03b7db24543ca398",
+    "scripts/capture-previews.mjs": "d888cbb2106e90a77cb4849c86b79ffbc98b48a55883c3551328fc601d4055e7",
+    "scripts/capture-liquid-buttons.mjs": "7b6ba94bb0e8784f3d38ba32d63605eb88c2e2db3370a530384bd8277322888b",
+    "PRODUCT.md": "cceb1dccd4dfb7529b5a3a6e7beb64b2943e112c300598379553081fe573b52e",
+    "DESIGN.md": "e522bad204a00b86658a17398b03be3394d4885e0977f6bce6ae10695dd00e23",
+    ".impeccable/design.json": "d626e6950a99ca6a7590da69bd7bf672608d220b303b478ba5f3ed956639115d",
+    ".impeccable/briefs/orbital-hero.md": "fe88f70818e6245b987c2b10c37d28e8d2da92e0ab79e0636e946208e5a1f631",
+    "package.json": "8f2dc6037ad46d4a05251bfc1fcb3fa6a91b5a7fedf1d0f53218db8a8507b8b7",
+    "package-lock.json": "14181503180893b309e94a84fb37402fca30863df5754555214662541a259a90"
+  },
+  "backend_model_diff": [],
+  "scope": "Chrome frontend, demonstration fixtures, mocked API guards and actual in-app preview; no new live backend verification or recommendation experiment.",
+  "limitations": [
+    "No physical-device, Safari or screen-reader verification",
+    "No measured FPS, GPU memory, battery or perceived-smoothness claim; preserveDrawingBuffer may carry GPU cost",
+    "Hidden-page listener and cleanup reviewed in source; automated offscreen/pixel/state checks do not establish hardware leak freedom",
+    "1305px has rendered capture/overflow evidence, not the alpha-geometry assertion",
+    "Impeccable engine/detector unavailable earlier in session; direct craft-floor/fresh reviewer used, no detector pass claimed"
+  ]
+}
