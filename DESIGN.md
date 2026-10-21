@@ -132,6 +132,8 @@ The approved Y2K Futurism / Soft Club world uses icy-blue acrylic enclosures, si
 
 This records the implemented October 21 Stage 9 comparison, merging the prior provisional system. No final structure is selected. The shared material world supersedes Stage 4's separate typography/theme directions; those remain historical evidence. The user selects a structure before its Discover and About frontend is promoted. Stage 10 and deployment require separate authorization; retain v1–v5 and comparison history after selection.
 
+The subsequent Disc Study exploration settles the aesthetic preference on incumbent v2 while leaving the final body structure open. Gatefold, Disc Tray and Liner Notes extend that same visual system for comparison.
+
 **Key Characteristics:**
 - Five distinct app structures with shared Manrope typography, content and behavior.
 - Sculpted enclosure lips around near-opaque reading fields.
@@ -194,6 +196,18 @@ All five preserve seed data, ordering, support evidence, error states, search, r
 Reservations are noninteractive and hidden from assistive technology. Preserve aspect without minimum-height cropping. On mobile, task and choices precede each reservation. Heroes disappear during search/results; working screens reserve no blank media. Future-fit values do not authorize adding images.
 
 About preserves the same source-grounded copy, catalog limits and frozen evaluation values: v1 intro rail/body; v2 sequential native disclosures; v3 contents index/methodology; v4 broad intro/two-column sections; v5 reading panel/contents rail. It remains a Read surface, resolving into readable mobile columns.
+
+### Disc Study body layouts
+
+The three routes under `/prototypes/disc-study/` reuse v2's material, typography and shared state layer in a 1160px maximum-width body. Original v1–v5 routes and their hero mappings remain available.
+
+| Route suffix / name | Body structure | About treatment |
+|---|---|---|
+| gatefold — Gatefold | Joined cover/search and starter/result leaves. | Left-aligned intro in a 1080px reading width. |
+| disc-tray — Disc Tray | Upper command enclosure and separate compact track drawer; desktop title/artist columns. | Broad intro and compact disclosures in a 1080px reading width. |
+| liner-notes — Liner Notes | Asymmetric heading/search above the enclosure; spacious rows and prominent ranks. | Left-aligned intro and spacious disclosures in a 960px reading width. |
+
+Each entry retains v2's flat circular 1:1 reservation using hero-v2, with layout-specific responsive sizes. At 767px and below, bodies become one column and task/starting choices precede the disc. Search/results states omit the hero. Each `/about` route retains native disclosures and source-grounded copy. These layouts add no imagery, backend behavior or production promotion; the final body choice, Stage 10 and deployment remain separately gated.
 
 **The Task Before Hero Rule.** Put search and starting choices before decorative media on narrow screens; remove the reservation from working states.
 

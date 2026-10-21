@@ -1,5 +1,17 @@
 # Stage 9: five app structures, awaiting selection
 
+## Disc Study follow-up
+
+The user preferred v2's aesthetic and approved three additional body layouts. Open `/prototypes/disc-study/gatefold?mode=demo&fixture=entry`, `/prototypes/disc-study/disc-tray?mode=demo&fixture=entry`, or `/prototypes/disc-study/liner-notes?mode=demo&fixture=entry`. The three-way picker preserves the current input and recommendation state. About remains within the selected study route. Original v1–v5 routes remain available, and no final layout is promoted.
+
+| Study | Before / after | Why and tradeoff |
+|---|---|---|
+| Gatefold | Centered stack becomes joined cover and result pages | Keeps search/seed next to results; narrower result column |
+| Disc Tray | Single enclosure becomes command tray and inset results drawer | Compact title/artist scanning; less breathing room |
+| Liner Notes | Centered task becomes asymmetric header and generous ranked body | Clear editorial rhythm; longest scroll |
+
+All retain the v2 palette, font, selective chrome and solid circular 1:1 #C9D5DF hero reservation. Mobile puts task and choices before the disc; working states remove it. No new imagery, playback, user data or model behavior. `scripts/capture-previews.mjs --disc-study` records 18 matching entry/results/About captures; tests/frontend/disc-study.spec.ts adds three working-flow/state matrices (225 observations and 18 axe scans) plus picker/history/navigation regression. See the separate `docs/evidence/stage-9-disc-study-checks.json` and `stage-9-disc-study-review.md` for actual completed verification. The original evidence below remains the earlier five-layout checkpoint.
+
 The user approved the glass/chrome material world and asked for five different forms of the application, rather than theme swaps. Discover and About are implemented in each. This is the comparison milestone; no structure has been selected, no final `/discover` route is promoted, and Stage 10/deployment remain gated.
 
 ## Compare the structures

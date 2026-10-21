@@ -6,6 +6,8 @@ A planned music discovery application that recommends recognizable tracks from a
 
 **Stage 9 comparison is implemented:** five structurally different Discover and About interfaces share the approved icy glass/chrome visual system, real API adapter and labeled demonstration fixtures. Hero areas remain flat CSS placeholders. The user must select a structure before the final frontend is promoted; Stage 10 and deployment have not begun. See the [frontend setup, comparison and evidence](docs/stage-9-frontend.md).
 
+The user preferred Disc Study's aesthetic; three further body layouts are available at `/prototypes/disc-study/gatefold`, `/prototypes/disc-study/disc-tray` and `/prototypes/disc-study/liner-notes`. Append `?mode=demo&fixture=entry` for the labeled, backend-free comparison. Final body selection remains open.
+
 The accepted `cohort-v2` applies two independently verified recording redirects to a fixed 30% listener cohort reconstructed from existing cached ranges, with no new event download. The original 26/40 failure, approved panel, and acceptance thresholds remain preserved. See the [frozen revision protocol](docs/stage-6-protocol-v2.json) and [acceptance decision](docs/evidence/stage-6-decision-v2.json).
 
 - Stage 1: product scope and constraints documented.

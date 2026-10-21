@@ -1,0 +1,59 @@
+{
+  "observed_at": "2026-10-21T05:50:32.542428+00:00",
+  "scope": "Three Disc Study body layouts; final body selection pending. Original five retained. No Stage10 or deployment.",
+  "build": "pass",
+  "typecheck": "pass",
+  "browser_suite": {
+    "startTime": "2026-10-21T05:47:12.943Z",
+    "duration": 159100.136,
+    "expected": 23,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "new_cases": 4,
+  "new_state_width_observations": 225,
+  "new_axe_scans": 18,
+  "all_state_width_observations": 600,
+  "all_axe_scans": 48,
+  "captures": 18,
+  "review": {
+    "file": "stage-9-disc-study-review.md",
+    "disposition": "ship",
+    "scope": "Source and all18 captures; no material fixes"
+  },
+  "first_attempt": {
+    "passed": 22,
+    "failed": 1,
+    "reason": "Picker test reloaded before recommendation completion and URL seed update. Corrected test awaits completed result and About navigation; no application fix.",
+    "final_rerun": "23 passed"
+  },
+  "unchanged": [
+    "backend/ and ml/ source",
+    "lib/ API/hooks/contracts/fixtures",
+    "v2/index.tsx and v2/style.css",
+    "data/model artifacts"
+  ],
+  "source_sha256": {
+    "app/layout.tsx": "4c11407628a928cf18a1aeca175071b379dbe990fdc1df70627b76271bbbed8c",
+    "components/discovery.tsx": "dfbedcad7c4d0cb8ddb116bf84316614a0c3d9c0919944144c37da56cb7f9610",
+    "components/preview.tsx": "bf7a6b4cfdfac471219f98d81119d2c0ac56feda1e5ca3b86d9437fbc102c5fb",
+    "scripts/capture-previews.mjs": "240369ced8d5b2ce2aad280f38cd6a65225d08856e4028867502cc2a033cf091",
+    "tests/frontend/disc-study.spec.ts": "837015a30fbaa1ff210cd49cec62ff2e57d363c9922ff26aa9d7ae9c2db6fa36",
+    "v2/studies.ts": "0ca600f1f3d9ec8f338053f60449355f24be8b6569a975a0e152b3010fd1c7f2",
+    "v2/studies.css": "7dcb14a1d1477950227bdb3b0795f5395c6e16363e602addd747ab5d5291c3a2",
+    "v2/gatefold/index.tsx": "65045e6e1d1dd18698e4f9bd70dd847c3b92622edea0600a9554cda67dc7e396",
+    "v2/disc-tray/index.tsx": "8b27bea91ae220be09929a1a0bc4b017d8b26505efa49c23623021b386b83fe6",
+    "v2/liner-notes/index.tsx": "1a4e24a499fcdc4f3a872aa6ee5939f02cb707b386acf9591bec070eb13e77e1",
+    "app/prototypes/disc-study/[study]/[[...section]]/page.tsx": "5cbab119ea42882c6ba293ff2bc6549ea44719ba1bb3c8f40ccc75e6cfc84994"
+  },
+  "unverified": [
+    "physical phone",
+    "screen reader",
+    "actual browser zoom",
+    "human usability",
+    "deployed performance",
+    "fresh real-data integration for these layouts"
+  ],
+  "ci": "pending push; later CI record in this file"
+}

@@ -1,0 +1,285 @@
+{
+  "observed_at": "2026-10-21T05:43:56.999Z",
+  "revision": "disc-study-v1",
+  "browser": "155.0.8059.85",
+  "data": "demonstration fixtures only",
+  "provenance": "Local browser screenshots; documentation evidence, never app artwork.",
+  "captures": [
+    {
+      "variant": "gatefold",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-disc-study/gatefold-desktop-entry.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 260,
+        "height": 260,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "95f1cb2598fe2b0daa10696ea71d56d69330d9d02ae001ee380b88001c3ebe94"
+    },
+    {
+      "variant": "gatefold",
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-disc-study/gatefold-desktop-ten.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "97827964c6326b939dabac4e36331058c9a38ee22f293b788d663474ed5ad620"
+    },
+    {
+      "variant": "gatefold",
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-disc-study/gatefold-desktop-about.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "6b1c4c6c60475fb2ce9cbc490fb278fa1f9c373032991a9059fcbfe494945ca3"
+    },
+    {
+      "variant": "gatefold",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-disc-study/gatefold-mobile-entry.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 220,
+        "height": 220,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "5a91442e5f33f0483b7cc025f2ea1d61fc1fb07aefeec2b9c9728cc7279cfbe2"
+    },
+    {
+      "variant": "gatefold",
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-disc-study/gatefold-mobile-ten.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "30d03e63df46f22d93acb3d8f220681a99e15d56c018d07a198db832edc39772"
+    },
+    {
+      "variant": "gatefold",
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-disc-study/gatefold-mobile-about.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "8e57d015b43fbc9588021a35593be2edd53ff5aafb8e64c4b3dc549fab042f63"
+    },
+    {
+      "variant": "disc-tray",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-disc-study/disc-tray-desktop-entry.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 260,
+        "height": 260,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "e2c68f7b85c4952f401a5a9820e4bb3f3cec7156a2f5dca56f1f2708cc6c9a4d"
+    },
+    {
+      "variant": "disc-tray",
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-disc-study/disc-tray-desktop-ten.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "88e2a45f55d642ceca1755bdcc6e06a2bdb08a12a621867f7262b1c4a9922e66"
+    },
+    {
+      "variant": "disc-tray",
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-disc-study/disc-tray-desktop-about.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "0fad47a0e11d51a9b450084fbdd78a36a1508b5047fadcd7dda0f82a564f61b8"
+    },
+    {
+      "variant": "disc-tray",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-disc-study/disc-tray-mobile-entry.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 224,
+        "height": 224,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "bf434247c6165c6072da27eb2d1c07c36c4906a1ee372b07ea2eea81221c08e7"
+    },
+    {
+      "variant": "disc-tray",
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-disc-study/disc-tray-mobile-ten.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "ef46d0a065c2a2fc382898909bdd1abf61d88d3ac7ab114b836114ba0064b69b"
+    },
+    {
+      "variant": "disc-tray",
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-disc-study/disc-tray-mobile-about.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "a2c9644d80ba198394dee36b42ea484f935af3be424624c519e14618b905c671"
+    },
+    {
+      "variant": "liner-notes",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-disc-study/liner-notes-desktop-entry.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 300,
+        "height": 300,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "2aefe25d35eb4f49d1e0fd397e4d7b484db16891b96e587100233b82b3a6edcf"
+    },
+    {
+      "variant": "liner-notes",
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-disc-study/liner-notes-desktop-ten.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "6c298fe54c609fb9b8f2c556a7339651b0459f8b6c42bbc9119b52588fe8be21"
+    },
+    {
+      "variant": "liner-notes",
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-disc-study/liner-notes-desktop-about.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pageWidth": 1440,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "c52a930859b1c0a60ca7d1e6d598ae68265109976f6889022612f8158a7f6fc1"
+    },
+    {
+      "variant": "liner-notes",
+      "fixture": "entry",
+      "path": "docs/evidence/stage-9-disc-study/liner-notes-mobile-entry.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": {
+        "width": 224,
+        "height": 224,
+        "fill": "rgb(201, 213, 223)"
+      },
+      "sha256": "310ce9e379a7141d2129ba077c7dfdc8d69d7b12377399d54bb19cfd5ba0e620"
+    },
+    {
+      "variant": "liner-notes",
+      "fixture": "ten",
+      "path": "docs/evidence/stage-9-disc-study/liner-notes-mobile-ten.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "980243bdcbd64d65a0072be75d0700a6a99cb3e291201d3b4e369779bcad1370"
+    },
+    {
+      "variant": "liner-notes",
+      "fixture": "about",
+      "path": "docs/evidence/stage-9-disc-study/liner-notes-mobile-about.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageWidth": 390,
+      "headingFont": "Manrope, sans-serif",
+      "headingFontLoaded": true,
+      "hero": null,
+      "sha256": "40f19ddc1d198e48f8e282ff8cfbbce93ad9ab5bb425b837c90455bf6365a90d"
+    }
+  ]
+}

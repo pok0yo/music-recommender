@@ -10,10 +10,14 @@ import DiscStudy from '../v2';
 import PearlOrbit from '../v3';
 import CapsuleCurrent from '../v4';
 import CobaltSignal from '../v5';
+import Gatefold from '../v2/gatefold';
+import DiscTray from '../v2/disc-tray';
+import LinerNotes from '../v2/liner-notes';
 
 export const variantNames = ['Blue Horizon', 'Disc Study', 'Pearl Orbit', 'Capsule Current', 'Cobalt Signal'];
 export const variantStructures = ['Split console', 'Guided sequence', 'Catalog workbench', 'Track ledger', 'List + inspector'];
 const presentations = [BlueHorizon, DiscStudy, PearlOrbit, CapsuleCurrent, CobaltSignal];
+const studies = [Gatefold, DiscTray, LinerNotes];
 
 function Problem({ error, retry }: { error: APIError; retry: () => void }) {
   const [waiting, setWaiting] = useState(error.retryAfter || 0);
@@ -47,13 +51,13 @@ function EvidenceDetails({ track }: { track: RelatedTrack }) {
   </div>;
 }
 
-export function Discovery({ variant, mode, fixture }: { variant: number; mode: Meta['data_mode']; fixture: Scenario }) {
+export function Discovery({ variant, mode, fixture, study }: { variant: number; mode: Meta['data_mode']; fixture: Scenario; study?: number }) {
   const d = useDiscovery(mode, fixture);
   const [inspectedID, setInspectedID] = useState<string | null>(null);
   const inspectorHeading = useRef<HTMLHeadingElement>(null);
   const detailTrigger = useRef<HTMLButtonElement | null>(null);
   const inspected = d.recommendations?.results.find(track => track.recording_id === inspectedID) || d.recommendations?.results[0];
-  const Presentation = presentations[variant - 1];
+  const Presentation = study ? studies[study - 1] : presentations[variant - 1];
   const resultCount = d.recommendations?.results.length ?? 0;
   const meta = d.recommendations?.meta || d.starters?.meta;
   const heading = <div className="task-heading"><h1>{d.opening ? <>Start with<br className="opening-break" /> one song.</> : 'Find your next connection.'}</h1>
