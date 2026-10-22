@@ -3,9 +3,9 @@
   --atmosphere-glass:#f1f8ffbd;
   --muted:#28435f;
   background-color:#daeaf5;
-  background-image:url('/artwork/disc-tray/accents/chrome-orbit.webp'),url('/artwork/disc-tray/accents/aero-spine.webp'),url('/artwork/disc-tray/accents/liquid-comma.webp'),url('/artwork/disc-tray/accents/chrome-orbit.webp'),linear-gradient(180deg,#d6ebff0a,#b8d9f03d),url('/artwork/disc-tray/environment/environment-wide.webp');
-  background-size:440px,530px,470px,160px,100% 100%,cover;
-  background-position:left -180px top 230px,right -170px top 610px,left -130px bottom 10px,right 10px top 190px,center,center top;
+  background-image:url('/artwork/disc-tray/environment/icy-water-wide.webp');
+  background-size:cover;
+  background-position:left top;
   background-repeat:no-repeat;
 }
 /* The metal rim is a hollow mask, so no opaque backing cancels the frosted face. */
@@ -51,16 +51,14 @@
 [data-artwork=orbital-disc] .about-intro {
   padding:32px 34% 32px 28px;
   border-radius:26px;
-  background:var(--atmosphere-glass) url('/artwork/disc-tray/environment/chrome-detail.webp') right center/32% 100% no-repeat;
+  background:var(--atmosphere-glass) url('/artwork/disc-tray/environment/icy-water-detail.webp') right center/32% 100% no-repeat;
 }
 @media(max-width:1023px) {
   [data-artwork=orbital-disc] .task-heading h1 { font-size:32px; }
 }
 @media(max-width:767px) {
   [data-artwork=orbital-disc] {
-    background-image:url('/artwork/disc-tray/accents/chrome-orbit.webp'),url('/artwork/disc-tray/accents/liquid-comma.webp'),url('/artwork/disc-tray/accents/aero-spine.webp'),linear-gradient(180deg,#c8e3ff0a,#b8d9f03d),url('/artwork/disc-tray/environment/environment-mobile.webp');
-    background-size:310px,340px,330px,100% 100%,cover;
-    background-position:left -170px top 310px,right -190px top 830px,left -120px bottom 50px,center,center top;
+    background-image:url('/artwork/disc-tray/environment/icy-water-mobile.webp');
   }
   [data-artwork=orbital-disc] .disc-tray.is-opening .tray-command { background:var(--atmosphere-glass); -webkit-backdrop-filter:blur(8px) saturate(125%); backdrop-filter:blur(8px) saturate(125%); }
   [data-artwork=orbital-disc] .disc-tray.is-opening .tray-upper { background:none; }

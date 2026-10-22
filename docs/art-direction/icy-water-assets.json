@@ -1,0 +1,44 @@
+{
+  "observed_at": "2026-10-22T06:33:59.117Z",
+  "tool": "built-in image_gen",
+  "native_resolution": "1672x941; not upscaled to claim 2K",
+  "request": "icy-water-request.json",
+  "origin": "One completed user-authorized built-in image_gen generation. Three resized/cropped WebP derivatives share that source; no reference pixels or additional generated originals.",
+  "assets": [
+    {
+      "path": "public/artwork/disc-tray/environment/icy-water-original.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2547583,
+      "sha256": "0665c2d96c74f89f96521ada8379020ef3a4083e3e1eab980bf18e7172f95e9c",
+      "role": "Unmodified built-in image_gen original; not loaded by the interface."
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/icy-water-wide.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 196460,
+      "sha256": "270e89ab88d6e21af3fb2360d6025919128ab4dcf38dae15f89be4e7e4d01ca2",
+      "role": "Left-weighted page environment",
+      "crop": "centre"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/icy-water-mobile.webp",
+      "width": 528,
+      "height": 940,
+      "bytes": 86990,
+      "sha256": "9294a9defa7b0cb8235e7a97e968c1610788e7b677fa9208ca7094cafed5f473",
+      "role": "Narrow crop retains the left metal and water",
+      "crop": "west"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/icy-water-detail.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 68870,
+      "sha256": "b308b81e4e64467a0a4dbab548607a00dbccf35ed87a0e9cb0abf1342bd5ab0b",
+      "role": "About introduction detail",
+      "crop": "west"
+    }
+  ]
+}

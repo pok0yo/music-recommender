@@ -1,0 +1,78 @@
+{
+  "observed_at": "2026-10-22T06:59:01.559Z",
+  "build": "passed",
+  "typecheck": "passed",
+  "script_syntax_checks": "passed",
+  "final_full_suite": {
+    "startTime": "2026-10-22T06:39:21.852Z",
+    "duration": 167865.31100000002,
+    "expected": 39,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser": "155.0.8059.85",
+  "captures": "stage-9-icy-water-captures.json",
+  "capture_count": 24,
+  "capture_hashes_and_widths_verified": true,
+  "capture_scope": "Ten states each at1440desktop and390mobile;1908entry/model-hover/results/About. Six initial loading captures were replaced after semantic state waits, with no UI change.",
+  "asset_manifest": "../art-direction/icy-water-assets.json",
+  "assets_verified": true,
+  "generation": {
+    "tool": "built-in image_gen",
+    "originals": 1,
+    "derivatives": 3,
+    "native_resolution": "1672x941",
+    "upscaled": false,
+    "reference_pixels_copied": false
+  },
+  "runtime_image_bytes": 352320,
+  "model_rim_regression": {
+    "opaque_pixels": 418,
+    "max_channel_difference": 0
+  },
+  "contrast_scope": "Existing analytical worst-case flat-face bound over black and axe checks; not all backgrounds/frames or device conformance.",
+  "review": {
+    "initial": "fix",
+    "initial_scope": "All24 final captures valid; visual/source requirements met; one documentation-drift finding.",
+    "final": "ship",
+    "final_scope": "Same reviewer scored the documentation finding resolved. No additional UI recapture or independent runtime check in the verdict pass.",
+    "report": "stage-9-icy-water-review.md"
+  },
+  "environment_issue": {
+    "initial_suite": {
+      "passed": 18,
+      "failed": 21
+    },
+    "cause": "Preview server retained previous build HTML and returned HTTP500 for its old CSS URL. Restarting identified local preview served current CSS with HTTP200; complete39-test rerun passed.",
+    "product_code_changed_to_resolve": false
+  },
+  "source_sha256": {
+    "v2/atmosphere.css": "6909af6e4954d9c366835813c7735e4d369907063637801d380115c367a66448",
+    "tests/frontend/atmosphere.spec.ts": "3f58f2ea0de14505a80145f06f30a2009ce107223ae7bfbd667c3bd7451c5e88",
+    "scripts/prepare-disc-tray-environment.mjs": "c234055c0502ac6630a7d0362a669e1a39da2b60925cc18bdf96b74d5abf722b",
+    "scripts/capture-site-liquid-glass.mjs": "9bb5e3d30c76479f41c064645936bc0d3e9f223e71fd0d941e4f784910bf3dd6",
+    "PRODUCT.md": "ac433a9f083e40e4775fc829c605300099fe66b47e67458407e9262041478e38",
+    "DESIGN.md": "a373e3288fe34f579f0c713b9909e0e7e7b28643837687c852591444ce1e7900",
+    ".impeccable/design.json": "8c289d9406824c945b2b51aceabb2505a0abed9205dc8c6af5d0608bf3a9790b",
+    ".impeccable/briefs/icy-water.md": "289d27a7fddac05bae4aa3cb2183e7b974da8962909c3295846e5e63d04febfd",
+    "docs/art-direction/icy-water-request.json": "241b915ec6d99ae85511e3d5f916ce39e51a81b5e8cd9b981c8325ade6607270",
+    "docs/art-direction/icy-water-assets.json": "da0c9bc057e03091d2f530cd6ec29613583114e29f23e19c7ce68878ca4a30e9",
+    "docs/stage-9-frontend.md": "eabaf52fcf8415ba9fa98fe5ae494df88a6e582089fbbde1639e4a0479e01631",
+    "docs/evidence/stage-9-icy-water-review.md": "f61b907a7d967ef6418bd4d3df1e441cfe2fdf3bb686ac110b85881c4fe6d22e"
+  },
+  "unchanged_source": [
+    "components/orbital-hero.tsx",
+    "components/orbital-scene.ts",
+    "v2/studies.css",
+    "v2/disc-tray/index.tsx"
+  ],
+  "scope": "Selected Orbital Disc background replacement only. Other comparisons, model/layout/type/native semantics/backend/recommendation data and stage gates unchanged.",
+  "limitations": [
+    "Local Chrome and demonstration fixtures, plus existing mocked real-mode guards; not live service validation",
+    "No detector-pass claim; unavailable launcher earlier, direct source/craft-floor review",
+    "No Safari, physical-device or screen-reader check",
+    "No measured FPS, battery, retention or performance-improvement claim",
+    "Remote CI is separate from these local results; inspect GitHub after push"
+  ]
+}

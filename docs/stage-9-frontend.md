@@ -1,5 +1,11 @@
 # Stage 9: five app structures, awaiting selection
 
+## Icy water background replacement
+
+The selected Orbital Disc demo now uses one original left-weighted icy-metal/water environment rather than the scattered chrome-orbit, liquid-comma and aero-spine background layers. The environment combines smooth rigid blue-metal ribbon/fin forms, reflected water, faint curved perspective lines, blue haze and fine grain. It remains a static decorative CSS background beneath the existing frosted controls and reading planes. Discover/results and About share the environment; narrow screens and About use dedicated crops. Other comparison routes, hero model and rim layering are unchanged.
+
+The native built-in image_gen output is 1672x941, retained without upscaling or a 2K claim. Runtime WebP derivatives are 1672x941 (196,460 bytes),528x940 (86,990 bytes) and640x640 (68,870 bytes). Exact prompt and why-it-works rationale are in `docs/art-direction/icy-water-request.json`; source/derivative hashes and crop recipes are in `docs/art-direction/icy-water-assets.json` and `scripts/prepare-disc-tray-environment.mjs --icy-water`. Build, typecheck and all39 local frontend tests pass. All24 final captures are valid; fresh visual/source review found the material requirements met and its single documentation finding was corrected and scored resolved. Current scoped evidence is in `docs/evidence/stage-9-icy-water-checks.json`, `stage-9-icy-water-captures.json` and `stage-9-icy-water-review.md`. Previous sources and screenshots remain historical; remote CI and device behavior are separate.
+
 ## Hero rim layering correction
 
 The user's circled screenshot showed the tray rim painting over the disc orbit. The frosted face creates a stacking context, which trapped the model below the subsequently painted rim. Each selected glass shell now isolates its painting and puts the decorative rim at z-index:-1 behind its content. The model's position, size, scene, hover behavior and static fallback are unchanged.

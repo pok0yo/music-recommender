@@ -3,12 +3,16 @@ import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const browser=await chromium.launch({channel:process.env.CI?undefined:'chrome'});
 const layering=process.argv.includes('--hero-layering');
-const output='docs/evidence/'+(layering?'stage-9-hero-layering':process.argv.includes('--chrome-atmosphere')?'stage-9-chrome-atmosphere':'stage-9-site-liquid-glass');
+const icy=process.argv.includes('--icy-water');
+const output='docs/evidence/'+(icy?'stage-9-icy-water':layering?'stage-9-hero-layering':process.argv.includes('--chrome-atmosphere')?'stage-9-chrome-atmosphere':'stage-9-site-liquid-glass');
 const evidence={observed_at:new Date().toISOString(),browser:browser.version(),data:'Demonstration fixtures only',captures:[]};
 await mkdir(output,{recursive:true});
 try {
   const cases=[];
-  if(layering){
+  if(icy){
+    for(const [device,width,height] of [['desktop',1440,900],['mobile',390,844]])for(const state of ['entry','hover','focus','results','about','disabled','opaque','zero','error','long'])cases.push({device,width,height,state});
+    for(const state of ['entry','model-hover','results','about'])cases.push({device:'reference',width:1908,height:938,state});
+  }else if(layering){
     for(const state of ['entry','results','about','opaque'])cases.push({device:'desktop',width:1440,height:900,state});
     for(const state of ['entry','about'])cases.push({device:'mobile',width:390,height:844,state});
     for(const state of ['entry','model-hover'])cases.push({device:'reference',width:1908,height:938,state});
@@ -22,11 +26,14 @@ try {
     const page=await browser.newPage({viewport:{width,height}});
     if(state==='opaque'){const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-transparency',value:'reduce'}]});}
     const path=variant?`/variants/v${variant}`:'/prototypes/disc-tray/artwork/orbital-disc';
-    const fixture=state==='results'?'ten':state==='disabled'?'rate-limit':'entry';
+    const fixture=state==='results'?'ten':state==='disabled'?'rate-limit':['zero','error','long'].includes(state)?state:'entry';
     await page.goto(`http://127.0.0.1:3000${path}${state==='about'?'/about':''}?mode=demo&fixture=${fixture}`);
     await page.locator('main h1').waitFor();
     if(state==='opaque') await expect.poll(()=>page.locator('.app-surface :is(button,a,input[type=search],select,summary,.app-header,.shell-body,.about-index,.preview-bar,.proto-picker)').evaluateAll(elements=>elements.filter(e=>getComputedStyle(e).backdropFilter!=='none').length)).toBe(0);
-    if(state==='results') await expect(page.locator('.track-row')).toHaveCount(10);
+    if(['results','long'].includes(state)) await expect(page.locator('.track-row')).toHaveCount(10);
+    if(state==='long') await expect(page.locator('.track-row').first()).toContainText('A quiet place between');
+    if(state==='zero') await expect(page.getByText('No supported connections for this song yet.')).toBeVisible();
+    if(state==='error') await expect(page.locator('.problem')).toContainText('We could not load recommendations.');
     if(state==='disabled') await expect(page.locator('.problem button')).toBeDisabled();
     await page.evaluate(()=>document.fonts.ready);
     if(!variant && ['entry','hover','focus','opaque','model-hover'].includes(state)) await expect(page.locator('.orbital-hero')).toHaveAttribute('data-model-ready','true');

@@ -1,0 +1,223 @@
+{
+  "observed_at": "2026-10-22T06:47:20.630Z",
+  "browser": "155.0.8059.85",
+  "data": "Demonstration fixtures only",
+  "captures": [
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-icy-water/desktop-entry.png",
+      "pageWidth": 1440,
+      "sha256": "dbd97f82f0866800192acf313e595de70d99286c98b74de3f41d27d123b4b0e5"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "hover",
+      "path": "docs/evidence/stage-9-icy-water/desktop-hover.png",
+      "pageWidth": 1440,
+      "sha256": "22ccf9854a0528d6c09455d6d6d953e519356d692740f9c3f4990c9e9329a4fc"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "focus",
+      "path": "docs/evidence/stage-9-icy-water/desktop-focus.png",
+      "pageWidth": 1440,
+      "sha256": "bc79eca1b6734090b05586130e38e64a42591b8e6f24ba2d40f611d276dac926"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "path": "docs/evidence/stage-9-icy-water/desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "742b45db5843a87707779f8477522a6e76ba860c845324d6c24a8bc714d37ada"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "about",
+      "path": "docs/evidence/stage-9-icy-water/desktop-about.png",
+      "pageWidth": 1440,
+      "sha256": "2c1403d256217f9bdf2c948367d81659f8166e3484032ea88b0343456463499b"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "disabled",
+      "path": "docs/evidence/stage-9-icy-water/desktop-disabled.png",
+      "pageWidth": 1440,
+      "sha256": "07fb2222e7974a4a1a9796bc1dac540b65a7e7204a827a02f6c4ef559d24d560"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "opaque",
+      "path": "docs/evidence/stage-9-icy-water/desktop-opaque.png",
+      "pageWidth": 1440,
+      "sha256": "57459fb9342c21a940611f1b32057c77a2da8c875ca4936d5e896bb5663b6f11"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "zero",
+      "path": "docs/evidence/stage-9-icy-water/desktop-zero.png",
+      "pageWidth": 1440,
+      "sha256": "f2159e228ff9d98b3cb4431ac2efa2c39cd8991772f28c7a6c9f575c6a025741"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "error",
+      "path": "docs/evidence/stage-9-icy-water/desktop-error.png",
+      "pageWidth": 1440,
+      "sha256": "8d72734c25e92c387b411684acf9def8e1702fcbf15d8bf6492603886bb53411"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "long",
+      "path": "docs/evidence/stage-9-icy-water/desktop-long.png",
+      "pageWidth": 1440,
+      "sha256": "e9628166568d5f516e4453401f9e7c74cd080c79af73d52c7e0e5dc1c708ce35"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-icy-water/mobile-entry.png",
+      "pageWidth": 390,
+      "sha256": "e11f2376d191678602bbbf1fc4102bb2545c268987551b3d37f5fe8ef5806169"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "hover",
+      "path": "docs/evidence/stage-9-icy-water/mobile-hover.png",
+      "pageWidth": 390,
+      "sha256": "bbe8dc1acd34de3355ad8d9860ba1d7d50577b84a24f83c2fe3908de8368002e"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "focus",
+      "path": "docs/evidence/stage-9-icy-water/mobile-focus.png",
+      "pageWidth": 390,
+      "sha256": "cf72857f029453fd2d69c242335a5a8d3fca2d241ec1052a9e1b22b1c1aac3d2"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "path": "docs/evidence/stage-9-icy-water/mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "5533942197133744435d5ccac2de7534739983bf7d5ca61407f611a713154998"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "about",
+      "path": "docs/evidence/stage-9-icy-water/mobile-about.png",
+      "pageWidth": 390,
+      "sha256": "07e3e1464f2e01854ea2bd8aad2041492d086d64150c2eda557145180251be96"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "disabled",
+      "path": "docs/evidence/stage-9-icy-water/mobile-disabled.png",
+      "pageWidth": 390,
+      "sha256": "ce6434326f05c0a1b223b43543f77d5039929e8e42a43dc6c716e8b5dee260bb"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "opaque",
+      "path": "docs/evidence/stage-9-icy-water/mobile-opaque.png",
+      "pageWidth": 390,
+      "sha256": "1b62994a11262d92e02059932de5950ed9063c73616575bbcd6361515d03cf51"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "zero",
+      "path": "docs/evidence/stage-9-icy-water/mobile-zero.png",
+      "pageWidth": 390,
+      "sha256": "c9605bcfb84c9669756cbc7f44a5805cdffcef966a88a8a574473d3603de1d14"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "error",
+      "path": "docs/evidence/stage-9-icy-water/mobile-error.png",
+      "pageWidth": 390,
+      "sha256": "d72c73ed3bff0fa6adae034046012793167fa05a93b7a465616b643204c1cfb5"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "long",
+      "path": "docs/evidence/stage-9-icy-water/mobile-long.png",
+      "pageWidth": 390,
+      "sha256": "f5ef52b9935b0aa383023db7a726639f42135079bcb6fbec2ca0faef647e8a2f"
+    },
+    {
+      "device": "reference",
+      "width": 1908,
+      "height": 938,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-icy-water/reference-entry.png",
+      "pageWidth": 1908,
+      "sha256": "af83575713dff5002d43c51af1a8c9fefb95f36266cf9a4394d774fca4921d52"
+    },
+    {
+      "device": "reference",
+      "width": 1908,
+      "height": 938,
+      "state": "model-hover",
+      "path": "docs/evidence/stage-9-icy-water/reference-model-hover.png",
+      "pageWidth": 1908,
+      "sha256": "eb9062a4eed6090c4f5aff1dcae55fb60b8c58b38507062032ed0a3c0c938240"
+    },
+    {
+      "device": "reference",
+      "width": 1908,
+      "height": 938,
+      "state": "results",
+      "path": "docs/evidence/stage-9-icy-water/reference-results.png",
+      "pageWidth": 1908,
+      "sha256": "925b5923965bc623a3ab7a172fe6c84dcd861ed70f0369e825df81e610082383"
+    },
+    {
+      "device": "reference",
+      "width": 1908,
+      "height": 938,
+      "state": "about",
+      "path": "docs/evidence/stage-9-icy-water/reference-about.png",
+      "pageWidth": 1908,
+      "sha256": "d556e6954a12f572ff457f23a8443235d702d8bb2883b6d0f6ca9e674ce298ba"
+    }
+  ]
+}
