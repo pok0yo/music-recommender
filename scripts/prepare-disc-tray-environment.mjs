@@ -4,6 +4,29 @@ import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 
 const directory='public/artwork/disc-tray/environment/';
+if(process.argv.includes('--extended')) {
+  const assets=[];
+  const record=async(path,bytes,role,extra={})=>{
+    const {width,height}=await sharp(bytes).metadata();
+    await writeFile(path,bytes);
+    assets.push({path,width,height,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex'),role,...extra});
+  };
+  for(const finish of ['hazy','crisp']) {
+    const prefix=directory+`extended-${finish}`;
+    const wide=await readFile(prefix+'-original.png'), portrait=await readFile(prefix+'-portrait-original.png');
+    await record(prefix+'-original.png',wide,'Native generated extended landscape; not loaded by the page.',{finish});
+    await record(prefix+'-portrait-original.png',portrait,'Native generated extended portrait; not loaded by the page.',{finish});
+    for(const [name,source,width,height,waterline] of [['wide',wide,1672,941,.66],['mobile',portrait,528,1176,.615],['detail',wide,640,640,null]]) {
+      const bytes=await sharp(source).resize(width,height,{fit:'cover',position:name==='detail'?'west':'centre',withoutEnlargement:true}).webp({quality:90}).toBuffer();
+      const size=await sharp(bytes).metadata();
+      assert(size.width===width && size.height===height && bytes.length<600_000);
+      await record(prefix+`-${name}.webp`,bytes,'Optimized extended environment',{finish,waterline});
+    }
+  }
+  await writeFile('docs/art-direction/extended-background-assets.json',JSON.stringify({observed_at:new Date().toISOString(),tool:'built-in image_gen',request:'extended-background-request.json',origin:'Four generated edits of the existing scene, with wider landscape and taller portrait framing. No pixel-identical preservation or native8K claim.',assets},null,2)+'\n');
+  console.log(JSON.stringify(assets.map(({path,width,height,bytes})=>({path,width,height,bytes})),null,2));
+  process.exit(0);
+}
 if(process.argv.includes('--iridescent')) {
   const assets=[];
   const record=async(path,bytes,role,extra={})=>{

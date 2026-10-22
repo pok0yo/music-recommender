@@ -30,7 +30,7 @@ test('background finishes preserve the discovery session, navigation and respons
   await expect(finish).toHaveValue('crisp');
   await page.getByRole('link',{name:'About the recommendations',exact:true}).click();
   await expect(finish).toHaveValue('crisp');
-  expect(await page.locator('.about-intro').evaluate(e=>getComputedStyle(e).backgroundImage)).toContain('iridescent-crisp-detail.webp');
+  expect(await page.locator('.about-intro').evaluate(e=>getComputedStyle(e).backgroundImage)).toContain('extended-crisp-detail.webp');
   await finish.selectOption('hazy');
   await page.getByRole('link',{name:'Discover',exact:true}).click();
   await expect(finish).toHaveValue('hazy');
@@ -39,7 +39,7 @@ test('background finishes preserve the discovery session, navigation and respons
     for(const value of ['hazy','crisp']){
       await finish.selectOption(value);
       await expect(page.locator('.app-surface')).toHaveAttribute('data-background',value);
-      expect(await page.locator('.app-surface').evaluate(e=>getComputedStyle(e).backgroundImage)).toContain(`iridescent-${value}-${width<768?'mobile':'wide'}.webp`);
+      expect(await page.locator('.app-surface').evaluate(e=>getComputedStyle(e).backgroundImage)).toContain(`extended-${value}-${width<768?'mobile':'wide'}.webp`);
       expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);
       if([390,1440].includes(width))expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations).toEqual([]);
     }
@@ -69,7 +69,7 @@ test('local atmosphere and display type retain readable states and comparison bo
     }
   }
   await page.goto(`${route}/about?mode=demo&fixture=entry`);
-  expect(await page.locator('.about-intro').evaluate(e=>getComputedStyle(e).backgroundImage)).toContain('iridescent-hazy-detail.webp');
+  expect(await page.locator('.about-intro').evaluate(e=>getComputedStyle(e).backgroundImage)).toContain('extended-hazy-detail.webp');
   await expect(page.locator('.orbital-hero')).toHaveCount(0);
   await page.emulateMedia({forcedColors:'active'});
   expect(await page.locator('.app-surface').evaluate(e=>getComputedStyle(e).backgroundImage)).toBe('none');
@@ -95,10 +95,10 @@ test('icy water replaces scattered accents behind translucent trays with opaque 
   await page.emulateMedia({reducedMotion:'reduce'});
   await page.goto(`${route}?mode=demo&fixture=entry`);
   const background=await page.locator('.app-surface').evaluate(e=>getComputedStyle(e).backgroundImage);
-  expect(background).toContain('iridescent-hazy-wide.webp');
+  expect(background).toContain('extended-hazy-wide.webp');
   expect(background).not.toContain('/accents/');
-  for(const finish of ['hazy','crisp'])for(const [name,width,height] of [['wide',1672,941],['mobile',528,940],['detail',640,640]] as const){
-    expect(await page.evaluate(async(name)=>{const image=new Image();image.src=`/artwork/disc-tray/environment/${name}.webp`;await image.decode();return [image.naturalWidth,image.naturalHeight];},`iridescent-${finish}-${name}`)).toEqual([width,height]);
+  for(const finish of ['hazy','crisp'])for(const [name,width,height] of [['wide',1672,941],['mobile',528,1176],['detail',640,640]] as const){
+    expect(await page.evaluate(async(name)=>{const image=new Image();image.src=`/artwork/disc-tray/environment/${name}.webp`;await image.decode();return [image.naturalWidth,image.naturalHeight];},`extended-${finish}-${name}`)).toEqual([width,height]);
   }
   const body=page.locator('.tray-upper');
   expect(await body.evaluate(e=>getComputedStyle(e).backgroundColor)).toBe('rgba(241, 248, 255, 0.74)');
@@ -118,7 +118,7 @@ test('icy water replaces scattered accents behind translucent trays with opaque 
   await cdp.send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-transparency',value:'reduce'}]});
   await expect.poll(()=>body.evaluate(e=>getComputedStyle(e).backgroundColor)).toBe('rgb(252, 253, 255)');
   await page.setViewportSize({width:390,height:844});
-  expect(await page.locator('.app-surface').evaluate(e=>getComputedStyle(e).backgroundImage)).toContain('iridescent-hazy-mobile.webp');
+  expect(await page.locator('.app-surface').evaluate(e=>getComputedStyle(e).backgroundImage)).toContain('extended-hazy-mobile.webp');
   expect(await frame.evaluate(e=>getComputedStyle(e,'::after').display)).toBe('none');
   expect(await page.locator('.tray-command').evaluate(e=>getComputedStyle(e).backgroundColor)).toBe('rgb(252, 253, 255)');
   expect(await page.locator('.tray-command').evaluate(e=>getComputedStyle(e).backdropFilter)).toBe('none');

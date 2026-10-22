@@ -30,6 +30,9 @@ The user subsequently approved procedural background-water motion inspired by a 
 
 The user then reported excessive background zoom and requested the full image. The Orbital background now fits the complete selected asset within a fixed viewport, keeping proportions and stable scale across page lengths. Desktop uses the full wide image; phones retain their established portrait asset, fitted without additional cropping. Spare space uses the existing icy-blue ground. Water refraction shares that exact fit; model, UI and independent Still control remain unchanged.
 
+The user then requested generating more scenery to remove edge margins. Four built-in image_gen edits provide wider and taller versions of the existing blue/lilac/rose environment for both finishes. The fixed viewport background now covers the screen with generated peripheral scenery, keeping its scale independent of document height. Peripheral cropping replaces letterboxing; images are not stretched. Water shares that coverage and each source shoreline. Original sources remain historical, the edits are not claimed pixel-identical outpaints, and actual native dimensions are recorded. No model, UI, recommendation, Stage10 or deployment change.
+
 ## Evidence
+
 
 See docs/stage-4-design-plan.md, docs/stage-5-implementation-plan.md, and docs/stage-8-backend.md. Demonstration fixtures must be persistently labeled and cannot replace a failing real API. Similarity is not enjoyment probability. Browser tests and subjective design judgments are not user research.

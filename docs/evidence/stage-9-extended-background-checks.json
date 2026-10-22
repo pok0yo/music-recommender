@@ -1,0 +1,59 @@
+{
+  "observed_at": "2026-10-22T20:06:06.663Z",
+  "build": "passed",
+  "typecheck": "passed",
+  "script_syntax": "passed",
+  "final_full_suite": {
+    "startTime": "2026-10-22T20:01:03.598Z",
+    "duration": 241425.748,
+    "expected": 44,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser": "155.0.8059.85",
+  "captures": "stage-9-extended-background-captures.json",
+  "capture_count": 26,
+  "capture_hashes_and_dimensions_verified": true,
+  "capture_scope": "Viewport captures, both finishes:390/1440/1881 entry/results/About and deliberate footer-scrolled views, plus2560x1080 entry. Not full-page documents.",
+  "assets": "../art-direction/extended-background-assets.json",
+  "asset_hashes_bytes_dimensions_verified": true,
+  "master_count": 4,
+  "native_wide": [
+    1672,
+    941
+  ],
+  "native_portrait": [
+    840,
+    1871
+  ],
+  "native8k": false,
+  "pixel_identical_outpaint": false,
+  "derivative_count": 6,
+  "runtime_bytes": {
+    "hazy": 535186,
+    "crisp": 453544
+  },
+  "pixel_regression": "Crystal clear revealed static background corner colors differ from flat ice ground at390/1440/1881; screenshot buffers identical through top/footer scrolling and entry/ten-result document lengths. UI hidden only for this test.",
+  "water_mapping": "Fixed viewport cover, centered offsets; CSS --waterline .66 wide/.615 phone drives uWaterline and canvas crop. Existing650000pixels/30draw limits retained.",
+  "review": {
+    "disposition": "ship",
+    "fresh_independent_visual_source": true,
+    "captures_inspected": 26,
+    "native_masters_inspected": 4,
+    "material_fixes": [],
+    "report": "stage-9-extended-background-review.md",
+    "scope": "Pinned extended-background iteration; no reviewer browser/detector/test rerun or fresh performance profile."
+  },
+  "profile": "Earlier water profile is historical; no fresh performance or energy claim.",
+  "not_verified": [
+    "Physical phones",
+    "Safari",
+    "Screen readers",
+    "Battery/energy use",
+    "GPU completion time",
+    "Video efficiency comparison",
+    "Remote CI at this checkpoint"
+  ],
+  "detector": "Unavailable launcher; direct source/craft-floor/visual fallback, no detector pass claimed"
+}

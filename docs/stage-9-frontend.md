@@ -1,5 +1,15 @@
 # Stage 9: five app structures, awaiting selection
 
+## Generated edge scenery
+
+The Orbital environment now uses four built-in image_gen edits with wider landscape and taller portrait framing, in both Hazy iridescence and Crystal clear. The added sky, blue metal and lilac/pink reflective water supply real scenery beyond the previous composition. A fixed centered background covers the viewport, with peripheral generated scenery cropped as needed for aspect ratio; no letterbox margins, stretching or page-height zoom. The model and UI remain unchanged. These are generated edits with recognizable continuity, not a claim that the original pixels were locked.
+
+Native landscape masters are1672x941 and portrait masters840x1871. Runtime WebP derivatives are1672x941,528x1176 and640x640. Exact prompts, why-it-works rationale, input/output chain and asset hashes/dimensions are in `docs/art-direction/extended-background-request.json` and `extended-background-assets.json`. Reproduce derivatives with `node scripts/prepare-disc-tray-environment.mjs --extended`. No upscaling or native8K claim is introduced. Older sources remain historical and are not overwritten.
+
+Water uses matching viewport-cover coordinates and centered offsets. Source shorelines differ from the old assets: `--waterline:.66` for wide and `.615` for phone feed the canvas crop and shader uniform, keeping refraction below the shore. Existing rendering bounds, Still control, preferences, suspension and fallback/cleanup remain. No per-frame React state or layout read is added.
+
+Build/typecheck/script checks and all44 local browser tests pass. The revealed Crystal clear background has image-colored pixels at all four corners at390/1440/1881px and identical screenshot buffers through scrolling and entry/ten-result page lengths. Both finishes decode and retain discovery/navigation/preference/failure behavior. The26 current viewport captures cover both finishes at390/1440/1881 entry/results/About/footer-scrolled and2560x1080 entry; they are not full-page documents. See `docs/evidence/stage-9-extended-background-checks.json`, `stage-9-extended-background-captures.json` and the scoped independent review. Previous contain captures/profile checkpoints are historical; no fresh performance, device, energy or video-efficiency claim is made.
+
 ## Full background fit correction
 
 The Orbital background previously used `cover` against the whole document, enlarging and cropping artwork as content grew. A fixed CSS pseudo-element now fits the complete selected image with centered `contain`, preserving aspect ratio. Desktop uses the full wide asset; phones keep the established portrait asset, fitted without extra crop. Spare space uses the existing ice ground. The water canvas shares the fixed viewport, image scale and centering offsets, so it stays aligned while UI content scrolls. No new asset, dependency, model or interface structure is introduced.

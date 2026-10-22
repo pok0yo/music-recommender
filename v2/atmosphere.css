@@ -4,28 +4,29 @@
   isolation:isolate;
   --atmosphere-glass:#f1f8ffbd;
   --muted:#28435f;
-  --background-wide:url('/artwork/disc-tray/environment/iridescent-hazy-wide.webp');
-  --background-mobile:url('/artwork/disc-tray/environment/iridescent-hazy-mobile.webp');
-  --background-detail:url('/artwork/disc-tray/environment/iridescent-hazy-detail.webp');
+  --background-wide:url('/artwork/disc-tray/environment/extended-hazy-wide.webp');
+  --background-mobile:url('/artwork/disc-tray/environment/extended-hazy-mobile.webp');
+  --background-detail:url('/artwork/disc-tray/environment/extended-hazy-detail.webp');
+  --waterline:.66;
   background-color:#daeaf5;
   background-image:var(--background-wide);
   background-size:0 0;
   background-position:left top;
   background-repeat:no-repeat;
 }
-/* Paint the full artwork against the viewport, independent of document length. */
+/* Generated scene bleed fills the viewport without page-height scaling. */
 [data-artwork=orbital-disc]::before {
   content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
   background-color:inherit; background-image:inherit;
-  background-size:contain; background-position:center; background-repeat:no-repeat;
+  background-size:cover; background-position:center; background-repeat:no-repeat;
 }
 .water-layer { position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
 .water-canvas { position:absolute; left:0; }
 [data-artwork=orbital-disc] > :is(.preview-bar,.page-frame) { position:relative; z-index:1; }
 [data-artwork=orbital-disc][data-background=crisp] {
-  --background-wide:url('/artwork/disc-tray/environment/iridescent-crisp-wide.webp');
-  --background-mobile:url('/artwork/disc-tray/environment/iridescent-crisp-mobile.webp');
-  --background-detail:url('/artwork/disc-tray/environment/iridescent-crisp-detail.webp');
+  --background-wide:url('/artwork/disc-tray/environment/extended-crisp-wide.webp');
+  --background-mobile:url('/artwork/disc-tray/environment/extended-crisp-mobile.webp');
+  --background-detail:url('/artwork/disc-tray/environment/extended-crisp-detail.webp');
 }
 [data-artwork=orbital-disc] :is(.preview-bar-inner,.preview-settings) { flex-wrap:wrap; }
 /* The metal rim is a hollow mask, so no opaque backing cancels the frosted face. */
@@ -77,7 +78,7 @@
   [data-artwork=orbital-disc] .task-heading h1 { font-size:32px; }
 }
 @media(max-width:767px) {
-  [data-artwork=orbital-disc] { background-image:var(--background-mobile); }
+  [data-artwork=orbital-disc] { background-image:var(--background-mobile); --waterline:.615; }
   [data-artwork=orbital-disc] .disc-tray.is-opening .tray-command { background:var(--atmosphere-glass); -webkit-backdrop-filter:blur(8px) saturate(125%); backdrop-filter:blur(8px) saturate(125%); }
   [data-artwork=orbital-disc] .disc-tray.is-opening .tray-upper { background:none; }
   .app-surface[data-artwork=orbital-disc] .glass-shell::after { padding:4px; }

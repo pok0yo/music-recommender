@@ -6,14 +6,16 @@ const layering=process.argv.includes('--hero-layering');
 const icy=process.argv.includes('--icy-water');
 const iridescent=process.argv.includes('--iridescent');
 const water=process.argv.includes('--procedural-water');
-const fit=process.argv.includes('--background-fit');
-const output='docs/evidence/'+(fit?'stage-9-background-fit':water?'stage-9-procedural-water':iridescent?'stage-9-iridescent':icy?'stage-9-icy-water':layering?'stage-9-hero-layering':process.argv.includes('--chrome-atmosphere')?'stage-9-chrome-atmosphere':'stage-9-site-liquid-glass');
+const extended=process.argv.includes('--extended');
+const fit=process.argv.includes('--background-fit')||extended;
+const output='docs/evidence/'+(extended?'stage-9-extended-background':fit?'stage-9-background-fit':water?'stage-9-procedural-water':iridescent?'stage-9-iridescent':icy?'stage-9-icy-water':layering?'stage-9-hero-layering':process.argv.includes('--chrome-atmosphere')?'stage-9-chrome-atmosphere':'stage-9-site-liquid-glass');
 const evidence={observed_at:new Date().toISOString(),browser:browser.version(),data:'Demonstration fixtures only',captures:[]};
 await mkdir(output,{recursive:true});
 try {
   const cases=[];
   if(fit){
     for(const background of ['hazy','crisp'])for(const [device,width,height] of [['desktop',1440,900],['mobile',390,844],['reference',1881,905]])for(const state of ['entry','results','about','scrolled'])cases.push({background,device,width,height,state});
+    if(extended)for(const background of ['hazy','crisp'])cases.push({background,device:'ultrawide',width:2560,height:1080,state:'entry'});
   }else if(water){
     for(const background of ['hazy','crisp']){
       for(const [device,width,height] of [['desktop',1440,900],['mobile',390,844]])for(const state of ['entry','results','about','opaque','reduced','still'])cases.push({background,device,width,height,state});

@@ -1,0 +1,57 @@
+{
+  "tool": "built-in image_gen",
+  "intent": "Extend existing scene and supply responsive bleed to remove letterbox margins; not pixel-identical preservation of the original.",
+  "why_this_works": "A wider field of view and tall portrait counterpart provide real scene material at the viewport edges. Fixed viewport coverage crops peripheral generated bleed while retaining a smaller core subject, never scaling to document height.",
+  "prompts": [
+    {
+      "key": "outpaint_crisp_wide",
+      "prompt": "Edit target: the attached existing Crystal clear Y2K environment. Outpaint/extend this exact scene; do not redesign it. Reframe to a wider field of view by extending scenery on ALL FOUR sides, as if the existing image occupies roughly the central 70% width and height of a larger canvas. Preserve the recognizable left ice-blue sculpted metal ribbon/rigid fins, lilac and pink reflected highlights, smooth highly reflective blue water, clear sky and delicate curved white technical lines. Continue the same sculpture where it exits the frame, and extend water/sky naturally into new areas. Keep the sculpture left-weighted and right side relatively calm. No added isolated objects, people, logos, text, interface, border, matte, vignette, haze, grain, black/white blank bands or blur. Crisp premium CGI materials and sharp reflections. Landscape 16:9 full-bleed website background, highest native quality available, not a website screenshot. Keep the horizontal waterline at approximately 62% of final image height and reflective water across the entire bottom edge. Original composition should feel pulled back, not enlarged. Why this works: generated continuation provides real scenery bleed for edge-to-edge responsive crops without zooming back into the original subject. Do not render these instructions or rationale."
+    },
+    {
+      "key": "outpaint_hazy_wide",
+      "prompt": "Edit target: FIRST image, the newly extended landscape. SECOND image is only the finish reference. Keep the FIRST image's exact zoomed-out framing, sculpture silhouette, left-weighted placement, waterline position, smooth water geometry and complete edge-to-edge scenery. Apply only the second image's blue mist, very fine print grain and atmospheric soft cloud bank with lilac/pink reflected light. Retain detailed reflective icy-blue metal and water, readable calm right sky, delicate curved technical lines. No additional objects, people, text, logos, interface, frames, blank margins or vignette. Landscape 16:9, highest native detail. Do not crop or zoom in, do not change the first image's horizon. Why this works: matching extended geometry lets the two finishes fill the website consistently while keeping their original clear-versus-hazy distinction. Do not render instructions or rationale."
+    },
+    {
+      "key": "outpaint_crisp_mobile",
+      "prompt": "Edit target: existing portrait Crystal clear environment. OUTPAINT the scene on all four sides and pull the framing back so the existing sculpture and reflective water occupy roughly the inner70% of a larger full-bleed portrait canvas. Extend the top and bottom especially, for tall phone screens; target portrait9:20. Continue the same smooth rigid icy-blue reflective metal ribbon/fins and blue sky, subtle curving white grid lines, lilac/pink reflections and mirrorlike smooth rippling water. Keep the sculpture on the left, recognizable and proportionate; extend its existing forms rather than invent separate objects. Clear air and highly polished sharp CGI, no haze or grain. Horizontal waterline around64% of final height, smooth reflection field fills entire bottom. No blank bands, borders, vignette, people, brands, text or UI. Highest native quality. Why this works: extra scene beyond the original portrait supplies responsive bleed so phone screens fill without stretching or enlarging the core composition. Do not render instructions or rationale."
+    },
+    {
+      "key": "outpaint_hazy_mobile",
+      "prompt": "Edit target: FIRST image, the extended portrait Crystal clear environment. SECOND image is only a finish reference. Keep the FIRST image's exact pulled-back phone framing, sculpture silhouette, waterline around61% down, and edge-to-edge scene. Apply only the second image's atmospheric blue mist, very fine print grain, soft lilac/pink cloud light and reflected rose/lavender accents. Keep recognizable icy-blue polished ribbon/rigid fins and smooth reflective water with clear details; no heavy blur or overexposure. Do not zoom, crop, move the sculpture or horizon, or add objects. Portrait9:20 full bleed, highest native detail. No text, logos, interface, frames, blank bands, matte or vignette. Why this works: preserving the extended portrait geometry keeps both finishes aligned and supplies real scenery at every phone-screen edge. Do not render instructions or rationale."
+    }
+  ],
+  "source_chain": "Existing crisp wide -> extended crisp wide -> extended hazy wide; existing crisp mobile -> extended crisp portrait -> extended hazy portrait. Hazy references supply finish only.",
+  "native_resolution_claim": "Record actual decoded dimensions; do not claim native8K.",
+  "edits": [
+    {
+      "inputs": [
+        "iridescent-crisp-original.png"
+      ],
+      "output": "extended-crisp-original.png",
+      "generation_file": "exec-3cdb5134-cea3-417c-84e4-bf0c70aa43db.png"
+    },
+    {
+      "inputs": [
+        "extended-crisp-original.png",
+        "iridescent-hazy-original.png"
+      ],
+      "output": "extended-hazy-original.png",
+      "generation_file": "exec-be478035-5a41-4b45-a3d8-99ba471b540d.png"
+    },
+    {
+      "inputs": [
+        "iridescent-crisp-mobile.webp"
+      ],
+      "output": "extended-crisp-portrait-original.png",
+      "generation_file": "exec-3abb829d-ad79-43c8-873e-8483361f6936.png"
+    },
+    {
+      "inputs": [
+        "extended-crisp-portrait-original.png",
+        "extended-hazy-original.png"
+      ],
+      "output": "extended-hazy-portrait-original.png",
+      "generation_file": "exec-9c5800fb-2cdb-4b42-847c-b88991734217.png"
+    }
+  ]
+}

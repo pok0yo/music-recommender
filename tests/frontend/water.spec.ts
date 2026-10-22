@@ -21,8 +21,8 @@ test('water ripples are bounded, pausable, and suspend offscreen, hidden and for
   const canvas = water.locator('canvas');
   const geometry = await canvas.evaluate(c => {
     const element = c as HTMLCanvasElement, box = c.getBoundingClientRect();
-    const fitHeight = 941 * Math.min(innerWidth / 1672, innerHeight / 941);
-    return { pixels: element.width * element.height, aboveShore: box.top < (innerHeight-fitHeight)/2 + fitHeight * .675 - 1, top: box.top, bottom: box.bottom, viewport: innerHeight };
+    const fitHeight = 941 * Math.max(innerWidth / 1672, innerHeight / 941);
+    return { pixels: element.width * element.height, aboveShore: box.top < (innerHeight-fitHeight)/2 + fitHeight * .66 - 1, top: box.top, bottom: box.bottom, viewport: innerHeight };
   });
   expect(geometry.pixels).toBeLessThanOrEqual(650000);
   expect(geometry.aboveShore).toBe(false);
@@ -59,7 +59,7 @@ test('water ripples are bounded, pausable, and suspend offscreen, hidden and for
   await expect(water).toHaveAttribute('data-water-state', 'still');
 });
 
-test('the full background stays the same size through scrolling and longer content', async ({ page }) => {
+test('extended scenery fills every edge and stays stable through scrolling and longer content', async ({ page }) => {
   for (const [width, height] of [[390, 844], [1440, 900], [1881, 905]]) {
     await page.setViewportSize({ width, height });
     let first: Buffer | undefined;
@@ -71,10 +71,23 @@ test('the full background stays the same size through scrolling and longer conte
         const style = getComputedStyle(e, '::before');
         return { position: style.position, size: style.backgroundSize, image: style.backgroundImage };
       });
-      expect(background).toMatchObject({ position: 'fixed', size: 'contain' });
-      expect(background.image).toContain(`iridescent-crisp-${width<768?'mobile':'wide'}.webp`);
+      expect(background).toMatchObject({ position: 'fixed', size: 'cover' });
+      expect(background.image).toContain(`extended-crisp-${width<768?'mobile':'wide'}.webp`);
       await page.addStyleTag({ content: '.page-frame,.preview-bar,.skip-link{opacity:0!important}' });
       const top = await page.screenshot();
+      if (!first) {
+        const edgeDifferences = await page.evaluate(async base64 => {
+          const bitmap = await createImageBitmap(await (await fetch('data:image/png;base64,' + base64)).blob());
+          const canvas = document.createElement('canvas'); canvas.width=bitmap.width; canvas.height=bitmap.height;
+          const context = canvas.getContext('2d')!; context.drawImage(bitmap,0,0); bitmap.close();
+          const ground=getComputedStyle(document.querySelector('.app-surface')!).backgroundColor.match(/\d+/g)!.map(Number);
+          return [[0,0],[canvas.width-1,0],[0,canvas.height-1],[canvas.width-1,canvas.height-1]].map(([x,y])=>{
+            const pixel=context.getImageData(x,y,1,1).data;
+            return Math.abs(pixel[0]-ground[0])+Math.abs(pixel[1]-ground[1])+Math.abs(pixel[2]-ground[2]);
+          });
+        },top.toString('base64'));
+        expect(edgeDifferences.every(difference=>difference>12)).toBe(true);
+      }
       if (first) expect(top.equals(first)).toBe(true);
       first = top;
       await page.locator('.app-footer').scrollIntoViewIfNeeded();
@@ -123,11 +136,11 @@ test('water failures retain static artwork and working search', async ({ page })
   await expect(water).toHaveAttribute('data-water-state', 'running');
   await water.locator('canvas').evaluate(c => (c as HTMLCanvasElement).getContext('webgl2')!.getExtension('WEBGL_lose_context')!.loseContext());
   await expect(water).toHaveAttribute('data-water-state', 'fallback');
-  expect(await page.locator('.app-surface').evaluate(e => getComputedStyle(e).backgroundImage)).toContain('iridescent-crisp-wide.webp');
+  expect(await page.locator('.app-surface').evaluate(e => getComputedStyle(e).backgroundImage)).toContain('extended-crisp-wide.webp');
   await page.getByRole('searchbox').fill('Tiffany'); await page.getByRole('searchbox').press('Enter');
   await page.getByRole('button', { name: /CLOUDS.*Use this song/ }).click();
   await expect(page.locator('.track-row')).toHaveCount(10);
-  await page.route(/\/environment\/iridescent-.*\.webp/, route => route.abort());
+  await page.route(/\/environment\/extended-.*\.webp/, route => route.abort());
   await page.goto(route);
   await expect(water).toHaveAttribute('data-water-state', 'fallback');
   await expect(page.getByRole('searchbox')).toBeVisible();

@@ -1,0 +1,104 @@
+{
+  "observed_at": "2026-10-22T19:54:38.458Z",
+  "tool": "built-in image_gen",
+  "request": "extended-background-request.json",
+  "origin": "Four generated edits of the existing scene, with wider landscape and taller portrait framing. No pixel-identical preservation or native8K claim.",
+  "assets": [
+    {
+      "path": "public/artwork/disc-tray/environment/extended-hazy-original.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2297480,
+      "sha256": "eee34db91700ebe32fe38a64e1b0f54e7e0fc454882bdedffdfd9daf21a740de",
+      "role": "Native generated extended landscape; not loaded by the page.",
+      "finish": "hazy"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/extended-hazy-portrait-original.png",
+      "width": 840,
+      "height": 1871,
+      "bytes": 2477888,
+      "sha256": "b309dbf05c627cba0ec889d6b87c6dabcfb258cbef094aadad61433bd8e39c50",
+      "role": "Native generated extended portrait; not loaded by the page.",
+      "finish": "hazy"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/extended-hazy-wide.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 264006,
+      "sha256": "3c427d300da3213e61ffd5883f1a26c90b47574b6a3af230a305fc6786f463d0",
+      "role": "Optimized extended environment",
+      "finish": "hazy",
+      "waterline": 0.66
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/extended-hazy-mobile.webp",
+      "width": 528,
+      "height": 1176,
+      "bytes": 173644,
+      "sha256": "d8817d85331036ec823099849cf50fb2c42f7c21004e976c788e0911473aa73c",
+      "role": "Optimized extended environment",
+      "finish": "hazy",
+      "waterline": 0.615
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/extended-hazy-detail.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 97536,
+      "sha256": "b58cc05948e1b06af26cae5d7dd7eb3d2444a15c7e71245e8884a0940eceb264",
+      "role": "Optimized extended environment",
+      "finish": "hazy",
+      "waterline": null
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/extended-crisp-original.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2034875,
+      "sha256": "4fa0edebb0fc82f1bedb968442d714854bd89eb5afb211e2b3d03ad471583adb",
+      "role": "Native generated extended landscape; not loaded by the page.",
+      "finish": "crisp"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/extended-crisp-portrait-original.png",
+      "width": 840,
+      "height": 1871,
+      "bytes": 2329216,
+      "sha256": "dfd65cc3b604cca5490a8283cc9f93e1f7ef130ee2bbfed128556e3bd04daed9",
+      "role": "Native generated extended portrait; not loaded by the page.",
+      "finish": "crisp"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/extended-crisp-wide.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 211010,
+      "sha256": "e2edabaf3ba2260751214c5694d22da0bb0838e909ca70cb24242657a259d490",
+      "role": "Optimized extended environment",
+      "finish": "crisp",
+      "waterline": 0.66
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/extended-crisp-mobile.webp",
+      "width": 528,
+      "height": 1176,
+      "bytes": 153996,
+      "sha256": "39fba389a10de53ac193c4c53777aec2621a2aa5b8e4789d1a9fa0c8ef6f0703",
+      "role": "Optimized extended environment",
+      "finish": "crisp",
+      "waterline": 0.615
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/extended-crisp-detail.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 88538,
+      "sha256": "49d9336f8fd0c4d90747a9c26c3d8ce5c247a9a871bb0aca7e0147eee841d4b6",
+      "role": "Optimized extended environment",
+      "finish": "crisp",
+      "waterline": null
+    }
+  ]
+}
