@@ -1,0 +1,353 @@
+{
+  "observed_at": "2026-10-22T16:34:05.079Z",
+  "browser": "155.0.8059.85",
+  "data": "Demonstration fixtures only",
+  "captures": [
+    {
+      "background": "hazy",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-desktop-entry.png",
+      "pageWidth": 1440,
+      "sha256": "0b4aa8539d80223c5bb349ddb6df9f0cbeac2e7728d7b98dfa62269030bd23fd"
+    },
+    {
+      "background": "hazy",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "c4ef38ec263c20432babdd392ecaa3d24506c693b388eb61696d6fd610743057"
+    },
+    {
+      "background": "hazy",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "about",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-desktop-about.png",
+      "pageWidth": 1440,
+      "sha256": "12604fa92952e89c3f567f26f21d7165d57294f6bdc9d2f98b828ed929dd55fd"
+    },
+    {
+      "background": "hazy",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "opaque",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-desktop-opaque.png",
+      "pageWidth": 1440,
+      "sha256": "d17c9df30aa916d9bfe3b57850898d318e0d5694e33242eda53019433c984539"
+    },
+    {
+      "background": "hazy",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "reduced",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-desktop-reduced.png",
+      "pageWidth": 1440,
+      "sha256": "8b4826b36a462e4235005fa5cf0743e918da54fd3f9d3abd684b7eae1a918f22"
+    },
+    {
+      "background": "hazy",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "still",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-desktop-still.png",
+      "pageWidth": 1440,
+      "sha256": "aa75ec802ceb4e8730921c32aeda68474b905175b1264316a11b4438ab5ff0af"
+    },
+    {
+      "background": "hazy",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-mobile-entry.png",
+      "pageWidth": 390,
+      "sha256": "fa127aba6501719a3504f102a23d4300848c22ad5091c73f30637dd45346e047"
+    },
+    {
+      "background": "hazy",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "ea4ef45b483bf1c57d3014e47017011cfd13e51bce0034b88035b6835cbd5a30"
+    },
+    {
+      "background": "hazy",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "about",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-mobile-about.png",
+      "pageWidth": 390,
+      "sha256": "1c0e1640a1618015632cd60c59e58ce5e073b4eda3ffd57abb5adabdf2c4d391"
+    },
+    {
+      "background": "hazy",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "opaque",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-mobile-opaque.png",
+      "pageWidth": 390,
+      "sha256": "323f68b28d2f2ab45e19bddcf631da5dfb19312f8824c7dd6b7abab46a6cdf96"
+    },
+    {
+      "background": "hazy",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "reduced",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-mobile-reduced.png",
+      "pageWidth": 390,
+      "sha256": "fa127aba6501719a3504f102a23d4300848c22ad5091c73f30637dd45346e047"
+    },
+    {
+      "background": "hazy",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "still",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-mobile-still.png",
+      "pageWidth": 390,
+      "sha256": "b7dda379565c42d3f57b8218704d13cbde47e08f487a89e622e5ed9bbf3f59da"
+    },
+    {
+      "background": "hazy",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-reference-entry.png",
+      "pageWidth": 1881,
+      "sha256": "258332073d483ece46d9715169d97d4777839a81fe7adf3479383408e921d606"
+    },
+    {
+      "background": "hazy",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "water",
+      "path": "docs/evidence/stage-9-procedural-water/hazy-reference-water.png",
+      "pageWidth": 1881,
+      "sha256": "ea86eff6725ddba22ecf1b935ea093485bb6b696107e4bbd1545b46a5ed7ffab"
+    },
+    {
+      "background": "hazy",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "water",
+      "frame": 0,
+      "path": "docs/evidence/stage-9-procedural-water/hazy-water-0.png",
+      "pageWidth": 1881,
+      "sha256": "be84e1367dba778a7450ad3b4316023347711dafd557f4b5f0eccecdcb71acf1"
+    },
+    {
+      "background": "hazy",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "water",
+      "frame": 1,
+      "path": "docs/evidence/stage-9-procedural-water/hazy-water-1.png",
+      "pageWidth": 1881,
+      "sha256": "f7f839af8f3d054c27277479087734b23a2f29953f9639687894792d0cd763bd"
+    },
+    {
+      "background": "hazy",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "water",
+      "frame": 2,
+      "path": "docs/evidence/stage-9-procedural-water/hazy-water-2.png",
+      "pageWidth": 1881,
+      "sha256": "f575a5775d8c42d86fdfc820ebf916086bfa49546d37c531cca2f8109241ca07"
+    },
+    {
+      "background": "crisp",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-desktop-entry.png",
+      "pageWidth": 1440,
+      "sha256": "22bab8b16ebce78363a5c7689dee7829a70d7a29cc870bcaa483bead7e82ce0b"
+    },
+    {
+      "background": "crisp",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "711bbe46113e638d57aa816191590934cf3f37ebac6d28dc16565c44fea875ca"
+    },
+    {
+      "background": "crisp",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "about",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-desktop-about.png",
+      "pageWidth": 1440,
+      "sha256": "9c508251150a33360448d92fb141d57fd3d52598c8072e94376f710a212ac787"
+    },
+    {
+      "background": "crisp",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "opaque",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-desktop-opaque.png",
+      "pageWidth": 1440,
+      "sha256": "2929956b7d791b8534fe76e94cb6e4d9de5a509cfd844bee5ad681f731b8a1d4"
+    },
+    {
+      "background": "crisp",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "reduced",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-desktop-reduced.png",
+      "pageWidth": 1440,
+      "sha256": "a4465e95fefc0a0d78b448d25ae8314a9b1be2f39785149f822703cb3a31bfcb"
+    },
+    {
+      "background": "crisp",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "still",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-desktop-still.png",
+      "pageWidth": 1440,
+      "sha256": "8d28adfe44487823062448dad0cef9ded44fe036d44750d8b790ddae10e3b4da"
+    },
+    {
+      "background": "crisp",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-mobile-entry.png",
+      "pageWidth": 390,
+      "sha256": "63f232c7a9f8ac8ad2be01b7f5765204724384a736698a8ee6bb358bb5b9c003"
+    },
+    {
+      "background": "crisp",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "85c6115794a0485ef54063baf7f55defa20a31753165a903b009d51b6f738ab1"
+    },
+    {
+      "background": "crisp",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "about",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-mobile-about.png",
+      "pageWidth": 390,
+      "sha256": "2456209b9137b63a3138475d98f185e29cb36eefba41ae0de54112fe3de0262e"
+    },
+    {
+      "background": "crisp",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "opaque",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-mobile-opaque.png",
+      "pageWidth": 390,
+      "sha256": "2348d6bcaae8195b1ff4b2385b06c724f57bd64ab7e13465deb433a69b803be1"
+    },
+    {
+      "background": "crisp",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "reduced",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-mobile-reduced.png",
+      "pageWidth": 390,
+      "sha256": "63f232c7a9f8ac8ad2be01b7f5765204724384a736698a8ee6bb358bb5b9c003"
+    },
+    {
+      "background": "crisp",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "still",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-mobile-still.png",
+      "pageWidth": 390,
+      "sha256": "47921f25511347ba35b382b3a931cdad0b0a3557db43401d16d72482b2c7bc3f"
+    },
+    {
+      "background": "crisp",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-reference-entry.png",
+      "pageWidth": 1881,
+      "sha256": "370a95d06e5566160d3a71aadc3e6fe95785c1eb25103f8996a6543c933e16a1"
+    },
+    {
+      "background": "crisp",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "water",
+      "path": "docs/evidence/stage-9-procedural-water/crisp-reference-water.png",
+      "pageWidth": 1881,
+      "sha256": "aeeed7c8a1c9819c3948f18d33a0ff5915c6802c740af7f28c86ff610d1a1310"
+    },
+    {
+      "background": "crisp",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "water",
+      "frame": 0,
+      "path": "docs/evidence/stage-9-procedural-water/crisp-water-0.png",
+      "pageWidth": 1881,
+      "sha256": "ede8116ffb89395d7c67d3305dcbe391ce52cff35eefb4ff0ffc751d769a8c90"
+    },
+    {
+      "background": "crisp",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "water",
+      "frame": 1,
+      "path": "docs/evidence/stage-9-procedural-water/crisp-water-1.png",
+      "pageWidth": 1881,
+      "sha256": "ed3b4aad06d59fae5ba8fb903792da6c66bc16bf1003e29af32e753a9ef159f4"
+    },
+    {
+      "background": "crisp",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "water",
+      "frame": 2,
+      "path": "docs/evidence/stage-9-procedural-water/crisp-water-2.png",
+      "pageWidth": 1881,
+      "sha256": "6450c696d9e0fef824c6b3c372bb8e119d833cfbbb7beb3f65e815c29590c55f"
+    }
+  ]
+}

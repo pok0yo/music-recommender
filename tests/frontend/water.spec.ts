@@ -1,0 +1,112 @@
+import { test, expect } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+
+const route = '/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry';
+const count = (page: import('@playwright/test').Page) => page.evaluate(() => Reflect.get(window, 'waterDrawCount') as number);
+
+test('water ripples are bounded, pausable, and suspend offscreen, hidden and for preferences', async ({ page }) => {
+  await page.addInitScript(() => {
+    let draws = 0;
+    Object.defineProperty(window, 'waterDrawCount', { get: () => draws });
+    const original = WebGL2RenderingContext.prototype.drawElements;
+    WebGL2RenderingContext.prototype.drawElements = function (...args) {
+      if ((this.canvas as HTMLCanvasElement).classList.contains('water-canvas')) ++draws;
+      return original.apply(this, args);
+    };
+  });
+  await page.setViewportSize({ width: 1440, height: 700 });
+  await page.goto(route + '&background=crisp');
+  const water = page.locator('.water-layer');
+  await expect(water).toHaveAttribute('data-water-state', 'offscreen');
+  expect(await count(page)).toBe(0);
+  await page.locator('.app-footer').scrollIntoViewIfNeeded();
+  await expect(water).toHaveAttribute('data-water-state', 'running');
+  const canvas = water.locator('canvas');
+  const geometry = await canvas.evaluate(c => {
+    const element = c as HTMLCanvasElement, root = c.closest('.app-surface')!.getBoundingClientRect(), box = c.getBoundingClientRect();
+    const coverHeight = 941 * Math.max(root.width / 1672, root.height / 941);
+    return { pixels: element.width * element.height, aboveShore: box.top < root.top + coverHeight * .675 - 1, top: box.top, bottom: box.bottom, viewport: innerHeight };
+  });
+  expect(geometry.pixels).toBeLessThanOrEqual(650000);
+  expect(geometry.aboveShore).toBe(false);
+  expect(geometry.top).toBeGreaterThanOrEqual(-1);
+  expect(geometry.bottom).toBeLessThanOrEqual(geometry.viewport + 1);
+  const before = await canvas.screenshot();
+  const start = await count(page);
+  await page.waitForTimeout(600);
+  expect(await count(page) - start).toBeLessThanOrEqual(19);
+  expect((await canvas.screenshot()).equals(before)).toBe(false);
+  await page.evaluate(() => { Object.defineProperty(document, 'hidden', { configurable: true, value: true }); document.dispatchEvent(new Event('visibilitychange')); });
+  await expect(water).toHaveAttribute('data-water-state', 'hidden');
+  const hidden = await count(page); await page.waitForTimeout(150); expect(await count(page)).toBe(hidden);
+  await page.evaluate(() => { Object.defineProperty(document, 'hidden', { configurable: true, value: false }); document.dispatchEvent(new Event('visibilitychange')); });
+  await expect(water).toHaveAttribute('data-water-state', 'running');
+  await page.evaluate(() => scrollTo(0, 0));
+  await expect(water).toHaveAttribute('data-water-state', 'offscreen');
+  const outside = await count(page); await page.waitForTimeout(150); expect(await count(page)).toBe(outside);
+  await page.getByRole('combobox', { name: 'Water movement' }).selectOption('still');
+  await expect(water).toHaveAttribute('data-water-state', 'still');
+  await expect(canvas).toHaveCount(0);
+  await page.getByRole('combobox', { name: 'Water movement' }).selectOption('moving');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(water).toHaveAttribute('data-water-state', 'still');
+  await expect(canvas).toHaveCount(0);
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  const cdp = await page.context().newCDPSession(page);
+  await cdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-transparency', value: 'reduce' }] });
+  await expect(water).toHaveAttribute('data-water-state', 'still');
+  await expect(canvas).toHaveCount(0);
+  await cdp.send('Emulation.setEmulatedMedia', { features: [] });
+  await page.emulateMedia({ forcedColors: 'active' });
+  await expect(water).toHaveAttribute('data-water-state', 'still');
+});
+
+test('water choice preserves discovery and navigation, including mobile and both finishes', async ({ page }) => {
+  test.setTimeout(60_000);
+  await page.goto(route);
+  await page.getByRole('searchbox').fill('Tiffany');
+  await page.getByRole('combobox', { name: 'Water movement' }).selectOption('still');
+  await expect(page.getByRole('searchbox')).toHaveValue('Tiffany');
+  await page.getByRole('searchbox').press('Enter');
+  await page.getByRole('button', { name: /CLOUDS.*Use this song/ }).click();
+  await expect(page.locator('.track-row')).toHaveCount(10);
+  await page.locator('summary').first().click();
+  await page.getByRole('combobox', { name: 'Water movement' }).selectOption('moving');
+  await expect(page.locator('.selected-track')).toContainText('CLOUDS');
+  await expect(page.locator('details').first()).toHaveAttribute('open', '');
+  await page.getByRole('combobox', { name: 'Water movement' }).selectOption('still');
+  await page.reload();
+  await expect(page.getByRole('combobox', { name: 'Water movement' })).toHaveValue('still');
+  await page.getByRole('link', { name: 'About the recommendations', exact: true }).click();
+  await expect(page.getByRole('combobox', { name: 'Water movement' })).toHaveValue('still');
+  for (const width of [320, 390, 768, 1024, 1440, 1881]) {
+    await page.setViewportSize({ width, height: 844 });
+    for (const finish of ['hazy', 'crisp']) {
+      await page.getByRole('combobox', { name: 'Background finish' }).selectOption(finish);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width + 1);
+    }
+  }
+  expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze()).violations).toEqual([]);
+  await page.getByRole('link', { name: 'Discover', exact: true }).click();
+  await expect(page.getByRole('combobox', { name: 'Water movement' })).toHaveValue('still');
+  await page.getByRole('button', { name: 'Preview Glass Current' }).click();
+  await expect(page.locator('.water-layer')).toHaveCount(0);
+  await expect(page.getByRole('combobox', { name: 'Water movement' })).toHaveCount(0);
+});
+
+test('water failures retain static artwork and working search', async ({ page }) => {
+  await page.goto(route + '&background=crisp');
+  await page.locator('.app-footer').scrollIntoViewIfNeeded();
+  const water = page.locator('.water-layer');
+  await expect(water).toHaveAttribute('data-water-state', 'running');
+  await water.locator('canvas').evaluate(c => (c as HTMLCanvasElement).getContext('webgl2')!.getExtension('WEBGL_lose_context')!.loseContext());
+  await expect(water).toHaveAttribute('data-water-state', 'fallback');
+  expect(await page.locator('.app-surface').evaluate(e => getComputedStyle(e).backgroundImage)).toContain('iridescent-crisp-wide.webp');
+  await page.getByRole('searchbox').fill('Tiffany'); await page.getByRole('searchbox').press('Enter');
+  await page.getByRole('button', { name: /CLOUDS.*Use this song/ }).click();
+  await expect(page.locator('.track-row')).toHaveCount(10);
+  await page.route(/\/environment\/iridescent-.*\.webp/, route => route.abort());
+  await page.goto(route);
+  await expect(water).toHaveAttribute('data-water-state', 'fallback');
+  await expect(page.getByRole('searchbox')).toBeVisible();
+});

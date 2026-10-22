@@ -1,5 +1,7 @@
 /* The selected demo gets atmosphere; the retained comparisons keep their own world. */
 [data-artwork=orbital-disc] {
+  position:relative;
+  isolation:isolate;
   --atmosphere-glass:#f1f8ffbd;
   --muted:#28435f;
   --background-wide:url('/artwork/disc-tray/environment/iridescent-hazy-wide.webp');
@@ -11,6 +13,9 @@
   background-position:left top;
   background-repeat:no-repeat;
 }
+.water-layer { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+.water-canvas { position:absolute; left:0; }
+[data-artwork=orbital-disc] > :is(.preview-bar,.page-frame) { position:relative; z-index:1; }
 [data-artwork=orbital-disc][data-background=crisp] {
   --background-wide:url('/artwork/disc-tray/environment/iridescent-crisp-wide.webp');
   --background-mobile:url('/artwork/disc-tray/environment/iridescent-crisp-mobile.webp');
