@@ -6,12 +6,15 @@ const layering=process.argv.includes('--hero-layering');
 const icy=process.argv.includes('--icy-water');
 const iridescent=process.argv.includes('--iridescent');
 const water=process.argv.includes('--procedural-water');
-const output='docs/evidence/'+(water?'stage-9-procedural-water':iridescent?'stage-9-iridescent':icy?'stage-9-icy-water':layering?'stage-9-hero-layering':process.argv.includes('--chrome-atmosphere')?'stage-9-chrome-atmosphere':'stage-9-site-liquid-glass');
+const fit=process.argv.includes('--background-fit');
+const output='docs/evidence/'+(fit?'stage-9-background-fit':water?'stage-9-procedural-water':iridescent?'stage-9-iridescent':icy?'stage-9-icy-water':layering?'stage-9-hero-layering':process.argv.includes('--chrome-atmosphere')?'stage-9-chrome-atmosphere':'stage-9-site-liquid-glass');
 const evidence={observed_at:new Date().toISOString(),browser:browser.version(),data:'Demonstration fixtures only',captures:[]};
 await mkdir(output,{recursive:true});
 try {
   const cases=[];
-  if(water){
+  if(fit){
+    for(const background of ['hazy','crisp'])for(const [device,width,height] of [['desktop',1440,900],['mobile',390,844],['reference',1881,905]])for(const state of ['entry','results','about','scrolled'])cases.push({background,device,width,height,state});
+  }else if(water){
     for(const background of ['hazy','crisp']){
       for(const [device,width,height] of [['desktop',1440,900],['mobile',390,844]])for(const state of ['entry','results','about','opaque','reduced','still'])cases.push({background,device,width,height,state});
       for(const state of ['entry','water'])cases.push({background,device:'reference',width:1881,height:905,state});
@@ -49,15 +52,16 @@ try {
     if(state==='error') await expect(page.locator('.problem')).toContainText('We could not load recommendations.');
     if(state==='disabled') await expect(page.locator('.problem button')).toBeDisabled();
     await page.evaluate(()=>document.fonts.ready);
-    if(!variant && ['entry','hover','focus','opaque','model-hover',...(water?['reduced','still','water']:[])].includes(state)) await expect(page.locator('.orbital-hero')).toHaveAttribute('data-model-ready','true');
-    if(water)await page.locator('img').evaluateAll(images=>Promise.all(images.map(image=>image.decode().catch(()=>{}))));
+    if(!variant && ['entry','hover','focus','opaque','model-hover',...(water||fit?['reduced','still','water','scrolled']:[])].includes(state)) await expect(page.locator('.orbital-hero')).toHaveAttribute('data-model-ready','true');
+    if(water||fit)await page.locator('img').evaluateAll(images=>Promise.all(images.map(image=>image.decode().catch(()=>{}))));
     if(state==='model-hover'){await page.locator('.orbital-hero').hover({position:{x:300,y:180}});await expect(page.locator('.orbital-canvas')).toHaveAttribute('data-render-state','running');await page.waitForTimeout(200);}
     if(state==='hover'){const control=page.getByRole('button',{name:'Search',exact:true});await control.hover();await expect(control).toHaveAttribute('data-glass-active','true');await page.waitForTimeout(260);}
     if(state==='focus') await page.getByRole('searchbox').focus();
     if(water&&['opaque','reduced','still'].includes(state))await expect(page.locator('.water-layer')).toHaveAttribute('data-water-state','still');
     await page.evaluate(()=>scrollTo(0,0));
+    if(fit){await expect(page.locator('.water-layer')).toHaveAttribute('data-water-state','running');if(state==='scrolled')await page.locator('.app-footer').scrollIntoViewIfNeeded();}
     const file=`${output}/${background?background+'-':''}${variant?'v'+variant+'-':''}${device}-${state}.png`;
-    const capture=await page.screenshot({path:file,fullPage:true});
+    const capture=await page.screenshot({path:file,fullPage:!fit});
     if(water){const height=await page.evaluate(()=>document.documentElement.scrollHeight);if(capture.readUInt32BE(20)!==height)throw Error(`Incomplete document: ${file}`);}
     const pageWidth=await page.evaluate(()=>document.documentElement.scrollWidth);if(pageWidth>width+1) throw Error(`Overflow: ${file}`);
     evidence.captures.push({...item,path:file,pageWidth,sha256:createHash('sha256').update(await readFile(file)).digest('hex')});

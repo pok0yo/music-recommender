@@ -7,7 +7,7 @@ uniform vec4 uRect;
 uniform float uTime;
 varying vec2 vUv;
 void main() {
-  vec2 uv = vec2(vUv.x * uRect.x, 1.0 - uRect.w - (1.0 - vUv.y) * uRect.y);
+  vec2 uv = vec2(uRect.z + vUv.x * uRect.x, 1.0 - uRect.w - (1.0 - vUv.y) * uRect.y);
   float depth = clamp((1.0 - uv.y - 0.675) / 0.325, 0.0, 1.0);
   float shore = smoothstep(0.0, 0.12, depth);
   float gain = smoothstep(0.0, 1.2, uTime);
@@ -68,23 +68,25 @@ export function createWaterScene(host: HTMLDivElement, root: HTMLElement) {
       }, undefined, () => { if (!disposed && generation === imageGeneration) fail(); });
     }
     if (!loaded) return;
-    const rect = root.getBoundingClientRect();
+    const rect = host.getBoundingClientRect(), page = root.getBoundingClientRect();
     const image = texture!.image as HTMLImageElement;
-    const cover = Math.max(rect.width / image.naturalWidth, rect.height / image.naturalHeight);
-    const imageWidth = image.naturalWidth * cover, imageHeight = image.naturalHeight * cover;
-    const top = Math.max(imageHeight * 0.675, -rect.top), bottom = Math.min(rect.height, innerHeight - rect.top);
-    visible = bottom > top && rect.right > 0 && rect.left < innerWidth;
+    const fit = Math.min(rect.width / image.naturalWidth, rect.height / image.naturalHeight);
+    const imageWidth = image.naturalWidth * fit, imageHeight = image.naturalHeight * fit;
+    const imageLeft = (rect.width - imageWidth) / 2, imageTop = (rect.height - imageHeight) / 2;
+    const left = Math.max(imageLeft, -rect.left), right = Math.min(imageLeft + imageWidth, innerWidth - rect.left);
+    const top = Math.max(imageTop + imageHeight * 0.675, -rect.top), bottom = Math.min(imageTop + imageHeight, innerHeight - rect.top);
+    visible = bottom > top && right > left && page.bottom > 0 && page.top < innerHeight;
     if (!visible || document.hidden) { stop(); canvas.style.display = 'none'; state(document.hidden ? 'hidden' : 'offscreen'); return; }
-    const height = bottom - top, scale = Math.min(1, 1440 / rect.width, Math.sqrt(650000 / (rect.width * height)));
-    const widthPixels = Math.max(1, Math.floor(rect.width * scale)), heightPixels = Math.max(1, Math.floor(height * scale));
+    const width = right - left, height = bottom - top, scale = Math.min(1, 1440 / width, Math.sqrt(650000 / (width * height)));
+    const widthPixels = Math.max(1, Math.floor(width * scale)), heightPixels = Math.max(1, Math.floor(height * scale));
     if (canvas.width !== widthPixels || canvas.height !== heightPixels) renderer.setSize(widthPixels, heightPixels, false);
-    canvas.style.top = top + 'px'; canvas.style.width = rect.width + 'px'; canvas.style.height = height + 'px'; canvas.style.display = 'block';
-    material.uniforms.uRect.value.set(rect.width / imageWidth, height / imageHeight, 0, top / imageHeight);
+    canvas.style.left = left + 'px'; canvas.style.top = top + 'px'; canvas.style.width = width + 'px'; canvas.style.height = height + 'px'; canvas.style.display = 'block';
+    material.uniforms.uRect.value.set(width / imageWidth, height / imageHeight, (left - imageLeft) / imageWidth, (top - imageTop) / imageHeight);
     state('running'); if (!frame) frame = requestAnimationFrame(draw);
   };
   const scheduleLayout = () => { if (!disposed && !layoutFrame) layoutFrame = requestAnimationFrame(update); };
   const lost = (event: Event) => { event.preventDefault(); fail(); };
-  const resize = new ResizeObserver(scheduleLayout); resize.observe(root);
+  const resize = new ResizeObserver(scheduleLayout); resize.observe(host);
   window.addEventListener('scroll', scheduleLayout, { passive: true }); window.addEventListener('resize', scheduleLayout);
   document.addEventListener('visibilitychange', scheduleLayout); canvas.addEventListener('webglcontextlost', lost);
   scheduleLayout();

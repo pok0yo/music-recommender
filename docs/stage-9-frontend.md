@@ -1,5 +1,13 @@
 # Stage 9: five app structures, awaiting selection
 
+## Full background fit correction
+
+The Orbital background previously used `cover` against the whole document, enlarging and cropping artwork as content grew. A fixed CSS pseudo-element now fits the complete selected image with centered `contain`, preserving aspect ratio. Desktop uses the full wide asset; phones keep the established portrait asset, fitted without extra crop. Spare space uses the existing ice ground. The water canvas shares the fixed viewport, image scale and centering offsets, so it stays aligned while UI content scrolls. No new asset, dependency, model or interface structure is introduced.
+
+Production build/typecheck and all44 local frontend tests pass. A screenshot-buffer regression hides only the UI during its check and verifies identical revealed backgrounds at the top and footer, and across entry/ten-result document lengths, at390/1440/1881px. Existing water, preference, fallback, responsive, model-layering and discovery tests also pass. The24 current comparison captures are explicitly viewport images: both finishes at390x844,1440x900,1881x905, showing top-of-document entry/results/About and separately named footer-scrolled views.
+
+See `docs/evidence/stage-9-background-fit-checks.json`, `stage-9-background-fit-captures.json` and the independent review alongside them. Earlier43-test water results,34 captures and draw/task profile describe the prior cover geometry; they are historical rather than new measurements. No fresh profiling, physical-device, Safari, battery or video-efficiency claim is made. Stage9 and publication gates remain unchanged.
+
 ## Procedural reflective water
 
 The selected Orbital Disc demo now refracts its existing water texture with two interacting, slowly changing ripple fields. Blue, lilac and pink reflections come from the current artwork; the shoreline fades into the unchanged metal/sky above it. Both Hazy iridescence and Crystal clear work. This is source-image refraction rather than fluid physics or live scene-object reflections. The supplied local pool video informed the movement only: no footage, reference pixels or video player is shipped.

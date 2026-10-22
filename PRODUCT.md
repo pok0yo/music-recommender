@@ -28,5 +28,8 @@ The user then requested lilac/purple and pink reflection accents that echo the f
 
 The user subsequently approved procedural background-water motion inspired by a supplied local pool video, retaining the current icy-blue/lilac/rose imagery and smooth reflections. Only the selected Orbital Disc demo's water region animates on both finishes. A native Rippling/Still choice in the prototype toolbar persists through URL/navigation. The metal, sky, UI and hover-only disc stay independent. This is a scoped exception to the earlier static-background policy: reduced motion/transparency and forced colors use still artwork, hidden/offscreen rendering stops, and graphics failures retain the base background. The implementation refracts the existing water image; it does not simulate fluid physics or generate live geometric reflections. No reference footage is shipped, no new dependency is added, and no claim that procedural rendering is cheaper than video is established.
 
+The user then reported excessive background zoom and requested the full image. The Orbital background now fits the complete selected asset within a fixed viewport, keeping proportions and stable scale across page lengths. Desktop uses the full wide image; phones retain their established portrait asset, fitted without additional cropping. Spare space uses the existing icy-blue ground. Water refraction shares that exact fit; model, UI and independent Still control remain unchanged.
+
 ## Evidence
+
 See docs/stage-4-design-plan.md, docs/stage-5-implementation-plan.md, and docs/stage-8-backend.md. Demonstration fixtures must be persistently labeled and cannot replace a failing real API. Similarity is not enjoyment probability. Browser tests and subjective design judgments are not user research.

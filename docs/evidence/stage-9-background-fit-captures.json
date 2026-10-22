@@ -1,0 +1,247 @@
+{
+  "observed_at": "2026-10-22T17:01:41.453Z",
+  "browser": "155.0.8059.85",
+  "data": "Demonstration fixtures only",
+  "captures": [
+    {
+      "background": "hazy",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-background-fit/hazy-desktop-entry.png",
+      "pageWidth": 1440,
+      "sha256": "bb65412152888c84e035b024b75d4a413c40906ec1e95de235934de017693a6a"
+    },
+    {
+      "background": "hazy",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "path": "docs/evidence/stage-9-background-fit/hazy-desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "b9a99efda4fa325286e316a5960ef422eba3e684d91ef32678e72884c1402158"
+    },
+    {
+      "background": "hazy",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "about",
+      "path": "docs/evidence/stage-9-background-fit/hazy-desktop-about.png",
+      "pageWidth": 1440,
+      "sha256": "a911b02e359339c790fc55fb2f275a5453ba18dc8942504b435634a7babab059"
+    },
+    {
+      "background": "hazy",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "scrolled",
+      "path": "docs/evidence/stage-9-background-fit/hazy-desktop-scrolled.png",
+      "pageWidth": 1440,
+      "sha256": "6817d6104f78bbcc31f31cd397313308901325a64306dcf06565806e446930a0"
+    },
+    {
+      "background": "hazy",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-background-fit/hazy-mobile-entry.png",
+      "pageWidth": 390,
+      "sha256": "6a15d930d551848657e56d7fdbde95ea691a2f61230ff4cc71627df093b4e2d1"
+    },
+    {
+      "background": "hazy",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "path": "docs/evidence/stage-9-background-fit/hazy-mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "5b74f528113782de180dd64e5c515d4972d634dbe8f822cd0af1a6f35675d3d2"
+    },
+    {
+      "background": "hazy",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "about",
+      "path": "docs/evidence/stage-9-background-fit/hazy-mobile-about.png",
+      "pageWidth": 390,
+      "sha256": "e4a59577cd8dac362c89e34054f22e1781eee68937b573157099584a3f29d097"
+    },
+    {
+      "background": "hazy",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "scrolled",
+      "path": "docs/evidence/stage-9-background-fit/hazy-mobile-scrolled.png",
+      "pageWidth": 390,
+      "sha256": "8561a1ddcca999dda276501f684f25af3971891e8c00b8720aa641ae374e8064"
+    },
+    {
+      "background": "hazy",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-background-fit/hazy-reference-entry.png",
+      "pageWidth": 1881,
+      "sha256": "60e0ee5489299d51f410022fa290512c31d71fa5ad06f4cdd13b8cc4a024d949"
+    },
+    {
+      "background": "hazy",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "results",
+      "path": "docs/evidence/stage-9-background-fit/hazy-reference-results.png",
+      "pageWidth": 1881,
+      "sha256": "6f39dfde2083084e6ef9bc157089b9317acfafe844ab904c52dc5c362ca89767"
+    },
+    {
+      "background": "hazy",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "about",
+      "path": "docs/evidence/stage-9-background-fit/hazy-reference-about.png",
+      "pageWidth": 1881,
+      "sha256": "55db62ee10f6d21a5ae3b3ed52428cf83bebafd662e18140e8c4b8b440d83949"
+    },
+    {
+      "background": "hazy",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "scrolled",
+      "path": "docs/evidence/stage-9-background-fit/hazy-reference-scrolled.png",
+      "pageWidth": 1881,
+      "sha256": "264c9487f7864c2d03f033aa421b1e685ac0b54750ddcaeb8e679c8c33bda6ad"
+    },
+    {
+      "background": "crisp",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-background-fit/crisp-desktop-entry.png",
+      "pageWidth": 1440,
+      "sha256": "745c4d861ad98e31adf143d76298785399f32cc7168bedd08551fbc434d5ecac"
+    },
+    {
+      "background": "crisp",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "path": "docs/evidence/stage-9-background-fit/crisp-desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "4cf7c32f00520599bacbf8360d2e6cfb9411632033ac0e7ea81e2a03f02795c7"
+    },
+    {
+      "background": "crisp",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "about",
+      "path": "docs/evidence/stage-9-background-fit/crisp-desktop-about.png",
+      "pageWidth": 1440,
+      "sha256": "09d9029625a3328313c91b735f0a6512a834ce329e7eaa68c19de6d9cbbec7d2"
+    },
+    {
+      "background": "crisp",
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "scrolled",
+      "path": "docs/evidence/stage-9-background-fit/crisp-desktop-scrolled.png",
+      "pageWidth": 1440,
+      "sha256": "ee37d4954db87cbc84e046dfd25a3867d01bb51072cb3a1048d08fe36ab5f265"
+    },
+    {
+      "background": "crisp",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-background-fit/crisp-mobile-entry.png",
+      "pageWidth": 390,
+      "sha256": "416692514c09d6945b171f450be9de9ea6bfeee3b4e045e597acdae3729822ec"
+    },
+    {
+      "background": "crisp",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "path": "docs/evidence/stage-9-background-fit/crisp-mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "6ef85e359950d0f1bb9d37559a2dbf3597616c6ba8d40aec6b32d5c1bca8bd61"
+    },
+    {
+      "background": "crisp",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "about",
+      "path": "docs/evidence/stage-9-background-fit/crisp-mobile-about.png",
+      "pageWidth": 390,
+      "sha256": "eeb226ee3e9c5e1688e8a1cf75db48d1fa6f5a78e846e35926e79167d59e0d44"
+    },
+    {
+      "background": "crisp",
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "scrolled",
+      "path": "docs/evidence/stage-9-background-fit/crisp-mobile-scrolled.png",
+      "pageWidth": 390,
+      "sha256": "3aa3c01ed726b47af1a2f645c56baa0202130c37f2861911579560bbd75c71e2"
+    },
+    {
+      "background": "crisp",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-background-fit/crisp-reference-entry.png",
+      "pageWidth": 1881,
+      "sha256": "5d977568bcad3d371323ea30c1aa050b0eab2549136eb086ee61012008a755b8"
+    },
+    {
+      "background": "crisp",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "results",
+      "path": "docs/evidence/stage-9-background-fit/crisp-reference-results.png",
+      "pageWidth": 1881,
+      "sha256": "e7152b6aef386318d4b393380e8cf23cd3ff95ac8a0bcdc0a9ab0b4244b8eff2"
+    },
+    {
+      "background": "crisp",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "about",
+      "path": "docs/evidence/stage-9-background-fit/crisp-reference-about.png",
+      "pageWidth": 1881,
+      "sha256": "fbfb43113ee69849504e177d5402f5587e2dfe50608e755404add6b06b823fc8"
+    },
+    {
+      "background": "crisp",
+      "device": "reference",
+      "width": 1881,
+      "height": 905,
+      "state": "scrolled",
+      "path": "docs/evidence/stage-9-background-fit/crisp-reference-scrolled.png",
+      "pageWidth": 1881,
+      "sha256": "8530f8c1bffa92ccfde55d9799d643e9ee53610c78906c6207010a61c0b1d0cc"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-10-22T17:04:58.383Z",
+  "build": "passed",
+  "typecheck": "passed",
+  "capture_script_syntax": "passed",
+  "final_full_suite": {
+    "startTime": "2026-10-22T16:57:44.030Z",
+    "duration": 205413.783,
+    "expected": 44,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser": "155.0.8059.85",
+  "captures": "stage-9-background-fit-captures.json",
+  "capture_count": 24,
+  "capture_hashes_and_dimensions_verified": true,
+  "capture_scope": "Viewport captures:390x844,1440x900,1881x905; both finishes; entry/results/About at top and deliberate footer-scrolled views. Not full-page documents.",
+  "pixel_regression": "Crystal clear static revealed-background screenshot buffers identical at top/footer and entry/ten-result page lengths across390/1440/1881. UI hidden only for this test; live UI unchanged.",
+  "source_scope": "Fixed centered contain for complete selected responsive artwork; desktop wide, retained phone portrait; matching water fit and offsets. Existing650000-pixel/30-draw bounds unchanged.",
+  "guards": "Existing hidden branch and displaced-host offscreen branch simulated; preferences, manual pause, asset/context failure, navigation and responsive guards pass.",
+  "review": {
+    "disposition": "ship",
+    "all_24_captures_independently_viewed_and_hashes_verified": true,
+    "material_fixes": [],
+    "report": "stage-9-background-fit-review.md",
+    "scope": "Local background-fit correction only; reviewer did not rerun tests/browser/detector. Final checks JSON persisted after review."
+  },
+  "prior_profile": "stage-9-procedural-water-profile.json records the historical cover geometry; no fresh profile or efficiency claim",
+  "not_verified": [
+    "Physical phones",
+    "Safari",
+    "Screen readers",
+    "Battery/energy use",
+    "GPU completion time",
+    "Video comparison",
+    "Remote CI at this checkpoint"
+  ],
+  "detector": "Unavailable launcher; direct source/craft-floor/visual review, no detector pass claimed"
+}
