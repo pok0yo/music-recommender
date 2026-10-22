@@ -4,6 +4,34 @@ import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 
 const directory='public/artwork/disc-tray/environment/';
+if(process.argv.includes('--iridescent')) {
+  const assets=[];
+  const record=async(path,bytes,role,extra={})=>{
+    const {width,height}=await sharp(bytes).metadata();
+    await writeFile(path,bytes);
+    assets.push({path,width,height,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex'),role,...extra});
+  };
+  for(const finish of ['hazy','crisp']) {
+    const prefix=directory+`iridescent-${finish}`;
+    const source=await readFile(prefix+'-original.png');
+    const size=await sharp(source).metadata();
+    assert(size.width>=1672 && size.height>=941,'Use native originals without enlarging the web derivatives.');
+    await record(prefix+'-original.png',source,'Unmodified built-in image_gen edit; not loaded by the interface.',{finish});
+    for(const [name,width,height,position] of [['wide',1672,941,'centre'],['mobile',528,940,'west'],['detail',640,640,'west']]) {
+      const bytes=await sharp(source).resize(width,height,{fit:'cover',position,withoutEnlargement:true}).webp({quality:90}).toBuffer();
+      const dimensions=await sharp(bytes).metadata();
+      assert(dimensions.width===width && dimensions.height===height && bytes.length<600_000);
+      await record(prefix+`-${name}.webp`,bytes,'Optimized website derivative',{finish,crop:position});
+    }
+    const export8k=await sharp(source).resize(7680,4320,{fit:'cover',position:'centre',kernel:'lanczos3'}).jpeg({quality:96,chromaSubsampling:'4:4:4'}).toBuffer();
+    const exportSize=await sharp(export8k).metadata();
+    assert(exportSize.width===7680 && exportSize.height===4320 && export8k.length<30_000_000);
+    await record(prefix+'-8k-resampled.jpg',export8k,'8K resampled export; not native8K detail and never loaded by page CSS.',{finish,resampled:true,native_width:size.width,native_height:size.height});
+  }
+  await writeFile('docs/art-direction/iridescent-background-assets.json',JSON.stringify({observed_at:new Date().toISOString(),tool:'built-in image_gen',request:'iridescent-background-request.json',origin:'Two generated edits: hazy accents from icy-water original; crisp edit from hazy original. 8K JPEGs are Lanczos-resampled exports, not native8K generations.',assets},null,2)+'\n');
+  console.log(JSON.stringify(assets.map(({path,width,height,bytes})=>({path,width,height,bytes})),null,2));
+  process.exit(0);
+}
 const icy=process.argv.includes('--icy-water');
 const original=icy?'icy-water-original.png':'refracted-horizon.png';
 const source=await readFile(directory+original);

@@ -1,5 +1,13 @@
 # Stage 9: five app structures, awaiting selection
 
+## Iridescent background finish comparison
+
+Orbital Disc now has a native Background selector in the existing prototype toolbar: Hazy iridescence and Crystal clear. Both retain blue-metal ribbon/fin geometry and reflective water while adding lilac/violet/rose reflected bands. The hazy edit retains mist and print grain; the crisp edit removes those textures and the low cloud bank for polished metal, clean air and defined water reflections. The original blue-only background remains a historical asset. Foreground disc, layout, type, glass and other artwork routes are preserved.
+
+The finish is stored as `background=hazy|crisp`, defaults safely to hazy, and persists through reload, browser history and Discover/About navigation. Switching does not remount discovery or erase typed input, seed, results or open disclosures. The native control is scoped to the Orbital artwork route; existing toolbar wrapping accommodates it. API/model behavior is unchanged.
+
+Two built-in image_gen edits each have native1672x941 PNG originals. Each supplies1672x941 wide,528x940 mobile and640x640 About WebPs. Separate7680x4320 JPEG exports use Lanczos3 resampling, quality96 and4:4:4 chroma; they contain enlarged native artwork, not native8K detail, and are not loaded by page CSS. Exact edit prompts/source chain and rationale are in `docs/art-direction/iridescent-background-request.json`; verified dimensions, byte counts, hashes and export provenance are in `iridescent-background-assets.json`. Reproduce derivatives with `node scripts/prepare-disc-tray-environment.mjs --iridescent`. Production build/typecheck and all40 local frontend tests pass. All28 final captures are valid; fresh visual/source review returned ship with no material fixes. Evidence is recorded in docs/evidence/stage-9-iridescent-checks.json, the capture manifest and review report, independently of earlier checkpoints.
+
 ## Icy water background replacement
 
 The selected Orbital Disc demo now uses one original left-weighted icy-metal/water environment rather than the scattered chrome-orbit, liquid-comma and aero-spine background layers. The environment combines smooth rigid blue-metal ribbon/fin forms, reflected water, faint curved perspective lines, blue haze and fine grain. It remains a static decorative CSS background beneath the existing frosted controls and reading planes. Discover/results and About share the environment; narrow screens and About use dedicated crops. Other comparison routes, hero model and rim layering are unchanged.

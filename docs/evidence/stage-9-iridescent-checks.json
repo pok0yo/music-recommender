@@ -1,0 +1,90 @@
+{
+  "observed_at": "2026-10-22T08:00:35.462Z",
+  "build": "passed",
+  "typecheck": "passed",
+  "script_syntax": "passed",
+  "sidecar_json_css_and_unchanged_tokens": "verified",
+  "final_full_suite": {
+    "startTime": "2026-10-22T07:47:18.117Z",
+    "duration": 171315.06100000002,
+    "expected": 40,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser": "155.0.8059.85",
+  "captures": "stage-9-iridescent-captures.json",
+  "capture_count": 28,
+  "capture_hashes_dimensions_and_widths_verified": true,
+  "capture_scope": "Each finish1440desktop/390mobile entry,focus,results,About,opaque,error plus1881x905entry/modelhover.",
+  "asset_manifest": "../art-direction/iridescent-background-assets.json",
+  "assets_verified": true,
+  "generation": {
+    "tool": "built-in image_gen",
+    "edits": 2,
+    "source_chain": "icy-water original -> hazy iridescent -> crisp iridescent",
+    "native_dimensions": [
+      1672,
+      941
+    ],
+    "web_derivatives": 6,
+    "exports8k": 2,
+    "export_dimensions": [
+      7680,
+      4320
+    ],
+    "exports_resampled": true,
+    "native8k_detail": false
+  },
+  "runtime_image_bytes": {
+    "hazy": 454764,
+    "crisp": 397542
+  },
+  "feature_verification": [
+    "Native Orbital-only finish selector and safe default",
+    "Typed query, selected seed, results, open disclosures and hero node preserved on switch",
+    "Reload, browser history and Discover/About finish persistence",
+    "Both WebP sets decode; no original or8K page requests",
+    "Overflow and axe checks for both finishes across representative widths; existing opaque/forced-color/asset-failure guards"
+  ],
+  "model_rim_regression": {
+    "opaque_pixels": 418,
+    "max_channel_difference": 0
+  },
+  "review": {
+    "disposition": "ship",
+    "scope": "Fresh independent visual/source review of supplied screenshot, native art and all28 captures; no material fixes. Runtime results parent-run.",
+    "report": "stage-9-iridescent-review.md"
+  },
+  "source_sha256": {
+    "components/preview.tsx": "c53e7d86acfd8c111f9a03d28ddac7c769946f9fcbf770f0d9d6c5fd6f47f0f9",
+    "app/prototypes/disc-tray/artwork/[artwork]/[[...section]]/page.tsx": "5d31036905c2561d81678b312bcfb7bc1b8b7c7f50ea067e4e8e6a6d469fb640",
+    "v2/atmosphere.css": "35736440ebbfe1a39ff6304ef715edae2de1b530354454fb51d2c7c950a8be2d",
+    "scripts/prepare-disc-tray-environment.mjs": "22c564063b5ccf5664e293b6b28995a5fee451956d0455d9bf5dae82b22f6cea",
+    "scripts/capture-site-liquid-glass.mjs": "2f0b091ce10bcc38cf57314d3e62d3dcfbc07910d53314e2d0effb76d00ec3fe",
+    "tests/frontend/atmosphere.spec.ts": "962b3b87f8aca498de0562b4bfa8fdc0cb92c95a4abc7808d4d0ddf1dd262607",
+    "PRODUCT.md": "34b05efa09e70d35ad2163cb7724c51cbe6e6ae609be785b98956272c419a25e",
+    "DESIGN.md": "deae9836a6d63da057e811f4c9d8de82f9021bc9e7b7fb65ff3dc4e5f6996af9",
+    ".impeccable/design.json": "5c304bea96ac239372b1c06ff838ee0371a04eccacb43b0ed9a540f1757082c2",
+    ".impeccable/briefs/iridescent-backgrounds.md": "c058a2bc3c9d0bdfbddf751861b965f531cefeb9cf66f96fa2ccaea0c93555c4",
+    "docs/art-direction/iridescent-background-request.json": "3d159577f62538d22344f9e5330154509837ac7f2cd019d9b6222f71a42573e5",
+    "docs/art-direction/iridescent-background-assets.json": "887cd40da27ed84b9e87257c94e2e20a10f89887b4e053692c1eefdcfd91cdb7",
+    "docs/stage-9-frontend.md": "0b3309fd5d23482a08ce37571796a7bf5297c72e3983f3cb6b79cba7e1b14ed4",
+    "docs/evidence/stage-9-iridescent-review.md": "0561d9c2d2d6a44e0293ef42b0f8ca57100ab92562362ecce273f0869bc9a1a5"
+  },
+  "unchanged_source": [
+    "components/orbital-hero.tsx",
+    "components/orbital-scene.ts",
+    "v2/studies.css",
+    "v2/disc-tray/index.tsx"
+  ],
+  "scope": "Selected Orbital Disc Stage9 background comparison only. Model/layout/type/glass semantics, other artwork and backend/recommendations unchanged. No root promotion or deployment.",
+  "limitations": [
+    "8K files are enlarged JPEG exports from1672x941 native edits, not new native detail",
+    "Local Chrome/demo fixtures and existing mocked real-mode guards, not live API validation",
+    "No detector-pass claim; unavailable launcher earlier, direct source/craft-floor review",
+    "No Safari, physical-device or screen-reader validation",
+    "No measured FPS, battery, retention or performance claim",
+    "Remote CI is separate; inspect GitHub after push"
+  ]
+}

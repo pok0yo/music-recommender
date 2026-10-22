@@ -1,0 +1,23 @@
+{
+  "tool": "built-in image_gen",
+  "intent": "Two edits for the same selected background, with native size verified and separately labelled8K resampled exports.",
+  "edits": [
+    {
+      "finish": "hazy",
+      "input": "public/artwork/disc-tray/environment/icy-water-original.png",
+      "output": "public/artwork/disc-tray/environment/iridescent-hazy-original.png",
+      "prompt": "Edit the supplied original website background; output only the landscape artwork, no UI. Preserve its composition, viewpoint and scene: giant aerodynamic icy-blue metal ribbon cropped at the LEFT edge, folded pointed fin near the water, reflective lower-third water, faint white curved perspective grid lines, open blue middle and right. Change only the lighting palette: introduce elegant restrained LILAC, VIOLET and SOFT ROSE-PINK iridescent reflection bands on the polished metal and their corresponding water reflections, echoing the pale rainbow interference of a compact disc. Keep the majority ice-blue, silver and white; the pink/purple should be physically reflected highlights and localized color spill, never a flat pink sky or neon cyberpunk. Preserve the original luminous mist, soft blue halation, atmospheric haze and fine print grain: this is the HAZY comparison variant. Preserve coherent reflections, wide calm right field and left-side material density. No extra objects, discs, people, lettering, logos, controls, frames or watermark. Highest available native resolution and exceptional detail; target 8K landscape quality if supported. Why this works (do not render as text): restrained purple/rose reflected bands relate the environment to the foreground disc while preserving the selected blue world and an atmospheric baseline for comparison.",
+      "why_this_works": "Lilac and rose reflected bands tie the blue metal/water to the foreground disc while retaining grain and mist as the comparison baseline."
+    },
+    {
+      "finish": "crisp",
+      "input": "public/artwork/disc-tray/environment/iridescent-hazy-original.png",
+      "output": "public/artwork/disc-tray/environment/iridescent-crisp-original.png",
+      "prompt": "Use case: precise-object-edit / lighting-weather. Edit this exact landscape website background into its CRYSTAL CLEAR comparison version. Preserve the precise camera, large left-cropped blue-metal ribbon, pointed folded fin, their silhouettes and placement, waterline, delicate curved white grid lines and open central/right area. Preserve the lilac, violet and soft rose-pink reflected highlight bands and blue-dominant palette. Make a high-end sleek polished CGI render that matches glossy glass UI: REMOVE ALL print grain, noise, paper texture, soft halation, bloom fog and mist around the sculptures and water; remove the low cloud bank and haze along the horizon, leaving clean blue air with a clear distant horizon. Replace the mottled misty sky with a smooth pristine pale blue sky. Re-render the metal with razor-defined chamfers, clean continuous reflective surfaces and very crisp specular boundaries. Water must have pristine detailed sharp ripples, mirror-like silver-blue reflections and clear lavender/pink reflection streaks, no milky glare. Sophisticated physically convincing lighting with fine detail, no oversharpening halos or gritty microtexture. Do not enlarge or move the objects, add clutter, discs, planets, people, text, logos, UI or frames. This is the SAME SCENE and palette under crystal-clear atmosphere, not a new composition. Output highest available native resolution, target7680x4320 8K landscape if supported; exceptional fine detail. Why this works (do not render text): removing baked haze/grain while retaining geometry and iridescence produces an honest material-finish comparison with the atmospheric version behind the same interface.",
+      "why_this_works": "Keeping the same geometry and reflection palette while removing baked haze/grain lets the user judge atmosphere versus polished clarity in the same interface."
+    }
+  ],
+  "native_resolution": "Both1672x941. The generator did not deliver native8K.",
+  "export_resolution": "7680x4320 JPEG, Lanczos3 resampling, quality96,4:4:4 chroma; resampling does not create native detail.",
+  "scope": "Selected Orbital Disc prototype. Other comparison artwork and foreground model remain unchanged."
+}

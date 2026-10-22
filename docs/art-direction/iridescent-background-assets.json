@@ -1,0 +1,110 @@
+{
+  "observed_at": "2026-10-22T07:44:26.132Z",
+  "tool": "built-in image_gen",
+  "request": "iridescent-background-request.json",
+  "origin": "Two generated edits: hazy accents from icy-water original; crisp edit from hazy original. 8K JPEGs are Lanczos-resampled exports, not native8K generations.",
+  "assets": [
+    {
+      "path": "public/artwork/disc-tray/environment/iridescent-hazy-original.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2301735,
+      "sha256": "2f9bf1e33b027f67303c54cdc4fda3cb5c755d03ceb1cfd3ecf099ef6bd167f3",
+      "role": "Unmodified built-in image_gen edit; not loaded by the interface.",
+      "finish": "hazy"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/iridescent-hazy-wide.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 253128,
+      "sha256": "77a88d608abaa5b33b4448d293de09b6485b0c8b172a9076d40a5513dab658bc",
+      "role": "Optimized website derivative",
+      "finish": "hazy",
+      "crop": "centre"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/iridescent-hazy-mobile.webp",
+      "width": 528,
+      "height": 940,
+      "bytes": 106228,
+      "sha256": "e277c2980c9c2cc49aec74ba53d1240e3d735965e7abc10daccba0f43df10a86",
+      "role": "Optimized website derivative",
+      "finish": "hazy",
+      "crop": "west"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/iridescent-hazy-detail.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 95408,
+      "sha256": "e2884170f3b18fde74562e19efe1a96d2262787df98518aa977780366d050729",
+      "role": "Optimized website derivative",
+      "finish": "hazy",
+      "crop": "west"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/iridescent-hazy-8k-resampled.jpg",
+      "width": 7680,
+      "height": 4320,
+      "bytes": 7060595,
+      "sha256": "546c8ce03fc2dc1f626271a3ec6ceb72ebea7e1e065ebffb86bcc6c2f4e72104",
+      "role": "8K resampled export; not native8K detail and never loaded by page CSS.",
+      "finish": "hazy",
+      "resampled": true,
+      "native_width": 1672,
+      "native_height": 941
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/iridescent-crisp-original.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2044392,
+      "sha256": "ef9179d8c0111e9b623e5c657ec3a55b00d9804dd2bf2de1cbbf9edfb79682cf",
+      "role": "Unmodified built-in image_gen edit; not loaded by the interface.",
+      "finish": "crisp"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/iridescent-crisp-wide.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 205230,
+      "sha256": "b855edd480de7e6fd49c8f8ccef6a219da157bc5ec1e2de1a01198b9117f8705",
+      "role": "Optimized website derivative",
+      "finish": "crisp",
+      "crop": "centre"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/iridescent-crisp-mobile.webp",
+      "width": 528,
+      "height": 940,
+      "bytes": 104398,
+      "sha256": "c8de8d90fa7cd06eb53dd732d5e6fe93d286a2d93a2da1251dc8200bf8fc21a2",
+      "role": "Optimized website derivative",
+      "finish": "crisp",
+      "crop": "west"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/iridescent-crisp-detail.webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 87914,
+      "sha256": "1a721bcb6cc6de7161a53df4ae6a6fa7dccab950c42c476e28058b3621caa5fd",
+      "role": "Optimized website derivative",
+      "finish": "crisp",
+      "crop": "west"
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/iridescent-crisp-8k-resampled.jpg",
+      "width": 7680,
+      "height": 4320,
+      "bytes": 6584204,
+      "sha256": "a2358be1002529fef47c2a2d77ea111cf1d327113e9854d7600819310bb08983",
+      "role": "8K resampled export; not native8K detail and never loaded by page CSS.",
+      "finish": "crisp",
+      "resampled": true,
+      "native_width": 1672,
+      "native_height": 941
+    }
+  ]
+}

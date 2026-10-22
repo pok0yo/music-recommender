@@ -9,8 +9,8 @@ import { About } from './about';
 import { studyNames, studySlugs, studyStructures } from '../v2/studies';
 import { artworks } from '../v2/artwork';
 
-export function Preview({ initialVariant, initialMode, initialFixture, about = false, initialStudy, initialArtwork }: {
-  initialVariant: number; initialMode: Meta['data_mode']; initialFixture: Scenario; about?: boolean; initialStudy?: number; initialArtwork?: number;
+export function Preview({ initialVariant, initialMode, initialFixture, about = false, initialStudy, initialArtwork, initialBackground = 'hazy' }: {
+  initialVariant: number; initialMode: Meta['data_mode']; initialFixture: Scenario; about?: boolean; initialStudy?: number; initialArtwork?: number; initialBackground?: 'hazy' | 'crisp';
 }) {
   const [variant, setVariant] = useState(initialArtwork || initialStudy || initialVariant);
   const isArtwork = initialArtwork !== undefined;
@@ -23,6 +23,18 @@ export function Preview({ initialVariant, initialMode, initialFixture, about = f
   const pathFor = (next: number) => isArtwork ? `/prototypes/disc-tray/artwork/${artworks[next - 1].slug}` : isStudy ? `/prototypes/disc-study/${studySlugs[next - 1]}` : `/variants/v${next}`;
   const [mode, setMode] = useState(initialMode);
   const [fixture, setFixture] = useState(initialFixture);
+  const [background, setBackground] = useState(initialBackground);
+  const switchBackground = (next: 'hazy' | 'crisp') => {
+    setBackground(next);
+    const url = new URL(window.location.href);
+    url.searchParams.set('background', next);
+    window.history.replaceState(null, '', url);
+  };
+  useEffect(() => {
+    const restore = () => setBackground(new URLSearchParams(window.location.search).get('background') === 'crisp' ? 'crisp' : 'hazy');
+    window.addEventListener('popstate', restore);
+    return () => window.removeEventListener('popstate', restore);
+  }, []);
   const picker = useRef<HTMLElement>(null);
   const highlight = useRef<HTMLSpanElement>(null);
   const [ready, setReady] = useState(false);
@@ -62,13 +74,16 @@ export function Preview({ initialVariant, initialMode, initialFixture, about = f
     window.history.replaceState(null, '', url);
   };
   const context = new URLSearchParams({ mode, ...(mode === 'demo' ? { fixture } : {}) });
-  return <div className={`app-surface variant-${productVariant}${study ? ` study-${studySlugs[study - 1]}` : ''}`} data-variant={`v${productVariant}`} data-study={study ? studySlugs[study - 1] : undefined} data-artwork={artwork?.slug}>
+  if (isArtwork) context.set('background', background);
+  return <div className={`app-surface variant-${productVariant}${study ? ` study-${studySlugs[study - 1]}` : ''}`} data-variant={`v${productVariant}`} data-study={study ? studySlugs[study - 1] : undefined} data-artwork={artwork?.slug} data-background={artwork?.slug === 'orbital-disc' ? background : undefined}>
     <a className="skip-link" href="#main-content">Skip to content</a>
     <aside className="preview-bar" aria-label="Prototype controls"><div className="preview-bar-inner"><p><strong>{isArtwork ? 'Disc Tray artwork' : isStudy ? 'Disc Study exploration' : 'Prototype preview'}</strong><span>{names[variant - 1]} · {structures[variant - 1]}</span></p>
       <div className="preview-settings"><label>Data<select aria-label="Data source" value={mode} onChange={event => changeData(event.target.value as Meta['data_mode'], 'entry')}>
         <option value="real">Real catalog</option><option value="demo">Demonstration data</option></select></label>
         {mode === 'demo' && <label>Scenario<select aria-label="Demonstration scenario" value={fixture} onChange={event => changeData('demo', event.target.value as Scenario)}>
-          {Object.entries(scenarios).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>}</div></div>
+          {Object.entries(scenarios).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>}
+        {artwork?.slug === 'orbital-disc' && <label>Background<select aria-label="Background finish" value={background} onChange={event => switchBackground(event.target.value as 'hazy' | 'crisp')}>
+          <option value="hazy">Hazy iridescence</option><option value="crisp">Crystal clear</option></select></label>}</div></div>
       <nav className="proto-picker" aria-label="Prototype variants" data-ready={ready ? '' : undefined} ref={picker}>
         <span className="proto-picker-highlight" aria-hidden="true" ref={highlight} />
         {names.map((name, index) => <button key={name} type="button" className="proto-picker-item" aria-label={`Preview ${name}`} data-active={variant === index + 1 ? '' : undefined}
