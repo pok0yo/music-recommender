@@ -1,0 +1,54 @@
+.glass-filter { position:absolute; width:0; height:0; pointer-events:none; overflow:hidden; }
+.app-surface :is(button,a,input[type=search],select,summary) {
+  --glass-x:50%; --glass-y:20%;
+  -webkit-backdrop-filter:blur(10px) saturate(140%);
+  backdrop-filter:blur(10px) saturate(140%);
+}
+.app-surface :is(input[type=search],select,summary,.app-header a,.app-footer a,.about-index a,.skip-link) {
+  background-color:#f3f9ffb8;
+  background-image:radial-gradient(100px circle at var(--glass-x) var(--glass-y),#ffffffb3,transparent 75%),linear-gradient(135deg,#ffffff70,#b8dbf02b 55%,#fff8);
+  border:1px solid var(--control);
+  box-shadow:inset 0 1px 0 #fff,inset 0 -1px 0 #88b0d94d,0 4px 12px #28476714;
+}
+.app-surface :is(summary,.app-footer a,.about-index a) { border-radius:12px; padding:10px 12px; }
+.app-surface .brand { border-radius:16px; padding:6px 10px; }
+.app-surface .app-header a[aria-current] { background-color:#153ea8; background-image:radial-gradient(80px circle at var(--glass-x) var(--glass-y),#fff2,transparent 80%); border-color:#153ea8; }
+.app-surface :is(.app-header,.shell-body,.about-index) { background-color:#f3f9ffe6; -webkit-backdrop-filter:blur(14px) saturate(130%); backdrop-filter:blur(14px) saturate(130%); }
+.app-surface .preview-bar { background:#eff7ffcc; backdrop-filter:blur(14px); }
+.app-surface .proto-picker { background:#d5e5f3c7; border-color:#8da8c3; backdrop-filter:blur(12px); }
+.app-surface .proto-picker-item { color:#173250; }
+.app-surface .proto-picker-highlight { background:linear-gradient(135deg,#fff9,#b6d4ee88); box-shadow:inset 0 1px 0 #fff,0 3px 10px #28476722; }
+.app-surface .liquid-metal-button { background:linear-gradient(125deg,#ffffffaa,#adcee480 45%,#fff9); }
+.app-surface .liquid-metal-button::before { background:linear-gradient(180deg,#ffffff9c,#f0f8ffc9 42%,#dceafa80 49%,#edf5fdb3); }
+.app-surface .liquid-metal-button.primary-button::before { background:linear-gradient(180deg,#315dc5f5,#153ea8f5 49%,#12358ef5); }
+.glass-effect { position:absolute; inset:2px; z-index:-1; border-radius:inherit; overflow:hidden; pointer-events:none; }
+.glass-distortion,.glass-tint,.glass-shine { position:absolute; inset:0; border-radius:inherit; pointer-events:none; }
+.glass-distortion { backdrop-filter:blur(3px) saturate(140%); }
+.glass-tint { background:#ffffff14; }
+.glass-shine { background:radial-gradient(100px circle at var(--glass-x) var(--glass-y),#ffffff80,transparent 70%); box-shadow:inset 1px 1px 1px #ffffffb3,inset -1px -1px 1px #c6e7ff80; opacity:.45; }
+.primary-button .glass-tint { background:transparent; }
+.primary-button .glass-shine { opacity:.08; }
+.app-surface [data-glass-active] .glass-distortion { filter:url('#liquid-glass-distortion'); }
+.app-surface [data-glass-active] .glass-shine { opacity:.7; }
+.app-surface .primary-button[data-glass-active] .glass-shine { opacity:.1; }
+.app-surface :is(input[type=search],select):focus-visible { background-color:#f7fbffe6; }
+.app-surface .liquid-metal-button:disabled { background:var(--rule); box-shadow:none; }
+.app-surface .liquid-metal-button:disabled::before { background:var(--tint); }
+.liquid-metal-button:disabled .glass-effect { display:none; }
+@media(prefers-reduced-motion:no-preference) {
+  .glass-shine { transition:opacity 220ms cubic-bezier(.16,1,.3,1); }
+  .app-surface :is(input[type=search],select,summary,.app-header a,.app-footer a,.about-index a) { transition:background-color 180ms ease-out,box-shadow 180ms ease-out; }
+}
+@media(prefers-reduced-motion:reduce) { .glass-distortion { filter:none!important; } }
+@media(prefers-reduced-transparency:reduce) {
+  .glass-effect { display:none; }
+  .app-surface :is(button,a,input[type=search],select,summary,.app-header,.shell-body,.about-index,.preview-bar,.proto-picker) { -webkit-backdrop-filter:none!important; backdrop-filter:none!important; background-image:none; background-color:var(--surface,#fcfdff); }
+  .app-surface .liquid-metal-button::before { background:var(--surface); }
+  .app-surface .liquid-metal-button.primary-button::before,.app-surface .app-header a[aria-current] { background:var(--primary); }
+}
+@media(forced-colors:active) {
+  .glass-effect { display:none; }
+  .app-surface :is(button,a,input[type=search],select,summary,.app-header,.shell-body,.about-index,.preview-bar,.proto-picker) { -webkit-backdrop-filter:none!important; backdrop-filter:none!important; background:Canvas; color:CanvasText; border-color:ButtonText; box-shadow:none; }
+  .app-surface .liquid-metal-button::before { display:none; }
+  .app-surface .liquid-metal-button:disabled { color:GrayText; border-color:GrayText; }
+}

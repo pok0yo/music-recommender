@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type ComponentPropsWithRef } from 'react';
 import type { ShaderMount } from '@paper-design/shaders';
+import { GlassEffect } from './liquid-glass';
 
 // Adapted from the supplied LiquidMetalButton; native props preserve form and focus behavior.
 export function LiquidMetalButton({ children, className = '', type = 'button', disabled,
@@ -85,6 +86,7 @@ export function LiquidMetalButton({ children, className = '', type = 'button', d
     }}>
     <span ref={material} className="liquid-material" aria-hidden="true" />
     <span className="liquid-shimmer" aria-hidden="true"><span className="liquid-shimmer-spark" /></span>
+    <GlassEffect />
     {children}
     {motionAllowed && !disabled && ripple && <span key={ripple.id} className="liquid-ripple" aria-hidden="true"
       style={{ left: ripple.x, top: ripple.y, width: ripple.size, height: ripple.size }}

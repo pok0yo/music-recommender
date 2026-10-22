@@ -1,5 +1,19 @@
 # Stage 9: five app structures, awaiting selection
 
+## Shared liquid glass
+
+The user approved adapting the supplied GlassEffect throughout the website. Shared buttons, native search/select fields, links/navigation, native summaries, prototype pickers and reading enclosures now use a unified frosted/translucent material across all existing routes. `components/ui/liquid-glass.tsx` contributes three decorative button layers, one global SVG displacement filter and one delegated mouse handler. Native elements continue to own actions, keyboard behavior, labels and focus; popup option menus remain browser controlled. The pasted demo dock, clickable images, unrelated external links, moving wallpaper and hover-padding changes were omitted.
+
+| Before | After | Why |
+|---|---|---|
+| Metallic button treatment with opaque reading faces | Layered translucent lens, tint and specular edge, retaining strong cobalt primaries | Extends the requested liquid-glass material without washing out labels |
+| Plain native fields, links and disclosures | Pointer-positioned highlights and backdrop blur with native semantics | Makes the interactive material consistent across the website |
+| Static enclosure surfaces | Pale 90% frosted reading planes | Preserves contrast around transparent controls |
+
+Pointer updates coalesce into requestAnimationFrame only when the mouse moves; no new idle loop or graphics dependency. The supplied displacement scale200 was reduced to16 and limited to the active decorative button layer, never text. Existing lazy shader/shimmer/ripple behavior remains. Reduced motion stops pointer tracking; reduced transparency and forced colors remove blur/refraction with strong preference overrides and static readable surfaces. Two earlier37-test runs had36 passes and one failed reduced-transparency assertion. Inspection of the emitted production CSS found that putting the prefixed reset last left only a declaration Chrome ignored. Placing the standard backdrop-filter reset last fixes the compiled rule. The final full suite passes37/37; the preference test now checks every interactive surface/enclosure and tests forced colors separately. Final results are recorded in `stage-9-site-liquid-glass-checks.json`. The capture helper explicitly waits for ten result rows before recording results and asserts blur removal before opaque captures; earlier premature loading captures were replaced.
+
+Twenty-four final captures cover desktop/mobile entry, hover, focus, results, About, disabled and opaque states; all other original layouts' working screens; and550/1305px entry views. See `stage-9-site-liquid-glass-captures.json` and `stage-9-site-liquid-glass-review.md`. Build/typecheck and actual regression evidence are separate from visual review. Unsupported filters retain native/CSS surfaces; no Safari, physical-device, screen-reader, FPS or battery guarantee is made. The previous remote run39688772508 forccb2d6f ended with30 passes and5 failures; its cause remains unproven, and the current local37-pass result is not a remote pass. No backend/model/data behavior, Stage10 or deployment change.
+
 ## Refracted environment and display typography
 
 The user approved Higgsfield-generated background assets and a more distinctive Y2K font for the selected Orbital Disc demo. Its Discover, working and About pages now use a static glass/chrome environment, a quiet reading mask behind search and pale reading planes behind data notices, footnotes and footer links. About uses a right-side image detail inside its introduction. The centered hover-only 3D disc, buttons, data flow and factual copy remain. Other artwork/body/original comparisons retain their prior typography and backgrounds.

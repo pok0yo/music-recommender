@@ -18,5 +18,7 @@ Y2K Futurism / Soft Club, match feel rather than reference content. Readable con
 
 The user subsequently approved generated background artwork and more distinctive Y2K typography for the selected Orbital Disc demo and its working/About pages. A completed Higgsfield glass/chrome environment and three responsive crops supply the atmosphere; these are one generated original, not separate artworks. Michroma is reserved for branding and short display headings, while Manrope remains for reading and controls. This scoped expansion preserves the centered hover-only disc, other comparison routes, product behavior and data truth. No production promotion or deployment is implied.
 
+The user then approved adapting supplied liquid glass across all interactive UI and existing routes. Native controls retain their semantics and labels; decorative tint/refraction/specular layers, pointer-positioned reflections and frosted reading surfaces extend the shared material. Existing palette, typography roles, background assets, centered hover-only disc, real/demo truth and stage gates remain. No perpetual background animation, dock demo, external demo links or new graphics dependency is introduced.
+
 ## Evidence
 See docs/stage-4-design-plan.md, docs/stage-5-implementation-plan.md, and docs/stage-8-backend.md. Demonstration fixtures must be persistently labeled and cannot replace a failing real API. Similarity is not enjoyment probability. Browser tests and subjective design judgments are not user research.

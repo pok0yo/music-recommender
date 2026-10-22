@@ -1,0 +1,231 @@
+{
+  "observed_at": "2026-10-22T03:29:29.538Z",
+  "browser": "155.0.8059.85",
+  "data": "Demonstration fixtures only",
+  "captures": [
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-site-liquid-glass/desktop-entry.png",
+      "pageWidth": 1440,
+      "sha256": "5a820f7e093e30ed4f6d66ee442e3ce5091f4d80bf6d64f7b9fd37c875d0d9c0"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "hover",
+      "path": "docs/evidence/stage-9-site-liquid-glass/desktop-hover.png",
+      "pageWidth": 1440,
+      "sha256": "6cb1af11852c96b5c8c7a913de6004a77441756e235a725ce48134ec287e9b30"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "focus",
+      "path": "docs/evidence/stage-9-site-liquid-glass/desktop-focus.png",
+      "pageWidth": 1440,
+      "sha256": "a850f786784354e70b721a335102c57f43a7faa0b8c1bbfaac27ba9a0c1c0b2b"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "path": "docs/evidence/stage-9-site-liquid-glass/desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "7dbaf8ec4de1bf0da3585b0dd568983e422f5ca7e76e687ac0b6372e75a8fa07"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "about",
+      "path": "docs/evidence/stage-9-site-liquid-glass/desktop-about.png",
+      "pageWidth": 1440,
+      "sha256": "3f60f9d5ffbbeb2dff4153c81a5ce2fe7a5f32bc3ab3f53f6129475774ae0df9"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "disabled",
+      "path": "docs/evidence/stage-9-site-liquid-glass/desktop-disabled.png",
+      "pageWidth": 1440,
+      "sha256": "05bfb97aa8cecc70c5b97b70e6d1cdd1389bfd22827129d4c871a8018e5f3daa"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "opaque",
+      "path": "docs/evidence/stage-9-site-liquid-glass/desktop-opaque.png",
+      "pageWidth": 1440,
+      "sha256": "b9bc353d7f666cfec8695bc9357e4d8669c7cfddc9ed8295afbc525f101e694e"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-site-liquid-glass/mobile-entry.png",
+      "pageWidth": 390,
+      "sha256": "9457ae3bd489b47aead1a9990f2131e8d535d0f6a6b373814a007d4e0d2754aa"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "hover",
+      "path": "docs/evidence/stage-9-site-liquid-glass/mobile-hover.png",
+      "pageWidth": 390,
+      "sha256": "586ea8b98e8815c08b37c4d1ec8c2308f274b2e8c5b5787ab248fd11cdde6bce"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "focus",
+      "path": "docs/evidence/stage-9-site-liquid-glass/mobile-focus.png",
+      "pageWidth": 390,
+      "sha256": "bdf0b8c0511edcb521a2f421dbe635dc1d48eee0401391ba5b35c2796ed18fc6"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "path": "docs/evidence/stage-9-site-liquid-glass/mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "a2b69761f0637ca1ddbd0cf5664ec7f68bbea9171fd714058e0403115c590f2b"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "about",
+      "path": "docs/evidence/stage-9-site-liquid-glass/mobile-about.png",
+      "pageWidth": 390,
+      "sha256": "dac3a4a0dd70da6b5c964a6f9cb3fdd3d11faec0321535811e1707d7962c8dfa"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "disabled",
+      "path": "docs/evidence/stage-9-site-liquid-glass/mobile-disabled.png",
+      "pageWidth": 390,
+      "sha256": "24a6c7cb35835e8da74edc9c7f2840edf6db90b9656b10a65ae7acff5d8d43cd"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "opaque",
+      "path": "docs/evidence/stage-9-site-liquid-glass/mobile-opaque.png",
+      "pageWidth": 390,
+      "sha256": "29ea4322433ebb086b66bdc2b4c7bb11ed95c07d01a6fe57f620c88f4a4f6af4"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "variant": 1,
+      "path": "docs/evidence/stage-9-site-liquid-glass/v1-desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "d69ccbc02f077402b5d4d78fbd2b25ad8ba3baec943398bf4998a8f5a18074af"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "variant": 1,
+      "path": "docs/evidence/stage-9-site-liquid-glass/v1-mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "9090b143451a5ebe1cbea88b21b34d92c3818b0e9943abfb631ef29d8b014281"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "variant": 3,
+      "path": "docs/evidence/stage-9-site-liquid-glass/v3-desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "8e0d21c4d35f2902fc6e3b36eb903ab5e1bbab1302c5c8511b7b69a25b485548"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "variant": 3,
+      "path": "docs/evidence/stage-9-site-liquid-glass/v3-mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "c417c84f47f7cd23dfef9344bbf948f284e9bb58ca795c0e5925adc71acd74f0"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "variant": 4,
+      "path": "docs/evidence/stage-9-site-liquid-glass/v4-desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "d891eea5aca8724d6d4e4b4894a7634c3d01502528f3b4fc419b06fa22aec8c8"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "variant": 4,
+      "path": "docs/evidence/stage-9-site-liquid-glass/v4-mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "9c3300537014294d037a78bec6cf8e91511cfaeaa25e185d84c91b517210c824"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "variant": 5,
+      "path": "docs/evidence/stage-9-site-liquid-glass/v5-desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "3cb731bf3c56768e182a7b511e9a19abbc61e84bed7a93f0b057bfc63be2b49f"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "variant": 5,
+      "path": "docs/evidence/stage-9-site-liquid-glass/v5-mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "0c7f0836dc136b6284be35e4fe9cc4613b65ad69f0f5455bf2064f2b035a35aa"
+    },
+    {
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-site-liquid-glass/user-entry.png",
+      "pageWidth": 550,
+      "sha256": "7b7fe349a9d88d9e56e1a48c3acfa37930a18d588219c1da9c9a4f559ff9fe6c"
+    },
+    {
+      "device": "live",
+      "width": 1305,
+      "height": 792,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-site-liquid-glass/live-entry.png",
+      "pageWidth": 1305,
+      "sha256": "9ef7c5a5640a290f004c2b48ac723435b1627796a61e1adab7153ecce107d4b6"
+    }
+  ]
+}

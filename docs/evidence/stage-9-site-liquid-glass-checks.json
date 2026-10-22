@@ -1,0 +1,53 @@
+{
+  "observed_at": "2026-10-22T03:31:25.679Z",
+  "build": "passed",
+  "typecheck": "passed",
+  "final_full_suite": {
+    "startTime": "2026-10-22T03:25:05.031Z",
+    "duration": 201455.57,
+    "expected": 37,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "pre_resume_full_suite": {
+    "startTime": "2026-10-22T01:45:48.760Z",
+    "duration": 205593.847,
+    "expected": 36,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "resolved_failure": "Compiled CSS retained only the unsupported -webkit-backdrop-filter reset when it was last. Standard backdrop-filter declared last now survives optimization; all native interactive/enclosure filters are asserted none under reduced transparency and independently forced colors.",
+  "captures": "stage-9-site-liquid-glass-captures.json",
+  "capture_count": 24,
+  "capture_hashes_and_widths_verified": true,
+  "browser": "155.0.8059.85",
+  "source_sha256": {
+    "app/layout.tsx": "7391d66a7b155c8dd77737011c9c6a19d8c9135217dd3ca52410aaf1e36048ed",
+    "components/ui/liquid-glass.tsx": "49312e3a845fa78b2362b801e6a420139eeda29f6ddf28053b0c07904e06b952",
+    "components/ui/liquid-glass.css": "987d7936b72fc1d4eff3f21d6476447fe360e5553f920a9acc8cae6fbba3f146",
+    "components/ui/liquid-metal-button.tsx": "c8ad882a00c7bcb32d39af39fdf8c89e51a4b226ba0800cfe68a6478f84141e3",
+    "tests/frontend/liquid-glass.spec.ts": "83121d5b7d54951cafb16af915a54194476e856853c9dd17ddfd4a0bc680c8c9",
+    "scripts/capture-site-liquid-glass.mjs": "45d3fefa9ea07860ba9c459ab31eba6852fccbfc70b22d63904e5c0892a787d3",
+    "PRODUCT.md": "aace4ee5d2c4489c5ebc8fd2e01e262ea7635d9fbf3fe803789a3b844fcb2b8c",
+    "DESIGN.md": "3d0b48f503dd5496c14ebb4dc7bc83bdbfe6dde06e8d831191915ba1bfbd7a9d",
+    ".impeccable/design.json": "eae33472ff09e043ffaeba9bbf7c2fd72205269d45a5978c401d507ded0211e2",
+    ".impeccable/briefs/site-liquid-glass.md": "7df8eb6e1fe53cdf246e6a828c680489189ec3d0bcf2010ec807e885558c9abb",
+    "docs/stage-9-frontend.md": "3cfe429501e74fc610e91dc9423849bff4127cf1dcfc54fb645b95f283676ac6"
+  },
+  "scope": "Production-build local Chrome, demonstration fixtures and existing real-mode mocked guards. No new live backend, model experiment or deployment.",
+  "remote_ci_before_this_commit": {
+    "commit": "ccb2d6f973a5f00f24f964e67015184c32e1e785",
+    "url": "https://github.com/pok0yo/music-recommender/actions/runs/39688772508",
+    "status": "failure",
+    "passed": 30,
+    "failed": 5,
+    "observation": "Prior graphics-related test timeouts; cause unproven. Local37 passes do not establish a remote pass."
+  },
+  "limitations": [
+    "No physical-device, Safari or screen-reader verification",
+    "No measured FPS, battery, performance improvement or retention result",
+    "Earlier Impeccable engine/detector unavailable; direct project context/craft-floor and finish review, no detector-pass claim"
+  ]
+}
