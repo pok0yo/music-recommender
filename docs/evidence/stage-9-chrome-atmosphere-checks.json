@@ -1,0 +1,64 @@
+{
+  "observed_at": "2026-10-22T04:20:32.332Z",
+  "build": "passed",
+  "typecheck": "passed",
+  "final_full_suite": {
+    "startTime": "2026-10-22T04:08:18.298Z",
+    "duration": 167459.625,
+    "expected": 38,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser": "155.0.8059.85",
+  "captures": "stage-9-chrome-atmosphere-captures.json",
+  "capture_count": 24,
+  "capture_hashes_and_widths_verified": true,
+  "asset_manifest": "../art-direction/chrome-accents.json",
+  "assets_verified": true,
+  "original_local_sculptures": 3,
+  "runtime_images": 3,
+  "runtime_image_bytes": 154826,
+  "generation_accounting": "Higgsfield balance0; no job, trial, subscription or purchase. Original Three.js exports, not additional AI-generated art or copied reference pixels.",
+  "contrast_scope": {
+    "kind": "Analytical flat-face bound over black; not a physical-device or all-frame measurement",
+    "face": "#f1f8ffbd",
+    "cobalt_ratio": 4.585079301887252,
+    "secondary_ratio": 5.0930471396193395
+  },
+  "review": {
+    "initial": "fix",
+    "initial_scope": "Visual/source promises met; one direction-provenance finding",
+    "final": "ship",
+    "final_scope": "Same reviewer resolved the provenance finding under the local-extension workflow exemption; no new visual/runtime checks in the verdict pass",
+    "report": "stage-9-chrome-atmosphere-review.md"
+  },
+  "source_sha256": {
+    "v2/atmosphere.css": "2655ce50ab438014a8a7e2b8f05738fcce422032f3e9f4d87c514029719c126e",
+    "scripts/render-chrome-accents.mjs": "b8a6cbc384434a2f650b2fe5a4bf88bb609a588976b3885c0cfe876d09e06e23",
+    "scripts/capture-site-liquid-glass.mjs": "12f061381279fde7eadf743ce573f26e76f8926c1deffcc8b7034ad7de7c4b37",
+    "tests/frontend/atmosphere.spec.ts": "051a34b19d13c6f40fccbaa70ce28e69a705170f37c9c45e7f152a304417ff62",
+    "docs/art-direction/chrome-accents.json": "228036fc08d9256080b0625ac2f74aa90c3040815924218e72f1712c4ed88c7d",
+    "PRODUCT.md": "fbec1a1326eabf9b8b60eacd3b95377b7058fe3b5fb18d703dcd0c90ed073b48",
+    "DESIGN.md": "1f360006f355e2f9bd1fdd8aeb863cb24d307a361e845a9b9ba290034163c20d",
+    ".impeccable/design.json": "45ce37b12f7760687d99e2f671770acf33b140ec72c5764a0314a9c40727d80c",
+    ".impeccable/briefs/chrome-atmosphere.md": "1e98dbb13f3dccc7b0231d881c9e78a616273a8096fae76ea0fed5d17c4e0593",
+    "docs/stage-9-frontend.md": "7c0e7128e056e4a6f197b8724b9abbae6ba239822db7eba651ed9c8ef6903133",
+    "docs/evidence/stage-9-chrome-atmosphere-review.md": "636c899ed5fa63650375e42f5a5551fd12488fa0d6fabc4c609c578a19d817bc"
+  },
+  "remote_ci_before_this_commit": {
+    "commit": "82ff1c1d4956fb846d329a8edaf984b9b2f6aace",
+    "url": "https://github.com/pok0yo/music-recommender/actions/runs/39717492126",
+    "status": "failure",
+    "passed": 25,
+    "failed": 12,
+    "cause": "Unproven; the current local pass is not a remote pass."
+  },
+  "scope": "Selected Orbital Disc frontend refinement. Fixture screenshots and existing real-mode mocked guards. Backend/model/catalog and live integrations unchanged.",
+  "limitations": [
+    "No Safari, physical-device or screen-reader validation",
+    "No measured FPS, battery, user-retention or performance-improvement claim",
+    "Earlier Impeccable engine/detector unavailable; direct project/craft-floor review without a detector-pass claim",
+    "Prior remote CI failures remain distinct and unresolved"
+  ]
+}

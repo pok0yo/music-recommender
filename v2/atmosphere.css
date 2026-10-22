@@ -1,10 +1,26 @@
 /* The selected demo gets atmosphere; the retained comparisons keep their own world. */
 [data-artwork=orbital-disc] {
+  --atmosphere-glass:#f1f8ffbd;
+  --muted:#28435f;
   background-color:#daeaf5;
-  background-image:linear-gradient(180deg,#f1f8ff12 30%,#edf5ffbf 100%),url('/artwork/disc-tray/environment/environment-wide.webp');
-  background-size:100% 100%,cover;
-  background-position:center top;
+  background-image:url('/artwork/disc-tray/accents/chrome-orbit.webp'),url('/artwork/disc-tray/accents/aero-spine.webp'),url('/artwork/disc-tray/accents/liquid-comma.webp'),url('/artwork/disc-tray/accents/chrome-orbit.webp'),linear-gradient(180deg,#d6ebff0a,#b8d9f03d),url('/artwork/disc-tray/environment/environment-wide.webp');
+  background-size:440px,530px,470px,160px,100% 100%,cover;
+  background-position:left -180px top 230px,right -170px top 610px,left -130px bottom 10px,right 10px top 190px,center,center top;
   background-repeat:no-repeat;
+}
+/* The metal rim is a hollow mask, so no opaque backing cancels the frosted face. */
+.app-surface[data-artwork=orbital-disc] .glass-shell { background:none; }
+.app-surface[data-artwork=orbital-disc] .glass-shell::after {
+  content:""; position:absolute; inset:0; padding:6px; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(140deg,#fff 0%,#c0d0e3 18%,#7898b7 27%,#f8fcff 29%,#aac2dc 66%,#f7fcff 87%,#7e9dbb);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+}
+.app-surface[data-artwork=orbital-disc] :is(.shell-body,.app-header,.about-index,.demo-notice,.release-context,.about-boundary,.app-footer) {
+  background-color:var(--atmosphere-glass);
+  -webkit-backdrop-filter:blur(8px) saturate(125%);
+  backdrop-filter:blur(8px) saturate(125%);
 }
 [data-artwork=orbital-disc] .brand,
 [data-artwork=orbital-disc] .task-heading h1,
@@ -26,37 +42,44 @@
 [data-artwork=orbital-disc] .about-intro h1 { font-size:clamp(28px,3.5vw,44px); line-height:1.25; letter-spacing:-.025em; max-width:22ch; }
 [data-artwork=orbital-disc] .section-line h2 { font-size:14px; letter-spacing:-.015em; }
 [data-artwork=orbital-disc] .disc-tray.is-opening .tray-upper {
-  background-image:linear-gradient(90deg,#f7fbff 0%,#f7fbff 43%,#f7fbffdd 57%,#f7fbff26 100%),url('/artwork/disc-tray/environment/environment-wide.webp');
-  background-position:center;
-  background-size:cover;
+  background-image:none;
 }
 [data-artwork=orbital-disc] .disc-tray.is-working .task-heading h1 { font-size:28px; max-width:26ch; }
-[data-artwork=orbital-disc] .app-header { background-color:#f7fbfff2; }
-[data-artwork=orbital-disc] .demo-notice,
-[data-artwork=orbital-disc] .release-context,
-[data-artwork=orbital-disc] .about-boundary,
-[data-artwork=orbital-disc] .app-footer { background-color:#f3f8fff2; }
 [data-artwork=orbital-disc] .release-context { padding:12px 16px; border-radius:12px; }
 [data-artwork=orbital-disc] .about-boundary { padding:16px; border-radius:12px; }
 [data-artwork=orbital-disc] .app-footer { padding:20px; border-radius:16px; }
 [data-artwork=orbital-disc] .about-intro {
   padding:32px 34% 32px 28px;
   border-radius:26px;
-  background:#f7fbff url('/artwork/disc-tray/environment/chrome-detail.webp') right center/32% 100% no-repeat;
+  background:var(--atmosphere-glass) url('/artwork/disc-tray/environment/chrome-detail.webp') right center/32% 100% no-repeat;
 }
 @media(max-width:1023px) {
   [data-artwork=orbital-disc] .task-heading h1 { font-size:32px; }
 }
 @media(max-width:767px) {
-  [data-artwork=orbital-disc] { background-image:linear-gradient(180deg,#f1f8ff22,#edf5ff99),url('/artwork/disc-tray/environment/environment-mobile.webp'); background-size:100% 100%,cover; }
-  [data-artwork=orbital-disc] .disc-tray.is-opening .tray-command { background:#f7fbfff5; }
+  [data-artwork=orbital-disc] {
+    background-image:url('/artwork/disc-tray/accents/chrome-orbit.webp'),url('/artwork/disc-tray/accents/liquid-comma.webp'),url('/artwork/disc-tray/accents/aero-spine.webp'),linear-gradient(180deg,#c8e3ff0a,#b8d9f03d),url('/artwork/disc-tray/environment/environment-mobile.webp');
+    background-size:310px,340px,330px,100% 100%,cover;
+    background-position:left -170px top 310px,right -190px top 830px,left -120px bottom 50px,center,center top;
+  }
+  [data-artwork=orbital-disc] .disc-tray.is-opening .tray-command { background:var(--atmosphere-glass); -webkit-backdrop-filter:blur(8px) saturate(125%); backdrop-filter:blur(8px) saturate(125%); }
   [data-artwork=orbital-disc] .disc-tray.is-opening .tray-upper { background:none; }
+  .app-surface[data-artwork=orbital-disc] .glass-shell::after { padding:4px; }
+  .app-surface[data-artwork=orbital-disc] .disc-tray.is-opening > .glass-shell:first-child::after { display:none; }
   [data-artwork=orbital-disc] .task-heading h1 { font-size:clamp(25px,5.8vw,36px); }
-  [data-artwork=orbital-disc] .about-intro { padding:24px; background:#f7fbfff5; }
+  [data-artwork=orbital-disc] .about-intro { padding:24px; background:var(--atmosphere-glass); }
   [data-artwork=orbital-disc] .about-intro h1 { font-size:26px; }
 }
+@media(prefers-reduced-transparency:reduce) {
+  [data-artwork=orbital-disc] { --atmosphere-glass:var(--surface); }
+  [data-artwork=orbital-disc] .about-intro { background-image:none; }
+  [data-artwork=orbital-disc] .disc-tray.is-opening .tray-command { -webkit-backdrop-filter:none; backdrop-filter:none; }
+}
 @media(forced-colors:active) {
+  [data-artwork=orbital-disc] { --atmosphere-glass:Canvas; }
   [data-artwork=orbital-disc],
   [data-artwork=orbital-disc] .disc-tray.is-opening .tray-upper,
   [data-artwork=orbital-disc] .about-intro { background:Canvas; }
+  .app-surface[data-artwork=orbital-disc] .glass-shell::after { display:none; }
+  [data-artwork=orbital-disc] .disc-tray.is-opening .tray-command { background:Canvas; -webkit-backdrop-filter:none; backdrop-filter:none; }
 }

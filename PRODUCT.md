@@ -20,5 +20,7 @@ The user subsequently approved generated background artwork and more distinctive
 
 The user then approved adapting supplied liquid glass across all interactive UI and existing routes. Native controls retain their semantics and labels; decorative tint/refraction/specular layers, pointer-positioned reflections and frosted reading surfaces extend the shared material. Existing palette, typography roles, background assets, centered hover-only disc, real/demo truth and stage gates remain. No perpetual background animation, dock demo, external demo links or new graphics dependency is introduced.
 
+The user then requested a denser Y2K background and partially transparent cards for the selected demo. Original static chrome orbital stars, liquid commas/droplets and swept forms now support the existing interactive disc. Hollow enclosure rims and approximately74% frosted faces reveal the underlying environment while preserving protected reading contrast and opaque accessibility fallbacks. These are local 3D exports, not additional Higgsfield generations or copied reference assets. This extension remains scoped to the selected Orbital Disc demo.
+
 ## Evidence
 See docs/stage-4-design-plan.md, docs/stage-5-implementation-plan.md, and docs/stage-8-backend.md. Demonstration fixtures must be persistently labeled and cannot replace a failing real API. Similarity is not enjoyment probability. Browser tests and subjective design judgments are not user research.

@@ -2,7 +2,7 @@ import {chromium,expect} from '@playwright/test';
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const browser=await chromium.launch({channel:process.env.CI?undefined:'chrome'});
-const output='docs/evidence/stage-9-site-liquid-glass';
+const output='docs/evidence/'+(process.argv.includes('--chrome-atmosphere')?'stage-9-chrome-atmosphere':'stage-9-site-liquid-glass');
 const evidence={observed_at:new Date().toISOString(),browser:browser.version(),data:'Demonstration fixtures only',captures:[]};
 await mkdir(output,{recursive:true});
 try {

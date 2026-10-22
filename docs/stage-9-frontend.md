@@ -1,5 +1,15 @@
 # Stage 9: five app structures, awaiting selection
 
+## Chrome field and translucent trays
+
+The user requested more Y2K background material and less opaque cards. The selected Orbital Disc demo now composes four cropped chrome accents from three original reusable sculptures on desktop, with three placements on mobile. A rounded orbital star, liquid comma/droplets and swept chrome form share physically shaded silver-blue materials. They support the existing disc rather than adding another moving focal object. Other comparisons keep their prior environments and materials.
+
+The old chrome frame gradient filled the entire area behind each card, hiding any scenery even when its inner face was translucent. The rim now uses a hollow CSS mask; approximately74% frosted faces expose the global scene through the center. The duplicated opaque hero background was removed, the white page wash reduced, and secondary text darkened. The minimum contrast calculation over an ideal black underlay is4.58:1 for the small cobalt text and5.09:1 for secondary text; this is an analytical bound for these flat reading faces, not a claim of physical-device or all-frame accessibility verification. Reduced transparency makes faces opaque, forced colors remove the images/rims, and absent images leave the ice background and working controls.
+
+Higgsfield reported0 image credits; no generation, trial, subscription or purchase was submitted. `scripts/render-chrome-accents.mjs` uses the existing Three.js installation offline, exporting three2048px transparent PNG masters and three960px WebPs. The runtime images total154,826 bytes. Its alpha/byte assertions and `docs/art-direction/chrome-accents.json` retain source hashes, dimensions, provenance and output hashes. Reference images supply mood only. No new runtime dependency, live 3D scene, animation loop, interaction, backend/model change, Stage10 or deployment is introduced.
+
+Final local checks, captures and fresh visual review are recorded separately under `docs/evidence/stage-9-chrome-atmosphere-*`. Prior local and remote results below are historical checkpoints and do not establish the current remote outcome. Safari, physical devices, screen readers, FPS, battery and retention remain unverified.
+
 ## Shared liquid glass
 
 The user approved adapting the supplied GlassEffect throughout the website. Shared buttons, native search/select fields, links/navigation, native summaries, prototype pickers and reading enclosures now use a unified frosted/translucent material across all existing routes. `components/ui/liquid-glass.tsx` contributes three decorative button layers, one global SVG displacement filter and one delegated mouse handler. Native elements continue to own actions, keyboard behavior, labels and focus; popup option menus remain browser controlled. The pasted demo dock, clickable images, unrelated external links, moving wallpaper and hover-padding changes were omitted.

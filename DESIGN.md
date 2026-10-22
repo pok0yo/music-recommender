@@ -7,6 +7,8 @@ colors:
   ink: "#173250"
   primary: "#153ea8"
   muted: "#465f7b"
+  orbital-muted: "#28435f"
+  atmosphere-glass: "#f1f8ffbd"
   control: "#6b8099"
   rule: "#b9cbe1"
   tint: "#eaf1fc"
@@ -141,6 +143,11 @@ components:
     textColor: "{colors.ink}"
     rounded: "{rounded.field}"
     padding: "20px"
+  orbital-reading-panel:
+    backgroundColor: "{colors.atmosphere-glass}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.inner}"
+    padding: "28px"
   demo-notice:
     backgroundColor: "{colors.tint}"
     textColor: "{colors.ink}"
@@ -158,14 +165,14 @@ The approved Y2K Futurism / Soft Club world uses icy-blue acrylic enclosures, si
 
 This records the implemented October 21 Stage 9 comparison, merging the prior provisional system. Disc Tray is the selected body; final hero artwork remains unselected. The shared material world supersedes Stage 4's separate typography/theme directions; those remain historical evidence. Body selection does not authorize production promotion, Stage 10 or deployment; retain v1–v5 and comparison history after selection.
 
-The subsequent Disc Study exploration settles the aesthetic preference on incumbent v2 and the body choice on Disc Tray. Gatefold, Disc Tray and Liner Notes remain available for comparison. The four-option artwork comparison lives only in working Disc Tray demos at `/prototypes/disc-tray/artwork/{slug}`; the picker changes artwork while preserving discovery state. The user subsequently authorized a larger interactive 3D Orbital Disc exploration, replacing only that option's circular raster enclosure. The other three options retain their generated originals, and the original five previews and three body-comparison routes retain flat placeholders. The latest user adjustment vertically centers the model in the upper tray and removes its Pause/Resume control; rotation, tilt and shine now respond only during mouse hover, with a still idle pose. The subsequent approved atmosphere refinement adds one original Higgsfield environment and locally served Michroma display lettering only to the selected Orbital Disc Discover/working/About route. It extends the pinned world without changing the other artwork or body comparisons. The latest approved shared liquid-glass extension applies reflective controls and frosted enclosures throughout existing routes while preserving palette, typography, layouts, scoped atmosphere and the centered hover-only disc. This remains a reviewable Stage 9 iteration, not final artwork acceptance or production promotion.
+The subsequent Disc Study exploration settles the aesthetic preference on incumbent v2 and the body choice on Disc Tray. Gatefold, Disc Tray and Liner Notes remain available for comparison. The four-option artwork comparison lives only in working Disc Tray demos at `/prototypes/disc-tray/artwork/{slug}`; the picker changes artwork while preserving discovery state. The user subsequently authorized a larger interactive 3D Orbital Disc exploration, replacing only that option's circular raster enclosure. The other three options retain their generated originals, and the original five previews and three body-comparison routes retain flat placeholders. The latest user adjustment vertically centers the model in the upper tray and removes its Pause/Resume control; rotation, tilt and shine now respond only during mouse hover, with a still idle pose. The subsequent approved atmosphere refinement adds one original Higgsfield environment and locally served Michroma display lettering only to the selected Orbital Disc Discover/working/About route. It extends the pinned world without changing the other artwork or body comparisons. The latest approved shared liquid-glass extension applies reflective controls and frosted enclosures throughout existing routes while preserving palette, typography, layouts, scoped atmosphere and the centered hover-only disc. The subsequent approved chrome-field extension adds three original local static sculptures, hollow enclosure rims and more translucent reading faces only to the selected Orbital route. It preserves this world, the shared-glass baseline elsewhere and all stage gates. This remains a reviewable Stage 9 iteration, not final artwork acceptance or production promotion.
 
 **Key Characteristics:**
 - Five distinct app structures with shared Manrope base typography, content and behavior; the selected Orbital demo alone adds Michroma short display lettering.
-- Sculpted enclosure lips around near-opaque reading fields.
+- Sculpted enclosure lips around pale reading fields; the selected Orbital route uses hollow rims and approximately 74% frosted faces.
 - Shared translucent liquid-glass controls, cobalt primary faces and pale frosted reading planes; pointer-lit decoration remains behind labels.
 - Flat CSS heroes in original comparisons; three local raster artwork options and one locally authored 3D Orbital Disc with a transparent static fallback in the authorized Disc Tray demos.
-- One generated environment source supplies static responsive backgrounds only in the selected Orbital demo; pale reading planes protect the task.
+- One generated environment source and three original local static chrome sculptures compose the selected Orbital background; protected frosted reading planes preserve the task.
 - Native controls, visible keyboard focus and task-first mobile flow.
 - Persistent demonstration labels and an explicit real-data boundary.
 
@@ -178,13 +185,13 @@ Cool pearl and ice-blue surfaces support dark blue reading text and cobalt actio
 
 ### Neutral
 - **Ice canvas / Pearl surface:** ground token and solid controls or displays. The baseline page ground is a cool three-stop gradient; only the selected Orbital demo adds the scoped environment treatment below.
-- **Deep blue ink / Secondary blue ink:** primary reading text and supporting metadata.
+- **Deep blue ink / Secondary blue ink:** primary reading text and supporting metadata. The scoped orbital-muted token darkens secondary text only in the selected Orbital demo.
 - **Field edge / Divider / Inset:** strong control boundaries, quiet separators and evidence or demonstration backgrounds.
-- **Reading field / Header:** pale 90% frosted enclosure interiors and translucent product navigation, with opaque reduced-transparency fallbacks.
+- **Reading field / Header:** pale near-opaque shared enclosure interiors and translucent product navigation. Only the selected Orbital demo uses atmosphere-glass for approximately 74% frosted faces; reduced transparency restores opaque surfaces.
 - **Hero v1–v5:** flat reservations mapped in Layout.
 - **Notice / Problem pairs:** limited-result and failure messages with explanatory text; color alone never carries state.
 
-**The Reading Field Rule.** Keep reading regions pale and near-opaque (shared glass uses `#f3f9ffe6`); text must never depend on artwork or distorted decoration for contrast.
+**The Reading Field Rule.** Keep shared reading regions pale and near-opaque; only the selected Orbital route uses the atmosphere-glass face with darker orbital-muted supporting text. Text must never depend on artwork or distorted decoration for contrast, and opaque preference fallbacks remain available.
 
 ## Typography
 
@@ -262,9 +269,13 @@ The local Three.js 0.186.1 scene uses actual annular front/back faces, a thin ou
 
 ### Selected Orbital atmosphere
 
-Only the selected `[data-artwork=orbital-disc]` Discover, working/results and About surfaces use `v2/atmosphere.css`. One Higgsfield Nano Banana 2.1 generation (job `1f71568c-fa71-414d-9401-dbee5900ce09`) supplies a retained 2752×1536 master plus three responsive WebP crops: 1920×1080 page/hero environment (93,274 bytes), 720×1280 narrow background (83,528 bytes) and 640×640 About detail (41,724 bytes). These are three derivatives of one generated image, not three independent artworks. The original is retained for provenance and is not loaded by the interface. Prompts, rationale, rejected unsubmitted proposals and actual generation parameters live in `docs/art-direction/disc-tray-environment-request.json`; hashes and crop roles live in `docs/art-direction/disc-tray-environment-assets.json`. No transparent accent was generated and no moodboard/reference pixels are shipped.
+Only the selected `[data-artwork=orbital-disc]` Discover, working/results and About surfaces use `v2/atmosphere.css`. One Higgsfield Nano Banana 2.1 generation (job `1f71568c-fa71-414d-9401-dbee5900ce09`) supplies a retained 2752×1536 master plus three responsive WebP crops: 1920×1080 page/hero environment (93,274 bytes), 720×1280 narrow background (83,528 bytes) and 640×640 About detail (41,724 bytes). These are three derivatives of one generated image, not three independent artworks. The original is retained for provenance and is not loaded by the interface. Prompts, rationale, rejected unsubmitted proposals and actual generation parameters live in `docs/art-direction/disc-tray-environment-request.json`; hashes and crop roles live in `docs/art-direction/disc-tray-environment-assets.json`. No transparent accent was generated by Higgsfield and no moodboard/reference pixels are shipped. The later local chrome exports below are separate authored assets.
 
-The page uses a static cover image over `#daeaf5`, with a pale vertical overlay. The opening upper panel repeats the wide environment behind a near-white-to-transparent left-to-right reading mask; the left 43% remains `#f7fbff`. At 767px and below, the page uses the narrow crop, the upper panel image is removed and the search command receives a `#f7fbfff5` plane. About contains the square detail in the right 32% of its introduction, with text padding reserving 34%; mobile replaces that detail with a pale reading field. Header, demo notice, release context, About boundary and footer receive near-opaque pale planes; image detail never substitutes for text contrast. Working lists and explanatory paragraphs keep their existing calm reading surfaces.
+The current page composes four static chrome placements over the wide environment and a light vertical wash on an ice fallback. Three locally authored physical chrome sculptures supply these placements: chrome-orbit is reused twice on desktop, alongside liquid-comma and aero-spine. Each has a transparent 2048px PNG master and a 960px WebP; the three runtime files total 154,826 bytes. At 767px and below, three placements use a separate crop/size composition over the narrow environment. Provenance, dimensions, alpha coverage, byte counts and hashes are recorded in `docs/art-direction/chrome-accents.json`; the existing Three.js installation is used only for these offline exports. No new Higgsfield generation was submitted (the recorded balance was 0 image credits), and no additional runtime scene, dependency or animation was added.
+
+The selected opening upper panel no longer repeats the environment or carries an opaque gradient backing. The global field remains visible through atmosphere-glass reading faces, with orbital-muted supporting text; the selected face filter is 8px blur/125% saturation. Header, reading shells, contents index, demo notice, release context, About boundary and footer share that face. About retains the square detail in the right 32% of its introduction with 34% text reservation; mobile removes the detail. At mobile widths the opening command has its own frosted face, while the opening wrapper and upper panel retain display:contents and no enclosing rim around the free-standing hero.
+
+The earlier near-white opening mask and near-opaque selected planes describe the superseded atmosphere checkpoint, not the current selected material. The shared glass recipe and other comparison routes remain unchanged. The current `docs/evidence/stage-9-chrome-atmosphere-captures.json` records 24 captures with file hashes checked in this documentation pass; the final 38-test local Chrome run passes. The fresh visual/source review found the material promises met; its sole direction-provenance finding was resolved under the local-extension rule. Hash verification is not rendered visual review. Do not reuse earlier passing checks or capture counts as evidence of this extension.
 
 Images are decorative local CSS backgrounds: no fixed attachment, added animation, remote runtime image request, control or factual content. Forced colors replaces the page, upper-panel and About-intro imagery with `Canvas`; missing images leave pale fallback surfaces. Preserve the centered hover-only 3D disc as a separate authored scene and keep the other three artwork routes and original comparisons unchanged.
 
@@ -272,7 +283,7 @@ Images are decorative local CSS backgrounds: no fixed attachment, added animatio
 
 ## Elevation & Depth
 
-Narrow silver-blue gradient lips, inset highlights and diffuse shadows frame pale frosted reading interiors. The shared glass override uses `#f3f9ffe6` with 14px blur/130% saturation for headers, reading shells and contents indexes; ordinary controls use 10px blur/140% saturation. The chrome lip remains 6px desktop/4px mobile. Original comparison hero fills remain flat, with the scoped raster and authored 3D artwork-demo exceptions above. Translucent icy button faces and strongly tinted cobalt primaries now supersede the original opaque button recipe; static gloss and conic highlights remain still at idle.
+Narrow silver-blue gradient lips, inset highlights and diffuse shadows frame pale frosted reading interiors. The shared glass override uses `#f3f9ffe6` with 14px blur/130% saturation for headers, reading shells and contents indexes; ordinary controls use 10px blur/140% saturation. The chrome lip remains 6px desktop/4px mobile. Only the selected Orbital route removes the frame backing and draws that lip as a hollow masked pseudo-element, allowing its atmosphere-glass face and 8px blur/125% saturation to reveal the background; the mobile opening display:contents wrapper disables that pseudo-element so no rim surrounds the free-standing hero. Original comparison hero fills remain flat, with the scoped raster and authored 3D artwork-demo exceptions above. Translucent icy button faces and strongly tinted cobalt primaries now supersede the original opaque button recipe; static gloss and conic highlights remain still at idle.
 
 ### Shadow Vocabulary
 - **Enclosure:** `0 16px 38px #28476724,inset 0 1px 1px #fff`.
@@ -324,7 +335,7 @@ Orbital geometry tests cover widths 320, 390, 550, 569, 768, 1024, 1253 and 1440
 
 ### Reading panels and track evidence
 
-Near-opaque panels contain ruled lists, tabular ranks and native disclosures with inset evidence fills. v4 uses denser title/artist columns. v5 puts evidence in a separate inspector: Details focuses its heading; return uses a connected originating trigger or the first current Details button. Counts do not imply enjoyment probability.
+Pale frosted panels contain ruled lists, tabular ranks and native disclosures with inset evidence fills. Shared routes retain near-opaque glass; the selected Orbital route uses the scoped atmosphere-glass face, darker supporting text and hollow rim described above. v4 uses denser title/artist columns. v5 puts evidence in a separate inspector: Details focuses its heading; return uses a connected originating trigger or the first current Details button. Counts do not imply enjoyment probability.
 
 ### Navigation and data state
 
@@ -336,18 +347,18 @@ Demonstration mode keeps its notice and illustrative-ordering language. Real fai
 
 ### Do:
 - **Do** retain all five structures, routes and comparison history until and after the user's structure selection.
-- **Do** keep Manrope base typography, near-opaque reading fields, cobalt actions and selective enclosure chrome; scope Michroma 400 branding/display roles and generated environment backgrounds to the selected Orbital demo.
+- **Do** keep Manrope base typography, protected pale reading fields, cobalt actions and selective enclosure chrome; scope Michroma 400, the generated environment, local chrome accents, atmosphere-glass faces and darker orbital-muted text to the selected Orbital demo.
 - **Do** apply shared liquid glass across native interactive surfaces, preserving labels and actions, stable hover bounds, calm frosted reading planes, static idle highlights and readable preference/failure fallbacks.
 - **Do** preserve original comparison flat fills and mappings, and the three retained raster demos' circular 1:1 slot. Give only Orbital Disc its approved vertically centered right-side overlap, same-scene transparent fallback, hover-only motion and task-first mobile order.
-- **Do** preserve native controls, visible focus, reduced-motion, reduced-transparency and forced-color treatments.
+- **Do** preserve native controls, visible focus, reduced-motion, reduced-transparency and forced-color treatments. Keep the selected mobile opening display:contents wrapper rim-free so the hero remains free-standing.
 - **Do** label demonstration fixtures persistently and keep real failures separate from demo data.
-- **Do** treat review/capture evidence as scoped evidence, not deployment, user research or full accessibility conformance. Current shared-glass evidence contains 24 verified captures across selected interaction/fallback states and representative comparison routes; preserve the distinction from the eight hero geometry-test widths and earlier atmosphere/centered/raised checkpoints.
+- **Do** treat review/capture evidence as scoped evidence, not deployment, user research or full accessibility conformance. The earlier shared-glass checkpoint contains 24 verified captures across selected interaction/fallback states and representative comparison routes; preserve the distinction from the eight hero geometry-test widths and earlier atmosphere/centered/raised checkpoints. The chrome-field extension has its own capture manifest; the final 38-test local Chrome suite passes. The fresh review and provenance-fix verdict are recorded in docs/evidence/stage-9-chrome-atmosphere-review.md at their actual scope.
 
 ### Don't:
-- **Don't** extend Orbital's 3D, environment or display-font exceptions to other routes, copy reference pixels, add remote runtime models/images or invent playback controls. Keep original comparisons artwork-free and body/control typography in Manrope; Orbital stays still except during mouse hover and has no Pause/Resume control.
+- **Don't** extend Orbital's 3D, environment, chrome accents, translucent face or display-font exceptions to other routes, copy reference pixels, add remote runtime models/images or invent playback controls. Keep original comparisons artwork-free and body/control typography in Manrope; Orbital stays still except during mouse hover and has no Pause/Resume control.
 - **Don't** replace structural differences with typography/theme swaps, reserve blank hero space in working screens or describe responsive environment crops as independent generated artworks.
 - **Don't** turn approved glass/chrome into a generic ban, distort labels/content, replace native actions with decorative divs or extend translucency into low-contrast reading regions.
 - **Don't** treat Disc Tray body selection or the artwork demos as authorization for production promotion, Stage 10 or deployment; final hero artwork remains unselected.
 - **Don't** inflate catalog, link, model-quality or personalisation claims beyond PRODUCT.md and frozen evidence.
 
-Not canonized: comparison-picker typography is tooling, not product identity; unverified hardware, screen-reader and deployed-performance behavior is not a system guarantee. The launcher/Impeccable engine were unavailable; this normalization used the documented direct-source fallback without global tooling installation. No additional defects were repaired by documentation.
+Not canonized: comparison-picker typography is tooling, not product identity; unverified hardware, screen-reader and deployed-performance behavior is not a system guarantee. The launcher/Impeccable engine were unavailable; this normalization used the documented direct-source fallback without global tooling installation. No additional defects were repaired by documentation. The final38-test local Chrome run passes, and the fresh visual/source review plus narrow provenance verdict are recorded in stage-9-chrome-atmosphere-review.md. Remote results remain separate and unresolved.

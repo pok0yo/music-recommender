@@ -1,0 +1,64 @@
+{
+  "observed_at": "2026-10-22T03:54:57.196Z",
+  "origin": "Original locally authored Three.js geometry and physical chrome materials, exported once to transparent PNG and WebP. Reference mood only; no reference pixels. Not AI-generated; no Higgsfield generation submitted. Balance checked:0 image credits.",
+  "renderer": "Three.js / Chrome 155.0.8059.85",
+  "license": "Original project geometry; Three.js MIT notice retained in public/third-party/three/LICENSE.",
+  "source": "scripts/render-chrome-accents.mjs",
+  "source_sha256": "b8a6cbc384434a2f650b2fe5a4bf88bb609a588976b3885c0cfe876d09e06e23",
+  "assets": [
+    {
+      "name": "chrome-orbit",
+      "master": {
+        "path": "public/artwork/disc-tray/accents/chrome-orbit.png",
+        "width": 2048,
+        "height": 2048,
+        "bytes": 802421,
+        "sha256": "f6a42d588c316e739a8ded9a03573ce124cfd4abdfcf669799a4cca6de0d4d08"
+      },
+      "runtime": {
+        "path": "public/artwork/disc-tray/accents/chrome-orbit.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 61974,
+        "sha256": "8c35e3cb81cbbfe10e91ab8d6776219a2464b5bc3cff30ecdfc2e289506fe3ff"
+      },
+      "visible_fraction": 0.08191442489624023
+    },
+    {
+      "name": "liquid-comma",
+      "master": {
+        "path": "public/artwork/disc-tray/accents/liquid-comma.png",
+        "width": 2048,
+        "height": 2048,
+        "bytes": 766343,
+        "sha256": "e5159bf3c4626269f4d3c55cf7192bdd854b419c57592b3f7b8c2470a0af643e"
+      },
+      "runtime": {
+        "path": "public/artwork/disc-tray/accents/liquid-comma.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 48626,
+        "sha256": "1bc240cc1a0c1ec6bc6d9f3b2571e6896c8b1acf80efbb15ed1537aa6431cf92"
+      },
+      "visible_fraction": 0.07179522514343262
+    },
+    {
+      "name": "aero-spine",
+      "master": {
+        "path": "public/artwork/disc-tray/accents/aero-spine.png",
+        "width": 2048,
+        "height": 2048,
+        "bytes": 677706,
+        "sha256": "6ad6172c01e4fbf46642f69bd9ca2327c7a095c99780d626106103611ca98e12"
+      },
+      "runtime": {
+        "path": "public/artwork/disc-tray/accents/aero-spine.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 44226,
+        "sha256": "e33ca0275c7d20b114c0ed7bfd32af5699e6a9d2372708e22a8b2fabd6c3c86c"
+      },
+      "visible_fraction": 0.05740189552307129
+    }
+  ]
+}

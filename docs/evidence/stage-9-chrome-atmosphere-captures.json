@@ -1,0 +1,231 @@
+{
+  "observed_at": "2026-10-22T04:07:32.540Z",
+  "browser": "155.0.8059.85",
+  "data": "Demonstration fixtures only",
+  "captures": [
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/desktop-entry.png",
+      "pageWidth": 1440,
+      "sha256": "071b4673c11e1971fa69a79204ea5d8e6de75f2d051267e679637405a9b731dd"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "hover",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/desktop-hover.png",
+      "pageWidth": 1440,
+      "sha256": "fc0f5554dddf20d86ffa30f7d9eeb18f1a9ac91639d90a6e97626990cf66705b"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "focus",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/desktop-focus.png",
+      "pageWidth": 1440,
+      "sha256": "a50f074d1bfb5b5c53847f143dd9601c6851063dbcac5d1c18bad444a7b8828a"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "6bc134da17cd6317a522614db55220865c2aa27a83f5c7a09e1ecefcb0b5ac7d"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "about",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/desktop-about.png",
+      "pageWidth": 1440,
+      "sha256": "ce4834c55d0104be73f3ae93004aef0a355e458bd1aeaec2050da1d6aa5bcc87"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "disabled",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/desktop-disabled.png",
+      "pageWidth": 1440,
+      "sha256": "db49239bf6b200a81016cf29509fe51611fb933786708a45f2f5ca207efda6b1"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "opaque",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/desktop-opaque.png",
+      "pageWidth": 1440,
+      "sha256": "6753554bab2ff97c00a30275d768d2f864a6491704c354f04897b1b17166ed11"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/mobile-entry.png",
+      "pageWidth": 390,
+      "sha256": "f16e545881c80c628d2e9c987cfb6e5709d284cc05a7d4e379f0b6e1f67f8f90"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "hover",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/mobile-hover.png",
+      "pageWidth": 390,
+      "sha256": "ba07394ae545b3862fad76e45b167d4426553e67e79cf0bcd812542fad245ec4"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "focus",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/mobile-focus.png",
+      "pageWidth": 390,
+      "sha256": "e22f54c2d623aec1ef292985c6122862f845bd792f288c1c47fd72dcc370ac12"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "6b3d14c813b7d9834efd78d0b9a9ca154ffefc3c1c02f08bbc9c5d79db2fb1dd"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "about",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/mobile-about.png",
+      "pageWidth": 390,
+      "sha256": "b001aee48f41862082aa7be848326d65b298e0b756f12815e5b2b99d649f5cae"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "disabled",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/mobile-disabled.png",
+      "pageWidth": 390,
+      "sha256": "75fc555665a5f70bc47ec89d17c9cfb9d4e28a8da10daa6cba40a040c8400905"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "opaque",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/mobile-opaque.png",
+      "pageWidth": 390,
+      "sha256": "5090e53cd91586cb3018b0892d0a94f7ee5c472a460d724930451e72032f331d"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "variant": 1,
+      "path": "docs/evidence/stage-9-chrome-atmosphere/v1-desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "d69ccbc02f077402b5d4d78fbd2b25ad8ba3baec943398bf4998a8f5a18074af"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "variant": 1,
+      "path": "docs/evidence/stage-9-chrome-atmosphere/v1-mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "9090b143451a5ebe1cbea88b21b34d92c3818b0e9943abfb631ef29d8b014281"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "variant": 3,
+      "path": "docs/evidence/stage-9-chrome-atmosphere/v3-desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "8e0d21c4d35f2902fc6e3b36eb903ab5e1bbab1302c5c8511b7b69a25b485548"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "variant": 3,
+      "path": "docs/evidence/stage-9-chrome-atmosphere/v3-mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "c417c84f47f7cd23dfef9344bbf948f284e9bb58ca795c0e5925adc71acd74f0"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "variant": 4,
+      "path": "docs/evidence/stage-9-chrome-atmosphere/v4-desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "d891eea5aca8724d6d4e4b4894a7634c3d01502528f3b4fc419b06fa22aec8c8"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "variant": 4,
+      "path": "docs/evidence/stage-9-chrome-atmosphere/v4-mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "9c3300537014294d037a78bec6cf8e91511cfaeaa25e185d84c91b517210c824"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "variant": 5,
+      "path": "docs/evidence/stage-9-chrome-atmosphere/v5-desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "3cb731bf3c56768e182a7b511e9a19abbc61e84bed7a93f0b057bfc63be2b49f"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "results",
+      "variant": 5,
+      "path": "docs/evidence/stage-9-chrome-atmosphere/v5-mobile-results.png",
+      "pageWidth": 390,
+      "sha256": "0c7f0836dc136b6284be35e4fe9cc4613b65ad69f0f5455bf2064f2b035a35aa"
+    },
+    {
+      "device": "user",
+      "width": 550,
+      "height": 766,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/user-entry.png",
+      "pageWidth": 550,
+      "sha256": "6cfa744b24466176a7f70e537fb7fc68ed48d6e170ce6b0ea0287280f0396e45"
+    },
+    {
+      "device": "live",
+      "width": 1305,
+      "height": 792,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-chrome-atmosphere/live-entry.png",
+      "pageWidth": 1305,
+      "sha256": "4c3321aee6a4ad69125e244378193e481c3c96e3c3069544611c6741f87c40a0"
+    }
+  ]
+}
