@@ -1,5 +1,11 @@
 # Stage 9: five app structures, awaiting selection
 
+## Hero rim layering correction
+
+The user's circled screenshot showed the tray rim painting over the disc orbit. The frosted face creates a stacking context, which trapped the model below the subsequently painted rim. Each selected glass shell now isolates its painting and puts the decorative rim at z-index:-1 behind its content. The model's position, size, scene, hover behavior and static fallback are unchanged.
+
+A new screenshot differential samples418 fully opaque model pixels where the orbit crosses the rim at1920px. Hiding the rim changed those pixels by as much as102 RGB levels before the fix; after the fix, the maximum change is0. This checks actual browser painting rather than merely asserting CSS values. Production build, typecheck and all39 local frontend tests pass. Fresh visual/source review returned ship. Final regression, eight current captures and review are recorded separately in `stage-9-hero-layering-checks.json`, `stage-9-hero-layering-captures.json` and `stage-9-hero-layering-review.md`. The1908px captures match the supplied screenshot width. Earlier composition checks below remain historical; remote CI is separate. No model, recommendation, backend, Stage10 or deployment change.
+
 ## Chrome field and translucent trays
 
 The user requested more Y2K background material and less opaque cards. The selected Orbital Disc demo now composes four cropped chrome accents from three original reusable sculptures on desktop, with three placements on mobile. A rounded orbital star, liquid comma/droplets and swept chrome form share physically shaded silver-blue materials. They support the existing disc rather than adding another moving focal object. Other comparisons keep their prior environments and materials.

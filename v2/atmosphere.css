@@ -9,9 +9,9 @@
   background-repeat:no-repeat;
 }
 /* The metal rim is a hollow mask, so no opaque backing cancels the frosted face. */
-.app-surface[data-artwork=orbital-disc] .glass-shell { background:none; }
+.app-surface[data-artwork=orbital-disc] .glass-shell { background:none; isolation:isolate; }
 .app-surface[data-artwork=orbital-disc] .glass-shell::after {
-  content:""; position:absolute; inset:0; padding:6px; border-radius:inherit; pointer-events:none;
+  content:""; position:absolute; inset:0; z-index:-1; padding:6px; border-radius:inherit; pointer-events:none;
   background:linear-gradient(140deg,#fff 0%,#c0d0e3 18%,#7898b7 27%,#f8fcff 29%,#aac2dc 66%,#f7fcff 87%,#7e9dbb);
   -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
   mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);

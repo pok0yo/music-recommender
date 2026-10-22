@@ -1,5 +1,6 @@
 import { test, expect, type Locator } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import sharp from 'sharp';
 
 const route = '/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry';
 const pixels = (canvas: Locator) => canvas.evaluate(async (e: HTMLCanvasElement) => {
@@ -42,6 +43,32 @@ test('floating 3D silhouette is centered in its tray, fits every width and leave
     }
     if([390,1440].includes(width)) expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations).toEqual([]);
   }
+});
+
+test('opaque model pixels paint above the tray rim at its right edge',async({page})=>{
+  await page.setViewportSize({width:1920,height:1100});
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.goto(route);
+  await expect(page.locator('.orbital-hero')).toHaveAttribute('data-model-ready','true');
+  const tray=(await page.locator('.disc-tray > .glass-shell').first().boundingBox())!;
+  const clip={x:Math.floor(tray.x+tray.width-6),y:Math.floor(tray.y),width:6,height:Math.ceil(tray.height)};
+  const points=await page.locator('.orbital-canvas canvas').evaluate((c:HTMLCanvasElement,clip)=>{
+    const gl=c.getContext('webgl2')!,rgba=new Uint8Array(c.width*c.height*4),rect=c.getBoundingClientRect(),points:number[]=[];
+    gl.readPixels(0,0,c.width,c.height,gl.RGBA,gl.UNSIGNED_BYTE,rgba);
+    for(let y=0;y<clip.height;y++)for(let x=0;x<clip.width;x++){
+      const px=Math.floor((clip.x+x+.5-rect.x)*c.width/rect.width),py=c.height-1-Math.floor((clip.y+y+.5-rect.y)*c.height/rect.height);
+      if(px>=0&&px<c.width&&py>=0&&py<c.height&&rgba[(py*c.width+px)*4+3]===255)points.push((y*clip.width+x)*4);
+    }
+    return points;
+  },clip);
+  expect(points.length).toBeGreaterThan(20);
+  const before=await sharp(await page.screenshot({clip})).ensureAlpha().raw().toBuffer();
+  await page.addStyleTag({content:'.app-surface[data-artwork=orbital-disc] .disc-tray > .glass-shell:first-child::after { visibility:hidden!important; }'});
+  const withoutRim=await sharp(await page.screenshot({clip})).ensureAlpha().raw().toBuffer();
+  let difference=0;
+  for(const offset of points)for(let channel=0;channel<3;channel++)difference=Math.max(difference,Math.abs(before[offset+channel]-withoutRim[offset+channel]));
+  test.info().annotations.push({type:'model-rim-pixels',description:JSON.stringify({opaquePixels:points.length,maxChannelDifference:difference})});
+  expect(difference).toBeLessThanOrEqual(2);
 });
 
 test('idle is still, hover responds and motion stops on leave or reduced motion', async ({ page }) => {

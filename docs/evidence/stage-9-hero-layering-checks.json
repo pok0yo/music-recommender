@@ -1,0 +1,65 @@
+{
+  "observed_at": "2026-10-22T06:03:52.819Z",
+  "build": "passed",
+  "typecheck": "passed",
+  "final_full_suite": {
+    "startTime": "2026-10-22T05:51:45.116Z",
+    "duration": 218393.223,
+    "expected": 39,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser": "155.0.8059.85",
+  "regression": {
+    "viewport": {
+      "width": 1920,
+      "height": 1100
+    },
+    "before_fix_max_channel_difference": 102,
+    "after_fix": {
+      "opaquePixels": 418,
+      "maxChannelDifference": 0
+    },
+    "scope": "Fully opaque WebGL model pixels at the right rim intersection; compares screenshot with rim visible versus hidden. Not a general all-frame rendering guarantee."
+  },
+  "captures": "stage-9-hero-layering-captures.json",
+  "capture_count": 8,
+  "capture_hashes_and_widths_verified": true,
+  "review": {
+    "disposition": "ship",
+    "scope": "Fresh visual/source review of the user screenshot, eight current captures, prior entry captures and bounded design contract; tests parent-run.",
+    "report": "stage-9-hero-layering-review.md"
+  },
+  "source_sha256": {
+    "v2/atmosphere.css": "a749c8b3ae7ed3dd7626b87f9911bd6a9d8c7f8b56e90a6caa76d8e7560292b1",
+    "tests/frontend/orbital-hero.spec.ts": "cf41ae9d20897807f711fe83c5d8290b2d457514fc4e2f4b27df5ca1810f947c",
+    "scripts/capture-site-liquid-glass.mjs": "1c733f9193967f9e1247ca7dbaf35993d8ffe05334a5f541ed9d73f2a082c41b",
+    ".impeccable/briefs/hero-layering.md": "3280de5464dbb61c7a4e8b5f732cc170c2742f1b21da45db7c276de8e1f4d138",
+    "DESIGN.md": "1d3cc6c0f51b3bf656875c32b7e4e31fab51f2f46bcad13e8bb44e4511923391",
+    ".impeccable/design.json": "4f534378f8dcbab28db64403629dd31a1d4ee9d11ab4ff3655acf76987c80abc",
+    "docs/stage-9-frontend.md": "53f252f8c96468f357c74675fa82c9bd5a55a7ba352b7856bb175e09f6784997",
+    "docs/evidence/stage-9-hero-layering-review.md": "ac2dbae9d491a50567565177b486bc8ce2a08cfd864307f06f8dd06a66df9be7"
+  },
+  "unchanged_source": [
+    "components/orbital-hero.tsx",
+    "components/orbital-scene.ts",
+    "v2/studies.css",
+    "v2/disc-tray/index.tsx",
+    "docs/art-direction/orbital-disc-model.json",
+    "public/artwork"
+  ],
+  "remote_ci_before_this_commit": {
+    "commit": "cecb2a796a7cd8d42378c69accf97161248baad3",
+    "url": "https://github.com/pok0yo/music-recommender/actions/runs/39721997859",
+    "status": "failure",
+    "cause": "Unproven; current local success is not remote success."
+  },
+  "scope": "Selected Orbital Disc frontend rim layering correction only. No geometry, position, asset, backend, recommendation, Stage10 or deployment change.",
+  "limitations": [
+    "No Safari, physical-device or screen-reader validation",
+    "No measured FPS, battery or performance-improvement claim",
+    "No detector-pass claim; direct source and craft-floor review",
+    "Prior remote CI failures remain separate and unresolved"
+  ]
+}

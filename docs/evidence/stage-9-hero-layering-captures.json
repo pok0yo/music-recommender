@@ -1,0 +1,79 @@
+{
+  "observed_at": "2026-10-22T05:56:54.496Z",
+  "browser": "155.0.8059.85",
+  "data": "Demonstration fixtures only",
+  "captures": [
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-hero-layering/desktop-entry.png",
+      "pageWidth": 1440,
+      "sha256": "3769c45c59214f92e63e8c48ceb279bb8b2296cf7c5c38b5b76c249f40c4b5b9"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "results",
+      "path": "docs/evidence/stage-9-hero-layering/desktop-results.png",
+      "pageWidth": 1440,
+      "sha256": "ad69ad707f622687764fe42eb84ba5a18621b08c48b87e2402701bb96601bfbe"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "about",
+      "path": "docs/evidence/stage-9-hero-layering/desktop-about.png",
+      "pageWidth": 1440,
+      "sha256": "18fbb7a5eff6753611eb151d2328c58573b793cf8d4cf2b388208fa2ba6633da"
+    },
+    {
+      "device": "desktop",
+      "width": 1440,
+      "height": 900,
+      "state": "opaque",
+      "path": "docs/evidence/stage-9-hero-layering/desktop-opaque.png",
+      "pageWidth": 1440,
+      "sha256": "da84eb0b1bcd29bce576e3a325a709aa0e2d7dd55bf9f88b2cb2a2d0e06780cc"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-hero-layering/mobile-entry.png",
+      "pageWidth": 390,
+      "sha256": "045fb6cc09bfebf95dacf4c2948268dbe3f9e1f5014325a1138a92f94632161f"
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "state": "about",
+      "path": "docs/evidence/stage-9-hero-layering/mobile-about.png",
+      "pageWidth": 390,
+      "sha256": "c6d542f1c938da4f7ac99ffce7099ab5536cd9f97da606e67ec7ef1b1fc311fe"
+    },
+    {
+      "device": "reference",
+      "width": 1908,
+      "height": 938,
+      "state": "entry",
+      "path": "docs/evidence/stage-9-hero-layering/reference-entry.png",
+      "pageWidth": 1908,
+      "sha256": "0a488325fd79faf98d807e563d8a754a29b595adf645cd2ba6a86d326cbfc171"
+    },
+    {
+      "device": "reference",
+      "width": 1908,
+      "height": 938,
+      "state": "model-hover",
+      "path": "docs/evidence/stage-9-hero-layering/reference-model-hover.png",
+      "pageWidth": 1908,
+      "sha256": "87f4477748ab75a8b1fb84b0210146c3ddfa5e57cadfa4b7a62a6fe70fc84912"
+    }
+  ]
+}
