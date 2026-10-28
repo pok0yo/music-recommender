@@ -1,0 +1,564 @@
+{
+  "observed_at": "2026-10-28T22:21:54.604578+00:00",
+  "complete": true,
+  "activated": false,
+  "model_changed": false,
+  "required_recordings": 5000,
+  "prepared_recordings": 4996,
+  "unavailable_ids": [
+    "a8036642-7192-472e-b5af-dc5aa849bdad"
+  ],
+  "duplicate_canonical_ids": {},
+  "excluded_canonical_aliases": [
+    {
+      "model_recording_id": "a7e741cf-08d6-48e5-9b2c-8b96c5e5d4d3",
+      "canonical_recording_id": "a7e741cf-08d6-48e5-9b2c-8b96c5e5d4d3",
+      "retained_model_recording_id": "ab2eed8d-df26-4a88-91b7-b1dde7d5c4e9",
+      "reason": "Verified canonical alias; not a distinct recording"
+    },
+    {
+      "model_recording_id": "6992b0e1-c864-4fee-be48-49f543b0c892",
+      "canonical_recording_id": "51844b04-dc28-439e-b66a-cf63044fa26f",
+      "retained_model_recording_id": "51844b04-dc28-439e-b66a-cf63044fa26f",
+      "reason": "Verified canonical alias; not a distinct recording"
+    },
+    {
+      "model_recording_id": "8d369bd3-83cb-4bde-9ef5-c8b9f9a59660",
+      "canonical_recording_id": "70e1f282-89e1-4af7-b21e-34d0215ab2de",
+      "retained_model_recording_id": "70e1f282-89e1-4af7-b21e-34d0215ab2de",
+      "reason": "Verified canonical alias; not a distinct recording"
+    }
+  ],
+  "verified_metadata_redirects": [
+    {
+      "model_recording_id": "036d66f8-7c39-4578-bf28-d56a16c4c8f3",
+      "canonical_recording_id": "0860dcf4-7762-41c8-945a-e636ca8f3471",
+      "verification_sha256": "8b2b94069408ff83b0cd397ee89adeafded171302ecf2f1f2bc738da350c5948"
+    },
+    {
+      "model_recording_id": "0cad800c-dcbd-4140-a7eb-01fcd1aa5677",
+      "canonical_recording_id": "7605704d-5395-485d-af33-ab6c6a93eda6",
+      "verification_sha256": "326f4fbf82fbd9b6c66378c07a94d75c94f446e37ce4bdc984146c4c66f708bf"
+    },
+    {
+      "model_recording_id": "0dc32ee1-cf6f-4fcb-847a-2b0f4e8b28bf",
+      "canonical_recording_id": "623d840a-a1fd-4172-87cd-8b7e60da7b13",
+      "verification_sha256": "0c9bd1ac5e2d3505673f3e794f81647db737e69d2d4f34a6ffc647a6f910e739"
+    },
+    {
+      "model_recording_id": "13409287-3c25-484f-9e32-9f2fdd25309b",
+      "canonical_recording_id": "0996a128-ffb1-448d-83f5-5832d505f4de",
+      "verification_sha256": "567ae8ef1aa2a5a3fda93426ab2ac1b969c98d30fcb22018301134f38a7edfd9"
+    },
+    {
+      "model_recording_id": "13b9145b-7ec4-4d2f-b207-d48c872ff1e9",
+      "canonical_recording_id": "677c6de3-d078-4cfd-80db-cb5e942a48fc",
+      "verification_sha256": "0219d53cd20d65483599c81e36862abecf71166f8bfb4e8b8772ba06568e0821"
+    },
+    {
+      "model_recording_id": "14101294-ed7d-4f1f-b30a-342dc1f5a008",
+      "canonical_recording_id": "acc32b80-5a77-4e2b-bd57-88edae1dc250",
+      "verification_sha256": "29b2eb180d03c4491ec3afa99cd550ce349806dcaaa4215bd4c3e0a122deaf1b"
+    },
+    {
+      "model_recording_id": "17df1685-7e42-49e1-8f1e-4346fc7cc9a7",
+      "canonical_recording_id": "92403d75-4e2b-4f44-8f73-58c4d1f6f495",
+      "verification_sha256": "43d3ff7f93ccf8bc44dbfc54f8152a090d8232d63cf7625467351b437eb7e9bd"
+    },
+    {
+      "model_recording_id": "1fbc7e1f-27e4-4067-be43-776d95306f4a",
+      "canonical_recording_id": "c2a62535-b12a-4685-964a-3c02c2a7980b",
+      "verification_sha256": "77347adb8195bd9f36123d63d2c6f17ce12df186f01b6ae2c3dbac4e5838fc04"
+    },
+    {
+      "model_recording_id": "237795ed-49b4-4908-8598-bcb245a6eb76",
+      "canonical_recording_id": "9ac1693a-8ef2-4249-8724-4cc389a514b3",
+      "verification_sha256": "9ce01d9eced4901200cf8aad1c78b4939d0dc97fed48dc7d216532fe33ea3000"
+    },
+    {
+      "model_recording_id": "2e5ccf69-44dd-4585-b09d-14a1a685f3d9",
+      "canonical_recording_id": "547fa55e-16c2-4dad-8de2-20d62f18396c",
+      "verification_sha256": "f59a8e02a94642d1ddc20aa42b90091eb43bb77253728b2a5f0fba5920175597"
+    },
+    {
+      "model_recording_id": "3cdcce48-6bde-4555-b33d-a57d1233603c",
+      "canonical_recording_id": "2f7a6735-2e09-4ce2-81e4-b148e6c39a55",
+      "verification_sha256": "9c10913f905d0923fc242cf817e4748ed992a45d48874d5890f91fa023c7cd94"
+    },
+    {
+      "model_recording_id": "3e020a68-2ac7-43e8-b11c-79d247ac8f53",
+      "canonical_recording_id": "bede15ec-08cb-4cf7-b6ed-c174e3fc4c31",
+      "verification_sha256": "30573d52395a8812f88efcbf1af18b726491f1e3187edf9602f87ca518ddaf5c"
+    },
+    {
+      "model_recording_id": "3e5dea37-9394-4c0f-b280-760ab055507d",
+      "canonical_recording_id": "6b25b62d-d84b-4a09-be63-9f08f050631f",
+      "verification_sha256": "722f7391996756753d0666f975bbd793dff375db76bc694c57c73d827ca3bdfe"
+    },
+    {
+      "model_recording_id": "3ea92d8b-f531-4ce4-9fcd-3658600688f1",
+      "canonical_recording_id": "1eab6541-5155-4717-9f36-2912ddb70dc2",
+      "verification_sha256": "58edfee2a84092fd8782b964523e42a6d4fe8a516e3cb9360000a772d58e24d0"
+    },
+    {
+      "model_recording_id": "40426eee-28a3-42dd-b94d-a04b286a2a19",
+      "canonical_recording_id": "0ffa4f0e-384e-45e7-8690-d07faeb5a6cc",
+      "verification_sha256": "1ba4a1deacbe3d72758937c04efa083b485ef41c11ecd25fa7aebd2e8178c7ec"
+    },
+    {
+      "model_recording_id": "40e90c56-b568-4a75-a446-7714b7b3bb6d",
+      "canonical_recording_id": "bb340bf7-c064-4eaa-ae6b-7eb83f73712b",
+      "verification_sha256": "27c10c509eb3b754d25b17d4202f03c18a438484b4089bf4f01d43b1e1535671"
+    },
+    {
+      "model_recording_id": "4d8ef47c-01fa-42cf-8eda-669c8d394a34",
+      "canonical_recording_id": "28059734-5fc5-4289-a2e0-fb6a29bcf7e0",
+      "verification_sha256": "380ad58c2cf2feb982c7eddac92faefb8d136e7d24f1f8b26bdca363e8fc2e7d"
+    },
+    {
+      "model_recording_id": "5160c410-04de-4c22-915d-a1b306e77eab",
+      "canonical_recording_id": "0edc1297-4f45-4363-bf6e-5fd478f268e3",
+      "verification_sha256": "07f047eca7a13ed45aa05531715f5b34d521521de2a85b9c29ae96f3f46caa1c"
+    },
+    {
+      "model_recording_id": "54693c7f-bdc3-4858-bc04-4378a9fbf803",
+      "canonical_recording_id": "a0f74461-945d-4ec8-8e3b-d577637868d6",
+      "verification_sha256": "19b224c7d38a25c431bad9a7cd93aa297bbe2e95e34d117caa3c7025518d560d"
+    },
+    {
+      "model_recording_id": "5a952743-5546-4452-a823-60e18d630b0f",
+      "canonical_recording_id": "26d9c73d-30e1-41cb-a40b-550bd6e8181e",
+      "verification_sha256": "eee050fceb605ff86d6dbfbfe51b86aa423c603aa05de5ef60316a68956f7fcd"
+    },
+    {
+      "model_recording_id": "6696c3da-4c74-4f42-a2ad-b2781d9e62b7",
+      "canonical_recording_id": "bad3076a-5693-4d44-a3c0-665ae4b80058",
+      "verification_sha256": "e704c6ee89a921d733240475d540b686ea8c42f123441c58ffbf7d0250fc8520"
+    },
+    {
+      "model_recording_id": "67bea8c1-ceee-407f-9686-48fa538a3111",
+      "canonical_recording_id": "da2e2fc5-ba6a-48c4-8994-0c2076069c28",
+      "verification_sha256": "5e1cafb65741939eae2fc93a4dd5528b298814e3a4289f7f4fdbcc874b802ec1"
+    },
+    {
+      "model_recording_id": "68b25a6f-4f9b-4faf-99a9-7437ba590c7e",
+      "canonical_recording_id": "1de149c9-1f2d-491e-b628-6dde34e13b62",
+      "verification_sha256": "6d7058bae978132984f8539213a7a2097146041f17a43ea2ad2b5f0414c9d444"
+    },
+    {
+      "model_recording_id": "6992b0e1-c864-4fee-be48-49f543b0c892",
+      "canonical_recording_id": "51844b04-dc28-439e-b66a-cf63044fa26f",
+      "verification_sha256": "93a28c8b27c97f90815695ca21e0e97a96ab6fefb4fe930830ce7bd16a4b1263"
+    },
+    {
+      "model_recording_id": "780da202-d1d3-4e5e-a7bf-28b96eabaf1a",
+      "canonical_recording_id": "23f9609d-dd63-46af-96be-de4934896ae1",
+      "verification_sha256": "139b355504b53231e4a02b75e5519f45202ddff1f768d9883bc1ebb393dd0325"
+    },
+    {
+      "model_recording_id": "79c7593e-04b8-4d53-b272-d30bc2ac1e19",
+      "canonical_recording_id": "9262c3f0-c45e-4334-a75b-2ddd1941635a",
+      "verification_sha256": "8fb4731d24a3c04f986e5642e75bbe378bea55f7257c784fcba4344241ffb10f"
+    },
+    {
+      "model_recording_id": "85cb5862-14b4-4cd5-9ef5-633e97302959",
+      "canonical_recording_id": "0bac86a1-d12d-4ebc-8264-ef6e66c03a58",
+      "verification_sha256": "4f89f5bd826861ab0a48505b468f97fc40fe64a0a664b584f5c9ac91e33fb3af"
+    },
+    {
+      "model_recording_id": "8696f8d2-fa18-4c61-98e4-3aa3f05fe68a",
+      "canonical_recording_id": "a8d2a577-b399-4e6a-ba2e-219cf71fcebc",
+      "verification_sha256": "d042d68f3cedbeb6b0cc85d2b3c5562165eb8a12804a88bacde0d44cf02eb5c6"
+    },
+    {
+      "model_recording_id": "8d369bd3-83cb-4bde-9ef5-c8b9f9a59660",
+      "canonical_recording_id": "70e1f282-89e1-4af7-b21e-34d0215ab2de",
+      "verification_sha256": "a9b9361b765ca8c978d328f6aeacbbc4af89ee1933890577f23c10ef8e5b1f2f"
+    },
+    {
+      "model_recording_id": "91d05966-fe39-458c-84ab-67d14968f926",
+      "canonical_recording_id": "d161e11c-007d-4eed-a06f-9981032962f4",
+      "verification_sha256": "5eb23523c03cf06b5e44245521658f9af2ab5cc8ac692a7f613882f136d52c79"
+    },
+    {
+      "model_recording_id": "9e442501-03e1-4eff-bd62-00da07a227ce",
+      "canonical_recording_id": "12675198-b4d8-4820-b118-7a89ee5a8aca",
+      "verification_sha256": "c00a05dfdc3f6215c6d19a7b19fca58cb53c114fb1679f60832d08e4af3370f7"
+    },
+    {
+      "model_recording_id": "a10e20cd-88a7-4c8b-9fb3-9b6e84f4c331",
+      "canonical_recording_id": "ee6d9954-eab4-4eb7-abda-673ce2812a8e",
+      "verification_sha256": "6bcc44ef1c03517688b12fa21972734d0390415ef61a7412553e461404a811ab"
+    },
+    {
+      "model_recording_id": "a816dc10-5168-4c45-900f-08b31ce9e5db",
+      "canonical_recording_id": "24d5084c-25e4-4c8a-8439-3358eea0d93e",
+      "verification_sha256": "bd34eef991b7f3ba82eac2efc3b7320a08d8866330c2119f110e563e996f2423"
+    },
+    {
+      "model_recording_id": "ac737199-1623-4a90-8dc8-44591f592c28",
+      "canonical_recording_id": "9aa0b3be-36b5-4eff-b7bc-08684893cef3",
+      "verification_sha256": "3037392e3bc66ab7994963e86e6d3f633ae9f1fa3701b04335daed0b0766de31"
+    },
+    {
+      "model_recording_id": "aecc6465-a3c6-42f3-8674-00ad728d461f",
+      "canonical_recording_id": "4d0706bf-ef5f-4cf2-ab5a-fead3e4187cf",
+      "verification_sha256": "2b3e86bba0446aa6244356ad20bc304b15b750d281043279c6b0b006eab24fbe"
+    },
+    {
+      "model_recording_id": "b001a09a-a0ba-427a-991f-578ede7152d4",
+      "canonical_recording_id": "48bbae0f-ea4a-4866-839c-087d1403e593",
+      "verification_sha256": "6e8a698cdaae9749067d4e0957461d326ebe5da2ea82fea8af3129559a20c970"
+    },
+    {
+      "model_recording_id": "b0fd76f4-fdf2-413d-b993-562b43f8a985",
+      "canonical_recording_id": "7e4acc1b-5053-4fe5-bb68-a5021dfbe933",
+      "verification_sha256": "af37963db85514b492b3a6fdd25b9d8c63207b1efdb38e2672f30dda53b68ef6"
+    },
+    {
+      "model_recording_id": "b25f351b-206f-4297-95bd-78459b704144",
+      "canonical_recording_id": "18ca3bc6-b646-4a6b-82bc-07584bd28e95",
+      "verification_sha256": "0a9b5cc77e222d2b8f667b47d487282cd2b45678057b61ef009462f97c48601b"
+    },
+    {
+      "model_recording_id": "b2eeaa0d-6470-4a84-a0ed-8c655d0bfcee",
+      "canonical_recording_id": "fc4deba2-0389-4734-b4c5-37ffba27093a",
+      "verification_sha256": "838faaedeebd15e165d55d05061a9f8821cc817c39ab3eee12ec52fc3d8c95ea"
+    },
+    {
+      "model_recording_id": "c72f3537-5259-45e2-9f74-bfa4f009442e",
+      "canonical_recording_id": "1e637150-ea03-453e-aaec-44c72efdca0b",
+      "verification_sha256": "c668ce798e8bb85d647e6e2c54496d21d00e2dc663748de7046dfedb8e070b07"
+    },
+    {
+      "model_recording_id": "c9a77d11-7e54-4d2e-8d9a-c842cadf4ea0",
+      "canonical_recording_id": "718723d8-9266-4062-94f2-fffafb872302",
+      "verification_sha256": "0dfd8abdb4bc4eff25a1d1ebb62f1d456b8baf44538198553b4e797654882c0e"
+    },
+    {
+      "model_recording_id": "ca154b13-2234-4601-822a-5ad40486ab2a",
+      "canonical_recording_id": "cb6cb42c-5803-45c8-b312-521cc5698c89",
+      "verification_sha256": "6dd9727c5a710d6d1f689bc7e34b2ee1e4251792fbf133929f00284676018ac9"
+    },
+    {
+      "model_recording_id": "ce2e2609-ec1b-4462-9ad5-87d1fa931119",
+      "canonical_recording_id": "9fb74c76-b691-4efb-8c48-735cf6457510",
+      "verification_sha256": "57509a5c574df9626d94439a6d825035b30f092b4a4d629ed2b340eb664c0d31"
+    },
+    {
+      "model_recording_id": "cfe0c59e-7618-411e-831a-72d390ac7993",
+      "canonical_recording_id": "b97422d3-cb80-4e61-af0a-36ea13489ef4",
+      "verification_sha256": "fbd739e0dd89099e1f846e38d008a5a0f12a4c86f81bedeecb80a062d135eb12"
+    },
+    {
+      "model_recording_id": "d11d62e9-dcb5-4632-b34f-453439a56f49",
+      "canonical_recording_id": "e158a977-e2b4-497e-9507-ef2a419b926a",
+      "verification_sha256": "3ce8a20c592d78a83d50ae22d38a2e0d30bbde3b955b3e84aa8977963b514408"
+    },
+    {
+      "model_recording_id": "d3599a2c-f05e-4f1d-bcb1-52ba1dba276e",
+      "canonical_recording_id": "c12788a9-212f-4a57-ab74-e25276e53102",
+      "verification_sha256": "59e41808f64da335b90479578a5c77ca8cf5e2e85f4bda35ece6610c544a3785"
+    },
+    {
+      "model_recording_id": "d3a309c2-0049-4260-99fd-41fd8b27bc35",
+      "canonical_recording_id": "0e3e1724-d020-4ccf-b707-ff9fc5e6ea72",
+      "verification_sha256": "5c34f28e8be17ebab6c68dac426eb2e62fe51b7af03afb3f00c2e16e718f7cf1"
+    },
+    {
+      "model_recording_id": "d5c2cdf3-2c03-49bc-a5a9-1fea4049f70b",
+      "canonical_recording_id": "7a4cc39c-ef58-42d2-b18f-01b7dccdf6a7",
+      "verification_sha256": "566d9010d911cb7fd92c3ba250c806f7dbca9bbe7018c7592e21aa4683b44210"
+    },
+    {
+      "model_recording_id": "dae76a66-5ea8-43c2-856d-cce2aa7fbe49",
+      "canonical_recording_id": "b9b4ddd4-ee57-4259-9853-e8de6cb27867",
+      "verification_sha256": "f3ad4ab795a86da67710fa85e4db64f7e5723dff6cb009ceb7059baa9a453789"
+    },
+    {
+      "model_recording_id": "dc908cc0-ba65-4ef2-8513-2dcf5977f786",
+      "canonical_recording_id": "c7e8fa32-99a7-4907-8acb-8e02f020eeaa",
+      "verification_sha256": "6445b88108bea24343a595041044bab18992ec6b1040ca46c793a45849a64037"
+    },
+    {
+      "model_recording_id": "e6d894a9-8593-4b90-966a-9ce743365c3e",
+      "canonical_recording_id": "ce4eb46b-1a27-4950-a02f-9499cab56c6b",
+      "verification_sha256": "796c4aa08e42ba1673cb6b92c92a416626c13bbf0f71f7d17b26220632561216"
+    },
+    {
+      "model_recording_id": "e96071bc-f250-4d81-9b3b-632659a9562b",
+      "canonical_recording_id": "2bff76c1-0b98-4643-9ed3-063511ef9383",
+      "verification_sha256": "ec0f067862a664654fc4cacc0b94c9b61ea7be59a2b830a1a9f95cabbceb1e23"
+    },
+    {
+      "model_recording_id": "e9d5f3a4-1941-4db9-accf-d2dd45bb4809",
+      "canonical_recording_id": "ec122a71-b507-4366-9815-18d92d16de04",
+      "verification_sha256": "834f7d203b16957451ec2f8e050540f7840290c7d817a1f8d708670360958260"
+    },
+    {
+      "model_recording_id": "ec8cde84-35f5-438e-aec0-42b3b016269f",
+      "canonical_recording_id": "60d0153a-c2df-4a36-aff4-f653b1c478a3",
+      "verification_sha256": "647e76d9966b8580be8681fe409116ff85b6362bb180cb61167c66612632f2e2"
+    },
+    {
+      "model_recording_id": "f5bbd229-d55d-4574-987b-a2dde84f55af",
+      "canonical_recording_id": "8734d051-9224-494d-8cca-68432a9d84cb",
+      "verification_sha256": "ec9219c7f82e44703645b5679384e809b9c179670928f46e0cdf774695dcff7e"
+    }
+  ],
+  "artifact_manifest_sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122",
+  "catalog_sha256": "4a6265e94da5a3b749e9a699596a2c620d7131023c2cc5805b13113e7a61f0ac",
+  "selection_sha256": "134fd818cae172e049522e042f907215c84433eb5cf8615c76d2608675e674ea",
+  "previous_release": {
+    "catalog_version": "catalog-v1-ef2fb83d56b9d320cadfa990d7cefb8ec24f6a309c194a5ff999aab1205354a3",
+    "content_sha256": "ef2fb83d56b9d320cadfa990d7cefb8ec24f6a309c194a5ff999aab1205354a3",
+    "data_mode": "real",
+    "model_manifest_sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122",
+    "recording_count": 215
+  },
+  "new_release": {
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+    "content_sha256": "1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+    "recording_count": 4996,
+    "model_manifest_sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122",
+    "data_mode": "real"
+  },
+  "original_artist_counts": {
+    "nate sib": {
+      "browsed_recordings": 47,
+      "model_supported_recordings": 22
+    },
+    "Tiffany Day": {
+      "browsed_recordings": 74,
+      "model_supported_recordings": 60
+    },
+    "che": {
+      "browsed_recordings": 229,
+      "model_supported_recordings": 85
+    },
+    "2hollis": {
+      "browsed_recordings": 138,
+      "model_supported_recordings": 65
+    },
+    "Lucy Bedroque": {
+      "browsed_recordings": 151,
+      "model_supported_recordings": 48
+    },
+    "beabadoobee": {
+      "browsed_recordings": 270,
+      "model_supported_recordings": 94
+    },
+    "Daniel Caesar": {
+      "browsed_recordings": 191,
+      "model_supported_recordings": 67
+    },
+    "Steve Lacy": {
+      "browsed_recordings": 125,
+      "model_supported_recordings": 76
+    },
+    "Bruno Mars": {
+      "browsed_recordings": 591,
+      "model_supported_recordings": 78
+    },
+    "GIVĒON": {
+      "browsed_recordings": 90,
+      "model_supported_recordings": 58
+    }
+  },
+  "original_artist_coverage": {
+    "nate sib": {
+      "seeds": 22,
+      "complete_ten": 22,
+      "complete_ten_share": 1.0,
+      "mean_results": 10.0,
+      "missing_metadata_positions": 0,
+      "model_short_lists": 0,
+      "distinct_rankings": 22
+    },
+    "Tiffany Day": {
+      "seeds": 60,
+      "complete_ten": 60,
+      "complete_ten_share": 1.0,
+      "mean_results": 10.0,
+      "missing_metadata_positions": 0,
+      "model_short_lists": 0,
+      "distinct_rankings": 60
+    },
+    "che": {
+      "seeds": 87,
+      "complete_ten": 77,
+      "complete_ten_share": 0.8850574712643678,
+      "mean_results": 9.632183908045977,
+      "missing_metadata_positions": 32,
+      "model_short_lists": 0,
+      "distinct_rankings": 87
+    },
+    "2hollis": {
+      "seeds": 65,
+      "complete_ten": 64,
+      "complete_ten_share": 0.9846153846153847,
+      "mean_results": 9.876923076923077,
+      "missing_metadata_positions": 8,
+      "model_short_lists": 0,
+      "distinct_rankings": 65
+    },
+    "Lucy Bedroque": {
+      "seeds": 48,
+      "complete_ten": 43,
+      "complete_ten_share": 0.8958333333333334,
+      "mean_results": 9.5625,
+      "missing_metadata_positions": 21,
+      "model_short_lists": 0,
+      "distinct_rankings": 48
+    },
+    "beabadoobee": {
+      "seeds": 94,
+      "complete_ten": 83,
+      "complete_ten_share": 0.8829787234042553,
+      "mean_results": 9.72340425531915,
+      "missing_metadata_positions": 26,
+      "model_short_lists": 0,
+      "distinct_rankings": 94
+    },
+    "Daniel Caesar": {
+      "seeds": 77,
+      "complete_ten": 73,
+      "complete_ten_share": 0.948051948051948,
+      "mean_results": 9.688311688311689,
+      "missing_metadata_positions": 24,
+      "model_short_lists": 0,
+      "distinct_rankings": 77
+    },
+    "Steve Lacy": {
+      "seeds": 76,
+      "complete_ten": 69,
+      "complete_ten_share": 0.9078947368421053,
+      "mean_results": 9.5,
+      "missing_metadata_positions": 38,
+      "model_short_lists": 0,
+      "distinct_rankings": 76
+    },
+    "Bruno Mars": {
+      "seeds": 79,
+      "complete_ten": 60,
+      "complete_ten_share": 0.759493670886076,
+      "mean_results": 8.69620253164557,
+      "missing_metadata_positions": 82,
+      "model_short_lists": 3,
+      "distinct_rankings": 78
+    },
+    "GIVĒON": {
+      "seeds": 59,
+      "complete_ten": 49,
+      "complete_ten_share": 0.8305084745762712,
+      "mean_results": 9.322033898305085,
+      "missing_metadata_positions": 40,
+      "model_short_lists": 0,
+      "distinct_rankings": 59
+    }
+  },
+  "before": {
+    "seeds": 215,
+    "complete_ten": 47,
+    "complete_ten_share": 0.2186046511627907,
+    "mean_results": 6.306976744186047,
+    "missing_metadata_positions": 794,
+    "model_short_lists": 0,
+    "distinct_rankings": 208
+  },
+  "existing_catalog_after": {
+    "seeds": 215,
+    "complete_ten": 215,
+    "complete_ten_share": 1.0,
+    "mean_results": 10.0,
+    "missing_metadata_positions": 0,
+    "model_short_lists": 0,
+    "distinct_rankings": 215
+  },
+  "after": {
+    "seeds": 4996,
+    "complete_ten": 3248,
+    "complete_ten_share": 0.6501200960768615,
+    "mean_results": 8.679543634907926,
+    "missing_metadata_positions": 6576,
+    "model_short_lists": 3,
+    "distinct_rankings": 4945
+  },
+  "journeys": [
+    {
+      "round": 1,
+      "coverage": {
+        "seeds": 32,
+        "complete_ten": 32,
+        "complete_ten_share": 1.0,
+        "mean_results": 10.0,
+        "missing_metadata_positions": 0,
+        "model_short_lists": 0,
+        "distinct_rankings": 32
+      }
+    },
+    {
+      "round": 2,
+      "coverage": {
+        "seeds": 205,
+        "complete_ten": 205,
+        "complete_ten_share": 1.0,
+        "mean_results": 10.0,
+        "missing_metadata_positions": 0,
+        "model_short_lists": 0,
+        "distinct_rankings": 205
+      }
+    },
+    {
+      "round": 3,
+      "coverage": {
+        "seeds": 638,
+        "complete_ten": 638,
+        "complete_ten_share": 1.0,
+        "mean_results": 10.0,
+        "missing_metadata_positions": 0,
+        "model_short_lists": 0,
+        "distinct_rankings": 638
+      }
+    },
+    {
+      "round": 4,
+      "coverage": {
+        "seeds": 1539,
+        "complete_ten": 1537,
+        "complete_ten_share": 0.9987004548408057,
+        "mean_results": 9.998050682261209,
+        "missing_metadata_positions": 3,
+        "model_short_lists": 0,
+        "distinct_rankings": 1539
+      }
+    },
+    {
+      "round": 5,
+      "coverage": {
+        "seeds": 2908,
+        "complete_ten": 2750,
+        "complete_ten_share": 0.9456671251719395,
+        "mean_results": 9.817400275103164,
+        "missing_metadata_positions": 531,
+        "model_short_lists": 0,
+        "distinct_rankings": 2907
+      }
+    }
+  ],
+  "budget": {
+    "requests": 463,
+    "reserved_bytes": 236618191,
+    "received_body_bytes": 18851800,
+    "download_cap_bytes": 268435456,
+    "disk_cap_bytes": 1073741824,
+    "disk_bytes": 131824851,
+    "accounting": "Bounded response bytes plus conservative per-attempt overhead, not packet-level metering"
+  },
+  "old_ledger_unchanged": true,
+  "limitations": [
+    "Coverage is not a new accuracy evaluation",
+    "New release remains inactive",
+    "Search metadata can lag live recording lookups; exact requested IDs required"
+  ]
+}

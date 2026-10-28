@@ -19,6 +19,12 @@ def normalized(value):
     return unicodedata.normalize("NFKC", value).casefold().strip()
 
 
+def search_text(row):
+    text=normalized(row['title']+' '+' '.join(c['name'] for c in row['artist_credits']))
+    folded=''.join(c for c in unicodedata.normalize('NFKD',text) if not unicodedata.combining(c))
+    return text if text==folded else text+' '+folded
+
+
 def content_hash(rows):
     return hashlib.sha256(json.dumps(rows, sort_keys=True, ensure_ascii=False,
         separators=(",", ":")).encode()).hexdigest()
@@ -78,38 +84,58 @@ class Catalog:
         return [self.track(row["payload"]) for row in rows]
 
 
-def import_catalog():
-    report_path = Path("docs/evidence/stage-8-catalog-preparation.json")
-    report = json.loads(report_path.read_text())
-    path = Path("data/processed/stage-8-catalog-v1/recordings.json")
-    assert report["complete"] and sha256(path) == report["catalog_sha256"]
-    rows = json.loads(path.read_text())
+def import_catalog(directory=Path("data/processed/stage-8-catalog-v1"), report_path=Path("docs/evidence/stage-8-catalog-preparation.json")):
+    directory, report_path = Path(directory), Path(report_path)
+    report = json.loads(report_path.read_text(encoding='utf-8'))
+    path = directory / "recordings.json"
+    if not report["complete"] or sha256(path) != report["catalog_sha256"]:
+        raise ValueError("Prepared catalog is incomplete or its checksum differs")
+    rows = json.loads(path.read_text(encoding='utf-8'))
     digest = content_hash(rows)
-    version = "catalog-v1-" + digest
+    version = report.get("new_release", {}).get("catalog_version", "catalog-v1-" + digest)
     release = dict(catalog_version=version, content_sha256=digest, recording_count=len(rows),
         model_manifest_sha256=report["artifact_manifest_sha256"], data_mode="real")
+    if "new_release" in report and report["new_release"] != release:
+        raise ValueError("Prepared release manifest differs")
     panel = json.loads(Path("docs/evidence/stage-6-support-audit-v2.json").read_text())["panel"]
     starters = {r["recording_mbid"] for r in panel if r["supported"]}
-    assert starters <= {row["recording_id"] for row in rows}
-    assert len({row["canonical_recording_id"] for row in rows}) == len(rows)
+    if not starters <= {row["recording_id"] for row in rows} or len({row["canonical_recording_id"] for row in rows}) != len(rows):
+        raise ValueError("Missing approved starter or duplicate canonical recording")
+    if len({row["recording_id"] for row in rows}) != len(rows):
+        raise ValueError("Duplicate model recording ID")
+    for row in rows:
+        Catalog.track(row)
+    from ml.serving_artifact import Artifact
+    trusted = json.loads(Path('docs/evidence/stage-7-decision.json').read_text())['evidence_sha256']['stage-7-artifact-manifest.json']
+    if release['model_manifest_sha256'] != trusted:
+        raise ValueError('Catalog is not tied to the frozen model')
+    artifact = Artifact('artifacts/stage-7-cf-v1', trusted)
+    if not {row['recording_id'] for row in rows} <= {value.decode() for value in artifact.arrays['ids']}:
+        raise ValueError('Catalog contains unsupported model recordings')
     connections = json.loads(Path("artifacts/local-postgres/connections.json").read_text())
     with psycopg.connect(connections["admin"]) as db:
         db.execute(Path("backend/schema.sql").read_text())
         existing = db.execute("SELECT content_sha256 FROM music_catalog.releases WHERE version=%s", (version,)).fetchone()
         if existing:
-            assert existing[0] == digest
+            if existing[0] != digest:
+                raise ValueError('Existing release differs; refusing overwrite')
         else:
             db.execute("INSERT INTO music_catalog.releases VALUES (%s,%s,%s,%s)",
                 (version, release["model_manifest_sha256"], digest, len(rows)))
             for row in rows:
                 Catalog.track(row)
-                search = normalized(row["title"] + " " + " ".join(c["name"] for c in row["artist_credits"]))
+                search = search_text(row)
                 db.execute("INSERT INTO music_catalog.recordings VALUES (%s,%s,%s,%s,%s)",
                     (version, row["recording_id"], Jsonb(row), search, row["recording_id"] in starters))
     Catalog(connections["reader"], release).check(full=True)
-    save(Path("data/processed/stage-8-catalog-v1/release.json"), release)
+    save(directory / "release.json", release)
     print(json.dumps(release))
 
 
 if __name__ == "__main__":
-    import_catalog()
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--directory',type=Path,default=Path('data/processed/stage-8-catalog-v1'))
+    parser.add_argument('--report',type=Path,default=Path('docs/evidence/stage-8-catalog-preparation.json'))
+    args=parser.parse_args()
+    import_catalog(args.directory,args.report)

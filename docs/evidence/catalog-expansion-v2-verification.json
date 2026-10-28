@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "activated": false,
+  "verified_source_rows": 4996,
+  "model_supported_rows": 4996,
+  "api_seed_queries": 315,
+  "limited_queries": 37,
+  "original_artist_searches": 10,
+  "metadata_omissions_and_ranks_preserved": true,
+  "model_manifest_sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122",
+  "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+  "limitations": [
+    "API snapshot verification, not a PostgreSQL import or active website switch",
+    "Not a new accuracy or human-usefulness study"
+  ]
+}
