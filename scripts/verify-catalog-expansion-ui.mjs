@@ -4,11 +4,13 @@ import {chromium} from '@playwright/test';
 
 // Inactive release: use responses produced by the real API's snapshot verifier.
 const cases=JSON.parse(await readFile('data/processed/catalog-expansion-v2/ui-cases.json','utf8'));
+const live=process.argv.includes('--live');
 const browser=await chromium.launch({channel:'chrome'}),samples=[],errors=[];
 try {
   const page=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'});
+  const responses=[];page.on('response',response=>{if(live&&response.url().startsWith('http://127.0.0.1:8000/'))responses.push(response);});
   page.on('pageerror',error=>errors.push(error.message));
-  await page.route('http://127.0.0.1:8000/**',async route=>{
+  if(!live)await page.route('http://127.0.0.1:8000/**',async route=>{
     const url=new URL(route.request().url());let body;
     if(url.pathname==='/v1/catalog/starters')body=cases.starters;
     else if(url.pathname==='/v1/catalog/search')body=cases.searches[url.searchParams.get('q')];
@@ -40,6 +42,7 @@ try {
   }
   assert(await canvas.evaluate(node=>node===document.querySelector('.orbital-canvas canvas')));
   assert.deepEqual(errors,[]);
-  await writeFile('docs/evidence/catalog-expansion-v2-ui.json',JSON.stringify({passed:true,activated:false,catalogVersion:cases.starters.meta.catalog_version,samples,errors,canvasRetained:true,scope:'Real-model pending API response replay in real-mode UI; active catalog unchanged',limitations:['Not a live PostgreSQL release activation','Physical-device and Safari checks not performed']},null,2)+'\n');
+  if(live){assert(responses.length>=10);for(const response of responses){assert.equal(response.status(),200);const body=await response.json();assert.equal(body.meta.catalog_version,cases.starters.meta.catalog_version);assert.equal(body.meta.data_mode,'real');}}
+  await writeFile(`docs/evidence/catalog-expansion-v2-${live?'activation-ui':'ui'}.json`,JSON.stringify({passed:true,activated:live,catalogVersion:cases.starters.meta.catalog_version,samples,errors,canvasRetained:true,scope:live?'Live real-mode website requests to the activated local PostgreSQL catalog':'Real-model pending API response replay in real-mode UI; active catalog unchanged',limitations:[...(live?[]:['Not a live PostgreSQL release activation']),'Physical-device and Safari checks not performed']},null,2)+'\n');
   console.log(JSON.stringify({passed:true,samples}));
 } finally {await browser.close();}

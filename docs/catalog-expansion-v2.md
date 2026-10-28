@@ -4,7 +4,7 @@
 
 On October 28, 2026 the user approved metadata-only expansion toward 5,000 model-supported recordings, centered on the original ten artists and their connections. Fresh limits are 256 MiB downloaded, 1 GiB additional disk, and no paid services. Original-artist journeys take priority over a universal 95% completeness claim. Recent releases remain nonessential. The trained model, rankings, UI, and initial 32 approved starters are preserved. Activation requires a separate go.
 
-The active release remains `data/processed/stage-8-catalog-v1/release.json`. Prepared data, raw response caches, model arrays and credentials remain ignored by Git.
+The user separately authorized activation on October 28, 2026. The active default is now `data/processed/catalog-expansion-v2/release.json`; v1 remains available for rollback. Prepared data, raw response caches, model arrays and credentials remain ignored by Git.
 
 ## Acquisition and selection
 
@@ -34,7 +34,7 @@ Preparation writes `recordings.json` and a content-addressed `release.json` to `
 
 The importer now accepts explicit preparation/report paths and preserves the original defaults. It validates the complete preparation, unique identities, the frozen model and recording eligibility before connecting to PostgreSQL. A single transaction inserts a new version without replacing existing rows.
 
-The following is the release procedure for the activation checkpoint, not an instruction to activate automatically:
+The following is the authorized release procedure, completed locally on October 28:
 
 ```powershell
 .venv/Scripts/python.exe -m backend.catalog --directory data/processed/catalog-expansion-v2 --report docs/evidence/catalog-expansion-v2.json
@@ -73,4 +73,21 @@ Validation passed: 16 backend tests, the existing 48 model/audit tests, all 4,99
 
 The selected 3D UI passed search, recommendation and reseeding checks with pending real-model response replay for newly added songs by nate sib, Tiffany Day and Daniel Caesar. It retained the same canvas and real-mode label. [UI verification](evidence/catalog-expansion-v2-ui.json). Reproduce that check after starting the frontend with `node scripts/verify-catalog-expansion-ui.mjs`; `backend.verify_catalog_expansion` creates its ignored response cases first. This does not activate the release or substitute demo results in the application.
 
-The new version has not been imported into PostgreSQL or selected by the active API. Those live release checks remain part of the explicit activation checkpoint. Physical-device and Safari validation are not included.
+The preparation/API-replay reports above describe the inactive checkpoint at their observation times. The later activation is recorded separately below. Physical-device and Safari validation are not included.
+
+## Local activation
+
+The transactional import completed with 4,996 v2 rows and 32 approved starters; the 215-row v1 release was retained and its full content hash verified. The API now defaults to the v2 release file, with `CATALOG_RELEASE` still available as an explicit override. Local browser origins `localhost:3000` and `127.0.0.1:3000` are allowed; no wildcard or credentialed CORS was introduced.
+
+`backend.verify_catalog_activation` verified every imported payload/search field, the complete catalog hash, the retained v1 hash and the request role's SELECT-only permissions. It ran 314 seed queries through the actual API with PostgreSQL, preserving model ranks, listener counts, missing-metadata counts and real-mode/version labels. Live HTTP checks covered all ten artists, unaccented Giveon search, six recommendation/reseed queries and invalid-input boundaries. [Activation evidence](evidence/catalog-expansion-v2-activation.json).
+
+`node scripts/verify-catalog-expansion-ui.mjs --live` verified the selected website against the actual local API without response interception: new songs by nate sib, Tiffany Day and Daniel Caesar were found, selected, recommended and reseeded while retaining the mounted 3D canvas. Every observed API response identified v2 and real mode. [Live UI evidence](evidence/catalog-expansion-v2-activation-ui.json). This is a local release, not a public deployment or a new accuracy evaluation.
+
+To repeat the database/live API verification while PostgreSQL and the API are running:
+
+```powershell
+.venv/Scripts/python.exe -m backend.verify_catalog_activation
+node scripts/verify-catalog-expansion-ui.mjs --live
+```
+
+Rollback remains the explicit `CATALOG_RELEASE` override described above. No model, downloaded metadata or prior database release must be deleted.

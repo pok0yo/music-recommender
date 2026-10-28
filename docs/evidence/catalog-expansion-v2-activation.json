@@ -1,0 +1,25 @@
+{
+  "verified_at": "2026-10-28T22:37:34.743047+00:00",
+  "activated": true,
+  "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+  "verified_postgres_records": 4996,
+  "approved_starters": 32,
+  "postgres_api_seed_queries": 314,
+  "live_artist_searches": 10,
+  "live_recommendation_queries": 6,
+  "ranks_support_and_omissions_verified": true,
+  "unaccented_search_verified": true,
+  "reader_privileges": {
+    "read": true,
+    "insert": false,
+    "update": false,
+    "delete": false
+  },
+  "rollback_catalog_verified": "catalog-v1-ef2fb83d56b9d320cadfa990d7cefb8ec24f6a309c194a5ff999aab1205354a3",
+  "previous_records": 215,
+  "model_manifest_sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122",
+  "limitations": [
+    "Local activation, not a public deployment",
+    "Not a new recommendation-quality evaluation"
+  ]
+}

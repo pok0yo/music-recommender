@@ -33,7 +33,7 @@ def create_app(catalog=None, artifact=None, release=None, origins=(), rate_limit
                 app.state.artifact = Artifact(os.getenv("MODEL_DIRECTORY", "artifacts/stage-7-cf-v1"),
                     os.getenv("MODEL_MANIFEST_SHA256", MODEL_SHA))
             if app.state.release is None:
-                app.state.release = json.loads(Path(os.getenv("CATALOG_RELEASE", "data/processed/stage-8-catalog-v1/release.json")).read_text())
+                app.state.release = json.loads(Path(os.getenv("CATALOG_RELEASE", "data/processed/catalog-expansion-v2/release.json")).read_text(encoding="utf-8"))
             if app.state.catalog is None:
                 dsn = os.getenv("DATABASE_URL")
                 if not dsn:
@@ -176,4 +176,4 @@ def failure(request, status, code, message, headers=None):
         request_id=request.state.request_id), headers={"X-Request-ID": request.state.request_id, **(headers or {})})
 
 
-app = create_app(origins=tuple(filter(None, os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(","))))
+app = create_app(origins=tuple(filter(None, os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000").split(","))))
