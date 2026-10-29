@@ -1,0 +1,147 @@
+{
+  "measured_at": "2026-10-29T05:23:38.045812+00:00",
+  "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+  "model_manifest_sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122",
+  "all_searchable": {
+    "seeds": 4996,
+    "displayable_lengths": {
+      "10": 3248,
+      "6": 239,
+      "3": 100,
+      "7": 271,
+      "9": 357,
+      "8": 310,
+      "4": 134,
+      "1": 50,
+      "5": 165,
+      "2": 74,
+      "0": 48
+    },
+    "full_ten": 3248,
+    "full_ten_share": 0.6501200960768615,
+    "metadata_omissions": 6576,
+    "unsupported_seeds": 0,
+    "model_short_lists": 3
+  },
+  "original_starters": {
+    "seeds": 32,
+    "displayable_lengths": {
+      "10": 32
+    },
+    "full_ten": 32,
+    "full_ten_share": 1.0,
+    "metadata_omissions": 0,
+    "unsupported_seeds": 0,
+    "model_short_lists": 0
+  },
+  "journeys": [
+    {
+      "round": 1,
+      "seeds": 32,
+      "displayable_lengths": {
+        "10": 32
+      },
+      "full_ten": 32,
+      "full_ten_share": 1.0,
+      "metadata_omissions": 0,
+      "unsupported_seeds": 0,
+      "model_short_lists": 0
+    },
+    {
+      "round": 2,
+      "seeds": 205,
+      "displayable_lengths": {
+        "10": 205
+      },
+      "full_ten": 205,
+      "full_ten_share": 1.0,
+      "metadata_omissions": 0,
+      "unsupported_seeds": 0,
+      "model_short_lists": 0
+    },
+    {
+      "round": 3,
+      "seeds": 638,
+      "displayable_lengths": {
+        "10": 638
+      },
+      "full_ten": 638,
+      "full_ten_share": 1.0,
+      "metadata_omissions": 0,
+      "unsupported_seeds": 0,
+      "model_short_lists": 0
+    },
+    {
+      "round": 4,
+      "seeds": 1539,
+      "displayable_lengths": {
+        "10": 1537,
+        "9": 1,
+        "8": 1
+      },
+      "full_ten": 1537,
+      "full_ten_share": 0.9987004548408057,
+      "metadata_omissions": 3,
+      "unsupported_seeds": 0,
+      "model_short_lists": 0
+    },
+    {
+      "round": 5,
+      "seeds": 2905,
+      "displayable_lengths": {
+        "10": 2749,
+        "3": 6,
+        "7": 19,
+        "5": 16,
+        "6": 24,
+        "8": 28,
+        "9": 43,
+        "2": 9,
+        "1": 3,
+        "0": 2,
+        "4": 6
+      },
+      "full_ten": 2749,
+      "full_ten_share": 0.9462994836488813,
+      "metadata_omissions": 529,
+      "unsupported_seeds": 0,
+      "model_short_lists": 0
+    }
+  ],
+  "starter_diversity": {
+    "distinct_rankings": 32,
+    "distinct_recommendations": 205,
+    "mean_pairwise_jaccard": 0.021096077464985385,
+    "most_repeated": [
+      {
+        "recording_id": "f56a6ad1-59ed-49fa-8d6f-b1f1aaaf5eeb",
+        "title": "Superpowers",
+        "lists": 5
+      },
+      {
+        "recording_id": "b503cb6f-ef3b-4e5e-8237-37f22810f484",
+        "title": "the perfect pair",
+        "lists": 4
+      },
+      {
+        "recording_id": "17b58f95-0162-4fc8-a4aa-2c9b75400246",
+        "title": "Beaches",
+        "lists": 4
+      },
+      {
+        "recording_id": "7bb864ff-3e68-4502-9431-d2559115f100",
+        "title": "flash",
+        "lists": 4
+      },
+      {
+        "recording_id": "a7696433-d4a4-45d9-94ab-5aaf8044805e",
+        "title": "tonight",
+        "lists": 4
+      }
+    ]
+  },
+  "limitations": [
+    "Read-only frozen-model/catalog coverage, not a new accuracy or user-enjoyment evaluation",
+    "Journeys follow every displayable neighbor, with distinct seeds per round; not independent user sessions"
+  ]
+}

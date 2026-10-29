@@ -18,6 +18,31 @@ The clean Python source also starts against explicitly supplied existing model/c
 
 Software rendering was reproduced locally using Chromium's documented SwiftShader configuration. The public 32-song flow and four homepage checks pass with one worker (6 tests, 1.9 minutes). An animated software-rendered click took about 5.5 seconds in the initial probe, compared with 1.4 seconds under reduced motion. This supports reducing CI graphics contention; it is not a mobile-device performance claim or proof of every remote failure's cause.
 
-CI now uses an explicit software renderer and one worker, retains all assertions, allows 40 minutes for the complete suite, and uploads failure traces/screenshots/results even when tests fail. `PLAYWRIGHT_SOFTWARE=1` reproduces its renderer configuration locally without disabling animation assertions. Chromium documents the test-only software-rendering flags at https://chromium.googlesource.com/chromium/src/+/main/docs/gpu/swiftshader.md . They are not applied to visitor browsers.
+The first serial software-rendering CI run still timed out after 40 minutes ([retained run](https://github.com/pok0yo/music-recommender/actions/runs/40822244853)). Its traces show frame/actionability stalls, delayed UI transitions and incomplete fixture rendering; increasing the job limit alone did not resolve them. The next configuration uses Chromium's software **WebGL fallback**, with GPU compositing disabled, rather than forcing the entire ANGLE driver through SwiftShader. It divides all tracked tests across three jobs with one worker each and a 20-minute per-job limit. Test-level sharding preserves every assertion and avoids a single oversized test file monopolizing one shard. Duplicate push/PR runs cancel by branch, and diagnostics are retained for one day. No animation assertion is disabled and no visitor rendering flag is changed.
 
-Remote confirmation and browser performance measurements remain pending at this checkpoint. Safari, physical devices, a human screen-reader audit and deployed-network behavior remain unavailable or unmeasured. No new recommendation-quality evaluation is claimed.
+`PLAYWRIGHT_SOFTWARE=1` reproduces the renderer configuration locally. See [Chromium's documented modes](https://chromium.googlesource.com/chromium/src/+/main/docs/gpu/swiftshader.md) and [Playwright's test-level sharding behavior](https://playwright.dev/docs/test-sharding). Remote confirmation of the revised configuration remains pending.
+
+The clean-source byte audit initially rejected Windows CRLF conversions. Checking committed Git blob hashes with LF equivalence only when it exactly reproduces the original blob confirms all 733 tracked files match, with 229 line-ending-only differences. This does not accept arbitrary source edits. See `evidence/release-phase-3-clean.json`.
+
+## Browser timing and startup
+
+`node scripts/measure-release-browser.mjs` profiles installed Chrome and Edge on the Ryzen AI 9 465 / Radeon 880M laptop, while forwarding the frontend's requests unchanged to the isolated real API. Animation remains enabled. Each scenario has five warm-ups. Starters are selected cyclically from the approved 32; shorter samples cover a subset.
+
+| Scenario | Measured selections | Seed-to-results p95 |
+| --- | ---: | ---: |
+| Chrome 1440x900 | 100 | 395.984 ms |
+| Chrome 390x844 viewport | 32 | 359.282 ms |
+| Chrome 390x844, 4x CPU slowdown | 10 | 678.670 ms |
+| Edge 1440x900 | 32 | 336.362 ms |
+
+These samples meet the proposed two-second local target. Five-second frame samples have no intervals over 33.4 ms in the unthrottled scenarios. The CPU-throttled sample has one, with a maximum of 38.9 ms. No page errors are observed. Keyboard activation-to-results includes automation overhead, and frame scheduling is not a GPU-completion measurement. Viewport and CPU emulation are not physical phones. See `evidence/release-phase-3-browser.json`.
+
+A separate fresh API process takes 18,817 ms from launch through model/catalog readiness, with the OS file cache warm. Its observed peak working set is 250,798,080 bytes; private committed memory is 827,871,232 bytes. PostgreSQL is separate. These Windows counters are not Linux container RSS or hosted cold-start guarantees. Readiness polling uses a one-second request timeout and 100 ms pauses, so startup timing includes polling/connection overhead. The temporary process is stopped after measurement. This startup delay must be considered when assessing sleeping free hosts in Phase 4. See `evidence/release-phase-3-cold.json`.
+
+## Availability is separate from accuracy
+
+A new read-only audit of the loaded frozen model and serving database confirms all 32 starters and all displayable seeds in the first three breadth-first rounds (32, 205 and 638 distinct seeds) return ten described recommendations. Round four is 1,537/1,539; round five is 2,749/2,905. The rounds follow displayable neighbors only, matching seeds a visitor can actually choose.
+
+Across all 4,996 searchable recordings, 3,248 (65.01%) have ten displayable results; 48 have none. There are no unsupported serving seeds, but three model short lists and 6,576 omitted metadata positions across all lists. Original starter lists have 32 distinct rankings and 205 distinct recommended recordings, with mean pairwise Jaccard overlap 0.0211. These are availability/diversity measurements, not new recommendation-accuracy or enjoyment evidence. No metadata is acquired, no list is padded and the trained model is unchanged. See `evidence/release-phase-3-coverage.json`.
+
+Safari, physical phones, a human screen-reader audit and deployed-network behavior remain unavailable or unmeasured. Phase 4 remains separately gated.
