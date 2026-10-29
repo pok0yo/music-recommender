@@ -4,7 +4,7 @@ A music discovery application that recommends tracks from a single seed song, wi
 
 ## Status
 
-**Public-release Phase 2:** the selected 3D Orbital record-player interface is now the homepage at `/`, using real recommendations by default. Search, seed selection, recommendation details, listening destinations and device-local feedback share the existing behavior layer. Stage 10 integration/performance work and public deployment remain separate approval gates. See the [release checkpoint](docs/release-phase-2.md).
+**Public-release Phase 3:** integration and local performance verification are complete in the documented environments. All 64 committed browser checks and 72 backend/model checks pass locally and in GitHub CI. The selected 3D Orbital record-player homepage uses real recommendations by default, with listening destinations and device-local feedback. See the [integration checkpoint](docs/release-phase-3.md) for measurements, catalog limits and unavailable device checks. Phase 4 deployment preparation awaits separate authorization; there is no public deployment yet.
 
 Use `/?mode=demo` for explicitly labeled illustrative results, and `/?dev=1` to expose environment controls. Ordinary visits hide those development controls. Existing Orbital, About, and earlier design-comparison URLs remain available; retired artwork URLs redirect to Orbital while preserving query context. Shared `?q=…` searches and `?seed=…` recommendation links restore on refresh and browser navigation.
 
