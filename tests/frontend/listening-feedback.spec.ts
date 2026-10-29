@@ -43,6 +43,11 @@ test('listen distinguishes exact links from searches; dismiss, undo and reseed p
   await discover(page);const canvas=await page.locator('.orbital-canvas canvas').elementHandle();
   const seed=new URL(page.url()).searchParams.get('seed');
   await page.locator('.rack-listen summary').click();
+  const panel=(await page.locator('.rack-display').boundingBox())!,menu=(await page.locator('.rack-listen nav').boundingBox())!;
+  expect(menu.x).toBeGreaterThanOrEqual(panel.x);
+  expect(menu.y).toBeGreaterThanOrEqual(panel.y);
+  expect(menu.y+menu.height).toBeLessThanOrEqual(panel.y+panel.height);
+  expect(menu.x+menu.width).toBeLessThanOrEqual(panel.x+panel.width);
   await expect(page.getByRole('link',{name:'Open Spotify (opens a new tab)'})).toHaveAttribute('href',spotify);
   await expect(page.getByRole('link',{name:'Search on Apple Music (opens a new tab)'})).toHaveAttribute('target','_blank');
   await page.locator('.rack-listen summary').press('Escape');await expect(page.locator('.rack-listen')).not.toHaveAttribute('open','');
