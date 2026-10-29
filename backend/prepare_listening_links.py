@@ -141,7 +141,7 @@ def verify():
             assert datetime.fromisoformat(row['verified_at'])==datetime.fromisoformat(checked['checked_at'])
             assert destination(checked['final_url'])[:2]==destination(row['url'])[:2]
         assert db.execute('SELECT sum(reserved) FROM requests').fetchone()[0]<=report['budget']['download_cap_bytes']
-    print(json.dumps(dict(offline_verified=True,link_count=len(rows),records_with_links=len({r['recording_id'] for r in rows}),activated=False)))
+    print(json.dumps(dict(offline_verified=True,link_count=len(rows),records_with_links=len({r['recording_id'] for r in rows}),activation_checked=False)))
 
 
 if __name__=='__main__':

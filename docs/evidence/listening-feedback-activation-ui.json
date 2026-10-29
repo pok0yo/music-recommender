@@ -1,0 +1,23 @@
+{
+  "verified_at": "2026-10-29T01:58:18.330Z",
+  "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+  "live_real_api": true,
+  "starters": 32,
+  "search": true,
+  "listen_services": 3,
+  "verified_pilot_active": true,
+  "verified_link_counts_by_provider": {
+    "spotify": 72,
+    "apple_music": 43,
+    "youtube_music": 15
+  },
+  "starters_with_links": 9,
+  "dismiss_undo_reseed_history": true,
+  "retained_canvas": true,
+  "demo_destinations_absent": true,
+  "unsolicited_external_requests": 0,
+  "page_errors": [],
+  "limitations": [
+    "Provider playback and physical devices not tested"
+  ]
+}
