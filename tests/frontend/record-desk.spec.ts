@@ -9,7 +9,7 @@ const route='/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=';
 const out='docs/evidence/stage-9-record-desk';
 
 test('environment sliders update the mounted scene and reset to softer defaults',async({page})=>{
-  await page.emulateMedia({reducedMotion:'reduce'});await page.goto(route+'entry');
+  await page.emulateMedia({reducedMotion:'reduce'});await page.goto(route+'entry&dev=1');
   const host=page.locator('.orbital-canvas');await expect(host).toHaveAttribute('data-rack','true');
   const canvas=await host.locator('canvas').elementHandle();
   await page.getByText('Environment controls',{exact:true}).click();

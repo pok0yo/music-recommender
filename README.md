@@ -1,12 +1,12 @@
 # Music Recommender
 
-A planned music discovery application that recommends recognizable tracks from a single seed song, with explanations grounded in listening data.
+A music discovery application that recommends tracks from a single seed song, with explanations grounded in shared listening data.
 
 ## Status
 
-**Stage 9 comparison is implemented:** five structurally different Discover and About interfaces share the approved icy glass/chrome visual system, real API adapter and labeled demonstration fixtures. Hero areas remain flat CSS placeholders. The user must select a structure before the final frontend is promoted; Stage 10 and deployment have not begun. See the [frontend setup, comparison and evidence](docs/stage-9-frontend.md).
+**Public-release Phase 2:** the selected 3D Orbital record-player interface is now the homepage at `/`, using real recommendations by default. Search, seed selection, recommendation details, listening destinations and device-local feedback share the existing behavior layer. Stage 10 integration/performance work and public deployment remain separate approval gates. See the [release checkpoint](docs/release-phase-2.md).
 
-The user selected Disc Tray. Its four working artwork demos start at `/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry`; the picker changes between Orbital Disc, Glass Current, Aero Player and Liquid Star. Final artwork selection remains open. The original five and three Disc Study body comparisons remain available.
+Use `/?mode=demo` for explicitly labeled illustrative results, and `/?dev=1` to expose environment controls. Ordinary visits hide those development controls. Existing Orbital, About, and earlier design-comparison URLs remain available; retired artwork URLs redirect to Orbital while preserving query context. Shared `?q=…` searches and `?seed=…` recommendation links restore on refresh and browser navigation.
 
 The accepted `cohort-v2` applies two independently verified recording redirects to a fixed 30% listener cohort reconstructed from existing cached ranges, with no new event download. The original 26/40 failure, approved panel, and acceptance thresholds remain preserved. See the [frozen revision protocol](docs/stage-6-protocol-v2.json) and [acceptance decision](docs/evidence/stage-6-decision-v2.json).
 
@@ -18,13 +18,13 @@ The accepted `cohort-v2` applies two independently verified recording redirects 
 - Stage 6: complete and accepted. All 149 selected files are processed inside the additional 16 GiB transfer cap; 75,994,223 cleaned events and reproducible splits are available locally. The unchanged panel passes for 32/40 tracks. Validation/test have 7,887/7,848 scorable queries. The original 38 audit tests passed locally and in CI.
 - Stage 7: selected lambda-50 item-CF reaches test NDCG@10 0.218345 versus popularity 0.021665 on scorable queries. All 48 tests passed locally and in CI. The 565,147-item serving export passes integrity checks and matches every evaluated ranking. See the [evaluation report](docs/stage-7-evaluation.md) for uncertainty, exclusions, failure cohorts, and reproducibility.
 
-See the [Stage 4 UX and design plan](docs/stage-4-design-plan.md) for historical planning. The user's October 21 revision replaces the earlier separate themes with five app structures in one shared material world; [DESIGN.md](DESIGN.md) documents the implemented system. No final structure has been selected.
+See the [Stage 4 UX and design plan](docs/stage-4-design-plan.md) for historical planning. Earlier comparisons led to the selected Orbital record desk; [DESIGN.md](DESIGN.md) documents the evolving visual system.
 
 See the [Stage 5 implementation plan](docs/stage-5-implementation-plan.md) for architecture, data-to-UI contracts, the evaluation protocol, stage acceptance criteria, testing, deployment, and portfolio deliverables. Its 122–174-hour planning range includes contingency; the 6–8-week target depends on availability and a successful data audit.
 
 See the [Stage 6 acceptance report](docs/stage-6-data-audit.md#15-final-cohort-v2-acceptance-and-stage-boundary) and [decision manifest](docs/evidence/stage-6-decision-v2.json) for coverage gaps, exclusions, resources, reproducibility, and the frozen candidate/query hashes. Earlier failed versions and checkpoints remain documented as history.
 
-- Stage 8: local API and versioned 215-recording catalog implemented; 32 real starter responses match the frozen model. Database permissions and actual outage recovery are verified. See the [backend report and setup](docs/stage-8-backend.md).
+- Stage 8: local API and read-only database access implemented. The later [catalog expansion](docs/catalog-expansion-v2.md) activates 4,996 recordings while preserving 32 approved starters and the frozen model. The [listening-link pilot](docs/listening-feedback.md) adds 130 checked destinations across 76 recordings; other destinations are explicitly labeled provider searches. See the [original backend setup](docs/stage-8-backend.md) and later release documents for current startup configuration.
 
 The target is a 6–8-week individual portfolio project, subject to available development time and later product checks. The accepted cohort, train-only recommender, and measured offline results exist locally. These results do not establish subjective usefulness or application readiness.
 
@@ -36,7 +36,7 @@ The target is a 6–8-week individual portfolio project, subject to available de
 - Select a result as the next seed, without creating an account.
 - Support responsive layouts, keyboard navigation, reduced motion, and clear loading, empty, and error states.
 
-The user's ten requested artists define the coverage target; very recent releases are not essential. The [40-title panel](docs/coverage-panel.json) was approved on 2026-10-18. The original 38 selected recording IDs remain unchanged; AQUAFINA and Japanese Denim remain ambiguous. Eight titles are still unsupported, and Lucy Bedroque has only one of four supported titles. The aggregate pass does not establish comprehensive artist coverage or correct metadata for all 565,147 eligible recording IDs. Outbound listening links remain provisional pending final MVP approval.
+The user's ten requested artists define the coverage target; very recent releases are not essential. The [40-title panel](docs/coverage-panel.json) was approved on 2026-10-18. The original 38 selected recording IDs remain unchanged; AQUAFINA and Japanese Denim remain ambiguous. Eight titles are still unsupported, and Lucy Bedroque has only one of four supported titles. The aggregate pass does not establish comprehensive artist coverage or display metadata for all 565,147 model recordings. The verified serving catalog is a smaller subset.
 
 ## Recommendation and evaluation
 
@@ -56,7 +56,7 @@ The frontend uses Next.js, React, TypeScript and CSS with the installed Tailwind
 
 ## Design direction
 
-Y2K Futurism / Soft Club: icy blue, glossy white, cobalt typography, restrained chrome, curved surfaces and fine technical markings. Five app structures live in separate `v1/` through `v5/` folders sharing one behavior layer. Hero areas use flat CSS placeholders; reference artwork is not copied.
+Y2K Futurism / Soft Club: icy blue, reflective water, a chrome-and-glass record player, an animated orbital disc and liquid-glass controls. Native controls provide the same song actions without precise 3D picking. Earlier structures remain in `v1/` through `v5/` as historical comparisons. SF Pro Display/Text are preferred where available, with system-font fallbacks; proprietary font files are not bundled.
 
 ## Project workflow
 

@@ -20,7 +20,7 @@ export default async function ArtworkPage({ params, searchParams }: {
   }
   const index = artworks.findIndex(item => item.slug === artwork);
   if (index < 0) notFound();
-  if (!section && query.view !== 'app' && query.interface !== 'classic') return <MusicRackStudy mode={query.mode === 'demo' ? 'demo' : 'real'} fixture={scenarioName(typeof query.fixture === 'string' ? query.fixture : 'entry')} />;
+  if (!section && query.view !== 'app' && query.interface !== 'classic') return <MusicRackStudy mode={query.mode === 'demo' ? 'demo' : 'real'} fixture={scenarioName(typeof query.fixture === 'string' ? query.fixture : 'entry')} developerControls={query.dev === '1'} />;
   return <Preview initialVariant={2} initialArtwork={index + 1} initialMode={query.mode === 'demo' ? 'demo' : 'real'}
     initialFixture={scenarioName(typeof query.fixture === 'string' ? query.fixture : 'entry')} initialBackground={query.background === 'crisp' ? 'crisp' : 'hazy'} initialWaterMotion={query.water !== 'still'} initialFullPlayer={query.interface !== 'classic'} about={section?.[0] === 'about'} />;
 }

@@ -13,7 +13,7 @@ import {environmentControls,defaultEnvironment} from '../lib/environment-control
 import {ListenControl} from './listen-control';
 import {useFeedback} from '../lib/use-feedback';
 
-export function MusicRackStudy({mode,fixture}:{mode:Meta['data_mode'];fixture:Scenario}) {
+export function MusicRackStudy({mode,fixture,developerControls=false}:{mode:Meta['data_mode'];fixture:Scenario;developerControls?:boolean}) {
   const d=useDiscovery(mode,fixture,approvedStarters.tracks);
   const [environment,setEnvironment]=useState(defaultEnvironment);
   const feedback=useFeedback(mode);
@@ -41,10 +41,10 @@ export function MusicRackStudy({mode,fixture}:{mode:Meta['data_mode'];fixture:Sc
   const retry=()=>{if(d.searchError)void d.search(d.query);else if(d.recommendError)void d.retry();else void d.loadStarters();};
   return <main className="rack-study is-functional" aria-label="Orbital music discovery">
     <h1 className="sr-only">Discover music through shared listening</h1>
-    <details className="rack-dev-bar"><summary>Environment controls</summary><div className="rack-dev-controls">
+    {developerControls&&<details className="rack-dev-bar"><summary>Environment controls</summary><div className="rack-dev-controls">
       {Object.entries(environmentControls).map(([name,control])=>{const key=name as keyof typeof environment;return <label key={key}>{control.label}<output>{environment[key].toFixed(2)}</output><input type="range" aria-label={control.label} min={control.min} max={control.max} step={control.step} value={environment[key]} onChange={event=>setEnvironment(value=>({...value,[key]:Number(event.target.value)}))}/></label>;})}
       <button type="button" onClick={()=>setEnvironment(defaultEnvironment)}>Reset environment</button>
-    </div></details>
+    </div></details>}
     <p id="rack-study-help" className="sr-only">Drag empty space to rotate. Scroll or pinch to zoom. Select a sleeve to preview a song, then choose Discover to find recommendations. Arrow keys rotate the focused scene, Enter confirms, and Space pauses motion. All song actions are available in the player display.</p>
     <OrbitalHero open={false} docked consoleMode rack={rack} selection={d.selection??undefined} tracks={tracks} busy={false} error={!!error} searching={d.searchBusy}
       motionPaused={paused} onOpen={showSeed} onClose={reset} onChoose={discover} onToggleMotion={()=>setPaused(value=>!value)} />
@@ -77,6 +77,7 @@ export function MusicRackStudy({mode,fixture}:{mode:Meta['data_mode'];fixture:Sc
         {related&&<dl><div><dt>Shared training listeners</dt><dd>{related.shared_training_listeners}</dd></div><div><dt>Starting-song listeners</dt><dd>{related.seed_training_listeners}</dd></div><div><dt>This song’s listeners</dt><dd>{related.candidate_training_listeners}</dd></div></dl>}
         {active?.disambiguation&&<p dir="auto">{active.disambiguation}</p>}
         <p>{mode==='demo'?'Tracks, ordering and counts are illustrative, not model results.':'Connections come from training data through August 1, 2026. Similarity is not a prediction of enjoyment.'}</p>
+        <p>Search covers a limited, verified catalog. Some songs and versions are unavailable. Discover finds connections; Listen opens a music service.</p>
         <p>No account or personal listening history required. Listening destinations open another service; searches do not verify a recording match. Feedback stays on this device and does not retrain the model.</p>
         <div className="rack-options"><button type="button" onClick={()=>setPaused(value=>!value)}>{paused?'Resume motion':'Pause motion'}</button><button type="button" onClick={()=>setViewRevision(value=>value+1)}>Reset view</button></div></div>
       {d.selection&&<button type="button" className="rack-current" onClick={showSeed}><span>Starting song</span><strong dir="auto">{d.selection.title}</strong><small dir="auto">{artists(d.selection)}</small></button>}

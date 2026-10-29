@@ -16,7 +16,7 @@ import '../v2/rack-study.css';
 import '../components/ui/liquid-glass.css';
 import { LiquidGlass } from '../components/ui/liquid-glass';
 
-export const metadata: Metadata = { title: 'Music Recommender — design previews', description: 'Five music discovery prototypes with transparent listening connections.' };
+export const metadata: Metadata = { title: 'Music Recommender — discover your next song', description: 'Start with one song and explore connections through shared listening, with recommendation details and links to listen.' };
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, viewportFit: 'cover', themeColor: '#F4F9FF' };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en"><body><LiquidGlass />{children}</body></html>;

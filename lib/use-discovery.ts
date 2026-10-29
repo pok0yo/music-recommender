@@ -40,6 +40,8 @@ export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario, demoCat
 
   const search = useCallback(async (value: string) => {
     searchRequest.current?.abort();
+    recommendationRequest.current?.abort(); ++recommendationSequence.current;
+    setPending(false);
     const sequence = ++searchSequence.current;
     const controller = searchRequest.current = new AbortController();
     setQuery(value);
@@ -50,8 +52,11 @@ export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario, demoCat
       return;
     }
     setSearchBusy(true); setMatches(null);
-    const url = new URL(window.location.href); url.searchParams.set('q', value);
-    window.history.replaceState(null, '', url);
+    const url = new URL(window.location.href);
+    const fromSeed = url.searchParams.has('seed');
+    url.searchParams.set('q', value); url.searchParams.delete('seed');
+    if (fromSeed) window.history.pushState(null, '', url);
+    else window.history.replaceState(null, '', url);
     try {
       const response = await api.search(value.trim(), controller.signal);
       if (!controller.signal.aborted && sequence === searchSequence.current) setMatches(response);
@@ -102,12 +107,14 @@ export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario, demoCat
     void loadStarters();
     const restore = () => {
       const params = new URLSearchParams(window.location.search);
-      setQuery(params.get('q') || '');
+      const value = params.get('q') || '';
+      clear(false); setQuery(value);
       const id = params.get('seed');
-      if (id) void choose(id, false, false); else clear(false);
+      if (id) void choose(id, false, false);
+      else if (params.has('q')) void search(value);
     };
     const params = new URLSearchParams(window.location.search);
-    if (params.has('seed')) restore();
+    if (params.has('seed') || params.has('q')) restore();
     else if (mode === 'demo' && fixture === 'invalid') void choose('invalid', false, false);
     else if (mode === 'demo' && !['entry', 'search', 'no-match'].includes(fixture)) void choose(demoCatalog?.[0]??demoTracks[0], false, false);
     else if (mode === 'demo' && ['search', 'no-match'].includes(fixture)) void search(fixture === 'search' ? 'Tiffany' : 'An absent song');
