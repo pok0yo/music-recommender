@@ -40,7 +40,7 @@ test('physical sleeves preview without confirming and the loaded CD recalls its 
 });
 
 test('search, preview, discover, evidence and reseeding share one mounted scene',async({page})=>{
-  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?90_000:45_000);const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?270_000:45_000);const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
   await page.goto(route+'entry');const host=page.locator('.orbital-canvas'),title=page.locator('.rack-readout h2');
   await expect(host).toHaveAttribute('data-rack','true');const canvas=await host.locator('canvas').elementHandle();
   await page.getByRole('button',{name:'Next song',exact:true}).click();await expect(title).toHaveText('CLOUDS');
@@ -87,7 +87,7 @@ test('empty, limited, failed and pending requests retain honest recovery',async(
 });
 
 test('phone, long text and graphics fallback keep the display usable',async({page})=>{
-  test.setTimeout(60_000);await page.emulateMedia({reducedMotion:'reduce'});
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?180_000:60_000);await page.emulateMedia({reducedMotion:'reduce'});
   for(const width of [320,390,768,1440]){
     await page.setViewportSize({width,height:900});await page.goto(route+'long');
     await expect(page.locator('.rack-readout h2')).toContainText('A quiet place');

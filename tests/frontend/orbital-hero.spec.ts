@@ -23,7 +23,7 @@ const modelBounds = (canvas: Locator) => canvas.evaluate((c: HTMLCanvasElement) 
     });
 
 test('staged 3D silhouette fits its environment and leaves controls clear', async ({ page }) => {
-  test.setTimeout(120_000);
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?360_000:120_000);
   await page.emulateMedia({ reducedMotion:'reduce' });
   for (const width of [320,390,550,569,768,1024,1253,1440]) {
     await page.setViewportSize({width,height:900});

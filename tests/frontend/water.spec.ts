@@ -60,6 +60,7 @@ test('water ripples are bounded, pausable, and suspend offscreen, hidden and for
 });
 
 test('extended scenery fills every edge and stays stable through scrolling and longer content', async ({ page }) => {
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?360_000:30_000);
   for (const [width, height] of [[390, 844], [1440, 900], [1881, 905]]) {
     await page.setViewportSize({ width, height });
     let first: Buffer | undefined;
@@ -97,7 +98,7 @@ test('extended scenery fills every edge and stays stable through scrolling and l
 });
 
 test('water choice preserves discovery and navigation, including mobile and both finishes', async ({ page }) => {
-  test.setTimeout(60_000);
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?180_000:60_000);
   await page.goto(route);
   await page.getByRole('searchbox').fill('Tiffany');
   await page.getByRole('combobox', { name: 'Water movement' }).selectOption('still');

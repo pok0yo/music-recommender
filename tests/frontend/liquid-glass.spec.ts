@@ -3,6 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 const route='/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry&interface=classic';
 
 test('native interactive surfaces reflect the pointer without moving or changing their actions',async({page})=>{
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?240_000:30_000);
   await page.goto(route);
   await expect(page.locator('#liquid-glass-distortion')).toHaveCount(1);
   const controls=[page.getByRole('searchbox'),page.getByLabel('Data source'),page.getByRole('button',{name:'Search',exact:true}),page.getByRole('link',{name:'Discover',exact:true}),page.getByLabel('Background finish'),page.locator('.starter-button').first()];
