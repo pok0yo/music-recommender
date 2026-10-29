@@ -11,7 +11,7 @@ export type RackInteraction = Omit<RackState, 'revealed'> & {
 };
 
 export function createMusicRackScene(renderer: THREE.WebGLRenderer, scene: THREE.Scene, camera: THREE.PerspectiveCamera,
-  featured: THREE.Group, disc: THREE.Group, orbits: THREE.Mesh[], orbitFinish: THREE.MeshPhysicalMaterial, studio: THREE.Texture) {
+  featured: THREE.Group, disc: THREE.Group, orbits: THREE.Mesh[], orbitFinish: THREE.MeshPhysicalMaterial, studio: THREE.Texture, software=false) {
   const root = new THREE.Group(); root.visible = false; scene.add(root);
   const materials = new Map<THREE.Material, number>(), textures = new Set<THREE.Texture>();
   const blue = new THREE.MeshPhysicalMaterial({ color:0x398ab9, metalness:.55, roughness:.15, clearcoat:1,envMap:studio });
@@ -64,7 +64,7 @@ export function createMusicRackScene(renderer: THREE.WebGLRenderer, scene: THREE
   const featureScale=new THREE.Vector3(.56,.56,.56),lookTarget=new THREE.Vector3(0,.65,0),discCenter=new THREE.Vector3();
   const floatingEuler=new THREE.Euler(), raycaster=new THREE.Raycaster(),identity=new THREE.Quaternion();
   const water = new Reflector(new THREE.CircleGeometry(9,80),{
-    textureWidth:512,textureHeight:512,multisample:0,clipBias:.003,
+    textureWidth:software?256:512,textureHeight:software?256:512,multisample:0,clipBias:.003,
     shader:{
       uniforms:{color:{value:new THREE.Color(.7,.8,1)},tDiffuse:{value:null},textureMatrix:{value:new THREE.Matrix4()},uTime:{value:0},uMotion:{value:0}},
       vertexShader:`uniform mat4 textureMatrix; varying vec4 vUv; varying vec2 vFloor;

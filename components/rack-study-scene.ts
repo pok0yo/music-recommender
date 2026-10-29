@@ -9,7 +9,7 @@ import {defaultEnvironment,type EnvironmentSettings} from '../lib/environment-co
 
 // A scene study shares the existing CD and renderer; the website view keeps its own composition.
 export function createRackStudyScene(renderer:THREE.WebGLRenderer,scene:THREE.Scene,camera:THREE.PerspectiveCamera,
-  featured:THREE.Group,disc:THREE.Group,orbits:THREE.Mesh[],orbitFinish:THREE.MeshPhysicalMaterial,studio:THREE.Texture,onViewChange:(angle:number)=>void) {
+  featured:THREE.Group,disc:THREE.Group,orbits:THREE.Mesh[],orbitFinish:THREE.MeshPhysicalMaterial,studio:THREE.Texture,onViewChange:(angle:number)=>void,software=false) {
   const root=new THREE.Group();scene.add(root);
   const materials=new Set<THREE.Material>(),textures=new Set<THREE.Texture>();
   const chrome=new THREE.MeshPhysicalMaterial({color:0xa6cefa,metalness:1,roughness:.11,envMap:studio,envMapIntensity:1.6,clearcoat:1});
@@ -88,7 +88,8 @@ export function createRackStudyScene(renderer:THREE.WebGLRenderer,scene:THREE.Sc
       #include <tonemapping_fragment>
       #include <colorspace_fragment>
     }`}));
-  const water=new Reflector(new THREE.PlaneGeometry(2000,2000),{textureWidth:innerWidth<600?512:1024,textureHeight:innerWidth<600?512:1024,multisample:0,clipBias:.002,
+  const reflectionSize=software?256:innerWidth<600?512:1024;
+  const water=new Reflector(new THREE.PlaneGeometry(2000,2000),{textureWidth:reflectionSize,textureHeight:reflectionSize,multisample:0,clipBias:.002,
     shader:{uniforms:{...tuning,color:{value:new THREE.Color()},tDiffuse:{value:null},textureMatrix:{value:new THREE.Matrix4()},uTime:{value:0},uMotion:{value:1},uSun:{value:sunDirection}},
       vertexShader:`uniform mat4 textureMatrix;varying vec4 vUv;varying vec2 vFloor;varying vec3 vWorld;void main(){vUv=textureMatrix*vec4(position,1.);vFloor=position.xy;vWorld=(modelMatrix*vec4(position,1.)).xyz;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
       fragmentShader:`${tuningShader} uniform sampler2D tDiffuse;uniform float uTime,uMotion;uniform vec3 uSun;varying vec4 vUv;varying vec2 vFloor;varying vec3 vWorld;

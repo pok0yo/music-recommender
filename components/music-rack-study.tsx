@@ -22,6 +22,9 @@ export function MusicRackStudy({mode,fixture,developerControls=false}:{mode:Meta
   const showingRecommendations=!!d.recommendations&&!d.matches&&!d.pending&&!d.searchBusy;
   const tracks=showingRecommendations?rawTracks.filter(track=>!feedback.ids.includes(track.recording_id)):rawTracks;
   const feedbackHidden=showingRecommendations?rawTracks.length-tracks.length:0;
+  const metadataUnavailable=d.recommendations?.status==='limited'&&!d.recommendations.results.length&&d.recommendations.omitted_metadata_count>0;
+  const emptyTitle=metadataUnavailable?'Song details unavailable':'No connections yet';
+  const emptyMessage=metadataUnavailable?'Connections were found, but verified song details are unavailable. Search for another starting point.':'No supported connections. Search for another starting point.';
   const [candidate,setCandidate]=useState(''),[operation,setOperation]=useState(0),[paused,setPaused]=useState(false);
   const [details,setDetails]=useState(false),[inspectSeed,setInspectSeed]=useState(false),[viewRevision,setViewRevision]=useState(0);
   const heading=useRef<HTMLHeadingElement>(null);
@@ -56,9 +59,9 @@ export function MusicRackStudy({mode,fixture,developerControls=false}:{mode:Meta
         <button type="submit" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg></button>
       </form>
       <div className="rack-readout"><p className="rack-eyebrow" role="status">{inspectSeed?'Current starting song':collection}{!inspectSeed&&!d.searchBusy&&!d.pending&&tracks.length?` / ${String(index+1).padStart(2,'0')} of ${tracks.length}${related&&related.rank!==index+1?` · rank ${related.rank}`:''}`:''}<span className="sr-only">{active?`: ${active.title} by ${artists(active)}`:''}</span></p>
-        <h2 ref={heading} tabIndex={-1} dir="auto">{active?.title??(d.searchBusy?'Searching…':d.matches?'No matching songs':d.recommendations?'No connections yet':'Choose your first song')}</h2>
+        <h2 ref={heading} tabIndex={-1} dir="auto">{active?.title??(d.searchBusy?'Searching…':d.matches?'No matching songs':d.recommendations?emptyTitle:'Choose your first song')}</h2>
         {active&&<p className="rack-artist" dir="auto">{artists(active)}</p>}
-        {!active&&<p>{feedbackHidden?'All recommendations are hidden by your feedback. Undo or reset feedback to see them again.':d.matches?'Try another song or artist.':d.recommendations?'No supported connections. Search for another starting point.':'Search the supported catalog or choose a sleeve.'}</p>}
+        {!active&&<p>{feedbackHidden?'All recommendations are hidden by your feedback. Undo or reset feedback to see them again.':d.matches?'Try another song or artist.':d.recommendations?emptyMessage:'Search the supported catalog or choose a sleeve.'}</p>}
       </div>
       <div className="rack-transport"><button type="button" className="rack-step" aria-label="Previous song" disabled={tracks.length<2} onClick={()=>preview(index-1)}>‹</button>
         <LiquidMetalButton className="primary rack-discover" disabled={!active||(d.pending&&sameSeed)} onClick={discover}>{d.pending&&sameSeed?'Finding…':sameSeed?'Discover again':'Discover'}</LiquidMetalButton>

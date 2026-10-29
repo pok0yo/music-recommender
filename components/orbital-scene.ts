@@ -6,7 +6,12 @@ import { createRackStudyScene } from './rack-study-scene';
 export function createOrbitalScene(host: HTMLElement, onFailure: () => void, onDial: (angle: number) => void) {
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'low-power', preserveDrawingBuffer: true });
   try {
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    const gl = renderer.getContext(), debug = gl.getExtension('WEBGL_debug_renderer_info');
+    const software = /swiftshader|llvmpipe|softpipe|software/i.test(String(gl.getParameter(debug ? debug.UNMASKED_RENDERER_WEBGL : gl.RENDERER)));
+    // CPU-rendered WebGL needs smaller buffers to keep native controls responsive.
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, software ? .75 : 1.5));
+    renderer.transmissionResolutionScale = software ? .5 : 1;
+    host.dataset.renderQuality = software ? 'software' : 'full';
     renderer.setClearColor(0x000000, 0);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.25;
@@ -34,9 +39,9 @@ export function createOrbitalScene(host: HTMLElement, onFailure: () => void, onD
     whitePanel.position.set(-2, 0, 4.5); whitePanel.lookAt(0, 0, 0); room.add(whitePanel);
     const darkPanel = new THREE.Mesh(new THREE.PlaneGeometry(1, 10), new THREE.MeshBasicMaterial({ color:0x1c3554 }));
     darkPanel.position.set(3, -.5, 4); darkPanel.lookAt(0, 0, 0); room.add(darkPanel);
-    const environment = pmrem.fromScene(room, .025);
+    const environment = pmrem.fromScene(room, .025, .1, 100, {size:software ? 64 : 256});
     const studio = new RoomEnvironment();
-    const studioEnvironment = pmrem.fromScene(studio, .025);
+    const studioEnvironment = pmrem.fromScene(studio, .025, .1, 100, {size:software ? 64 : 256});
     studio.dispose();
     scene.environment = environment.texture;
     room.traverse(object => { if (object instanceof THREE.Mesh) { object.geometry.dispose(); object.material.dispose(); } });
@@ -121,13 +126,13 @@ export function createOrbitalScene(host: HTMLElement, onFailure: () => void, onD
     const pointer = new THREE.Vector2();
     let rack: ReturnType<typeof createMusicRackScene> | ReturnType<typeof createRackStudyScene> | undefined, rackState: RackState | undefined;
     function render() { renderer.render(scene, camera); }
-    function pose(dt: number) {
-      if (rackState && rack) { key.intensity=1.5;rim.intensity=2;rim.position.set(4+pointer.x*2,-1-pointer.y*2,3);renderer.toneMappingExposure=1.05;const phase=rack.pose(dt,enabled,pointer)||'browsing';if(host.dataset.rackPhase!==phase)host.dataset.rackPhase=phase;return; }
+    function pose(dt: number, elapsedDt = dt) {
+      if (rackState && rack) { key.intensity=1.5;rim.intensity=2;rim.position.set(4+pointer.x*2,-1-pointer.y*2,3);renderer.toneMappingExposure=1.05;const phase=rack.pose(elapsedDt,enabled,pointer)||'browsing';if(host.dataset.rackPhase!==phase)host.dataset.rackPhase=phase;return; }
       key.intensity=3;rim.intensity=4;renderer.toneMappingExposure=1.25;
       sculpture.scale.setScalar(1); sculpture.position.x=sculpture.position.z=0;
       camera.position.x=0; camera.position.y=.05; camera.quaternion.identity();
-      const ease = dt ? 1 - Math.exp(-dt * 7) : enabled ? 0 : 1;
-      focus = enabled ? THREE.MathUtils.lerp(focus, picking ? 1 : 0, 1 - Math.exp(-dt * 18)) : picking ? 1 : 0;
+      const ease = dt ? 1 - Math.exp(-elapsedDt * 7) : enabled ? 0 : 1;
+      focus = enabled ? THREE.MathUtils.lerp(focus, picking ? 1 : 0, 1 - Math.exp(-elapsedDt * 18)) : picking ? 1 : 0;
       if (!enabled) { dial = dialTarget; dialVelocity = 0; }
       else {
         dialVelocity += (dialTarget - dial) * 100 * dt;
@@ -153,9 +158,11 @@ export function createOrbitalScene(host: HTMLElement, onFailure: () => void, onD
       onDial(dial);
     }
     function animate(now: number) {
-      const dt = Math.min((now - previous) / 1000, .05); previous = now; if (!picking) elapsed += dt;
-      if (loaded) discSpin += dt * .65;
-      pose(dt); render(); frame = requestAnimationFrame(animate);
+      // Elapsed phases use visible wall time; only the numerical dial spring needs a bounded step.
+      const elapsedDt = Math.max(0, (now - previous) / 1000), dt = Math.min(elapsedDt, .05); previous = now;
+      if (!picking) elapsed += elapsedDt;
+      if (loaded) discSpin += elapsedDt * .65;
+      pose(dt, elapsedDt); render(); frame = requestAnimationFrame(animate);
     }
     function update() {
       cancelAnimationFrame(frame); frame = 0;
@@ -201,8 +208,8 @@ export function createOrbitalScene(host: HTMLElement, onFailure: () => void, onD
       setRack(value: RackState | undefined) {
         rackState=value;
         if(value && !rack) rack=value.isolated
-          ?createRackStudyScene(renderer,scene,camera,sculpture,disc,[orbit,fineOrbit,satellite],orbitFinish,studioEnvironment.texture,angle=>{host.dataset.orbitAngle=angle.toFixed(3);if(!frame)render();})
-          :createMusicRackScene(renderer,scene,camera,sculpture,disc,[orbit,fineOrbit,satellite],orbitFinish,studioEnvironment.texture);
+          ?createRackStudyScene(renderer,scene,camera,sculpture,disc,[orbit,fineOrbit,satellite],orbitFinish,studioEnvironment.texture,angle=>{host.dataset.orbitAngle=angle.toFixed(3);if(!frame)render();},software)
+          :createMusicRackScene(renderer,scene,camera,sculpture,disc,[orbit,fineOrbit,satellite],orbitFinish,studioEnvironment.texture,software);
         rack?.setState(value);host.dataset.rack=value?'true':'false';if(!value)delete host.dataset.rackPhase;update();
         host.dataset.rackSelection=value?.tracks[value.index]?.recording_id||'';
         host.dataset.rackCount=String(value?Math.min(8,value.tracks.length-Math.floor(value.index/8)*8):0);

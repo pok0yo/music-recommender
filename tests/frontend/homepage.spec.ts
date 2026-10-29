@@ -95,3 +95,35 @@ test('existing Orbital links restore seed context and invalid search links show 
   await page.getByRole('button',{name:'Search',exact:true}).click();
   await expect(page.locator('.rack-readout h2')).toHaveText('CLOUDS');
 });
+
+test('software rendering keeps the 3D scene and native song controls within its pixel budget',async({page})=>{
+  await page.goto('/');
+  const host=page.locator('.orbital-canvas');
+  await expect(host).toHaveAttribute('data-rack','true');
+  const graphics=await host.locator('canvas').evaluate((canvas:HTMLCanvasElement)=>{
+    const gl=canvas.getContext('webgl2')!,info=gl.getExtension('WEBGL_debug_renderer_info');
+    const renderer=String(gl.getParameter(info?info.UNMASKED_RENDERER_WEBGL:gl.RENDERER));
+    return {renderer,width:canvas.width,cssWidth:canvas.clientWidth};
+  });
+  const software=/swiftshader|llvmpipe|softpipe|software/i.test(graphics.renderer);
+  console.log('Graphics calibration',graphics,software?'software':'full');
+  await expect(host).toHaveAttribute('data-render-quality',software?'software':'full');
+  if(software)expect(graphics.width).toBeLessThanOrEqual(Math.ceil(graphics.cssWidth*.75));
+  await page.getByRole('button',{name:'Next song',exact:true}).click();
+  await expect(page.locator('.rack-readout h2')).toHaveText('CLOUDS');
+  await page.getByRole('button',{name:'Discover',exact:true}).click();
+  await expect(page.locator('.rack-current')).toContainText('CLOUDS');
+});
+
+test('missing display metadata is distinguished from a model with no connections',async({page})=>{
+  await page.route('**/v1/recommendations/**',route=>route.fulfill({json:{seed:demoTracks[0],results:[],alternatives:[],requested_limit:10,model_result_count:10,omitted_metadata_count:10,status:'limited',meta}}));
+  await page.goto(`/?seed=${demoTracks[0].recording_id}`);
+  await expect(page.locator('.rack-readout h2')).toHaveText('Song details unavailable');
+  await expect(page.locator('.rack-readout')).toContainText('Connections were found');
+  await expect(page.locator('.rack-message')).toContainText('10 model results have no verified display metadata');
+  await expect(page.getByRole('button',{name:'Discover',exact:true})).toBeDisabled();
+  await expect(page.locator('.rack-data-label')).toHaveText('Trained recommendations');
+  await page.getByRole('searchbox').fill('Tiffany');
+  await page.getByRole('button',{name:'Search',exact:true}).click();
+  await expect(page.locator('.rack-readout h2')).toHaveText('CLOUDS');
+});

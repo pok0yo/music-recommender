@@ -155,7 +155,7 @@ test('rendered whole-model Y turn and half-turn oscillation retain bobbing, hove
   await page.clock.runFor(32);
   await expect(page.locator('.orbital-canvas')).toHaveAttribute('data-render-state','running');
   for(let second=0;second<7;second++){
-    await page.clock.runFor(1000);
+    await page.clock.fastForward(1000);
     heights.push(ring(await matrices())[13]);
   }
   const last=await matrices();
@@ -176,7 +176,7 @@ test('rendered whole-model Y turn and half-turn oscillation retain bobbing, hove
   const colors:number[]=[];
   let previousYaw=pose(await matrices()).yaw,totalYaw=previousYaw;
   for(let quarter=0;quarter<4;quarter++){
-    await page.clock.runFor(40_000);
+    await page.clock.fastForward(40_000);
     const current=pose(await matrices()); poses.push(current);
     const advance=Math.atan2(Math.sin(current.yaw-previousYaw),Math.cos(current.yaw-previousYaw));
     expect(advance).toBeGreaterThan(1.5); expect(advance).toBeLessThan(1.7);
