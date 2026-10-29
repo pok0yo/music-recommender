@@ -50,7 +50,9 @@ def verify():
             assert get('/v1/catalog/search',params={'q':artist,'limit':20})['results']
         cases=json.loads((OUTPUT/'ui-cases.json').read_text(encoding='utf-8'))
         for seed,expected in list(cases['recommendations'].items())[:6]:
-            assert get('/v1/recommendations/'+seed)['results']==expected['results']
+            actual=get('/v1/recommendations/'+seed)['results']
+            # Links are derived separately; compare the immutable catalog and model fields.
+            assert [{k:v for k,v in row.items() if k!='listening_links'} for row in actual]==[{k:v for k,v in row.items() if k!='listening_links'} for row in expected['results']]
         assert client.get('/v1/catalog/search',params={'q':"' OR 1=1 --"}).json()['results']==[]
         assert client.get('/v1/recommendations/00000000-0000-0000-0000-000000000000').status_code==404
     result=dict(verified_at=datetime.now(timezone.utc).isoformat(),activated=True,catalog_version=release['catalog_version'],

@@ -32,8 +32,9 @@ class NoRedirect(HTTPRedirectHandler):
 
 
 class MetadataCache:
-    def __init__(self, root=ROOT, output=OUTPUT):
+    def __init__(self, root=ROOT, output=OUTPUT, allowed_url=None):
         self.root, self.output = Path(root), Path(output)
+        self.allowed_url=allowed_url
         self.root.mkdir(parents=True, exist_ok=True)
         self.lock = sqlite3.connect(self.root / "process-lock.sqlite", timeout=0)
         self.lock.execute("BEGIN EXCLUSIVE")
@@ -57,7 +58,8 @@ class MetadataCache:
 
     def reserve(self, url):
         parsed = urlsplit(url)
-        if parsed.scheme != "https" or parsed.netloc != "musicbrainz.org" or not parsed.path.startswith('/ws/2/recording'):
+        official=parsed.scheme == "https" and parsed.netloc == "musicbrainz.org" and parsed.path.startswith('/ws/2/recording')
+        if not official and not (self.allowed_url and self.allowed_url(url)):
             raise ValueError("Only official recording metadata requests are allowed")
         if self.disk_bytes() + EXPANDED_LIMIT * 3 > DISK_CAP:
             raise ValueError("New metadata disk allowance exhausted")

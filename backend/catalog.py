@@ -33,6 +33,7 @@ def content_hash(rows):
 class Catalog:
     def __init__(self, dsn, release):
         self.dsn, self.release = dsn, release
+        self.listening_links = {}
         self.slots = BoundedSemaphore(4)
 
     def query(self, statement, parameters=()):
@@ -62,12 +63,17 @@ class Catalog:
     def get(self, recording):
         rows = self.query("SELECT payload FROM music_catalog.recordings WHERE version=%s AND recording_id=%s",
             (self.release["catalog_version"], recording))
-        return self.track(rows[0]["payload"]) if rows else None
+        return self.present(rows[0]["payload"]) if rows else None
 
     def get_many(self, recordings):
         rows = self.query("SELECT payload FROM music_catalog.recordings WHERE version=%s AND recording_id=ANY(%s::uuid[])",
             (self.release["catalog_version"], recordings))
-        return {row["payload"]["recording_id"]: self.track(row["payload"]) for row in rows}
+        return {row["payload"]["recording_id"]: self.present(row["payload"]) for row in rows}
+
+    def present(self,payload):
+        track=self.track(payload)
+        track['listening_links']=self.listening_links.get(track['recording_id'],[])
+        return track
 
     @staticmethod
     def track(payload):
@@ -76,12 +82,12 @@ class Catalog:
     def search(self, text, limit):
         rows = self.query("SELECT payload FROM music_catalog.recordings WHERE version=%s AND position(%s in search_text)>0 ORDER BY search_text COLLATE \"C\",recording_id LIMIT %s",
             (self.release["catalog_version"], normalized(text), limit))
-        return [self.track(row["payload"]) for row in rows]
+        return [self.present(row["payload"]) for row in rows]
 
     def starters(self):
         rows = self.query("SELECT payload FROM music_catalog.recordings WHERE version=%s AND starter ORDER BY search_text COLLATE \"C\",recording_id LIMIT 32",
             (self.release["catalog_version"],))
-        return [self.track(row["payload"]) for row in rows]
+        return [self.present(row["payload"]) for row in rows]
 
 
 def import_catalog(directory=Path("data/processed/stage-8-catalog-v1"), report_path=Path("docs/evidence/stage-8-catalog-preparation.json")):

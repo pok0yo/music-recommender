@@ -6,8 +6,8 @@ import { demonstrationAPI, demoTracks, type Scenario } from './fixtures';
 import { type CatalogResponse, type Meta, type RecommendationResponse, type Track, uuid } from './contracts';
 
 const safeError = (value: unknown) => value instanceof APIError ? value : new APIError('unavailable', 'The music catalog could not be loaded. Please try again.');
-export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario) {
-  const api = useMemo(() => mode === 'demo' ? demonstrationAPI(fixture) : realAPI(), [mode, fixture]);
+export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario, demoCatalog?: Track[]) {
+  const api = useMemo(() => mode === 'demo' ? demonstrationAPI(fixture,demoCatalog) : realAPI(), [mode, fixture,demoCatalog]);
   const [query, setQuery] = useState('');
   const [starters, setStarters] = useState<CatalogResponse | null>(null);
   const [starterError, setStarterError] = useState<APIError | null>(null);
@@ -109,14 +109,14 @@ export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario) {
     const params = new URLSearchParams(window.location.search);
     if (params.has('seed')) restore();
     else if (mode === 'demo' && fixture === 'invalid') void choose('invalid', false, false);
-    else if (mode === 'demo' && !['entry', 'search', 'no-match'].includes(fixture)) void choose(demoTracks[0], false, false);
+    else if (mode === 'demo' && !['entry', 'search', 'no-match'].includes(fixture)) void choose(demoCatalog?.[0]??demoTracks[0], false, false);
     else if (mode === 'demo' && ['search', 'no-match'].includes(fixture)) void search(fixture === 'search' ? 'Tiffany' : 'An absent song');
     window.addEventListener('popstate', restore);
     return () => {
       starterRequest.current?.abort(); searchRequest.current?.abort(); recommendationRequest.current?.abort();
       window.removeEventListener('popstate', restore);
     };
-  }, [api, choose, clear, fixture, loadStarters, mode, search]);
+  }, [api, choose, clear, fixture, loadStarters, mode, search,demoCatalog]);
 
   useEffect(() => {
     if (recommendations && focusResults.current) { resultHeading.current?.focus(); focusResults.current = false; }

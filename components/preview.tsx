@@ -10,8 +10,8 @@ import { studyNames, studySlugs, studyStructures } from '../v2/studies';
 import { artworks } from '../v2/artwork';
 import { WaterBackground } from './water-background';
 
-export function Preview({ initialVariant, initialMode, initialFixture, about = false, initialStudy, initialArtwork, initialBackground = 'hazy', initialWaterMotion = true }: {
-  initialVariant: number; initialMode: Meta['data_mode']; initialFixture: Scenario; about?: boolean; initialStudy?: number; initialArtwork?: number; initialBackground?: 'hazy' | 'crisp'; initialWaterMotion?: boolean;
+export function Preview({ initialVariant, initialMode, initialFixture, about = false, initialStudy, initialArtwork, initialBackground = 'hazy', initialWaterMotion = true, initialFullPlayer = false }: {
+  initialVariant: number; initialMode: Meta['data_mode']; initialFixture: Scenario; about?: boolean; initialStudy?: number; initialArtwork?: number; initialBackground?: 'hazy' | 'crisp'; initialWaterMotion?: boolean; initialFullPlayer?: boolean;
 }) {
   const [variant, setVariant] = useState(initialArtwork || initialStudy || initialVariant);
   const isArtwork = initialArtwork !== undefined;
@@ -67,6 +67,7 @@ export function Preview({ initialVariant, initialMode, initialFixture, about = f
   }, [variant]);
   useEffect(() => { const id = requestAnimationFrame(() => setReady(true)); return () => cancelAnimationFrame(id); }, []);
   useEffect(() => {
+    if (isArtwork) return;
     const keys = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement;
       if (target.closest('input,textarea,select,button,summary,a,[contenteditable=true]') || event.ctrlKey || event.metaKey || event.altKey) return;
@@ -86,32 +87,38 @@ export function Preview({ initialVariant, initialMode, initialFixture, about = f
     window.history.replaceState(null, '', url);
   };
   const context = new URLSearchParams({ mode, ...(mode === 'demo' ? { fixture } : {}) });
+  if (isArtwork && !initialFullPlayer) context.set('interface', 'classic');
+  if (isArtwork && initialFullPlayer) context.set('view','app');
   if (isArtwork) { context.set('background', background); context.set('water', waterMotion ? 'moving' : 'still'); }
-  return <div className={`app-surface variant-${productVariant}${study ? ` study-${studySlugs[study - 1]}` : ''}`} data-variant={`v${productVariant}`} data-study={study ? studySlugs[study - 1] : undefined} data-artwork={artwork?.slug} data-background={artwork?.slug === 'orbital-disc' ? background : undefined}>
-    <a className="skip-link" href="#main-content">Skip to content</a>
-    {artwork?.slug === 'orbital-disc' && <WaterBackground enabled={waterMotion} finish={background} />}
-    <aside className="preview-bar" aria-label="Prototype controls"><div className="preview-bar-inner"><p><strong>{isArtwork ? 'Disc Tray artwork' : isStudy ? 'Disc Study exploration' : 'Prototype preview'}</strong><span>{names[variant - 1]} · {structures[variant - 1]}</span></p>
-      <div className="preview-settings"><label>Data<select aria-label="Data source" value={mode} onChange={event => changeData(event.target.value as Meta['data_mode'], 'entry')}>
+  const settings = <div className="preview-settings"><label>Data<select aria-label="Data source" value={mode} onChange={event => changeData(event.target.value as Meta['data_mode'], 'entry')}>
         <option value="real">Real catalog</option><option value="demo">Demonstration data</option></select></label>
         {mode === 'demo' && <label>Scenario<select aria-label="Demonstration scenario" value={fixture} onChange={event => changeData('demo', event.target.value as Scenario)}>
           {Object.entries(scenarios).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>}
         {artwork?.slug === 'orbital-disc' && <label>Background<select aria-label="Background finish" value={background} onChange={event => switchBackground(event.target.value as 'hazy' | 'crisp')}>
           <option value="hazy">Hazy iridescence</option><option value="crisp">Crystal clear</option></select></label>}
         {artwork?.slug === 'orbital-disc' && <label>Water<select aria-label="Water movement" value={waterMotion ? 'moving' : 'still'} onChange={event => switchWater(event.target.value === 'moving')}>
-          <option value="moving">Rippling</option><option value="still">Still</option></select></label>}</div></div>
+          <option value="moving">Rippling</option><option value="still">Still</option></select></label>}</div>;
+  const brand = <Link className="brand" href={`${pathFor(variant)}?${context}`}>Music Recommender<span className="brand-mark" aria-hidden="true">m/r</span></Link>;
+  const navigation = <nav aria-label="Main navigation"><Link aria-current={!about ? 'page' : undefined} href={`${pathFor(variant)}?${context}`}>Discover</Link>
+    <Link aria-current={about ? 'page' : undefined} aria-label={isArtwork ? "How it works" : "About the recommendations"} href={`${pathFor(variant)}/about?${context}`}>{isArtwork ? 'How it works' : 'About'}</Link></nav>;
+  return <div className={`app-surface variant-${productVariant}${study ? ` study-${studySlugs[study - 1]}` : ''}`} data-interface={initialFullPlayer ? 'player' : undefined} data-variant={`v${productVariant}`} data-study={study ? studySlugs[study - 1] : undefined} data-artwork={artwork?.slug} data-background={artwork?.slug === 'orbital-disc' ? background : undefined}>
+    <a className="skip-link" href="#main-content">Skip to content</a>
+    {artwork?.slug === 'orbital-disc' && <WaterBackground enabled={waterMotion} finish={background} />}
+    {!isArtwork && <aside className="preview-bar" aria-label="Prototype controls"><div className="preview-bar-inner"><p><strong>{isStudy ? 'Disc Study exploration' : 'Prototype preview'}</strong><span>{names[variant - 1]} · {structures[variant - 1]}</span></p>{settings}</div>
       <nav className="proto-picker" aria-label="Prototype variants" data-ready={ready ? '' : undefined} ref={picker}>
         <span className="proto-picker-highlight" aria-hidden="true" ref={highlight} />
         {names.map((name, index) => <button key={name} type="button" className="proto-picker-item" aria-label={`Preview ${name}`} data-active={variant === index + 1 ? '' : undefined}
           aria-current={variant === index + 1 ? 'true' : undefined} onClick={() => switchVariant(index + 1)}><span className="picker-full-name">{name}</span><span className="picker-short-name" aria-hidden="true">{index + 1}</span></button>)}
       </nav>
-    </aside>
-    <div className="page-frame"><header className="app-header"><Link className="brand" href={`${pathFor(variant)}?${context}`}>Music Recommender<span className="brand-mark" aria-hidden="true">m/r</span></Link>
-      <nav aria-label="Main navigation"><Link aria-current={!about ? 'page' : undefined} href={`${pathFor(variant)}?${context}`}>Discover</Link>
-        <Link aria-current={about ? 'page' : undefined} aria-label="About the recommendations" href={`${pathFor(variant)}/about?${context}`}>About</Link></nav></header>
-      {mode === 'demo' && <p className="demo-notice" role="note"><strong>Demonstration data.</strong> Track relationships and counts are illustrative, not model results.</p>}
+    </aside>}
+    <div className="page-frame"><header className={`app-header${isArtwork ? ' orbital-toolbar' : ''}`}>
+      {isArtwork ? <><div className="orbital-header-main">{brand}
+        <p className={mode === 'demo' ? 'demo-notice' : 'catalog-notice'} role="note"><strong>{mode === 'demo' ? 'Demonstration data.' : 'Real catalog.'}</strong> {mode === 'demo' ? 'Track relationships and counts are illustrative, not model results.' : '215 recordings · MusicBrainz + ListenBrainz'}</p>
+        {navigation}</div>{settings}</> : <>{brand}{navigation}</>}</header>
+      {!isArtwork && mode === 'demo' && <p className="demo-notice" role="note"><strong>Demonstration data.</strong> Track relationships and counts are illustrative, not model results.</p>}
       <main id="main-content" tabIndex={-1} key={mode + fixture + String(about)}>{about ? <About variant={productVariant} /> : <Discovery mode={mode} fixture={fixture} variant={productVariant} study={study}
-        heroArtwork={artwork ? `/artwork/disc-tray/${artwork.slug}.png` : undefined} />}</main>
-      <footer className="app-footer"><span>Music, through a different connection.</span><Link href={`${pathFor(variant)}/about?${context}`}>How these recommendations work</Link></footer>
+        heroArtwork={artwork ? `/artwork/disc-tray/${artwork.slug}.png` : undefined} showContext={!isArtwork} fullPlayer={initialFullPlayer} waterMotion={waterMotion} />}</main>
+      {!isArtwork && <footer className="app-footer"><span>Music, through a different connection.</span><Link href={`${pathFor(variant)}/about?${context}`}>How these recommendations work</Link></footer>}
     </div>
   </div>;
 }

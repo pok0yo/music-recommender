@@ -16,13 +16,14 @@ import DiscTray from '../v2/disc-tray';
 import LinerNotes from '../v2/liner-notes';
 import { LiquidMetalButton } from './ui/liquid-metal-button';
 import { OrbitalHero } from './orbital-hero';
+import { PlayerConsole } from './player-console';
 
 export const variantNames = ['Blue Horizon', 'Disc Study', 'Pearl Orbit', 'Capsule Current', 'Cobalt Signal'];
 export const variantStructures = ['Split console', 'Guided sequence', 'Catalog workbench', 'Track ledger', 'List + inspector'];
 const presentations = [BlueHorizon, DiscStudy, PearlOrbit, CapsuleCurrent, CobaltSignal];
 const studies = [Gatefold, DiscTray, LinerNotes];
 
-function Problem({ error, retry }: { error: APIError; retry: () => void }) {
+export function Problem({ error, retry }: { error: APIError; retry: () => void }) {
   const [waiting, setWaiting] = useState(error.retryAfter || 0);
   useEffect(() => {
     setWaiting(error.retryAfter || 0);
@@ -54,8 +55,22 @@ function EvidenceDetails({ track }: { track: RelatedTrack }) {
   </div>;
 }
 
-export function Discovery({ variant, mode, fixture, study, heroArtwork }: { variant: number; mode: Meta['data_mode']; fixture: Scenario; study?: number; heroArtwork?: string }) {
+export function Discovery({ variant, mode, fixture, study, heroArtwork, showContext = true, fullPlayer = false, waterMotion = true }: { variant: number; mode: Meta['data_mode']; fixture: Scenario; study?: number; heroArtwork?: string; showContext?: boolean; fullPlayer?: boolean; waterMotion?: boolean }) {
   const d = useDiscovery(mode, fixture);
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const orbital = heroArtwork?.endsWith('/orbital-disc.png');
+  const dockFocus = useRef(false);
+  const choose = (track: Track) => {
+    dockFocus.current = !!orbital && !d.attempted;
+    void d.choose(track, true, !dockFocus.current);
+  };
+  useEffect(() => {
+    if (d.recommendations && dockFocus.current) {
+      d.resultHeading.current?.focus({ preventScroll: true }); dockFocus.current = false;
+    }
+  }, [d.recommendations]);
+  const opening = orbital ? !d.attempted : d.opening;
+  useEffect(() => { if (d.attempted) setPickerOpen(false); }, [d.attempted]);
   const [inspectedID, setInspectedID] = useState<string | null>(null);
   const inspectorHeading = useRef<HTMLHeadingElement>(null);
   const detailTrigger = useRef<HTMLButtonElement | null>(null);
@@ -63,8 +78,8 @@ export function Discovery({ variant, mode, fixture, study, heroArtwork }: { vari
   const Presentation = study ? studies[study - 1] : presentations[variant - 1];
   const resultCount = d.recommendations?.results.length ?? 0;
   const meta = d.recommendations?.meta || d.starters?.meta;
-  const heading = <div className="task-heading"><h1>{d.opening ? <>Start with<br className="opening-break" /> one song.</> : 'Find your next connection.'}</h1>
-    <p>{d.opening ? 'Choose a track. Explore connections in listening data.' : 'Search again, or follow a track somewhere new.'}</p></div>;
+  const heading = <div className="task-heading"><h1>{opening ? orbital ? <><span>Start with</span>{' '}<span>one song.</span></> : <>Start with<br className="opening-break" /> one song.</> : 'Find your next connection.'}</h1>
+    <p>{opening ? 'Choose a track. Explore connections in listening data.' : 'Search again, or follow a track somewhere new.'}</p></div>;
   const search = <section className="search-area" aria-label="Find a song"><form noValidate onSubmit={event => { event.preventDefault(); void d.search(d.query); }}>
     <label htmlFor="music-search">Song or artist</label><div className="search-controls"><input id="music-search" ref={d.searchInput}
       value={d.query} onChange={event => d.setQuery(event.target.value)} type="search" enterKeyHint="search"
@@ -76,15 +91,15 @@ export function Discovery({ variant, mode, fixture, study, heroArtwork }: { vari
     {d.matches && <div className="search-matches"><h2 className="small-heading">{d.matches.results.length ? 'Choose your starting song' : 'No matching tracks'}</h2>
       <p className="sr-only" role="status">{d.matches.results.length} matching {d.matches.results.length === 1 ? 'song' : 'songs'} found.</p>
       {!d.matches.results.length && <p>Try another title or artist, or choose a starting point below.</p>}
-      <ul>{d.matches.results.map(track => <li key={track.recording_id}><LiquidMetalButton type="button" className="match-button" onClick={() => void d.choose(track)}><TrackName track={track} />
-        <span className="match-action">Use this song</span></LiquidMetalButton></li>)}</ul>
+      <div className="search-match-options" inert={orbital && pickerOpen}><ul>{d.matches.results.map(track => <li key={track.recording_id}><LiquidMetalButton type="button" className="match-button" onClick={() => choose(track)}><TrackName track={track} />
+        <span className="match-action">Use this song</span></LiquidMetalButton></li>)}</ul></div>
       {!d.matches.results.length && <LiquidMetalButton type="button" className="text-button" onClick={() => d.clear()}>Show starting points</LiquidMetalButton>}
     </div>}
   </section>;
   const starters = <section className="starting-points" aria-labelledby="starting-heading"><div className="section-line"><h2 id="starting-heading">Starting points</h2><span>Choose one to explore</span></div>
     {d.starterError ? <Problem error={d.starterError} retry={() => void d.loadStarters()} /> : !d.starters ? <p role="status">Loading starting points…</p>
       : !d.starters.results.length ? <p>No starting points are available right now. Try a search.</p>
-        : <ul>{d.starters.results.slice(0, 4).map(track => <li key={track.recording_id}><LiquidMetalButton className="starter-button" type="button" onClick={() => void d.choose(track)}>
+        : <ul>{d.starters.results.slice(0, 4).map(track => <li key={track.recording_id}><LiquidMetalButton className="starter-button" type="button" onClick={() => choose(track)}>
           <TrackName track={track} /><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>
         </LiquidMetalButton></li>)}</ul>}
   </section>;
@@ -122,8 +137,17 @@ export function Discovery({ variant, mode, fixture, study, heroArtwork }: { vari
       trigger?.focus();
     }}>Back to track list</LiquidMetalButton>
   </div></aside> : null;
-  return <><Presentation opening={d.opening} heading={heading} search={search} starters={starters}
-    hero={heroArtwork?.endsWith('/orbital-disc.png') ? <OrbitalHero /> : <div className="hero-slot" aria-hidden="true"><div className="hero-fill">{heroArtwork && <Image src={heroArtwork} alt="" width={2048} height={2048}
+  if (orbital && fullPlayer) return <PlayerConsole discovery={d} mode={mode} heading={heading} search={search} starters={starters} pickerOpen={pickerOpen}
+    renderProblem={(error, retry) => <Problem error={error} retry={retry} />} renderDetails={track => <EvidenceDetails track={track} />}
+    renderHero={(paused,rack) => <OrbitalHero rack={rack?{...rack,waterMotion}:undefined} open={pickerOpen && !d.attempted} docked={d.attempted} consoleMode={d.attempted} motionPaused={paused} selection={d.selection}
+      onOpen={() => setPickerOpen(true)} onClose={() => setPickerOpen(false)} tracks={(d.matches || d.starters)?.results || []}
+      busy={d.searchBusy || (!d.matches && !d.starters && !d.starterError)} error={!!d.searchError || (!d.matches && !!d.starterError)} searching={!!d.matches}
+      onChoose={track => { setPickerOpen(false); choose(track); }} />} />;
+  return <><Presentation opening={opening} pickerOpen={pickerOpen} retainHero={orbital} heading={heading} search={search} starters={starters}
+    hero={orbital ? <OrbitalHero open={pickerOpen && !d.attempted} docked={d.attempted} selection={d.selection} onOpen={() => setPickerOpen(true)} onClose={() => setPickerOpen(false)}
+      tracks={(d.matches || d.starters)?.results || []} busy={d.searchBusy || (!d.matches && !d.starters && !d.starterError)}
+      error={!!d.searchError || (!d.matches && !!d.starterError)} searching={!!d.matches}
+      onChoose={track => { setPickerOpen(false); choose(track); }} /> : <div className="hero-slot" aria-hidden="true"><div className="hero-fill">{heroArtwork && <Image src={heroArtwork} alt="" width={2048} height={2048}
       sizes="(max-width: 767px) 204px, (max-width: 1023px) 200px, 240px" preload />}</div></div>} seed={seed} results={results} inspector={inspector} />
-    {meta && <div className="release-context"><span>{mode === 'demo' ? 'Demonstration data' : 'Real catalog'}</span><span>{mode === 'demo' ? 'Shared comparison fixtures' : '215 recordings · MusicBrainz + ListenBrainz'}</span></div>}</>;
+    {showContext && meta && <div className="release-context"><span>{mode === 'demo' ? 'Demonstration data' : 'Real catalog'}</span><span>{mode === 'demo' ? 'Shared comparison fixtures' : '215 recordings · MusicBrainz + ListenBrainz'}</span></div>}</>;
 }

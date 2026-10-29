@@ -1,0 +1,462 @@
+{
+  "catalog_version": "catalog-v1-ef2fb83d56b9d320cadfa990d7cefb8ec24f6a309c194a5ff999aab1205354a3",
+  "catalog_source_sha256": "15b50829eb1822e7eaf4794ae11b709b922de4d4858177ed41e5dfdb1267e38f",
+  "support_audit_sha256": "16ca93d2f189cd8b5f0001dfea558a3929fbf5581efd88fc40dc70964629a2bb",
+  "approved_panel_count": 40,
+  "supported_count": 32,
+  "tracks": [
+    {
+      "artist_credits": [
+        {
+          "artist_id": "1ff7da2a-885f-4f66-b1a2-14d93bf590d0",
+          "joinphrase": "",
+          "name": "nate sib"
+        }
+      ],
+      "canonical_recording_id": "8630f911-a9a6-486e-b764-aabc236479ad",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "8630f911-a9a6-486e-b764-aabc236479ad",
+      "title": "typical"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "c9e3089c-a7bc-4df5-80f9-9161eaa74a02",
+          "joinphrase": "",
+          "name": "Tiffany Day"
+        }
+      ],
+      "canonical_recording_id": "15db4b6a-7205-4960-9f0c-d1a34d147afe",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "15db4b6a-7205-4960-9f0c-d1a34d147afe",
+      "title": "CLOUDS"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "b46e298d-d3a5-4695-a03e-63e8c523b23e",
+          "joinphrase": "",
+          "name": "Daniel Caesar"
+        }
+      ],
+      "canonical_recording_id": "49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+      "title": "Always"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "88d17133-abbc-42db-9526-4e2c1db60336",
+          "joinphrase": "",
+          "name": "beabadoobee"
+        }
+      ],
+      "canonical_recording_id": "f220ba2e-0d12-41a2-b9ef-5a5119b967b8",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "f220ba2e-0d12-41a2-b9ef-5a5119b967b8",
+      "title": "Glue Song"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "0a68f3b5-79c2-4f81-a7bc-ebc977602e86",
+          "joinphrase": "",
+          "name": "che"
+        }
+      ],
+      "canonical_recording_id": "565ed4d0-469e-4a89-8e3e-afc521a4ed56",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "565ed4d0-469e-4a89-8e3e-afc521a4ed56",
+      "title": "Miley Cyrus"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "8bd5a8fb-4c25-401d-a597-2c24affdd5c5",
+          "joinphrase": "",
+          "name": "2hollis"
+        }
+      ],
+      "canonical_recording_id": "de766945-2406-4627-9d3c-5dd4a17497d6",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "de766945-2406-4627-9d3c-5dd4a17497d6",
+      "title": "crush"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "bb7959ac-84cc-45c4-8138-d80ee5f2bd9a",
+          "joinphrase": "",
+          "name": "Lucy Bedroque"
+        }
+      ],
+      "canonical_recording_id": "4c4053b4-6e64-4bb7-a8a3-ca5e9f32811b",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "4c4053b4-6e64-4bb7-a8a3-ca5e9f32811b",
+      "title": "Mi Amor"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "88d17133-abbc-42db-9526-4e2c1db60336",
+          "joinphrase": "",
+          "name": "beabadoobee"
+        }
+      ],
+      "canonical_recording_id": "c6cdaca3-37a1-47f3-a5e3-e9c012a6c0f1",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "c6cdaca3-37a1-47f3-a5e3-e9c012a6c0f1",
+      "title": "Coffee"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "b46e298d-d3a5-4695-a03e-63e8c523b23e",
+          "joinphrase": " feat. ",
+          "name": "Daniel Caesar"
+        },
+        {
+          "artist_id": "d0c7656d-8169-4f77-9dbe-b8f24e40105d",
+          "joinphrase": "",
+          "name": "Kali Uchis"
+        }
+      ],
+      "canonical_recording_id": "b3323026-2dc1-4c02-b447-1b7118a97e90",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "b3323026-2dc1-4c02-b447-1b7118a97e90",
+      "title": "Get You"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "b29020d6-5dbf-4c99-b16f-c009f8a712ff",
+          "joinphrase": "",
+          "name": "Steve Lacy"
+        }
+      ],
+      "canonical_recording_id": "bc0f4be2-29bd-4f4b-a850-862bbd130db5",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "bc0f4be2-29bd-4f4b-a850-862bbd130db5",
+      "title": "Dark Red"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "afb680f2-b6eb-4cd7-a70b-a63b25c763d5",
+          "joinphrase": "",
+          "name": "Bruno Mars"
+        }
+      ],
+      "canonical_recording_id": "4658bb93-57c4-4710-86f1-b87869f5781b",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "4658bb93-57c4-4710-86f1-b87869f5781b",
+      "title": "Just the Way You Are"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "ad322b8b-31b2-437d-8fd8-1af13c1d7b91",
+          "joinphrase": "",
+          "name": "GIVĒON"
+        }
+      ],
+      "canonical_recording_id": "cb77aabb-7b1f-4cf4-8db9-6b49753a60de",
+      "disambiguation": "explicit",
+      "external_link": null,
+      "recording_id": "cb77aabb-7b1f-4cf4-8db9-6b49753a60de",
+      "title": "Heartbreak Anniversary"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "1ff7da2a-885f-4f66-b1a2-14d93bf590d0",
+          "joinphrase": "",
+          "name": "nate sib"
+        }
+      ],
+      "canonical_recording_id": "ca215903-73eb-42f7-97bd-ccf520137b23",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "ca215903-73eb-42f7-97bd-ccf520137b23",
+      "title": "go"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "c9e3089c-a7bc-4df5-80f9-9161eaa74a02",
+          "joinphrase": "",
+          "name": "Tiffany Day"
+        }
+      ],
+      "canonical_recording_id": "daf4d723-2ff7-4e5f-b132-237c987c3a03",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "daf4d723-2ff7-4e5f-b132-237c987c3a03",
+      "title": "SAN FRANCISCO SIDEWALK"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "0a68f3b5-79c2-4f81-a7bc-ebc977602e86",
+          "joinphrase": "",
+          "name": "che"
+        }
+      ],
+      "canonical_recording_id": "37917bf2-83f7-41bb-9f89-5320aa4561c4",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "37917bf2-83f7-41bb-9f89-5320aa4561c4",
+      "title": "Pizza Time"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "8bd5a8fb-4c25-401d-a597-2c24affdd5c5",
+          "joinphrase": "",
+          "name": "2hollis"
+        }
+      ],
+      "canonical_recording_id": "38ad538a-fddb-49f7-aeb7-84fb232ac4ff",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "38ad538a-fddb-49f7-aeb7-84fb232ac4ff",
+      "title": "jeans"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "88d17133-abbc-42db-9526-4e2c1db60336",
+          "joinphrase": "",
+          "name": "beabadoobee"
+        }
+      ],
+      "canonical_recording_id": "297dd100-3148-49f7-841d-c44ce59f34bd",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "297dd100-3148-49f7-841d-c44ce59f34bd",
+      "title": "She Plays Bass"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "b29020d6-5dbf-4c99-b16f-c009f8a712ff",
+          "joinphrase": "",
+          "name": "Steve Lacy"
+        }
+      ],
+      "canonical_recording_id": "1abdf128-2f80-457c-8da0-e554e8e3b534",
+      "disambiguation": "explicit",
+      "external_link": null,
+      "recording_id": "1abdf128-2f80-457c-8da0-e554e8e3b534",
+      "title": "Bad Habit"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "afb680f2-b6eb-4cd7-a70b-a63b25c763d5",
+          "joinphrase": "",
+          "name": "Bruno Mars"
+        }
+      ],
+      "canonical_recording_id": "9dbd4c26-c4ad-4abe-ba3e-88bfe6750518",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "9dbd4c26-c4ad-4abe-ba3e-88bfe6750518",
+      "title": "Locked Out of Heaven"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "ad322b8b-31b2-437d-8fd8-1af13c1d7b91",
+          "joinphrase": "",
+          "name": "GIVĒON"
+        }
+      ],
+      "canonical_recording_id": "7c59799e-3135-4f54-9541-f25e8822684d",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "7c59799e-3135-4f54-9541-f25e8822684d",
+      "title": "Like I Want You"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "1ff7da2a-885f-4f66-b1a2-14d93bf590d0",
+          "joinphrase": "",
+          "name": "nate sib"
+        }
+      ],
+      "canonical_recording_id": "fa4c7167-c1c8-4c5a-909f-3dd8f3139658",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "fa4c7167-c1c8-4c5a-909f-3dd8f3139658",
+      "title": "secret"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "c9e3089c-a7bc-4df5-80f9-9161eaa74a02",
+          "joinphrase": "",
+          "name": "Tiffany Day"
+        }
+      ],
+      "canonical_recording_id": "a824626f-d5e1-43b3-a2e9-49b138b0eaee",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "a824626f-d5e1-43b3-a2e9-49b138b0eaee",
+      "title": "HELLA BOY CRAZY"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "8bd5a8fb-4c25-401d-a597-2c24affdd5c5",
+          "joinphrase": "",
+          "name": "2hollis"
+        }
+      ],
+      "canonical_recording_id": "1eb60aa4-9610-4296-87c5-ba050f64655c",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "1eb60aa4-9610-4296-87c5-ba050f64655c",
+      "title": "gold"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "b29020d6-5dbf-4c99-b16f-c009f8a712ff",
+          "joinphrase": "",
+          "name": "Steve Lacy"
+        }
+      ],
+      "canonical_recording_id": "aa03fca2-4c9e-4ee9-95c3-c30fa0a91004",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "aa03fca2-4c9e-4ee9-95c3-c30fa0a91004",
+      "title": "N Side"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "afb680f2-b6eb-4cd7-a70b-a63b25c763d5",
+          "joinphrase": "",
+          "name": "Bruno Mars"
+        }
+      ],
+      "canonical_recording_id": "c2525847-4207-44c8-995f-45e81004c6ab",
+      "disambiguation": "explicit intro",
+      "external_link": null,
+      "recording_id": "c2525847-4207-44c8-995f-45e81004c6ab",
+      "title": "Treasure"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "ad322b8b-31b2-437d-8fd8-1af13c1d7b91",
+          "joinphrase": "",
+          "name": "GIVĒON"
+        }
+      ],
+      "canonical_recording_id": "9c237f32-aaa3-4275-a984-87dddff37d17",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "9c237f32-aaa3-4275-a984-87dddff37d17",
+      "title": "For Tonight"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "1ff7da2a-885f-4f66-b1a2-14d93bf590d0",
+          "joinphrase": "",
+          "name": "nate sib"
+        }
+      ],
+      "canonical_recording_id": "3956cb39-7741-421c-a5bd-a163b99d8813",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "3956cb39-7741-421c-a5bd-a163b99d8813",
+      "title": "only1"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "c9e3089c-a7bc-4df5-80f9-9161eaa74a02",
+          "joinphrase": "",
+          "name": "Tiffany Day"
+        }
+      ],
+      "canonical_recording_id": "99e50018-d45e-44e2-b085-8052e87c71ae",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "99e50018-d45e-44e2-b085-8052e87c71ae",
+      "title": "KANSAS"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "8bd5a8fb-4c25-401d-a597-2c24affdd5c5",
+          "joinphrase": "",
+          "name": "2hollis"
+        }
+      ],
+      "canonical_recording_id": "6b2ed59c-316e-4b8a-aae1-cca399354126",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "6b2ed59c-316e-4b8a-aae1-cca399354126",
+      "title": "lie"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "88d17133-abbc-42db-9526-4e2c1db60336",
+          "joinphrase": "",
+          "name": "beabadoobee"
+        }
+      ],
+      "canonical_recording_id": "0e011401-8380-48f3-b4bf-ad89e5e8e6ae",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "0e011401-8380-48f3-b4bf-ad89e5e8e6ae",
+      "title": "the way things go"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "b29020d6-5dbf-4c99-b16f-c009f8a712ff",
+          "joinphrase": "",
+          "name": "Steve Lacy"
+        }
+      ],
+      "canonical_recording_id": "d3d1a743-a512-49c7-b38d-0610c3433a39",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "d3d1a743-a512-49c7-b38d-0610c3433a39",
+      "title": "Some"
+    },
+    {
+      "artist_credits": [
+        {
+          "artist_id": "ad322b8b-31b2-437d-8fd8-1af13c1d7b91",
+          "joinphrase": "",
+          "name": "GIVĒON"
+        }
+      ],
+      "canonical_recording_id": "80f206d2-2668-4797-ab84-c556b85efbf9",
+      "disambiguation": null,
+      "external_link": null,
+      "recording_id": "80f206d2-2668-4797-ab84-c556b85efbf9",
+      "title": "Garden Kisses"
+    }
+  ]
+}

@@ -74,23 +74,82 @@
   border-radius:26px;
   background:var(--atmosphere-glass) var(--background-detail) right center/32% 100% no-repeat;
 }
+/* The selected listening console has one toolbar and two distinct material planes. */
+[data-artwork=orbital-disc] { padding-top:20px; }
+[data-artwork=orbital-disc] .orbital-toolbar { display:block; padding:12px 20px; margin-top:0; border-radius:28px; }
+.orbital-header-main { display:flex; align-items:center; gap:24px; }
+.orbital-header-main .brand { flex:none; }
+.orbital-header-main nav { margin-left:auto; flex:none; }
+.app-surface[data-artwork=orbital-disc] .orbital-toolbar :is(.demo-notice,.catalog-notice) {
+  flex:1; max-width:62ch; margin:0; padding:0; font-size:13px; line-height:1.5;
+  color:var(--muted); background:none; -webkit-backdrop-filter:none; backdrop-filter:none;
+}
+.orbital-toolbar .preview-settings { margin-top:8px; justify-content:flex-end; flex-wrap:wrap; gap:12px 20px; }
+.orbital-toolbar .preview-settings select { font-size:14px; }
+[data-artwork=orbital-disc] main { padding-top:24px; }
+[data-artwork=orbital-disc] .disc-study { max-width:1320px; }
+[data-artwork=orbital-disc] .disc-tray.is-opening { position:relative; margin-top:0; }
+.app-surface[data-artwork=orbital-disc] .disc-tray.is-opening .tray-upper {
+  display:grid; grid-template-columns:minmax(0,.38fr) minmax(0,.62fr); align-items:stretch;
+  gap:12px; padding:8px; background:none; -webkit-backdrop-filter:none; backdrop-filter:none;
+}
+[data-artwork=orbital-disc] .disc-tray.is-opening .tray-command {
+  align-content:center; max-width:none; padding:28px 24px; border-radius:24px;
+  background:linear-gradient(145deg,#f1f8ffe6,#dceaf7d9),url('/artwork/disc-tray/environment/extended-hazy-detail.webp') center/cover;
+  box-shadow:inset 0 1px 1px #fff,0 6px 16px #29486b14;
+}
+[data-artwork=orbital-disc] .disc-tray.is-opening .task-heading h1 { font-size:clamp(30px,2.8vw,40px); line-height:1.18; }
+[data-artwork=orbital-disc] .disc-tray.is-opening .search-area { margin-top:24px; }
+[data-artwork=orbital-disc] .disc-tray.is-opening .primary-button { padding-inline:18px; }
+[data-artwork=orbital-disc] .disc-study .orbital-hero {
+  position:relative; display:grid; place-items:center; width:100%; max-width:none;
+  min-height:390px; height:clamp(390px,calc(100svh - 390px),560px); aspect-ratio:auto; grid-template-rows:minmax(0,1fr);
+  top:auto; right:auto; transform:none; margin:0; padding:0; border-radius:24px; overflow:hidden;
+  background:#a6c8ee url('/artwork/disc-tray/environment/disc-stage-soft-focus.webp') center/cover;
+  box-shadow:inset 0 1px 1px #fff9,inset 0 -1px 1px #526f8c66,0 12px 24px #153f6b20;
+}
+[data-artwork=orbital-disc] .orbital-hero::before {
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(145deg,#edf7ff29,#d8d0f90d 60%,#d9eaff1a);
+}
+[data-artwork=orbital-disc] .orbital-stage { z-index:1; width:min(100%,clamp(620px,calc((100svh - 390px)*1.6),760px)); height:auto; }
+[data-artwork=orbital-disc] .tray-drawer { margin:16px 0 0; }
+[data-artwork=orbital-disc] .disc-tray.is-opening .tray-drawer .shell-body { padding:16px 24px; }
+[data-artwork=orbital-disc] .disc-tray.is-opening .section-line { margin-bottom:12px; }
+[data-artwork=orbital-disc] .disc-tray.is-opening .starter-button { padding:10px 14px; min-height:64px; }
 @media(max-width:1023px) {
   [data-artwork=orbital-disc] .task-heading h1 { font-size:32px; }
+  .orbital-header-main { flex-wrap:wrap; gap:12px; }
+  .app-surface[data-artwork=orbital-disc] .orbital-toolbar :is(.demo-notice,.catalog-notice) { order:3; flex-basis:100%; max-width:none; }
+  .app-surface[data-artwork=orbital-disc] .disc-tray.is-opening { display:flex; flex-direction:column; }
+  .app-surface[data-artwork=orbital-disc] .disc-tray.is-opening > .glass-shell:first-child,
+  .app-surface[data-artwork=orbital-disc] .disc-tray.is-opening .tray-upper { display:contents; }
+  .app-surface[data-artwork=orbital-disc] .disc-tray.is-opening > .glass-shell:first-child::after { display:none; }
+  [data-artwork=orbital-disc] .disc-tray.is-opening .tray-command { padding:28px 24px; }
+  [data-artwork=orbital-disc] .disc-study .orbital-hero { order:2; min-height:0; height:clamp(300px,70vw,520px); margin-top:16px; }
+  [data-artwork=orbital-disc] .orbital-stage { width:min(100%,760px); }
 }
 @media(max-width:767px) {
   [data-artwork=orbital-disc] { background-image:var(--background-mobile); --waterline:.615; }
-  [data-artwork=orbital-disc] .disc-tray.is-opening .tray-command { background:var(--atmosphere-glass); -webkit-backdrop-filter:blur(8px) saturate(125%); backdrop-filter:blur(8px) saturate(125%); }
+  [data-artwork=orbital-disc] .orbital-toolbar { padding:12px 16px; border-radius:24px; }
+  .orbital-header-main .brand { flex-basis:100%; }
+  .orbital-header-main nav { margin-left:0; }
+  .orbital-toolbar .preview-settings { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:16px; }
+  .orbital-toolbar .preview-settings label { display:block; min-width:0; }
+  .orbital-toolbar .preview-settings select { width:100%; max-width:none; font-size:16px; margin-top:6px; }
   [data-artwork=orbital-disc] .disc-tray.is-opening .tray-upper { background:none; }
   .app-surface[data-artwork=orbital-disc] .glass-shell::after { padding:4px; }
   .app-surface[data-artwork=orbital-disc] .disc-tray.is-opening > .glass-shell:first-child::after { display:none; }
   [data-artwork=orbital-disc] .task-heading h1 { font-size:clamp(25px,5.8vw,36px); }
   [data-artwork=orbital-disc] .about-intro { padding:24px; background:var(--atmosphere-glass); }
   [data-artwork=orbital-disc] .about-intro h1 { font-size:26px; }
+  [data-artwork=orbital-disc] .disc-tray.is-opening .tray-drawer .shell-body { padding:18px; }
 }
 @media(prefers-reduced-transparency:reduce) {
   [data-artwork=orbital-disc] { --atmosphere-glass:var(--surface); }
   [data-artwork=orbital-disc] .about-intro { background-image:none; }
   [data-artwork=orbital-disc] .disc-tray.is-opening .tray-command { -webkit-backdrop-filter:none; backdrop-filter:none; }
+  [data-artwork=orbital-disc] .disc-tray.is-opening .tray-command { background:var(--surface); }
 }
 @media(forced-colors:active) {
   [data-artwork=orbital-disc] { --atmosphere-glass:Canvas; }
@@ -99,4 +158,187 @@
   [data-artwork=orbital-disc] .about-intro { background:Canvas; }
   .app-surface[data-artwork=orbital-disc] .glass-shell::after { display:none; }
   [data-artwork=orbital-disc] .disc-tray.is-opening .tray-command { background:Canvas; -webkit-backdrop-filter:none; backdrop-filter:none; }
+  [data-artwork=orbital-disc] .disc-study .orbital-hero { background:Canvas; box-shadow:none; }
+  [data-artwork=orbital-disc] .orbital-hero::before { display:none; }
+}
+
+/* Animate the inline tray's actual dimensions so neighboring controls move with it. */
+.app-surface[data-artwork=orbital-disc] .disc-tray.is-opening .tray-upper {
+  transition:grid-template-columns 480ms cubic-bezier(.23,1,.32,1);
+}
+[data-artwork=orbital-disc] .disc-tray.is-opening .tray-command { container-type:inline-size; }
+[data-artwork=orbital-disc] .disc-tray.is-opening .task-heading h1 { font-size:clamp(24px,8cqw,40px); }
+[data-artwork=orbital-disc] .disc-tray.is-opening .task-heading h1 > span { display:block; white-space:nowrap; }
+.app-surface[data-artwork=orbital-disc] .disc-tray.is-picking .tray-upper { grid-template-columns:minmax(0,.3fr) minmax(0,.7fr); }
+[data-artwork=orbital-disc] .disc-study .orbital-hero {
+  transition:height 480ms cubic-bezier(.23,1,.32,1),min-height 480ms cubic-bezier(.23,1,.32,1);
+}
+[data-artwork=orbital-disc] .orbital-stage {
+  position:absolute; height:100%; transition:width 480ms cubic-bezier(.23,1,.32,1);
+  pointer-events:none;
+}
+[data-artwork=orbital-disc] .disc-study .orbital-hero.is-picker { height:clamp(600px,76svh,740px); min-height:600px; }
+[data-artwork=orbital-disc] .is-picker .orbital-stage { width:100%; }
+.disc-focus-fallback { position:absolute; inset:0; width:100%; height:100%; object-fit:contain;
+  transform:scale(var(--orbital-framing,1)) rotate(var(--disc-angle,0rad)); opacity:0; }
+.orbital-fallback,.disc-focus-fallback { transition:opacity 260ms ease-out; }
+.is-picker .orbital-fallback { opacity:0; }
+.is-picker .disc-focus-fallback { opacity:1; }
+.orbital-hero[data-model-ready] .disc-focus-fallback { visibility:hidden; }
+.disc-open { position:absolute; inset:0; width:100%; border:0; border-radius:inherit; background:transparent; color:var(--primary); cursor:pointer; display:grid; align-items:end; justify-items:center; padding:20px; opacity:1; transition:opacity 180ms ease-out; }
+.disc-open > span { display:flex; align-items:center; gap:16px; padding:11px 18px; border:1px solid #728cbb; border-radius:999px; background:#eef7ffe6; box-shadow:0 4px 12px #29486b26,inset 0 1px #fff; backdrop-filter:blur(12px); }
+.disc-open svg { width:20px; height:20px; stroke:currentColor; stroke-width:1.5; }
+.disc-open:focus-visible { outline:3px solid var(--primary); outline-offset:-6px; }
+.is-picker .disc-open { opacity:0; }
+.disc-selector {
+  position:absolute; z-index:2; inset:0; display:grid; grid-template-rows:auto minmax(190px,1fr) auto auto;
+  padding:18px; gap:12px; pointer-events:none;
+  opacity:0; transform:translateY(12px);
+  transition:opacity 180ms ease-out,transform 360ms cubic-bezier(.23,1,.32,1);
+}
+.is-picker .disc-selector { opacity:1; transform:translateY(0); transition-delay:100ms,0ms; }
+.disc-picker-toolbar { position:relative; z-index:3; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.disc-picker-toolbar h2 { margin:0; font-size:16px; line-height:1.5; font-weight:600; color:#173b77; }
+.disc-picker-toolbar .text-button { flex-shrink:0; font-size:13px; }
+.disc-selector button { pointer-events:auto; touch-action:manipulation; }
+.disc-dial { position:absolute; z-index:1; width:82%; aspect-ratio:1; max-height:82%; top:50%; left:50%; transform:translate(-50%,-50%); border-radius:50%; cursor:grab; touch-action:none; pointer-events:auto; }
+.disc-dial:focus-visible { outline:2px dashed var(--primary); outline-offset:-4px; }
+.disc-dial[aria-disabled=true] { touch-action:pan-y; cursor:default; }
+.is-dragging .disc-dial { cursor:grabbing; }
+.disc-song-orbit { position:absolute; inset:0; z-index:2; container-type:inline-size; min-width:0; }
+.disc-song {
+  position:absolute; left:50%; top:50%; width:clamp(118px,25cqw,180px); padding:12px;
+  display:grid; gap:6px; text-align:center; border-radius:16px; color:#173b77;
+  background:#eef7ffdb; backdrop-filter:blur(12px) saturate(1.15);
+  box-shadow:inset 0 1px #fff,0 8px 20px #203d7033;
+  transform:translate(calc(-50% + var(--song-x,0)*min(28cqw,200px)),calc(-50% + var(--song-y,-1)*min(28cqw,200px))) scale(var(--song-scale,1));
+  opacity:0;
+}
+.disc-song strong { font-size:16px; line-height:1.3; overflow-wrap:anywhere; }
+.disc-song span { font-size:12px; line-height:1.4; overflow-wrap:anywhere; }
+.disc-choices { position:relative; z-index:2; grid-row:3; display:grid; grid-template-columns:80px minmax(0,1fr) 80px; gap:12px; width:100%; max-width:680px; margin:auto; align-items:center; }
+.disc-choices > * { min-width:0; }
+.disc-current { grid-column:2; grid-row:1; padding:16px; text-align:center; border-radius:20px; background:#eef7fff0; backdrop-filter:blur(20px) saturate(1.15); box-shadow:inset 0 1px #fff,0 12px 24px #203d7040; color:#173b77; }
+.disc-current h3 { margin:10px 0 4px; font-size:clamp(20px,2vw,28px); line-height:1.25; overflow-wrap:anywhere; }
+.disc-current p { margin:0 0 12px; font-size:15px; line-height:1.5; overflow-wrap:anywhere; }
+.disc-current .disc-version { font-size:12px; }
+.disc-current-copy { animation:disc-copy-in 180ms ease-out; }
+@keyframes disc-copy-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+.disc-position { font-size:11px; line-height:1.5; color:#345d91; }
+.disc-current .primary-button { min-height:44px; width:100%; padding:10px 12px; }
+.disc-choices .disc-neighbor { min-height:44px; padding:12px 8px; border-radius:16px; color:#173b77; font-size:12px; }
+.disc-previous { grid-column:1; grid-row:1; }
+.disc-next { grid-column:3; grid-row:1; }
+.disc-instructions { position:relative; z-index:3; grid-row:4; margin:0; text-align:center; font-size:12px; color:#173b77; line-height:1.6; padding:8px 12px; border-radius:12px; background:#edf6ffe8; }
+.disc-picker-empty { position:relative; z-index:2; grid-row:3; padding:20px; border-radius:16px; text-align:center; background:#eef7fff0; color:#173b77; margin:0; }
+@media(max-width:1023px) {
+  [data-artwork=orbital-disc] .disc-study .orbital-hero.is-picker { height:640px; min-height:640px; }
+}
+@media(max-width:550px) {
+  .disc-selector { padding:14px 12px; gap:12px; grid-template-rows:auto minmax(180px,1fr) auto auto; }
+  .disc-picker-toolbar { gap:8px; align-items:start; }
+  .disc-picker-toolbar h2 { max-width:140px; font-size:14px; }
+  .disc-picker-toolbar .text-button { font-size:12px; padding:9px 10px; }
+  .disc-song { width:118px; padding:10px 8px; }
+  .disc-song strong { font-size:14px; }
+  .disc-choices { grid-template-columns:1fr 1fr; gap:10px; }
+  .disc-current { grid-column:1/-1; grid-row:2; padding:14px 18px; }
+  .disc-current h3 { margin-top:8px; font-size:23px; }
+  .disc-previous { grid-column:1; }
+  .disc-next { grid-column:2; }
+  .disc-instructions { font-size:11px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .app-surface[data-artwork=orbital-disc] .disc-tray.is-opening .tray-upper,
+  [data-artwork=orbital-disc] .disc-study .orbital-hero,
+  [data-artwork=orbital-disc] .orbital-stage,.disc-selector,.disc-open { transition:none; }
+  .disc-focus-fallback { transform:scale(var(--orbital-framing,1)); }
+  .orbital-fallback,.disc-focus-fallback { transition:none; }
+  .disc-current-copy { animation:none; }
+}
+@media(prefers-reduced-transparency:reduce) {
+  .disc-song,.disc-current,.disc-picker-empty,.disc-instructions,.disc-open > span { background:var(--surface); backdrop-filter:none; }
+}
+@media(forced-colors:active) {
+  .disc-song,.disc-current,.disc-picker-empty,.disc-instructions,.disc-open > span { background:Canvas; color:CanvasText; border:1px solid CanvasText; box-shadow:none; }
+  .disc-picker-toolbar h2 { color:CanvasText; }
+}
+
+[data-artwork=orbital-disc] .search-match-options { display:grid; grid-template-rows:1fr; opacity:1; transition:grid-template-rows 360ms cubic-bezier(.23,1,.32,1),opacity 180ms ease-out; }
+[data-artwork=orbital-disc] .search-match-options > ul { min-height:0; overflow:hidden; }
+[data-artwork=orbital-disc] .is-picking .search-match-options { grid-template-rows:0fr; opacity:0; }
+@media(prefers-reduced-motion:reduce) { [data-artwork=orbital-disc] .search-match-options { transition:none; } }
+
+/* The selected disc keeps one scene while it travels into the starting-song dock. */
+[data-artwork=orbital-disc] .has-disc-dock.is-working { display:grid; grid-template-columns:360px minmax(0,1fr); gap:24px; align-items:start; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working > .glass-shell:first-child { z-index:2; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .tray-upper { display:flex; flex-direction:column-reverse; gap:8px; padding:24px 18px 20px; overflow:visible; background:none; box-shadow:none; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .tray-command { width:100%; min-width:0; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .tray-drawer { margin:0; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .seed-summary { margin:0; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .search-controls { flex-direction:column; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .search-controls .primary-button { width:100%; }
+[data-artwork=orbital-disc] .disc-study .orbital-hero.is-docked { width:100%; height:360px; min-height:360px; margin:0; background:none; box-shadow:none; overflow:visible; transition:none; }
+[data-artwork=orbital-disc] .orbital-hero.is-docked::before { display:none; }
+[data-artwork=orbital-disc] .is-docked .orbital-stage { width:60%; height:60%; left:20%; top:15%; transition:none; overflow:clip; }
+.is-docked .disc-open { opacity:0; pointer-events:none; }
+.is-docked .orbital-fallback { opacity:0; }
+.is-docked .disc-focus-fallback { opacity:1; }
+.disc-carried-label { position:absolute; z-index:4; bottom:0; left:50%; transform:translateX(-50%); display:grid; gap:3px; width:min(88%,250px); padding:8px 14px; border:1px solid #93cbec; border-radius:12px; background:linear-gradient(150deg,#d9fbffe8,#aed5f2e6); color:#173b77; box-shadow:0 4px 12px #173b7733,inset 0 1px #fff; text-align:center; pointer-events:none; }
+.disc-carried-label strong,.disc-carried-label span { overflow-wrap:anywhere; }
+.disc-carried-label span { font-size:12px; }
+.disc-carried-label .player-status { font-family:'Michroma',sans-serif; font-size:8px; letter-spacing:.035em; text-transform:uppercase; }
+.disc-carried-label { animation:disc-results-in 240ms cubic-bezier(.23,1,.32,1); }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .recommendations { animation:disc-results-in 240ms cubic-bezier(.23,1,.32,1); }
+@keyframes disc-results-in { from { opacity:0; } to { opacity:1; } }
+@media(max-width:767px) {
+  [data-artwork=orbital-disc] .has-disc-dock.is-working { grid-template-columns:minmax(0,1fr); }
+  [data-artwork=orbital-disc] .has-disc-dock.is-working .tray-upper { padding:18px; }
+  [data-artwork=orbital-disc] .has-disc-dock.is-working .search-area { margin-top:18px; }
+  [data-artwork=orbital-disc] .disc-study .orbital-hero.is-docked { height:clamp(270px,86vw,360px); min-height:270px; order:0; }
+}
+
+/* A physical clamshell surrounds the live disc; the display keeps native controls. */
+.cd-player-housing { position:absolute; inset:0; opacity:0; visibility:hidden; pointer-events:none; }
+.is-docked .cd-player-housing { opacity:1; visibility:visible; }
+.player-model { position:absolute; inset:0; z-index:2; }
+.player-model canvas { display:block; width:100%; height:100%; }
+.player-well { position:absolute; z-index:0; width:64%; height:64%; top:13%; left:18%; border-radius:50%; background:radial-gradient(circle,#486da9,#243b626b 60%,#c4e9fa 70%,#315f84 72%); box-shadow:inset 0 3px 12px #0b2b5873; }
+.player-case-fallback { position:absolute; z-index:2; inset:7% 3% 8%; border-radius:28% 28% 32% 32%; border:12px solid #80cdf59c; background:radial-gradient(circle at 50% 44%,transparent 0 38%,#72bcdfb8 39%,#cdf2ffb3 45%,#1984c9d9 67%,#5774d1b3); box-shadow:inset 0 2px 3px #fff,0 12px 18px #2248784d; }
+.player-lid-fallback { position:absolute; width:88%; aspect-ratio:1; top:1%; left:6%; border:5px solid #dbf1ff; border-radius:50%; background:linear-gradient(135deg,#defbff33,#a7c1fa33); transform-origin:50% 0; transition:transform 240ms cubic-bezier(.23,1,.32,1); }
+[data-open] > .player-case-fallback .player-lid-fallback { transform:perspective(600px) rotateX(68deg); }
+.cd-player-housing[data-ready] .player-case-fallback { display:none; }
+.cd-player-housing:not([data-ready]) .player-model { visibility:hidden; }
+.cd-player-housing .player-well { z-index:0; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working > .cd-player-console { padding:5px; border-radius:64px 64px 48px 48px; border:1px solid #d9f5ff; background:linear-gradient(105deg,#a3eaffb3 0%,#3b91cce0 9%,#bdeaffb8 18%,#8fbfeea8 50%,#b9b6f1bd 83%,#5278c9ed 95%,#c9f5ffb3); box-shadow:inset 3px 2px 2px #fff,inset -5px -4px 8px #254f9299,0 14px 35px #153f6b4d; }
+.app-surface[data-artwork=orbital-disc] .cd-player-console::after { display:none; }
+.cd-player-console::before { content:'ORBITAL / DISC STUDY'; position:absolute; z-index:3; top:15px; left:50%; right:auto; width:max-content; height:auto; display:block; transform:translateX(-50%); background:none; white-space:nowrap; font-family:'Michroma',sans-serif; font-size:8px; line-height:1.4; letter-spacing:.06em; color:#1a4975; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .tray-command { padding:28px 16px 18px; border-radius:24px 24px 32px 32px; border:3px solid #beddeef2; background:linear-gradient(135deg,#203e6ded,#104b7cf5 60%,#344e86f0); box-shadow:inset 0 3px 10px #041c3b73,inset 0 -1px #7adfff73,0 2px 0 #e5faffc4; color:#eaf6ff; --muted:#d1e8ff; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .seed-summary { grid-template-columns:minmax(0,1fr); padding:0 0 18px; border-top:0; border-color:#d4edff4d; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .context-label { color:#b8edff; font-family:'Michroma',sans-serif; font-size:9px; letter-spacing:.04em; text-transform:uppercase; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .selected-track .track-title { color:#fff; font-size:20px; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .selected-track .track-artist { color:#d3d4ff; font-size:14px; margin-top:5px; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .seed-summary > .text-button { grid-column:1; grid-row:auto; justify-self:start; margin-top:14px; padding:10px 16px; color:#153ea8; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .seed-caption { font-size:13px; color:#d1e8ff; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .search-area { margin-top:18px; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .field-help { color:#d1e8ff; font-size:12px; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working input[type=search] { color:#173250; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working input::placeholder { color:#465f7b; }
+[data-artwork=orbital-disc] .has-disc-dock.is-working .search-matches { --muted:#465f7b; color:#173250; }
+.is-docked:not([data-model-ready])[data-player-state=spinning] .disc-focus-fallback { animation:player-disc-spin 10s linear infinite; }
+@keyframes player-disc-spin { from { transform:scale(var(--orbital-framing,1)) rotate(var(--disc-angle,0rad)); } to { transform:scale(var(--orbital-framing,1)) rotate(calc(var(--disc-angle,0rad) + 360deg)); } }
+@media(max-width:1023px) and (min-width:768px) {
+  [data-artwork=orbital-disc] .has-disc-dock.is-working { grid-template-columns:320px minmax(0,1fr); gap:16px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .player-lid-fallback { transition:none; }
+  .is-docked:not([data-model-ready])[data-player-state=spinning] .disc-focus-fallback { animation:none; }
+}
+@media(forced-colors:active) {
+  [data-artwork=orbital-disc] .has-disc-dock.is-working > .cd-player-console,
+  [data-artwork=orbital-disc] .has-disc-dock.is-working .tray-command { background:Canvas; color:CanvasText; border-color:CanvasText; box-shadow:none; }
+  [data-artwork=orbital-disc] .has-disc-dock.is-working :is(.context-label,.selected-track .track-title,.selected-track .track-artist,.seed-caption,.field-help) { color:CanvasText; }
+}
+@media(prefers-reduced-motion:reduce) {
+  [data-artwork=orbital-disc] .has-disc-dock.is-working .recommendations,.disc-carried-label { animation:none; }
 }

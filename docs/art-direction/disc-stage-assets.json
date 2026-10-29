@@ -1,0 +1,22 @@
+{
+  "tool": "built-in image_gen",
+  "request": "disc-stage-request.json",
+  "assets": [
+    {
+      "path": "public/artwork/disc-tray/environment/disc-stage-soft-focus-original.png",
+      "width": 1586,
+      "height": 992,
+      "bytes": 2104868,
+      "sha256": "643cfd28626afcbba5eff809777a4c458d75763c773d1e8bc811043f815b8aff",
+      "role": "Unmodified generated source; not page-loaded."
+    },
+    {
+      "path": "public/artwork/disc-tray/environment/disc-stage-soft-focus.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 87928,
+      "sha256": "c4310c6b917f126583b2364cf53a6b9756536c7968626d19de44cfb95db983e6",
+      "role": "Quiet static hero plate; independent of page scenery and finish."
+    }
+  ]
+}

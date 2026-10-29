@@ -6,7 +6,7 @@ test('background finishes preserve the discovery session, navigation and respons
   test.setTimeout(90_000);
   const largeRequests:string[]=[];
   page.on('request',request=>{if(/8k-resampled|original\.png/.test(request.url()))largeRequests.push(request.url());});
-  await page.goto(`${route}?mode=demo&fixture=entry&background=invalid`);
+  await page.goto(`${route}?mode=demo&fixture=entry&background=invalid&interface=classic`);
   const finish=page.getByRole('combobox',{name:'Background finish'});
   await expect(finish).toHaveValue('hazy');
   await page.getByRole('searchbox').fill('Tiffany');
@@ -28,7 +28,7 @@ test('background finishes preserve the discovery session, navigation and respons
   await expect(finish).toHaveValue('crisp');
   await page.reload();
   await expect(finish).toHaveValue('crisp');
-  await page.getByRole('link',{name:'About the recommendations',exact:true}).click();
+  await page.getByRole('link',{name:'How it works',exact:true}).click();
   await expect(finish).toHaveValue('crisp');
   expect(await page.locator('.about-intro').evaluate(e=>getComputedStyle(e).backgroundImage)).toContain('extended-crisp-detail.webp');
   await finish.selectOption('hazy');
@@ -47,7 +47,7 @@ test('background finishes preserve the discovery session, navigation and respons
   await page.emulateMedia({forcedColors:'active'});
   expect(await page.locator('.app-surface').evaluate(e=>getComputedStyle(e).backgroundImage)).toBe('none');
   await page.emulateMedia({forcedColors:'none'});
-  await page.getByRole('button',{name:'Preview Glass Current'}).click();
+  await page.goto('/variants/v2?mode=demo&fixture=entry');
   await expect(finish).toHaveCount(0);
   await expect(page.locator('.app-surface')).not.toHaveAttribute('data-background');
   expect(largeRequests).toEqual([]);
@@ -59,7 +59,7 @@ test('local atmosphere and display type retain readable states and comparison bo
   for(const width of [320,390,550,768,1024,1440]) {
     await page.setViewportSize({width,height:900});
     for(const fixture of ['entry','error','long']) {
-      await page.goto(`${route}?mode=demo&fixture=${fixture}`);
+      await page.goto(`${route}?mode=demo&fixture=${fixture}&interface=classic`);
       await expect(page.locator('main h1')).toBeVisible();
       await page.evaluate(()=>document.fonts.ready);
       expect(await page.locator('main h1').evaluate(e=>getComputedStyle(e).fontFamily)).toContain('Michroma');
@@ -68,14 +68,14 @@ test('local atmosphere and display type retain readable states and comparison bo
       if([390,1440].includes(width)) expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations).toEqual([]);
     }
   }
-  await page.goto(`${route}/about?mode=demo&fixture=entry`);
+  await page.goto(`${route}/about?mode=demo&fixture=entry&interface=classic`);
   expect(await page.locator('.about-intro').evaluate(e=>getComputedStyle(e).backgroundImage)).toContain('extended-hazy-detail.webp');
   await expect(page.locator('.orbital-hero')).toHaveCount(0);
   await page.emulateMedia({forcedColors:'active'});
   expect(await page.locator('.app-surface').evaluate(e=>getComputedStyle(e).backgroundImage)).toBe('none');
   await page.emulateMedia({forcedColors:'none'});
-  for(const slug of ['glass-current','aero-player','liquid-star']) {
-    await page.goto(`/prototypes/disc-tray/artwork/${slug}?mode=demo&fixture=entry`);
+  {
+    await page.goto('/prototypes/disc-study/disc-tray?mode=demo&fixture=entry');
     expect(await page.locator('main h1').evaluate(e=>getComputedStyle(e).fontFamily)).not.toContain('Michroma');
     expect(await page.locator('.app-surface').evaluate(e=>getComputedStyle(e).backgroundImage)).not.toContain('environment');
     expect(await page.locator('.app-surface').evaluate(e=>getComputedStyle(e).backgroundImage)).not.toContain('/accents/');
@@ -84,7 +84,7 @@ test('local atmosphere and display type retain readable states and comparison bo
 
 test('missing decorative assets preserve search and recommendations',async({page})=>{
   await page.route(/\/artwork\/disc-tray\/(environment|accents)\//,route=>route.abort());
-  await page.goto(`${route}?mode=demo&fixture=entry`);
+  await page.goto(`${route}?mode=demo&fixture=entry&interface=classic`);
   await page.getByRole('searchbox').fill('Tiffany'); await page.getByRole('searchbox').press('Enter');
   await page.getByRole('button',{name:/CLOUDS.*Use this song/}).click();
   await expect(page.locator('.track-row')).toHaveCount(10);
@@ -93,7 +93,7 @@ test('missing decorative assets preserve search and recommendations',async({page
 
 test('icy water replaces scattered accents behind translucent trays with opaque fallbacks',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});
-  await page.goto(`${route}?mode=demo&fixture=entry`);
+  await page.goto(`${route}?mode=demo&fixture=entry&interface=classic`);
   const background=await page.locator('.app-surface').evaluate(e=>getComputedStyle(e).backgroundImage);
   expect(background).toContain('extended-hazy-wide.webp');
   expect(background).not.toContain('/accents/');
@@ -101,7 +101,8 @@ test('icy water replaces scattered accents behind translucent trays with opaque 
     expect(await page.evaluate(async(name)=>{const image=new Image();image.src=`/artwork/disc-tray/environment/${name}.webp`;await image.decode();return [image.naturalWidth,image.naturalHeight];},`extended-${finish}-${name}`)).toEqual([width,height]);
   }
   const body=page.locator('.tray-upper');
-  expect(await body.evaluate(e=>getComputedStyle(e).backgroundColor)).toBe('rgba(241, 248, 255, 0.74)');
+  expect(await body.evaluate(e=>getComputedStyle(e).backgroundColor)).toBe('rgba(0, 0, 0, 0)');
+  expect(await page.locator('.tray-command').evaluate(e=>getComputedStyle(e).backgroundImage)).toContain('extended-hazy-detail.webp');
   const contrast=await page.locator('.starting-points h2').evaluate(e=>{
     const rgb=(value:string)=>value.match(/[\d.]+/g)!.map(Number);
     const foreground=rgb(getComputedStyle(e).color),fill=rgb(getComputedStyle(e.closest('.shell-body')!).backgroundColor);
@@ -116,7 +117,7 @@ test('icy water replaces scattered accents behind translucent trays with opaque 
   expect(await frame.evaluate(e=>getComputedStyle(e,'::after').pointerEvents)).toBe('none');
   const cdp=await page.context().newCDPSession(page);
   await cdp.send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-transparency',value:'reduce'}]});
-  await expect.poll(()=>body.evaluate(e=>getComputedStyle(e).backgroundColor)).toBe('rgb(252, 253, 255)');
+  await expect.poll(()=>page.locator('.tray-command').evaluate(e=>getComputedStyle(e).backgroundColor)).toBe('rgb(252, 253, 255)');
   await page.setViewportSize({width:390,height:844});
   expect(await page.locator('.app-surface').evaluate(e=>getComputedStyle(e).backgroundImage)).toContain('extended-hazy-mobile.webp');
   expect(await frame.evaluate(e=>getComputedStyle(e,'::after').display)).toBe('none');

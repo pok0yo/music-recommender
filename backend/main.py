@@ -39,7 +39,12 @@ def create_app(catalog=None, artifact=None, release=None, origins=(), rate_limit
                 if not dsn:
                     dsn = json.loads(Path("artifacts/local-postgres/connections.json").read_text())["reader"]
                 app.state.catalog = Catalog(dsn, app.state.release)
-        except (OSError, ValueError, KeyError):
+            links_path=os.getenv('LISTENING_LINKS_RELEASE')
+            if links_path:
+                from backend.listening_links import load_release
+                app.state.catalog.listening_links=load_release(app.state.catalog,links_path)
+        except (OSError, ValueError, KeyError, psycopg.Error):
+            app.state.catalog = None
             logger.error("release_load_failed")
         yield
 

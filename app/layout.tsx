@@ -10,6 +10,9 @@ import '../v4/style.css';
 import '../v5/style.css';
 import '../v2/studies.css';
 import '../v2/atmosphere.css';
+import '../v2/player.css';
+import '../v2/rack.css';
+import '../v2/rack-study.css';
 import '../components/ui/liquid-glass.css';
 import { LiquidGlass } from '../components/ui/liquid-glass';
 

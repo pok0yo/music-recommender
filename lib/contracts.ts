@@ -1,3 +1,4 @@
+import {validListeningLink,type ListeningLink} from './listening';
 export type Track = {
   recording_id: string;
   canonical_recording_id: string;
@@ -5,6 +6,7 @@ export type Track = {
   artist_credits: { name: string; artist_id: string; joinphrase: string }[];
   disambiguation: string | null;
   external_link: null;
+  listening_links?: ListeningLink[];
 };
 export type Meta = {
   model_version: string; catalog_version: string; artifact_schema_version: number;
@@ -37,7 +39,8 @@ export function validTrack(v: unknown): v is Track {
     && typeof v.title === 'string' && !!v.title.trim() && Array.isArray(v.artist_credits)
     && v.artist_credits.length > 0 && v.artist_credits.every(c => object(c) && typeof c.name === 'string'
       && !!c.name.trim() && typeof c.artist_id === 'string' && uuid(c.artist_id) && typeof c.joinphrase === 'string')
-    && (v.disambiguation === null || typeof v.disambiguation === 'string') && v.external_link === null;
+    && (v.disambiguation === null || typeof v.disambiguation === 'string') && v.external_link === null
+    && (v.listening_links===undefined||(Array.isArray(v.listening_links)&&v.listening_links.length<=3&&v.listening_links.every(validListeningLink)&&new Set(v.listening_links.map(link=>link.provider)).size===v.listening_links.length));
 }
 function validMeta(v: unknown, mode: Meta['data_mode']): v is Meta {
   return object(v) && v.data_mode === mode && typeof v.model_version === 'string' && !!v.model_version.trim()

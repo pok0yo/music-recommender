@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const route = '/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry';
+const route = '/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry&interface=classic';
 
 test('idle shimmer is still and the shader eases in, survives quick re-entry and fades out', async ({ page }) => {
   await page.goto(route);

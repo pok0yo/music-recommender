@@ -1,0 +1,39 @@
+{
+  "complete": true,
+  "activated": false,
+  "pilot_recordings": 215,
+  "records_with_verified_links": 76,
+  "counts_by_provider": {
+    "spotify": 72,
+    "apple_music": 43,
+    "youtube_music": 15
+  },
+  "unresolved": [],
+  "destination_check_outcomes": {
+    "http_200": 130,
+    "http_404": 5
+  },
+  "release": {
+    "links_version": "links-v1-13ad4a446e31d06d14c2ec12685226795e5208073d365e1845852224976c74ef",
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+    "content_sha256": "13ad4a446e31d06d14c2ec12685226795e5208073d365e1845852224976c74ef",
+    "link_count": 130
+  },
+  "links_file_sha256": "b294b4fe8ae70bc0b62fb4ac85f80c0d6bec56035187901ca80821025973dfd7",
+  "provenance_sha256": "55902a66f183db653de3d87b36f7a220f16727ef18b669d834e026af5392bbdc",
+  "budget": {
+    "requests": 542,
+    "reserved_bytes": 17760798,
+    "received_body_bytes": 246035,
+    "download_cap_bytes": 268435456,
+    "disk_cap_bytes": 1073741824,
+    "disk_bytes": 737572,
+    "accounting": "Bounded response bytes plus conservative per-attempt overhead, not packet-level metering"
+  },
+  "catalog_metadata_ledger_unchanged": true,
+  "limitations": [
+    "Pilot only; no catalog-wide acquisition",
+    "HTTP reachability does not establish regional or account playback entitlement",
+    "Blocked destinations are not promoted to verified links"
+  ]
+}

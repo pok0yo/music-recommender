@@ -1,15 +1,16 @@
 {
-  "observed_at": "2026-10-21T22:04:20.186Z",
-  "path": "public/artwork/disc-tray/orbital-disc-model-7e748054c1e3.png",
-  "public_url": "/artwork/disc-tray/orbital-disc-model-7e748054c1e3.png",
+  "observed_at": "2026-10-27T06:32:12.402Z",
+  "path": "public/artwork/disc-tray/orbital-disc-model-8a1b7db29f43.png",
+  "public_url": "/artwork/disc-tray/orbital-disc-model-8a1b7db29f43.png",
   "width": 2000,
   "height": 1600,
-  "sha256": "7e748054c1e32cc81348b12c0baac1c471ae96c7567a3a238e91c9b1822aeb30",
+  "sha256": "8a1b7db29f43337f7659828add95ac56232606360b09df33d159bc652d54df95",
+  "view": "hero",
   "origin": "Direct transparent PNG export from locally authored Three.js geometry, PBR thin-film/spectrum materials and sky/area-panel lighting. No AI-generated or reference pixels.",
-  "renderer": "three0.186.1 / Chrome 155.0.8059.85",
+  "renderer": "three0.186.1 / Chrome 156.0.8078.48",
   "sources": {
-    "components/orbital-scene.ts": "854b158db44753d3ee809d8a1740a42254112ef733c8556e22d3a64ffb028fd7",
-    "components/orbital-hero.tsx": "619822dd7ed0ca144c37b2963c0eb8050098aab5ae6c0dc33ab9102c987ad069"
+    "components/orbital-scene.ts": "36b85123c7c13fcf0a4dae25a299e889f693d65cb4808b9cc7e20541a050ed78",
+    "components/orbital-hero.tsx": "b8c85fc766f1fd28c1d174acffeb286c18620810e9e3f2e22529ec1dc78f4100"
   },
   "license": "Original scene source belongs to this project; Three.js MIT notice retained in public/third-party/three/LICENSE."
 }
