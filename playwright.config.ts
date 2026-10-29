@@ -8,7 +8,7 @@ export default defineConfig({
   testDir: './tests/frontend', fullyParallel: software, workers: software ? 1 : 2,
   timeout: 30_000, expect: { timeout: 8000 }, reporter: [['list'], ['json', { outputFile: 'test-results/frontend-results.json' }]],
   use: { baseURL: 'http://127.0.0.1:3000', channel: process.env.CI ? undefined : 'chrome',
-    launchOptions: software ? { args: ['--use-gl=angle', '--use-angle=swiftshader-webgl', '--enable-unsafe-swiftshader', '--disable-gpu-compositing'] } : {},
+    launchOptions: software ? { args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] } : {},
     trace: 'retain-on-failure', screenshot: 'only-on-failure', viewport: { width: 1440, height: 900 } },
   webServer: { command: 'npm run start', url: 'http://127.0.0.1:3000', reuseExistingServer: !process.env.CI, timeout: 60_000 },
 });
