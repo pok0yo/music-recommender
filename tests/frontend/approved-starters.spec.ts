@@ -12,7 +12,7 @@ test('the public starting catalog exactly matches the supported panel',()=>{
 });
 
 test('all 32 starting songs can be browsed, searched and confirmed',async({page})=>{
-  test.setTimeout(60_000);await page.emulateMedia({reducedMotion:'reduce'});
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?180_000:60_000);await page.emulateMedia({reducedMotion:'reduce'});
   await page.goto('/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry');
   await expect(page.locator('.rack-eyebrow')).toContainText('01 of 32');
   await page.getByText('Browse 32 songs',{exact:true}).click();

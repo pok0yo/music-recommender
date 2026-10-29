@@ -12,15 +12,18 @@ test('idle shimmer is still and the shader eases in, survives quick re-entry and
   await search.hover(); await expect(material.locator('canvas')).toHaveCount(1);
   await expect.poll(() => material.evaluate(e => getComputedStyle(e).opacity)).toBe('1');
   expect(await material.evaluate(e => getComputedStyle(e).transitionDuration)).toBe('0.24s');
-  const reused = await search.evaluate(async e => {
-    const canvas = e.querySelector('canvas');
+  const canvas = await material.locator('canvas').elementHandle();
+  await page.clock.install({time:0}); await page.clock.pauseAt(60_000);
+  await search.evaluate(e => {
     e.dispatchEvent(new PointerEvent('pointerout', { bubbles: true, pointerType: 'mouse', relatedTarget: document.body }));
-    await new Promise(requestAnimationFrame);
-    e.dispatchEvent(new PointerEvent('pointerover', { bubbles: true, pointerType: 'mouse', relatedTarget: document.body }));
-    await new Promise(requestAnimationFrame);
-    return e.querySelectorAll('canvas').length === 1 && e.querySelector('canvas') === canvas;
   });
-  expect(reused).toBe(true);
+  await page.clock.runFor(16);
+  await search.evaluate(e => {
+    e.dispatchEvent(new PointerEvent('pointerover', { bubbles: true, pointerType: 'mouse', relatedTarget: document.body }));
+  });
+  await page.clock.runFor(16);
+  expect(await canvas!.evaluate(e => e === document.querySelector('.liquid-material canvas'))).toBe(true);
+  await expect(material.locator('canvas')).toHaveCount(1); await page.clock.resume();
   await page.mouse.move(0, 0);
   expect(await material.evaluate(e => getComputedStyle(e).transitionDuration)).toBe('0.18s');
   await expect.poll(() => material.evaluate(e => getComputedStyle(e).opacity)).toBe('0');
@@ -39,8 +42,13 @@ test('liquid buttons animate on pointer interaction, clean up and preserve nativ
     (e as HTMLElement & { paperShaderMount: { getCurrentFrame(): number } }).paperShaderMount.getCurrentFrame());
   const first = await frame(); await expect.poll(frame).toBeGreaterThan(first);
   await page.mouse.move(0, 0); await expect(page.locator('.liquid-material canvas')).toHaveCount(0);
+  // Observe insertion: a slow screenshot/rendering runner can miss the entire short ripple.
+  await search.evaluate(button => new MutationObserver((records, observer) => {
+    const added = records.flatMap(record => Array.from(record.addedNodes)).filter(node => node instanceof Element && node.matches('.liquid-ripple'));
+    if (added.length) { button.setAttribute('data-observed-ripples', String(added.length)); observer.disconnect(); }
+  }).observe(button, { childList: true }));
   await search.click();
-  await expect(search.locator('.liquid-ripple')).toHaveCount(1);
+  await expect(search).toHaveAttribute('data-observed-ripples','1');
   await page.mouse.move(0, 0);
   await expect(search.locator('.liquid-ripple')).toHaveCount(0);
   await expect(page.locator('.liquid-material canvas')).toHaveCount(0);

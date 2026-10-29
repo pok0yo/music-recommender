@@ -4,7 +4,7 @@ import AxeBuilder from '@axe-core/playwright';
 const route = '/prototypes/disc-tray/artwork/orbital-disc';
 
 test('Orbital console keeps controls visible and fits a desktop opening screen', async ({ page }) => {
-  test.setTimeout(90_000);
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?270_000:90_000);
   for (const [width, height] of [[1280,800],[1440,900],[1881,905],[390,844]]) {
     await page.setViewportSize({width,height});
     await page.goto(`${route}?mode=demo&fixture=entry&interface=classic`);

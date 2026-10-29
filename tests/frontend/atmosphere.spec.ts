@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 
 const route='/prototypes/disc-tray/artwork/orbital-disc';
 test('background finishes preserve the discovery session, navigation and responsive controls',async({page})=>{
-  test.setTimeout(90_000);
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?270_000:90_000);
   const largeRequests:string[]=[];
   page.on('request',request=>{if(/8k-resampled|original\.png/.test(request.url()))largeRequests.push(request.url());});
   await page.goto(`${route}?mode=demo&fixture=entry&background=invalid&interface=classic`);
@@ -54,7 +54,7 @@ test('background finishes preserve the discovery session, navigation and respons
 });
 
 test('local atmosphere and display type retain readable states and comparison boundaries', async ({page})=>{
-  test.setTimeout(120_000);
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?360_000:120_000);
   await page.emulateMedia({reducedMotion:'reduce'});
   for(const width of [320,390,550,768,1024,1440]) {
     await page.setViewportSize({width,height:900});
