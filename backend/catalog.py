@@ -34,7 +34,7 @@ class Catalog:
     def __init__(self, dsn, release):
         self.dsn, self.release = dsn, release
         self.listening_links = {}
-        self.slots = BoundedSemaphore(4)
+        self.slots = BoundedSemaphore(5)
 
     def query(self, statement, parameters=()):
         if not self.slots.acquire(blocking=False):
