@@ -1,0 +1,30 @@
+{
+  "checkpoint_date": "2026-10-30",
+  "phase": 5,
+  "status": "in_progress",
+  "prepared_source_commit": "59d15460685040ee95fa8fc1443827a58c8828e4",
+  "deployment_release_id": "7809c65ae924d8d88fd748223da2e9061e1b87bcb15f69ff105193c4337f8bf5",
+  "supabase": {
+    "organization_id": "bwpbbjelktuneannjlwy",
+    "organization_selected_by_user": true,
+    "project_name": "music-recommender",
+    "project_id": "qhqwtuxxebcsccvklgxy",
+    "region": "us-east-2",
+    "quoted_monthly_cost": 0,
+    "created_at": "2026-10-30T15:36:39.748542Z",
+    "status": "ACTIVE_HEALTHY",
+    "postgres_version": "17.11.0.011",
+    "schema_migration": "confirmation_expired_not_applied",
+    "catalog_schema_exists": false,
+    "reader_role_exists": false,
+    "unrelated_inactive_project_unchanged": true
+  },
+  "hosting_accounts_signed_in": ["Render", "Vercel"],
+  "github_repository_connections_complete": false,
+  "catalog_imported": false,
+  "model_uploaded": false,
+  "public_deployment_activated": false,
+  "public_frontend_url": null,
+  "public_api_url": null,
+  "production_acceptance_verified": false
+}
