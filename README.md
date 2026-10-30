@@ -4,7 +4,9 @@ A music discovery application that recommends tracks from a single seed song, wi
 
 ## Status
 
-**Public-release Phase 3:** integration and local performance verification are complete in the documented environments. All 64 committed browser checks and 72 backend/model checks pass locally and in GitHub CI. The selected 3D Orbital record-player homepage uses real recommendations by default, with listening destinations and device-local feedback. See the [integration checkpoint](docs/release-phase-3.md) for measurements, catalog limits and unavailable device checks. Phase 4 deployment preparation awaits separate authorization; there is no public deployment yet.
+**Public-release Phase 4:** deployment configuration and the [free-hosting runbook](docs/release-phase-4.md) are prepared; public activation requires separate Phase 5 approval. The proposed stack is Vercel Hobby, Render Free and a new dedicated Supabase Free project. Local Linux resource checks and database backup/restore checks pass; hosted cold starts, account eligibility and production TLS still require verification. There is no public URL yet.
+
+The selected 3D Orbital record-player homepage uses real recommendations by default, with listening destinations and device-local feedback. The preceding [integration checkpoint](docs/release-phase-3.md) records 64 browser and 72 backend/model checks passing locally and in GitHub CI, plus performance measurements, catalog limits and unavailable device checks. Phase 4 adds deployment-specific validation without changing the selected interface.
 
 Use `/?mode=demo` for explicitly labeled illustrative results, and `/?dev=1` to expose environment controls. Ordinary visits hide those development controls. Existing Orbital, About, and earlier design-comparison URLs remain available; retired artwork URLs redirect to Orbital while preserving query context. Shared `?q=…` searches and `?seed=…` recommendation links restore on refresh and browser navigation.
 

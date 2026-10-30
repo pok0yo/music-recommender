@@ -1,0 +1,19 @@
+{
+  "scope": "Isolated loopback PostgreSQL; no cloud project modified",
+  "imported": {
+    "records": 4996,
+    "links": 130,
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766"
+  },
+  "idempotent_import": true,
+  "reader_writes_rejected": true,
+  "restored": {
+    "records": 4996,
+    "links": 130,
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766"
+  },
+  "working_database_unchanged": true,
+  "managed_database_public_grants_preserved": true,
+  "backup_bytes": 619652,
+  "backup_sha256": "2926385073933fde644f712aac6875af21f8cc8f8ceb9687849f9ba90a5307d1"
+}

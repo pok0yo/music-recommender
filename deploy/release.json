@@ -1,0 +1,38 @@
+{
+  "files": {
+    "catalog/release.json": {
+      "bytes": 343,
+      "sha256": "576326ed76d7aaca5cad8647281842658ed2e9ec4e3882bf161f2a74c2af2326"
+    },
+    "links/release.json": {
+      "bytes": 314,
+      "sha256": "719224a4de9741825fbf3c83032b6298be4ee6b9748f463e4c9ff57fc9876054"
+    },
+    "model/ids.npy": {
+      "bytes": 20345420,
+      "sha256": "87732d20d4ec796a657df1b2560438feed57c9f1db04ce7ef82d3ca7172a9737"
+    },
+    "model/manifest.json": {
+      "bytes": 1954,
+      "sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122"
+    },
+    "model/neighbors.npy": {
+      "bytes": 22606008,
+      "sha256": "7d2f2ce93b725f362bcc6a16db1d1485591b3d392233ca4160a1046865e134d9"
+    },
+    "model/scores.npy": {
+      "bytes": 45211888,
+      "sha256": "5ba4097e6147701c5ea7b63101f99ffe8bbf11e813edac880aa7b834c0f09508"
+    },
+    "model/shared.npy": {
+      "bytes": 22606008,
+      "sha256": "a2c47e46ca2756d33a88c216838868807a90c7e4b1bc057abfb285e572b6729f"
+    },
+    "model/support.npy": {
+      "bytes": 2260716,
+      "sha256": "3b4bdefa6b5eaae88427230a586b75e22b74674b205f0e72049bcc1a1b0e57e6"
+    }
+  },
+  "release_id": "7809c65ae924d8d88fd748223da2e9061e1b87bcb15f69ff105193c4337f8bf5",
+  "schema_version": 1
+}

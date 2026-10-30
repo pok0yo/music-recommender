@@ -4,6 +4,7 @@ export class APIError extends Error {
   constructor(public code: string, message: string, public retryAfter?: number) { super(message); }
 }
 export function realAPI(base = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000'): MusicAPI {
+  base = base.trim().replace(/\/+$/, '');
   async function request(path: string, parent: AbortSignal): Promise<unknown> {
     const controller = new AbortController();
     const abort = () => controller.abort();

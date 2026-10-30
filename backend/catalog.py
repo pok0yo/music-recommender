@@ -2,11 +2,13 @@
 
 import hashlib
 import json
+import os
 from pathlib import Path
 from threading import BoundedSemaphore
 import unicodedata
 
 import psycopg
+from psycopg import sql
 from psycopg.rows import dict_row
 from psycopg.types.json import Jsonb
 
@@ -28,6 +30,15 @@ def search_text(row):
 def content_hash(rows):
     return hashlib.sha256(json.dumps(rows, sort_keys=True, ensure_ascii=False,
         separators=(",", ":")).encode()).hexdigest()
+
+
+def operator_connections():
+    admin, reader = os.getenv("CATALOG_ADMIN_DATABASE_URL"), os.getenv("DATABASE_URL")
+    if admin or reader:
+        if not admin or not reader:
+            raise ValueError("Imports require both admin and reader database configuration")
+        return {"admin": admin, "reader": reader}
+    return json.loads(Path("artifacts/local-postgres/connections.json").read_text())
 
 
 class Catalog:
@@ -118,9 +129,13 @@ def import_catalog(directory=Path("data/processed/stage-8-catalog-v1"), report_p
     artifact = Artifact('artifacts/stage-7-cf-v1', trusted)
     if not {row['recording_id'] for row in rows} <= {value.decode() for value in artifact.arrays['ids']}:
         raise ValueError('Catalog contains unsupported model recordings')
-    connections = json.loads(Path("artifacts/local-postgres/connections.json").read_text())
+    connections = operator_connections()
     with psycopg.connect(connections["admin"]) as db:
         db.execute(Path("backend/schema.sql").read_text())
+        # A managed database also serves its provider's services; change only our private schema there.
+        if not os.getenv("CATALOG_ADMIN_DATABASE_URL"):
+            db.execute(sql.SQL("REVOKE ALL ON DATABASE {} FROM PUBLIC").format(sql.Identifier(db.info.dbname)))
+        db.execute(sql.SQL("GRANT CONNECT ON DATABASE {} TO music_reader").format(sql.Identifier(db.info.dbname)))
         existing = db.execute("SELECT content_sha256 FROM music_catalog.releases WHERE version=%s", (version,)).fetchone()
         if existing:
             if existing[0] != digest:

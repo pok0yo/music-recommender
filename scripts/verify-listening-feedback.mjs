@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {readFile,writeFile} from 'node:fs/promises';
 import {chromium} from '@playwright/test';
 
-const origin='http://127.0.0.1:3000',api='http://127.0.0.1:8000';
+const origin=process.env.VERIFY_ORIGIN||'http://127.0.0.1:3000',api=process.env.VERIFY_API_URL||'http://127.0.0.1:8000';
 const release=JSON.parse(await readFile('data/processed/catalog-expansion-v2/release.json','utf8'));
 const pilotActive=process.argv.includes('--pilot-active');
 const links=pilotActive?JSON.parse(await readFile('data/processed/listening-links-v1/links.json','utf8')):[];
@@ -18,7 +18,7 @@ const browser=await chromium.launch({channel:process.env.CI?undefined:'chrome'})
 try{
   const page=await browser.newPage({viewport:{width:1440,height:1000}});await page.emulateMedia({reducedMotion:'reduce'});
   page.on('pageerror',error=>errors.push(error.message));page.on('request',request=>{if(!request.url().startsWith(origin)&&!request.url().startsWith(api)&&!request.url().startsWith('data:'))external.push(request.url());});
-  await page.goto(origin+'/prototypes/disc-tray/artwork/orbital-disc?mode=real');
+  await page.goto(origin+'/?mode=real');
   await page.getByText('Browse 32 songs',{exact:true}).waitFor();
   const canvas=await page.locator('.orbital-canvas canvas').elementHandle();
   await page.getByRole('button',{name:'Discover',exact:true}).click();
@@ -44,14 +44,14 @@ try{
   if(pilotActive){
     for(const [provider,service] of [['spotify','Spotify'],['apple_music','Apple Music'],['youtube_music','YouTube Music']]){
       const sample=links.find(link=>link.provider===provider);assert(sample);
-      await page.goto(origin+'/prototypes/disc-tray/artwork/orbital-disc?mode=real&seed='+sample.recording_id);
+      await page.goto(origin+'/?mode=real&seed='+sample.recording_id);
       await page.locator('.rack-current').click();await page.locator('.rack-listen summary').click();
       assert.equal(await page.getByRole('link',{name:`Open ${service} (opens a new tab)`}).getAttribute('href'),sample.url);
     }
   }
-  await page.goto(origin+'/prototypes/disc-tray/artwork/orbital-disc?mode=demo');
+  await page.goto(origin+'/?mode=demo');
   await page.getByText('Listening destinations are available in real mode.',{exact:true}).waitFor();
   assert.equal(await page.locator('.rack-listen a').count(),0);assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
 }finally{await browser.close();}
 const evidence={verified_at:new Date().toISOString(),catalog_version:release.catalog_version,live_real_api:true,starters:starters.length,search:true,listen_services:3,verified_pilot_active:pilotActive,verified_link_counts_by_provider:pilotActive?Object.fromEntries(['spotify','apple_music','youtube_music'].map(provider=>[provider,links.filter(link=>link.provider===provider).length])):null,starters_with_links:starters.filter(track=>track.listening_links.length).length,dismiss_undo_reseed_history:true,retained_canvas:true,demo_destinations_absent:true,unsolicited_external_requests:external.length,page_errors:errors,limitations:['Provider playback and physical devices not tested',...(pilotActive?[]:['Prepared verified links remain inactive'])]};
-await writeFile(`docs/evidence/listening-feedback-${pilotActive?'activation-ui':'verification'}.json`,JSON.stringify(evidence,null,2)+'\n');console.log(JSON.stringify(evidence));
+await writeFile(process.env.VERIFY_REPORT||`docs/evidence/listening-feedback-${pilotActive?'activation-ui':'verification'}.json`,JSON.stringify(evidence,null,2)+'\n');console.log(JSON.stringify(evidence));

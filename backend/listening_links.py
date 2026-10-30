@@ -50,7 +50,7 @@ def import_release():
     from pathlib import Path
     import psycopg
     from psycopg.types.json import Jsonb
-    from backend.catalog import Catalog,content_hash
+    from backend.catalog import Catalog,content_hash,operator_connections
     from backend.schemas import ListeningLink
     root=Path('data/processed/listening-links-v1')
     report=json.loads(Path('docs/evidence/listening-links-pilot.json').read_text(encoding='utf-8'))
@@ -60,7 +60,7 @@ def import_release():
     if len(rows)!=release['link_count'] or content_hash(rows)!=release['content_sha256']:raise ValueError('Link contents differ')
     active=json.loads(Path('data/processed/catalog-expansion-v2/release.json').read_text())
     if active['catalog_version']!=release['catalog_version']:raise ValueError('Catalog binding differs')
-    connections=json.loads(Path('artifacts/local-postgres/connections.json').read_text())
+    connections=operator_connections()
     catalog=Catalog(connections['reader'],active);catalog.check(full=True)
     if len({(r['recording_id'],r['provider']) for r in rows})!=len(rows):raise ValueError('Duplicate provider link')
     for row in rows:
