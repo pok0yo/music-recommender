@@ -1,5 +1,5 @@
 {
-  "checkpoint_date": "2026-10-30",
+  "checkpoint_date": "2026-10-31",
   "phase": 5,
   "status": "in_progress",
   "prepared_source_commit": "59d15460685040ee95fa8fc1443827a58c8828e4",
@@ -14,17 +14,53 @@
     "created_at": "2026-10-30T15:36:39.748542Z",
     "status": "ACTIVE_HEALTHY",
     "postgres_version": "17.11.0.011",
-    "schema_migration": "confirmation_expired_not_applied",
-    "catalog_schema_exists": false,
-    "reader_role_exists": false,
-    "unrelated_inactive_project_unchanged": true
+    "schema_migration": "user_applied_staged_sql_verified_read_only",
+    "catalog_schema_exists": true,
+    "reader_role_exists": true,
+    "unrelated_inactive_project_unchanged": true,
+    "rls_tables": 4,
+    "security_advisor_lints": 0,
+    "storage_bucket": "model-releases",
+    "storage_objects": 8,
+    "storage_bytes": 113032651,
+    "storage_hashes_verified": true,
+    "anonymous_storage_access_rejected": true
   },
-  "hosting_accounts_signed_in": ["Render", "Vercel"],
-  "github_repository_connections_complete": false,
+  "hosting_accounts_signed_in": [
+    "Render",
+    "Vercel"
+  ],
+  "github_repository_connections_complete": true,
   "catalog_imported": false,
-  "model_uploaded": false,
+  "model_uploaded": true,
   "public_deployment_activated": false,
   "public_frontend_url": null,
   "public_api_url": null,
-  "production_acceptance_verified": false
+  "production_acceptance_verified": false,
+  "private_database_password_present": false,
+  "vercel": {
+    "project_name": "music-recommender",
+    "project_id": "prj_1K4wMXdGmpvnDLDd3YbFk659SsWG",
+    "plan": "Hobby",
+    "repository_connected": true,
+    "production_branch": "codex/catalog-expansion-v2",
+    "framework": "Next.js",
+    "node_version": "24.x",
+    "reserved_provider_domain": "project-3wvwg.vercel.app",
+    "deployment_activated": false
+  },
+  "render": {
+    "service_created": false,
+    "draft_plan": "Free",
+    "draft_runtime": "Python 3",
+    "draft_branch": "codex/catalog-expansion-v2",
+    "auto_deploy": "Off",
+    "billing_guard_verified": false
+  },
+  "validation": {
+    "focused_uploader_and_deployment_tests_passed": 10,
+    "live_optional_resume_rerun": "not_executed_approval_review_timeout",
+    "live_read_only_storage_inventory_verified": true,
+    "full_browser_suite_rerun": false
+  }
 }

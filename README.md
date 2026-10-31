@@ -4,7 +4,7 @@ A music discovery application that recommends tracks from a single seed song, wi
 
 ## Status
 
-**Public-release Phase 5 is in progress:** the authorized dedicated Supabase project has been created at the quoted $0/month cost. Hosting accounts are signed in; private-repository connections and the database migration confirmation are pending. The website is not publicly deployed. See the [deployment checkpoint](docs/release-phase-5.md) for the exact project and remaining verification.
+**Public-release Phase 5 is in progress:** the dedicated Supabase schema and restricted reader role are set up, and all eight private serving-release files have verified hashes. Vercel is connected to the approved release branch; the Render Free service is still a draft. The database password handoff and catalog import remain pending. The website is not publicly deployed. See the [deployment checkpoint](docs/release-phase-5.md) for the exact project and remaining verification.
 
 **Public-release Phase 4 is complete:** deployment configuration and the [free-hosting runbook](docs/release-phase-4.md) are prepared and authorized for Phase 5. The approved stack is Vercel Hobby, Render Free and the dedicated Supabase Free project. Local Linux resource checks and database backup/restore checks pass; hosted cold starts, plan eligibility and production TLS still require verification. There is no public URL yet.
 
