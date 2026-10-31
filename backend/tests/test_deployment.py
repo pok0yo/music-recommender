@@ -92,9 +92,12 @@ class DeploymentTests(unittest.TestCase):
         with patch.dict(os.environ, env, clear=True), patch("backend.production.read_manifest", return_value=self.release):
             self.assertEqual(configure(), 10000)
             self.assertTrue(Path(os.environ["MODEL_DIRECTORY"]).is_absolute())
+            os.environ["DATABASE_URL"] = env["DATABASE_URL"].replace("sslrootcert=system", "sslrootcert=deploy/supabase-root-ca.crt")
+            self.assertEqual(configure(), 10000)
             (root / "model/ids.npy").write_bytes(b"corrupt")
             with self.assertRaises(ValueError): configure()
-        for database in [env["DATABASE_URL"].replace("verify-full", "require"), env["DATABASE_URL"].replace("music_reader.ref", "postgres.ref")]:
+        for database in [env["DATABASE_URL"].replace("verify-full", "require"), env["DATABASE_URL"].replace("music_reader.ref", "postgres.ref"),
+                env["DATABASE_URL"].replace("sslrootcert=system", "sslrootcert=unreviewed.crt")]:
             with patch.dict(os.environ, {**env, "DATABASE_URL": database}, clear=True):
                 with self.assertRaises(ValueError): configure()
         with patch.dict(os.environ, {**env, "CATALOG_ADMIN_DATABASE_URL": "operator-private"}, clear=True):

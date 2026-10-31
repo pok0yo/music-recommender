@@ -40,8 +40,8 @@ def configure():
         raise ValueError("Configure the reader database connection") from None
     user = database.get("user", "")
     if (user.split(".")[0] != "music_reader" or database.get("sslmode") != "verify-full"
-            or database.get("sslrootcert") != "system"):
-        raise ValueError("Use the music_reader role with verified database TLS and system roots")
+            or database.get("sslrootcert") not in ("system", "deploy/supabase-root-ca.crt")):
+        raise ValueError("Use the music_reader role with verified database TLS and approved roots")
     port = int(os.getenv("PORT", "10000"))
     if not 1024 <= port <= 65535:
         raise ValueError("PORT is outside the deployment range")
