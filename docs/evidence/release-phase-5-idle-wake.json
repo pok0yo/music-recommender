@@ -1,0 +1,37 @@
+{
+  "idle_window_started_utc": "2026-10-31T20:47:57.581970+00:00",
+  "operator_idle_seconds": 990,
+  "first_request_timeout_seconds": 8,
+  "attempts": [
+    {
+      "status": null,
+      "error_type": "TimeoutError",
+      "seconds": 8.51
+    },
+    {
+      "status": null,
+      "error_type": "TimeoutError",
+      "seconds": 20.06
+    },
+    {
+      "status": null,
+      "error_type": "TimeoutError",
+      "seconds": 20.029
+    },
+    {
+      "status": 200,
+      "seconds": 5.197
+    }
+  ],
+  "recovery_seconds": 83.8,
+  "real_mode_recovered": true,
+  "method": "Operator made no public API requests for 16.5 minutes. Provider logs confirmed shutdown and a new instance running the production command. Bounded HTTP retries measured recovery; the public browser then recovered through Try again and discovered ten real results. This is one cold-wake sample, not an availability guarantee.",
+  "provider_shutdown_confirmed": true,
+  "provider_shutdown_time_utc": "2026-10-31T21:01:16Z",
+  "provider_restart_command_time_utc": "2026-10-31T21:04:35Z",
+  "public_ui_timeout_shown": true,
+  "public_ui_try_again_recovered": true,
+  "post_wake_starters": 32,
+  "post_wake_displayable_recommendations": 10,
+  "build_inputs_survived_idle_restart": true
+}

@@ -1,7 +1,7 @@
 {
   "checkpoint_date": "2026-10-31",
   "phase": 5,
-  "status": "in_progress",
+  "status": "complete_with_documented_limits",
   "prepared_source_commit": "59d15460685040ee95fa8fc1443827a58c8828e4",
   "deployment_release_id": "7809c65ae924d8d88fd748223da2e9061e1b87bcb15f69ff105193c4337f8bf5",
   "supabase": {
@@ -24,20 +24,26 @@
     "storage_objects": 8,
     "storage_bytes": 113032651,
     "storage_hashes_verified": true,
-    "anonymous_storage_access_rejected": true
+    "anonymous_storage_access_rejected": true,
+    "ssl_enforcement": true,
+    "provider_ca_sha256": "700723581420dd1ac98fd7e9ac529f0ef210eadcaf87fc868a3ad7d114c2f3b7",
+    "client_tls_verified": true,
+    "pooler_database_tls": true,
+    "catalog_rows": 4996,
+    "listening_link_rows": 130
   },
   "hosting_accounts_signed_in": [
     "Render",
     "Vercel"
   ],
   "github_repository_connections_complete": true,
-  "catalog_imported": false,
+  "catalog_imported": true,
   "model_uploaded": true,
-  "public_deployment_activated": false,
-  "public_frontend_url": null,
-  "public_api_url": null,
-  "production_acceptance_verified": false,
-  "private_database_password_present": false,
+  "public_deployment_activated": true,
+  "public_frontend_url": "https://project-3wvwg.vercel.app",
+  "public_api_url": "https://music-recommender-api-7pp6.onrender.com",
+  "production_acceptance_verified": true,
+  "private_database_password_present": true,
   "vercel": {
     "project_name": "music-recommender",
     "project_id": "prj_1K4wMXdGmpvnDLDd3YbFk659SsWG",
@@ -47,20 +53,37 @@
     "framework": "Next.js",
     "node_version": "24.x",
     "reserved_provider_domain": "project-3wvwg.vercel.app",
-    "deployment_activated": false
+    "deployment_activated": true,
+    "deployment_id": "CcwsaMReNC1umCmxFKqAjYjtq2jK",
+    "anonymous_public_access_verified": true
   },
   "render": {
-    "service_created": false,
+    "service_created": true,
     "draft_plan": "Free",
     "draft_runtime": "Python 3",
     "draft_branch": "codex/catalog-expansion-v2",
     "auto_deploy": "Off",
-    "billing_guard_verified": false
+    "billing_guard_verified": true,
+    "service_id": "srv-dbj4vinf3r2c73evfne0",
+    "deployment_id": "dep-dbj4vj7f3r2c73evfob0",
+    "no_card_on_file": true,
+    "ready": true
   },
   "validation": {
     "focused_uploader_and_deployment_tests_passed": 10,
     "live_optional_resume_rerun": "not_executed_approval_review_timeout",
     "live_read_only_storage_inventory_verified": true,
-    "full_browser_suite_rerun": false
-  }
+    "full_browser_suite_rerun": false,
+    "github_backend_tests_passed": 34,
+    "github_model_tests_passed": 48,
+    "github_browser_tests_passed": 67,
+    "cloud_backup_restored_locally": true,
+    "live_real_journeys_verified": true,
+    "idle_wake": "passed_with_83_8_second_recovery",
+    "hosted_cpu_memory_metrics": "unavailable_on_free_plan",
+    "public_ui_retry_recovery_verified": true,
+    "build_inputs_survived_idle_restart": true,
+    "provider_rollback_to_older_release": "not_available_first_public_deployment"
+  },
+  "deployed_source_commit": "4645fa76e8574da245ddf61436eab39742047d55"
 }

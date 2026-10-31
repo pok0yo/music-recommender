@@ -1,5 +1,7 @@
 # Phase 4 — deployment preparation
 
+Historical preparation record. For actual public URLs, TLS findings and verification, use the [Phase 5 live runbook](release-phase-5.md).
+
 Prepared 2026-10-30. **No public deployment has been activated.** Phase 5 requires a separate user go. The proposed audience is an open public launch, with free services only. This configuration assumes a personal, noncommercial portfolio application; commercial use would require revisiting Vercel Hobby eligibility.
 
 ## Proposed configuration and cost

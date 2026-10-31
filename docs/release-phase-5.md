@@ -1,27 +1,78 @@
-# Phase 5 — public deployment in progress
+# Phase 5 — public launch and verification
 
-Checkpoint: 2026-10-31. Phase 5 remains authorized after Phase 4 preparation at `59d15460685040ee95fa8fc1443827a58c8828e4`. **The website is not publicly deployed and release acceptance has not been established.** The free-only, personal/noncommercial hosting constraints and selected interface remain unchanged.
+Updated 2026-10-31. **Phase 5 is complete for the tested release, with the operating limits and unavailable checks stated below. The public launch is active.** The selected 3D record-player interface, orbital disc/ring animations, water, liquid-glass controls and accessible song controls are preserved. No acquisition, retraining, paid service, accounts or embedded playback was added.
 
-## Completed and verified
+## Public URLs and deployed source
 
-- User selected **pok0yo's Org** (`bwpbbjelktuneannjlwy`). The dedicated Supabase Free project is `music-recommender`, reference `qhqwtuxxebcsccvklgxy`, Ohio (`us-east-2`), quoted $0/month. It reports `ACTIVE_HEALTHY`, PostgreSQL `17.11.0.011`. The unrelated inactive project remains untouched.
-- Connector migration confirmations expired without applying changes. The user subsequently ran the staged transaction in the project's SQL Editor. Read-only checks confirmed four `music_catalog` tables (`releases`, `recordings`, `link_releases`, `recording_links`), RLS enabled on each, and a restricted `music_reader` role with SELECT but no INSERT/DELETE. The reader has no superuser, role-creation, database-creation or RLS-bypass privileges. Anonymous/authenticated Data API roles have no schema access. Security advisors returned no lints. This is manual SQL setup, not a connector migration-history entry.
-- The user revoked the original secret API key after a fragment appeared in a diagnostic. The replacement `render_build` key is stored only in ignored operator configuration and authenticates successfully. Neither key belongs in source control or the frontend.
-- Private Storage bucket `model-releases` contains all eight pinned release files, totaling **113,032,651 bytes**. Each downloaded size and SHA-256 was verified against `deploy/release.json`; anonymous public access was rejected. Read-only Storage inventory independently matched eight files and the same total size. See [Storage evidence](evidence/release-phase-5-storage.json).
-- `scripts/upload-deployment-release.py` reuses the existing pinned manifest, local validation and authenticated download/hash helper. It refuses public buckets, changed lengths, unexpected inventory and overwrites. Existing matching files are skipped and subsequently validated. Two focused tests cover resume without writes or credential logging, plus rejection of public buckets and changed lengths. All ten focused uploader/deployment tests pass. An optional live resume rerun did not execute because automatic permission review timed out; offline resume checks and the live read-only inventory passed instead.
-- Render can access `pok0yo/music-recommender`. The unsubmitted service draft selects native Python 3, Ohio, **Free**, branch `codex/catalog-expansion-v2`, the hash-locked dependency install and private release fetch, `python -m backend.production`, readiness path `/health/ready`, and automatic deployment Off. **No Render service has been created.** Runtime database/Storage secrets and exact allowed origin have not been entered.
-- Vercel Hobby project **music-recommender** (`prj_1K4wMXdGmpvnDLDd3YbFk659SsWG`) is created and connected to that repository. Production branch tracking is `codex/catalog-expansion-v2`; framework Next.js, Node 24.x, root directory empty. The repository pins `npm ci` and `npm run build`, and disables automatic Git deployments. No analytics was enabled. **No frontend deployment has been activated.** Its currently assigned provider domain is `project-3wvwg.vercel.app`; this is a reserved configuration, not a verified working public website.
+- Website: **https://project-3wvwg.vercel.app**. A fresh HTTP client with no browser cookies received HTTP 200 at this exact URL, without a developer-login redirect.
+- Real API: **https://music-recommender-api-7pp6.onrender.com**. Readiness: `/health/ready`; liveness: `/health/live`.
+- Both deploy source `4645fa76e8574da245ddf61436eab39742047d55` from `codex/catalog-expansion-v2`. Automatic deployments remain off; later documentation commits do not activate new application code.
+- Vercel Hobby project `music-recommender`, ID `prj_1K4wMXdGmpvnDLDd3YbFk659SsWG`; production deployment `CcwsaMReNC1umCmxFKqAjYjtq2jK`.
+- Render Free service `srv-dbj4vinf3r2c73evfne0`, Ohio; deployment `dep-dbj4vj7f3r2c73evfob0`. The workspace billing page confirmed **No card on file**. No upgrade, paid disk or paid observability was enabled.
+- Dedicated Supabase Free project `qhqwtuxxebcsccvklgxy` in the user-selected organization. The unrelated inactive project remains untouched.
 
-The selected deployment release remains `7809c65ae924d8d88fd748223da2e9061e1b87bcb15f69ff105193c4337f8bf5`. Uploaded inputs are the six serving-model files and two release manifests; no raw listening dataset or catalog database rows were uploaded by the Storage operation.
+## Loaded releases and permissions
 
-## Current dependency and next actions
+The serving release is `7809c65ae924d8d88fd748223da2e9061e1b87bcb15f69ff105193c4337f8bf5`. The model is `item-cf-cohort-v2-lambda-50`, frozen at 565,147 recordings with a training cutoff of August 1, 2026. The serving catalog is `catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766`: **4,996 recordings, 32 approved starters**. The compatible checked-link pilot contains **130 destinations across 76 recordings**; other destinations remain explicitly labeled searches.
 
-1. The user must finish resetting the new project's database password in the opened Supabase Connect dialog, then save the exact value as `postgres_password` in the ignored `artifacts/deployment-private/supabase-operator.json`. At this checkpoint that field is still empty. Browser credential changes require user handoff; do not enter or submit a new password for the user, and never request it in chat.
-2. Once available, establish the verified-TLS operator connection through the IPv4 Session pooler, securely configure the reader credential, and import the existing catalog/link releases transactionally using the existing tools. Keep admin credentials off the API service. Verify full release integrity, reader restrictions and a private backup/restore rehearsal.
-3. Verify the Render workspace has no payment method or an effective hard spending guard. Complete only the approved free service configuration, deploy the pinned source, configure exact frontend/API origins, and manually deploy Vercel. Use the [Phase 4 runbook](release-phase-4.md) for configuration, verification and rollback. A fresh general deployment approval is not required.
+The user applied the staged schema SQL after connector confirmations expired. All four private `music_catalog` tables have RLS. The API uses a separate `music_reader` credential with SELECT only; actual attempted writes were rejected. It has no superuser, create-role/database or bypass-RLS privileges. The private schema is not exposed to anonymous/authenticated Data API roles. The final read-only Supabase query confirmed 4,996 catalog rows, 130 link rows and four RLS tables; security advisors returned no lints.
 
-## Verification still outstanding
+Certificate/hostname verification initially failed with public system roots. The project's own certificate-download link supplied the **Supabase Root 2021 CA**. The public certificate is tracked at `deploy/supabase-root-ca.crt`, with exact bytes preserved by `.gitattributes`; SHA-256 `700723581420dd1ac98fd7e9ac529f0ef210eadcaf87fc868a3ad7d114c2f3b7`. The runtime connection uses `sslmode=verify-full&sslrootcert=deploy/supabase-root-ca.crt`. The production guard accepts this fixed path or system roots, and rejects unreviewed paths, weaker TLS modes and operator credentials. SSL enforcement was enabled in the new project; client verification and pooler-to-database TLS 1.3 both passed. The CA expires April 26, 2031; follow Supabase's official rotation guidance before replacing it. [SSL and CA documentation](https://supabase.com/docs/guides/platform/ssl-enforcement).
 
-There is no verified public frontend/API URL. Catalog/link rows have not yet been imported into the new database. Hosted TLS, actual release loading, search/recommendation/reseed journeys, listening links, device-local feedback, error recovery, memory/latency, idle wake, logs, backups and hosted rollback remain unverified. The earlier 67 browser and 80 backend/model checks validate Phase 4 locally and in CI; they are not production smoke results. The new uploader has ten focused passing tests, not a rerun of the full browser suite.
+The original Storage key was revoked by the user after a fragment appeared in a diagnostic. Its replacement is held only in ignored operator configuration and Render's server environment. It is privileged within this isolated Supabase project, not a bucket-only credential. No admin database credential is configured on Render and no private credential is supplied to Vercel. The frontend receives only `NEXT_PUBLIC_API_URL`.
 
-Phase 5 is incomplete. No acquisition, retraining, paid service, unrelated redesign or public activation occurred during this checkpoint.
+## Builds and input retention
+
+Render uses the hash-locked Linux Python requirements, fetches all eight private pinned files at build time, then starts `python -m backend.production`. The first deployment successfully validated the build output and reached readiness. The private Storage bucket holds 113,032,651 bytes; authenticated downloads matched all pinned lengths and hashes, and anonymous access was rejected. No raw listening dataset was uploaded. The scoped upload helper refuses public buckets, changed lengths, unexpected inventory and overwrites. Its optional live resume rerun was not executed after automatic permission review timed out; offline resume tests and live read-only inventory checks passed.
+
+Vercel uses Next.js, Node 24.x, `npm ci`, `npm run build`, the repository root, the approved production branch and the actual API origin. Render allows only the exact public frontend origin for browser access. A request with an unapproved origin received no allow-origin header. These are origin controls, not authentication for the intentionally public API.
+
+## Validation
+
+| Check | Result |
+| --- | --- |
+| GitHub deployed-source checks | 67 browser, 34 backend and 48 model tests pass |
+| Anonymous public homepage | HTTP 200; no developer login |
+| Real API release identity | Correct frozen model/catalog; `data_mode=real` |
+| Approved starters | 32/32 return ten verified, displayable results |
+| Sampled recommendation-to-recommendation journeys | Three documented journeys return ten results |
+| Warm HTTPS API sample | 40 sequential requests; median 0.213 s, p95 0.449 s, max 0.489 s |
+| Live browser journey | Search, discovery, reseeding, history and refresh pass |
+| Feedback | Device-local dismissal and Undo pass; original ranks remain visible |
+| Listening destinations | Direct links versus searches labeled; new-tab links use noopener/noreferrer |
+| Keyboard and motion alternatives | Keyboard next/details and pause/resume pass |
+| Empty search | Truthful no-match message; Discover disabled; recovery available |
+| Demo mode | Explicit illustrative label; listening destinations unavailable there |
+| Narrow-layout geometry | At 390x844, document width 390 and player width 366; no horizontal overflow |
+| Backup restore | Cloud-sourced dump restored locally; all counts/full hashes match |
+| Idle wake and real recovery | Provider shutdown/restart confirmed; readiness in 83.8 s; Try again restores 32 starters and ten real results |
+
+The latency sample includes the operator's network and a warmed service; it is not a cold-start or load guarantee. A local full API suite stalled and was stopped before a completed result; the same-source full Linux GitHub suite passed. Focused local deployment/upload tests pass. The browser reported no errors and one graphics-driver floating-point precision warning while rendering continued.
+
+Evidence: [API](evidence/release-phase-5-api.json), [browser/hosting/CI](evidence/release-phase-5-ui.json), [database/restore](evidence/release-phase-5-database.json), [private Storage](evidence/release-phase-5-storage.json), [idle wake/recovery](evidence/release-phase-5-idle-wake.json). GitHub [backend/model checks](https://github.com/pok0yo/music-recommender/actions/runs/41239128743), [browser checks](https://github.com/pok0yo/music-recommender/actions/runs/41239128693).
+
+## Availability and operating limits
+
+These checks establish functional availability for the tested journeys, not recommendation accuracy. The existing complete-catalog audit remains 3,248/4,996 searchable seeds with ten displayable results and 48 with none; it has not been replaced by the 32-starter smoke sample. Missing metadata is not padded, and failed real requests never become demo recommendations. Feedback stays on the device and does not retrain the model.
+
+The 16.5-minute operator inactivity test confirmed a Render shutdown at 21:01:16 UTC and a new instance running the production command at 21:04:35 UTC on October 31. The first request exceeded eight seconds; bounded retries reached real readiness 83.8 seconds after the first wake request. The live website showed its truthful timeout and Try again, then recovered 32 starters and ten real recommendations after retry. This verifies that the pinned build inputs survived the idle restart; no rebuild, data import or demo substitution was needed. It is one cold-wake sample, not an uptime guarantee.
+
+Free Render can sleep and Supabase Free can pause after inactivity. The frontend retains its eight-second timeout and an explicit Retry action; it does not promise an always-on experience. Do not add keepalive traffic or upgrade plans without authorization. The API's 60-request/minute guard may be shared behind Render's proxy; it is not verified per-visitor limiting or a public-load capacity claim.
+
+Hosted peak CPU/RAM charts are gated behind paid Render compute and were not enabled. The previous bounded Linux rehearsal measured approximately 275 MB peak container memory, but that is not a hosted measurement. Safari, physical phones, human screen-reader review, and provider playback/login remain unverified. No paid monitoring or unrelated instrumentation was added.
+
+## Acceptance and remaining exclusions
+
+The tested release meets functional acceptance for anonymous public access, the correct real backend, verified original-starter discovery/reseeding, labeled listening destinations, local feedback, safe failure/retry recovery, database permissions, backup restoration and passing source checks. No confirmed blocker remains for this approved free portfolio launch. The observed 84-second idle wake, potentially shared rate limit, incomplete wider-catalog results and unavailable platform/device checks prevent a claim of always-on production capacity, broad device certification or improved recommendation accuracy. The first deployment has no earlier public release for provider rollback; the documented known-good redeploy/suspend path and cloud-sourced isolated restore are the available recovery procedures.
+
+## Backups and exact rollback
+
+Before/after import dumps are private under ignored `artifacts/deployment-private/backups/`. The post-import custom dump is **619,973 bytes**, SHA-256 `db2d36dda8121c67cfa408eed0515e9da1028b9c4590457b39c185e0d77b745f`. It was restored into a newly created isolated loopback PostgreSQL database, then full catalog/link hashes and 4,996/130 counts were verified. Only that disposable database was removed; the live cloud catalog was not restored over or deleted. This is a successful cloud-sourced backup restore, not a managed cross-project recovery rehearsal. Free automatic backups or a second off-device copy are not claimed.
+
+1. **Stop promotion.** Record the failing source/release IDs. Leave immutable database versions and Storage prefixes intact. Do not reset acquisition ledgers or substitute demo results.
+2. **Application recovery.** In [Render Deploys](https://dashboard.render.com/web/srv-dbj4vinf3r2c73evfne0/deploys), select the known-good `4645fa76e8574da245ddf61436eab39742047d55` deployment and use its rollback/redeploy control if retained; otherwise manually deploy that exact commit. In [Vercel Deployments](https://vercel.com/pok0yo/music-recommender/deployments), promote the retained production deployment `CcwsaMReNC1umCmxFKqAjYjtq2jK` or manually rebuild that exact commit with the saved public API origin. Keep the stable domains, exact allowed origin and compatible manifests paired.
+3. **First-launch failure.** There is no older public release to roll back to. Use Render Settings → **Suspend Web Service** to stop the API while preserving its configuration/data. The frontend will show its truthful unavailable state; do not delete the project or enable demo silently. Repair and redeploy the saved source, then verify readiness before resuming promotion. The Vercel menu confirms Instant Rollback and Promote are disabled for this first/current production deployment, while Redeploy is available; Render exposes Suspend Web Service. Provider rollback to a different older public release was not exercised.
+4. **Database recovery.** Use the verified private dump with `pg_restore --no-owner --no-acl` into a **fresh isolated target**, never `--clean` on the live project. Apply `deploy/roles.sql`, set the reader password privately, and apply `backend/schema.sql` plus `backend/listening_links.sql` to restore grants/RLS; explicitly grant database CONNECT to the reader. Use `Catalog(...).check(full=True)` and `load_release(...)` against the saved compatible manifests. Reject reader writes before switching the API's private reader connection. The [Phase 4 runbook](release-phase-4.md) has the operator commands; no credential-bearing connection string belongs in chat or shell history.
+5. **Verify recovery.** Require `/health/ready` to report `real` and the pinned catalog. Repeat search → Discover → reseed → listening destinations → dismissal/Undo. Preserve safe error states and input on failure.
+
+For maintenance, retain the latest three private database dumps, create a separately controlled off-device copy, preserve the previous known-good Storage release, watch free quotas/build egress, resume a paused Supabase project manually, and inspect readiness after recovery. If the API started while the database was unavailable, restart it after database recovery so its pinned links reload. Rotate exposed secrets at their provider and update only the matching server-side setting. No visitor account/history database or feedback collection needs migration.

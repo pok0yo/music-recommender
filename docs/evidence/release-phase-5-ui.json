@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-31",
+  "frontend_url": "https://project-3wvwg.vercel.app",
+  "api_url": "https://music-recommender-api-7pp6.onrender.com",
+  "source_commit": "4645fa76e8574da245ddf61436eab39742047d55",
+  "vercel_deployment_id": "CcwsaMReNC1umCmxFKqAjYjtq2jK",
+  "render_service_id": "srv-dbj4vinf3r2c73evfne0",
+  "render_deployment_id": "dep-dbj4vj7f3r2c73evfob0",
+  "anonymous_http_status": 200,
+  "developer_login_required": false,
+  "real_mode_default": true,
+  "three_dimensional_scene_rendered": true,
+  "search_discovery_reseed_history_passed": true,
+  "refresh_passed": true,
+  "empty_search_truthful_and_discover_disabled": true,
+  "dismiss_and_undo_passed": true,
+  "listening_destinations_labeled_as_direct_or_search": true,
+  "external_links_noopener_noreferrer": true,
+  "keyboard_next_details_and_pause_resume_passed": true,
+  "demo_explicitly_labeled": true,
+  "narrow_viewport_geometry": {
+    "width": 390,
+    "height": 844,
+    "document_width": 390,
+    "canvas_width": 390,
+    "player_width": 366,
+    "method": "DOM bounds; simulated viewport, not a physical device"
+  },
+  "browser_errors_observed": 0,
+  "browser_warning": "Graphics-driver shader floating-point precision warning; rendering continued",
+  "render_no_card_on_file": true,
+  "render_application_cpu_memory_metrics": "Unavailable on Free plan; no paid upgrade enabled",
+  "ci": {
+    "backend_model_url": "https://github.com/pok0yo/music-recommender/actions/runs/41239128743",
+    "backend_tests": 34,
+    "model_tests": 48,
+    "frontend_url": "https://github.com/pok0yo/music-recommender/actions/runs/41239128693",
+    "browser_tests": 67,
+    "all_passed": true
+  },
+  "unverified": [
+    "Safari and physical mobile devices",
+    "Human screen-reader review",
+    "External provider playback and subscription/login",
+    "Hosted peak CPU/RAM charts",
+    "Provider rollback to an older public release; first public deployment"
+  ],
+  "local_full_api_suite": "Stopped after stalling before first completed test; same-source full Linux GitHub suite passed",
+  "first_launch_recovery_controls": {
+    "vercel_instant_rollback_enabled": false,
+    "vercel_promote_enabled": false,
+    "vercel_redeploy_available": true,
+    "render_suspend_available": true,
+    "provider_rollback_executed": false
+  },
+  "production_logs_reviewed": true,
+  "production_logs_format": "Request ID, route template, status and duration; no credential or search-text fields",
+  "cold_timeout_truthful": true,
+  "try_again_recovered_real_mode": true,
+  "post_restart_discovery_passed": true
+}

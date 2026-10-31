@@ -1,0 +1,37 @@
+{
+  "api_url": "https://music-recommender-api-7pp6.onrender.com",
+  "source_commit": "4645fa76e8574da245ddf61436eab39742047d55",
+  "real_mode": true,
+  "starters_returning_ten": 32,
+  "starter_count": 32,
+  "journeys": [
+    {
+      "first_seed": "49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+      "second_seed": "f56a6ad1-59ed-49fa-8d6f-b1f1aaaf5eeb",
+      "displayable_results": 10,
+      "status": "ok"
+    },
+    {
+      "first_seed": "1eb60aa4-9610-4296-87c5-ba050f64655c",
+      "second_seed": "38ad538a-fddb-49f7-aeb7-84fb232ac4ff",
+      "displayable_results": 10,
+      "status": "ok"
+    },
+    {
+      "first_seed": "aa03fca2-4c9e-4ee9-95c3-c30fa0a91004",
+      "second_seed": "1725091c-4c28-45ae-8abf-7f4308bd66cc",
+      "displayable_results": 10,
+      "status": "ok"
+    }
+  ],
+  "tiffany_search_results": 20,
+  "unapproved_origin_rejected": true,
+  "invalid_seed_safe_error": true,
+  "sampled_requests": 40,
+  "warm_latency_seconds": {
+    "median": 0.213,
+    "p95": 0.449,
+    "max": 0.489
+  },
+  "method": "Sequential anonymous HTTPS requests from operator machine; warmed service; network included; no browser or cold-start claim"
+}

@@ -21,5 +21,9 @@
     "bytes": 619973,
     "sha256": "db2d36dda8121c67cfa408eed0515e9da1028b9c4590457b39c185e0d77b745f"
   },
-  "public_activation": false
+  "public_activation": false,
+  "cloud_backup_restored_to_isolated_local_database": true,
+  "restored_recordings": 4996,
+  "restored_links": 130,
+  "temporary_restore_database_removed": true
 }
