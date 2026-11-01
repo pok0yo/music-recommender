@@ -11,11 +11,13 @@ import model from '../docs/art-direction/orbital-disc-model.json';
 import pickerModel from '../docs/art-direction/disc-picker-model.json';
 
 const step = Math.PI / 3;
-export function OrbitalHero({ open, docked = false, selection, onOpen, onClose, tracks, busy, error, searching, onChoose, consoleMode = false, motionPaused = false, rack, onToggleMotion }: {
+export type SceneStatus = 'loading' | 'ready' | 'unavailable';
+export function OrbitalHero({ open, docked = false, selection, onOpen, onClose, tracks, busy, error, searching, onChoose, consoleMode = false, motionPaused = false, rack, onToggleMotion, contentReady=true, onSceneStatus }: {
   open: boolean; onOpen: () => void; onClose: () => void; tracks: Track[];
   docked?: boolean; selection?: Track | null; consoleMode?: boolean; motionPaused?: boolean; rack?: RackInteraction;
   busy: boolean; error: boolean; searching: boolean; onChoose: (track: Track) => void;
   onToggleMotion?: () => void;
+  contentReady?: boolean; onSceneStatus?: (status:SceneStatus) => void;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const figure = useRef<HTMLElement>(null);
@@ -24,6 +26,7 @@ export function OrbitalHero({ open, docked = false, selection, onOpen, onClose, 
   const fallback = useRef<HTMLImageElement>(null);
   const scene = useRef<ReturnType<typeof createOrbitalScene> | null>(null);
   const [ready, setReady] = useState(false);
+  const prepared = useRef(false);
   const [motionAllowed, setMotionAllowed] = useState(false);
   const [dragging, setDragging] = useState(false);
   const rotation = useRef(0);
@@ -98,11 +101,12 @@ export function OrbitalHero({ open, docked = false, selection, onOpen, onClose, 
   }, []);
   useEffect(() => {
     let cancelled = false;
-    void import('./orbital-scene').then(({ createOrbitalScene }) => {
+    void import('./orbital-scene').then(async ({ createOrbitalScene }) => {
+      await document.fonts.ready;
       if (cancelled || !host.current) return;
-      try { scene.current = createOrbitalScene(host.current, () => { if (!cancelled) setReady(false); }, paintDial); scene.current.setDial(rotation.current, true); setReady(true); }
-      catch { setReady(false); }
-    }).catch(() => { if (!cancelled) setReady(false); });
+      try { scene.current = createOrbitalScene(host.current, () => { if (!cancelled) { setReady(false); onSceneStatus?.('unavailable'); } }, paintDial); scene.current.setDial(rotation.current, true); setReady(true); }
+      catch { setReady(false); onSceneStatus?.('unavailable'); }
+    }).catch(() => { if (!cancelled) { setReady(false); onSceneStatus?.('unavailable'); } });
     return () => { cancelled = true; scene.current?.dispose(); scene.current = null; };
   }, []);
   useEffect(() => {
@@ -115,6 +119,18 @@ export function OrbitalHero({ open, docked = false, selection, onOpen, onClose, 
   useEffect(() => {
     scene.current?.setRack(rack?{...rack,revealed:playerPhase==='closing'||playerPhase==='spinning'}:undefined);
   }, [rack,playerPhase,ready]);
+  useEffect(()=>{
+    if(!ready||!contentReady||prepared.current||!onSceneStatus)return;
+    let cancelled=false;
+    void scene.current?.prepare().then(()=>{
+      if(cancelled)return;
+      prepared.current=true;onSceneStatus('ready');
+    }).catch(()=>{
+      if(cancelled)return;
+      scene.current?.dispose();scene.current=null;setReady(false);onSceneStatus('unavailable');
+    });
+    return ()=>{cancelled=true;};
+  },[ready,contentReady,onSceneStatus]);
   useEffect(() => {
     if (!open) return;
     const frame = requestAnimationFrame(() => {

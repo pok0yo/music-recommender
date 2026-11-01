@@ -203,6 +203,12 @@ export function createOrbitalScene(host: HTMLElement, onFailure: () => void, onD
     canvas.addEventListener('webglcontextlost', lost);
     render();
     return {
+      async prepare() {
+        await renderer.compileAsync(scene,camera);
+        if(disposed||unavailable)throw new Error('Scene unavailable');
+        pose(0);render();
+        await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));
+      },
       setMotion(value: boolean) { enabled = value; if (!value) pointer.set(0, 0); update(); },
       setLoaded(value: boolean) { loaded = value; },
       setRack(value: RackState | undefined) {

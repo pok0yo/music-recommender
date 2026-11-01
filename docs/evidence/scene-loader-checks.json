@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-01",
+  "base_commit": "863fb16",
+  "checkpoint": "local_implementation_ready_for_review",
+  "public_deployment_activated": false,
+  "preview": "http://127.0.0.1:3000/?mode=demo",
+  "isolated_source": true,
+  "preview_only_configuration": "Turbopack root set to preview working directory to avoid parent-lockfile inference; production config unchanged",
+  "production_build_passed": true,
+  "typecheck_passed": true,
+  "normal_chrome_checks_passed": 9,
+  "software_loader_checks_passed": 3,
+  "final_software_checks_include_keyboard_focus": true,
+  "api_test_data": "Synthetic intercepted responses; no hosted API or catalog changes",
+  "coverage": [
+    "Initial loader hides unfinished geometry and native controls",
+    "Indeterminate indicator has no invented progress percentage",
+    "Full scene draw and catalog settle before automatic reveal",
+    "Canvas retained during ordinary browsing; intro stays dismissed",
+    "Graphics failure and API 503 reveal real-mode retry controls",
+    "Context loss after startup does not reopen the loader",
+    "Slow-start escape moves keyboard focus into search",
+    "Reduced motion disables movement",
+    "390x844 layout has no horizontal overflow",
+    "Axe WCAG 2 A/AA through 2.2 AA checks pass while loading"
+  ],
+  "visual_review": [
+    "Desktop 1440x900 screenshot",
+    "Narrow 390x844 screenshot"
+  ],
+  "unverified": [
+    "Safari",
+    "Physical mobile hardware",
+    "Hosted deployment of this loader",
+    "Frame timings on low-end physical hardware"
+  ],
+  "source_sha256": {
+    "app/layout.tsx": "1b82b358497a221c0aab38b59d8f60d9c1d0a51d2f794bf17e8289e01733db2a",
+    "app/loading.tsx": "77d3fbf92f137166ffe4bdbb25c334e437792ccd1825847329b43f10f305ea51",
+    "components/scene-loader.tsx": "3b269e69fbec8658029dae0645d91d8714b9580fc7c5225717a537ac0f0e18e4",
+    "components/scene-loader.css": "5cb9c9d0ec18ac793a80ff59d193972d07642ae4ff94e37e1121a11f9da0718a",
+    "components/music-rack-study.tsx": "e657e0f4f7e923f21fb9788fd04b6c4f33e2b8e2c1a272b5f1863408199ac45a",
+    "components/orbital-hero.tsx": "ccf2a54d0c3108934d4c6d96771467e646d0aa69afbf275fcc3352115fd1d0ef",
+    "components/orbital-scene.ts": "11da18aa572bf6edb88de7afb2f7a22b0f98415c3f0ecf91807db76417d5a182",
+    "tests/frontend/scene-loader.spec.ts": "5c2d5640733e79254144bb996806824b1978113658309398b75917844989d1d1"
+  },
+  "software_homepage_checks_passed": 6,
+  "total_software_checks_passed": 9
+}

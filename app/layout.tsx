@@ -14,6 +14,7 @@ import '../v2/player.css';
 import '../v2/rack.css';
 import '../v2/rack-study.css';
 import '../components/ui/liquid-glass.css';
+import '../components/scene-loader.css';
 import { LiquidGlass } from '../components/ui/liquid-glass';
 
 export const metadata: Metadata = { title: 'Music Recommender — discover your next song', description: 'Start with one song and explore connections through shared listening, with recommendation details and links to listen.' };

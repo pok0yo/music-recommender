@@ -1,6 +1,6 @@
 'use client';
 
-import {useRef,useState} from 'react';
+import {useEffect,useRef,useState} from 'react';
 import {OrbitalHero} from './orbital-hero';
 import {LiquidMetalButton} from './ui/liquid-metal-button';
 import {Problem} from './discovery';
@@ -12,9 +12,16 @@ import approvedStarters from '../lib/approved-starters.json';
 import {environmentControls,defaultEnvironment} from '../lib/environment-controls';
 import {ListenControl} from './listen-control';
 import {useFeedback} from '../lib/use-feedback';
+import {SceneLoader} from './scene-loader';
+import type {SceneStatus} from './orbital-hero';
 
 export function MusicRackStudy({mode,fixture,developerControls=false}:{mode:Meta['data_mode'];fixture:Scenario;developerControls?:boolean}) {
   const d=useDiscovery(mode,fixture,approvedStarters.tracks);
+  const [sceneStatus,setSceneStatus]=useState<SceneStatus>('loading');
+  const [entered,setEntered]=useState(false);
+  const contentReady=!!(d.starters||d.starterError)&&!d.pending&&!d.searchBusy;
+  const loading=!entered&&(sceneStatus==='loading'||!contentReady);
+  useEffect(()=>{if(sceneStatus!=='loading'&&contentReady)setEntered(true);},[sceneStatus,contentReady]);
   const [environment,setEnvironment]=useState(defaultEnvironment);
   const feedback=useFeedback(mode);
   const [submitted,setSubmitted]=useState<Track[]>([]);
@@ -42,7 +49,8 @@ export function MusicRackStudy({mode,fixture,developerControls=false}:{mode:Meta
       else if(action==='seed')showSeed();else if(action==='eject')reset();else if(action==='confirm')discover();else preview(action==='next'?index+1:index-1);}};
   const collection=d.searchBusy?'Searching the catalog':d.matches?'Search matches':d.pending?'Finding connections':d.recommendError?'Connections unavailable':d.recommendations?'Recommendations':'Starting songs';
   const retry=()=>{if(d.searchError)void d.search(d.query);else if(d.recommendError)void d.retry();else void d.loadStarters();};
-  return <main className="rack-study is-functional" aria-label="Orbital music discovery">
+  return <main className="rack-study is-functional" aria-label="Orbital music discovery" data-scene-status={sceneStatus}>
+    <div className="rack-startup-content" aria-hidden={loading||undefined} inert={loading}>
     <h1 className="sr-only">Discover music through shared listening</h1>
     {developerControls&&<details className="rack-dev-bar"><summary>Environment controls</summary><div className="rack-dev-controls">
       {Object.entries(environmentControls).map(([name,control])=>{const key=name as keyof typeof environment;return <label key={key}>{control.label}<output>{environment[key].toFixed(2)}</output><input type="range" aria-label={control.label} min={control.min} max={control.max} step={control.step} value={environment[key]} onChange={event=>setEnvironment(value=>({...value,[key]:Number(event.target.value)}))}/></label>;})}
@@ -50,7 +58,8 @@ export function MusicRackStudy({mode,fixture,developerControls=false}:{mode:Meta
     </div></details>}
     <p id="rack-study-help" className="sr-only">Drag empty space to rotate. Scroll or pinch to zoom. Select a sleeve to preview a song, then choose Discover to find recommendations. Arrow keys rotate the focused scene, Enter confirms, and Space pauses motion. All song actions are available in the player display.</p>
     <OrbitalHero open={false} docked consoleMode rack={rack} selection={d.selection??undefined} tracks={tracks} busy={false} error={!!error} searching={d.searchBusy}
-      motionPaused={paused} onOpen={showSeed} onClose={reset} onChoose={discover} onToggleMotion={()=>setPaused(value=>!value)} />
+      motionPaused={paused} onOpen={showSeed} onClose={reset} onChoose={discover} onToggleMotion={()=>setPaused(value=>!value)}
+      contentReady={contentReady} onSceneStatus={setSceneStatus} />
     <section className="rack-display" aria-label="Player display">
       <header className="rack-display-header"><span className="rack-wordmark">m/r</span>{mode==='demo'?<a className="rack-data-label" href="?mode=real" aria-label="Use trained recommendations">Demo · use trained model ↗</a>:<span className="rack-data-label">Trained recommendations</span>}</header>
       <form className="rack-search" role="search" onSubmit={event=>{event.preventDefault();setCandidate('');setInspectSeed(false);setDetails(false);void d.search(d.query);}}>
@@ -90,5 +99,7 @@ export function MusicRackStudy({mode,fixture,developerControls=false}:{mode:Meta
       <p id="rack-catalog-note" className="rack-catalog-note">{mode==='demo'?'Demonstration only · rankings and counts are illustrative':'Real model · shared listening · limited verified catalog'}</p>
     </section>
     <p className="rack-scene-hint" aria-hidden="true">Drag to explore · select a sleeve</p>
+    </div>
+    <SceneLoader visible={loading} stage={contentReady?'scene':'catalog'} onContinue={()=>{setEntered(true);requestAnimationFrame(()=>d.searchInput.current?.focus({preventScroll:true}));}} />
   </main>;
 }

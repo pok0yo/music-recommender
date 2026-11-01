@@ -6,6 +6,8 @@ A music discovery application that recommends tracks from a single seed song, wi
 
 **Public launch:** [Open Music Recommender](https://project-3wvwg.vercel.app). The real API is [music-recommender-api-7pp6.onrender.com](https://music-recommender-api-7pp6.onrender.com/health/ready), serving 4,996 verified recordings and the compatible listening-link release. Phase 5 verification is complete: public journeys, backup restore, cold-wake recovery and all 149 tests in GitHub pass. Free hosting took about 84 seconds to wake in the measured test; use Try again after an idle timeout. See the [live release runbook](docs/release-phase-5.md) for versions, limits, evidence, maintenance and rollback.
 
+**Local change ready for review:** the [scene loading screen](docs/scene-loading-screen.md) covers unfinished first renders and preserves recovery controls. It is not deployed publicly yet.
+
 **Deployment preparation:** the [Phase 4 runbook](docs/release-phase-4.md) records the approved Vercel Hobby, Render Free and dedicated Supabase Free configuration. Current production state is recorded in Phase 5.
 
 The selected 3D Orbital record-player homepage uses real recommendations by default, with listening destinations and device-local feedback. The preceding [integration checkpoint](docs/release-phase-3.md) records 64 browser and 72 backend/model checks passing locally and in GitHub CI, plus performance measurements, catalog limits and unavailable device checks. Phase 4 adds deployment-specific validation without changing the selected interface.
