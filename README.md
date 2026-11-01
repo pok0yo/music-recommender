@@ -6,7 +6,7 @@ A music discovery application that recommends tracks from a single seed song, wi
 
 **Public launch:** [Open Music Recommender](https://project-3wvwg.vercel.app). The real API is [music-recommender-api-7pp6.onrender.com](https://music-recommender-api-7pp6.onrender.com/health/ready), serving 4,996 verified recordings and the compatible listening-link release. Phase 5 verification is complete: public journeys, backup restore, cold-wake recovery and all 149 tests in GitHub pass. Free hosting took about 84 seconds to wake in the measured test; use Try again after an idle timeout. See the [live release runbook](docs/release-phase-5.md) for versions, limits, evidence, maintenance and rollback.
 
-**Local change ready for review:** the [scene loading screen](docs/scene-loading-screen.md) covers unfinished first renders and preserves recovery controls. It is not deployed publicly yet.
+**Local changes ready for review:** the [scene loading screen](docs/scene-loading-screen.md) covers unfinished first renders, and the [stylized water adaptation](docs/stylized-water.md) adds displaced swells, irregular flowing highlights and layered depth to the selected record desk. Neither change is deployed publicly yet. The water draws on [Stylized Components by Christian Ortiz (Cortiz)](https://github.com/cortiz2894/stylized-components); attribution and its MIT license are retained in [third-party notices](THIRD_PARTY_NOTICES.md).
 
 **Deployment preparation:** the [Phase 4 runbook](docs/release-phase-4.md) records the approved Vercel Hobby, Render Free and dedicated Supabase Free configuration. Current production state is recorded in Phase 5.
 

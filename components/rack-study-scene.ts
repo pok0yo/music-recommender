@@ -6,6 +6,7 @@ import {artists,type Track} from '../lib/contracts';
 import type {RackState} from './music-rack-scene';
 import {rackTransfer,sampleTransfer,floatRotation,seatedRotation,type TransferFrame} from './rack-transfer';
 import {defaultEnvironment,type EnvironmentSettings} from '../lib/environment-controls';
+import {createWaterGeometry,waterVertex,waterFragment} from './stylized-water';
 
 // A scene study shares the existing CD and renderer; the website view keeps its own composition.
 export function createRackStudyScene(renderer:THREE.WebGLRenderer,scene:THREE.Scene,camera:THREE.PerspectiveCamera,
@@ -89,39 +90,17 @@ export function createRackStudyScene(renderer:THREE.WebGLRenderer,scene:THREE.Sc
       #include <colorspace_fragment>
     }`}));
   const reflectionSize=software?256:innerWidth<600?512:1024;
-  const water=new Reflector(new THREE.PlaneGeometry(2000,2000),{textureWidth:reflectionSize,textureHeight:reflectionSize,multisample:0,clipBias:.002,
-    shader:{uniforms:{...tuning,color:{value:new THREE.Color()},tDiffuse:{value:null},textureMatrix:{value:new THREE.Matrix4()},uTime:{value:0},uMotion:{value:1},uSun:{value:sunDirection}},
-      vertexShader:`uniform mat4 textureMatrix;varying vec4 vUv;varying vec2 vFloor;varying vec3 vWorld;void main(){vUv=textureMatrix*vec4(position,1.);vFloor=position.xy;vWorld=(modelMatrix*vec4(position,1.)).xyz;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
-      fragmentShader:`${tuningShader} uniform sampler2D tDiffuse;uniform float uTime,uMotion;uniform vec3 uSun;varying vec4 vUv;varying vec2 vFloor;varying vec3 vWorld;
-      void main(){vec4 uv=vUv;float t=uTime*uMotion*speed;vec2 p=vWorld.xz;
-        float a=dot(p,vec2(.75,.66))*2.8-t*.75;float b=dot(p,vec2(-.4,.92))*5.6+t*.52;float c=p.y*11.+sin(p.x*.8+t*.2)-t;
-        float distanceFade=smoothstep(15.,180.,distance(cameraPosition,vWorld));
-        float detail=1.-distanceFade;float wave=sin(a)*.65+sin(b)*.25+sin(c)*.1*detail;
-        vec2 slope=vec2(.75,.66)*cos(a)*.07+vec2(-.4,.92)*cos(b)*.045+vec2(0.,1.)*cos(c)*.025*detail;
-        slope*=ripples;vec3 normal=normalize(vec3(-slope.x,1.,-slope.y));vec3 view=normalize(cameraPosition-vWorld);
-        uv.xy+=vec2(wave*.002*ripples,slope.y*.014)*uv.w*detail;
-        vec4 mirror=texture2DProj(tDiffuse,uv);
-        vec3 base=mix(vec3(.018,.16,.36),vec3(.12,.32,.65),distanceFade);
-        base=mix(base,vec3(.28,.045,.4),(.5+.5*sin(p.x*.13+p.y*.09+wave*.3))*.55*accents);
-        float fresnel=pow(1.-max(dot(normal,view),0.),3.);
-        vec3 reflected=mirror.rgb*vec3(1.04,1.01,1.08);
-        vec3 color=mix(base,reflected,mirror.a*reflection*mix(.85,1.,fresnel));
-        vec3 halfVector=normalize(view+uSun);float highlight=pow(max(dot(normal,halfVector),0.),110.);
-        color+=wave*vec3(.035,.055,.07)*detail*ripples; color+=highlight*vec3(1.8,1.35,1.5)*( .35+.65*fresnel)*sun;
-        color=mix(color,vec3(.65,.72,.83),distanceFade*haze);
-        gl_FragColor=vec4(grade(color),1.);
-        #include <tonemapping_fragment>
-        #include <colorspace_fragment>
-      }`}});
+  // shortcut: planar reflections approximate these small swells; steep waves would need a different reflector.
+  const water=new Reflector(createWaterGeometry(software,innerWidth<600),{textureWidth:reflectionSize,textureHeight:reflectionSize,multisample:0,clipBias:.002,
+    shader:{uniforms:{...tuning,color:{value:new THREE.Color()},tDiffuse:{value:null},textureMatrix:{value:new THREE.Matrix4()},uTime:{value:0},uSun:{value:sunDirection}},
+      vertexShader:waterVertex,fragmentShader:waterFragment(tuningShader,software)}});
   water.rotation.x=-Math.PI/2;water.position.y=-1.86;scene.add(water);
   const waterMaterial=water.material as THREE.ShaderMaterial;
   const skyMaterial=sky.material as THREE.ShaderMaterial;
-  const shadowCanvas=document.createElement('canvas');shadowCanvas.width=shadowCanvas.height=128;const sc=shadowCanvas.getContext('2d')!,sg=sc.createRadialGradient(64,64,3,64,64,64);sg.addColorStop(0,'#112d5366');sg.addColorStop(1,'#112d5300');sc.fillStyle=sg;sc.fillRect(0,0,128,128);
-  const shadowMap=new THREE.CanvasTexture(shadowCanvas);textures.add(shadowMap);const shadow=mesh(new THREE.PlaneGeometry(8,4),new THREE.MeshBasicMaterial({map:shadowMap,transparent:true,depthWrite:false}));shadow.rotation.x=-Math.PI/2;shadow.position.y=-1.85;
 
   const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,.15,0);controls.enablePan=false;controls.rotateSpeed=.65;controls.zoomSpeed=.65;controls.minPolarAngle=.3;controls.maxPolarAngle=Math.PI*.47;controls.minDistance=10;controls.maxDistance=30;controls.enableDamping=true;controls.dampingFactor=.09;
   controls.addEventListener('change',()=>onViewChange(controls.getAzimuthalAngle()));
-  let state:RackState|undefined,queued:RackState|undefined,signature='',hoverIndex=-1,operation=-1,time=0,flightTime=0,initialized=false,aspect=0,inFlight=false;
+  let state:RackState|undefined,queued:RackState|undefined,signature='',hoverIndex=-1,operation=-1,time=0,waterTime=0,flightTime=0,initialized=false,aspect=0,inFlight=false;
   let frames:TransferFrame[]=[],framing=1,viewRevision=0,functional=false;
   const sample:TransferFrame={seconds:0,position:new THREE.Vector3(),rotation:new THREE.Quaternion(),sleeveZ:0,sleeveYaw:Math.PI/2,rings:1,phase:'browsing'};
   const identity=new THREE.Quaternion(),targetRotation=new THREE.Quaternion();
@@ -179,7 +158,8 @@ export function createRackStudyScene(renderer:THREE.WebGLRenderer,scene:THREE.Sc
         s.group.position.x=s.x;
         if(selected&&transferring){s.group.position.z=sample.sleeveZ;s.group.rotation.y=sample.sleeveYaw;}
         else{s.group.position.z=THREE.MathUtils.lerp(s.group.position.z,!inFlight&&state.functional&&selected?.55:!inFlight&&s.index===hoverIndex?.28:0,ease);s.group.rotation.y=THREE.MathUtils.lerp(s.group.rotation.y,Math.PI/2,ease);}}
-      waterMaterial.uniforms.uTime.value=time;waterMaterial.uniforms.uMotion.value=moving&&state.waterMotion!==false?1:0;
+      if(moving&&state.waterMotion!==false)waterTime+=dt*(state.environment??defaultEnvironment).speed;
+      waterMaterial.uniforms.uTime.value=waterTime;
       const phase=inFlight?sample.phase:state.browsing?'browsing':'loaded';
       if(!inFlight&&queued){const next=queued;queued=undefined;setState(next);if(!moving&&inFlight)return this.pose(0,false,pointer);}
       return phase;
