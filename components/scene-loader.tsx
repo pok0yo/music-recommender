@@ -4,11 +4,18 @@ import {useEffect,useState} from 'react';
 
 export function SceneLoader({visible=true,stage='scene',onContinue}:{visible?:boolean;stage?:'scene'|'catalog';onContinue?:()=>void}) {
   const [slow,setSlow]=useState(false);
+  const [finished,setFinished]=useState(!visible);
+  useEffect(()=>{
+    if(visible){setFinished(false);return;}
+    const timer=window.setTimeout(()=>setFinished(true),300);
+    return ()=>window.clearTimeout(timer);
+  },[visible]);
   useEffect(()=>{
     if(!visible)return;
     const timer=window.setTimeout(()=>setSlow(true),8000);
     return ()=>window.clearTimeout(timer);
   },[visible]);
+  if(finished&&!visible)return null;
   return <section className={`scene-loader${visible?'':' is-finished'}`} aria-label="Loading music discovery" aria-hidden={!visible} inert={!visible}>
     <div className="scene-loader-grid" aria-hidden="true" />
     <div className="scene-loader-window">

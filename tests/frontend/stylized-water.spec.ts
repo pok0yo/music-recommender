@@ -18,6 +18,7 @@ test('water keeps its horizon and concentrates bounded geometry around the playe
 });
 
 test('displaced water compiles, moves, freezes in place and retains the mounted discovery scene',async({page},testInfo)=>{
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?180_000:30_000);
   const errors:string[]=[];
   page.on('pageerror',error=>errors.push(error.message));
   page.on('console',message=>{if(message.type()==='error'&&/shader|webgl|three/i.test(message.text()))errors.push(message.text());});

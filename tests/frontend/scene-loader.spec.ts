@@ -20,6 +20,7 @@ test('first paint covers unfinished graphics and reveals only a drawn scene with
   release();
   await expect(page.locator('main')).toHaveAttribute('data-scene-status','ready');
   await expect(page.locator('.scene-loader')).toBeHidden();
+  await expect(page.locator('.scene-loader')).toHaveCount(0);
   await expect(page.getByRole('searchbox')).toBeVisible();
   const canvas=await page.locator('.orbital-canvas canvas').elementHandle();
   await page.getByRole('button',{name:'Next song',exact:true}).click();

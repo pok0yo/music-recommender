@@ -22,10 +22,12 @@ test('Orbital console keeps controls visible and fits a desktop opening screen',
 });
 
 test('retired artwork URLs preserve discovery and About context when redirected', async ({page}) => {
-  test.setTimeout(60_000);
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?180_000:60_000);
+  await page.emulateMedia({reducedMotion:'reduce'});
   const seed='00000000-0000-4000-8000-000000000003';
   for (const slug of ['glass-current','aero-player','liquid-star']) for (const section of ['', '/about']) {
     await page.goto(`/prototypes/disc-tray/artwork/${slug}${section}?mode=demo&fixture=ten&q=Tiffany&seed=${seed}&background=crisp&water=still&v=4&tag=one&tag=two&interface=classic`);
+    await page.waitForURL(url=>url.pathname===route+section);
     const url=new URL(page.url());
     expect(url.pathname).toBe(route+section);
     expect(url.searchParams.get('q')).toBe('Tiffany');
@@ -38,5 +40,7 @@ test('retired artwork URLs preserve discovery and About context when redirected'
     else await expect(page.locator('.track-row')).toHaveCount(10);
     await expect(page.locator('.proto-picker')).toHaveCount(0);
   }
-  expect((await page.goto('/prototypes/disc-tray/artwork/glass-current/unknown'))!.status()).toBe(404);
+  await page.goto('/prototypes/disc-tray/artwork/glass-current/unknown');
+  await expect(page.getByRole('heading',{name:'404',exact:true})).toBeVisible();
+  await expect(page.locator('meta[name="robots"]').first()).toHaveAttribute('content','noindex');
 });

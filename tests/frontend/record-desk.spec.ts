@@ -28,6 +28,7 @@ test('environment sliders update the mounted scene and reset to softer defaults'
 test('physical sleeves preview without confirming and the loaded CD recalls its seed',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});await page.goto(route+'entry');
   const host=page.locator('.orbital-canvas');await expect(host).toHaveAttribute('data-rack','true');
+  await expect(page.locator('.scene-loader')).toBeHidden();
   const box=(await host.boundingBox())!,camera=new PerspectiveCamera(35,box.width/box.height,.1,2000),target=new Vector3(0,.15,0);
   camera.position.copy(new Vector3(.53,.2,.79).normalize().multiplyScalar(19.5)).add(target);camera.lookAt(target);camera.setViewOffset(box.width,box.height,210,0,box.width,box.height);camera.updateMatrixWorld();
   const click=async(point:Vector3)=>{point.project(camera);await page.mouse.click(box.x+(point.x+1)*box.width/2,box.y+(1-point.y)*box.height/2);};
@@ -40,6 +41,7 @@ test('physical sleeves preview without confirming and the loaded CD recalls its 
 });
 
 test('search, preview, discover, evidence and reseeding share one mounted scene',async({page})=>{
+  await page.emulateMedia({reducedMotion:'reduce'});
   test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?270_000:45_000);const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
   await page.goto(route+'entry');const host=page.locator('.orbital-canvas'),title=page.locator('.rack-readout h2');
   await expect(host).toHaveAttribute('data-rack','true');const canvas=await host.locator('canvas').elementHandle();
@@ -83,6 +85,7 @@ test('empty, limited, failed and pending requests retain honest recovery',async(
   await page.goto(route+'error');await expect(page.locator('.rack-display').getByRole('alert')).toContainText('could not load recommendations');await expect(page.getByRole('button',{name:'Try again',exact:true})).toBeEnabled();
   await page.goto(route+'rate-limit');await expect(page.getByRole('button',{name:/Try again in/})).toBeDisabled();
   await page.goto(route+'loading');await expect(page.locator('.rack-eyebrow')).toContainText('Finding connections');
+  if(await page.locator('.rack-startup-content').getAttribute('inert')!==null)await page.getByRole('button',{name:'Use song controls',exact:false}).click();
   await page.getByRole('searchbox').fill('Tiffany');await page.getByRole('button',{name:'Search',exact:true}).click();await expect(page.locator('.rack-eyebrow')).toContainText('Search matches');await expect(page.locator('.rack-readout h2')).toHaveText('CLOUDS');
 });
 
