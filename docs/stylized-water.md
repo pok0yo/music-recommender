@@ -1,5 +1,7 @@
 # Stylized water — local implementation checkpoint
 
+Published on 2026-11-01 in frontend source `0f06f43`. See the [public update report](release-update-2026-11-01.md) for hosted checks, CI follow-up and rollback. The checkpoint description below records the pre-deployment implementation history.
+
 Prepared 2026-11-01 against `605ccc7`. This changes the selected Orbital record desk locally. The public release remains unchanged; activation is a separate authorized checkpoint.
 
 ## Reference and adaptation

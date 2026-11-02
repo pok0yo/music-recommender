@@ -1,15 +1,21 @@
 # Phase 5 — public launch and verification
 
-Updated 2026-10-31. **Phase 5 is complete for the tested release, with the operating limits and unavailable checks stated below. The public launch is active.** The selected 3D record-player interface, orbital disc/ring animations, water, liquid-glass controls and accessible song controls are preserved. No acquisition, retraining, paid service, accounts or embedded playback was added.
+Updated 2026-11-01. **The public launch is active. The original launch verification and the later frontend update are distinguished below, including remaining CI and device-check limits.** The selected 3D record-player interface, orbital disc/ring animations, water, liquid-glass controls and accessible song controls are preserved. No acquisition, retraining, paid service, accounts or embedded playback was added.
 
 ## Public URLs and deployed source
 
 - Website: **https://project-3wvwg.vercel.app**. A fresh HTTP client with no browser cookies received HTTP 200 at this exact URL, without a developer-login redirect.
 - Real API: **https://music-recommender-api-7pp6.onrender.com**. Readiness: `/health/ready`; liveness: `/health/live`.
-- Both deploy source `4645fa76e8574da245ddf61436eab39742047d55` from `codex/catalog-expansion-v2`. Automatic deployments remain off; later documentation commits do not activate new application code.
-- Vercel Hobby project `music-recommender`, ID `prj_1K4wMXdGmpvnDLDd3YbFk659SsWG`; production deployment `CcwsaMReNC1umCmxFKqAjYjtq2jK`.
+- The frontend now deploys `0f06f43f6756dd371cc4164a4e5c6f489739c11b`; the unchanged backend remains on `4645fa76e8574da245ddf61436eab39742047d55`, from `codex/catalog-expansion-v2`. Automatic deployments remain off; later test/documentation commits do not activate new application code.
+- Vercel Hobby project `music-recommender`, ID `prj_1K4wMXdGmpvnDLDd3YbFk659SsWG`; production deployment `BMRXbVNtzQsW6gEYpw1KdngZfM63` (November 1). Previous known-good deployment: `CcwsaMReNC1umCmxFKqAjYjtq2jK`.
 - Render Free service `srv-dbj4vinf3r2c73evfne0`, Ohio; deployment `dep-dbj4vj7f3r2c73evfob0`. The workspace billing page confirmed **No card on file**. No upgrade, paid disk or paid observability was enabled.
 - Dedicated Supabase Free project `qhqwtuxxebcsccvklgxy` in the user-selected organization. The unrelated inactive project remains untouched.
+
+## November 1 frontend update
+
+The loading screen and stylized water are publicly active. Vercel reported Ready after a 30-second build. An anonymous HTTP client received 200 at the stable public URL and found the loader in the initial response; the old release did not contain it. Live browser checks passed for real search, ten recommendations, reseeding, provider-search labels, dismissal/Undo with original ranks, Back, refresh, explanations and keyboard pause/resume. The explicit pending demo showed the loader and its song-control escape, with focus moved into search and the demo label preserved. No browser errors were observed.
+
+The [update report](release-update-2026-11-01.md) separates these hosted results from local checks and records the resolved GitHub CPU-rendering timeouts. Full validation on test follow-up `6efb245` passed 73 browser, 34 backend and 48 model checks; deployed application files are unchanged. The browser viewport override did not apply, so no new hosted narrow-layout result is claimed; local and GitHub narrow-layout checks passed. No backend deployment, schema/data change, paid service or credential change was needed.
 
 ## Loaded releases and permissions
 
@@ -27,7 +33,7 @@ Render uses the hash-locked Linux Python requirements, fetches all eight private
 
 Vercel uses Next.js, Node 24.x, `npm ci`, `npm run build`, the repository root, the approved production branch and the actual API origin. Render allows only the exact public frontend origin for browser access. A request with an unapproved origin received no allow-origin header. These are origin controls, not authentication for the intentionally public API.
 
-## Validation
+## Original October 31 launch validation
 
 | Check | Result |
 | --- | --- |
@@ -63,7 +69,7 @@ Hosted peak CPU/RAM charts are gated behind paid Render compute and were not ena
 
 ## Acceptance and remaining exclusions
 
-The tested release meets functional acceptance for anonymous public access, the correct real backend, verified original-starter discovery/reseeding, labeled listening destinations, local feedback, safe failure/retry recovery, database permissions, backup restoration and passing source checks. No confirmed blocker remains for this approved free portfolio launch. The observed 84-second idle wake, potentially shared rate limit, incomplete wider-catalog results and unavailable platform/device checks prevent a claim of always-on production capacity, broad device certification or improved recommendation accuracy. The first deployment has no earlier public release for provider rollback; the documented known-good redeploy/suspend path and cloud-sourced isolated restore are the available recovery procedures.
+The original October 31 release meets functional acceptance for anonymous public access, the correct real backend, verified original-starter discovery/reseeding, labeled listening destinations, local feedback, safe failure/retry recovery, database permissions, backup restoration and passing source checks. The November 1 frontend update has separate hosted verification and CI follow-up in the update report. The observed 84-second idle wake, potentially shared rate limit, incomplete wider-catalog results and unavailable platform/device checks prevent a claim of always-on production capacity, broad device certification or improved recommendation accuracy. The November 1 frontend update now has the retained October 31 frontend as its rollback target. The documented known-good redeploy/suspend path and cloud-sourced isolated restore remain available for backend recovery.
 
 ## Backups and exact rollback
 
@@ -71,7 +77,7 @@ Before/after import dumps are private under ignored `artifacts/deployment-privat
 
 1. **Stop promotion.** Record the failing source/release IDs. Leave immutable database versions and Storage prefixes intact. Do not reset acquisition ledgers or substitute demo results.
 2. **Application recovery.** In [Render Deploys](https://dashboard.render.com/web/srv-dbj4vinf3r2c73evfne0/deploys), select the known-good `4645fa76e8574da245ddf61436eab39742047d55` deployment and use its rollback/redeploy control if retained; otherwise manually deploy that exact commit. In [Vercel Deployments](https://vercel.com/pok0yo/music-recommender/deployments), promote the retained production deployment `CcwsaMReNC1umCmxFKqAjYjtq2jK` or manually rebuild that exact commit with the saved public API origin. Keep the stable domains, exact allowed origin and compatible manifests paired.
-3. **First-launch failure.** There is no older public release to roll back to. Use Render Settings → **Suspend Web Service** to stop the API while preserving its configuration/data. The frontend will show its truthful unavailable state; do not delete the project or enable demo silently. Repair and redeploy the saved source, then verify readiness before resuming promotion. The Vercel menu confirms Instant Rollback and Promote are disabled for this first/current production deployment, while Redeploy is available; Render exposes Suspend Web Service. Provider rollback to a different older public release was not exercised.
+3. **Backend failure without an older backend release.** Use Render Settings → **Suspend Web Service** to stop the API while preserving its configuration/data. The frontend will show its truthful unavailable state; do not delete the project or enable demo silently. Repair and redeploy the saved source, then verify readiness before resuming promotion. At the original first deployment, Instant Rollback and Promote were disabled while Redeploy was available; Render exposed Suspend Web Service. For the November 1 frontend update, use the retained October 31 deployment or rebuild that exact commit as described in the update report. A public switch back and forward was not rehearsed.
 4. **Database recovery.** Use the verified private dump with `pg_restore --no-owner --no-acl` into a **fresh isolated target**, never `--clean` on the live project. Apply `deploy/roles.sql`, set the reader password privately, and apply `backend/schema.sql` plus `backend/listening_links.sql` to restore grants/RLS; explicitly grant database CONNECT to the reader. Use `Catalog(...).check(full=True)` and `load_release(...)` against the saved compatible manifests. Reject reader writes before switching the API's private reader connection. The [Phase 4 runbook](release-phase-4.md) has the operator commands; no credential-bearing connection string belongs in chat or shell history.
 5. **Verify recovery.** Require `/health/ready` to report `real` and the pinned catalog. Repeat search → Discover → reseed → listening destinations → dismissal/Undo. Preserve safe error states and input on failure.
 

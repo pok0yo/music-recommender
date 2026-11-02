@@ -1,0 +1,226 @@
+{
+  "authorized_on_local_date": "2026-11-01",
+  "source_commit": "0f06f43f6756dd371cc4164a4e5c6f489739c11b",
+  "frontend_url": "https://project-3wvwg.vercel.app",
+  "api_url": "https://music-recommender-api-7pp6.onrender.com",
+  "previous_frontend_deployment_id": "CcwsaMReNC1umCmxFKqAjYjtq2jK",
+  "previous_frontend_commit": "4645fa76e8574da245ddf61436eab39742047d55",
+  "backend_commit_unchanged": "4645fa76e8574da245ddf61436eab39742047d55",
+  "changes": [
+    "Loading screen and completed-loader removal",
+    "Layered stylized water",
+    "Readiness-aware browser checks",
+    "Pause continuous animation behind startup overlay",
+    "Accessible keyboard and DOM-removal checks for CPU graphics"
+  ],
+  "excluded": "Unrelated dirty working-tree experiments, dataset/model/credentials, backend/database changes",
+  "plan": "Existing Vercel Hobby project; no paid changes",
+  "ci_runs": {
+    "frontend": 41382456355,
+    "backend_model": 41382456216
+  },
+  "local_checks": {
+    "hardware": {
+      "startTime": "2026-11-02T00:24:27.455Z",
+      "duration": 68209.587,
+      "expected": 15,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "software": {
+      "startTime": "2026-11-02T00:27:39.760Z",
+      "duration": 235213.87600000002,
+      "expected": 15,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "final-hardware": {
+      "startTime": "2026-11-02T00:55:15.190Z",
+      "duration": 40105.536,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "final-software": {
+      "startTime": "2026-11-02T00:57:29.273Z",
+      "duration": 85873.429,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "api": {
+    "verified_at": "2026-11-02T00:35:05.067363+00:00",
+    "scope": "Existing public API smoke before frontend activation; frontend subsequently verified separately. Real responses, no interception.",
+    "meta": {
+      "model_version": "item-cf-cohort-v2-lambda-50",
+      "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+      "artifact_schema_version": 1,
+      "training_cutoff": "2026-08-01T00:00:00Z",
+      "method": "item_cosine_shared_listener_shrinkage",
+      "data_mode": "real"
+    },
+    "approved_starters": 32,
+    "search_results": 10,
+    "journeys": [
+      {
+        "seed": "typical",
+        "seed_id": "8630f911-a9a6-486e-b764-aabc236479ad",
+        "results": 10,
+        "status": "ok",
+        "omitted_metadata_count": 0,
+        "next_seed": "back & forth",
+        "next_seed_id": "b3e9e99b-4fbd-45df-9112-cda7b5e6eb80",
+        "next_results": 10,
+        "next_status": "ok",
+        "next_omissions": 0
+      },
+      {
+        "seed": "CLOUDS",
+        "seed_id": "15db4b6a-7205-4960-9f0c-d1a34d147afe",
+        "results": 10,
+        "status": "ok",
+        "omitted_metadata_count": 0,
+        "next_seed": "ZILLOW HOUSES FOR SALE",
+        "next_seed_id": "b8eb806c-ea2a-417f-a515-bb6dd4895840",
+        "next_results": 10,
+        "next_status": "ok",
+        "next_omissions": 0
+      },
+      {
+        "seed": "Always",
+        "seed_id": "49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+        "results": 10,
+        "status": "ok",
+        "omitted_metadata_count": 0,
+        "next_seed": "Superpowers",
+        "next_seed_id": "f56a6ad1-59ed-49fa-8d6f-b1f1aaaf5eeb",
+        "next_results": 10,
+        "next_status": "ok",
+        "next_omissions": 0
+      }
+    ],
+    "cors_origin_verified": "https://project-3wvwg.vercel.app",
+    "requests": [
+      {
+        "path": "/health/ready",
+        "seconds": 0.344,
+        "status": 200
+      },
+      {
+        "path": "/v1/catalog/starters",
+        "seconds": 0.265,
+        "status": 200
+      },
+      {
+        "path": "/v1/catalog/search?q=Tiffany&limit=10",
+        "seconds": 0.25,
+        "status": 200
+      },
+      {
+        "path": "/v1/recommendations/8630f911-a9a6-486e-b764-aabc236479ad",
+        "seconds": 0.297,
+        "status": 200
+      },
+      {
+        "path": "/v1/recommendations/b3e9e99b-4fbd-45df-9112-cda7b5e6eb80",
+        "seconds": 0.313,
+        "status": 200
+      },
+      {
+        "path": "/v1/recommendations/15db4b6a-7205-4960-9f0c-d1a34d147afe",
+        "seconds": 0.296,
+        "status": 200
+      },
+      {
+        "path": "/v1/recommendations/b8eb806c-ea2a-417f-a515-bb6dd4895840",
+        "seconds": 0.313,
+        "status": 200
+      },
+      {
+        "path": "/v1/recommendations/49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+        "seconds": 0.391,
+        "status": 200
+      },
+      {
+        "path": "/v1/recommendations/f56a6ad1-59ed-49fa-8d6f-b1f1aaaf5eeb",
+        "seconds": 0.296,
+        "status": 200
+      }
+    ]
+  },
+  "activation": "production_ready_and_public_verified",
+  "frontend_source_commit": "0f06f43f6756dd371cc4164a4e5c6f489739c11b",
+  "test_correction_commit": "30600e50213c8c1f79482f99a6a397ff6acd4615",
+  "vercel_deployment_id": "BMRXbVNtzQsW6gEYpw1KdngZfM63",
+  "vercel_build_seconds": 30,
+  "anonymous_after": {
+    "status": 200,
+    "final_url": "https://project-3wvwg.vercel.app/",
+    "seconds": 0.235,
+    "loader_in_initial_html": true,
+    "title_present": true,
+    "cookies_supplied": false
+  },
+  "browser_checks": {
+    "real_search": true,
+    "discover_ten_results": true,
+    "reseed_ten_results": true,
+    "dismissal_preserves_original_rank": true,
+    "undo": true,
+    "links_labeled_as_searches": true,
+    "external_links_noopener_noreferrer": true,
+    "back_restores_seed": true,
+    "refresh_restores_seed": true,
+    "keyboard_pause_resume": true,
+    "browser_errors_observed": 0,
+    "loader_live_demo_pending_fixture": true,
+    "slow_start_escape_focuses_search": true,
+    "demo_explicitly_labeled": true,
+    "hosted_narrow_layout": "unverified: browser viewport override did not apply; observed 1280px width",
+    "local_narrow_layout": "390x844 passed focused checks"
+  },
+  "full_ci": {
+    "latest_completed_run_id": 41382456355,
+    "result": "success",
+    "source_commit": "6efb2459af25a8e3bbefecb8f15a3acfb0dea5a9",
+    "frontend_tests": 73,
+    "frontend_shards": 6,
+    "prior_failed_run_id": 41372567912,
+    "resolved_failures": [
+      "compound recovery total timeout",
+      "animated-water late-action timeout"
+    ],
+    "follow_up": "DPR 0.5 only for CPU water tests; 180-second compound recovery budget; both passed locally and in the completed full GitHub run",
+    "animated_water_minutes": 1.8,
+    "compound_recovery_minutes": 2.2,
+    "backend_model_run_id": 41382456216,
+    "backend_tests": 34,
+    "model_tests": 48,
+    "backend_model_result": "success",
+    "production_application_unchanged_since_deployed_source": true
+  },
+  "public_screenshots": [
+    "artifacts/release-update-checks/public-live.png",
+    "artifacts/release-update-checks/public-loader.png"
+  ],
+  "cpu_follow_up_stats": {
+    "startTime": "2026-11-02T02:17:13.989Z",
+    "duration": 115152.093,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "limitations": [
+    "Hosted narrow viewport override did not apply",
+    "Safari and physical phones unverified",
+    "CPU-only graphics remain slow",
+    "Free backend can sleep and require Retry"
+  ],
+  "test_resource_commit": "6efb2459af25a8e3bbefecb8f15a3acfb0dea5a9"
+}

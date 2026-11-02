@@ -1,5 +1,7 @@
 # Scene loading screen — local implementation checkpoint
 
+Published on 2026-11-01 in frontend source `0f06f43`, including the startup fixes below. The [public update report](release-update-2026-11-01.md) records hosted verification, CI follow-up and rollback. The original checkpoint below describes the work before public activation.
+
 Prepared 2026-11-01 against `863fb16`. The public release is unchanged. This checkpoint implements and verifies the loader locally; public deployment remains the next separately authorized step in the staged workflow.
 
 The selected record-player interface now starts behind a full-screen icy-blue glass window with a CSS iridescent disc, chrome orbit, pink/lilac accents, faint perspective grid and a segmented indeterminate loading indicator. It uses existing fonts and no new dependencies or image downloads. The same lightweight component covers route streaming through `app/loading.tsx` and the initial client/graphics startup. It never displays an invented percentage or imposes a minimum viewing time.
