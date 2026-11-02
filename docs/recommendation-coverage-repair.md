@@ -1,5 +1,7 @@
 # Recommendation coverage repair — audit checkpoint
 
+Preparation is now complete as a separate inactive checkpoint: [v3 preparation and remaining boundary gaps](catalog-gap-repair-v3.md). The audit below records the baseline before acquisition.
+
 Audited November 2, 2026. This checkpoint changes documentation only. No metadata was acquired, release activated, model retrained or application deployed.
 
 ## Verified baseline
