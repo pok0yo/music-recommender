@@ -73,6 +73,8 @@ Hosted peak CPU/RAM charts are gated behind paid Render compute and were not ena
 
 ## Acceptance and remaining exclusions
 
+November 2 device update: the user confirmed phone/Safari testing works smoothly. This is user-reported acceptance, not an agent-run device certification; specific hardware and software versions were not supplied. Earlier sections retain the original test scope and observations.
+
 The original October 31 release meets functional acceptance for anonymous public access, the correct real backend, verified original-starter discovery/reseeding, labeled listening destinations, local feedback, safe failure/retry recovery, database permissions, backup restoration and passing source checks. The November 1 frontend update has separate hosted verification and CI follow-up in the update report. The observed 84-second idle wake, potentially shared rate limit, incomplete wider-catalog results and unavailable platform/device checks prevent a claim of always-on production capacity, broad device certification or improved recommendation accuracy. The November 1 frontend update now has the retained October 31 frontend as its rollback target. The documented known-good redeploy/suspend path and cloud-sourced isolated restore remain available for backend recovery.
 
 ## Backups and exact rollback

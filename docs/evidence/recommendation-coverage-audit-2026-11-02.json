@@ -1,0 +1,188 @@
+{
+  "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+  "model_records": 565147,
+  "catalog_records": 4996,
+  "results_histogram": {
+    "0": 48,
+    "1": 50,
+    "2": 74,
+    "3": 100,
+    "4": 134,
+    "5": 165,
+    "6": 239,
+    "7": 271,
+    "8": 310,
+    "9": 357,
+    "10": 3248
+  },
+  "omitted_edges": 6576,
+  "distinct_missing_neighbors": 3693,
+  "zero_displayable": 48,
+  "zero_without_model_edges": 0,
+  "short_model_rows": [
+    {
+      "id": "0202394a-4fcf-49b7-880b-e28aebae7b6c",
+      "title": "Lighters",
+      "model_neighbors": 2
+    },
+    {
+      "id": "0c69cc35-ed38-4d18-a006-09d1aeb90b06",
+      "title": "Die With a Smile (instrumental)",
+      "model_neighbors": 2
+    },
+    {
+      "id": "e31e77d6-6bcb-45aa-9c33-1a141ac64714",
+      "title": "Mirror",
+      "model_neighbors": 5
+    }
+  ],
+  "empty_seed_metadata_needed": 478,
+  "cached_valid_model_records": 4908,
+  "cached_missing_neighbors": 1,
+  "cached_empty_seed_neighbors": 0,
+  "after_cached_only_histogram": {
+    "0": 48,
+    "1": 50,
+    "2": 74,
+    "3": 100,
+    "4": 134,
+    "5": 165,
+    "6": 239,
+    "7": 271,
+    "8": 309,
+    "9": 358,
+    "10": 3248
+  },
+  "verified_cached_responses": 277,
+  "ledger_charged_bytes": 236618191,
+  "ledger_attempts": 463,
+  "ledger_cap_bytes": 268435456,
+  "ledger_remaining_bytes": 31817265,
+  "journeys": [
+    {
+      "depth": 1,
+      "seeds": 32,
+      "results_histogram": {
+        "10": 32
+      }
+    },
+    {
+      "depth": 2,
+      "seeds": 205,
+      "results_histogram": {
+        "10": 205
+      }
+    },
+    {
+      "depth": 3,
+      "seeds": 638,
+      "results_histogram": {
+        "10": 638
+      }
+    },
+    {
+      "depth": 4,
+      "seeds": 1539,
+      "results_histogram": {
+        "8": 1,
+        "9": 1,
+        "10": 1537
+      }
+    }
+  ],
+  "all_verified_cache_sources": 729,
+  "cached_missing_candidates": [
+    {
+      "id": "a7e741cf-08d6-48e5-9b2c-8b96c5e5d4d3",
+      "title": "Do You Like Me?",
+      "canonical_already_served": true
+    }
+  ],
+  "safe_cache_only_additions": 0,
+  "original_artist_coverage": {
+    "nate sib": {
+      "seeds": 22,
+      "complete_ten": 22,
+      "zero": 0
+    },
+    "Tiffany Day": {
+      "seeds": 60,
+      "complete_ten": 60,
+      "zero": 0
+    },
+    "che": {
+      "seeds": 87,
+      "complete_ten": 77,
+      "zero": 0
+    },
+    "2hollis": {
+      "seeds": 65,
+      "complete_ten": 64,
+      "zero": 0
+    },
+    "Lucy Bedroque": {
+      "seeds": 48,
+      "complete_ten": 43,
+      "zero": 0
+    },
+    "beabadoobee": {
+      "seeds": 94,
+      "complete_ten": 83,
+      "zero": 0
+    },
+    "Daniel Caesar": {
+      "seeds": 77,
+      "complete_ten": 73,
+      "zero": 1
+    },
+    "Steve Lacy": {
+      "seeds": 76,
+      "complete_ten": 69,
+      "zero": 1
+    },
+    "Bruno Mars": {
+      "seeds": 79,
+      "complete_ten": 60,
+      "zero": 2
+    },
+    "GIVĒON": {
+      "seeds": 59,
+      "complete_ten": 49,
+      "zero": 0
+    }
+  },
+  "planned_zero_seed_patch": {
+    "candidate_ids": 478,
+    "batch_size": 25,
+    "batch_requests": 20,
+    "batch_reserved_bytes": 10813460,
+    "all_individual_fallback_reserved_bytes": 15663582,
+    "combined_reserved_mib": 25.25,
+    "no_additional_redirect_or_retry_allowance_in_estimate": true
+  },
+  "public_api_spot_checks": [
+    {
+      "seed": "Breathe (in the Air)",
+      "id": "077b6609-2758-43b8-8cbb-ebb83ea91b66",
+      "results": 0,
+      "status": "limited",
+      "model_results": 10,
+      "omitted": 10,
+      "data_mode": "real"
+    },
+    {
+      "seed": "typical",
+      "id": "8630f911-a9a6-486e-b764-aabc236479ad",
+      "results": 10,
+      "status": "ok",
+      "model_results": 10,
+      "omitted": 0,
+      "data_mode": "real"
+    }
+  ],
+  "target_inventory_sha256": "eb277477b8e2b26d08d2f9f471d986f4707765caf60627c763dc079c253e3898",
+  "model_manifest_sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122",
+  "observed_on": "2026-11-02",
+  "scope": "Read-only artifact/cache audit plus two public API spot checks; no acquisition or activation",
+  "user_reported_phone_safari": "User confirmed smooth operation on 2026-11-02; device versions not supplied"
+}
