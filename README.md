@@ -4,6 +4,8 @@ A music discovery application that recommends tracks from a single seed song, wi
 
 ## Status
 
+**November 2 local checkpoint:** [automatic catalog startup recovery](docs/startup-recovery.md) adds a bounded two-minute retry window and waking-up messages. It is not yet deployed publicly.
+
 **Public launch:** [Open Music Recommender](https://project-3wvwg.vercel.app). The real API is [music-recommender-api-7pp6.onrender.com](https://music-recommender-api-7pp6.onrender.com/health/ready), serving 4,996 verified recordings and the compatible listening-link release. The original Phase 5 verification covers public journeys, backup restore and cold-wake recovery. Free hosting took about 84 seconds to wake in that measured test; use Try again after an idle timeout. See the [live release runbook](docs/release-phase-5.md) for versions, limits, evidence, maintenance and rollback.
 
 **November 1 update is live:** the [scene loading screen](docs/scene-loading-screen.md) covers unfinished first renders, and the [stylized water adaptation](docs/stylized-water.md) adds displaced swells, irregular flowing highlights and layered depth. Public search, discovery, reseeding, listening destinations, feedback, history, refresh and keyboard pause/resume were verified on source `0f06f43`. All 155 checks passed in GitHub on test follow-up `6efb245`, with deployed application files unchanged. The [update report](docs/release-update-2026-11-01.md) records hosting, validation limits, resolved CI follow-up and rollback. The water draws on [Stylized Components by Christian Ortiz (Cortiz)](https://github.com/cortiz2894/stylized-components); attribution and its MIT license are retained in [third-party notices](THIRD_PARTY_NOTICES.md).

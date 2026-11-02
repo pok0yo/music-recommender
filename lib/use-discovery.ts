@@ -7,7 +7,8 @@ import { type CatalogResponse, type Meta, type RecommendationResponse, type Trac
 
 const safeError = (value: unknown) => value instanceof APIError ? value : new APIError('unavailable', 'The music catalog could not be loaded. Please try again.');
 export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario, demoCatalog?: Track[]) {
-  const api = useMemo(() => mode === 'demo' ? demonstrationAPI(fixture,demoCatalog) : realAPI(), [mode, fixture,demoCatalog]);
+  const [catalogWaking, setCatalogWaking] = useState(false);
+  const api = useMemo(() => mode === 'demo' ? demonstrationAPI(fixture,demoCatalog) : realAPI(undefined, () => setCatalogWaking(true)), [mode, fixture,demoCatalog]);
   const [query, setQuery] = useState('');
   const [starters, setStarters] = useState<CatalogResponse | null>(null);
   const [starterError, setStarterError] = useState<APIError | null>(null);
@@ -33,9 +34,10 @@ export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario, demoCat
   const loadStarters = useCallback(async () => {
     starterRequest.current?.abort();
     const controller = starterRequest.current = new AbortController();
-    setStarterError(null);
+    setStarterError(null); setCatalogWaking(false);
     try { const response = await api.starters(controller.signal); if (!controller.signal.aborted) setStarters(response); }
     catch (error) { if (!controller.signal.aborted) setStarterError(safeError(error)); }
+    finally { if (!controller.signal.aborted) setCatalogWaking(false); }
   }, [api]);
 
   const search = useCallback(async (value: string) => {
@@ -133,7 +135,7 @@ export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario, demoCat
     if (!attempted && focusSearch.current) { searchInput.current?.focus(); focusSearch.current = false; }
   }, [attempted, matches, searchError]);
 
-  return { query, setQuery, starters, starterError, loadStarters, matches, searchBusy, searchError, search,
+  return { query, setQuery, starters, starterError, catalogWaking, loadStarters, matches, searchBusy, searchError, search,
     selection, attempted, pending, recommendations, recommendError, choose, clear,
     retry: () => choose(chosenID.current), resultHeading, searchInput,
     opening: !attempted && !matches && !searchBusy && !searchError,

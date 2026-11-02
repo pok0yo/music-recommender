@@ -33,12 +33,16 @@ test('first paint covers unfinished graphics and reveals only a drawn scene with
 });
 
 test('failed graphics and catalog requests reveal truthful recovery controls instead of trapping the viewer',async({page})=>{
+  await page.clock.install();
   await page.addInitScript(()=>{
     const original=HTMLCanvasElement.prototype.getContext;
     HTMLCanvasElement.prototype.getContext=function(this:HTMLCanvasElement,...args:Parameters<typeof original>){return String(args[0]).includes('webgl')?null:original.apply(this,args);} as typeof original;
   });
   await page.route('**/v1/catalog/starters',route=>route.fulfill({status:503,json:{code:'unavailable',message:'Unavailable'}}));
   await page.goto('/');
+  await expect(page.locator('.scene-loader-status')).toContainText('Waking up');
+  await page.clock.setSystemTime(Date.now()+120_000);
+  await page.clock.fastForward(10_000);
   await expect(page.locator('.scene-loader')).toBeHidden();
   await expect(page.locator('main')).toHaveAttribute('data-scene-status','unavailable');
   await expect(page.getByRole('button',{name:'Try again',exact:true})).toBeVisible();

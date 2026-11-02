@@ -97,7 +97,7 @@ export function Discovery({ variant, mode, fixture, study, heroArtwork, showCont
     </div>}
   </section>;
   const starters = <section className="starting-points" aria-labelledby="starting-heading"><div className="section-line"><h2 id="starting-heading">Starting points</h2><span>Choose one to explore</span></div>
-    {d.starterError ? <Problem error={d.starterError} retry={() => void d.loadStarters()} /> : !d.starters ? <p role="status">Loading starting points…</p>
+    {d.starterError ? <Problem error={d.starterError} retry={() => void d.loadStarters()} /> : !d.starters ? <p role="status">{d.catalogWaking?'Waking up the music catalog… Retrying automatically for up to two minutes.':'Loading starting points…'}</p>
       : !d.starters.results.length ? <p>No starting points are available right now. Try a search.</p>
         : <ul>{d.starters.results.slice(0, 4).map(track => <li key={track.recording_id}><LiquidMetalButton className="starter-button" type="button" onClick={() => choose(track)}>
           <TrackName track={track} /><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>

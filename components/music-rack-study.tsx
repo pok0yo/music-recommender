@@ -93,6 +93,7 @@ export function MusicRackStudy({mode,fixture,developerControls=false}:{mode:Meta
         <p>No account or personal listening history required. Listening destinations open another service; searches do not verify a recording match. Feedback stays on this device and does not retrain the model.</p>
         <div className="rack-options"><button type="button" onClick={()=>setPaused(value=>!value)}>{paused?'Resume motion':'Pause motion'}</button><button type="button" onClick={()=>setViewRevision(value=>value+1)}>Reset view</button></div></div>
       {d.selection&&<button type="button" className="rack-current" onClick={showSeed}><span>Starting song</span><strong dir="auto">{d.selection.title}</strong><small dir="auto">{artists(d.selection)}</small></button>}
+      {d.catalogWaking&&<p className="rack-message" role="status">Waking up the music catalog… The service may be starting. Retrying automatically for up to two minutes.</p>}
       {error&&<Problem error={error} retry={retry}/>}
       {!d.matches&&d.recommendations?.status==='limited'&&<p className="rack-message">{d.recommendations.omitted_metadata_count?`${d.recommendations.omitted_metadata_count} model results have no verified display metadata. Original ranks are preserved.`:'Fewer than ten supported connections are available.'}</p>}
       <details className="rack-song-list"><summary>Browse {tracks.length} songs</summary><nav aria-label="Song sleeves">{tracks.map((track,i)=><button type="button" key={track.recording_id} aria-pressed={!inspectSeed&&i===index} onClick={()=>preview(i)}><span dir="auto">{track.title}</span><small dir="auto">{artists(track)}</small></button>)}</nav></details>
@@ -100,6 +101,6 @@ export function MusicRackStudy({mode,fixture,developerControls=false}:{mode:Meta
     </section>
     <p className="rack-scene-hint" aria-hidden="true">Drag to explore · select a sleeve</p>
     </div>
-    <SceneLoader visible={loading} stage={contentReady?'scene':'catalog'} onContinue={()=>{setEntered(true);requestAnimationFrame(()=>d.searchInput.current?.focus({preventScroll:true}));}} />
+    <SceneLoader visible={loading} stage={contentReady?'scene':d.catalogWaking?'waking':'catalog'} onContinue={()=>{setEntered(true);requestAnimationFrame(()=>d.searchInput.current?.focus({preventScroll:true}));}} />
   </main>;
 }
