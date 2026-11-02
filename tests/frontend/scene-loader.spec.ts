@@ -15,11 +15,11 @@ test('first paint covers unfinished graphics and reveals only a drawn scene with
   await expect(page.locator('.rack-startup-content')).toHaveAttribute('inert','');
   await expect(page.getByRole('searchbox')).toHaveCount(0);
   await expect(page.locator('.rack-fallback-cabinet')).toBeHidden();
+  await expect(page.locator('.orbital-canvas')).toHaveAttribute('data-render-state','still');
   await page.screenshot({path:testInfo.outputPath('loading-desktop.png')});
   expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations).toEqual([]);
   release();
   await expect(page.locator('main')).toHaveAttribute('data-scene-status','ready');
-  await expect(page.locator('.scene-loader')).toBeHidden();
   await expect(page.locator('.scene-loader')).toHaveCount(0);
   await expect(page.getByRole('searchbox')).toBeVisible();
   const canvas=await page.locator('.orbital-canvas canvas').elementHandle();
@@ -65,5 +65,6 @@ test('slow startup offers keyboard access to song controls and reduced motion st
   await page.getByRole('button',{name:'Use song controls',exact:false}).press('Enter');
   await expect(page.locator('.scene-loader')).toBeHidden();
   await expect(page.getByRole('searchbox')).toBeFocused();
+  await expect(page.locator('.orbital-hero')).toHaveAttribute('data-motion-paused','true');
   await expect(page.locator('.rack-fallback-cabinet')).toBeHidden();
 });

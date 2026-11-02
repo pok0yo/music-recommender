@@ -58,7 +58,7 @@ export function MusicRackStudy({mode,fixture,developerControls=false}:{mode:Meta
     </div></details>}
     <p id="rack-study-help" className="sr-only">Drag empty space to rotate. Scroll or pinch to zoom. Select a sleeve to preview a song, then choose Discover to find recommendations. Arrow keys rotate the focused scene, Enter confirms, and Space pauses motion. All song actions are available in the player display.</p>
     <OrbitalHero open={false} docked consoleMode rack={rack} selection={d.selection??undefined} tracks={tracks} busy={false} error={!!error} searching={d.searchBusy}
-      motionPaused={paused} onOpen={showSeed} onClose={reset} onChoose={discover} onToggleMotion={()=>setPaused(value=>!value)}
+      motionPaused={paused||loading||sceneStatus==='loading'} onOpen={showSeed} onClose={reset} onChoose={discover} onToggleMotion={()=>setPaused(value=>!value)}
       contentReady={contentReady} onSceneStatus={setSceneStatus} />
     <section className="rack-display" aria-label="Player display">
       <header className="rack-display-header"><span className="rack-wordmark">m/r</span>{mode==='demo'?<a className="rack-data-label" href="?mode=real" aria-label="Use trained recommendations">Demo · use trained model ↗</a>:<span className="rack-data-label">Trained recommendations</span>}</header>

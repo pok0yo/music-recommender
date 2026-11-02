@@ -24,7 +24,7 @@ test('displaced water compiles, moves, freezes in place and retains the mounted 
   page.on('console',message=>{if(message.type()==='error'&&/shader|webgl|three/i.test(message.text()))errors.push(message.text());});
   await page.goto('/?mode=demo&dev=1');
   await expect(page.locator('main')).toHaveAttribute('data-scene-status','ready');
-  await expect(page.locator('.scene-loader')).toBeHidden();
+  await expect(page.locator('.scene-loader')).toHaveCount(0);
   const canvas=await page.locator('.orbital-canvas canvas').elementHandle();
   const timing=await page.evaluate(()=>new Promise<{frames:number;median:number;p95:number;max:number}>(resolve=>{
     const intervals:number[]=[];let start=0,previous=0;
@@ -37,13 +37,13 @@ test('displaced water compiles, moves, freezes in place and retains the mounted 
   const water=()=>page.screenshot({clip:{x:25,y:690,width:150,height:150}});
   const moving=await water();await page.waitForTimeout(700);
   expect((await water()).equals(moving)).toBe(false);
-  await page.getByRole('button',{name:'Details +',exact:true}).click();
-  await page.getByRole('button',{name:'Pause motion',exact:true}).click();
+  await page.getByRole('button',{name:'Details +',exact:true}).press('Enter');
+  await page.getByRole('button',{name:'Pause motion',exact:true}).press('Enter');
   await expect(page.locator('.orbital-hero')).toHaveAttribute('data-motion-paused','true');
   await page.waitForTimeout(350);
   const paused=await water();await page.waitForTimeout(700);
   expect((await water()).equals(paused)).toBe(true);
-  await page.getByText('Environment controls',{exact:true}).click();
+  await page.getByText('Environment controls',{exact:true}).press('Enter');
   await page.getByRole('slider',{name:'Reflections',exact:true}).fill('0');
   await page.waitForTimeout(150);
   const dry=await page.screenshot({clip:{x:300,y:600,width:400,height:270}});
@@ -51,15 +51,15 @@ test('displaced water compiles, moves, freezes in place and retains the mounted 
   await page.waitForTimeout(150);
   expect((await page.screenshot({clip:{x:300,y:600,width:400,height:270}})).equals(dry)).toBe(false);
   await page.getByRole('slider',{name:'Water speed',exact:true}).fill('0');
-  await page.getByText('Environment controls',{exact:true}).click();
-  await page.getByRole('button',{name:'Resume motion',exact:true}).click();
+  await page.getByText('Environment controls',{exact:true}).press('Enter');
+  await page.getByRole('button',{name:'Resume motion',exact:true}).press('Enter');
   await page.waitForTimeout(350);
   const stopped=await water();await page.waitForTimeout(700);
   expect((await water()).equals(stopped)).toBe(true);
-  await page.getByText('Environment controls',{exact:true}).click();
-  await page.getByRole('button',{name:'Reset environment',exact:true}).click();
-  await page.getByText('Environment controls',{exact:true}).click();
-  await page.getByRole('button',{name:'Details −',exact:true}).click();
+  await page.getByText('Environment controls',{exact:true}).press('Enter');
+  await page.getByRole('button',{name:'Reset environment',exact:true}).press('Enter');
+  await page.getByText('Environment controls',{exact:true}).press('Enter');
+  await page.getByRole('button',{name:'Details −',exact:true}).press('Enter');
   await page.waitForTimeout(350);
   const resumed=await water();await page.waitForTimeout(700);
   expect((await water()).equals(resumed)).toBe(false);
