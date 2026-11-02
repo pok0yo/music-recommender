@@ -59,7 +59,6 @@ test('displaced water compiles, moves, freezes in place and retains the mounted 
   await page.getByText('Environment controls',{exact:true}).press('Enter');
   await page.getByRole('button',{name:'Reset environment',exact:true}).press('Enter');
   await page.getByText('Environment controls',{exact:true}).press('Enter');
-  await page.getByRole('button',{name:'Details −',exact:true}).press('Enter');
   await page.waitForTimeout(350);
   const resumed=await water();await page.waitForTimeout(700);
   expect((await water()).equals(resumed)).toBe(false);
