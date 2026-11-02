@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-02",
+  "frontend_url": "https://project-3wvwg.vercel.app/",
+  "source_commit": "575def55f8515184fd25a9ec7be618160f73c0c6",
+  "deployment_id": "MzsirePySd7yyoPXYhG4RCgF5X43",
+  "deployment_status": "Ready",
+  "build_seconds": 30,
+  "previous_deployment_id": "BMRXbVNtzQsW6gEYpw1KdngZfM63",
+  "rollback_commit": "0f06f43f6756dd371cc4164a4e5c6f489739c11b",
+  "backend_unchanged": true,
+  "unrelated_local_drafts_excluded": true,
+  "paid_changes": false,
+  "ci": {
+    "frontend_run": 41400743295,
+    "attempt": 2,
+    "result": "success",
+    "browser_checks": 80,
+    "first_attempt": "One animated-water timeout at final diagnostic screenshot; same-source failed group rerun passed",
+    "backend_model_run": 41400743071,
+    "backend_checks": 34,
+    "model_checks": 48
+  },
+  "hosted": {
+    "anonymous_http": 200,
+    "cookies_supplied": false,
+    "login_redirect": false,
+    "new_recovery_message_in_public_bundle": true,
+    "real_starters": 32,
+    "search": "Tiffany",
+    "seed": "ALWAYS FUN",
+    "recommendations": 10,
+    "reseed": "LOYOLA",
+    "reseed_recommendations": 10,
+    "browser_errors": 0
+  },
+  "limits": [
+    "No fresh production cold-wake measurement; retries verified with controlled browser tests",
+    "Physical phones and Safari unverified",
+    "Public rollback switch not rehearsed"
+  ],
+  "screenshot": "artifacts/startup-release-ci/public-after.png"
+}

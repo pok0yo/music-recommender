@@ -1,15 +1,19 @@
 # Phase 5 — public launch and verification
 
-Updated 2026-11-01. **The public launch is active. The original launch verification and the later frontend update are distinguished below, including remaining CI and device-check limits.** The selected 3D record-player interface, orbital disc/ring animations, water, liquid-glass controls and accessible song controls are preserved. No acquisition, retraining, paid service, accounts or embedded playback was added.
+Updated 2026-11-02. **The public launch is active. The original launch verification and the later frontend updates are distinguished below, including device-check limits and the documented graphics-test rerun.** The selected 3D record-player interface, orbital disc/ring animations, water, liquid-glass controls and accessible song controls are preserved. No acquisition, retraining, paid service, accounts or embedded playback was added.
 
 ## Public URLs and deployed source
 
 - Website: **https://project-3wvwg.vercel.app**. A fresh HTTP client with no browser cookies received HTTP 200 at this exact URL, without a developer-login redirect.
 - Real API: **https://music-recommender-api-7pp6.onrender.com**. Readiness: `/health/ready`; liveness: `/health/live`.
-- The frontend now deploys `0f06f43f6756dd371cc4164a4e5c6f489739c11b`; the unchanged backend remains on `4645fa76e8574da245ddf61436eab39742047d55`, from `codex/catalog-expansion-v2`. Automatic deployments remain off; later test/documentation commits do not activate new application code.
-- Vercel Hobby project `music-recommender`, ID `prj_1K4wMXdGmpvnDLDd3YbFk659SsWG`; production deployment `BMRXbVNtzQsW6gEYpw1KdngZfM63` (November 1). Previous known-good deployment: `CcwsaMReNC1umCmxFKqAjYjtq2jK`.
+- The frontend now deploys `575def55f8515184fd25a9ec7be618160f73c0c6`; the unchanged backend remains on `4645fa76e8574da245ddf61436eab39742047d55`, from `codex/catalog-expansion-v2`. Automatic deployments remain off; later test/documentation commits do not activate new application code.
+- Vercel Hobby project `music-recommender`, ID `prj_1K4wMXdGmpvnDLDd3YbFk659SsWG`; production deployment `MzsirePySd7yyoPXYhG4RCgF5X43` (November 2). Previous known-good deployment: `BMRXbVNtzQsW6gEYpw1KdngZfM63`, source `0f06f43`.
 - Render Free service `srv-dbj4vinf3r2c73evfne0`, Ohio; deployment `dep-dbj4vj7f3r2c73evfob0`. The workspace billing page confirmed **No card on file**. No upgrade, paid disk or paid observability was enabled.
 - Dedicated Supabase Free project `qhqwtuxxebcsccvklgxy` in the user-selected organization. The unrelated inactive project remains untouched.
+
+## November 2 startup recovery
+
+The [startup-recovery release](startup-recovery.md) is public. Real starting-catalog requests now retry transient failures within a two-minute window, with an explicit waking-up status and manual recovery afterward. Search and recommendation requests retain their existing behavior. Hosted anonymous startup, search, Discover and reseeding passed. GitHub passed 80 browser, 34 backend and 48 model checks; the sole first-attempt water screenshot timeout passed on a same-source group rerun. A fresh production cold wake was not measured. Roll back this frontend update to retained deployment `BMRXbVNtzQsW6gEYpw1KdngZfM63`, source `0f06f43`, using the exact procedure in that release report.
 
 ## November 1 frontend update
 
@@ -63,7 +67,7 @@ These checks establish functional availability for the tested journeys, not reco
 
 The 16.5-minute operator inactivity test confirmed a Render shutdown at 21:01:16 UTC and a new instance running the production command at 21:04:35 UTC on October 31. The first request exceeded eight seconds; bounded retries reached real readiness 83.8 seconds after the first wake request. The live website showed its truthful timeout and Try again, then recovered 32 starters and ten real recommendations after retry. This verifies that the pinned build inputs survived the idle restart; no rebuild, data import or demo substitution was needed. It is one cold-wake sample, not an uptime guarantee.
 
-Free Render can sleep and Supabase Free can pause after inactivity. The frontend retains its eight-second timeout and an explicit Retry action; it does not promise an always-on experience. Do not add keepalive traffic or upgrade plans without authorization. The API's 60-request/minute guard may be shared behind Render's proxy; it is not verified per-visitor limiting or a public-load capacity claim.
+Free Render can sleep and Supabase Free can pause after inactivity. Starting-catalog requests now have a two-minute automatic recovery window with eight-second attempts; search and recommendations retain eight-second timeouts and explicit Retry. This does not promise an always-on experience. Do not add keepalive traffic or upgrade plans without authorization. The API's 60-request/minute guard may be shared behind Render's proxy; it is not verified per-visitor limiting or a public-load capacity claim.
 
 Hosted peak CPU/RAM charts are gated behind paid Render compute and were not enabled. The previous bounded Linux rehearsal measured approximately 275 MB peak container memory, but that is not a hosted measurement. Safari, physical phones, human screen-reader review, and provider playback/login remain unverified. No paid monitoring or unrelated instrumentation was added.
 

@@ -4,7 +4,7 @@ A music discovery application that recommends tracks from a single seed song, wi
 
 ## Status
 
-**November 2 local checkpoint:** [automatic catalog startup recovery](docs/startup-recovery.md) adds a bounded two-minute retry window and waking-up messages. It is not yet deployed publicly.
+**November 2 update is live:** [automatic catalog startup recovery](docs/startup-recovery.md) adds a bounded two-minute retry window and waking-up messages. Frontend source `575def5` is deployed; anonymous startup, real search, discovery and reseeding were verified. GitHub validation passed 80 browser, 34 backend and 48 model checks, with one CPU graphics group passing on a same-source rerun.
 
 **Public launch:** [Open Music Recommender](https://project-3wvwg.vercel.app). The real API is [music-recommender-api-7pp6.onrender.com](https://music-recommender-api-7pp6.onrender.com/health/ready), serving 4,996 verified recordings and the compatible listening-link release. The original Phase 5 verification covers public journeys, backup restore and cold-wake recovery. Free hosting took about 84 seconds to wake in that measured test; use Try again after an idle timeout. See the [live release runbook](docs/release-phase-5.md) for versions, limits, evidence, maintenance and rollback.
 
