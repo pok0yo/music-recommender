@@ -78,6 +78,7 @@ test('reduced motion keeps every song, current seed and camera controls usable',
 });
 
 test('empty, limited, failed and pending requests retain honest recovery',async({page})=>{
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?180_000:30_000);
   await page.emulateMedia({reducedMotion:'reduce'});
   await page.goto(route+'no-match');await expect(page.locator('.rack-readout h2')).toHaveText('No matching songs');await expect(page.getByRole('button',{name:'Discover',exact:true})).toBeDisabled();
   await page.goto(route+'zero');await expect(page.locator('.rack-readout h2')).toHaveText('No connections yet');await expect(page.locator('.rack-current')).toContainText('typical');
