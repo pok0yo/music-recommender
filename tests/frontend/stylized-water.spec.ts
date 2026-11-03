@@ -65,6 +65,9 @@ test('displaced water compiles, moves, freezes in place and retains the mounted 
   await page.waitForTimeout(350);
   const resumed=await water();await page.waitForTimeout(700);
   expect((await water()).equals(resumed)).toBe(false);
+  // Motion is already verified; pause CPU rendering before interaction checks and the static capture.
+  await page.getByRole('button',{name:'Pause motion',exact:true}).press('Enter');
+  await expect(page.locator('.orbital-hero')).toHaveAttribute('data-motion-paused','true');
   await page.getByRole('button',{name:'Next song',exact:true}).click();
   await expect(page.locator('.rack-readout h2')).toHaveText('CLOUDS');
   expect(await canvas!.evaluate(el=>el===document.querySelector('.orbital-canvas canvas'))).toBe(true);

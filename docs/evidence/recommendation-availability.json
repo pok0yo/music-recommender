@@ -15,7 +15,17 @@
   "tested_state_axe_violations": 0,
   "hosted_database_latency_checked": false,
   "physical_devices_retested": false,
-  "full_new_github_run": "pending commit and push",
+  "full_new_github_run": {
+    "application_commit": "ba8d57b5f44a86df2415d44c64dbf1115766d93a",
+    "backend_model_run": 41566070854,
+    "backend_model_passed": 88,
+    "browser_run": 41566070811,
+    "browser_passed": 82,
+    "browser_failed": 1,
+    "availability_tests_passed": 3,
+    "failure": "Existing animated-water test exhausted total deadline during final screenshot",
+    "followup": "Test-only pause before final static checks; three software-rendered water tests passed locally; GitHub follow-up pending"
+  },
   "screenshots": [
     "artifacts/recommendation-availability-desktop.png",
     "artifacts/recommendation-availability-narrow.png"
@@ -30,7 +40,9 @@
     "components/orbital-hero.tsx": "fbd096642afb0aacce0d41b8a13b9ff588caf3b576e813b22cc86878b52e16de",
     "components/player-console.tsx": "7a7515484f8d2c8e346597acc0c99076599f6a3cd60c4b85c34563e4bd800c76",
     "backend/tests/test_api.py": "a3a3346a980c79a2ecbcd4ab0a6fbff47afc4a74130311f4c3715c5b93297b5c",
-    "tests/frontend/availability.spec.ts": "030e2dce2199e777955d84cc941ea22d258d11053e71053f76a721113879d67e"
+    "tests/frontend/availability.spec.ts": "030e2dce2199e777955d84cc941ea22d258d11053e71053f76a721113879d67e",
+    "tests/frontend/stylized-water.spec.ts": "eb67ee30472b9dff43586064e37278a22a382f9eebb3c19c000720745ab7fdae"
   },
-  "source_hash_normalization": "UTF-8 source bytes with CRLF normalized to LF"
+  "source_hash_normalization": "UTF-8 source bytes with CRLF normalized to LF",
+  "water_tests_passed_locally_after_capture_adjustment": 3
 }

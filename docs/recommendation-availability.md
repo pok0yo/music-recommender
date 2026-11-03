@@ -18,6 +18,8 @@ Counts are computed on demand using the existing frozen artifact and one additio
 
 The first focused browser attempt had two incorrect test selectors for the existing native Listen disclosure; corrected selectors passed. The preceding full GitHub browser run on `1be998a` had a software-rendered animated-water test timeout. It is not a green full-suite baseline. The new commit's GitHub results must be assessed separately; focused checks do not certify the entire browser suite.
 
+On application commit `ba8d57b`, [GitHub backend/model validation](https://github.com/pok0yo/music-recommender/actions/runs/41566070854) passed all 88 tests. [The full browser run](https://github.com/pok0yo/music-recommender/actions/runs/41566070811) passed 82 of 83, including all three new availability checks; the existing animated-water test exhausted its 180-second deadline during its final screenshot. A test-only follow-up pauses motion after all moving-water assertions and before the final song-control, mounted-canvas and screenshot checks. It preserves every assertion and the timeout. All three water tests passed locally with software rendering after this change. No production water or animation code changed.
+
 The full-snapshot check uses in-memory snapshot metadata with the actual frozen model. Hosted PostgreSQL latency for the added batch and physical-device behavior with these hints were not measured here. Earlier phone/Safari acceptance is user-reported and predates this checkpoint. Local proof is summarized in [availability evidence](evidence/recommendation-availability.json); screenshots remain ignored under `artifacts/`.
 
 ## Activation and rollback
