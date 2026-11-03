@@ -38,39 +38,53 @@ def load_release(catalog, path):
     from backend.catalog import content_hash
     if len(rows)!=release['link_count'] or content_hash(payloads)!=release['content_sha256']:raise ValueError('Link release contents differ')
     result={}
+    tracks=catalog.get_many(list({row['recording_id'] for row in payloads}))
     for row in payloads:
         link=ListeningLink.model_validate({k:v for k,v in row.items() if k not in ('recording_id','canonical_recording_id')})
-        source=catalog.get(row['recording_id'])
+        source=tracks.get(row['recording_id'])
         if not source or str(source['canonical_recording_id'])!=row['canonical_recording_id']:raise ValueError('Link identity differs')
         result.setdefault(row['recording_id'],[]).append(link.model_dump(mode='json'))
     return result
 
 
-def import_release():
+def import_release(directory='data/processed/listening-links-v1', report_path='docs/evidence/listening-links-pilot.json',
+                   catalog_release='data/processed/catalog-expansion-v2/release.json'):
     from pathlib import Path
     import psycopg
     from psycopg.types.json import Jsonb
     from backend.catalog import Catalog,content_hash,operator_connections
     from backend.schemas import ListeningLink
-    root=Path('data/processed/listening-links-v1')
-    report=json.loads(Path('docs/evidence/listening-links-pilot.json').read_text(encoding='utf-8'))
+    root=Path(directory)
+    report=json.loads(Path(report_path).read_text(encoding='utf-8'))
     release=json.loads((root/'release.json').read_text(encoding='utf-8'))
-    if not report['complete'] or release!=report['release'] or sha256(root/'links.json')!=report['links_file_sha256'] or sha256(root/'provenance.json')!=report['provenance_sha256']:raise ValueError('Link preparation differs')
+    active=json.loads(Path(catalog_release).read_text(encoding='utf-8'))
+    if report['complete'] is not True or release!=report.get('link_release',report.get('release')) or sha256(root/'links.json')!=report['links_file_sha256']:
+        raise ValueError('Link preparation differs')
+    if 'link_release' in report:
+        # A repair rebinds the unchanged pilot links; it cannot invent new provenance.
+        pilot=json.loads(Path('docs/evidence/listening-links-pilot.json').read_text(encoding='utf-8'))
+        if (report['new_release']!=active or sha256(Path(catalog_release).parent/'recordings.json')!=report['catalog_sha256']
+                or pilot['complete'] is not True or report['links_file_sha256']!=pilot['links_file_sha256']
+                or sha256(Path('data/processed/listening-links-v1/provenance.json'))!=pilot['provenance_sha256']
+                or any(release[key]!=pilot['release'][key] for key in ('content_sha256','link_count'))):
+            raise ValueError('Rebound link provenance differs')
+    elif sha256(root/'provenance.json')!=report['provenance_sha256']:
+        raise ValueError('Link provenance differs')
     rows=json.loads((root/'links.json').read_text(encoding='utf-8'))
     if len(rows)!=release['link_count'] or content_hash(rows)!=release['content_sha256']:raise ValueError('Link contents differ')
-    active=json.loads(Path('data/processed/catalog-expansion-v2/release.json').read_text())
     if active['catalog_version']!=release['catalog_version']:raise ValueError('Catalog binding differs')
     connections=operator_connections()
     catalog=Catalog(connections['reader'],active);catalog.check(full=True)
     if len({(r['recording_id'],r['provider']) for r in rows})!=len(rows):raise ValueError('Duplicate provider link')
+    tracks=catalog.get_many(list({row['recording_id'] for row in rows}))
     for row in rows:
         ListeningLink.model_validate({k:v for k,v in row.items() if k not in ('recording_id','canonical_recording_id')})
-        track=catalog.get(row['recording_id'])
+        track=tracks.get(row['recording_id'])
         if not track or track['canonical_recording_id']!=row['canonical_recording_id']:raise ValueError('Recording identity differs')
     with psycopg.connect(connections['admin']) as db:
         db.execute(Path('backend/listening_links.sql').read_text())
-        existing=db.execute('SELECT content_sha256 FROM music_catalog.link_releases WHERE version=%s',(release['links_version'],)).fetchone()
-        if existing and existing[0]!=release['content_sha256']:raise ValueError('Refusing to replace link release')
+        existing=db.execute('SELECT catalog_version,content_sha256,link_count FROM music_catalog.link_releases WHERE version=%s',(release['links_version'],)).fetchone()
+        if existing and existing!=(release['catalog_version'],release['content_sha256'],release['link_count']):raise ValueError('Refusing to replace link release')
         if not existing:
             db.execute('INSERT INTO music_catalog.link_releases VALUES (%s,%s,%s,%s)',(release['links_version'],release['catalog_version'],release['content_sha256'],release['link_count']))
             for row in rows:
@@ -80,4 +94,11 @@ def import_release():
     print(json.dumps(dict(imported=True,activated=False,**release)))
 
 
-if __name__=='__main__':import_release()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--directory',default='data/processed/listening-links-v1')
+    parser.add_argument('--report',default='docs/evidence/listening-links-pilot.json')
+    parser.add_argument('--catalog-release',default='data/processed/catalog-expansion-v2/release.json')
+    args=parser.parse_args()
+    import_release(args.directory,args.report,args.catalog_release)

@@ -6,6 +6,8 @@ The prepared catalog and compatible links are internally consistent, but **not r
 
 The next authorized checkpoint should fix the import/packaging compatibility gaps and rehearse the pair in disposable local PostgreSQL databases. Cloud import, upload and public deployment remain separate approval boundaries. No new artist, acquisition-budget or hosting decision is needed for that local work.
 
+That subsequent [tooling and local rehearsal checkpoint](catalog-v3-import-rehearsal.md) is now implemented. The review below records the original findings; cloud activation remains pending.
+
 ## Verified candidate
 
 All 5,474 recording payloads pass the current schema and belong to the pinned model with at least five training listeners. Recording and canonical identities are unique. All 32 approved starters remain present and have ten displayable model neighbors. Seventeen searchable recordings have no displayable onward results; the prepared availability UI handles those honestly. This is an availability check, not a recommendation-quality evaluation.

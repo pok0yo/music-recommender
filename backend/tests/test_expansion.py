@@ -2,6 +2,7 @@ import hashlib
 import gzip
 import io
 import json
+import os
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
@@ -15,6 +16,41 @@ from backend.metadata_cache import MetadataCache, DOWNLOAD_CAP, DISK_CAP, RESPON
 
 
 class ExpansionTests(unittest.TestCase):
+    def test_repair_import_accepts_nested_model_binding_and_rejects_conflicts_before_writing(self):
+        from backend.catalog import import_catalog,content_hash
+        from backend.tests.test_api import track,SEED
+        from ml.audit_support import sha256
+        with TemporaryDirectory() as directory:
+            old=Path.cwd();os.chdir(directory)
+            try:
+                root=Path('candidate');root.mkdir();docs=Path('docs/evidence');docs.mkdir(parents=True)
+                Path('backend').mkdir();Path('backend/schema.sql').write_text('fixture schema')
+                rows=[track(SEED)];records=root/'recordings.json';records.write_text(json.dumps(rows))
+                trusted='a'*64
+                (docs/'stage-6-support-audit-v2.json').write_text(json.dumps({'panel':[{'recording_mbid':SEED,'supported':True}]}))
+                (docs/'stage-7-decision.json').write_text(json.dumps({'evidence_sha256':{'stage-7-artifact-manifest.json':trusted}}))
+                release=dict(catalog_version='repair',content_sha256=content_hash(rows),recording_count=1,model_manifest_sha256=trusted,data_mode='real')
+                report=dict(complete=True,catalog_sha256=sha256(records),new_release=release)
+                receipt=root/'receipt.json';receipt.write_text(json.dumps(report))
+                with patch('ml.serving_artifact.Artifact') as artifact,patch('backend.catalog.operator_connections',return_value={'admin':'writer','reader':'reader'}),patch('backend.catalog.psycopg.connect') as connect,patch('backend.catalog.Catalog.check'):
+                    artifact.return_value.arrays={'ids':np.array([SEED],dtype='S36')}
+                    db=connect.return_value.__enter__.return_value
+                    db.info.dbname='fixture'
+                    db.execute.return_value.fetchone.return_value=None
+                    import_catalog(root,receipt)
+                    self.assertEqual(json.loads((root/'release.json').read_text()),release)
+                    db.execute.return_value.fetchone.return_value=(trusted,release['content_sha256'],2)
+                    with self.assertRaisesRegex(ValueError,'refusing overwrite'):import_catalog(root,receipt)
+                    connect.reset_mock()
+                    receipt.write_text(json.dumps(dict(report,artifact_manifest_sha256='b'*64)))
+                    with self.assertRaisesRegex(ValueError,'model binding'):import_catalog(root,receipt)
+                    connect.assert_not_called()
+                    receipt.write_text(json.dumps(report))
+                    (root/'release.json').write_text(json.dumps(dict(release,data_mode='demo')))
+                    with self.assertRaisesRegex(ValueError,'Existing prepared manifest'):import_catalog(root,receipt)
+                    connect.assert_not_called()
+            finally:os.chdir(old)
+
     def test_search_keeps_source_spelling_and_accepts_unaccented_artist_names(self):
         from backend.catalog import search_text
         row=dict(title='Café',artist_credits=[dict(name='GIVĒON')])

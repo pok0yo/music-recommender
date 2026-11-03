@@ -105,15 +105,20 @@ def import_catalog(directory=Path("data/processed/stage-8-catalog-v1"), report_p
     directory, report_path = Path(directory), Path(report_path)
     report = json.loads(report_path.read_text(encoding='utf-8'))
     path = directory / "recordings.json"
-    if not report["complete"] or sha256(path) != report["catalog_sha256"]:
+    if report["complete"] is not True or sha256(path) != report["catalog_sha256"]:
         raise ValueError("Prepared catalog is incomplete or its checksum differs")
     rows = json.loads(path.read_text(encoding='utf-8'))
     digest = content_hash(rows)
     version = report.get("new_release", {}).get("catalog_version", "catalog-v1-" + digest)
+    model_sha = report.get("artifact_manifest_sha256", report.get("new_release", {}).get("model_manifest_sha256"))
+    if not model_sha or report.get("new_release", {}).get("model_manifest_sha256", model_sha) != model_sha:
+        raise ValueError("Prepared model binding differs")
     release = dict(catalog_version=version, content_sha256=digest, recording_count=len(rows),
-        model_manifest_sha256=report["artifact_manifest_sha256"], data_mode="real")
+        model_manifest_sha256=model_sha, data_mode="real")
     if "new_release" in report and report["new_release"] != release:
         raise ValueError("Prepared release manifest differs")
+    if (directory / "release.json").exists() and json.loads((directory / "release.json").read_text(encoding='utf-8')) != release:
+        raise ValueError("Existing prepared manifest differs")
     panel = json.loads(Path("docs/evidence/stage-6-support-audit-v2.json").read_text())["panel"]
     starters = {r["recording_mbid"] for r in panel if r["supported"]}
     if not starters <= {row["recording_id"] for row in rows} or len({row["canonical_recording_id"] for row in rows}) != len(rows):
@@ -136,9 +141,9 @@ def import_catalog(directory=Path("data/processed/stage-8-catalog-v1"), report_p
         if not os.getenv("CATALOG_ADMIN_DATABASE_URL"):
             db.execute(sql.SQL("REVOKE ALL ON DATABASE {} FROM PUBLIC").format(sql.Identifier(db.info.dbname)))
         db.execute(sql.SQL("GRANT CONNECT ON DATABASE {} TO music_reader").format(sql.Identifier(db.info.dbname)))
-        existing = db.execute("SELECT content_sha256 FROM music_catalog.releases WHERE version=%s", (version,)).fetchone()
+        existing = db.execute("SELECT model_manifest_sha256,content_sha256,recording_count FROM music_catalog.releases WHERE version=%s", (version,)).fetchone()
         if existing:
-            if existing[0] != digest:
+            if existing != (model_sha, digest, len(rows)):
                 raise ValueError('Existing release differs; refusing overwrite')
         else:
             db.execute("INSERT INTO music_catalog.releases VALUES (%s,%s,%s,%s)",

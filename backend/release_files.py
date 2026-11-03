@@ -28,7 +28,10 @@ def identifier(files):
 
 
 def read_manifest(path=MANIFEST):
-    release = json.loads(Path(path).read_text(encoding="utf-8"))
+    return validate_manifest(json.loads(Path(path).read_text(encoding="utf-8")))
+
+
+def validate_manifest(release):
     files = release["files"]
     if (release["schema_version"] != 1 or set(files) != set(SOURCES)
             or release["release_id"] != identifier(files)):
@@ -50,17 +53,26 @@ def verify(root, release):
             raise ValueError("Deployment file differs: " + name)
 
 
-def prepare():
+def prepare(catalog_release=None, links_release=None, manifest=MANIFEST):
     from ml.serving_artifact import Artifact
+    from ml.inspect_spark import save
     trusted = json.loads(Path("docs/evidence/stage-7-decision.json").read_text())["evidence_sha256"]["stage-7-artifact-manifest.json"]
     Artifact("artifacts/stage-7-cf-v1", trusted)
-    files = {name: {"bytes": path.stat().st_size, "sha256": digest(path)} for name, path in SOURCES.items()}
-    release = {"schema_version": 1, "release_id": identifier(files), "files": files}
-    MANIFEST.parent.mkdir(exist_ok=True)
-    MANIFEST.write_text(json.dumps(release, sort_keys=True, indent=2) + "\n", encoding="utf-8")
-    release = read_manifest()
+    sources = dict(SOURCES)
+    if catalog_release is not None: sources['catalog/release.json'] = Path(catalog_release)
+    if links_release is not None: sources['links/release.json'] = Path(links_release)
+    catalog = json.loads(sources['catalog/release.json'].read_text(encoding='utf-8'))
+    links = json.loads(sources['links/release.json'].read_text(encoding='utf-8'))
+    if (catalog['model_manifest_sha256'] != trusted or catalog['data_mode'] != 'real'
+            or links['catalog_version'] != catalog['catalog_version']):
+        raise ValueError('Deployment catalog, links and model binding differs')
+    files = {name: {"bytes": path.stat().st_size, "sha256": digest(path)} for name, path in sources.items()}
+    release = validate_manifest({"schema_version": 1, "release_id": identifier(files), "files": files})
+    manifest = Path(manifest)
+    if manifest.exists() and read_manifest(manifest) != release:
+        raise ValueError('Refusing to replace a different deployment manifest')
     root = Path("artifacts/deployment") / release["release_id"]
-    for name, source in SOURCES.items():
+    for name, source in sources.items():
         target = root / name
         target.parent.mkdir(parents=True, exist_ok=True)
         if target.exists():
@@ -69,6 +81,8 @@ def prepare():
         else:
             shutil.copyfile(source, target)
     verify(root, release)
+    manifest.parent.mkdir(parents=True,exist_ok=True)
+    save(manifest,release)
     print(json.dumps({"release_id": release["release_id"], "files": len(files), "bytes": sum(s["bytes"] for s in files.values())}))
 
 
@@ -118,10 +132,15 @@ def fetch(root, release, base, token):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("prepare", "fetch"))
-    action = parser.parse_args().action
-    if action == "prepare":
-        prepare()
+    parser.add_argument('--catalog-release',type=Path)
+    parser.add_argument('--links-release',type=Path)
+    parser.add_argument('--manifest',type=Path,default=MANIFEST)
+    args = parser.parse_args()
+    if args.action == "prepare":
+        prepare(args.catalog_release,args.links_release,args.manifest)
     else:
-        release = read_manifest()
+        if args.catalog_release is not None or args.links_release is not None:
+            parser.error('Candidate input paths apply only to prepare')
+        release = read_manifest(args.manifest)
         fetch(Path(".runtime") / release["release_id"], release,
             os.environ["RELEASE_STORAGE_BASE_URL"], os.environ["RELEASE_STORAGE_TOKEN"])

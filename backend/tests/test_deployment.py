@@ -5,15 +5,62 @@ import json
 import os
 from pathlib import Path
 import tempfile
+import subprocess
+import sys
 import unittest
 from unittest.mock import patch
 
 from backend.catalog import operator_connections
 from backend.production import configure, public_origin
-from backend.release_files import SOURCES, fetch, identifier, read_manifest, verify
+from backend.release_files import SOURCES, fetch, identifier, read_manifest, verify, prepare
 
 
 class DeploymentTests(unittest.TestCase):
+    def test_rehearsal_rejects_either_remote_role_before_creating_databases(self):
+        root=Path(__file__).resolve().parents[2]
+        config=self.root/'artifacts/local-postgres/connections.json';config.parent.mkdir(parents=True)
+        for remote in ('admin','reader'):
+            connections={role:f"postgresql://user:private-test-password@{'remote.invalid' if role==remote else '127.0.0.1'}/fixture" for role in ('admin','reader')}
+            config.write_text(json.dumps(connections))
+            result=subprocess.run([sys.executable,str(root/'scripts/verify-deployment-database.py')],cwd=self.root,
+                env={**os.environ,'PYTHONPATH':str(root)},capture_output=True,text=True,timeout=20)
+            self.assertNotEqual(result.returncode,0)
+            self.assertIn('Local rehearsal requires loopback connections',result.stderr)
+            self.assertNotIn('private-test-password',result.stderr)
+            self.assertFalse((self.root/'artifacts/phase-4-verification').exists())
+
+    def test_candidate_preparation_checks_binding_and_preserves_existing_manifests_and_files(self):
+        old=Path.cwd();os.chdir(self.root)
+        self.addCleanup(os.chdir,old)
+        sources={name:Path('inputs')/name for name in SOURCES}
+        for path in sources.values():
+            path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(self.data)
+        trusted=hashlib.sha256(self.data).hexdigest()
+        doc=Path('docs/evidence/stage-7-decision.json');doc.parent.mkdir(parents=True)
+        doc.write_text(json.dumps({'evidence_sha256':{'stage-7-artifact-manifest.json':trusted}}))
+        catalog={'catalog_version':'candidate','model_manifest_sha256':trusted,'data_mode':'real'}
+        links={'catalog_version':'candidate'}
+        sources['catalog/release.json'].write_text(json.dumps(catalog));sources['links/release.json'].write_text(json.dumps(links))
+        manifest=Path('candidate.json');active=Path('deploy/release.json');active.parent.mkdir();active.write_bytes(b'active baseline')
+        with patch('backend.release_files.SOURCES',sources),patch('ml.serving_artifact.Artifact'):
+            prepare(sources['catalog/release.json'],sources['links/release.json'],manifest)
+            release=read_manifest(manifest);root=Path('artifacts/deployment')/release['release_id'];verify(root,release)
+            before=manifest.read_bytes()
+            prepare(sources['catalog/release.json'],sources['links/release.json'],manifest)
+            self.assertEqual(manifest.read_bytes(),before);self.assertEqual(active.read_bytes(),b'active baseline')
+            sources['links/release.json'].write_text(json.dumps({'catalog_version':'wrong'}))
+            with self.assertRaisesRegex(ValueError,'binding'):prepare(manifest=manifest)
+            self.assertEqual(manifest.read_bytes(),before)
+            sources['links/release.json'].write_text(json.dumps(links))
+            sources['catalog/release.json'].write_text(json.dumps(dict(catalog,model_manifest_sha256='b'*64)))
+            with self.assertRaisesRegex(ValueError,'binding'):prepare(manifest=manifest)
+            sources['catalog/release.json'].write_text(json.dumps(catalog))
+            (root/'model/ids.npy').write_bytes(b'corrupt prepared file')
+            with self.assertRaisesRegex(ValueError,'overwrite'):prepare(manifest=manifest)
+            self.assertEqual(manifest.read_bytes(),before)
+            manifest.write_text(json.dumps(self.release))
+            with self.assertRaisesRegex(ValueError,'replace a different deployment manifest'):prepare(manifest=manifest)
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
