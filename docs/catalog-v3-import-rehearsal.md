@@ -18,6 +18,8 @@ The prepared private bundle contains eight verified files and 113,032,651 bytes,
 
 All **45 backend tests passed locally**, including five new tests covering the candidate receipts, provenance, duplicate providers, canonical identities, immutable metadata, packaging failures and refusal of either remote database role. The remote-role checks run the actual rehearsal command as a subprocess, confirm rejection before database creation, and check that the private fixture password is absent from errors. Existing loader coverage now verifies one batched read and rejection of a missing recording. Syntax compilation and scoped whitespace checks passed. GitHub results are recorded separately after the push; the existing 83-test browser baseline was not rerun locally because no frontend behavior or styling changed.
 
+[GitHub backend/model validation](https://github.com/pok0yo/music-recommender/actions/runs/41648580730) on `eced41e6348bcb0c888256e09d21b30ed7e56ab7` passed **45 backend and 48 model tests**, 93 total. All seven implementation/test source hashes match that commit. The separately triggered [browser run](https://github.com/pok0yo/music-recommender/actions/runs/41648580727) was still in progress when this checkpoint was recorded; no current full-browser success is claimed. Check its final status before later public activation.
+
 The actual-data rehearsal proved:
 
 - v2's 4,996 recordings and 130 links coexist with v3's 5,474 recordings and 130 links. Both imports are idempotent.

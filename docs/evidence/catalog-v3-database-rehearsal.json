@@ -40,7 +40,16 @@
   "bundle_bytes": 113032651,
   "backend_tests_passed_locally": 45,
   "frontend_tests_rerun_this_checkpoint": false,
-  "github_validation": "pending push",
+  "github_validation": {
+    "tested_commit": "eced41e6348bcb0c888256e09d21b30ed7e56ab7",
+    "backend_model_run": 41648580730,
+    "backend_passed": 45,
+    "model_passed": 48,
+    "conclusion": "success",
+    "frontend_run": 41648580727,
+    "frontend_status_at_checkpoint": "in_progress",
+    "frontend_conclusion_at_checkpoint": null
+  },
   "cloud_imported": false,
   "storage_uploaded": false,
   "public_deployed": false,
@@ -54,5 +63,6 @@
     "backend/tests/test_listening_links.py": "e53228c0a9e3081975f024fc62a2e53cf3ba5502a3d3593ade8d75d627141293",
     "backend/tests/test_deployment.py": "3340a48564882be8e9933e08a65b7ae9acf61ae6f0bd2b3c7019b46fcec4e7f3"
   },
-  "source_hash_normalization": "UTF-8 bytes with CRLF normalized to LF"
+  "source_hash_normalization": "UTF-8 bytes with CRLF normalized to LF",
+  "local_cluster_stopped_after_rehearsal": true
 }
