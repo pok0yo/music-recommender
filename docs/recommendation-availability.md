@@ -30,4 +30,6 @@ This is an inactive implementation checkpoint. The public catalog remains v2 wit
 
 The next authorization must review the paired catalog/link import and pinned packaging described in [the v3 repair](catalog-gap-repair-v3.md), verify the added database batch's hosted latency, and assess current CI before public activation. Keep v2 and its original compatible links as the immutable rollback baseline. Frontend and backend should be released together so availability is present. Older responses remain compatible during rollout, but do not supply the hints.
 
+The subsequent [activation review](catalog-v3-activation-review.md) validates the candidate files and identifies import/report and packaging compatibility gaps. Those tools and an isolated database rehearsal are the next implementation checkpoint; public activation has not occurred.
+
 No production rollback is needed now. To discard this inactive implementation, revert its scoped Git commit; do not delete or reset the acquisition ledger/cache or prior release files. Public rollback continues to use the exact previously pinned deployment inputs in the [release runbook](release-phase-5.md).

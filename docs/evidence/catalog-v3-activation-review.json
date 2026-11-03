@@ -1,0 +1,152 @@
+{
+  "scope": "Activation preparation review; no imports, uploads, deployments or metadata acquisition",
+  "catalog_version": "catalog-v3-0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b",
+  "recordings": 5474,
+  "links_version": "links-v2-7215ce1c0902f3bf33f0390cd35dfb425794a312f3b15ced4e3be70cba18cd47",
+  "links": 130,
+  "linked_recordings": 76,
+  "link_payloads_identical_to_previous_release": true,
+  "catalog_and_links_hashes_verified": true,
+  "active_deployment_manifest": {
+    "files": {
+      "catalog/release.json": {
+        "bytes": 343,
+        "sha256": "576326ed76d7aaca5cad8647281842658ed2e9ec4e3882bf161f2a74c2af2326"
+      },
+      "links/release.json": {
+        "bytes": 314,
+        "sha256": "719224a4de9741825fbf3c83032b6298be4ee6b9748f463e4c9ff57fc9876054"
+      },
+      "model/ids.npy": {
+        "bytes": 20345420,
+        "sha256": "87732d20d4ec796a657df1b2560438feed57c9f1db04ce7ef82d3ca7172a9737"
+      },
+      "model/manifest.json": {
+        "bytes": 1954,
+        "sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122"
+      },
+      "model/neighbors.npy": {
+        "bytes": 22606008,
+        "sha256": "7d2f2ce93b725f362bcc6a16db1d1485591b3d392233ca4160a1046865e134d9"
+      },
+      "model/scores.npy": {
+        "bytes": 45211888,
+        "sha256": "5ba4097e6147701c5ea7b63101f99ffe8bbf11e813edac880aa7b834c0f09508"
+      },
+      "model/shared.npy": {
+        "bytes": 22606008,
+        "sha256": "a2c47e46ca2756d33a88c216838868807a90c7e4b1bc057abfb285e572b6729f"
+      },
+      "model/support.npy": {
+        "bytes": 2260716,
+        "sha256": "3b4bdefa6b5eaae88427230a586b75e22b74674b205f0e72049bcc1a1b0e57e6"
+      }
+    },
+    "release_id": "7809c65ae924d8d88fd748223da2e9061e1b87bcb15f69ff105193c4337f8bf5",
+    "schema_version": 1
+  },
+  "candidate_deployment_manifest": {
+    "schema_version": 1,
+    "release_id": "5e3038d4a068ef7e22bd7a07088b192482f1703446f8d7242898d0c9a1fad274",
+    "files": {
+      "model/manifest.json": {
+        "bytes": 1954,
+        "sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122"
+      },
+      "model/ids.npy": {
+        "bytes": 20345420,
+        "sha256": "87732d20d4ec796a657df1b2560438feed57c9f1db04ce7ef82d3ca7172a9737"
+      },
+      "model/support.npy": {
+        "bytes": 2260716,
+        "sha256": "3b4bdefa6b5eaae88427230a586b75e22b74674b205f0e72049bcc1a1b0e57e6"
+      },
+      "model/neighbors.npy": {
+        "bytes": 22606008,
+        "sha256": "7d2f2ce93b725f362bcc6a16db1d1485591b3d392233ca4160a1046865e134d9"
+      },
+      "model/scores.npy": {
+        "bytes": 45211888,
+        "sha256": "5ba4097e6147701c5ea7b63101f99ffe8bbf11e813edac880aa7b834c0f09508"
+      },
+      "model/shared.npy": {
+        "bytes": 22606008,
+        "sha256": "a2c47e46ca2756d33a88c216838868807a90c7e4b1bc057abfb285e572b6729f"
+      },
+      "catalog/release.json": {
+        "bytes": 343,
+        "sha256": "2be831798dbc59ba280cc6d1c2cbf8eeefad458ba142a457e35f5e9bf6cad386"
+      },
+      "links/release.json": {
+        "bytes": 314,
+        "sha256": "d70803b553b593afe2329028f0cbd3e915932b06e31759a599d496c4e6cb3ceb"
+      }
+    }
+  },
+  "changed_deployment_inputs": [
+    "catalog/release.json",
+    "links/release.json"
+  ],
+  "candidate_total_bytes": 113032651,
+  "active_defaults_modified": false,
+  "database_imported": false,
+  "uploaded": false,
+  "deployed": false,
+  "all_recordings_model_supported": true,
+  "approved_starters": 32,
+  "all_approved_starters_have_ten_results": true,
+  "empty_onward_seeds": 17,
+  "observed_at": "2026-11-03T03:41:36.695823+00:00",
+  "candidate_inventory_only": true,
+  "catalog_import_probe": {
+    "database_accessed": false,
+    "result": "blocked before connect by missing legacy artifact_manifest_sha256 report field"
+  },
+  "public_readiness": {
+    "initial": {
+      "url": "https://music-recommender-api-7pp6.onrender.com/health/ready",
+      "verified": false,
+      "elapsed_ms": 10414.7,
+      "reason": "readiness probe did not complete within the bounded request"
+    },
+    "followup": {
+      "url": "https://music-recommender-api-7pp6.onrender.com/health/ready",
+      "http_status": 200,
+      "elapsed_ms": 389.0,
+      "body": {
+        "status": "ready",
+        "meta": {
+          "model_version": "item-cf-cohort-v2-lambda-50",
+          "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+          "artifact_schema_version": 1,
+          "training_cutoff": "2026-08-01T00:00:00Z",
+          "method": "item_cosine_shared_listener_shrinkage",
+          "data_mode": "real"
+        }
+      }
+    }
+  },
+  "existing_validation": {
+    "tested_commit": "b2392aa2a1b73edf6077cfff2c1d94cd08820e0e",
+    "browser_run": 41568996681,
+    "browser_passed": 83,
+    "backend_model_run": 41568996677,
+    "backend_model_passed": 88,
+    "rerun_this_checkpoint": false
+  },
+  "candidate_files_sha256": {
+    "data/processed/catalog-gap-repair-v3/recordings.json": "cef0db1bf3505a7e7df06d9284765ec5c589de37f2c41ddad5afd0f687412598",
+    "data/processed/catalog-gap-repair-v3/release.json": "2be831798dbc59ba280cc6d1c2cbf8eeefad458ba142a457e35f5e9bf6cad386",
+    "data/processed/catalog-gap-repair-v3/links/links.json": "b294b4fe8ae70bc0b62fb4ac85f80c0d6bec56035187901ca80821025973dfd7",
+    "data/processed/catalog-gap-repair-v3/links/release.json": "d70803b553b593afe2329028f0cbd3e915932b06e31759a599d496c4e6cb3ceb"
+  },
+  "reviewed_source_sha256": {
+    "backend/catalog.py": "759941361d5526c8e64dd4973ad115f9abadde5bd02a891ca0a321947545fe53",
+    "backend/listening_links.py": "694879c232165e53d78c3faf084ebfce7e66021fcb24d724ea5bd79f09c5ac19",
+    "backend/release_files.py": "a48dc4ed85adc279636b20c4a168a594c5c0e7a126c1b9e48bebfed3e8f0948e",
+    "backend/production.py": "96598f768800ca908ef2e2cff95c14a18c73d6afe5ea2f16ce7015f815a476f7",
+    "scripts/verify-deployment-database.py": "185ec5b2c71a1f012f36eb2a38bd399a18bb893e3dc75247889b5fcabb9e879e",
+    "scripts/upload-deployment-release.py": "ec80e5f0eac6cde5390d176a6746dedde570d72ea3420b34dc70fae71a4f2397"
+  },
+  "source_hash_normalization": "UTF-8 source bytes with CRLF normalized to LF"
+}
