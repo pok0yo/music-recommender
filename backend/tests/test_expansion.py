@@ -39,8 +39,12 @@ class ExpansionTests(unittest.TestCase):
                     db.execute.return_value.fetchone.return_value=None
                     import_catalog(root,receipt)
                     self.assertEqual(json.loads((root/'release.json').read_text()),release)
+                    Path('backend/schema.sql').unlink();db.reset_mock()
+                    import_catalog(root,receipt,initialize_schema=False)
+                    self.assertEqual(db.execute.call_count,2)
+                    db.cursor.return_value.__enter__.return_value.executemany.assert_called_once()
                     db.execute.return_value.fetchone.return_value=(trusted,release['content_sha256'],2)
-                    with self.assertRaisesRegex(ValueError,'refusing overwrite'):import_catalog(root,receipt)
+                    with self.assertRaisesRegex(ValueError,'refusing overwrite'):import_catalog(root,receipt,initialize_schema=False)
                     connect.reset_mock()
                     receipt.write_text(json.dumps(dict(report,artifact_manifest_sha256='b'*64)))
                     with self.assertRaisesRegex(ValueError,'model binding'):import_catalog(root,receipt)

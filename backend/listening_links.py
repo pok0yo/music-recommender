@@ -48,7 +48,7 @@ def load_release(catalog, path):
 
 
 def import_release(directory='data/processed/listening-links-v1', report_path='docs/evidence/listening-links-pilot.json',
-                   catalog_release='data/processed/catalog-expansion-v2/release.json'):
+                   catalog_release='data/processed/catalog-expansion-v2/release.json', *, initialize_schema=True):
     from pathlib import Path
     import psycopg
     from psycopg.types.json import Jsonb
@@ -82,14 +82,16 @@ def import_release(directory='data/processed/listening-links-v1', report_path='d
         track=tracks.get(row['recording_id'])
         if not track or track['canonical_recording_id']!=row['canonical_recording_id']:raise ValueError('Recording identity differs')
     with psycopg.connect(connections['admin']) as db:
-        db.execute(Path('backend/listening_links.sql').read_text())
+        if initialize_schema:
+            db.execute(Path('backend/listening_links.sql').read_text())
         existing=db.execute('SELECT catalog_version,content_sha256,link_count FROM music_catalog.link_releases WHERE version=%s',(release['links_version'],)).fetchone()
         if existing and existing!=(release['catalog_version'],release['content_sha256'],release['link_count']):raise ValueError('Refusing to replace link release')
         if not existing:
             db.execute('INSERT INTO music_catalog.link_releases VALUES (%s,%s,%s,%s)',(release['links_version'],release['catalog_version'],release['content_sha256'],release['link_count']))
-            for row in rows:
-                payload={k:v for k,v in row.items() if k not in ('recording_id','canonical_recording_id')}
-                db.execute('INSERT INTO music_catalog.recording_links VALUES (%s,%s,%s,%s,%s)',(release['links_version'],row['recording_id'],row['canonical_recording_id'],row['provider'],Jsonb(payload)))
+            with db.cursor() as cursor:
+                cursor.executemany('INSERT INTO music_catalog.recording_links VALUES (%s,%s,%s,%s,%s)',
+                    ((release['links_version'],row['recording_id'],row['canonical_recording_id'],row['provider'],
+                      Jsonb({k:v for k,v in row.items() if k not in ('recording_id','canonical_recording_id')})) for row in rows))
     load_release(catalog,root/'release.json')
     print(json.dumps(dict(imported=True,activated=False,**release)))
 
@@ -100,5 +102,6 @@ if __name__=='__main__':
     parser.add_argument('--directory',default='data/processed/listening-links-v1')
     parser.add_argument('--report',default='docs/evidence/listening-links-pilot.json')
     parser.add_argument('--catalog-release',default='data/processed/catalog-expansion-v2/release.json')
+    parser.add_argument('--existing-schema',action='store_true',help='Append data without DDL/grant changes; verify existing schema and permissions first')
     args=parser.parse_args()
-    import_release(args.directory,args.report,args.catalog_release)
+    import_release(args.directory,args.report,args.catalog_release,initialize_schema=not args.existing_schema)

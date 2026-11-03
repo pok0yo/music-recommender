@@ -1,0 +1,44 @@
+{
+  "scope": "Isolated loopback PostgreSQL; no cloud project modified",
+  "imported": {
+    "records": 4996,
+    "links": 130,
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766"
+  },
+  "idempotent_import": true,
+  "reader_writes_rejected": true,
+  "restored": {
+    "records": 4996,
+    "links": 130,
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766"
+  },
+  "working_database_unchanged": true,
+  "managed_database_public_grants_preserved": true,
+  "backup_bytes": 1549814,
+  "backup_sha256": "d5146f18cab32797a6b4126692b42ee565a34743eea401b811f5085032f54603",
+  "candidate": {
+    "records": 5474,
+    "links": 130,
+    "catalog_version": "catalog-v3-0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b"
+  },
+  "both_versions_coexist": true,
+  "catalog_failure_rolled_back": true,
+  "link_failure_rolled_back": true,
+  "immutable_link_rebinding_rejected": true,
+  "rollback_to_previous_pair_verified": true,
+  "candidate_restored": true,
+  "real_candidate_api_checked": true,
+  "cloud_modified": false,
+  "existing_schema_preserved": true,
+  "concurrent_previous_catalog_read": true,
+  "concurrent_previous_links_read": true,
+  "backend_tests_passed_locally": 45,
+  "source_sha256": {
+    "backend/catalog.py": "581ea67655e1ceda9a8bdeae25fca9992bcdf94920dc84a2078c95117d1f11c2",
+    "backend/listening_links.py": "949b7abbb1abef4337e6071f9fd888015941ca614e218329fa8e6ce6b6a0b585",
+    "backend/tests/test_expansion.py": "ebba9d0dd5b36fcee455f85619b8e6906a2d8bdf86429c17d054d9bb2f1cead2",
+    "backend/tests/test_listening_links.py": "cbf75a83da158f32ef4d30695150b1729d5992d83c6196c900249c66d5e7fd57",
+    "scripts/verify-deployment-database.py": "28d8fe84e4ba70954d96fc810bd2eed40b4351b7b3238ed8caf7b816b187deb8"
+  },
+  "source_hash_normalization": "UTF-8 bytes with CRLF normalized to LF"
+}

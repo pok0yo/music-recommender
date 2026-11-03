@@ -101,7 +101,7 @@ class Catalog:
         return [self.present(row["payload"]) for row in rows]
 
 
-def import_catalog(directory=Path("data/processed/stage-8-catalog-v1"), report_path=Path("docs/evidence/stage-8-catalog-preparation.json")):
+def import_catalog(directory=Path("data/processed/stage-8-catalog-v1"), report_path=Path("docs/evidence/stage-8-catalog-preparation.json"), *, initialize_schema=True):
     directory, report_path = Path(directory), Path(report_path)
     report = json.loads(report_path.read_text(encoding='utf-8'))
     path = directory / "recordings.json"
@@ -136,11 +136,12 @@ def import_catalog(directory=Path("data/processed/stage-8-catalog-v1"), report_p
         raise ValueError('Catalog contains unsupported model recordings')
     connections = operator_connections()
     with psycopg.connect(connections["admin"]) as db:
-        db.execute(Path("backend/schema.sql").read_text())
-        # A managed database also serves its provider's services; change only our private schema there.
-        if not os.getenv("CATALOG_ADMIN_DATABASE_URL"):
-            db.execute(sql.SQL("REVOKE ALL ON DATABASE {} FROM PUBLIC").format(sql.Identifier(db.info.dbname)))
-        db.execute(sql.SQL("GRANT CONNECT ON DATABASE {} TO music_reader").format(sql.Identifier(db.info.dbname)))
+        if initialize_schema:
+            db.execute(Path("backend/schema.sql").read_text())
+            # A managed database also serves its provider's services; change only our private schema there.
+            if not os.getenv("CATALOG_ADMIN_DATABASE_URL"):
+                db.execute(sql.SQL("REVOKE ALL ON DATABASE {} FROM PUBLIC").format(sql.Identifier(db.info.dbname)))
+            db.execute(sql.SQL("GRANT CONNECT ON DATABASE {} TO music_reader").format(sql.Identifier(db.info.dbname)))
         existing = db.execute("SELECT model_manifest_sha256,content_sha256,recording_count FROM music_catalog.releases WHERE version=%s", (version,)).fetchone()
         if existing:
             if existing != (model_sha, digest, len(rows)):
@@ -148,11 +149,9 @@ def import_catalog(directory=Path("data/processed/stage-8-catalog-v1"), report_p
         else:
             db.execute("INSERT INTO music_catalog.releases VALUES (%s,%s,%s,%s)",
                 (version, release["model_manifest_sha256"], digest, len(rows)))
-            for row in rows:
-                Catalog.track(row)
-                search = search_text(row)
-                db.execute("INSERT INTO music_catalog.recordings VALUES (%s,%s,%s,%s,%s)",
-                    (version, row["recording_id"], Jsonb(row), search, row["recording_id"] in starters))
+            with db.cursor() as cursor:
+                cursor.executemany("INSERT INTO music_catalog.recordings VALUES (%s,%s,%s,%s,%s)",
+                    ((version, row["recording_id"], Jsonb(row), search_text(row), row["recording_id"] in starters) for row in rows))
     Catalog(connections["reader"], release).check(full=True)
     save(directory / "release.json", release)
     print(json.dumps(release))
@@ -163,5 +162,6 @@ if __name__ == "__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--directory',type=Path,default=Path('data/processed/stage-8-catalog-v1'))
     parser.add_argument('--report',type=Path,default=Path('docs/evidence/stage-8-catalog-preparation.json'))
+    parser.add_argument('--existing-schema',action='store_true',help='Append data without DDL/grant changes; verify existing schema and permissions first')
     args=parser.parse_args()
-    import_catalog(args.directory,args.report)
+    import_catalog(args.directory,args.report,initialize_schema=not args.existing_schema)

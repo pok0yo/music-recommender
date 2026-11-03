@@ -75,10 +75,26 @@ try:
         candidate_root=root/'candidate'
         shutil.copytree(args.candidate_directory,candidate_root)
         candidate=json.loads((candidate_root/'release.json').read_text(encoding='utf-8'))
+        concurrent_catalog_reads=[];concurrent_link_reads=[]
+        def checked_search(row):
+            if not concurrent_catalog_reads:
+                with psycopg.connect(reader,options='-c statement_timeout=1000') as probe:
+                    concurrent_catalog_reads.append(probe.execute('SELECT count(*) FROM music_catalog.recordings WHERE version=%s',(release['catalog_version'],)).fetchone()[0])
+            return search_text(row)
+        from psycopg.types.json import Jsonb
+        def checked_payload(payload):
+            if not concurrent_link_reads:
+                old_links=json.loads(Path('data/processed/listening-links-v1/release.json').read_text())
+                with psycopg.connect(reader,options='-c statement_timeout=1000') as probe:
+                    concurrent_link_reads.append(probe.execute('SELECT count(*) FROM music_catalog.recording_links WHERE version=%s',(old_links['links_version'],)).fetchone()[0])
+            return Jsonb(payload)
         with patch.dict(os.environ, {"CATALOG_ADMIN_DATABASE_URL": writer, "DATABASE_URL": reader}):
             for _ in range(2):
-                import_catalog(candidate_root,args.candidate_report)
-                import_release(candidate_root/'links',args.candidate_report,candidate_root/'release.json')
+                with patch('backend.catalog.search_text',side_effect=checked_search):
+                    import_catalog(candidate_root,args.candidate_report,initialize_schema=False)
+                with patch('psycopg.types.json.Jsonb',side_effect=checked_payload):
+                    import_release(candidate_root/'links',args.candidate_report,candidate_root/'release.json',initialize_schema=False)
+            assert concurrent_catalog_reads==[4996] and concurrent_link_reads==[130]
             candidate_loaded=state(reader,candidate,candidate_root/'links/release.json')
             assert state(reader)==before
             records=json.loads((candidate_root/'recordings.json').read_text(encoding='utf-8'))
@@ -90,7 +106,7 @@ try:
             (fault_root/'receipt.json').write_text(json.dumps(fault_receipt),encoding='utf-8')
             # Fail after a release and its first row were inserted, exercising a real transaction rollback.
             with patch('backend.catalog.search_text',side_effect=[search_text(records[0]),ValueError('rehearsal fault')]):
-                try:import_catalog(fault_root,fault_root/'receipt.json')
+                try:import_catalog(fault_root,fault_root/'receipt.json',initialize_schema=False)
                 except ValueError as error:assert str(error)=='rehearsal fault'
                 else:raise AssertionError('Faulted catalog import succeeded')
             with psycopg.connect(reader) as db:
@@ -107,7 +123,7 @@ try:
             first=json.loads((fault_links/'links.json').read_text(encoding='utf-8'))[0]
             payload={k:v for k,v in first.items() if k not in ('recording_id','canonical_recording_id')}
             with patch('psycopg.types.json.Jsonb',side_effect=[Jsonb(payload),ValueError('rehearsal fault')]):
-                try:import_release(fault_links,fault_links/'receipt.json',candidate_root/'release.json')
+                try:import_release(fault_links,fault_links/'receipt.json',candidate_root/'release.json',initialize_schema=False)
                 except ValueError as error:assert str(error)=='rehearsal fault'
                 else:raise AssertionError('Faulted link import succeeded')
             with psycopg.connect(reader) as db:
@@ -117,7 +133,7 @@ try:
             fault_receipt['link_release']=bad_link
             (fault_links/'release.json').write_text(json.dumps(bad_link),encoding='utf-8')
             (fault_links/'receipt.json').write_text(json.dumps(fault_receipt),encoding='utf-8')
-            try:import_release(fault_links,fault_links/'receipt.json',candidate_root/'release.json')
+            try:import_release(fault_links,fault_links/'receipt.json',candidate_root/'release.json',initialize_schema=False)
             except ValueError as error:assert 'Refusing to replace' in str(error)
             else:raise AssertionError('An immutable link version was rebound')
         assert state(reader)==before and state(reader,candidate,candidate_root/'links/release.json')==candidate_loaded
@@ -166,7 +182,8 @@ try:
     if candidate:
         report.update(candidate=candidate_loaded,both_versions_coexist=True,catalog_failure_rolled_back=True,
             link_failure_rolled_back=True,immutable_link_rebinding_rejected=True,rollback_to_previous_pair_verified=True,
-            candidate_restored=True,real_candidate_api_checked=True,cloud_modified=False)
+            candidate_restored=True,real_candidate_api_checked=True,cloud_modified=False,
+            existing_schema_preserved=True,concurrent_previous_catalog_read=True,concurrent_previous_links_read=True)
     destination=args.report or Path('docs/evidence/release-phase-4-database.json')
     destination.parent.mkdir(parents=True,exist_ok=True)
     destination.write_text(json.dumps(report, indent=2) + "\n",encoding='utf-8')

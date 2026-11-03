@@ -44,8 +44,12 @@ class ListeningTests(unittest.TestCase):
                     db.execute.return_value.fetchone.return_value=None
                     import_release(root,receipt,catalog_path)
                     source.return_value.get_many.assert_called_once_with([SEED])
+                    Path('backend/listening_links.sql').unlink();db.reset_mock()
+                    import_release(root,receipt,catalog_path,initialize_schema=False)
+                    self.assertEqual(db.execute.call_count,2)
+                    db.cursor.return_value.__enter__.return_value.executemany.assert_called_once()
                     db.execute.return_value.fetchone.return_value=('old',release['content_sha256'],1)
-                    with self.assertRaisesRegex(ValueError,'Refusing to replace'):import_release(root,receipt,catalog_path)
+                    with self.assertRaisesRegex(ValueError,'Refusing to replace'):import_release(root,receipt,catalog_path,initialize_schema=False)
                     connect.reset_mock()
                     receipt.write_text(json.dumps(dict(report,complete=False)))
                     with self.assertRaises(ValueError):import_release(root,receipt,catalog_path)
