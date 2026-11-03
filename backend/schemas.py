@@ -37,6 +37,7 @@ class Track(BaseModel):
     disambiguation: str | None
     external_link: None = None
     listening_links: list[ListeningLink] = Field(default_factory=list,max_length=3)
+    available_recommendations: int | None = Field(default=None, ge=0, le=10, strict=True)
 
     @field_validator('listening_links')
     @classmethod

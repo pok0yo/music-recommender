@@ -5,7 +5,7 @@ import {OrbitalHero} from './orbital-hero';
 import {LiquidMetalButton} from './ui/liquid-metal-button';
 import {Problem} from './discovery';
 import {useDiscovery} from '../lib/use-discovery';
-import {artists,type Meta,type Track} from '../lib/contracts';
+import {artists,recommendationHint,type Meta,type Track} from '../lib/contracts';
 import type {Scenario} from '../lib/fixtures';
 import type {RackInteraction} from './music-rack-scene';
 import approvedStarters from '../lib/approved-starters.json';
@@ -41,7 +41,7 @@ export function MusicRackStudy({mode,fixture,developerControls=false}:{mode:Meta
   const error=d.searchError??d.recommendError??d.starterError;
   const sameSeed=!!active&&active.recording_id===d.selection?.recording_id;
   const preview=(next:number)=>{if(!tracks.length)return;setCandidate(tracks[(next+tracks.length)%tracks.length].recording_id);setInspectSeed(false);setDetails(false);};
-  const discover=()=>{if(!active||(d.pending&&sameSeed))return;setSubmitted(tracks);setOperation(value=>value+1);setInspectSeed(false);setDetails(false);void d.choose(active,true,false);};
+  const discover=()=>{if(!active||active.available_recommendations===0||(d.pending&&sameSeed))return;setSubmitted(tracks);setOperation(value=>value+1);setInspectSeed(false);setDetails(false);void d.choose(active,true,false);};
   const showSeed=()=>{if(d.selection){setInspectSeed(true);heading.current?.focus({preventScroll:true});}else d.searchInput.current?.focus();};
   const reset=()=>{d.clear();d.setQuery('');setCandidate('');setInspectSeed(false);setDetails(false);};
   const rack:RackInteraction={tracks,index,browsing:!d.selection,operation,busy:false,isolated:true,functional:true,seed:d.selection,viewRevision,environment,onSelect:preview,
@@ -67,19 +67,20 @@ export function MusicRackStudy({mode,fixture,developerControls=false}:{mode:Meta
         <input id="rack-search" ref={d.searchInput} type="search" value={d.query} placeholder="Find a song or artist" maxLength={200} onChange={event=>d.setQuery(event.target.value)} aria-describedby="rack-catalog-note" />
         <button type="submit" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg></button>
       </form>
-      <div className="rack-readout"><p className="rack-eyebrow" role="status">{inspectSeed?'Current starting song':collection}{!inspectSeed&&!d.searchBusy&&!d.pending&&tracks.length?` / ${String(index+1).padStart(2,'0')} of ${tracks.length}${related&&related.rank!==index+1?` · rank ${related.rank}`:''}`:''}<span className="sr-only">{active?`: ${active.title} by ${artists(active)}`:''}</span></p>
+      <div className="rack-readout"><p className="rack-eyebrow" role="status">{inspectSeed?'Current starting song':collection}{!inspectSeed&&!d.searchBusy&&!d.pending&&tracks.length?` / ${String(index+1).padStart(2,'0')} of ${tracks.length}${related&&related.rank!==index+1?` · rank ${related.rank}`:''}`:''}<span className="sr-only">{active?`: ${active.title} by ${artists(active)}${recommendationHint(active)?`. ${recommendationHint(active)}`:''}`:''}</span></p>
         <h2 ref={heading} tabIndex={-1} dir="auto">{active?.title??(d.searchBusy?'Searching…':d.matches?'No matching songs':d.recommendations?emptyTitle:'Choose your first song')}</h2>
         {active&&<p className="rack-artist" dir="auto">{artists(active)}</p>}
+        {recommendationHint(active)&&<p id="rack-availability" className="rack-message">{recommendationHint(active)}{active?.available_recommendations===0?'. You can still listen or choose another song.':'.'}</p>}
         {!active&&<p>{feedbackHidden?'All recommendations are hidden by your feedback. Undo or reset feedback to see them again.':d.matches?'Try another song or artist.':d.recommendations?emptyMessage:'Search the supported catalog or choose a sleeve.'}</p>}
       </div>
       <div className="rack-transport"><button type="button" className="rack-step" aria-label="Previous song" disabled={tracks.length<2} onClick={()=>preview(index-1)}>‹</button>
-        <LiquidMetalButton className="primary rack-discover" disabled={!active||(d.pending&&sameSeed)} onClick={discover}>{d.pending&&sameSeed?'Finding…':sameSeed?'Discover again':'Discover'}</LiquidMetalButton>
+        <LiquidMetalButton className="primary rack-discover" disabled={!active||active.available_recommendations===0||(d.pending&&sameSeed)} aria-describedby={recommendationHint(active)?'rack-availability':undefined} onClick={discover}>{d.pending&&sameSeed?'Finding…':sameSeed?'Discover again':'Discover'}</LiquidMetalButton>
         <button type="button" className="rack-step" aria-label="Next song" disabled={tracks.length<2} onClick={()=>preview(index+1)}>›</button></div>
       <div className="rack-display-actions"><button type="button" aria-expanded={details} aria-controls="rack-details" onClick={()=>setDetails(value=>!value)}>Details {details?'−':'+'}</button>
         {active&&<ListenControl key={active.recording_id} track={active} mode={mode}/>}
         {d.selection&&<button type="button" onClick={reset}>Change starting song</button>}
         {d.matches&&<button type="button" onClick={()=>{d.clear();setCandidate('');setInspectSeed(false);}}>Starting songs</button>}</div>
-      {related&&!inspectSeed&&showingRecommendations&&<div className="rack-feedback" aria-label="Recommendation feedback"><button type="button" onClick={discover}>More like this</button><button type="button" disabled={!feedback.ready} onClick={()=>{feedback.dismiss(active!.recording_id);setCandidate('');setInspectSeed(false);requestAnimationFrame(()=>heading.current?.focus({preventScroll:true}));}}>Not for me</button></div>}
+      {related&&!inspectSeed&&showingRecommendations&&<div className="rack-feedback" aria-label="Recommendation feedback"><button type="button" disabled={active?.available_recommendations===0} aria-describedby={recommendationHint(active)?'rack-availability':undefined} onClick={discover}>More like this</button><button type="button" disabled={!feedback.ready} onClick={()=>{feedback.dismiss(active!.recording_id);setCandidate('');setInspectSeed(false);requestAnimationFrame(()=>heading.current?.focus({preventScroll:true}));}}>Not for me</button></div>}
       <div className="rack-feedback-status" role="status">{feedback.undoId&&<span>Song hidden on this device. <button type="button" onClick={()=>{const id=feedback.undo();if(id)setCandidate(id);requestAnimationFrame(()=>heading.current?.focus({preventScroll:true}));}}>Undo</button></span>}
         {feedbackHidden>0&&<span>{feedbackHidden} hidden by feedback. Original model ranks are preserved.</span>}
         {!feedback.persistent&&<span>Browser storage is unavailable. Feedback works for this visit.</span>}
@@ -96,7 +97,7 @@ export function MusicRackStudy({mode,fixture,developerControls=false}:{mode:Meta
       {d.catalogWaking&&<p className="rack-message" role="status">Waking up the music catalog… The service may be starting. Retrying automatically for up to two minutes.</p>}
       {error&&<Problem error={error} retry={retry}/>}
       {!d.matches&&d.recommendations?.status==='limited'&&<p className="rack-message">{d.recommendations.omitted_metadata_count?`${d.recommendations.omitted_metadata_count} model results have no verified display metadata. Original ranks are preserved.`:'Fewer than ten supported connections are available.'}</p>}
-      <details className="rack-song-list"><summary>Browse {tracks.length} songs</summary><nav aria-label="Song sleeves">{tracks.map((track,i)=><button type="button" key={track.recording_id} aria-pressed={!inspectSeed&&i===index} onClick={()=>preview(i)}><span dir="auto">{track.title}</span><small dir="auto">{artists(track)}</small></button>)}</nav></details>
+      <details className="rack-song-list"><summary>Browse {tracks.length} songs</summary><nav aria-label="Song sleeves">{tracks.map((track,i)=><button type="button" key={track.recording_id} aria-pressed={!inspectSeed&&i===index} onClick={()=>preview(i)}><span dir="auto">{track.title}</span><small dir="auto">{artists(track)}</small>{recommendationHint(track)&&<small>{recommendationHint(track)}</small>}</button>)}</nav></details>
       <p id="rack-catalog-note" className="rack-catalog-note">{mode==='demo'?'Demonstration only · rankings and counts are illustrative':'Real model · shared listening · limited verified catalog'}</p>
     </section>
     <p className="rack-scene-hint" aria-hidden="true">Drag to explore · select a sleeve</p>

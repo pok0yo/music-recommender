@@ -71,6 +71,7 @@ export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario, demoCat
   }, [searchBusy]);
 
   const choose = useCallback(async (track: Track | string, push = true, moveFocus = true) => {
+    if (typeof track !== 'string' && track.available_recommendations === 0) return;
     const id = typeof track === 'string' ? track : track.recording_id;
     searchRequest.current?.abort(); ++searchSequence.current;
     recommendationRequest.current?.abort();

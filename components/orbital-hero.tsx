@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useEffect, useLayoutEffect, useRef, useState, type PointerEvent } from 'react';
 import type { createOrbitalScene } from './orbital-scene';
 import type { RackInteraction } from './music-rack-scene';
-import { artists, type Track } from '../lib/contracts';
+import { artists, recommendationHint, type Track } from '../lib/contracts';
 import { LiquidMetalButton } from './ui/liquid-metal-button';
 import { CDPlayerHousing } from './cd-player';
 import model from '../docs/art-direction/orbital-disc-model.json';
@@ -279,7 +279,8 @@ export function OrbitalHero({ open, docked = false, selection, onOpen, onClose, 
         <div className="disc-current" aria-live="polite" aria-atomic="true"><span className="disc-position">{index + 1} / {tracks.length} · {searching ? 'Search matches' : 'Starting points'}</span>
           <div key={active.recording_id} className="disc-current-copy"><h3 dir="auto">{active.title}</h3><p dir="auto">{artists(active)}</p>
             {active.disambiguation && <p className="disc-version" dir="auto">{active.disambiguation}</p>}</div>
-          <LiquidMetalButton type="button" className="primary-button" onClick={() => onChoose(active)}>Use this song</LiquidMetalButton>
+          {recommendationHint(active)&&<p>{recommendationHint(active)}</p>}
+          <LiquidMetalButton type="button" className="primary-button" disabled={active.available_recommendations===0} onClick={() => onChoose(active)}>Use this song</LiquidMetalButton>
         </div>
         {tracks.length > 1 && <LiquidMetalButton type="button" className="disc-neighbor disc-next" onClick={() => move(1)} aria-label="Next song">
           <span>Next</span></LiquidMetalButton>}

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import type { APIError } from '../lib/api';
-import { artists, type Meta, type RelatedTrack } from '../lib/contracts';
+import { artists, recommendationHint, type Meta, type RelatedTrack } from '../lib/contracts';
 import type { useDiscovery } from '../lib/use-discovery';
 import { LiquidMetalButton } from './ui/liquid-metal-button';
 import type { RackInteraction } from './music-rack-scene';
@@ -48,7 +48,7 @@ export function PlayerConsole({ discovery: d, mode, renderProblem, renderDetails
     setPosition((index + direction + collection.length) % collection.length); setDetails(false); setBrowsing(true);
   };
   const choose = () => {
-    if (!current || busy) return;
+    if (!current || busy || current.available_recommendations===0) return;
     focusResult.current = true; setSearchOpen(false); setDetails(false);
     setBrowsing(false); setOperation(value=>value+1);
     void d.choose(current, true, false);
@@ -92,6 +92,7 @@ export function PlayerConsole({ discovery: d, mode, renderProblem, renderDetails
         {!busy && current && <div className="player-track-display" key={current.recording_id}>
           <div className="player-track-number" aria-hidden="true">{String('rank' in current ? current.rank : index + 1).padStart(2, '0')}</div>
           <div className="player-track-name"><h2 dir="auto">{current.title}</h2><p dir="auto">{artists(current)}</p>{current.disambiguation && <p dir="auto">{current.disambiguation}</p>}
+            {recommendationHint(current)&&<p>{recommendationHint(current)}</p>}
             {'rank' in current && <p className="player-track-reason">Rank {String(current.rank)} · Connected through shared listening</p>}</div>
         </div>}
         {!busy && !error && !collection.length && <p>{d.matches ? 'Try another title or artist, or press Eject / choose song to return to starting points.' : d.attempted ? 'No supported connections for this song yet. Choose another starting song.' : 'No starting points are available. Open search to find a song.'}</p>}
@@ -107,7 +108,7 @@ export function PlayerConsole({ discovery: d, mode, renderProblem, renderDetails
       }}>
         <div className="player-transport">
           <LiquidMetalButton className="player-hardware-button" type="button" aria-label="Previous song" disabled={busy || collection.length < 2} onClick={() => browse(-1)}><svg className="player-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h2v14H5zm14 0v14L8 12z" /></svg><span>Previous</span></LiquidMetalButton>
-          <LiquidMetalButton className="primary-button player-seed-button" type="button" disabled={!current || busy} onClick={choose}><span className="player-symbol" aria-hidden="true">▶</span><span>Use as seed</span></LiquidMetalButton>
+          <LiquidMetalButton className="primary-button player-seed-button" type="button" disabled={!current || busy || current.available_recommendations===0} onClick={choose}><span className="player-symbol" aria-hidden="true">▶</span><span>Use as seed</span></LiquidMetalButton>
           <LiquidMetalButton className="player-hardware-button" type="button" aria-label="Next song" disabled={busy || collection.length < 2} onClick={() => browse(1)}><svg className="player-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 5h2v14h-2zM5 5l11 7-11 7z" /></svg><span>Next</span></LiquidMetalButton>
         </div>
         <div className="player-utility">

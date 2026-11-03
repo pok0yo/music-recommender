@@ -4,7 +4,7 @@ A music discovery application that recommends tracks from a single seed song, wi
 
 ## Status
 
-**Prepared, not active:** the [targeted catalog repair](docs/catalog-gap-repair-v3.md) contains 5,474 verified recordings and repairs all 48 previously empty lists. Seventeen newly added seeds still have empty onward lists; their handling requires review before activation. The public catalog remains at 4,996 recordings.
+**Prepared, not active:** the [targeted catalog repair](docs/catalog-gap-repair-v3.md) contains 5,474 verified recordings and repairs all 48 previously empty lists. [Availability hints](docs/recommendation-availability.md) expose partial/empty onward lists and prevent empty reseeding while retaining listening access. Seventeen newly added seeds still have empty onward lists; paired release activation and hosted validation remain separate. The public catalog remains at 4,996 recordings.
 
 **November 2 update is live:** [automatic catalog startup recovery](docs/startup-recovery.md) adds a bounded two-minute retry window and waking-up messages. Frontend source `575def5` is deployed; anonymous startup, real search, discovery and reseeding were verified. GitHub validation passed 80 browser, 34 backend and 48 model checks, with one CPU graphics group passing on a same-source rerun.
 

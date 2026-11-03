@@ -1,0 +1,36 @@
+{
+  "catalog_version": "catalog-v3-0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b",
+  "seed_queries": 5474,
+  "expected_zero_counts": 17,
+  "counts_match_pinned_neighbors_and_metadata": true,
+  "acquisition_requests": 0,
+  "activated": false,
+  "checkpoint": "inactive availability hints",
+  "backend_tests_passed": 40,
+  "focused_browser_tests_passed": 3,
+  "existing_homepage_tests_passed": 6,
+  "typecheck_passed": true,
+  "production_build_passed": true,
+  "narrow_width_px": 390,
+  "tested_state_axe_violations": 0,
+  "hosted_database_latency_checked": false,
+  "physical_devices_retested": false,
+  "full_new_github_run": "pending commit and push",
+  "screenshots": [
+    "artifacts/recommendation-availability-desktop.png",
+    "artifacts/recommendation-availability-narrow.png"
+  ],
+  "source_sha256": {
+    "backend/main.py": "1aea9dd6da040fe07875251100ac856b92eb424f9c3be601177d80f5eaecb862",
+    "backend/schemas.py": "91b50bf2dcd9719d85b92fb7739c1690216d98394de0c1bc4de86d3b022ebe39",
+    "lib/contracts.ts": "4d3a736cbddae786ba5132200fdc8b15baae47092e4dc8ad27d30a907d6e6575",
+    "lib/use-discovery.ts": "8ae74e33a19e4d224f16ca4296d73450762999d99863f78be9aa8c14e19b6930",
+    "components/discovery.tsx": "98ba9adfa8efdc4f6ef78fb9b07f2be424d3e7bc535d5273452641761cad6617",
+    "components/music-rack-study.tsx": "f99849460bcac94bcdb28261effa98b78f273b1f4cc1bd548fe31bfd1fd696e2",
+    "components/orbital-hero.tsx": "fbd096642afb0aacce0d41b8a13b9ff588caf3b576e813b22cc86878b52e16de",
+    "components/player-console.tsx": "7a7515484f8d2c8e346597acc0c99076599f6a3cd60c4b85c34563e4bd800c76",
+    "backend/tests/test_api.py": "a3a3346a980c79a2ecbcd4ab0a6fbff47afc4a74130311f4c3715c5b93297b5c",
+    "tests/frontend/availability.spec.ts": "030e2dce2199e777955d84cc941ea22d258d11053e71053f76a721113879d67e"
+  },
+  "source_hash_normalization": "UTF-8 source bytes with CRLF normalized to LF"
+}

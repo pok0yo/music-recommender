@@ -49,6 +49,8 @@ The existing frontend was built locally against an isolated read-only snapshot A
 
 **Do not activate automatically.** The next release review must address the 17 new boundary gaps and acknowledge the many partial new lists. Recommended next work is to make onward recommendation availability explicit before selection for those entries, while preserving listening access and truthful limited states; further metadata acquisition would need a separately frozen selection and authorization. Do not hide these gaps by padding lists or calling model-supported recordings unsupported.
 
+The subsequent [availability checkpoint](recommendation-availability.md) implements those hints and guards without further acquisition. It remains inactive; the transactional import, pinned paired release and hosted checks below still require the next authorization.
+
 Activation will require a transactional catalog import through `backend.catalog`, a reviewed import path for the newly bound links (the current `backend.listening_links.import_release` still targets pilot paths), and compatible pinned packaging through `backend/release_files.py` / `deploy/release.json`, followed by hosted checks. These active defaults and manifests remain untouched here.
 
 The previous v2 catalog, original listening-link release and current public deployment remain the rollback baseline. Since this checkpoint is inactive, no rollback operation is needed now. A later public switch must retain those paired immutable releases and exact pinned deployment inputs.
