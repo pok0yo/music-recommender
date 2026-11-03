@@ -24,7 +24,7 @@
     "browser_failed": 1,
     "availability_tests_passed": 3,
     "failure": "Existing animated-water test exhausted total deadline during final screenshot",
-    "followup": "Test-only pause before final static checks; three software-rendered water tests passed locally; GitHub follow-up pending"
+    "followup": "Resolved by test-only capture sequencing on b2392aa2a1b73edf6077cfff2c1d94cd08820e0e"
   },
   "screenshots": [
     "artifacts/recommendation-availability-desktop.png",
@@ -44,5 +44,15 @@
     "tests/frontend/stylized-water.spec.ts": "eb67ee30472b9dff43586064e37278a22a382f9eebb3c19c000720745ab7fdae"
   },
   "source_hash_normalization": "UTF-8 source bytes with CRLF normalized to LF",
-  "water_tests_passed_locally_after_capture_adjustment": 3
+  "water_tests_passed_locally_after_capture_adjustment": 3,
+  "final_github_validation": {
+    "tested_commit": "b2392aa2a1b73edf6077cfff2c1d94cd08820e0e",
+    "browser_run": 41568996681,
+    "browser_passed": 83,
+    "browser_failed": 0,
+    "browser_groups_passed": 6,
+    "backend_model_run": 41568996677,
+    "backend_model_passed": 88,
+    "conclusion": "success"
+  }
 }
