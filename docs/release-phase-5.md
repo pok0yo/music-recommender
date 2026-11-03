@@ -79,6 +79,8 @@ The original October 31 release meets functional acceptance for anonymous public
 
 ## Backups and exact rollback
 
+November 3 follow-up: the hosted database now also retains inactive catalog v3 and its compatible links. The public API still uses v2. Fresh before/after archives were restored into isolated local databases; the after archive contains both immutable pairs. See the [v3 hosted import report](catalog-v3-hosted-import.md) for exact hashes, private paths and pending upload/activation gates. The original Phase 5 backup details below remain historical evidence.
+
 Before/after import dumps are private under ignored `artifacts/deployment-private/backups/`. The post-import custom dump is **619,973 bytes**, SHA-256 `db2d36dda8121c67cfa408eed0515e9da1028b9c4590457b39c185e0d77b745f`. It was restored into a newly created isolated loopback PostgreSQL database, then full catalog/link hashes and 4,996/130 counts were verified. Only that disposable database was removed; the live cloud catalog was not restored over or deleted. This is a successful cloud-sourced backup restore, not a managed cross-project recovery rehearsal. Free automatic backups or a second off-device copy are not claimed.
 
 1. **Stop promotion.** Record the failing source/release IDs. Leave immutable database versions and Storage prefixes intact. Do not reset acquisition ledgers or substitute demo results.

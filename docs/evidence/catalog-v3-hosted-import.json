@@ -1,0 +1,96 @@
+{
+  "project_id": "qhqwtuxxebcsccvklgxy",
+  "cloud_import_complete": true,
+  "public_activation": false,
+  "storage_uploaded": false,
+  "database_bytes": 31151795,
+  "preflight_permissions_verified": true,
+  "client_and_database_tls_verified": true,
+  "previous_release": {
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+    "recordings": 4996,
+    "links": 130,
+    "content_sha256": "1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766"
+  },
+  "credentials_unchanged": true,
+  "before_backup": {
+    "path": "artifacts/deployment-private/backups/20261103T142531Z-7e7330-before-v3.dump",
+    "bytes": 619973,
+    "sha256": "84a5ea07035440f1cf71e144cfefd09415994868a390a33d652832e02fb71943"
+  },
+  "before_backup_restored": [
+    {
+      "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+      "recordings": 4996,
+      "links": 130,
+      "content_sha256": "1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766"
+    }
+  ],
+  "catalog_committed": true,
+  "links_committed": true,
+  "candidate": {
+    "catalog_version": "catalog-v3-0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b",
+    "recordings": 5474,
+    "links": 130,
+    "content_sha256": "0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b"
+  },
+  "previous_release_after": {
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+    "recordings": 4996,
+    "links": 130,
+    "content_sha256": "1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766"
+  },
+  "permissions_unchanged": true,
+  "after_backup": {
+    "path": "artifacts/deployment-private/backups/20261103T142531Z-7e7330-after-v3.dump",
+    "bytes": 1550135,
+    "sha256": "32e38d226abcd6734746f89b3d1a0e26ec28ccf0bca55253d90a21dae76758cb"
+  },
+  "after_backup_restored": [
+    {
+      "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+      "recordings": 4996,
+      "links": 130,
+      "content_sha256": "1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766"
+    },
+    {
+      "catalog_version": "catalog-v3-0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b",
+      "recordings": 5474,
+      "links": 130,
+      "content_sha256": "0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b"
+    }
+  ],
+  "temporary_restore_databases_removed": true,
+  "observed_at": "2026-11-03T14:26:39.410107+00:00",
+  "stage": "complete",
+  "active_deployment_release_id": "7809c65ae924d8d88fd748223da2e9061e1b87bcb15f69ff105193c4337f8bf5",
+  "candidate_deployment_release_id": "5e3038d4a068ef7e22bd7a07088b192482f1703446f8d7242898d0c9a1fad274",
+  "candidate_storage_prefix_objects": 0,
+  "security_advisories_before": 0,
+  "security_advisories_after": 0,
+  "local_restore_databases_removed": true,
+  "local_cluster_stopped": true,
+  "original_inputs_and_prepared_bundle_unchanged": true,
+  "external_metadata_acquisition_requests": 0,
+  "validation": {
+    "tested_commit": "ca03f10ebcf328bd0ee8ab9febf65ed10607b82a",
+    "backend_model_run": 41653193275,
+    "backend_passed": 45,
+    "model_passed": 48,
+    "browser_run": 41653193647,
+    "browser_passed": 82,
+    "browser_failed": 1,
+    "browser_failure": "Animated-water test exceeded its 180-second deadline",
+    "public_release_ready": false
+  },
+  "operator_helper_sha256": {
+    "artifacts\\deployment-private\\import-v3.py": "d3bb90b909440b4548ab548c4c37265123d704f957534bbd5de221f28a9d9550",
+    "artifacts\\deployment-private\\verify-v3-api.py": "8eabcf8e17aefa239ac09b90a6d56f9a3297c04f33b2ba755eff959baddbd156"
+  },
+  "implementation_sha256": {
+    "backend/catalog.py": "581ea67655e1ceda9a8bdeae25fca9992bcdf94920dc84a2078c95117d1f11c2",
+    "backend/listening_links.py": "949b7abbb1abef4337e6071f9fd888015941ca614e218329fa8e6ce6b6a0b585",
+    "scripts/verify-deployment-database.py": "28d8fe84e4ba70954d96fc810bd2eed40b4351b7b3238ed8caf7b816b187deb8"
+  },
+  "source_hash_normalization": "Implementation hashes normalize CRLF to LF; private helper hashes use exact bytes."
+}
