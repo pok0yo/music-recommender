@@ -75,6 +75,27 @@ class StorageUploadTests(unittest.TestCase):
                     upload.main()
                 fetch.assert_not_called()
 
+    def test_candidate_uses_its_own_prefix_and_preserves_active_files(self):
+        active = Path("deploy/release.json")
+        active.write_text("original active manifest")
+        evidence = Path("docs/evidence/release-phase-5-storage.json")
+        evidence.write_text("original active evidence")
+        candidate = Path("artifacts/candidate.json")
+        candidate.write_text(json.dumps(self.release))
+
+        def check_readback(root, release, base, key):
+            self.assertFalse(list(Path(root).iterdir()))
+            self.assertEqual(release, self.release)
+            self.assertTrue(base.endswith("/model-releases/" + self.release["release_id"]))
+
+        with patch.object(upload, "build_opener") as factory, patch.object(upload, "fetch", side_effect=check_readback) as fetch, contextlib.redirect_stdout(io.StringIO()):
+            factory.return_value.open.side_effect = self.open
+            upload.main(candidate)
+            fetch.assert_called_once()
+
+        self.assertEqual(active.read_text(), "original active manifest")
+        self.assertEqual(evidence.read_text(), "original active evidence")
+
 
 if __name__ == "__main__":
     unittest.main()

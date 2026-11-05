@@ -4,7 +4,7 @@ A music discovery application that recommends tracks from a single seed song, wi
 
 ## Status
 
-**Imported, not active:** the [hosted v3 checkpoint](docs/catalog-v3-hosted-import.md) has 5,474 verified recordings and 130 preserved listening links, with before/after backups restored successfully in isolation. [Availability hints](docs/recommendation-availability.md) expose partial/empty onward lists and prevent empty reseeding while retaining listening access. Seventeen seeds still have empty onward lists. Private artifact upload and paired public activation remain pending, including resolution of the current water browser-test timeout. The public catalog remains at 4,996 recordings.
+**V3 staged privately.** The [hosted v3 checkpoint](docs/catalog-v3-hosted-import.md) has 5,474 verified recordings and 130 preserved listening links. The [private build bundle](docs/catalog-v3-hosted-import.md#private-storage-upload) has passed download checksum verification. [Availability hints](docs/recommendation-availability.md) expose partial and empty onward lists and prevent empty reseeding while retaining listening access. Seventeen seeds still have empty onward lists. The public catalog still serves 4,996 recordings pending paired public activation.
 
 **November 2 update is live:** [automatic catalog startup recovery](docs/startup-recovery.md) adds a bounded two-minute retry window and waking-up messages. Frontend source `575def5` is deployed; anonymous startup, real search, discovery and reseeding were verified. GitHub validation passed 80 browser, 34 backend and 48 model checks, with one CPU graphics group passing on a same-source rerun.
 

@@ -8,7 +8,7 @@ Candidate catalog: `catalog-v3-0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f
 
 Compatible links: `links-v2-7215ce1c0902f3bf33f0390cd35dfb425794a312f3b15ced4e3be70cba18cd47`.
 
-The deployment candidate remains `5e3038d4a068ef7e22bd7a07088b192482f1703446f8d7242898d0c9a1fad274`: all eight prepared files verify, but its private Storage prefix has zero objects. The tracked active inventory remains `7809c65ae924d8d88fd748223da2e9061e1b87bcb15f69ff105193c4337f8bf5`. Original model, catalog and link input hashes are unchanged.
+At the end of the import checkpoint, the eight prepared files for candidate `5e3038d4a068ef7e22bd7a07088b192482f1703446f8d7242898d0c9a1fad274` verified locally and its private Storage prefix had zero objects. The tracked active inventory remains `7809c65ae924d8d88fd748223da2e9061e1b87bcb15f69ff105193c4337f8bf5`. Original model, catalog and link input hashes are unchanged.
 
 ## Import and access controls
 
@@ -43,6 +43,20 @@ The broader prepared coverage limits remain: 17 v3 seeds have empty onward lists
 
 [Backend/model CI](https://github.com/pok0yo/music-recommender/actions/runs/41653193275) on `ca03f10ebcf328bd0ee8ab9febf65ed10607b82a` passed **45 backend and 48 model tests**. The corresponding [browser run](https://github.com/pok0yo/music-recommender/actions/runs/41653193647) passed **82 of 83 tests**; the animated-water case exceeded its 180-second deadline. This is not a green public-release validation. No UI code was changed in this checkpoint; the remaining browser failure must be resolved before public activation.
 
-The next authorization is **private release upload**, with a fresh bucket/quota check and the explicit candidate inventory. Upload must preserve the existing private prefix and must not change the running service's Storage base URL or active manifest. Paired public deployment remains a later authorization, followed by actual public journey, performance and recovery checks.
-
 Sanitized proof: [hosted import](evidence/catalog-v3-hosted-import.json) and [hosted-data API checks](evidence/catalog-v3-hosted-api.json). Dumps, full timing receipts, credentials, working copies, datasets and model binaries remain ignored by Git.
+
+## Private Storage upload
+
+On November 4, all eight files for candidate `5e3038d4a068ef7e22bd7a07088b192482f1703446f8d7242898d0c9a1fad274` were uploaded to the existing private `model-releases` bucket. The operator passed the explicit candidate manifest to the uploader. The uploader downloaded every file into a fresh temporary directory and verified its pinned size and SHA-256. Requests without credentials were rejected by both the public and authenticated object routes. The original v2 prefix retained all eight expected objects and sizes.
+
+Storage inventory increased from 113,032,651 to 226,065,302 bytes. The largest file is 45,211,888 bytes. The private bucket retained its 50,000,000-byte limit and its existing access settings. This fits the documented Free plan limits. [Storage quota](https://supabase.com/docs/guides/storage/pricing) and [file limits](https://supabase.com/docs/guides/storage/uploads/file-limits).
+
+```powershell
+.venv/Scripts/python.exe scripts/upload-deployment-release.py --manifest artifacts/catalog-v3-prepared-release.json
+```
+
+The active manifest and service configuration were preserved. The public readiness check timed out on the first request and returned HTTP 200 with v2 in real mode on retry. All 46 backend tests passed locally, including the candidate uploader regression check. A later [browser run on `2e2d99f`](https://github.com/pok0yo/music-recommender/actions/runs/41656847082) passed all six shards. The previously timed-out water case passed in 2.4 minutes on that run.
+
+The next checkpoint is public release validation and paired deployment, subject to explicit authorization and validation of the release commit. Retain both prefixes. Use the original v2 manifest and Storage prefix for backend rollback and the prior Vercel production deployment for frontend rollback. The [public rollback runbook](release-phase-5.md#backups-and-exact-rollback) applies.
+
+[Private upload evidence](evidence/catalog-v3-private-storage.json).

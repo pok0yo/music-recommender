@@ -1,21 +1,23 @@
 """Operator-only upload of the pinned release to the approved private Supabase bucket."""
+import argparse
 import json
 from http.client import HTTPException
 from pathlib import Path
 import re
 import sys
+from tempfile import TemporaryDirectory
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, build_opener
 
 sys.path.insert(0, str(Path.cwd()))
-from backend.release_files import NoRedirect, fetch, read_manifest, verify
+from backend.release_files import MANIFEST, NoRedirect, fetch, read_manifest, verify
 
 
-def main():
+def main(manifest=MANIFEST):
     config = json.loads(Path("artifacts/deployment-private/supabase-operator.json").read_text(encoding="utf-8-sig"))
     if config["project_ref"] != "qhqwtuxxebcsccvklgxy" or not re.fullmatch(r"sb_secret_[A-Za-z0-9_-]{20,}", config["storage_secret_key"]):
         raise ValueError("Use the approved project and its private server key")
-    release = read_manifest()
+    release = read_manifest(manifest)
     root = Path("artifacts/deployment") / release["release_id"]
     verify(root, release)
     origin = "https://" + config["project_ref"] + ".supabase.co/storage/v1"
@@ -29,6 +31,8 @@ def main():
     with request("GET", "/bucket") as response:
         bucket_config = next((item for item in json.load(response) if item["id"] == bucket), None)
     if bucket_config is None:
+        if manifest != MANIFEST:
+            raise ValueError("The approved private bucket must exist before uploading a candidate")
         body = {"id": bucket, "name": bucket, "type": "STANDARD", "public": False,
             "versioning_status": "DISABLED", "file_size_limit": 50_000_000,
             "allowed_mime_types": ["application/octet-stream", "application/json"]}
@@ -60,9 +64,9 @@ def main():
             uploaded += spec["bytes"]
         print(json.dumps({"object": name, "bytes": spec["bytes"], "uploaded": not exists}), flush=True)
 
-    verified = Path("artifacts/deployment-cloud-verification") / release["release_id"]
     base = origin + "/object/authenticated/" + bucket + "/" + release["release_id"]
-    fetch(verified, release, base, config["storage_secret_key"])
+    with TemporaryDirectory(dir="artifacts") as verified:
+        fetch(verified, release, base, config["storage_secret_key"])
     anonymous = Request(origin + "/object/public/" + bucket + "/" + release["release_id"] + "/model/manifest.json")
     try:
         with opener.open(anonymous, timeout=30) as response:
@@ -75,13 +79,16 @@ def main():
         "total_bytes": sum(item["bytes"] for item in release["files"].values()),
         "uploaded_bytes_this_run": uploaded, "downloaded_hashes_verified": True,
         "anonymous_public_access_rejected": True}
-    Path("docs/evidence/release-phase-5-storage.json").write_text(json.dumps(report, indent=2) + "\n")
+    if manifest == MANIFEST:
+        Path("docs/evidence/release-phase-5-storage.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report), flush=True)
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--manifest", type=Path, default=MANIFEST)
     try:
-        main()
+        main(parser.parse_args().manifest)
     except HTTPError as error:
         raise SystemExit(f"Storage operation failed with HTTP {error.code}; private details were withheld.") from None
     except (ValueError, KeyError, OSError, URLError, HTTPException):
