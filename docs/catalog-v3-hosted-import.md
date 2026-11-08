@@ -60,3 +60,24 @@ The active manifest and service configuration were preserved. The public readine
 The next checkpoint is public release validation and paired deployment, subject to explicit authorization and validation of the release commit. Retain both prefixes. Use the original v2 manifest and Storage prefix for backend rollback and the prior Vercel production deployment for frontend rollback. The [public rollback runbook](release-phase-5.md#backups-and-exact-rollback) applies.
 
 [Private upload evidence](evidence/catalog-v3-private-storage.json).
+
+## November 8 release-validation follow-up
+
+The browser run pending at source-chat response ID 943 later [failed on `7e50ad4`](https://github.com/pok0yo/music-recommender/actions/runs/41963271860): five shards passed, while the displaced-water test in shard six exhausted its 180-second deadline during the final Pause motion keyboard action. This was not green release validation. An earlier retained trace also showed expensive repeated screenshots and keyboard actions under software rendering; it did not demonstrate a consistently broken Pause control.
+
+Test-only correction `e2c646b7a481a9bfe2dafff0486f0ebc0a2e8de3` disables automatic visual trace snapshots and screencasts for `stylized-water.spec.ts`. API/network/source traces, failure screenshots and the test's explicit water screenshots remain. Every test body, assertion, keyboard interaction, viewport, pixel ratio and timeout is unchanged. No application, model, manifest, database or provider configuration changed.
+
+An isolated checkout of the pinned release was built and typechecked. Windows Chrome with the existing software-rendering flags produced these observations for the displaced-water case:
+
+| Trace configuration | Result | Duration |
+| --- | --- | ---: |
+| Original automatic visual tracing | Pass | 64.074 s |
+| Tracing disabled, diagnostic comparison only | Pass | 48.940 s |
+| Screencast disabled, DOM snapshots retained | Pass | 65.718 s |
+| Final API/source trace without automatic visual snapshots | Pass | 49.486 s |
+
+All three water tests passed with the final correction, including the narrow reduced-motion case. These sequential observations identify avoidable diagnostic overhead; they are not a controlled performance benchmark or physical-device certification. The original failing behavior remains guarded by the same assertions. The deliberate diagnostic tradeoff is that this suite's retained traces do not contain replayable DOM snapshots or a screencast; explicit screenshots and failure context remain available.
+
+Linux [backend/model validation](https://github.com/pok0yo/music-recommender/actions/runs/42510573850) passed all **46 backend and 48 model tests** at the correction commit. Full [frontend validation](https://github.com/pok0yo/music-recommender/actions/runs/42510573838) passed **all 83 browser tests across six shards**, including production builds and typechecks. The displaced-water case passed in approximately 1.2 minutes within its unchanged three-minute deadline. The pull-request run supersedes the duplicate push run; one lingering job in the obsolete run required force cancellation to release the workflow's concurrency queue. No failed run was relabeled as passing.
+
+This closes the browser-validation checkpoint for exact source `e2c646b7a481a9bfe2dafff0486f0ebc0a2e8de3`. This report's subsequent documentation-only commit leaves every application and test file identical to that tested source; any automatically triggered follow-up checks are separate runs. Public activation is not part of this checkpoint. Preserve both immutable release pairs and require a separate go before the paired frontend/backend deployment. The 17 empty onward lists and unmeasured Render v3 latency remain limitations.
