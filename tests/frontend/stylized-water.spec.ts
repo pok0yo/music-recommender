@@ -1,8 +1,9 @@
 import {test,expect} from '@playwright/test';
 import {createWaterGeometry} from '../../components/stylized-water';
 
-// CPU graphics checks need layout and motion coverage, not full-resolution capture cost.
-test.use({deviceScaleFactor:process.env.CI||process.env.PLAYWRIGHT_SOFTWARE ? 0.5 : 1});
+// Explicit water captures provide visual evidence without automatic trace snapshot readbacks.
+test.use({deviceScaleFactor:process.env.CI||process.env.PLAYWRIGHT_SOFTWARE ? 0.5 : 1,
+  trace:{mode:'retain-on-failure',screenshots:false,snapshots:false}});
 
 test('water keeps its horizon and concentrates bounded geometry around the player',()=>{
   const counts:number[]=[];
