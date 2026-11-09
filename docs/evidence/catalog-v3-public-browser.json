@@ -1,0 +1,32 @@
+{
+  "observed_at": "2026-11-09T04:24:57.934Z",
+  "source_commit": "a85cde945f7091355dae1cd5fe97053c2f49fb92",
+  "public_url": "https://project-3wvwg.vercel.app/?q=Leaving+Toronto&seed=d2d8f010-6dbb-4b4a-9723-67b92d0d1a7c",
+  "real_data_label": true,
+  "partial_seed_hint": 9,
+  "partial_list_results": 9,
+  "complete_repaired_list_results": 10,
+  "zero_seed_discover_disabled": true,
+  "zero_seed_keyboard_confirmation_blocked": true,
+  "zero_seed_listening_available": true,
+  "feedback_hide_and_undo_restored": true,
+  "original_ranks_preserved": true,
+  "reseed_and_back_verified": true,
+  "shared_link_refresh_verified": true,
+  "unsupported_seed_error_and_replacement_discovery_verified": true,
+  "direct_spotify_recording_link_verified": true,
+  "provider_search_fallbacks_labeled": true,
+  "new_tab_links_use_noopener_noreferrer": true,
+  "external_provider_playback_checked": false,
+  "layout": {
+    "canvasCount": 1,
+    "height": 720,
+    "renderQuality": "full",
+    "sceneStatus": "ready",
+    "scrollWidth": 1280,
+    "width": 1280
+  },
+  "console_errors": [],
+  "physical_device_tested": false,
+  "screenshot": "artifacts/catalog-v3-public.jpg"
+}
