@@ -1,0 +1,68 @@
+{
+  "scope": "Isolated loopback PostgreSQL; no cloud project modified",
+  "imported": {
+    "records": 4996,
+    "links": 130,
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766"
+  },
+  "idempotent_import": true,
+  "reader_writes_rejected": true,
+  "restored": {
+    "records": 4996,
+    "links": 130,
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766"
+  },
+  "working_database_unchanged": true,
+  "managed_database_public_grants_preserved": true,
+  "backup_bytes": 1549814,
+  "backup_sha256": "58258f236372fb06db4d0e0777cd611f114bdb268db518a622714670a5528ac4",
+  "candidate": {
+    "records": 5474,
+    "links": 130,
+    "catalog_version": "catalog-v3-0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b"
+  },
+  "both_versions_coexist": true,
+  "catalog_failure_rolled_back": true,
+  "link_failure_rolled_back": true,
+  "immutable_link_rebinding_rejected": true,
+  "rollback_to_previous_pair_verified": true,
+  "candidate_restored": true,
+  "real_candidate_api_checked": true,
+  "cloud_modified": false,
+  "observed_at": "2026-11-03T13:53:16.789657+00:00",
+  "temporary_databases_removed": true,
+  "local_cluster_started_for_rehearsal": true,
+  "active_release_sources_unchanged": true,
+  "prepared_candidate_files_unchanged": true,
+  "private_bundle_verified": true,
+  "candidate_deployment_release_id": "5e3038d4a068ef7e22bd7a07088b192482f1703446f8d7242898d0c9a1fad274",
+  "active_deployment_release_id": "7809c65ae924d8d88fd748223da2e9061e1b87bcb15f69ff105193c4337f8bf5",
+  "bundle_bytes": 113032651,
+  "backend_tests_passed_locally": 45,
+  "frontend_tests_rerun_this_checkpoint": false,
+  "github_validation": {
+    "tested_commit": "eced41e6348bcb0c888256e09d21b30ed7e56ab7",
+    "backend_model_run": 41648580730,
+    "backend_passed": 45,
+    "model_passed": 48,
+    "conclusion": "success",
+    "frontend_run": 41648580727,
+    "frontend_status_at_checkpoint": "in_progress",
+    "frontend_conclusion_at_checkpoint": null
+  },
+  "cloud_imported": false,
+  "storage_uploaded": false,
+  "public_deployed": false,
+  "transaction_scope": "Each catalog/link command is transactional; their pair is not one cross-command transaction. No active pointer is changed.",
+  "source_sha256": {
+    "backend/catalog.py": "5b5606fc822ef6278bb2b74dbfdd49262f340ce3868285013ddd6606511eaed8",
+    "backend/listening_links.py": "ceb6921c801892165e16b2e8f2c2ef48a27c38114013cf0291a349420b846579",
+    "backend/release_files.py": "f6cdaab40e5736ca405536bb3313744c10f5601479fa53fccba4a558cc3a1099",
+    "scripts/verify-deployment-database.py": "c782553b9b11eb1005bd7cc6e48ceb84a2a538a8ebb5cdcfb2ccca8e641837a0",
+    "backend/tests/test_expansion.py": "e86e07b18156e25d07cf6dfd1c905c57d84ce2ec757c9d6c7352d788dfaaebaa",
+    "backend/tests/test_listening_links.py": "e53228c0a9e3081975f024fc62a2e53cf3ba5502a3d3593ade8d75d627141293",
+    "backend/tests/test_deployment.py": "3340a48564882be8e9933e08a65b7ae9acf61ae6f0bd2b3c7019b46fcec4e7f3"
+  },
+  "source_hash_normalization": "UTF-8 bytes with CRLF normalized to LF",
+  "local_cluster_stopped_after_rehearsal": true
+}

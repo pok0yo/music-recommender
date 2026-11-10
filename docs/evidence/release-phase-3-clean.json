@@ -1,0 +1,26 @@
+{
+  "verified_at": "2026-10-29T18:25:37.898720+00:00",
+  "source_snapshot": "ea8c9efa034be159e12be2b48334a10d31ae6b23",
+  "tracked_files_checked": 740,
+  "source_mismatches": [],
+  "line_ending_only_differences": 236,
+  "comparison": "Git blob bytes; CRLF-to-LF equivalence accepted only for text files when it exactly reproduces the committed blob hash",
+  "install": "npm ci --offline --no-audit --no-fund",
+  "standalone_production_build": true,
+  "full_browser_suite_source": "ea8c9efa034be159e12be2b48334a10d31ae6b23",
+  "full_browser_suite_stats": {
+    "startTime": "2026-10-29T18:24:29.741Z",
+    "duration": 360643.038,
+    "expected": 64,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "refreshed_backend_tests": 24,
+  "model_tests": 48,
+  "limitations": [
+    "Local browser suite uses installed Chrome/hardware graphics, not the remote Linux runner",
+    "Local Python checks reuse the installed environment; remote CI installs Python dependencies fresh",
+    "Existing verified model/catalog/link files and read-only PostgreSQL are supplied separately, not acquired or copied into Git"
+  ]
+}

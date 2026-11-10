@@ -72,6 +72,42 @@ class APITests(unittest.TestCase):
             self.assertEqual(client.get("/v1/catalog/search?q=absent").json()["results"], [])
             self.assertIn("RecommendationResponse", client.get("/openapi.json").json()["components"]["schemas"])
 
+    def test_availability_is_catalog_bound_batched_and_does_not_mutate_payloads(self):
+        self.catalog.records[UNKNOWN] = track(UNKNOWN)
+        def ranked(recording):
+            ids = [NEIGHBOR, UNKNOWN] if recording == SEED else []
+            return dict(items=[dict(recording_mbid=i,shared_training_listeners=3,
+                seed_training_listeners=5,candidate_training_listeners=5) for i in ids])
+        self.artifact.recommend = ranked
+        original = deepcopy(self.catalog.records)
+        with self.client() as client, patch.object(self.catalog,'get_many',wraps=self.catalog.get_many) as batch:
+            results = client.get('/v1/catalog/search?q=Fixture').json()['results']
+            self.assertEqual({r['recording_id']:r['available_recommendations'] for r in results}, {SEED:2,NEIGHBOR:0,UNKNOWN:0})
+            self.assertEqual(batch.call_count,1)
+            self.assertEqual(set(batch.call_args.args[0]),{NEIGHBOR,UNKNOWN})
+            self.assertEqual(client.get('/v1/catalog/starters').json()['results'][0]['available_recommendations'],2)
+            body = client.get('/v1/recommendations/'+SEED+'?limit=1').json()
+            self.assertEqual(body['seed']['available_recommendations'],2)
+            self.assertEqual(body['results'][0]['available_recommendations'],0)
+            self.assertEqual(body['results'][0]['rank'],1)
+            del self.catalog.records[UNKNOWN]
+            self.assertEqual(client.get('/v1/catalog/starters').json()['results'][0]['available_recommendations'],1)
+            self.assertEqual(self.catalog.records,{k:v for k,v in original.items() if k!=UNKNOWN})
+
+    def test_failed_availability_read_is_an_error_not_a_zero_hint(self):
+        with self.client() as client, patch.object(self.catalog,'get_many',side_effect=psycopg.OperationalError('private')):
+            response = client.get('/v1/catalog/search?q=Fixture')
+            self.assertEqual(response.status_code,503)
+            self.assertNotIn('private',response.text)
+            self.assertNotIn('available_recommendations',response.text)
+
+    def test_availability_contract_rejects_coercion_and_out_of_range_counts(self):
+        from backend.schemas import Track
+        for count in (-1,11,1.5,True,'0'):
+            with self.assertRaises(ValueError):Track.model_validate(dict(track(SEED),available_recommendations=count))
+        for count in (None,0,10):
+            self.assertEqual(Track.model_validate(dict(track(SEED),available_recommendations=count)).available_recommendations,count)
+
     def test_input_bounds_safe_errors_and_stable_request_ids(self):
         with self.client() as client:
             for path in ("/v1/catalog/search?q= ", "/v1/catalog/search?q=xx&limit=21",

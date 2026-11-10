@@ -1,0 +1,80 @@
+/* The entry tray is unchanged; the recommendation view becomes a physical music display. */
+[data-interface=player]:has(.rack-scene).app-surface { padding:20px 0 24px; }
+[data-interface=player]:has(.rack-scene) .page-frame { width:min(calc(100% - 64px),1320px); margin:0 auto; min-height:0; padding:0; border:0; border-radius:0; background:none; box-shadow:none; }
+[data-interface=player]:has(.rack-scene) .orbital-toolbar { border-radius:28px; background:#d7ebffb8; }
+[data-interface=player]:has(.rack-scene) #main-content { padding-top:20px; }
+.full-player.rack-scene { display:grid; grid-template-columns:minmax(0,1fr) 340px; grid-template-areas:'stage console' 'songs console' 'caption caption'; gap:12px 24px; align-items:start; padding:0; --muted:#36557a; color:#173b6b; }
+.rack-stage-shell { display:contents; }
+.rack-stage-body { grid-area:stage; min-width:0; }
+[data-interface=player]:has(.rack-scene) .rack-stage { height:clamp(400px,calc(100svh - 400px),620px); border:0; border-radius:0; background:none; box-shadow:none; overflow:visible; isolation:auto; }
+.rack-stage::after,.rack-stage .player-window-print,.rack-stage .player-window-status { display:none; }
+[data-interface=player]:has(.rack-scene) .rack-stage .orbital-hero.is-docked { position:relative; width:100%; height:100%; min-height:0; padding:0; margin:0; max-width:none; border-radius:0; background:none; box-shadow:none; overflow:visible; touch-action:pan-y; }
+[data-interface=player]:has(.rack-scene) .rack-stage .orbital-stage { inset:0; width:100%; height:100%; max-width:none; overflow:visible; filter:none; transition:none; }
+.rack-scene .rack-console { grid-area:console; display:flex; flex-direction:column; gap:16px; padding:0; min-width:0; }
+.rack-scene .player-screen { padding:20px; border:1px solid #eefaff; border-radius:28px; color:#193d6d; background:linear-gradient(145deg,#edfaffc9,#c6dff2ad); -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px); box-shadow:inset 1px 1px 1px #fff,inset -1px -2px 3px #8eadd266,0 8px 24px #26477c1a; }
+.rack-scene .player-screen::before { display:none; }
+.rack-scene .player-screen-top { color:#385c9b; font-size:10px; }
+.rack-scene .player-counter { color:#214a8f; font-size:17px; }
+[data-interface=player]:has(.rack-scene) .player-screen h1 { font:400 13px/1.6 'Michroma',sans-serif; color:#21467f; }
+.rack-scene .player-seed { color:#3b5579; margin-top:12px; font-size:12px; }
+.rack-scene .player-track-display { min-height:135px; align-items:flex-start; gap:14px; }
+.rack-scene .player-track-number { font-size:32px; color:#3763a7; padding-top:8px; }
+.rack-scene .player-track-name h2 { font-size:21px; color:#153c86; }
+.rack-scene .player-track-name p { color:#355581; font-size:14px; }
+.rack-scene .player-track-name .player-track-reason { color:#365b8b; font-size:12px; }
+.rack-scene :is(.player-screen-note,.player-limits,.player-search-panel p,.player-detail-panel dt,.player-detail-panel dd,.unavailable-link,.player-screen .problem p) { color:#36557a; }
+.rack-scene .player-detail-panel { border-color:#4d78ad55; }
+.rack-scene .player-detail-panel dl { display:grid; gap:12px; margin:14px 0; }
+.rack-scene .player-detail-panel dl > div { display:flex; gap:12px; justify-content:space-between; }
+.rack-scene .player-detail-panel dd { font-weight:600; font-variant-numeric:tabular-nums; }
+.rack-scene .player-search-panel .search-controls { flex-direction:column; }
+.rack-scene .player-hardware { gap:12px; padding:0; }
+.rack-scene .player-transport { grid-template-columns:1fr 1.5fr 1fr; gap:8px; align-items:center; }
+.rack-scene .player-transport .player-seed-button { grid-row:auto; grid-column:auto; min-height:70px; border-radius:36px; font-size:12px; }
+.rack-scene .player-transport .player-hardware-button { flex-direction:column; min-height:62px; font-size:11px; }
+.rack-scene .player-utility { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.rack-scene .player-utility button { flex-direction:row; min-height:48px; border-radius:24px; font-size:11px; }
+.rack-scene .player-utility button:first-child { grid-column:1/-1; }
+.rack-track-strip { grid-area:songs; min-width:0; padding:10px 12px; background:#ddebfa70; border:1px solid #f1faffb8; border-radius:22px; backdrop-filter:blur(10px); }
+.rack-track-strip > p { margin:0 4px 8px; font-size:11px; color:#2e527b; }
+.rack-track-strip ol { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; margin:0; padding:0; list-style:none; max-height:132px; overflow:auto; }
+.rack-track-strip li { min-width:0; }
+.rack-track-strip button { display:flex; align-items:center; gap:8px; min-height:48px; width:100%; padding:8px 9px; border-radius:14px; font-size:11px; text-align:left; color:#254a78; }
+.rack-track-strip button[aria-pressed=true] { border-color:#4464bc; background-color:#bed4f5; box-shadow:inset 0 1px #fff,0 0 0 1px #4763ad66; }
+.rack-sleeve-number { color:#315db2; font-variant-numeric:tabular-nums; }
+.rack-sleeve-label { display:block; min-width:0; }
+.rack-sleeve-label strong,.rack-sleeve-label > span { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.rack-sleeve-label strong { font-size:12px; font-weight:600; }
+.rack-sleeve-label > span { margin-top:2px; }
+.rack-scene .player-device-caption { grid-area:caption; margin:4px 4px 0; display:flex; justify-content:space-between; gap:20px; font-size:10px; color:#284a76; }
+.rack-fallback-note { position:absolute; bottom:8px; left:12px; right:12px; padding:10px; border-radius:14px; background:#e9f6ffe8; color:#214976; font-size:12px; text-align:center; }
+.rack-fallback-cabinet { position:absolute; inset:40% 18% 15%; border:12px solid #a5d7f5; border-top-width:22px; border-bottom:0; border-radius:24px 24px 12px 12px; background:linear-gradient(120deg,#edfaffbb,#83b9da44); box-shadow:inset 2px 2px 2px #fff,2px 6px 18px #21497745; }
+.rack-fallback-cabinet span:first-child { position:absolute; left:18%; right:18%; top:-70px; height:65px; border:4px solid #bdeaff; border-radius:28px; background:#8bbce1cc; }
+.rack-fallback-cabinet span:nth-child(2),.rack-fallback-cabinet span:last-child { position:absolute; left:7%; top:12%; width:34%; height:90%; border-radius:8px; background:repeating-linear-gradient(90deg,#8dafeb 0 8px,#e4f5ff 9px 13px,#bcb5e8 14px 20px); }
+.rack-fallback-cabinet span:last-child { left:59%; }
+.has-music-rack[data-model-ready] .rack-fallback-note,.has-music-rack[data-model-ready] .rack-fallback-cabinet { display:none; }
+.has-music-rack .orbital-fallback,.has-music-rack[data-model-ready] .disc-focus-fallback { display:none; }
+.has-music-rack:not([data-model-ready]) .disc-focus-fallback { inset:-5% 20% auto; width:60%; height:65%; object-fit:contain; transform:none; animation:none!important; }
+@media(max-width:1100px) and (min-width:768px) {
+  .full-player.rack-scene { grid-template-columns:minmax(0,1fr) 300px; gap:12px 16px; }
+  .rack-track-strip ol { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:767px) {
+  [data-interface=player]:has(.rack-scene).app-surface { padding-top:20px; }
+  [data-interface=player]:has(.rack-scene) .page-frame { width:calc(100% - 24px); }
+  .full-player.rack-scene { grid-template-columns:minmax(0,1fr); grid-template-areas:'stage' 'console' 'songs' 'caption'; gap:16px; }
+  [data-interface=player]:has(.rack-scene) .rack-stage { height:clamp(400px,115vw,540px); }
+  .rack-scene .rack-console { gap:14px; }
+  .rack-scene .player-screen { padding:20px; }
+  .rack-scene .player-track-display { min-height:110px; }
+  .rack-track-strip ol { grid-template-columns:repeat(2,minmax(0,1fr)); max-height:240px; }
+  .rack-scene .player-device-caption { display:block; }
+  .rack-scene .player-device-caption > span { display:block; margin-top:6px; }
+}
+@media(prefers-reduced-transparency:reduce) {
+  .rack-scene :is(.player-screen,.rack-track-strip) { backdrop-filter:none; background:#d8ebff; }
+}
+@media(forced-colors:active) {
+  .rack-scene :is(.player-screen,.rack-track-strip) { backdrop-filter:none; background:Canvas; color:CanvasText; box-shadow:none; border:1px solid CanvasText; }
+  .rack-scene :is(h1,h2,p,span,strong,dt,dd) { color:CanvasText!important; }
+}

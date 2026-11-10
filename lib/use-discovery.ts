@@ -6,8 +6,9 @@ import { demonstrationAPI, demoTracks, type Scenario } from './fixtures';
 import { type CatalogResponse, type Meta, type RecommendationResponse, type Track, uuid } from './contracts';
 
 const safeError = (value: unknown) => value instanceof APIError ? value : new APIError('unavailable', 'The music catalog could not be loaded. Please try again.');
-export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario) {
-  const api = useMemo(() => mode === 'demo' ? demonstrationAPI(fixture) : realAPI(), [mode, fixture]);
+export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario, demoCatalog?: Track[]) {
+  const [catalogWaking, setCatalogWaking] = useState(false);
+  const api = useMemo(() => mode === 'demo' ? demonstrationAPI(fixture,demoCatalog) : realAPI(undefined, () => setCatalogWaking(true)), [mode, fixture,demoCatalog]);
   const [query, setQuery] = useState('');
   const [starters, setStarters] = useState<CatalogResponse | null>(null);
   const [starterError, setStarterError] = useState<APIError | null>(null);
@@ -33,13 +34,16 @@ export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario) {
   const loadStarters = useCallback(async () => {
     starterRequest.current?.abort();
     const controller = starterRequest.current = new AbortController();
-    setStarterError(null);
+    setStarterError(null); setCatalogWaking(false);
     try { const response = await api.starters(controller.signal); if (!controller.signal.aborted) setStarters(response); }
     catch (error) { if (!controller.signal.aborted) setStarterError(safeError(error)); }
+    finally { if (!controller.signal.aborted) setCatalogWaking(false); }
   }, [api]);
 
   const search = useCallback(async (value: string) => {
     searchRequest.current?.abort();
+    recommendationRequest.current?.abort(); ++recommendationSequence.current;
+    setPending(false);
     const sequence = ++searchSequence.current;
     const controller = searchRequest.current = new AbortController();
     setQuery(value);
@@ -50,8 +54,11 @@ export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario) {
       return;
     }
     setSearchBusy(true); setMatches(null);
-    const url = new URL(window.location.href); url.searchParams.set('q', value);
-    window.history.replaceState(null, '', url);
+    const url = new URL(window.location.href);
+    const fromSeed = url.searchParams.has('seed');
+    url.searchParams.set('q', value); url.searchParams.delete('seed');
+    if (fromSeed) window.history.pushState(null, '', url);
+    else window.history.replaceState(null, '', url);
     try {
       const response = await api.search(value.trim(), controller.signal);
       if (!controller.signal.aborted && sequence === searchSequence.current) setMatches(response);
@@ -64,6 +71,7 @@ export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario) {
   }, [searchBusy]);
 
   const choose = useCallback(async (track: Track | string, push = true, moveFocus = true) => {
+    if (typeof track !== 'string' && track.available_recommendations === 0) return;
     const id = typeof track === 'string' ? track : track.recording_id;
     searchRequest.current?.abort(); ++searchSequence.current;
     recommendationRequest.current?.abort();
@@ -102,21 +110,23 @@ export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario) {
     void loadStarters();
     const restore = () => {
       const params = new URLSearchParams(window.location.search);
-      setQuery(params.get('q') || '');
+      const value = params.get('q') || '';
+      clear(false); setQuery(value);
       const id = params.get('seed');
-      if (id) void choose(id, false, false); else clear(false);
+      if (id) void choose(id, false, false);
+      else if (params.has('q')) void search(value);
     };
     const params = new URLSearchParams(window.location.search);
-    if (params.has('seed')) restore();
+    if (params.has('seed') || params.has('q')) restore();
     else if (mode === 'demo' && fixture === 'invalid') void choose('invalid', false, false);
-    else if (mode === 'demo' && !['entry', 'search', 'no-match'].includes(fixture)) void choose(demoTracks[0], false, false);
+    else if (mode === 'demo' && !['entry', 'search', 'no-match'].includes(fixture)) void choose(demoCatalog?.[0]??demoTracks[0], false, false);
     else if (mode === 'demo' && ['search', 'no-match'].includes(fixture)) void search(fixture === 'search' ? 'Tiffany' : 'An absent song');
     window.addEventListener('popstate', restore);
     return () => {
       starterRequest.current?.abort(); searchRequest.current?.abort(); recommendationRequest.current?.abort();
       window.removeEventListener('popstate', restore);
     };
-  }, [api, choose, clear, fixture, loadStarters, mode, search]);
+  }, [api, choose, clear, fixture, loadStarters, mode, search,demoCatalog]);
 
   useEffect(() => {
     if (recommendations && focusResults.current) { resultHeading.current?.focus(); focusResults.current = false; }
@@ -126,7 +136,7 @@ export function useDiscovery(mode: Meta['data_mode'], fixture: Scenario) {
     if (!attempted && focusSearch.current) { searchInput.current?.focus(); focusSearch.current = false; }
   }, [attempted, matches, searchError]);
 
-  return { query, setQuery, starters, starterError, loadStarters, matches, searchBusy, searchError, search,
+  return { query, setQuery, starters, starterError, catalogWaking, loadStarters, matches, searchBusy, searchError, search,
     selection, attempted, pending, recommendations, recommendError, choose, clear,
     retry: () => choose(chosenID.current), resultHeading, searchInput,
     opening: !attempted && !matches && !searchBusy && !searchError,

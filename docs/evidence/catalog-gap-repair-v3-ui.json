@@ -1,0 +1,25 @@
+{
+  "observed_on": "2026-11-02",
+  "scope": "Local existing frontend against isolated read-only inactive snapshot API; no public activation",
+  "catalog_version": "catalog-v3-0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b",
+  "repaired_seed": "Leaving Toronto",
+  "repaired_results": 10,
+  "next_seed": "SNL",
+  "next_results": 9,
+  "next_omission_notice": true,
+  "back_restores_ten": true,
+  "new_recording_search": "SNL",
+  "new_recording_search_results": 1,
+  "provider_destinations_labeled_as_searches": true,
+  "boundary_seed": "17c054ec-feee-477b-89ac-55140f3b4e56",
+  "boundary_state": "Song details unavailable; change-song/search controls retained",
+  "browser_errors": 0,
+  "build_and_typescript": "pass",
+  "backend_tests": 37,
+  "offline_replay": "passed; network forbidden; ledger count and reservations unchanged",
+  "screenshot": "artifacts/catalog-gap-repair-preview.png",
+  "limitations": [
+    "No public catalog activation",
+    "No physical-device rerun"
+  ]
+}

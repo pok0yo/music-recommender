@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-01",
+  "baseCommit": "605ccc76a3dd0d0c4e5f79e82ba7cad754b39bf5",
+  "scope": "Local selected record-desk water; not publicly deployed",
+  "reference": {
+    "repository": "https://github.com/cortiz2894/stylized-components",
+    "commit": "1cece0a296b29299d1380c34feb5c158b2f04500",
+    "license": "MIT; full notice retained in THIRD_PARTY_NOTICES.md",
+    "execution": "Reference sources inspected as text; repository not installed or executed"
+  },
+  "validation": {
+    "typecheck": "passed",
+    "productionBuild": "passed in isolated preview archive; only preview config sets turbopack.root to archive directory",
+    "hardwareChrome": {
+      "stats": {
+        "startTime": "2026-11-01T23:44:28.355Z",
+        "duration": 73458.12000000001,
+        "expected": 13,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "frameIntervalsMs": {
+        "frames": 225,
+        "median": 13.300000000000182,
+        "p95": 13.5,
+        "max": 13.900000000000091
+      }
+    },
+    "softwareChrome": {
+      "stats": {
+        "startTime": "2026-11-01T23:46:35.717Z",
+        "duration": 100458.094,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "frameIntervalsMs": {
+        "frames": 11,
+        "median": 266.7000000000007,
+        "p95": 333.2999999999993,
+        "max": 333.2999999999993
+      }
+    },
+    "focusedSuites": [
+      "record-desk.spec.ts (hardware)",
+      "scene-loader.spec.ts (hardware and software)",
+      "stylized-water.spec.ts (hardware and software)"
+    ],
+    "performanceMethod": "After scene-ready, sample requestAnimationFrame intervals for 3 seconds at 1440x900. No absolute speed assertion; measures browser cadence, not GPU completion or physical-device performance.",
+    "manualVisualReview": "Desktop before/after and narrow screenshot review; final capture stored locally under artifacts/water-review",
+    "unavailable": [
+      "Safari",
+      "Physical mobile devices",
+      "Low-end physical GPU profiling",
+      "Public deployment of this change"
+    ],
+    "githubBaseline": {
+      "runId": 41358814287,
+      "commit": "605ccc76a3dd0d0c4e5f79e82ba7cad754b39bf5",
+      "status": "failed before this water change",
+      "failures": [
+        "Retired artwork redirect assertion",
+        "Record-desk pending-fixture search timeout",
+        "Startup loader visibility assertion"
+      ],
+      "scope": "Preserved as pre-existing CI failures; focused local hardware and software results recorded separately. No claim that full GitHub CI is passing."
+    }
+  },
+  "geometry": {
+    "extent": 2000,
+    "desktopVertices": 25921,
+    "narrowVertices": 12769,
+    "softwareVertices": 4225
+  },
+  "sourceSha256": {
+    "components/stylized-water.ts": "b5798113aaf18fc1f7626f96ad2a49cb6b7d83f8b077c28864a728448c501430",
+    "components/rack-study-scene.ts": "04787f372c955c666de31c53c43da90f133dd409b9b8e5279e55b916559e0f59",
+    "tests/frontend/stylized-water.spec.ts": "03a753114ffec96ebe04f64d109da6b1875c46fb0ab69221a83bd84e84c5a723"
+  },
+  "preserved": [
+    "Disc and sleeve transfers",
+    "Camera framing and orbit controls",
+    "Existing environment slider ranges and defaults",
+    "Reduced motion and pause",
+    "Loader and graphics recovery",
+    "Real/demo distinction",
+    "Catalog, model and listening links"
+  ],
+  "limitations": [
+    "Approximate planar live reflections with small-wave distortion",
+    "No fluid simulation or collision solver",
+    "Software graphics use a cheaper contour field",
+    "Timing observations do not establish a universal frame rate"
+  ]
+}

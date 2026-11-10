@@ -1,0 +1,16 @@
+{
+  "measured_at": "2026-10-29T05:21:38.9533816Z",
+  "cold_process_to_ready_ms": 18817.484,
+  "peak_working_set_bytes": 250798080,
+  "working_set_bytes": 218472448,
+  "private_commit_bytes": 827871232,
+  "meta": {
+    "model_version": "item-cf-cohort-v2-lambda-50",
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+    "artifact_schema_version": 1,
+    "training_cutoff": "2026-08-01T00:00:00Z",
+    "method": "item_cosine_shared_listener_shrinkage",
+    "data_mode": "real"
+  },
+  "scope": "Fresh local Python/API process with OS file cache warm; includes readiness/model/catalog verification. PostgreSQL is separate. Not container RSS or deployed cold start."
+}

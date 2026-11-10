@@ -1,0 +1,305 @@
+{
+  "observed_at": "2026-11-02T08:21:42.896041+00:00",
+  "complete": true,
+  "activated": false,
+  "previous_release": {
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+    "content_sha256": "1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+    "data_mode": "real",
+    "model_manifest_sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122",
+    "recording_count": 4996
+  },
+  "new_release": {
+    "catalog_version": "catalog-v3-0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b",
+    "content_sha256": "0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b",
+    "recording_count": 5474,
+    "model_manifest_sha256": "ac341968aef80dc9f5eb9459eea5e5ba119e9112c9b2dc38026dda00bc92f122",
+    "data_mode": "real"
+  },
+  "selection_sha256": "f1e4169d3a15d5644aaf6ed8bf5e7a8664049d3df7ad0d62f553d218e76d7831",
+  "catalog_sha256": "cef0db1bf3505a7e7df06d9284765ec5c589de37f2c41ddad5afd0f687412598",
+  "script_sha256": "3175780149bd5d184cc2f3789d017317cc3bd44de7ef515b64b38a28a69b4c6e",
+  "link_release": {
+    "links_version": "links-v2-7215ce1c0902f3bf33f0390cd35dfb425794a312f3b15ced4e3be70cba18cd47",
+    "catalog_version": "catalog-v3-0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b",
+    "content_sha256": "13ad4a446e31d06d14c2ec12685226795e5208073d365e1845852224976c74ef",
+    "link_count": 130
+  },
+  "links_file_sha256": "b294b4fe8ae70bc0b62fb4ac85f80c0d6bec56035187901ca80821025973dfd7",
+  "identity_resolution": {
+    "unavailable": [],
+    "redirects": [
+      {
+        "recording_id": "7bb32fbe-1720-40e6-bf2b-dddbb3618ee4",
+        "canonical_recording_id": "14ed2b48-da2d-4151-9ed7-90f9d8ac0f6e",
+        "verification_sha256": "a90e73da22cc3596566f4b61b80c2ecdf19a5ad3464c30c4bfd1e45eddd250b8"
+      },
+      {
+        "recording_id": "e5ae2a5d-f8ba-471e-ae26-e3dc1e92ce2d",
+        "canonical_recording_id": "412eee55-c199-45c1-a67e-104d01075be3",
+        "verification_sha256": "91225e324bca92c05951622ab1669c6699e451c581ec371ac457afa0b5a15832"
+      },
+      {
+        "recording_id": "70be880f-6fbd-4f69-9f48-7150363f8723",
+        "canonical_recording_id": "9f7bac6a-0231-4fc3-b277-2a4c000ee606",
+        "verification_sha256": "98e5fcdf6dac8247f50f26e02982113a7def6df6fb00ad3a2f473ffa4a5f749e"
+      },
+      {
+        "recording_id": "fd13596a-2782-4e3c-8e00-67d7eda91166",
+        "canonical_recording_id": "0e0363cd-a242-4a6a-85a3-cf2c3cbd6ea6",
+        "verification_sha256": "3c10a52da4d2c6e7792d45f267531a0e6af6231f1e2934c952a67189d74749b5"
+      },
+      {
+        "recording_id": "0d248b92-6932-4bcd-8417-2f699853ccb0",
+        "canonical_recording_id": "83dbaf01-8a59-47c8-971c-e0b07cd12c95",
+        "verification_sha256": "c66f2ebb81675a6f64e3149429920415df6c30c4047248018a681458e403c61b"
+      }
+    ],
+    "excluded_aliases": []
+  },
+  "validation": {
+    "api_seed_queries": 5474,
+    "before": {
+      "seeds": 4996,
+      "complete_ten": 3248,
+      "complete_ten_share": 0.6501200960768615,
+      "mean_results": 8.679543634907926,
+      "missing_metadata_positions": 6576,
+      "model_short_lists": 3,
+      "distinct_rankings": 4945
+    },
+    "existing_catalog": {
+      "seeds": 4996,
+      "complete_ten": 3299,
+      "complete_ten_share": 0.660328262610088,
+      "mean_results": 8.790232185748598,
+      "missing_metadata_positions": 6023,
+      "model_short_lists": 3,
+      "distinct_rankings": 4995,
+      "zero_results": 0
+    },
+    "original_empty_seeds": {
+      "seeds": 48,
+      "complete_ten": 48,
+      "complete_ten_share": 1.0,
+      "mean_results": 10.0,
+      "missing_metadata_positions": 0,
+      "model_short_lists": 0,
+      "distinct_rankings": 48,
+      "zero_results": 0
+    },
+    "added_seeds": {
+      "seeds": 478,
+      "complete_ten": 33,
+      "complete_ten_share": 0.06903765690376569,
+      "mean_results": 5.872384937238493,
+      "missing_metadata_positions": 1973,
+      "model_short_lists": 0,
+      "distinct_rankings": 461,
+      "zero_results": 17
+    },
+    "all_seeds": {
+      "seeds": 5474,
+      "complete_ten": 3332,
+      "complete_ten_share": 0.6086956521739131,
+      "mean_results": 8.535440263061746,
+      "missing_metadata_positions": 7996,
+      "model_short_lists": 3,
+      "distinct_rankings": 5455,
+      "zero_results": 17
+    },
+    "journeys": [
+      {
+        "round": 1,
+        "seeds": 32,
+        "complete_ten": 32,
+        "complete_ten_share": 1.0,
+        "mean_results": 10.0,
+        "missing_metadata_positions": 0,
+        "model_short_lists": 0,
+        "distinct_rankings": 32,
+        "zero_results": 0
+      },
+      {
+        "round": 2,
+        "seeds": 205,
+        "complete_ten": 205,
+        "complete_ten_share": 1.0,
+        "mean_results": 10.0,
+        "missing_metadata_positions": 0,
+        "model_short_lists": 0,
+        "distinct_rankings": 205,
+        "zero_results": 0
+      },
+      {
+        "round": 3,
+        "seeds": 638,
+        "complete_ten": 638,
+        "complete_ten_share": 1.0,
+        "mean_results": 10.0,
+        "missing_metadata_positions": 0,
+        "model_short_lists": 0,
+        "distinct_rankings": 638,
+        "zero_results": 0
+      },
+      {
+        "round": 4,
+        "seeds": 1539,
+        "complete_ten": 1537,
+        "complete_ten_share": 0.9987004548408057,
+        "mean_results": 9.998050682261209,
+        "missing_metadata_positions": 3,
+        "model_short_lists": 0,
+        "distinct_rankings": 1539,
+        "zero_results": 0
+      },
+      {
+        "round": 5,
+        "seeds": 2905,
+        "complete_ten": 2751,
+        "complete_ten_share": 0.946987951807229,
+        "mean_results": 9.824784853700516,
+        "missing_metadata_positions": 509,
+        "model_short_lists": 0,
+        "distinct_rankings": 2905,
+        "zero_results": 0
+      }
+    ],
+    "new_empty_seed_ids": [
+      "17c054ec-feee-477b-89ac-55140f3b4e56",
+      "18d9cd50-e68f-4bcb-8d28-1c262e0df82d",
+      "21e2303c-9ff6-4c74-95b7-ff0687dcfecd",
+      "2fab79e5-b1b8-46dd-bb5b-eadcbd6f5894",
+      "39c25149-a2f1-4198-bbdf-e8f098077210",
+      "4e4a492f-432a-4692-80d9-fa3c355c7c83",
+      "57a6dff3-daee-4e63-bc82-6bd6f5df2957",
+      "6efc0a65-6156-4c3e-bab6-854695084ed8",
+      "7a1750af-8601-46e4-a9b0-bd107748a9d9",
+      "7aef7f3c-9152-4585-b570-15ceb6c60ea7",
+      "957fa515-8443-4217-96ad-ab1b32e2053b",
+      "958c4b70-caa0-4306-be9c-3132de600605",
+      "9c26690e-92b8-4ad8-927d-616dc0b30d66",
+      "bcb25130-e252-4867-b4b9-629d44c4cfa9",
+      "d0081b47-4004-4ed4-9c4a-4be5be47128c",
+      "e093086d-b925-404b-94ec-467127a40672",
+      "e0db66f5-1c44-49a4-b67d-105fda32e360"
+    ],
+    "original_artist_coverage": {
+      "nate sib": {
+        "seeds": 22,
+        "complete_ten": 22,
+        "complete_ten_share": 1.0,
+        "mean_results": 10.0,
+        "missing_metadata_positions": 0,
+        "model_short_lists": 0,
+        "distinct_rankings": 22,
+        "zero_results": 0
+      },
+      "Tiffany Day": {
+        "seeds": 60,
+        "complete_ten": 60,
+        "complete_ten_share": 1.0,
+        "mean_results": 10.0,
+        "missing_metadata_positions": 0,
+        "model_short_lists": 0,
+        "distinct_rankings": 60,
+        "zero_results": 0
+      },
+      "che": {
+        "seeds": 87,
+        "complete_ten": 77,
+        "complete_ten_share": 0.8850574712643678,
+        "mean_results": 9.632183908045977,
+        "missing_metadata_positions": 32,
+        "model_short_lists": 0,
+        "distinct_rankings": 87,
+        "zero_results": 0
+      },
+      "2hollis": {
+        "seeds": 65,
+        "complete_ten": 64,
+        "complete_ten_share": 0.9846153846153847,
+        "mean_results": 9.876923076923077,
+        "missing_metadata_positions": 8,
+        "model_short_lists": 0,
+        "distinct_rankings": 65,
+        "zero_results": 0
+      },
+      "Lucy Bedroque": {
+        "seeds": 48,
+        "complete_ten": 43,
+        "complete_ten_share": 0.8958333333333334,
+        "mean_results": 9.5625,
+        "missing_metadata_positions": 21,
+        "model_short_lists": 0,
+        "distinct_rankings": 48,
+        "zero_results": 0
+      },
+      "beabadoobee": {
+        "seeds": 94,
+        "complete_ten": 83,
+        "complete_ten_share": 0.8829787234042553,
+        "mean_results": 9.72340425531915,
+        "missing_metadata_positions": 26,
+        "model_short_lists": 0,
+        "distinct_rankings": 94,
+        "zero_results": 0
+      },
+      "Daniel Caesar": {
+        "seeds": 77,
+        "complete_ten": 74,
+        "complete_ten_share": 0.961038961038961,
+        "mean_results": 9.818181818181818,
+        "missing_metadata_positions": 14,
+        "model_short_lists": 0,
+        "distinct_rankings": 77,
+        "zero_results": 0
+      },
+      "Steve Lacy": {
+        "seeds": 76,
+        "complete_ten": 70,
+        "complete_ten_share": 0.9210526315789473,
+        "mean_results": 9.631578947368421,
+        "missing_metadata_positions": 28,
+        "model_short_lists": 0,
+        "distinct_rankings": 76,
+        "zero_results": 0
+      },
+      "Bruno Mars": {
+        "seeds": 79,
+        "complete_ten": 62,
+        "complete_ten_share": 0.7848101265822784,
+        "mean_results": 8.974683544303797,
+        "missing_metadata_positions": 60,
+        "model_short_lists": 3,
+        "distinct_rankings": 79,
+        "zero_results": 0
+      },
+      "GIVĒON": {
+        "seeds": 59,
+        "complete_ten": 49,
+        "complete_ten_share": 0.8305084745762712,
+        "mean_results": 9.322033898305085,
+        "missing_metadata_positions": 40,
+        "model_short_lists": 0,
+        "distinct_rankings": 59,
+        "zero_results": 0
+      }
+    }
+  },
+  "budget": {
+    "requests": 494,
+    "reserved_bytes": 248300014,
+    "received_body_bytes": 19752591,
+    "download_cap_bytes": 268435456,
+    "disk_cap_bytes": 1073741824,
+    "disk_bytes": 147794290,
+    "accounting": "Bounded response bytes plus conservative per-attempt overhead, not packet-level metering"
+  },
+  "stage_6_ledger_unchanged": true,
+  "limitations": [
+    "Inactive snapshot; no database import or public activation",
+    "Not a recommendation-accuracy evaluation",
+    "Existing provider links retained without new destination checks; new songs use labeled searches"
+  ]
+}

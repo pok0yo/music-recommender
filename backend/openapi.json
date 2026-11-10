@@ -70,6 +70,43 @@
         "title": "ErrorResponse",
         "type": "object"
       },
+      "ListeningLink": {
+        "additionalProperties": false,
+        "properties": {
+          "provider": {
+            "enum": [
+              "spotify",
+              "apple_music",
+              "youtube_music"
+            ],
+            "title": "Provider",
+            "type": "string"
+          },
+          "url": {
+            "maxLength": 2048,
+            "title": "Url",
+            "type": "string"
+          },
+          "verification": {
+            "const": "recording_relationship_and_destination",
+            "title": "Verification",
+            "type": "string"
+          },
+          "verified_at": {
+            "format": "date-time",
+            "title": "Verified At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "provider",
+          "url",
+          "verified_at",
+          "verification"
+        ],
+        "title": "ListeningLink",
+        "type": "object"
+      },
       "Meta": {
         "properties": {
           "artifact_schema_version": {
@@ -217,6 +254,14 @@
             "title": "External Link",
             "type": "null"
           },
+          "listening_links": {
+            "items": {
+              "$ref": "#/components/schemas/ListeningLink"
+            },
+            "maxItems": 3,
+            "title": "Listening Links",
+            "type": "array"
+          },
           "rank": {
             "maximum": 10.0,
             "minimum": 1.0,
@@ -294,6 +339,14 @@
           "external_link": {
             "title": "External Link",
             "type": "null"
+          },
+          "listening_links": {
+            "items": {
+              "$ref": "#/components/schemas/ListeningLink"
+            },
+            "maxItems": 3,
+            "title": "Listening Links",
+            "type": "array"
           },
           "recording_id": {
             "format": "uuid",

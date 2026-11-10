@@ -1,0 +1,61 @@
+{
+  "observed_at": "2026-11-03T14:30:30.956156+00:00",
+  "catalog_version": "catalog-v3-0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b",
+  "method": "Local Windows ASGI application and frozen model querying the hosted Supabase database over verified TLS; serial requests. This is not a Render-runtime or public-browser benchmark.",
+  "render_runtime_measured": false,
+  "approved_starters_tested": 32,
+  "approved_starters_returning_ten": 32,
+  "journeys": [
+    {
+      "seed": "49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+      "next_seed": "f56a6ad1-59ed-49fa-8d6f-b1f1aaaf5eeb",
+      "results": 10
+    },
+    {
+      "seed": "1abdf128-2f80-457c-8da0-e554e8e3b534",
+      "next_seed": "bc0f4be2-29bd-4f4b-a850-862bbd130db5",
+      "results": 10
+    },
+    {
+      "seed": "15db4b6a-7205-4960-9f0c-d1a34d147afe",
+      "next_seed": "b8eb806c-ea2a-417f-a515-bb6dd4895840",
+      "results": 10
+    },
+    {
+      "seed": "c6cdaca3-37a1-47f3-a5e3-e9c012a6c0f1",
+      "next_seed": "f220ba2e-0d12-41a2-b9ef-5a5119b967b8",
+      "results": 10
+    },
+    {
+      "seed": "de766945-2406-4627-9d3c-5dd4a17497d6",
+      "next_seed": "e0d8c279-ce9b-41c1-ab5c-80a101a39dfb",
+      "results": 10
+    }
+  ],
+  "full_list_case": 10,
+  "partial_list_case": 9,
+  "empty_list_case": 0,
+  "original_ranks_verified": true,
+  "search_checked": true,
+  "unsupported_seed_404": true,
+  "listening_payload_verified": true,
+  "recommendation_latency_ms": {
+    "samples": 41,
+    "median": 1702.8,
+    "p95": 1861.0,
+    "max": 1960.0
+  },
+  "public_activation": false,
+  "public_probes": [
+    {
+      "path": "/health/ready",
+      "http_status": 200,
+      "ms": 383.3,
+      "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766"
+    },
+    {
+      "path": "/v1/recommendations/d9654d83-e687-4221-b808-86498d8f01f4",
+      "http_status": 404
+    }
+  ]
+}

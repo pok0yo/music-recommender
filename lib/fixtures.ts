@@ -32,12 +32,13 @@ function delay(signal: AbortSignal, milliseconds: number): Promise<void> {
     if (signal.aborted) onAbort(); else signal.addEventListener('abort', onAbort, { once: true });
   });
 }
-export function demonstrationAPI(scenario: Scenario): MusicAPI {
+export function demonstrationAPI(scenario: Scenario, starterCatalog?: Track[]): MusicAPI {
+  const catalog=starterCatalog??demoTracks;
   return {
-    async starters(signal) { await delay(signal, 100); return { results: demoTracks.slice(0, 4), meta: demoMeta }; },
+    async starters(signal) { await delay(signal, 100); return { results: starterCatalog??demoTracks.slice(0, 4), meta: demoMeta }; },
     async search(query, signal) {
       await delay(signal, 180);
-      return { results: scenario === 'no-match' ? [] : demoTracks.filter(t => (t.title + artists(t)).toLocaleLowerCase().includes(query.toLocaleLowerCase())).slice(0, 10), meta: demoMeta };
+      return { results: scenario === 'no-match' ? [] : catalog.filter(t => (t.title + artists(t)).toLocaleLowerCase().includes(query.toLocaleLowerCase())).slice(0, 10), meta: demoMeta };
     },
     async recommend(id, signal) {
       await delay(signal, scenario === 'loading' ? 86_400_000 : 200);
@@ -49,9 +50,9 @@ export function demonstrationAPI(scenario: Scenario): MusicAPI {
         unknown: ['404', 'This song is outside the supported catalog. Choose another starting point.'],
       };
       if (failures[scenario]) throw new APIError(...failures[scenario]!, scenario === 'rate-limit' ? 2 : undefined);
-      const seed = demoTracks.find(t => t.recording_id === id);
+      const seed = catalog.find(t => t.recording_id === id);
       if (!seed) throw new APIError('404', 'This song is outside the supported catalog. Choose another starting point.');
-      let results = demoTracks.filter(t => t.recording_id !== id).slice(0, scenario === 'zero' ? 0 : scenario === 'one' ? 1 : 10)
+      let results = catalog.filter(t => t.recording_id !== id).slice(0, scenario === 'zero' ? 0 : scenario === 'one' ? 1 : 10)
         .map((track, i) => ({ ...track, rank: i + 1, reason_code: 'shared_listeners' as const,
           explanation: 'Connected through shared listening in this dataset.',
           shared_training_listeners: 8, seed_training_listeners: 24, candidate_training_listeners: 18 + i }));

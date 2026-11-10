@@ -33,13 +33,18 @@ def create_app(catalog=None, artifact=None, release=None, origins=(), rate_limit
                 app.state.artifact = Artifact(os.getenv("MODEL_DIRECTORY", "artifacts/stage-7-cf-v1"),
                     os.getenv("MODEL_MANIFEST_SHA256", MODEL_SHA))
             if app.state.release is None:
-                app.state.release = json.loads(Path(os.getenv("CATALOG_RELEASE", "data/processed/stage-8-catalog-v1/release.json")).read_text())
+                app.state.release = json.loads(Path(os.getenv("CATALOG_RELEASE", "data/processed/catalog-expansion-v2/release.json")).read_text(encoding="utf-8"))
             if app.state.catalog is None:
                 dsn = os.getenv("DATABASE_URL")
                 if not dsn:
                     dsn = json.loads(Path("artifacts/local-postgres/connections.json").read_text())["reader"]
                 app.state.catalog = Catalog(dsn, app.state.release)
-        except (OSError, ValueError, KeyError):
+            links_path=os.getenv('LISTENING_LINKS_RELEASE')
+            if links_path:
+                from backend.listening_links import load_release
+                app.state.catalog.listening_links=load_release(app.state.catalog,links_path)
+        except (OSError, ValueError, KeyError, psycopg.Error):
+            app.state.catalog = None
             logger.error("release_load_failed")
         yield
 
@@ -124,6 +129,15 @@ def create_app(catalog=None, artifact=None, release=None, origins=(), rate_limit
             artifact_schema_version=state.artifact.manifest["schema_version"],
             data_mode=state.release["data_mode"])
 
+    def with_availability(tracks, state):
+        neighbors = {track['recording_id']: [n['recording_mbid'] for n in state.artifact.recommend(track['recording_id'])['items']]
+                     for track in tracks}
+        required = list({recording for ranked in neighbors.values() for recording in ranked})
+        known = state.catalog.get_many(required) if required else {}
+        # One batched metadata read per response; counts belong to this pinned catalog, not local feedback.
+        return [dict(track, available_recommendations=sum(recording in known for recording in neighbors[track['recording_id']]))
+                for track in tracks]
+
     @app.get("/health/live")
     def live():
         return {"status": "live"}
@@ -139,12 +153,12 @@ def create_app(catalog=None, artifact=None, release=None, origins=(), rate_limit
         q = q.strip()
         if len(q) < 2:
             raise HTTPException(422)
-        return dict(results=state.catalog.search(q, limit), meta=meta(state))
+        return dict(results=with_availability(state.catalog.search(q, limit), state), meta=meta(state))
 
     @app.get("/v1/catalog/starters", response_model=CatalogResponse)
     def starters(request: Request, state=Depends(ensure_ready)):
         parameters(request, ())
-        return dict(results=state.catalog.starters(), meta=meta(state))
+        return dict(results=with_availability(state.catalog.starters(), state), meta=meta(state))
 
     @app.get("/v1/recommendations/{recording_id}", response_model=RecommendationResponse,
         responses={404: {"model": ErrorResponse}})
@@ -164,7 +178,8 @@ def create_app(catalog=None, artifact=None, release=None, origins=(), rate_limit
                 results.append(dict(**track, rank=rank, shared_training_listeners=item["shared_training_listeners"],
                     seed_training_listeners=item["seed_training_listeners"],
                     candidate_training_listeners=item["candidate_training_listeners"]))
-        return dict(seed=seed, results=results, alternatives=[], requested_limit=limit,
+        presented = with_availability([seed, *results], state)
+        return dict(seed=presented[0], results=presented[1:], alternatives=[], requested_limit=limit,
             model_result_count=len(ranked), omitted_metadata_count=len(ranked)-len(results),
             status="no_connections" if not ranked else "ok" if len(results)==limit else "limited", meta=meta(state))
 
@@ -176,4 +191,4 @@ def failure(request, status, code, message, headers=None):
         request_id=request.state.request_id), headers={"X-Request-ID": request.state.request_id, **(headers or {})})
 
 
-app = create_app(origins=tuple(filter(None, os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(","))))
+app = create_app(origins=tuple(filter(None, os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000").split(","))))

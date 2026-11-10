@@ -1,0 +1,13 @@
+{
+  "platform": "linux",
+  "python": "3.14.4",
+  "memory_limit_bytes": 512000000,
+  "cpu_quota": "10000 100000",
+  "peak_rss_bytes": 269430784,
+  "cgroup_memory_peak_bytes": 275247104,
+  "seconds": 74.376,
+  "model_items": 565147,
+  "verified_catalog_records": 4996,
+  "verified_links": 130,
+  "scope": "Real frozen model, all serving seeds, metadata/link validation and API imports. No HTTP server or database connection; not Render cold-start or network performance."
+}

@@ -1,68 +1,46 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { artworks } from '../../v2/artwork';
 
-test('four hero artworks load, crop and reflow without moving the Disc Tray task', async ({ page }) => {
-  test.setTimeout(120_000);
-  const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
-  for (const width of [320, 390, 550, 768, 1024, 1440]) {
-    await page.setViewportSize({ width, height: 900 });
-    for (const art of artworks) {
-      await page.goto(`/prototypes/disc-tray/artwork/${art.slug}?mode=demo&fixture=entry`);
-      const orbital = art.slug === 'orbital-disc';
-      const img = page.locator('.hero-slot img');
-      await expect(page.locator('.starter-button')).toHaveCount(4);
-      if (orbital) await expect(page.locator('.orbital-hero')).toHaveAttribute('data-model-ready','true');
-      await expect.poll(() => img.evaluate((e: HTMLImageElement) => e.complete && e.naturalWidth > 0)).toBe(true);
-      await expect(img).toHaveAttribute('alt', '');
-      await expect(img).toHaveAttribute('src', /\/_next\/image\?/);
-      if (!orbital) expect(await page.locator('.hero-fill').evaluate(e => getComputedStyle(e).overflow)).toBe('hidden');
-      else expect(await page.locator('.orbital-hero').evaluate(e => getComputedStyle(e).backgroundImage)).toBe('none');
-      const hero = (await page.locator('.hero-slot').boundingBox())!;
-      expect(hero.width / hero.height).toBeCloseTo(orbital ? 1.25 : 1, 1);
-      expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)).toBe(false);
-      if (width < 768) {
-        const choices = (await page.locator('.starting-points').boundingBox())!;
-        expect(choices.y + choices.height).toBeLessThanOrEqual(hero.y + 1);
-      }
-      if ([390,1440].includes(width)) expect((await new AxeBuilder({ page }).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations).toEqual([]);
-    }
+const route = '/prototypes/disc-tray/artwork/orbital-disc';
+
+test('Orbital console keeps controls visible and fits a desktop opening screen', async ({ page }) => {
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?270_000:90_000);
+  for (const [width, height] of [[1280,800],[1440,900],[1881,905],[390,844]]) {
+    await page.setViewportSize({width,height});
+    await page.goto(`${route}?mode=demo&fixture=entry&interface=classic`);
+    await expect(page.locator('.orbital-hero')).toHaveAttribute('data-model-ready','true');
+    await page.evaluate(() => document.fonts.ready);
+    await expect(page.locator('.starter-button')).toHaveCount(4);
+    await expect(page.locator('.proto-picker,.preview-bar,.app-footer,.release-context')).toHaveCount(0);
+    await expect(page.locator('.orbital-toolbar .demo-notice')).toContainText('not model results');
+    await expect(page.getByRole('link',{name:'How it works',exact:true})).toHaveText('How it works');
+    for (const label of ['Data source','Demonstration scenario','Background finish','Water movement']) await expect(page.getByRole('combobox',{name:label,exact:true})).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);
+    if (width>=1280) expect(await page.evaluate(() => document.documentElement.scrollHeight)).toBeLessThanOrEqual(height+1);
+    if ([390,1440].includes(width)) expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations).toEqual([]);
   }
-  expect(errors).toEqual([]);
 });
 
-test('artwork comparison preserves typing, selection, navigation and working-state behavior', async ({ page }) => {
-  await page.goto('/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry');
-  await page.getByRole('searchbox').fill('1234'); await page.getByRole('searchbox').press('ArrowRight');
-  await expect(page.locator('[data-artwork]')).toHaveAttribute('data-artwork','orbital-disc');
-  for (const art of artworks) {
-    await page.getByRole('button', { name: `Preview ${art.name}` }).click();
-    await expect(page.getByRole('searchbox')).toHaveValue('1234');
-    await expect(page.locator('.hero-slot img')).toHaveAttribute('src', new RegExp(art.slug));
+test('retired artwork URLs preserve discovery and About context when redirected', async ({page}) => {
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?180_000:60_000);
+  await page.emulateMedia({reducedMotion:'reduce'});
+  const seed='00000000-0000-4000-8000-000000000003';
+  for (const slug of ['glass-current','aero-player','liquid-star']) for (const section of ['', '/about']) {
+    await page.goto(`/prototypes/disc-tray/artwork/${slug}${section}?mode=demo&fixture=ten&q=Tiffany&seed=${seed}&background=crisp&water=still&v=4&tag=one&tag=two&interface=classic`);
+    await page.waitForURL(url=>url.pathname===route+section);
+    const url=new URL(page.url());
+    expect(url.pathname).toBe(route+section);
+    expect(url.searchParams.get('q')).toBe('Tiffany');
+    expect(url.searchParams.get('seed')).toBe(seed);
+    expect(url.searchParams.get('v')).toBe('1');
+    expect(url.searchParams.getAll('tag')).toEqual(['one','two']);
+    await expect(page.getByRole('combobox',{name:'Background finish'})).toHaveValue('crisp');
+    await expect(page.getByRole('combobox',{name:'Water movement'})).toHaveValue('still');
+    if (section) await expect(page.getByRole('heading',{name:'Connections, with context.'})).toBeVisible();
+    else await expect(page.locator('.track-row')).toHaveCount(10);
+    await expect(page.locator('.proto-picker')).toHaveCount(0);
   }
-  await page.reload(); await expect(page.locator('[data-artwork]')).toHaveAttribute('data-artwork','liquid-star');
-  await page.getByRole('searchbox').fill('Tiffany'); await page.getByRole('searchbox').press('Enter');
-  await page.getByRole('button', { name: /CLOUDS.*Use this song/ }).click();
-  await expect(page.getByRole('heading', { name: '10 connections to explore' })).toBeFocused();
-  const seed = new URL(page.url()).searchParams.get('seed');
-  for (const art of artworks) {
-    await page.getByRole('button', { name: `Preview ${art.name}` }).click();
-    await expect(page.locator('.selected-track')).toContainText('CLOUDS');
-    await expect(page.locator('.track-row')).toHaveCount(10);
-    await expect(page.locator('.hero-slot')).toHaveCount(0);
-    expect(new URL(page.url()).searchParams.get('seed')).toBe(seed);
-  }
-  await page.locator('summary').first().click(); await expect(page.getByText('Listening link unavailable.').first()).toBeVisible();
-  await page.getByRole('button', { name: /Use as seed/ }).first().click();
-  await expect.poll(() => new URL(page.url()).searchParams.get('seed')).not.toBe(seed);
-  await page.goBack(); await expect(page.locator('.selected-track')).toContainText('CLOUDS');
-  await page.getByRole('button', { name: 'Change song' }).click(); await expect(page.getByRole('searchbox')).toBeFocused();
-  await expect(page.locator('.hero-slot')).toBeVisible();
-  await page.getByRole('link', { name: 'About the recommendations', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Connections, with context.' })).toBeVisible();
-  await page.getByRole('button', { name: 'Preview Aero Player' }).click();
-  await expect(page).toHaveURL(/aero-player\/about/);
-  await page.getByRole('link', { name: 'Discover', exact: true }).click();
-  await expect(page.locator('[data-artwork]')).toHaveAttribute('data-artwork','aero-player');
-  await expect(page.locator('.hero-fill img')).toBeVisible();
+  await page.goto('/prototypes/disc-tray/artwork/glass-current/unknown');
+  await expect(page.getByRole('heading',{name:'404',exact:true})).toBeVisible();
+  await expect(page.locator('meta[name="robots"]').first()).toHaveAttribute('content','noindex');
 });

@@ -1,0 +1,44 @@
+{
+  "verified_at": "2026-10-29T01:58:26.688300+00:00",
+  "local_activation": true,
+  "release": {
+    "links_version": "links-v1-13ad4a446e31d06d14c2ec12685226795e5208073d365e1845852224976c74ef",
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+    "content_sha256": "13ad4a446e31d06d14c2ec12685226795e5208073d365e1845852224976c74ef",
+    "link_count": 130
+  },
+  "link_count": 130,
+  "recordings_with_links": 76,
+  "counts_by_provider": {
+    "apple_music": 43,
+    "spotify": 72,
+    "youtube_music": 15
+  },
+  "starters_with_links": 9,
+  "recommendation_seed_queries": 99,
+  "ranks_and_omissions_preserved": true,
+  "catalog_hash_verified": true,
+  "rollback_catalog_verified": true,
+  "no_link_rollback_verified": true,
+  "reader_privileges": [
+    {
+      "tablename": "link_releases",
+      "read": true,
+      "insert": false,
+      "update": false,
+      "delete": false
+    },
+    {
+      "tablename": "recording_links",
+      "read": true,
+      "insert": false,
+      "update": false,
+      "delete": false
+    }
+  ],
+  "new_acquisition_requests": 0,
+  "limitations": [
+    "Local activation only",
+    "Provider playback, Safari and physical devices not checked"
+  ]
+}

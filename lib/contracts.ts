@@ -1,3 +1,4 @@
+import {validListeningLink,type ListeningLink} from './listening';
 export type Track = {
   recording_id: string;
   canonical_recording_id: string;
@@ -5,6 +6,8 @@ export type Track = {
   artist_credits: { name: string; artist_id: string; joinphrase: string }[];
   disambiguation: string | null;
   external_link: null;
+  listening_links?: ListeningLink[];
+  available_recommendations?: number | null;
 };
 export type Meta = {
   model_version: string; catalog_version: string; artifact_schema_version: number;
@@ -28,6 +31,11 @@ export type MusicAPI = {
 };
 export const uuid = (value: string) => /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value);
 export const artists = (track: Track) => track.artist_credits.map(c => c.name + c.joinphrase).join('');
+export function recommendationHint(track?: Track) {
+  const count = track?.available_recommendations;
+  if (count == null || count === 10) return undefined;
+  return count === 0 ? 'No recommendations available yet' : `${count} recommendation${count === 1 ? '' : 's'} available`;
+}
 const object = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null;
 const integer = (v: unknown, minimum: number, maximum = Number.MAX_SAFE_INTEGER): v is number =>
   Number.isSafeInteger(v) && Number(v) >= minimum && Number(v) <= maximum;
@@ -37,7 +45,9 @@ export function validTrack(v: unknown): v is Track {
     && typeof v.title === 'string' && !!v.title.trim() && Array.isArray(v.artist_credits)
     && v.artist_credits.length > 0 && v.artist_credits.every(c => object(c) && typeof c.name === 'string'
       && !!c.name.trim() && typeof c.artist_id === 'string' && uuid(c.artist_id) && typeof c.joinphrase === 'string')
-    && (v.disambiguation === null || typeof v.disambiguation === 'string') && v.external_link === null;
+    && (v.disambiguation === null || typeof v.disambiguation === 'string') && v.external_link === null
+    && (v.available_recommendations == null || integer(v.available_recommendations, 0, 10))
+    && (v.listening_links===undefined||(Array.isArray(v.listening_links)&&v.listening_links.length<=3&&v.listening_links.every(validListeningLink)&&new Set(v.listening_links.map(link=>link.provider)).size===v.listening_links.length));
 }
 function validMeta(v: unknown, mode: Meta['data_mode']): v is Meta {
   return object(v) && v.data_mode === mode && typeof v.model_version === 'string' && !!v.model_version.trim()

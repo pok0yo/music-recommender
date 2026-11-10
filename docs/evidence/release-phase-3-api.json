@@ -1,0 +1,98 @@
+{
+  "measured_at": "2026-10-29T05:09:49.096268+00:00",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "transport": "loopback HTTP, no network throttling",
+  "clients": 5,
+  "requests_per_endpoint": 100,
+  "warmup_requests_per_endpoint": 5,
+  "meta": {
+    "model_version": "item-cf-cohort-v2-lambda-50",
+    "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+    "artifact_schema_version": 1,
+    "training_cutoff": "2026-08-01T00:00:00Z",
+    "method": "item_cosine_shared_listener_shrinkage",
+    "data_mode": "real"
+  },
+  "endpoints": {
+    "starters": {
+      "sample_paths": [
+        "/v1/catalog/starters"
+      ],
+      "statuses": {
+        "200": 100
+      },
+      "elapsed_seconds": 4.189,
+      "median_ms": 195.862,
+      "p95_ms": 275.247,
+      "max_ms": 340.012,
+      "target_met": true
+    },
+    "search": {
+      "sample_paths": [
+        "/v1/catalog/search?q=nate+sib",
+        "/v1/catalog/search?q=Tiffany+Day",
+        "/v1/catalog/search?q=che",
+        "/v1/catalog/search?q=2hollis",
+        "/v1/catalog/search?q=Lucy+Bedroque",
+        "/v1/catalog/search?q=beabadoobee",
+        "/v1/catalog/search?q=Daniel+Caesar",
+        "/v1/catalog/search?q=Steve+Lacy",
+        "/v1/catalog/search?q=Bruno+Mars",
+        "/v1/catalog/search?q=Giveon"
+      ],
+      "statuses": {
+        "200": 100
+      },
+      "elapsed_seconds": 4.049,
+      "median_ms": 196.714,
+      "p95_ms": 227.48,
+      "max_ms": 252.043,
+      "target_met": true
+    },
+    "recommendations": {
+      "sample_paths": [
+        "/v1/recommendations/49233c96-b2dc-47e3-99f1-b09fcbb179b4",
+        "/v1/recommendations/1abdf128-2f80-457c-8da0-e554e8e3b534",
+        "/v1/recommendations/15db4b6a-7205-4960-9f0c-d1a34d147afe",
+        "/v1/recommendations/c6cdaca3-37a1-47f3-a5e3-e9c012a6c0f1",
+        "/v1/recommendations/de766945-2406-4627-9d3c-5dd4a17497d6",
+        "/v1/recommendations/bc0f4be2-29bd-4f4b-a850-862bbd130db5",
+        "/v1/recommendations/9c237f32-aaa3-4275-a984-87dddff37d17",
+        "/v1/recommendations/80f206d2-2668-4797-ab84-c556b85efbf9",
+        "/v1/recommendations/b3323026-2dc1-4c02-b447-1b7118a97e90",
+        "/v1/recommendations/f220ba2e-0d12-41a2-b9ef-5a5119b967b8",
+        "/v1/recommendations/ca215903-73eb-42f7-97bd-ccf520137b23",
+        "/v1/recommendations/1eb60aa4-9610-4296-87c5-ba050f64655c",
+        "/v1/recommendations/cb77aabb-7b1f-4cf4-8db9-6b49753a60de",
+        "/v1/recommendations/a824626f-d5e1-43b3-a2e9-49b138b0eaee",
+        "/v1/recommendations/38ad538a-fddb-49f7-aeb7-84fb232ac4ff",
+        "/v1/recommendations/4658bb93-57c4-4710-86f1-b87869f5781b",
+        "/v1/recommendations/99e50018-d45e-44e2-b085-8052e87c71ae",
+        "/v1/recommendations/6b2ed59c-316e-4b8a-aae1-cca399354126",
+        "/v1/recommendations/7c59799e-3135-4f54-9541-f25e8822684d",
+        "/v1/recommendations/9dbd4c26-c4ad-4abe-ba3e-88bfe6750518",
+        "/v1/recommendations/4c4053b4-6e64-4bb7-a8a3-ca5e9f32811b",
+        "/v1/recommendations/565ed4d0-469e-4a89-8e3e-afc521a4ed56",
+        "/v1/recommendations/aa03fca2-4c9e-4ee9-95c3-c30fa0a91004",
+        "/v1/recommendations/3956cb39-7741-421c-a5bd-a163b99d8813",
+        "/v1/recommendations/37917bf2-83f7-41bb-9f89-5320aa4561c4",
+        "/v1/recommendations/daf4d723-2ff7-4e5f-b132-237c987c3a03",
+        "/v1/recommendations/fa4c7167-c1c8-4c5a-909f-3dd8f3139658",
+        "/v1/recommendations/297dd100-3148-49f7-841d-c44ce59f34bd",
+        "/v1/recommendations/d3d1a743-a512-49c7-b38d-0610c3433a39",
+        "/v1/recommendations/0e011401-8380-48f3-b4bf-ad89e5e8e6ae",
+        "/v1/recommendations/c2525847-4207-44c8-995f-45e81004c6ab",
+        "/v1/recommendations/8630f911-a9a6-486e-b764-aabc236479ad"
+      ],
+      "statuses": {
+        "200": 100
+      },
+      "elapsed_seconds": 6.243,
+      "median_ms": 307.326,
+      "p95_ms": 340.514,
+      "max_ms": 355.186,
+      "target_met": true
+    }
+  },
+  "caveat": "Isolated API uses an elevated test-only rate limit; normal rate-limit behavior is tested separately. Not deployed performance."
+}

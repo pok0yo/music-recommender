@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-const route = '/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry';
+const route = '/prototypes/disc-tray/artwork/orbital-disc?mode=demo&fixture=entry&interface=classic';
 const count = (page: import('@playwright/test').Page) => page.evaluate(() => Reflect.get(window, 'waterDrawCount') as number);
 
 test('water ripples are bounded, pausable, and suspend offscreen, hidden and for preferences', async ({ page }) => {
@@ -60,6 +60,7 @@ test('water ripples are bounded, pausable, and suspend offscreen, hidden and for
 });
 
 test('extended scenery fills every edge and stays stable through scrolling and longer content', async ({ page }) => {
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?360_000:30_000);
   for (const [width, height] of [[390, 844], [1440, 900], [1881, 905]]) {
     await page.setViewportSize({ width, height });
     let first: Buffer | undefined;
@@ -90,14 +91,14 @@ test('extended scenery fills every edge and stays stable through scrolling and l
       }
       if (first) expect(top.equals(first)).toBe(true);
       first = top;
-      await page.locator('.app-footer').scrollIntoViewIfNeeded();
+      await page.evaluate(()=>scrollTo(0,document.documentElement.scrollHeight));
       expect((await page.screenshot()).equals(top)).toBe(true);
     }
   }
 });
 
 test('water choice preserves discovery and navigation, including mobile and both finishes', async ({ page }) => {
-  test.setTimeout(60_000);
+  test.setTimeout(process.env.CI||process.env.PLAYWRIGHT_SOFTWARE?180_000:60_000);
   await page.goto(route);
   await page.getByRole('searchbox').fill('Tiffany');
   await page.getByRole('combobox', { name: 'Water movement' }).selectOption('still');
@@ -112,7 +113,7 @@ test('water choice preserves discovery and navigation, including mobile and both
   await page.getByRole('combobox', { name: 'Water movement' }).selectOption('still');
   await page.reload();
   await expect(page.getByRole('combobox', { name: 'Water movement' })).toHaveValue('still');
-  await page.getByRole('link', { name: 'About the recommendations', exact: true }).click();
+  await page.getByRole('link', { name: 'How it works', exact: true }).click();
   await expect(page.getByRole('combobox', { name: 'Water movement' })).toHaveValue('still');
   for (const width of [320, 390, 768, 1024, 1440, 1881]) {
     await page.setViewportSize({ width, height: 844 });
@@ -124,14 +125,14 @@ test('water choice preserves discovery and navigation, including mobile and both
   expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze()).violations).toEqual([]);
   await page.getByRole('link', { name: 'Discover', exact: true }).click();
   await expect(page.getByRole('combobox', { name: 'Water movement' })).toHaveValue('still');
-  await page.getByRole('button', { name: 'Preview Glass Current' }).click();
+  await page.goto('/variants/v2?mode=demo&fixture=entry');
   await expect(page.locator('.water-layer')).toHaveCount(0);
   await expect(page.getByRole('combobox', { name: 'Water movement' })).toHaveCount(0);
 });
 
 test('water failures retain static artwork and working search', async ({ page }) => {
   await page.goto(route + '&background=crisp');
-  await page.locator('.app-footer').scrollIntoViewIfNeeded();
+  await page.evaluate(()=>scrollTo(0,document.documentElement.scrollHeight));
   const water = page.locator('.water-layer');
   await expect(water).toHaveAttribute('data-water-state', 'running');
   await water.locator('canvas').evaluate(c => (c as HTMLCanvasElement).getContext('webgl2')!.getExtension('WEBGL_lose_context')!.loseContext());

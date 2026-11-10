@@ -97,9 +97,13 @@ test('picker shortcuts do not capture form input and preserve full-size preview 
 });
 
 test('real mode never falls back to demonstration data on outage', async ({ page }) => {
+  await page.clock.install();
   await page.route('http://127.0.0.1:8000/**', route => route.fulfill({ status: 503, json: { code: 'unavailable', message: 'Private server details', request_id: demoTracks[0].recording_id } }));
   await page.goto('/variants/v1');
-  await expect(page.locator('main').getByRole('alert')).toContainText('temporarily unavailable');
+  await expect(page.getByRole('status')).toContainText('Waking up');
+  await page.clock.setSystemTime(Date.now()+120_000);
+  await page.clock.fastForward(10_000);
+  await expect(page.locator('main').getByRole('alert')).toContainText('after two minutes');
   await expect(page.getByRole('note')).toHaveCount(0);
   await expect(page.locator('.starter-button')).toHaveCount(0);
   await expect(page.getByText('Private server details')).toHaveCount(0);

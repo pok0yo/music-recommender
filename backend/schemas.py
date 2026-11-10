@@ -3,13 +3,29 @@
 from typing import Literal
 from uuid import UUID
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator, AwareDatetime
 
 
 class ArtistCredit(BaseModel):
     name: str = Field(min_length=1)
     artist_id: UUID
     joinphrase: str = ""
+
+
+class ListeningLink(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    provider: Literal['spotify','apple_music','youtube_music']
+    url: str = Field(max_length=2048)
+    verified_at: AwareDatetime
+    verification: Literal['recording_relationship_and_destination']
+
+    @field_validator('url')
+    @classmethod
+    def approved_destination(cls,value,info):
+        from backend.listening_links import destination
+        parsed=destination(value)
+        if not parsed or parsed[0]!=info.data.get('provider'):raise ValueError('Invalid listening destination')
+        return parsed[2]
 
 
 class Track(BaseModel):
@@ -20,6 +36,14 @@ class Track(BaseModel):
     artist_credits: list[ArtistCredit] = Field(min_length=1)
     disambiguation: str | None
     external_link: None = None
+    listening_links: list[ListeningLink] = Field(default_factory=list,max_length=3)
+    available_recommendations: int | None = Field(default=None, ge=0, le=10, strict=True)
+
+    @field_validator('listening_links')
+    @classmethod
+    def unique_providers(cls,value):
+        if len({link.provider for link in value})!=len(value):raise ValueError('Duplicate listening provider')
+        return value
 
 
 class Meta(BaseModel):

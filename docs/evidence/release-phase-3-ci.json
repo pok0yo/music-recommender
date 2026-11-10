@@ -1,0 +1,90 @@
+{
+  "verified_at": "2026-10-29T19:03:35.139272+00:00",
+  "source_revision": "453443ea018372f3f6b5bbd88233e37463c4c2e2",
+  "browser_run_url": "https://github.com/pok0yo/music-recommender/actions/runs/40933785213",
+  "browser_conclusion": "success",
+  "shards": [
+    {
+      "shard": 1,
+      "stats": {
+        "startTime": "2026-10-29T18:46:37.726Z",
+        "duration": 890254.169,
+        "expected": 11,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report_sha256": "307f4787f093a097ffbdd7c51341927bdfb3b7fb336e1aa840582cee59f2378f"
+    },
+    {
+      "shard": 2,
+      "stats": {
+        "startTime": "2026-10-29T18:46:48.642Z",
+        "duration": 126392.173,
+        "expected": 11,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report_sha256": "15ef5df86ccc9bb749bc54a8af45412e3a15a7472413b21d0c5b9dcde413362e"
+    },
+    {
+      "shard": 3,
+      "stats": {
+        "startTime": "2026-10-29T18:46:20.447Z",
+        "duration": 109324.944,
+        "expected": 11,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report_sha256": "bb80289b1f53d4b3bf568717f4e3034e8fea5a25fbc0afb16d9469805d60fd4b"
+    },
+    {
+      "shard": 4,
+      "stats": {
+        "startTime": "2026-10-29T18:46:34.466Z",
+        "duration": 475465.578,
+        "expected": 11,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report_sha256": "cc5179851d64604fc7d1d190365f0f9b5faa5c0ff5de06ea3b090d9a7edb8d95"
+    },
+    {
+      "shard": 5,
+      "stats": {
+        "startTime": "2026-10-29T18:46:22.121Z",
+        "duration": 245448.36099999998,
+        "expected": 10,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report_sha256": "76690a7bd45784183c75c025050704480af9da0b1a774f40252b19b72bd31e56"
+    },
+    {
+      "shard": 6,
+      "stats": {
+        "startTime": "2026-10-29T18:46:33.390Z",
+        "duration": 687571.849,
+        "expected": 10,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report_sha256": "43a107778d2031c185ddbc6e8cac4d7ae99b2f397032c5e1da4ebf4f53cce384"
+    }
+  ],
+  "passed": 64,
+  "skipped": 0,
+  "flaky": 0,
+  "failed": 0,
+  "all_committed_tests_once": true,
+  "backend_run_url": "https://github.com/pok0yo/music-recommender/actions/runs/40933785179",
+  "backend_conclusion": "success",
+  "backend_tests": 24,
+  "model_tests": 48,
+  "scope": "Fresh Linux installs/builds; Chromium SwiftShader, one worker per shard; behavior checks, not hosted latency or physical-device performance."
+}

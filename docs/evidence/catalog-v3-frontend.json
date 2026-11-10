@@ -1,0 +1,12 @@
+{
+  "source_commit": "a85cde945f7091355dae1cd5fe97053c2f49fb92",
+  "vercel_deployment_id": "Gh5BXbNxUk8eYeFHsJx1GYVsjSEw",
+  "production_build_seconds": 31,
+  "anonymous_homepage_http_status": 200,
+  "developer_login_required": false,
+  "availability_application_asset": {
+    "url": "https://project-3wvwg.vercel.app/_next/static/immutable/chunks/1sdrt-0eyzhi6.js",
+    "sha256": "460558b606e94a41fc592e28ed6a589c38dd876f95e4975ebe3edfebaaa25da8"
+  },
+  "backend_switch_pending": false
+}

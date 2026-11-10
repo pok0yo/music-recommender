@@ -23,5 +23,3 @@ CREATE POLICY reader_select ON music_catalog.recordings FOR SELECT TO music_read
 REVOKE ALL ON ALL TABLES IN SCHEMA music_catalog FROM PUBLIC;
 GRANT USAGE ON SCHEMA music_catalog TO music_reader;
 GRANT SELECT ON ALL TABLES IN SCHEMA music_catalog TO music_reader;
-REVOKE ALL ON DATABASE music_discovery FROM PUBLIC;
-GRANT CONNECT ON DATABASE music_discovery TO music_reader;

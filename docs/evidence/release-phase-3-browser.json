@@ -1,0 +1,129 @@
+{
+  "measured_at": "2026-10-29T05:16:05.949Z",
+  "platform": "win32",
+  "cpu": "AMD Ryzen AI 9 465 w/ Radeon 880M              ",
+  "method": "Headless installed browsers; loopback HTTP, DPR 1. Frontend requests are forwarded unchanged to the isolated real API on port 8001. Keyboard activation to displayed recommendations includes automation overhead. Five warm-ups per sample; selections cycle through the 32 approved starters, with shorter samples covering a subset. Animation stays enabled.",
+  "limitations": "Viewport emulation and CPU throttling are not physical phones or Safari. Frame intervals measure browser scheduling, not GPU completion. Not deployed-network performance.",
+  "samples": [
+    {
+      "channel": "chrome",
+      "browser": "156.0.8078.48",
+      "width": 1440,
+      "height": 900,
+      "cpu_slowdown": 1,
+      "count": 100,
+      "ready_ms": 3503.6931000000004,
+      "median_ms": 231.21870000000126,
+      "p95_ms": 395.98379999999815,
+      "max_ms": 877.6669000000002,
+      "target_met": true,
+      "renderer": "ANGLE (AMD, AMD Radeon(TM) 880M Graphics (0x0000150E) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "frames": {
+        "count": 376,
+        "p95_interval_ms": 13.899999999999636,
+        "max_interval_ms": 14.700000000000728,
+        "over_33ms": 0,
+        "long_tasks": []
+      },
+      "meta": {
+        "model_version": "item-cf-cohort-v2-lambda-50",
+        "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+        "artifact_schema_version": 1,
+        "training_cutoff": "2026-08-01T00:00:00Z",
+        "method": "item_cosine_shared_listener_shrinkage",
+        "data_mode": "real"
+      },
+      "page_errors": []
+    },
+    {
+      "channel": "chrome",
+      "browser": "156.0.8078.48",
+      "width": 390,
+      "height": 844,
+      "cpu_slowdown": 1,
+      "count": 32,
+      "ready_ms": 3034.240300000005,
+      "median_ms": 229.9363000000012,
+      "p95_ms": 359.28190000000177,
+      "max_ms": 408.5610999999917,
+      "target_met": true,
+      "renderer": "ANGLE (AMD, AMD Radeon(TM) 880M Graphics (0x0000150E) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "frames": {
+        "count": 376,
+        "p95_interval_ms": 13.800000000000182,
+        "max_interval_ms": 14.300000000001091,
+        "over_33ms": 0,
+        "long_tasks": []
+      },
+      "meta": {
+        "model_version": "item-cf-cohort-v2-lambda-50",
+        "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+        "artifact_schema_version": 1,
+        "training_cutoff": "2026-08-01T00:00:00Z",
+        "method": "item_cosine_shared_listener_shrinkage",
+        "data_mode": "real"
+      },
+      "page_errors": []
+    },
+    {
+      "channel": "chrome",
+      "browser": "156.0.8078.48",
+      "width": 390,
+      "height": 844,
+      "cpu_slowdown": 4,
+      "count": 10,
+      "ready_ms": 5163.326199999996,
+      "median_ms": 485.80539999999746,
+      "p95_ms": 678.6699999999983,
+      "max_ms": 678.6699999999983,
+      "target_met": true,
+      "renderer": "ANGLE (AMD, AMD Radeon(TM) 880M Graphics (0x0000150E) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "frames": {
+        "count": 346,
+        "p95_interval_ms": 26.69999999999891,
+        "max_interval_ms": 38.899999999999636,
+        "over_33ms": 1,
+        "long_tasks": []
+      },
+      "meta": {
+        "model_version": "item-cf-cohort-v2-lambda-50",
+        "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+        "artifact_schema_version": 1,
+        "training_cutoff": "2026-08-01T00:00:00Z",
+        "method": "item_cosine_shared_listener_shrinkage",
+        "data_mode": "real"
+      },
+      "page_errors": []
+    },
+    {
+      "channel": "msedge",
+      "browser": "156.0.4314.50",
+      "width": 1440,
+      "height": 900,
+      "cpu_slowdown": 1,
+      "count": 32,
+      "ready_ms": 3440.964399999997,
+      "median_ms": 227.48490000001038,
+      "p95_ms": 336.36249999998836,
+      "max_ms": 399.11550000001444,
+      "target_met": true,
+      "renderer": "ANGLE (AMD, AMD Radeon(TM) 880M Graphics (0x0000150E) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "frames": {
+        "count": 376,
+        "p95_interval_ms": 13.899999999999636,
+        "max_interval_ms": 14.899999999999636,
+        "over_33ms": 0,
+        "long_tasks": []
+      },
+      "meta": {
+        "model_version": "item-cf-cohort-v2-lambda-50",
+        "catalog_version": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+        "artifact_schema_version": 1,
+        "training_cutoff": "2026-08-01T00:00:00Z",
+        "method": "item_cosine_shared_listener_shrinkage",
+        "data_mode": "real"
+      },
+      "page_errors": []
+    }
+  ]
+}

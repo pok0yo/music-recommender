@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "activated": true,
+  "catalogVersion": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+  "samples": [
+    {
+      "artist": "nate sib",
+      "selected": "Face Card",
+      "recommended": "Let You Go",
+      "reseeded": true
+    },
+    {
+      "artist": "Tiffany Day",
+      "selected": "AMERICAN GIRL",
+      "recommended": "START OVER",
+      "reseeded": true
+    },
+    {
+      "artist": "Daniel Caesar",
+      "selected": "A Cappella",
+      "recommended": "Death & Taxes",
+      "reseeded": true
+    }
+  ],
+  "errors": [],
+  "canvasRetained": true,
+  "scope": "Live real-mode website requests to the activated local PostgreSQL catalog",
+  "limitations": [
+    "Physical-device and Safari checks not performed"
+  ]
+}

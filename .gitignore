@@ -33,6 +33,7 @@ test-results/
 /data/interim/
 /data/processed/
 /artifacts/
+/.runtime/
 
 # Operating-system files.
 .DS_Store

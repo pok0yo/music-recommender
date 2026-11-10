@@ -1,0 +1,89 @@
+{
+  "date": "2026-11-08",
+  "public_activation_performed": true,
+  "candidate_release_id": "5e3038d4a068ef7e22bd7a07088b192482f1703446f8d7242898d0c9a1fad274",
+  "candidate_catalog_version": "catalog-v3-0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b",
+  "catalog_full_hash_verified": true,
+  "links_verified": 130,
+  "starters_verified": 32,
+  "authenticated_storage_manifest_hash_verified": true,
+  "security_advisors": 0,
+  "database_rls_tables": 4,
+  "bucket_private": true,
+  "storage_inventory_files": 16,
+  "storage_inventory_bytes": 226065302,
+  "dashboard_egress_gb": 0.43,
+  "free_egress_limit_gb": 5,
+  "free_storage_limit_gb": 1,
+  "render_auto_deploy": "off",
+  "vercel_git_deployment_enabled": false,
+  "source_commit": "a85cde945f7091355dae1cd5fe97053c2f49fb92",
+  "phase": "active_verified",
+  "previous_frontend_commit": "575def55f8515184fd25a9ec7be618160f73c0c6",
+  "previous_frontend_deployment": "MzsirePySd7yyoPXYhG4RCgF5X43",
+  "previous_backend_commit": "4645fa76e8574da245ddf61436eab39742047d55",
+  "previous_backend_deployment": "dep-dbj4vj7f3r2c73evfob0",
+  "public_baseline_catalog": "catalog-v2-1c2f222147176b362426ab426936307f16d273de21bbd9b9ed6eee0b629c9766",
+  "backend_tests_local_passed": 46,
+  "release_backend_model_ci": "https://github.com/pok0yo/music-recommender/actions/runs/42558583464",
+  "release_browser_ci": "https://github.com/pok0yo/music-recommender/actions/runs/42558583533",
+  "release_backend_model_ci_passed": 94,
+  "production_origin_build_passed": true,
+  "typecheck_passed": true,
+  "rollout_order": "Frontend first on v2, then backend v3 after exact-release CI passes",
+  "forms_prepared": true,
+  "release_browser_ci_passed": 83,
+  "paired_activation_complete": true,
+  "frontend_deployment_id": "Gh5BXbNxUk8eYeFHsJx1GYVsjSEw",
+  "frontend_source": "a85cde945f7091355dae1cd5fe97053c2f49fb92",
+  "frontend_build_seconds": 31,
+  "frontend_anonymous_http_status": 200,
+  "frontend_availability_asset_verified": true,
+  "backend_deploy_requested": true,
+  "backend_bundle_url_saved": true,
+  "backend_deployment_id": "dep-dbokfe9srm7s73c8nhgg",
+  "frontend_build_warning": "Two npm cache-dir environment-option deprecation warnings; npm audit reported 0 vulnerabilities.",
+  "backend_deploy_succeeded": true,
+  "backend_application_startup_complete": true,
+  "public_api_verified": true,
+  "public_browser_verified": true,
+  "anonymous_storage_rejected": [
+    {
+      "route": "public",
+      "unauthenticated_http_status": 400
+    },
+    {
+      "route": "authenticated",
+      "unauthenticated_http_status": 400
+    }
+  ],
+  "private_runtime_record_updated": true,
+  "post_deploy_security_advisors": 0,
+  "post_deploy_rls_tables": 4,
+  "post_deploy_reader_privileges": [
+    "SELECT"
+  ],
+  "post_deploy_reader_superuser": false,
+  "post_deploy_reader_bypass_rls": false,
+  "post_deploy_storage_files": 16,
+  "post_deploy_bucket_private": true,
+  "post_deploy_catalog_counts": [
+    4996,
+    5474
+  ],
+  "post_deploy_link_counts": [
+    130,
+    130
+  ],
+  "public_catalog_recordings": 5474,
+  "public_listening_links": 130,
+  "model_changed": false,
+  "credentials_changed": false,
+  "policies_changed": false,
+  "hosting_plan_changed": false,
+  "evidence_sha256": {
+    "catalog-v3-frontend.json": "6be5917071f2a946ebfec957a9ce05232e0cfd5823632eabb59a7acecfab8280",
+    "catalog-v3-public-api.json": "df49a4bffcd218f7fd5192e56dc41ce7362fb40bb18875ec6b1b811a414c54bc",
+    "catalog-v3-public-browser.json": "bc3e61d7bd76643063d6089edee03a226d8cb611b5a761badd0da8c9a31af56e"
+  }
+}

@@ -1,12 +1,26 @@
 # Music Recommender
 
+## Released MVP — complete November 9, 2026
+
+The portfolio MVP is complete and in maintenance mode. [Open the public application](https://project-3wvwg.vercel.app/), read the [case study](docs/case-study.md), or review the [closeout record](docs/project-closeout.md). Both providers run source `a85cde945f7091355dae1cd5fe97053c2f49fb92`; the November 8 paired activation was verified and its evidence recorded in `fafe1e5`. This closeout changes documentation and portfolio media, not the deployed application.
+
+The selected interface is the Orbital 3D record player and physical song rack on reflective water, with native controls, keyboard navigation, reduced-motion support and safe loading/error/empty states. Catalog availability and historical evaluation are separate claims: 17 searchable songs have no onward list, and listener usefulness has not been measured. New features, acquisition, retraining and design experiments are optional future work requiring a separate decision.
+
+## Product truth
+
+The released journey is search or browse → choose a recording → Discover → inspect shared-listening recommendations → open a listening destination → use another result as the seed. The public v3 catalog has 5,474 recordings and 32 approved starters, with 130 preserved recording destinations across 76 recordings; other destinations are labeled provider searches. Device-local Not for me / Undo feedback hides results without changing the frozen model or collecting a server-side taste profile. There are no accounts, social features or embedded audio playback. Partial lists retain original ranks; zero-availability songs remain listenable but cannot be confirmed for discovery. Explicit demo URLs are illustrative and labeled; failed real requests never become demo results.
+
+## Historical prototype notes
+
+The chronology below preserves prior design decisions and local experiments. Its references to authorization, pending promotion, current prototypes and older counts apply to those checkpoints; they do not override the released status and Product truth above. Uncommitted prototype edits are excluded from the public release.
+
 ## Platform
 Web application, designed for keyboard, pointer, and touch. English interface; track metadata preserves Unicode.
 
-## Product truth
-Choose one recording, explore up to ten connections from shared listening, inspect the method, and use another result as the seed. No account, playback, social features, or feedback collection. The backend's current serving catalog has 215 recordings and 32 approved supported starters. Further reseeding may omit metadata and return a limited list. External listening links are currently unavailable.
+## Historical product snapshot
+Choose one recording, explore up to ten connections from shared listening, inspect the method, and use another result as the seed. No account, playback, social features, or feedback collection. The backend's current serving catalog has 4,996 recordings and 32 approved supported starters. Further reseeding may omit metadata and return a limited list. External listening links are currently unavailable.
 
-## Current stage
+## Historical stage boundary
 Stage 9 prototype comparison is authorized. On October 21, 2026, the user approved the sculpted glass-and-chrome concept and requested five fundamentally different app structures within that shared world. This replaces the earlier five separate typographic/theme directions. All five use equal behavior and shared fixtures, with deliberate presentation differences documented in DESIGN.md. The user selects a structure before its final Discover and About frontend is promoted. Stage 10 and deployment require separate authorization. The frozen Stage 7 and 8 evidence remains authoritative for data and model claims.
 
 The user subsequently preferred v2 Disc Study's aesthetic and selected Disc Tray from the three body-layout explorations. Gatefold, Disc Tray and Liner Notes remain at /prototypes/disc-study/{gatefold,disc-tray,liner-notes}; the original five previews also remain available. Four generated hero-art candidates are now compared in working Disc Tray demos at /prototypes/disc-tray/artwork/{orbital-disc,glass-current,aero-player,liquid-star}. The body is selected; final artwork remains unselected. No production promotion, Stage 10 or deployment is authorized.

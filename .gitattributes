@@ -31,6 +31,7 @@ ml/verify_stage7_artifact.py text eol=lf
 backend/**/*.py text eol=lf
 backend/*.py text eol=lf
 backend/*.sql text eol=lf
+deploy/supabase-root-ca.crt -text
 backend/requirements.txt text eol=lf
 backend/openapi.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 docs/evidence/stage-8-*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
