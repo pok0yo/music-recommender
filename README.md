@@ -4,6 +4,10 @@ A music discovery application that recommends tracks from a single seed song, wi
 
 ## Status
 
+**Portfolio MVP complete — November 9, 2026.** Feature development is closed; maintenance addresses verified failures, security issues and required provider changes. [Case study](docs/case-study.md) · [Demo and screenshots](docs/demo.md) · [Closeout and retained local experiments](docs/project-closeout.md). The frozen public release remains source `a85cde9`; this closeout does not redeploy it.
+
+[![Public Music Recommender interface](docs/media/music-recommender.jpg)](https://project-3wvwg.vercel.app/)
+
 **V3 is public.** The [paired release](docs/catalog-v3-activation.md) serves **5,474 verified recordings and 130 preserved listening links** from source `a85cde9`. [Availability hints](docs/recommendation-availability.md) expose partial and empty onward lists and prevent empty reseeding while retaining listening access. All 83 browser and 94 backend/model CI checks passed. Live checks verified all 32 starters, five onward journeys, ranks, availability counts, listening, feedback and recovery. Seventeen seeds still have empty onward lists; catalog expansion does not establish improved recommendation accuracy. V2 remains intact for rollback.
 
 **November 2 startup recovery is retained:** [automatic catalog startup recovery](docs/startup-recovery.md) adds a bounded two-minute retry window and waking-up messages. Introduced in `575def5`, it remains included in the current release. Its original anonymous startup, search, discovery and reseeding checks passed, with 80 browser, 34 backend and 48 model checks and one same-source CPU graphics group rerun.
@@ -34,11 +38,11 @@ See the [Stage 5 implementation plan](docs/stage-5-implementation-plan.md) for a
 
 See the [Stage 6 acceptance report](docs/stage-6-data-audit.md#15-final-cohort-v2-acceptance-and-stage-boundary) and [decision manifest](docs/evidence/stage-6-decision-v2.json) for coverage gaps, exclusions, resources, reproducibility, and the frozen candidate/query hashes. Earlier failed versions and checkpoints remain documented as history.
 
-- Stage 8: local API and read-only database access implemented. The later [catalog expansion](docs/catalog-expansion-v2.md) activates 4,996 recordings while preserving 32 approved starters and the frozen model. The [listening-link pilot](docs/listening-feedback.md) adds 130 checked destinations across 76 recordings; other destinations are explicitly labeled provider searches. See the [original backend setup](docs/stage-8-backend.md) and later release documents for current startup configuration.
+- Stage 8: local API and read-only database access implemented. The historical [v2 expansion](docs/catalog-expansion-v2.md) introduced 4,996 recordings; the [current v3 release](docs/catalog-v3-activation.md) serves 5,474 while preserving 32 approved starters and the frozen model. The [listening-link pilot](docs/listening-feedback.md) adds 130 checked destinations across 76 recordings; other destinations are explicitly labeled provider searches. See the [original backend setup](docs/stage-8-backend.md) and later release documents for current startup configuration.
 
-The target is a 6–8-week individual portfolio project, subject to available development time and later product checks. The accepted cohort, train-only recommender, and measured offline results exist locally. These results do not establish subjective usefulness or application readiness.
+The individual portfolio MVP is delivered. The original 6–8-week estimate was a planning target, not a recorded effort measurement. The accepted cohort, train-only recommender, offline evaluation and public release are documented; offline results do not establish subjective usefulness.
 
-## Proposed MVP
+## Released MVP
 
 - Search a verified supported catalog of recognizable mainstream recordings.
 - Select one seed and receive up to ten related tracks.
@@ -55,7 +59,7 @@ The user's ten requested artists define the coverage target; very recent release
 - Primary model: binary item-based collaborative filtering with cosine normalization and a shared-listener support adjustment.
 - ALS and metadata hybrids are conditional experiments, not requirements.
 - Completed evaluation: global chronological training, validation, and test windows; one seed per query; future co-listening as an explicitly limited relevance proxy.
-- Both models use the same full candidate catalog. NDCG@10, Recall@10, Precision@10, coverage, support cohorts, exclusions, and uncertainty are reported. Deployed latency is unmeasured.
+- Both models use the same full candidate catalog. NDCG@10, Recall@10, Precision@10, coverage, support cohorts, exclusions, and uncertainty are reported. The [v3 release](docs/catalog-v3-activation.md) records a finite 41-request warm public HTTPS sample (median 541.9 ms, p95 817.8 ms); it is not a concurrent-load benchmark.
 - Similarity scores are not probabilities of enjoyment. Nearly half of scorable test queries have no observed target in the selected model's top ten.
 
 The audit measured coverage, timestamp anomalies, sparsity, processing resources, and exclusions. Identity ambiguity and unsupported items remain explicit limitations. Evaluation is a retrospective reconstruction by listen time, not an as-of historical deployment replay. Spotify Platform content is not a proposed ML input.

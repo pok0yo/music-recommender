@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-09",
+  "status": "portfolio_mvp_complete_maintenance_mode",
+  "github_release_tag": "v0.1.0",
+  "deployed_application_source": "a85cde945f7091355dae1cd5fe97053c2f49fb92",
+  "application_code_changed": false,
+  "deployment_performed": false,
+  "repository_visibility_changed": false,
+  "prior_release_evidence": "catalog-v3-activation.json",
+  "prior_exact_source_browser_ci_passes": 83,
+  "prior_exact_source_backend_model_ci_passes": 94,
+  "application_tests_rerun_for_documentation": false,
+  "public_readiness_rechecked": true,
+  "public_data_mode": "real",
+  "public_catalog_version": "catalog-v3-0d44b0620107fe42678732b45397b8514be01ca0f9ed3829f468ca68afdf2b0b",
+  "recording": {
+    "filename": "music-recommender-demo.webm",
+    "bytes": 2154095,
+    "sha256": "e06d4fea0e623b97b32c2be350403b51c32ea2d9a26601c368dd5378e9985149",
+    "duration_seconds": 38.8,
+    "width": 1280,
+    "height": 720,
+    "fps": 25,
+    "codec": "VP9",
+    "audio": false,
+    "scripted": true,
+    "public_site": true,
+    "responses_mocked": false,
+    "begins_after_startup": true,
+    "full_decode_conversion_passed": true,
+    "visual_review_seconds": [
+      3,
+      9,
+      15,
+      20,
+      27,
+      35
+    ],
+    "javascript_page_errors_during_capture": 0,
+    "asserted_actions": [
+      "32 real starters ready",
+      "Leaving Toronto search",
+      "ten-result discovery",
+      "shared-listening explanation",
+      "listening destinations menu",
+      "Not for me and Undo restored SNL",
+      "nine-result SNL reseed",
+      "Back restored original ten-result list"
+    ],
+    "release_download_url": "https://github.com/pok0yo/music-recommender/releases/download/v0.1.0/music-recommender-demo.webm"
+  },
+  "screenshot": {
+    "path": "docs/media/music-recommender.jpg",
+    "capture_checkpoint": "2026-11-08 paired activation, same application source",
+    "bytes": 73451,
+    "sha256": "cc932898ac488d003fd191baf66a7930c19b74edb174a1b142279423ead15822"
+  },
+  "observed_nonblocking_browser_messages": [
+    "favicon.ico resource HTTP 404",
+    "WebGL shader floating-point precision warnings"
+  ],
+  "preservation": {
+    "original_product_paragraphs_retained": true,
+    "preexisting_tracked_modified_files": 12,
+    "unrelated_work_stashed_reset_deleted_or_committed": false,
+    "local_experiments_classified_in": "docs/project-closeout.md"
+  },
+  "limitations": [
+    "Human recommendation usefulness unmeasured",
+    "17 empty onward lists and 2125 partial lists in frozen v3 snapshot",
+    "No new physical-device or provider-playback certification",
+    "Public concurrent-load capacity unverified; free hosting can sleep"
+  ]
+}
